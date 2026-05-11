@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="MXT Lab Sitemap — A full list of all pages and topics available on MXT Lab."/>
+  <meta name="robots" content="index, follow"/>
+  <title>Sitemap — MXT Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;600;700&family=Cabinet+Grotesk:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--bg:#f5f7f0;--bg2:#eaedd8;--surface:#fff;--ink:#1a1f12;--ink2:#4a5240;--ink3:#8a9178;--green:#3a7d2c;--green-lt:#e8f5e2;--border:rgba(0,0,0,.08);--radius:14px;--max:900px;--nav-h:64px;--font-disp:'Clash Display',sans-serif;--font-body:'Cabinet Grotesk',sans-serif}
+    [data-theme="dark"]{--bg:#111408;--bg2:#181d0e;--surface:#1e2413;--ink:#edf0e2;--ink2:#adb59a;--ink3:#6a7258;--border:rgba(255,255,255,.08)}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--font-body);background:var(--bg);color:var(--ink);line-height:1.7;transition:background .3s,color .3s}
+    a{color:var(--green);text-decoration:none}
+    a:hover{text-decoration:underline}
+    nav{position:sticky;top:0;z-index:100;height:var(--nav-h);background:rgba(245,247,240,.93);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+    [data-theme="dark"] nav{background:rgba(17,20,8,.93)}
+    .nav-wrap{max-width:1100px;margin:0 auto;padding:0 24px;height:100%;display:flex;align-items:center;justify-content:space-between}
+    .nav-logo{font-family:var(--font-disp);font-weight:700;font-size:1.2rem;text-decoration:none;color:var(--ink)}
+    .nav-logo span{color:var(--green)}
+    .nav-right{display:flex;align-items:center;gap:12px}
+    .back-btn{font-size:.84rem;color:var(--ink2);text-decoration:none;padding:7px 14px;border-radius:50px;border:1px solid var(--border);transition:background .18s}
+    .back-btn:hover{background:var(--bg2);text-decoration:none}
+    .theme-toggle{background:none;border:1px solid var(--border);border-radius:50px;padding:6px 12px;display:flex;align-items:center;gap:6px;font-size:.78rem;color:var(--ink2);cursor:pointer;transition:background .18s;font-family:var(--font-body)}
+    .theme-toggle:hover{background:var(--bg2)}
+    .page-hero{background:var(--bg2);padding:52px 0 40px;border-bottom:1px solid var(--border)}
+    .container{max-width:var(--max);margin:0 auto;padding:0 24px}
+    .label{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:10px}
+    h1{font-family:var(--font-disp);font-size:clamp(2rem,4vw,2.8rem);font-weight:700;letter-spacing:-.02em;line-height:1.1}
+    .sitemap-body{padding:56px 0 80px}
+    .sitemap-section{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px 32px;margin-bottom:20px}
+    .sitemap-section h2{font-family:var(--font-disp);font-size:1.05rem;font-weight:700;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px}
+    .sitemap-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:8px}
+    .sitemap-link{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;font-size:.86rem;color:var(--ink2);transition:background .18s}
+    .sitemap-link:hover{background:var(--bg2);color:var(--green);text-decoration:none}
+    .sitemap-link .icon{font-size:.9rem;flex-shrink:0}
+    .sitemap-link .coming{font-size:.68rem;color:var(--ink3);margin-left:4px}
+    footer{background:#0e1208;color:rgba(255,255,255,.45);padding:32px 0;text-align:center;font-size:.78rem}
+    footer a{color:rgba(255,255,255,.45);text-decoration:none;margin:0 10px}
+    footer a:hover{color:#fff}
+    .footer-logo{font-family:var(--font-disp);font-weight:700;font-size:1.1rem;color:#fff;display:inline-block;margin-bottom:10px}
+    .footer-logo span{color:#6dbf5a}
+    .footer-links{display:flex;justify-content:center;flex-wrap:wrap;gap:4px;margin:10px 0}
+    @media(max-width:600px){.sitemap-section{padding:20px}.sitemap-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<nav>
+  <div class="nav-wrap">
+    <a href="index.html" class="nav-logo">MXT<span>Lab</span></a>
+    <div class="nav-right">
+      <a href="index.html" class="back-btn">← Back to MXT Lab</a>
+      <button class="theme-toggle" id="theme-toggle"><span id="t-icon">🌙</span><span id="t-lbl">Dark</span></button>
+    </div>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="label">Navigation</div>
+    <h1>Sitemap</h1>
+    <p style="color:var(--ink3);font-size:.85rem;margin-top:10px">A full list of all pages and topics available on MXT Lab.</p>
+  </div>
+</div>
+
+<div class="sitemap-body">
+  <div class="container">
+
+    <!-- Main Pages -->
+    <div class="sitemap-section">
+      <h2>🏠 Main Pages</h2>
+      <div class="sitemap-grid">
+        <a href="index.html" class="sitemap-link"><span class="icon">🏠</span> Home</a>
+        <a href="index.html" class="sitemap-link"><span class="icon">📚</span> Topics</a>
+        <a href="index.html" class="sitemap-link"><span class="icon">👥</span> About MXT Lab</a>
+        <a href="index.html" class="sitemap-link"><span class="icon">📖</span> Resources</a>
+        <a href="index.html" class="sitemap-link"><span class="icon">✉️</span> Contact</a>
+      </div>
+    </div>
+
+    <!-- Grade 9 -->
+    <div class="sitemap-section">
+      <h2>🌾 Grade 9 Agriculture Topics</h2>
+
+      <p style="font-size:.8rem;color:var(--ink3);margin-bottom:14px;font-weight:600;text-transform:uppercase;letter-spacing:.06em">Strand 1: Crops</p>
+      <div class="sitemap-grid" style="margin-bottom:20px">
+        <a href="index.html" class="sitemap-link"><span class="icon">🌱</span> Soil — Types & Formation</a>
+        <a href="index.html" class="sitemap-link"><span class="icon">🌽</span> Types of Crops & Their Environments</a>
+        <a href="index.html" class="sitemap-link"><span class="icon">🚜</span> Crop Farming Practices & Management</a>
+        <a href="index.html" class="sitemap-link"><span class="icon">⚙️</span> Crop Farming Technology</a>
+        <a href="index.html" class="sitemap-link"><span class="icon">🍅</span> Horticulture — Fruits, Vegetables & Spices</a>
+        <a href="index.html" class="sitemap-link"><span class="icon">🌿</span> Plant Farming Practices <span class="coming">(Coming Soon)</span></a>
+        <a href="index.html" class="sitemap-link"><span class="icon">💡</span> Technology in Horticulture <span class="coming">(Coming Soon)</span></a>
+      </div>
+
+      <p style="font-size:.8rem;color:var(--ink3);margin-bottom:14px;font-weight:600;text-transform:uppercase;letter-spacing:.06em">Strand 2: Animals</p>
+      <div class="sitemap-grid" style="margin-bottom:20px">
+        <a href="index.html" class="sitemap-link"><span class="icon">🐷</span> Monogastric & Polygastric Animals</a>
+        <a href="index.html" class="sitemap-link"><span class="icon">🐄</span> Anatomy of Farm Animals</a>
+        <a href="index.html" class="sitemap-link"><span class="icon">🏠</span> Animal Farming Practices & Management</a>
+        <a href="index.html" class="sitemap-link"><span class="icon">🐔</span> Types of Poultry & Their Behaviour</a>
+        <a href="index.html" class="sitemap-link"><span class="icon">🥚</span> Poultry Farming Principles & Systems <span class="coming">(Coming Soon)</span></a>
+      </div>
+
+      <p style="font-size:.8rem;color:var(--ink3);margin-bottom:14px;font-weight:600;text-transform:uppercase;letter-spacing:.06em">Strand 3: Aquaculture</p>
+      <div class="sitemap-grid" style="margin-bottom:20px">
+        <a href="index.html" class="sitemap-link"><span class="icon">🐟</span> Introduction to Aquaculture</a>
+        <a href="index.html" class="sitemap-link"><span class="icon">🌊</span> Aqua Farming Systems & Practices</a>
+        <a href="index.html" class="sitemap-link"><span class="icon">⚓</span> Gears & Technology in Aqua Farming <span class="coming">(Coming Soon)</span></a>
+      </div>
+
+      <p style="font-size:.8rem;color:var(--ink3);margin-bottom:14px;font-weight:600;text-transform:uppercase;letter-spacing:.06em">Strand 4: Natural Resource Management</p>
+      <div class="sitemap-grid" style="margin-bottom:20px">
+        <a href="index.html" class="sitemap-link"><span class="icon">🌳</span> Types of Forests & Forest Resources</a>
+        <a href="index.html" class="sitemap-link"><span class="icon">🪓</span> Forest Harvesting Practices</a>
+        <a href="index.html" class="sitemap-link"><span class="icon">♻️</span> Forest Management & Conservation</a>
+        <a href="index.html" class="sitemap-link"><span class="icon">🔧</span> Forestry Technology <span class="coming">(Coming Soon)</span></a>
+      </div>
+
+      <p style="font-size:.8rem;color:var(--ink3);margin-bottom:14px;font-weight:600;text-transform:uppercase;letter-spacing:.06em">Strand 5: Agribusiness</p>
+      <div class="sitemap-grid">
+        <a href="index.html" class="sitemap-link"><span class="icon">💰</span> Economic Principles in Agribusiness</a>
+        <a href="index.html" class="sitemap-link"><span class="icon">🚢</span> Agricultural Imports & Exports</a>
+        <a href="index.html" class="sitemap-link"><span class="icon">📋</span> Planning & Managing an Agribusiness <span class="coming">(Coming Soon)</span></a>
+      </div>
+    </div>
+
+    <!-- Grade 10 -->
+    <div class="sitemap-section">
+      <h2>🌿 Grade 10 Agriculture Topics</h2>
+
+      <p style="font-size:.8rem;color:var(--ink3);margin-bottom:14px;font-weight:600;text-transform:uppercase;letter-spacing:.06em">Strand 1: Crops</p>
+      <div class="sitemap-grid" style="margin-bottom:20px">
+        <a href="index.html" class="sitemap-link"><span class="icon">🌱</span> Soil Improvement Practices</a>
+        <a href="index.html" class="sitemap-link"><span class="icon">🌾</span> Crop Classification</a>
+        <a href="index.html" class="sitemap-link"><span class="icon">🚜</span> Crop Management Systems & Practices</a>
+        <a href="index.html" class="sitemap-link"><span class="icon">🌿</span> Plant Propagation Technology</a>
+        <a href="index.html" class="sitemap-link"><span class="icon">🪴</span> Types of Agricultural Plants <span class="coming">(Coming Soon)</span></a>
+        <a href="index.html" class="sitemap-link"><span class="icon">🌸</span> Cultivation of Ornamental & Bedding Plants <span class="coming">(Coming Soon)</span></a>
+        <a href="index.html" class="sitemap-link"><span class="icon">💡</span> Technology in Horticulture Production <span class="coming">(Coming Soon)</span></a>
+      </div>
+
+      <p style="font-size:.8rem;color:var(--ink3);margin-bottom:14px;font-weight:600;text-transform:uppercase;letter-spacing:.06em">Strand 2: Animals</p>
+      <div class="sitemap-grid" style="margin-bottom:20px">
+        <a href="index.html" class="sitemap-link"><span class="icon">🐷</span> Breeds of Monogastric & Polygastric Animals</a>
+        <a href="index.html" class="sitemap-link"><span class="icon">🔬</span> Animal Physiology — Digestive & Reproductive</a>
+        <a href="index.html" class="sitemap-link"><span class="icon">🏠</span> Animal Husbandry & Management Practices</a>
+        <a href="index.html" class="sitemap-link"><span class="icon">🌿</span> Animal Nutrition, Feeding & Health <span class="coming">(Coming Soon)</span></a>
+        <a href="index.html" class="sitemap-link"><span class="icon">🥩</span> Post-Harvest Processing of Animal Products <span class="coming">(Coming Soon)</span></a>
+        <a href="index.html" class="sitemap-link"><span class="icon">🐔</span> Poultry Breeds, Management & Technology <span class="coming">(Coming Soon)</span></a>
+      </div>
+
+      <p style="font-size:.8rem;color:var(--ink3);margin-bottom:14px;font-weight:600;text-transform:uppercase;letter-spacing:.06em">Strand 3: Aquaculture</p>
+      <div class="sitemap-grid" style="margin-bottom:20px">
+        <a href="index.html" class="sitemap-link"><span class="icon">💧</span> Freshwater, Brackish & Saltwater Farming</a>
+        <a href="index.html" class="sitemap-link"><span class="icon">🌊</span> Aqua Farming Management Systems</a>
+        <a href="index.html" class="sitemap-link"><span class="icon">🎣</span> Capture Fishery — Harvesting & Management</a>
+        <a href="index.html" class="sitemap-link"><span class="icon">⚙️</span> Technology in Aquaculture & Capture Fishery <span class="coming">(Coming Soon)</span></a>
+      </div>
+
+      <p style="font-size:.8rem;color:var(--ink3);margin-bottom:14px;font-weight:600;text-transform:uppercase;letter-spacing:.06em">Strand 4: Natural Resource Management</p>
+      <div class="sitemap-grid" style="margin-bottom:20px">
+        <a href="index.html" class="sitemap-link"><span class="icon">🌴</span> Tropical Forests & Their Characteristics</a>
+        <a href="index.html" class="sitemap-link"><span class="icon">📋</span> Forest Management & Monitoring Systems</a>
+        <a href="index.html" class="sitemap-link"><span class="icon">♻️</span> Preserving & Sustaining Forests</a>
+        <a href="index.html" class="sitemap-link"><span class="icon">🔧</span> Forestry Technology — Harvesting & Processing <span class="coming">(Coming Soon)</span></a>
+      </div>
+
+      <p style="font-size:.8rem;color:var(--ink3);margin-bottom:14px;font-weight:600;text-transform:uppercase;letter-spacing:.06em">Strand 5: Agribusiness</p>
+      <div class="sitemap-grid">
+        <a href="index.html" class="sitemap-link"><span class="icon">⚠️</span> Managing Risk in Agribusiness</a>
+        <a href="index.html" class="sitemap-link"><span class="icon">📣</span> Agribusiness Communication & Marketing</a>
+        <a href="index.html" class="sitemap-link"><span class="icon">🚀</span> Starting Up an Agribusiness <span class="coming">(Coming Soon)</span></a>
+      </div>
+    </div>
+
+    <!-- Resources -->
+    <div class="sitemap-section">
+      <h2>📖 Resources</h2>
+      <div class="sitemap-grid">
+        <a href="index.html" class="sitemap-link"><span class="icon">🌱</span> What is Soil and Why Does It Matter?</a>
+        <a href="index.html" class="sitemap-link"><span class="icon">🐷</span> Monogastric vs Polygastric Animals</a>
+        <a href="index.html" class="sitemap-link"><span class="icon">🐟</span> Introduction to Aquaculture in PNG</a>
+        <a href="index.html" class="sitemap-link"><span class="icon">🌿</span> Soil Improvement — Natural vs Artificial</a>
+        <a href="index.html" class="sitemap-link"><span class="icon">📊</span> What is Agribusiness?</a>
+        <a href="index.html" class="sitemap-link"><span class="icon">🌳</span> Forest Harvesting in PNG</a>
+      </div>
+    </div>
+
+    <!-- Legal -->
+    <div class="sitemap-section">
+      <h2>⚖️ Legal & Information</h2>
+      <div class="sitemap-grid">
+        <a href="privacy.html" class="sitemap-link"><span class="icon">🔒</span> Privacy Policy</a>
+        <a href="terms.html" class="sitemap-link"><span class="icon">📄</span> Terms of Use</a>
+        <a href="cookies.html" class="sitemap-link"><span class="icon">🍪</span> Cookie Policy</a>
+        <a href="sitemap.html" class="sitemap-link"><span class="icon">🗺️</span> Sitemap</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-logo">MXT<span>Lab</span></div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+      <a href="cookies.html">Cookie Policy</a>
+    </div>
+    <p>© 2026 MXT Lab. All rights reserved.</p>
+  </div>
+</footer>
+<script>
+  let dark=false;
+  document.getElementById('theme-toggle').addEventListener('click',()=>{dark=!dark;document.documentElement.setAttribute('data-theme',dark?'dark':'light');document.getElementById('t-icon').textContent=dark?'☀️':'🌙';document.getElementById('t-lbl').textContent=dark?'Light':'Dark';});
+</script>
+</body>
+</html>
