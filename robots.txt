@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mxtlab.github.io/sitemap.xml
