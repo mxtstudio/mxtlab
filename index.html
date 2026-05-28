@@ -145,9 +145,60 @@ img{max-width:100%}
 .s-hint{padding:10px 20px 14px;font-size:.73rem;color:var(--ink3);display:flex;gap:16px}
 
 /* PAGES */
-.page{display:none;animation:fadeUp .3s var(--ease)}
-.page.active{display:block}
+.page{display:none}
+.page.active{display:block;animation:pageIn .45s var(--ease) both}
+@keyframes pageIn{from{opacity:0;transform:translateY(18px) scale(.995)}to{opacity:1;transform:translateY(0) scale(1)}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+/* SCROLL REVEAL */
+[data-reveal]{opacity:0;transform:translateY(28px);transition:opacity .6s cubic-bezier(.22,.68,0,1),transform .6s cubic-bezier(.22,.68,0,1)}
+[data-reveal="left"]{transform:translateX(-28px)}
+[data-reveal="right"]{transform:translateX(28px)}
+[data-reveal="scale"]{transform:scale(.94);opacity:0}
+[data-reveal].revealed{opacity:1;transform:none}
+[data-delay="1"]{transition-delay:.08s}
+[data-delay="2"]{transition-delay:.16s}
+[data-delay="3"]{transition-delay:.24s}
+[data-delay="4"]{transition-delay:.32s}
+[data-delay="5"]{transition-delay:.40s}
+
+/* CARD HOVER LIFT */
+.strand-card,.topic-card,.val-card,.ci,.blc,.hiw-card{transition:box-shadow .28s cubic-bezier(.22,.68,0,1),transform .28s cubic-bezier(.22,.68,0,1),border-color .22s}
+.strand-card:hover,.val-card:hover,.ci:hover{box-shadow:0 8px 32px rgba(58,125,44,.13);transform:translateY(-5px) scale(1.01)}
+.topic-card:hover{box-shadow:0 12px 36px rgba(0,0,0,.12);transform:translateY(-5px)}
+.blc:hover{box-shadow:var(--shadow-md);transform:translateY(-3px)}
+.hiw-card:hover{box-shadow:0 10px 36px rgba(58,125,44,.12);transform:translateY(-4px)}
+
+/* BUTTON RIPPLE */
+.btn{position:relative;overflow:hidden}
+.btn::after{content:'';position:absolute;inset:0;background:rgba(255,255,255,.18);border-radius:inherit;opacity:0;transform:scale(0);transition:transform .4s,opacity .4s}
+.btn:active::after{transform:scale(2.5);opacity:1;transition:none}
+
+/* HERO FLOAT */
+.hero-visual{animation:heroFloat 5s ease-in-out infinite}
+@keyframes heroFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+/* STAGGER CHILDREN */
+.topics-grid .topic-card:nth-child(1){animation-delay:.04s}
+.topics-grid .topic-card:nth-child(2){animation-delay:.08s}
+.topics-grid .topic-card:nth-child(3){animation-delay:.12s}
+.topics-grid .topic-card:nth-child(4){animation-delay:.16s}
+.topics-grid .topic-card:nth-child(5){animation-delay:.20s}
+.topics-grid .topic-card:nth-child(6){animation-delay:.24s}
+.strands-grid .strand-card:nth-child(1){animation-delay:.04s}
+.strands-grid .strand-card:nth-child(2){animation-delay:.08s}
+.strands-grid .strand-card:nth-child(3){animation-delay:.12s}
+.strands-grid .strand-card:nth-child(4){animation-delay:.16s}
+.strands-grid .strand-card:nth-child(5){animation-delay:.20s}
+
+/* SHIMMER on chips */
+.chip-g{background-size:200% 100%;transition:background-position .4s}
+.chip-g:hover{background-position:right center}
+
+/* SMOOTH LINK UNDERLINE */
+.blog-read{position:relative;display:inline-flex}
+.blog-read::after{content:'';position:absolute;bottom:-1px;left:0;width:0;height:1.5px;background:var(--green);transition:width .3s}
+.blog-read:hover::after{width:100%}
 
 /* UTILS */
 .container{max-width:var(--max);margin:0 auto;padding:0 clamp(14px,3.5vw,24px)}
@@ -762,11 +813,11 @@ body.adsense-active .ad-slot-label{display:none}
   transition:opacity .65s var(--ease),transform .65s var(--ease);
 }
 [data-reveal].revealed{opacity:1;transform:translateY(0)}
-[data-reveal-d="1"]{transition-delay:.08s}
-[data-reveal-d="2"]{transition-delay:.16s}
-[data-reveal-d="3"]{transition-delay:.24s}
-[data-reveal-d="4"]{transition-delay:.32s}
-[data-reveal-d="5"]{transition-delay:.40s}
+[data-delay="1"]{transition-delay:.08s}
+[data-delay="2"]{transition-delay:.16s}
+[data-delay="3"]{transition-delay:.24s}
+[data-delay="4"]{transition-delay:.32s}
+[data-delay="5"]{transition-delay:.40s}
 
 /* ── TOPIC CARDS UPGRADE ── */
 .topic-card{border-radius:var(--radius);transition:box-shadow .25s,transform .25s}
@@ -899,21 +950,21 @@ initReveal();return false">
     <div class="container">
       <div class="hero-grid">
         <div>
-          <div class="hero-badge"><div class="pulse"></div>Agriculture · Grade 9 & 10 · Papua New Guinea</div>
-          <h1 class="h-xl">Learn Agriculture<br>the <span class="serif">right way</span></h1>
-          <p class="subtext" style="margin-top:16px">MXT Lab is an interactive learning space for Grade 9 and Grade 10 Agriculture students in Papua New Guinea. We cover all five strands — Crops, Animals, Aquaculture, Natural Resources, and Agribusiness.</p>
-          <div class="hero-actions">
+          <div class="hero-badge" data-reveal data-delay="1"><div class="pulse"></div>Agriculture · Grade 9 & 10 · Papua New Guinea</div>
+          <h1 class="h-xl" data-reveal data-delay="2">Learn Agriculture<br>the <span class="serif">right way</span></h1>
+          <p class="subtext" style="margin-top:16px" data-reveal data-delay="3">MXT Lab is an interactive learning space for Grade 9 and Grade 10 Agriculture students in Papua New Guinea. We cover all five strands — Crops, Animals, Aquaculture, Natural Resources, and Agribusiness.</p>
+          <div class="hero-actions" data-reveal data-delay="4">
             <button class="btn btn-primary" onclick="nav('modules')">Explore Topics →</button>
             <button class="btn btn-ghost" onclick="nav('about')">How It Works</button>
           </div>
-          <p class="hero-note">📖 New topics are added regularly. All available lessons are complete and ready to study now.</p>
+          <p class="hero-note" data-reveal data-delay="5">📖 New topics are added regularly. All available lessons are complete and ready to study now.</p>
           <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;font-size:.78rem">
             <a href="#strands" style="color:var(--green);font-weight:600;display:inline-flex;align-items:center;gap:4px">↓ Browse Strands</a>
             <a href="#how-it-works" style="color:var(--ink3);font-weight:500;display:inline-flex;align-items:center;gap:4px">↓ How It Works</a>
             <a href="#resources" style="color:var(--ink3);font-weight:500;display:inline-flex;align-items:center;gap:4px">↓ Resources</a>
           </div>
         </div>
-        <div>
+        <div class="hero-visual">
           <div class="strand-cards">
             <div class="sc" onclick="setGrade(9);nav('modules')">
               <div class="sc-top"><div class="sc-name">🌾 Grade 9 Agriculture</div><span class="chip chip-g">5 Strands</span></div>
@@ -930,30 +981,28 @@ initReveal();return false">
       </div>
     </div>
   </section>
-
-  <section class="sec" style="background:var(--bg2)" id="strands">
     <div class="container">
-      <div class="label">What You Will Study</div>
-      <h2 class="h-lg">5 Strands, both grades</h2>
-      <p class="subtext">Agriculture in Papua New Guinea is taught across five broad areas. MXT Lab covers all five for both Grade 9 and Grade 10.</p>
+      <div class="label" data-reveal>What You Will Study</div>
+      <h2 class="h-lg" data-reveal data-delay="1">5 Strands, both grades</h2>
+      <p class="subtext" data-reveal data-delay="2">Agriculture in Papua New Guinea is taught across five broad areas. MXT Lab covers all five for both Grade 9 and Grade 10.</p>
       <div class="strands-grid">
-        <div class="strand-card" data-reveal data-reveal-d="1" onclick="setGrade(9);nav('modules')">
+        <div class="strand-card" data-reveal data-delay="1" onclick="setGrade(9);nav('modules')">
           <div class="strand-card-head"><span class="strand-icon">🌾</span><h3>Crops</h3></div>
           <p>Soil, crop types, farming practices, horticulture, and technology in crop production.</p>
         </div>
-        <div class="strand-card" data-reveal data-reveal-d="2" onclick="setGrade(9);nav('modules')">
+        <div class="strand-card" data-reveal data-delay="2" onclick="setGrade(9);nav('modules')">
           <div class="strand-card-head"><span class="strand-icon">🐄</span><h3>Animals</h3></div>
           <p>Monogastric and polygastric animals, poultry farming, and animal management systems.</p>
         </div>
-        <div class="strand-card" data-reveal data-reveal-d="3" onclick="setGrade(9);nav('modules')">
+        <div class="strand-card" data-reveal data-delay="3" onclick="setGrade(9);nav('modules')">
           <div class="strand-card-head"><span class="strand-icon">🐟</span><h3>Aquaculture</h3></div>
           <p>Freshwater, brackish, and saltwater farming of fish and aquatic plants.</p>
         </div>
-        <div class="strand-card" data-reveal data-reveal-d="4" onclick="setGrade(9);nav('modules')">
+        <div class="strand-card" data-reveal data-delay="4" onclick="setGrade(9);nav('modules')">
           <div class="strand-card-head"><span class="strand-icon">🌳</span><h3>Natural Resources</h3></div>
           <p>Forestry types, harvesting practices, forest management, and conservation.</p>
         </div>
-        <div class="strand-card" data-reveal data-reveal-d="5" onclick="setGrade(9);nav('modules')">
+        <div class="strand-card" data-reveal data-delay="5" onclick="setGrade(9);nav('modules')">
           <div class="strand-card-head"><span class="strand-icon">📊</span><h3>Agribusiness</h3></div>
           <p>Starting and managing an agribusiness, imports and exports, and business planning.</p>
         </div>
@@ -974,13 +1023,13 @@ initReveal();return false">
 
   <section class="sec" id="how-it-works">
     <div class="container">
-      <div class="label">Our Approach</div>
-      <h2 class="h-lg">Learning through <span class="serif">understanding</span></h2>
-      <p class="subtext">Agriculture is a practical subject. Our method is built around that reality — not just reading and memorising.</p>
+      <div class="label" data-reveal>Our Approach</div>
+      <h2 class="h-lg" data-reveal data-delay="1">Learning through <span class="serif">understanding</span></h2>
+      <p class="subtext" data-reveal data-delay="2">Agriculture is a practical subject. Our method is built around that reality — not just reading and memorising.</p>
       <div class="hiw-grid">
-        <article class="hiw-card" data-n="01" data-reveal data-reveal-d="1"><div class="hiw-icon">🧭</div><h3>Explore the Concept</h3><p>Each topic starts with a real farming question or problem. You think it through before we explain anything — building your own understanding first.</p></article>
-        <article class="hiw-card" data-n="02" data-reveal data-reveal-d="2"><div class="hiw-icon">🔧</div><h3>Work Through It</h3><p>Explanations, key terms, and practical examples help you work through the content step by step. You go at your own pace.</p></article>
-        <article class="hiw-card" data-n="03" data-reveal data-reveal-d="3"><div class="hiw-icon">🪞</div><h3>Check What You Know</h3><p>Quiz questions help you check your understanding before moving on — so nothing important gets missed.</p></article>
+        <article class="hiw-card" data-n="01" data-reveal data-delay="1"><div class="hiw-icon">🧭</div><h3>Explore the Concept</h3><p>Each topic starts with a real farming question or problem. You think it through before we explain anything — building your own understanding first.</p></article>
+        <article class="hiw-card" data-n="02" data-reveal data-delay="2"><div class="hiw-icon">🔧</div><h3>Work Through It</h3><p>Explanations, key terms, and practical examples help you work through the content step by step. You go at your own pace.</p></article>
+        <article class="hiw-card" data-n="03" data-reveal data-delay="3"><div class="hiw-icon">🪞</div><h3>Check What You Know</h3><p>Quiz questions help you check your understanding before moving on — so nothing important gets missed.</p></article>
       </div>
     </div>
   </section>
@@ -997,10 +1046,10 @@ initReveal();return false">
 
   <section class="cta-sec">
     <div class="container" style="position:relative;z-index:1">
-      <div class="label" style="color:rgba(255,255,255,.5)">Join MXT Lab</div>
-      <h2 class="h-lg">Ready to study Agriculture properly?</h2>
-      <p>Free for all Grade 9 and Grade 10 students in Papua New Guinea.</p>
-      <button class="btn-white" onclick="nav('modules')">Explore Topics →</button>
+      <div class="label" style="color:rgba(255,255,255,.5)" data-reveal>Join MXT Lab</div>
+      <h2 class="h-lg" data-reveal data-delay="1">Ready to study Agriculture properly?</h2>
+      <p data-reveal data-delay="2">Free for all Grade 9 and Grade 10 students in Papua New Guinea.</p>
+      <div data-reveal data-delay="3"><button class="btn-white" onclick="nav('modules')">Explore Topics →</button></div>
     </div>
   </section>
 </div>
@@ -5759,17 +5808,38 @@ function backToTop(){
    ══════════════════════════════════════════ */
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(e => {
-    if(e.isIntersecting){ e.target.classList.add('revealed'); revealObserver.unobserve(e.target); }
+    if(e.isIntersecting){
+      e.target.classList.add('revealed');
+      revealObserver.unobserve(e.target);
+    }
   });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+}, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
 
 function initReveal(){
   document.querySelectorAll('[data-reveal]').forEach(el => {
     el.classList.remove('revealed');
     revealObserver.observe(el);
   });
+  // Also stagger-reveal cards that are immediately visible
+  setTimeout(() => {
+    document.querySelectorAll('.page.active [data-reveal]').forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if(rect.top < window.innerHeight) el.classList.add('revealed');
+    });
+  }, 60);
 }
-// Re-init on page nav (SPA)
+
+// Parallax on hero
+window.addEventListener('scroll', () => {
+  const hero = document.querySelector('.hero');
+  if(hero && document.getElementById('page-home').classList.contains('active')){
+    const y = scrollY * 0.3;
+    hero.style.backgroundPositionY = y + 'px';
+    const visual = hero.querySelector('.hero-visual');
+    if(visual) visual.style.transform = `translateY(${-y * 0.15}px)`;
+  }
+});
+
 const _origNav = nav;
 
 /* INIT */
