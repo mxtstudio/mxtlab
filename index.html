@@ -369,6 +369,11 @@ textarea.fc{resize:vertical;min-height:130px}
 .cta-sec .h-lg{color:#fff}
 .cta-sec p{color:rgba(255,255,255,.72);margin:13px auto 26px;max-width:450px}
 
+/* ADS */
+.ad-wrap{text-align:center;padding:16px 24px;background:var(--bg)}
+.ad-wrap ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important}
+.ad-wrap:has(ins.adsbygoogle[data-ad-status="unfilled"]){display:none}
+
 /* FOOTER */
 footer{background:#0e1208;color:rgba(255,255,255,.5);padding:52px 0 28px}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:36px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.07);margin-bottom:26px}
@@ -957,7 +962,7 @@ initReveal();return false">
   </section>
 
   <!-- AdSense Ad Unit — Home Page -->
-  <div style="text-align:center;padding:16px 24px;background:var(--bg)">
+  <div class="ad-wrap">
     <ins class="adsbygoogle"
          style="display:block"
          data-ad-client="ca-pub-7249885633789743"
@@ -1010,7 +1015,7 @@ initReveal();return false">
     </div>
   </div>
   <!-- AdSense Ad Unit — Modules Page -->
-  <div style="text-align:center;padding:16px 24px;background:var(--bg)">
+  <div class="ad-wrap">
     <ins class="adsbygoogle"
          style="display:block"
          data-ad-client="ca-pub-7249885633789743"
@@ -1085,7 +1090,7 @@ initReveal();return false">
         <div class="blog-list" id="blog-main"></div>
         <aside class="sidebar">
           <!-- AdSense Ad Unit — Blog Sidebar -->
-          <div style="margin-bottom:24px">
+          <div class="ad-wrap">
             <ins class="adsbygoogle"
                  style="display:block"
                  data-ad-client="ca-pub-7249885633789743"
