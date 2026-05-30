@@ -1,57 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://mxtlab.online/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://mxtlab.online/index.html</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://mxtlab.online/grade9.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/grade10.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/about.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/contact.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/privacy.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/disclaimer.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/lessons/g9-soil-formation.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/lessons/g9-types-crops.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/lessons/g9-crop-farming.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/lessons/g9-crop-technology.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/lessons/g9-horticulture.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/lessons/g9-monogastric-polygastric.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/lessons/g9-intro-aquaculture.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/lessons/g9-forests.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/lessons/g9-agribusiness-economics.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/lessons/g9-animal-anatomy.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/lessons/g9-animal-farming.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/lessons/g9-poultry-types.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/lessons/g9-poultry-farming.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/lessons/g9-pomology-olericulture.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/lessons/g9-horticulture-technology.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/lessons/g9-aqua-farming-systems.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/lessons/g9-aqua-technology.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/lessons/g9-forest-harvesting.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/lessons/g9-forest-management.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/lessons/g9-forestry-technology.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/lessons/g9-agri-imports-exports.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/lessons/g9-agribusiness-planning.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/lessons/g10-soil-improvement.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/lessons/g10-crop-classification.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/lessons/g10-crop-management.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/lessons/g10-plant-propagation.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/lessons/g10-types-plants.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/lessons/g10-ornamental-cultivation.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/lessons/g10-horticulture-tech.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/lessons/g10-animal-breeds.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/lessons/g10-animal-physiology.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/lessons/g10-animal-husbandry.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/lessons/g10-animal-nutrition.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/lessons/g10-animal-postharvest.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/lessons/g10-poultry-management.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/lessons/g10-agribusiness-risk.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/lessons/g10-agribusiness-marketing.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/lessons/g10-agribusiness-startup.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/lessons/g10-aqua-environments.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/lessons/g10-aqua-management.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/lessons/g10-capture-fishery.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/lessons/g10-aqua-tech.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/lessons/g10-forests-types.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/lessons/g10-forest-management.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/lessons/g10-forest-conservation.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mxtlab.online/lessons/g10-forestry-tech.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <url>
+    <loc>https://mxtlab.online/</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://mxtlab.online/about.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://mxtlab.online/contact.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://mxtlab.online/privacy.html</loc>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://mxtlab.online/disclaimer.html</loc>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
