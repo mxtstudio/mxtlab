@@ -33,11 +33,6 @@
 <link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png"/>
 <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%233a7d2c'/><text y='.9em' font-size='72' x='12'>🌾</text></svg>"/>
 <link rel="preload" as="image" href="Image/hero.webp" fetchpriority="high"/>
-<link rel="preload" as="image" href="Image/crops.webp" type="image/webp"/>
-<link rel="preload" as="image" href="Image/animals.webp" type="image/webp"/>
-<link rel="preload" as="image" href="Image/aquaculture.webp" type="image/webp"/>
-<link rel="preload" as="image" href="Image/nrm.webp" type="image/webp"/>
-<link rel="preload" as="image" href="Image/AgriBusiness.webp" type="image/webp"/>
 <title>MXT Lab — Agriculture | Grade 9 & 10</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -241,7 +236,12 @@ h1,h2,h3,h4{font-family:var(--font-disp);letter-spacing:-.02em}
 #announce-close{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;color:#fff;opacity:.7;cursor:pointer;font-size:1rem}
 
 /* HERO */
-/* HERO background handled below */
+.hero{padding:68px 0 52px;position:relative;overflow:hidden;background-image:url('Image/hero.webp');background-size:cover;background-position:center}
+.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,30,10,.82) 0%,rgba(20,50,15,.7) 100%);pointer-events:none;z-index:0}
+.hero .container{position:relative;z-index:1}
+.hero h1,.hero .hero-note{color:#fff}
+.hero .subtext{color:rgba(255,255,255,.85)}
+.hero .hero-note{color:rgba(255,255,255,.65)}
 .hero-grid{display:grid;grid-template-columns:1fr 400px;gap:52px;align-items:center}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);border-radius:50px;padding:6px 14px;font-size:.76rem;font-weight:600;color:#fff;margin-bottom:18px;box-shadow:var(--shadow-sm);backdrop-filter:blur(8px)}
 .pulse{width:7px;height:7px;border-radius:50%;background:var(--green);animation:pulseA 2s ease infinite;flex-shrink:0;will-change:transform,opacity}
@@ -307,8 +307,6 @@ h1,h2,h3,h4{font-family:var(--font-disp);letter-spacing:-.02em}
 
 /* LESSON PAGE */
 #page-lesson{background:var(--bg)}
-/* Reading progress bar */
-#reading-progress{position:fixed;top:0;left:0;height:3px;background:var(--green);width:0%;z-index:99999;transition:width .1s linear}
 .lesson-wrap{max-width:860px;margin:0 auto;padding:0 24px}
 .lesson-breadcrumb{display:flex;align-items:center;gap:8px;padding:20px 0 0;font-size:.78rem;color:var(--ink3);flex-wrap:wrap}
 .lesson-breadcrumb span{cursor:pointer;transition:color .18s}
@@ -979,7 +977,7 @@ initReveal();return false">
           <h1 class="h-xl" data-reveal data-delay="2">Learn Agriculture<br>the <span class="serif">right way</span></h1>
           <p class="subtext" style="margin-top:16px" data-reveal data-delay="3">MXT Lab is an interactive learning space for Grade 9 and Grade 10 Agriculture students in Papua New Guinea. We cover all five strands — Crops, Animals, Aquaculture, Natural Resources, and Agribusiness.</p>
           <div class="hero-actions" data-reveal data-delay="4">
-            <button class="btn btn-primary" onclick="showOnboarding()">Start Learning →</button>
+            <button class="btn btn-primary" onclick="nav('modules')">Explore Topics →</button>
             <button class="btn btn-ghost" onclick="nav('about')">How It Works</button>
           </div>
           <p class="hero-note" data-reveal data-delay="5">📖 New topics are added regularly. All available lessons are complete and ready to study now.</p>
@@ -1075,23 +1073,8 @@ initReveal();return false">
   </section>
 </div>
 
-<!-- ═══ ONBOARDING MODAL ═══ -->
-<div id="onboarding-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.7);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:20px">
-  <div style="background:#fff;border-radius:20px;padding:36px 28px;max-width:420px;width:100%;text-align:center;box-shadow:0 32px 80px rgba(0,0,0,.3)">
-    <div style="font-size:2.4rem;margin-bottom:12px">🌾</div>
-    <h2 style="font-size:1.4rem;font-weight:700;margin-bottom:8px;color:#0e2008">Welcome to MXT Lab</h2>
-    <p style="color:#555;font-size:.9rem;margin-bottom:28px;line-height:1.6">PNG's Agriculture learning platform for Grade 9 & 10 students. What grade are you in?</p>
-    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-      <button onclick="startLearning(9)" style="flex:1;min-width:130px;padding:16px 20px;background:linear-gradient(135deg,#1a4a0e,#2d7a1a);color:#fff;border:none;border-radius:12px;font-size:1rem;font-weight:700;cursor:pointer;transition:transform .2s" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
-        🌱 Grade 9
-      </button>
-      <button onclick="startLearning(10)" style="flex:1;min-width:130px;padding:16px 20px;background:linear-gradient(135deg,#0a2e1a,#1a5c2e);color:#fff;border:none;border-radius:12px;font-size:1rem;font-weight:700;cursor:pointer;transition:transform .2s" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
-        🌿 Grade 10
-      </button>
-    </div>
-    <button onclick="closeOnboarding()" style="margin-top:18px;background:none;border:none;color:#aaa;font-size:.82rem;cursor:pointer;text-decoration:underline">I'm just browsing</button>
-  </div>
-</div>
+<!-- ═══ MODULES ═══ -->
+<div class="page" id="page-modules">
   <div class="page-hero">
     <div class="container">
       <div class="label">Topics</div>
@@ -1101,15 +1084,6 @@ initReveal();return false">
   </div>
   <section class="sec">
     <div class="container">
-      <!-- Start Here Banner -->
-      <div style="background:linear-gradient(135deg,#1a4a0e,#2d7a1a);border-radius:14px;padding:20px 24px;margin-bottom:28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
-        <div>
-          <div style="color:rgba(255,255,255,.7);font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">👋 New here?</div>
-          <div style="color:#fff;font-weight:700;font-size:1rem">Start with Unit 1 — Soil Types & Formation</div>
-          <div style="color:rgba(255,255,255,.75);font-size:.82rem;margin-top:2px">The best place to begin Grade 9 Agriculture</div>
-        </div>
-        <button onclick="openFirstLesson()" style="background:#fff;color:#1a4a0e;border:none;border-radius:8px;padding:10px 20px;font-weight:700;font-size:.88rem;cursor:pointer;white-space:nowrap;flex-shrink:0">Start Here →</button>
-      </div>
       <div class="grade-tabs">
         <button class="grade-tab active" data-grade="9" onclick="filterGrade(9)">🌾 Grade 9</button>
         <button class="grade-tab" data-grade="10" onclick="filterGrade(10)">🌿 Grade 10</button>
@@ -1121,7 +1095,6 @@ initReveal();return false">
 
 <!-- ═══ LESSON ═══ -->
 <div class="page" id="page-lesson">
-  <div id="reading-progress"></div>
   <div class="lesson-wrap" id="lesson-content"></div>
 </div>
 
@@ -2080,6 +2053,10 @@ const LESSONS = {
   content: `
   <div class="lesson-section">
     <h2>Monogastric Animals</h2>
+    <figure class="lesson-figure">
+      <img src="Image/animals.webp" alt="Farm animals raised in Papua New Guinea" loading="lazy"/>
+      <figcaption>Common farm animals raised in Papua New Guinea, including pigs, cattle, and poultry.</figcaption>
+    </figure>
     <p>A <strong>monogastric animal</strong> has a simple, single-chambered stomach. Their digestive system is similar to humans — food passes through the stomach once, enzymes break it down, and nutrients are absorbed.</p>
     <p>Monogastric animals cannot efficiently digest large amounts of plant fibre (cellulose) like grass. They rely mainly on grains, fruits, roots, and concentrates as their feed.</p>
     <h3>Examples of Monogastric Farm Animals</h3>
@@ -2156,6 +2133,10 @@ const LESSONS = {
     <h2>What is Aquaculture?</h2>
     <p><strong>Aquaculture</strong> is the controlled farming of aquatic organisms — fish, shellfish, crustaceans, and aquatic plants — in freshwater, brackish water, or saltwater environments. It is sometimes described as "the underwater equivalent of agriculture."</p>
     <p>Unlike capture fishery (where fish are caught from the wild), aquaculture involves deliberately stocking, feeding, and managing aquatic species to increase production.</p>
+    <figure class="lesson-figure">
+      <img src="Image/aquaculture.webp" alt="Fish farming pond used in freshwater aquaculture" loading="lazy"/>
+      <figcaption>A freshwater fish farming pond — one of the most common forms of aquaculture practised in Papua New Guinea and across the Pacific.</figcaption>
+    </figure>
     <h3>Brief History of Aquaculture</h3>
     <p>Aquaculture is one of the oldest forms of food production. Ancient Egyptians farmed fish in ponds along the Nile River. In China, carp farming dates back more than 2,500 years. In Papua New Guinea, traditional communities have practised fish trapping and management in rivers and coastal areas for generations.</p>
   </div>
@@ -2239,6 +2220,10 @@ const LESSONS = {
   <div class="lesson-section">
     <h2>Types of Forests</h2>
     <p>Papua New Guinea has some of the world\'s most biodiverse tropical forests — covering approximately 70% of the country\'s land area. Different forest types exist based on altitude, rainfall, and soil conditions.</p>
+    <figure class="lesson-figure">
+      <img src="Image/nrm.webp" alt="Tropical rainforest canopy similar to Papua New Guinea forests" loading="lazy"/>
+      <figcaption>Tropical rainforest — the dominant forest type in Papua New Guinea, covering vast areas of lowland and highland terrain.</figcaption>
+    </figure>
     <h3>Lowland Tropical Rainforest</h3>
     <p>Found below 1,000 metres altitude. Characterised by tall trees (up to 50m), very high rainfall, high biodiversity, and dense canopy. Home to many commercially valuable timber species.</p>
     <h3>Montane (Highland) Forest</h3>
@@ -2314,6 +2299,10 @@ const LESSONS = {
   content: `
   <div class="lesson-section">
     <h2>What is Agribusiness?</h2>
+    <figure class="lesson-figure">
+      <img src="Image/AgriBusiness.webp" alt="Agribusiness activities from farm to market in Papua New Guinea" loading="lazy"/>
+      <figcaption>Agribusiness covers the full chain from farm production to processing, distribution, and sale of agricultural products.</figcaption>
+    </figure>
     <p><strong>Agribusiness</strong> refers to all the economic activities related to agriculture — from producing food to processing it, packaging it, transporting it, and selling it to consumers. It covers the entire chain from "farm to fork."</p>
     <p>Agribusiness is not just farming. It includes:</p>
     <ul>
@@ -5804,10 +5793,6 @@ function openLesson(id){
       <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">${lessonTabsHTML}</div>
     </div>
 
-    <div id="lesson-auto-image" style="margin:0 0 28px 0;border-radius:14px;overflow:hidden;max-height:320px;background:var(--bg2);display:flex;align-items:center;justify-content:center;min-height:180px">
-      <div style="color:var(--ink3);font-size:.85rem">Loading image...</div>
-    </div>
-
     <div class="lesson-body">
       <div class="lesson-objectives">
         <h3>Learning Objectives</h3>
@@ -5868,8 +5853,6 @@ function openLesson(id){
 
   document.getElementById('lesson-content').innerHTML = html;
   nav('lesson');
-  window.scrollTo(0,0);
-  fetchLessonImage(L.title);
 }
 
 function selectAnswer(qi, oi){
@@ -6126,87 +6109,6 @@ function initReveal(){
 // Parallax disabled for performance
 
 const _origNav = nav;
-
-// Auto-fetch lesson image from Wikimedia Commons
-async function fetchLessonImage(lessonTitle) {
-  const container = document.getElementById('lesson-auto-image');
-  if (!container) return;
-
-  // Build a clean search query from lesson title
-  const query = lessonTitle
-    .replace(/Unit \d+ —\s*/i, '')
-    .replace(/Grade \d+/i, '')
-    .trim();
-
-  try {
-    const searchUrl = `https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent(query)}&format=json&origin=*&srlimit=1`;
-    const searchRes = await fetch(searchUrl);
-    const searchData = await searchRes.json();
-    const pages = searchData.query?.search;
-    if (!pages || pages.length === 0) { container.style.display='none'; return; }
-
-    const pageTitle = pages[0].title;
-    const imgUrl = `https://en.wikipedia.org/w/api.php?action=query&titles=${encodeURIComponent(pageTitle)}&prop=pageimages&format=json&origin=*&pithumbsize=800`;
-    const imgRes = await fetch(imgUrl);
-    const imgData = await imgRes.json();
-    const page = Object.values(imgData.query.pages)[0];
-
-    if (page?.thumbnail?.source) {
-      container.innerHTML = `
-        <figure style="margin:0;width:100%">
-          <img src="${page.thumbnail.source}" alt="${query}" style="width:100%;max-height:320px;object-fit:cover;display:block" loading="eager"/>
-          <figcaption style="padding:8px 14px;font-size:.73rem;color:var(--ink3);background:var(--bg2)">Image related to: ${query} — via Wikimedia Commons</figcaption>
-        </figure>`;
-    } else {
-      container.style.display = 'none';
-    }
-  } catch(e) {
-    container.style.display = 'none';
-  }
-}
-
-// Reading progress bar
-window.addEventListener('scroll', () => {
-  const bar = document.getElementById('reading-progress');
-  if(!bar) return;
-  const lessonPage = document.getElementById('page-lesson');
-  if(!lessonPage || !lessonPage.classList.contains('active')) { bar.style.width='0%'; return; }
-  const scrollTop = window.scrollY;
-  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-  bar.style.width = docHeight > 0 ? (scrollTop / docHeight * 100) + '%' : '0%';
-});
-
-function openFirstLesson(){
-  setGrade(9);
-  // Open the first lesson in the modules list
-  const firstLesson = document.querySelector('#modules-content .module-card, #modules-content .topic-card, #modules-content [onclick]');
-  if(firstLesson) firstLesson.click();
-  else nav('modules');
-}
-
-/* ONBOARDING */
-function showOnboarding(){
-  const modal = document.getElementById('onboarding-modal');
-  modal.style.display = 'flex';
-  document.body.style.overflow = 'hidden';
-}
-function closeOnboarding(){
-  const modal = document.getElementById('onboarding-modal');
-  modal.style.display = 'none';
-  document.body.style.overflow = '';
-  localStorage.setItem('mxt_onboarded','1');
-}
-function startLearning(grade){
-  closeOnboarding();
-  setGrade(grade);
-  nav('modules');
-}
-// Show onboarding to first-time visitors after 2 seconds
-window.addEventListener('load', () => {
-  if(!localStorage.getItem('mxt_onboarded')){
-    setTimeout(showOnboarding, 2000);
-  }
-});
 
 /* INIT */
 nav('home');
