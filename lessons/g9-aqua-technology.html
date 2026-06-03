@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-57V6ZXCDK8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-57V6ZXCDK8');
+</script>
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7249885633789743" crossorigin="anonymous"></script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Gears & Technology in Aqua Farming — Agriculture lesson for Grade 9 students."/>
+<meta name="robots" content="index, follow"/>
+<meta name="author" content="MXT Lab"/>
+<meta property="og:title" content="Gears & Technology in Aqua Farming | MXT Lab"/>
+<meta property="og:description" content="Interactive lesson on Gears & Technology in Aqua Farming for Grade 9 Agriculture students."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://mxtlab.online/lessons/g9-aqua-technology.html"/>
+<meta property="og:image" content="https://mxtlab.online/og-image.png"/>
+<link rel="canonical" href="https://mxtlab.online/lessons/g9-aqua-technology.html"/>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg"/>
+<title>Gears & Technology in Aqua Farming — MXT Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700;800&family=Fraunces:ital,wght@0,300;0,600;1,300&display=swap">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+<div id="grain" aria-hidden="true"></div>
+
+<nav id="navbar" aria-label="Main navigation">
+  <div class="nav-wrap">
+    <a class="nav-logo" href="/">
+      <svg class="logo-mark" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect id="logo-bg" width="28" height="28" rx="7" fill="#3a7d2c"/>
+        <path d="M14 22c0 0-7-4.5-7-9.5C7 9 10.134 7 14 7s7 2 7 5.5C21 17.5 14 22 14 22z" fill="#fff" opacity=".9"/>
+        <path id="logo-stem" d="M14 22 L14 12" stroke="#3a7d2c" stroke-width="1.5" stroke-linecap="round"/>
+        <path id="logo-leaf1" d="M14 15 Q11 13 10 10" stroke="#3a7d2c" stroke-width="1" stroke-linecap="round"/>
+        <path id="logo-leaf2" d="M14 18 Q17 16 18 13" stroke="#3a7d2c" stroke-width="1" stroke-linecap="round"/>
+      </svg>
+      MXT<span id="lab-text">Lab</span>
+      <span class="nav-badge">Agriculture</span>
+    </a>
+    <ul class="nav-links">
+      <li class="has-drop">
+        <a href="/topics.html">Topics <span class="drop-arrow">▾</span></a>
+        <div class="dropdown">
+          <a href="/topics.html?grade=9">🌾 Grade 9 Agriculture</a>
+          <a href="/topics.html?grade=10">🌿 Grade 10 Agriculture</a>
+        </div>
+      </li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/resources.html">Resources</a></li>
+      <li><a href="/careers.html">Careers</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="nav-icon-btn" id="search-trigger" aria-label="Search">
+        <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+      <button class="theme-toggle" id="theme-toggle">
+        <span id="t-icon">🌙</span><span id="t-lbl">Dark</span>
+      </button>
+      <a class="btn-nav-cta" href="/topics.html">Explore Topics →</a>
+      <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Open navigation menu">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-drawer" id="mobile-drawer" role="navigation" aria-label="Mobile navigation">
+  <ul class="mob-links">
+    <li><a href="/">🏠 Home</a></li>
+    <div class="mob-label">Topics</div>
+    <li><a href="/topics.html?grade=9">🌾 Grade 9 Agriculture</a></li>
+    <li><a href="/topics.html?grade=10">🌿 Grade 10 Agriculture</a></li>
+    <li><a href="/about.html">👥 About MXT Lab</a></li>
+    <li><a href="/resources.html">📚 Resources</a></li>
+    <li><a href="/careers.html">🌱 Careers</a></li>
+    <li><a href="/contact.html">✉️ Contact</a></li>
+  </ul>
+</div>
+
+<div id="search-overlay" role="dialog" aria-modal="true" aria-label="Search lessons">
+  <div class="search-box">
+    <div class="search-row">
+      <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="search" id="search-input" placeholder="Search topics..." autocomplete="off"/>
+      <button class="s-close" id="search-close">Esc</button>
+    </div>
+    <div class="s-results" id="s-results"></div>
+  </div>
+</div>
+
+<main id="main">
+    <div class="page active" id="page-lesson">
+      <div class="lesson-wrap">
+        <div class="lesson-breadcrumb">
+          <a href="/">Home</a>
+          <span class="sep">›</span>
+          <a href="/topics.html?grade=9">Grade 9 Topics</a>
+          <span class="sep">›</span>
+          <span style="color:var(--ink)">Gears & Technology in Aqua Farming</span>
+        </div>
+
+        <div class="lesson-header">
+          <div class="lesson-strand-badge">🎣 Strand 3: Aquaculture · Unit 3 · Grade 9</div>
+          <h1>Gears & Technology in Aqua Farming</h1>
+          <div class="lesson-meta-row">
+            <span>📖 3 lessons</span>
+            <span>🇵🇬 Papua New Guinea Curriculum</span>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">
+            <span class="chip chip-g" style="cursor:default">Fishing Gears & Devices</span>
+            <span class="chip" style="cursor:default">Aqua Farming Technology</span>
+            <span class="chip" style="cursor:default">Challenges & Solutions</span></div>
+        </div>
+
+        <div class="lesson-body">
+          <div class="lesson-objectives">
+            <h3>Learning Objectives</h3>
+            <ul><li>Identify different types of gears and devices used in aqua farming</li><li>Analyse technologies used in aqua farming and identify their problems</li><li>Develop appropriate solutions to aqua farming technology challenges</li></ul>
+          </div>
+
+
+  <div class="lesson-section">
+    <h2>Fishing Gears and Devices in Aqua Farming</h2>
+    <p>Fishing gear refers to the tools used to capture aquatic resources. All fishing gears fall under two general categories: <strong>active gear</strong> (designed to chase and capture target species) and <strong>passive gear</strong> (which sits in one place, allowing target species to approach the device).</p>
+    <h3>Gillnets</h3>
+    <p>A gillnet is a fishing net hung vertically so that fish get trapped in it by their gills. Gillnets have floats on the upper line (headrope) and weights on the lower line (footrope) to keep them upright in the water. They can be set near the surface, at mid-water depth, or on the bottom depending on the target species.</p>
+    <h3>Handlines</h3>
+    <p>A handline is a simple and affordable fishing method using a line, hook, sinker, and bait. In Papua New Guinea, handline fishing from a canoe remains a widely used and economically accessible method. It is fuel efficient and effective for catching fish like snapper, bonefish, tilapia, and catfish.</p>
+    <h3>Fish Traps</h3>
+    <p>Fish traps are passive fishing devices that allow fish to enter but make it difficult for them to escape, through internal chambers or funnels. Traps come in many forms: barrier traps, habitat traps (like brush traps and octopus pots), basket traps made of wood or wire, and large corrals or open traps anchored in place.</p>
+    <h3>Fish Farming Equipment</h3>
+    <p>Aquaculture farms require specific equipment including: ponds or tanks, handling and grading equipment, water quality testers, fish transporters, dip nets, seine reels, water pumps, and automatic feeders.</p>
+  </div>
+  <div class="lesson-section">
+    <h2>Technology in Aqua Farming</h2>
+    <p>Key developments in aquaculture technology include:</p>
+    <ul>
+      <li><strong>Recirculating Aquaculture Systems (RAS)</strong> — systems that treat and reuse water continuously, replacing less than 10% of total water volume per day. They use mechanical and biological filtration, pumps, and holding tanks to maintain water quality at high stocking densities.</li>
+      <li><strong>Offshore cage systems</strong> — engineering advances allow aquaculture cages to be used further out at sea, with greater production potential.</li>
+      <li><strong>Aquafeeds technology</strong> — combining a large number of nutritional ingredients into highly efficient small pellets to maximise fish growth.</li>
+      <li><strong>Integrated agriculture-aquaculture systems</strong> — combining fish culture with agricultural crops such as rice, banana, or coconut on the same farm.</li>
+    </ul>
+  </div>
+  <div class="lesson-section">
+    <h2>Challenges and Solutions in Aqua Farming Technology</h2>
+    <p>Key challenges include environmental impacts from intensive systems, dependency on wild fish for fishmeal, rapid disease spread at high stocking densities, high capital costs for advanced systems, and the technical demands of water quality management.</p>
+    <p>Solutions include adopting integrated multitrophic aquaculture (IMTA), using biological filtration in RAS, applying technology appropriate to the farm scale, and selecting species naturally suited to local environmental conditions.</p>
+  </div>
+
+          <div class="key-terms">
+            <h3>Key Terms</h3>
+            <div class="term-list">
+                <div class="term"><span class="term-word">Gillnet</span><span class="term-def">A fishing net hung vertically so that fish become trapped by their gills. Has floats on the upper line and weights on the lower line.</span></div>
+
+                <div class="term"><span class="term-word">Handline</span><span class="term-def">A simple, low-cost fishing method using a line, hook, sinker, and bait. Widely used in PNG and the Pacific.</span></div>
+
+                <div class="term"><span class="term-word">Fish trap</span><span class="term-def">A passive fishing device that allows fish to enter easily but makes it difficult for them to escape.</span></div>
+
+                <div class="term"><span class="term-word">Active gear</span><span class="term-def">Fishing gear designed to chase and capture target species.</span></div>
+
+                <div class="term"><span class="term-word">Passive gear</span><span class="term-def">Fishing gear that remains in one place allowing target species to approach the capture device.</span></div>
+
+                <div class="term"><span class="term-word">RAS</span><span class="term-def">Recirculating Aquaculture System — treats and reuses water continuously, replacing less than 10% of total water volume per day.</span></div></div>
+          </div>
+
+          <div class="summary-box">
+            <h3>📝 Summary — What You Should Know</h3>
+            <ul><li>Fishing gears are classified as active (chase target species) or passive (target species approach the device)</li><li>Gillnets trap fish by their gills using floats on the top line and weights on the bottom</li><li>Handlines are low-cost, fuel-efficient, and widely used in Papua New Guinea and the Pacific</li><li>Fish traps are passive devices that allow fish to enter but make escape difficult</li><li>RAS systems treat and reuse water continuously, allowing high stocking densities with minimal water waste</li><li>Key challenges include disease risk, environmental impacts, high cost, and water quality management</li></ul>
+          </div>
+
+
+          <div class="key-terms" style="border-color:var(--blue);margin-top:0">
+            <h3 style="color:var(--blue)">Further Reading</h3>
+            <div style="display:flex;flex-direction:column;gap:10px">
+
+                <a href="https://www.fao.org/fishery/en/aquaculture" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:flex-start;gap:10px;font-size:.87rem;color:var(--ink2);transition:color .18s" onmouseover="this.style.color='var(--blue)'" onmouseout="this.style.color='var(--ink2)'">
+                  <span style="color:var(--blue);flex-shrink:0">↗</span>
+                  <span><strong style="color:var(--blue)">FAO Aquaculture Technology</strong> — Aquaculture systems, technology, and sustainable fish farming resources from the FAO.</span>
+                </a>
+            </div>
+          </div>
+
+          <div class="quiz-section" id="quiz-section">
+            <div class="quiz-header">
+              <div class="quiz-icon">❓</div>
+              <div>
+                <h2>Check Your Understanding</h2>
+                <p style="font-size:.8rem;color:var(--ink3);margin:2px 0 0">Answer all questions then submit to see how you did.</p>
+              </div>
+            </div>
+
+              <div class="quiz-q" id="qq-0" data-ans="1">
+                <p>1. How does a gillnet catch fish?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-0-0">
+                      <input type="radio" name="q0" value="0" /> Fish are attracted by bait into a funnel
+                    </label>
+
+                    <label class="qopt" id="qopt-0-1">
+                      <input type="radio" name="q0" value="1" /> Fish become trapped by their gills in the vertical net
+                    </label>
+
+                    <label class="qopt" id="qopt-0-2">
+                      <input type="radio" name="q0" value="2" /> Fish are chased into the net by boats
+                    </label>
+
+                    <label class="qopt" id="qopt-0-3">
+                      <input type="radio" name="q0" value="3" /> Fish swim over the net and are trapped below
+                    </label>
+
+                </div>
+              </div>
+
+              <div class="quiz-q" id="qq-1" data-ans="1">
+                <p>2. What distinguishes passive fishing gear from active fishing gear?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-1-0">
+                      <input type="radio" name="q1" value="0" /> Passive gear is more expensive
+                    </label>
+
+                    <label class="qopt" id="qopt-1-1">
+                      <input type="radio" name="q1" value="1" /> Passive gear sits in one place and lets fish approach it
+                    </label>
+
+                    <label class="qopt" id="qopt-1-2">
+                      <input type="radio" name="q1" value="2" /> Passive gear is only used in freshwater
+                    </label>
+
+                    <label class="qopt" id="qopt-1-3">
+                      <input type="radio" name="q1" value="3" /> Passive gear requires more labour
+                    </label>
+
+                </div>
+              </div>
+
+              <div class="quiz-q" id="qq-2" data-ans="2">
+                <p>3. What does RAS stand for in aquaculture?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-2-0">
+                      <input type="radio" name="q2" value="0" /> Reef Aquaculture System
+                    </label>
+
+                    <label class="qopt" id="qopt-2-1">
+                      <input type="radio" name="q2" value="1" /> River Aeration Solution
+                    </label>
+
+                    <label class="qopt" id="qopt-2-2">
+                      <input type="radio" name="q2" value="2" /> Recirculating Aquaculture System
+                    </label>
+
+                    <label class="qopt" id="qopt-2-3">
+                      <input type="radio" name="q2" value="3" /> Regulated Aquatic Seeding
+                    </label>
+
+                </div>
+              </div>
+
+              <div class="quiz-q" id="qq-3" data-ans="1">
+                <p>4. Which of the following is a challenge of intensive aquaculture technology?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-3-0">
+                      <input type="radio" name="q3" value="0" /> Too many fish species available
+                    </label>
+
+                    <label class="qopt" id="qopt-3-1">
+                      <input type="radio" name="q3" value="1" /> High capital cost and risk of rapid disease spread
+                    </label>
+
+                    <label class="qopt" id="qopt-3-2">
+                      <input type="radio" name="q3" value="2" /> Nets are too expensive to make
+                    </label>
+
+                    <label class="qopt" id="qopt-3-3">
+                      <input type="radio" name="q3" value="3" /> Fish grow too slowly in intensive systems
+                    </label>
+
+                </div>
+              </div>
+
+              <div class="quiz-q" id="qq-4" data-ans="2">
+                <p>5. In PNG, which fishing method remains widely used due to its low cost and fuel efficiency?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-4-0">
+                      <input type="radio" name="q4" value="0" /> Trawl net fishing
+                    </label>
+
+                    <label class="qopt" id="qopt-4-1">
+                      <input type="radio" name="q4" value="1" /> Cage fishing
+                    </label>
+
+                    <label class="qopt" id="qopt-4-2">
+                      <input type="radio" name="q4" value="2" /> Handline fishing from a canoe
+                    </label>
+
+                    <label class="qopt" id="qopt-4-3">
+                      <input type="radio" name="q4" value="3" /> Offshore mariculture
+                    </label>
+
+                </div>
+              </div>
+            <button class="btn btn-primary btn-sm" id="quiz-submit-btn" onclick="submitLessonQuiz()">Submit Answers →</button>
+            <div class="quiz-result" id="quiz-result" style="display:none"></div>
+          </div>
+
+          <div class="lesson-nav">
+            <a class="lesson-nav-btn" href="/lessons/g9-aqua-farming-systems.html">← Previous Topic</a>
+            <a class="btn btn-ghost btn-sm" href="/topics.html?grade=9">All Topics</a>
+            <a class="lesson-nav-btn" href="/lessons/g9-forests.html">Next Topic →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="fl" href="/">
+          <svg width="22" height="22" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="28" height="28" rx="7" fill="#3a7d2c"/>
+            <path d="M14 22c0 0-7-4.5-7-9.5C7 9 10.134 7 14 7s7 2 7 5.5C21 17.5 14 22 14 22z" fill="#fff" opacity=".9"/>
+          </svg>
+          MXT<span>Lab</span>
+        </a>
+        <p class="fd">Interactive Agriculture learning for Grade 9 and Grade 10 students in Papua New Guinea.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button id="back-top" onclick="backToTop()" aria-label="Back to top">↑</button>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

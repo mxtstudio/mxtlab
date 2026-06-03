@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-57V6ZXCDK8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-57V6ZXCDK8');
+</script>
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7249885633789743" crossorigin="anonymous"></script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Freshwater, Brackish & Saltwater Farming — Agriculture lesson for Grade 10 students."/>
+<meta name="robots" content="index, follow"/>
+<meta name="author" content="MXT Lab"/>
+<meta property="og:title" content="Freshwater, Brackish & Saltwater Farming | MXT Lab"/>
+<meta property="og:description" content="Interactive lesson on Freshwater, Brackish & Saltwater Farming for Grade 10 Agriculture students."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://mxtlab.online/lessons/g10-aqua-environments.html"/>
+<meta property="og:image" content="https://mxtlab.online/og-image.png"/>
+<link rel="canonical" href="https://mxtlab.online/lessons/g10-aqua-environments.html"/>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg"/>
+<title>Freshwater, Brackish & Saltwater Farming — MXT Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700;800&family=Fraunces:ital,wght@0,300;0,600;1,300&display=swap">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+<div id="grain" aria-hidden="true"></div>
+
+<nav id="navbar" aria-label="Main navigation">
+  <div class="nav-wrap">
+    <a class="nav-logo" href="/">
+      <svg class="logo-mark" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect id="logo-bg" width="28" height="28" rx="7" fill="#3a7d2c"/>
+        <path d="M14 22c0 0-7-4.5-7-9.5C7 9 10.134 7 14 7s7 2 7 5.5C21 17.5 14 22 14 22z" fill="#fff" opacity=".9"/>
+        <path id="logo-stem" d="M14 22 L14 12" stroke="#3a7d2c" stroke-width="1.5" stroke-linecap="round"/>
+        <path id="logo-leaf1" d="M14 15 Q11 13 10 10" stroke="#3a7d2c" stroke-width="1" stroke-linecap="round"/>
+        <path id="logo-leaf2" d="M14 18 Q17 16 18 13" stroke="#3a7d2c" stroke-width="1" stroke-linecap="round"/>
+      </svg>
+      MXT<span id="lab-text">Lab</span>
+      <span class="nav-badge">Agriculture</span>
+    </a>
+    <ul class="nav-links">
+      <li class="has-drop">
+        <a href="/topics.html">Topics <span class="drop-arrow">▾</span></a>
+        <div class="dropdown">
+          <a href="/topics.html?grade=9">🌾 Grade 9 Agriculture</a>
+          <a href="/topics.html?grade=10">🌿 Grade 10 Agriculture</a>
+        </div>
+      </li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/resources.html">Resources</a></li>
+      <li><a href="/careers.html">Careers</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="nav-icon-btn" id="search-trigger" aria-label="Search">
+        <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+      <button class="theme-toggle" id="theme-toggle">
+        <span id="t-icon">🌙</span><span id="t-lbl">Dark</span>
+      </button>
+      <a class="btn-nav-cta" href="/topics.html">Explore Topics →</a>
+      <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Open navigation menu">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-drawer" id="mobile-drawer" role="navigation" aria-label="Mobile navigation">
+  <ul class="mob-links">
+    <li><a href="/">🏠 Home</a></li>
+    <div class="mob-label">Topics</div>
+    <li><a href="/topics.html?grade=9">🌾 Grade 9 Agriculture</a></li>
+    <li><a href="/topics.html?grade=10">🌿 Grade 10 Agriculture</a></li>
+    <li><a href="/about.html">👥 About MXT Lab</a></li>
+    <li><a href="/resources.html">📚 Resources</a></li>
+    <li><a href="/careers.html">🌱 Careers</a></li>
+    <li><a href="/contact.html">✉️ Contact</a></li>
+  </ul>
+</div>
+
+<div id="search-overlay" role="dialog" aria-modal="true" aria-label="Search lessons">
+  <div class="search-box">
+    <div class="search-row">
+      <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="search" id="search-input" placeholder="Search topics..." autocomplete="off"/>
+      <button class="s-close" id="search-close">Esc</button>
+    </div>
+    <div class="s-results" id="s-results"></div>
+  </div>
+</div>
+
+<main id="main">
+    <div class="page active" id="page-lesson">
+      <div class="lesson-wrap">
+        <div class="lesson-breadcrumb">
+          <a href="/">Home</a>
+          <span class="sep">›</span>
+          <a href="/topics.html?grade=10">Grade 10 Topics</a>
+          <span class="sep">›</span>
+          <span style="color:var(--ink)">Freshwater, Brackish & Saltwater Farming</span>
+        </div>
+
+        <div class="lesson-header">
+          <div class="lesson-strand-badge">🐠 Strand 3: Aquaculture · Unit 1 · Grade 10</div>
+          <h1>Freshwater, Brackish & Saltwater Farming</h1>
+          <div class="lesson-meta-row">
+            <span>📖 3 lessons</span>
+            <span>🇵🇬 Papua New Guinea Curriculum</span>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">
+            <span class="chip chip-g" style="cursor:default">Common Characteristics of Fish</span>
+            <span class="chip" style="cursor:default">Farming Environments</span>
+            <span class="chip" style="cursor:default">Benefits of Aquaculture</span></div>
+        </div>
+
+        <div class="lesson-body">
+          <div class="lesson-objectives">
+            <h3>Learning Objectives</h3>
+            <ul><li>Identify common characteristics shared by all fish regardless of species</li><li>Distinguish between freshwater, brackish, and saltwater farming environments and the animals farmed in each</li><li>Describe the economic, environmental, and health benefits of aquaculture</li></ul>
+          </div>
+
+
+  <div class="lesson-section">
+    <h2>Common Characteristics of Fish</h2>
+    <p>Despite the thousands of different species with various adaptations, all fish share some common characteristics:</p>
+    <ul>
+      <li><strong>All fish are cold-blooded</strong> — they cannot regulate their body temperature internally. They rely on the outside environment for temperature regulation. Many species are extremely sensitive to temperature changes and can only exist within a specific temperature range.</li>
+      <li><strong>Water habitats</strong> — all fish live in water (salt, fresh, or brackish water).</li>
+      <li><strong>Gills to breathe</strong> — gills are a necessity for underwater life. They allow the fish to absorb oxygen from water and release carbon dioxide.</li>
+      <li><strong>Swim bladders</strong> — all fish have a swim bladder, a specialised air-filled organ that maintains stable buoyancy in the water. It allows fish to sleep without sinking to the bottom.</li>
+      <li><strong>Fins for movement</strong> — fins are almost universal in fish. Common types include the tail fin, side fins, dorsal fins, and anal fin.</li>
+      <li><strong>Vision and sensory organs</strong> — many fish have excellent vision and can see colours. They also have nostrils to detect odours in water. The lateral line contains small sensory hairs that detect underwater vibrations, allowing navigation even in low light or murky water.</li>
+    </ul>
+  </div>
+  <div class="lesson-section">
+    <h2>Freshwater, Brackish, and Saltwater Farming</h2>
+    <p>A number of aquaculture practices are used worldwide in three types of environment:</p>
+    <h3>Freshwater Farming</h3>
+    <p>Farming of aquatic animals and plants in zero-salinity water. Mostly inland based. Common species: catla, rohu, tilapia, freshwater prawn, catfish, and rainbow trout. In PNG, freshwater aquaculture using ponds and small lakes is accessible to rural farming communities.</p>
+    <h3>Brackish Water Farming</h3>
+    <p>Farming in water with partial salinity, found near estuaries and river mouths where freshwater and saltwater mix. Milkfish, mullet, and prawns are commonly farmed in brackish water environments. Brackish water aquaculture is suited to coastal areas of PNG.</p>
+    <h3>Saltwater Farming (Mariculture)</h3>
+    <p>Farming in seawater, either in caged areas of the ocean, coastal ponds containing seawater, or net pens. Species include molluscs, prawns, shellfish, seaweed, and large fish species. Seaweed is used in cosmetics (collagen for facial creams) and food products.</p>
+    <h3>Monoculture and Polyculture</h3>
+    <p>In monoculture, only one fish species is reared (e.g. tilapia or catfish). In polyculture, two or more species are farmed together — species are chosen with different feeding habits and water column preferences to avoid competition, which gives higher yields than monoculture.</p>
+  </div>
+  <div class="lesson-section">
+    <h2>Benefits of Aquaculture</h2>
+    <h3>Economic Benefits</h3>
+    <ul>
+      <li><strong>Alternative food source</strong> — fish and seafood are high in protein, omega-3 fatty acids, and white meat that is healthier for the blood than red meat. Fish are also cheaper to rear as they convert feed into protein more efficiently than beef cattle.</li>
+      <li><strong>Alternative fuel source</strong> — algae are being developed as alternative fuel sources. Algae produce lipids that can burn as clean fuel, potentially reducing dependence on fossil fuels.</li>
+      <li><strong>Increased jobs</strong> — aquaculture provides labour for maintaining pools and harvesting organisms, especially in developing countries. It also frees fishermen to pursue other economic activities.</li>
+    </ul>
+    <h3>Environmental Benefits</h3>
+    <ul>
+      <li><strong>Barrier against pollution</strong> — molluscs (filter feeders) and seaweed clean water as it flows through them, protecting the sea from land-based pollution.</li>
+      <li><strong>Reduces pressure on wild fish stocks</strong> — aquaculture provides an alternative source of seafood, allowing wild fish populations to recover from overfishing.</li>
+    </ul>
+    <h3>Health Benefits</h3>
+    <p>Seafood consumption is associated with reduced risk of cardiovascular disease, cancer, and Alzheimer's disease. Aquaculture can make seafood cheaper and more accessible, particularly in regions that depend on imported seafood products.</p>
+  </div>
+
+          <div class="key-terms">
+            <h3>Key Terms</h3>
+            <div class="term-list">
+                <div class="term"><span class="term-word">Cold-blooded (ectothermic)</span><span class="term-def">Unable to regulate body temperature internally. Fish rely on the surrounding water temperature for temperature regulation.</span></div>
+
+                <div class="term"><span class="term-word">Gills</span><span class="term-def">The respiratory organs of fish that allow them to absorb oxygen from water and release carbon dioxide.</span></div>
+
+                <div class="term"><span class="term-word">Swim bladder</span><span class="term-def">A specialized air-filled organ in fish that helps maintain stable buoyancy, preventing the fish from sinking or floating uncontrollably.</span></div>
+
+                <div class="term"><span class="term-word">Lateral line</span><span class="term-def">A sensory organ along the side of a fish containing small sensory hairs that detect underwater vibrations and help navigate in low-light or murky water.</span></div>
+
+                <div class="term"><span class="term-word">Monoculture</span><span class="term-def">A fish production system in which only one species is reared in the culture system.</span></div>
+
+                <div class="term"><span class="term-word">Polyculture</span><span class="term-def">A fish production system in which two or more different species are farmed together with different feeding habits and water column preferences.</span></div></div>
+          </div>
+
+          <div class="summary-box">
+            <h3>📝 Summary — What You Should Know</h3>
+            <ul><li>All fish are cold-blooded, live in water, breathe through gills, have swim bladders for buoyancy, and use fins for movement</li><li>The lateral line is a sensory organ that detects underwater vibrations for navigation in low-light conditions</li><li>Three aquaculture environments: freshwater (inland), brackish water (estuaries and coast), and saltwater (mariculture)</li><li>Polyculture farms multiple species together with different feeding habits, producing higher yields than monoculture</li><li>Economic benefits: alternative protein source, job creation, and potential for algae-based fuel</li><li>Environmental benefits: molluscs and seaweed clean water; aquaculture reduces overfishing pressure on wild stocks</li></ul>
+          </div>
+
+
+          <div class="key-terms" style="border-color:var(--blue);margin-top:0">
+            <h3 style="color:var(--blue)">Further Reading</h3>
+            <div style="display:flex;flex-direction:column;gap:10px">
+
+                <a href="https://www.fao.org/fishery/en/aquaculture" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:flex-start;gap:10px;font-size:.87rem;color:var(--ink2);transition:color .18s" onmouseover="this.style.color='var(--blue)'" onmouseout="this.style.color='var(--ink2)'">
+                  <span style="color:var(--blue);flex-shrink:0">↗</span>
+                  <span><strong style="color:var(--blue)">FAO Aquaculture</strong> — Aquaculture environments, fish species, and sustainable fish farming resources from the FAO.</span>
+                </a>
+            </div>
+          </div>
+
+          <div class="quiz-section" id="quiz-section">
+            <div class="quiz-header">
+              <div class="quiz-icon">❓</div>
+              <div>
+                <h2>Check Your Understanding</h2>
+                <p style="font-size:.8rem;color:var(--ink3);margin:2px 0 0">Answer all questions then submit to see how you did.</p>
+              </div>
+            </div>
+
+              <div class="quiz-q" id="qq-0" data-ans="1">
+                <p>1. What does it mean that fish are cold-blooded?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-0-0">
+                      <input type="radio" name="q0" value="0" /> Fish prefer cold water environments only
+                    </label>
+
+                    <label class="qopt" id="qopt-0-1">
+                      <input type="radio" name="q0" value="1" /> Fish cannot regulate their body temperature internally and rely on the surrounding water temperature
+                    </label>
+
+                    <label class="qopt" id="qopt-0-2">
+                      <input type="radio" name="q0" value="2" /> Fish produce their own body heat through metabolism
+                    </label>
+
+                    <label class="qopt" id="qopt-0-3">
+                      <input type="radio" name="q0" value="3" /> Fish can survive in both hot and cold environments without any change
+                    </label>
+
+                </div>
+              </div>
+
+              <div class="quiz-q" id="qq-1" data-ans="2">
+                <p>2. What is the function of the swim bladder in fish?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-1-0">
+                      <input type="radio" name="q1" value="0" /> To filter oxygen from water
+                    </label>
+
+                    <label class="qopt" id="qopt-1-1">
+                      <input type="radio" name="q1" value="1" /> To detect vibrations in the water
+                    </label>
+
+                    <label class="qopt" id="qopt-1-2">
+                      <input type="radio" name="q1" value="2" /> To maintain stable buoyancy so fish do not sink or float uncontrollably
+                    </label>
+
+                    <label class="qopt" id="qopt-1-3">
+                      <input type="radio" name="q1" value="3" /> To store nutrients absorbed from food
+                    </label>
+
+                </div>
+              </div>
+
+              <div class="quiz-q" id="qq-2" data-ans="2">
+                <p>3. Which aquaculture environment is associated with estuaries where freshwater and saltwater mix?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-2-0">
+                      <input type="radio" name="q2" value="0" /> Freshwater farming
+                    </label>
+
+                    <label class="qopt" id="qopt-2-1">
+                      <input type="radio" name="q2" value="1" /> Mariculture
+                    </label>
+
+                    <label class="qopt" id="qopt-2-2">
+                      <input type="radio" name="q2" value="2" /> Brackish water farming
+                    </label>
+
+                    <label class="qopt" id="qopt-2-3">
+                      <input type="radio" name="q2" value="3" /> Recirculating system farming
+                    </label>
+
+                </div>
+              </div>
+
+              <div class="quiz-q" id="qq-3" data-ans="1">
+                <p>4. What is one environmental benefit of molluscs and seaweed in aquaculture?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-3-0">
+                      <input type="radio" name="q3" value="0" /> They produce alternative fuel
+                    </label>
+
+                    <label class="qopt" id="qopt-3-1">
+                      <input type="radio" name="q3" value="1" /> They filter and clean water as it flows through them
+                    </label>
+
+                    <label class="qopt" id="qopt-3-2">
+                      <input type="radio" name="q3" value="2" /> They attract more wild fish to the area
+                    </label>
+
+                    <label class="qopt" id="qopt-3-3">
+                      <input type="radio" name="q3" value="3" /> They reduce the need for freshwater in fish farming
+                    </label>
+
+                </div>
+              </div>
+
+              <div class="quiz-q" id="qq-4" data-ans="1">
+                <p>5. Why is fish generally cheaper to rear than beef cattle for protein production?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-4-0">
+                      <input type="radio" name="q4" value="0" /> Fish do not need any feed
+                    </label>
+
+                    <label class="qopt" id="qopt-4-1">
+                      <input type="radio" name="q4" value="1" /> Fish convert feed into protein more efficiently than beef cattle
+                    </label>
+
+                    <label class="qopt" id="qopt-4-2">
+                      <input type="radio" name="q4" value="2" /> Fish farms require no labour or infrastructure
+                    </label>
+
+                    <label class="qopt" id="qopt-4-3">
+                      <input type="radio" name="q4" value="3" /> Fish can be caught wild without farming
+                    </label>
+
+                </div>
+              </div>
+            <button class="btn btn-primary btn-sm" id="quiz-submit-btn" onclick="submitLessonQuiz()">Submit Answers →</button>
+            <div class="quiz-result" id="quiz-result" style="display:none"></div>
+          </div>
+
+          <div class="lesson-nav">
+            <a class="lesson-nav-btn" href="/lessons/g10-poultry-management.html">← Previous Topic</a>
+            <a class="btn btn-ghost btn-sm" href="/topics.html?grade=10">All Topics</a>
+            <a class="lesson-nav-btn" href="/lessons/g10-aqua-management.html">Next Topic →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="fl" href="/">
+          <svg width="22" height="22" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="28" height="28" rx="7" fill="#3a7d2c"/>
+            <path d="M14 22c0 0-7-4.5-7-9.5C7 9 10.134 7 14 7s7 2 7 5.5C21 17.5 14 22 14 22z" fill="#fff" opacity=".9"/>
+          </svg>
+          MXT<span>Lab</span>
+        </a>
+        <p class="fd">Interactive Agriculture learning for Grade 9 and Grade 10 students in Papua New Guinea.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button id="back-top" onclick="backToTop()" aria-label="Back to top">↑</button>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

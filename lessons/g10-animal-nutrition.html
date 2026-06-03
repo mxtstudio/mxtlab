@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-57V6ZXCDK8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-57V6ZXCDK8');
+</script>
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7249885633789743" crossorigin="anonymous"></script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Animal Nutrition, Feeding & Health — Agriculture lesson for Grade 10 students."/>
+<meta name="robots" content="index, follow"/>
+<meta name="author" content="MXT Lab"/>
+<meta property="og:title" content="Animal Nutrition, Feeding & Health | MXT Lab"/>
+<meta property="og:description" content="Interactive lesson on Animal Nutrition, Feeding & Health for Grade 10 Agriculture students."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://mxtlab.online/lessons/g10-animal-nutrition.html"/>
+<meta property="og:image" content="https://mxtlab.online/og-image.png"/>
+<link rel="canonical" href="https://mxtlab.online/lessons/g10-animal-nutrition.html"/>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg"/>
+<title>Animal Nutrition, Feeding & Health — MXT Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700;800&family=Fraunces:ital,wght@0,300;0,600;1,300&display=swap">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+<div id="grain" aria-hidden="true"></div>
+
+<nav id="navbar" aria-label="Main navigation">
+  <div class="nav-wrap">
+    <a class="nav-logo" href="/">
+      <svg class="logo-mark" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect id="logo-bg" width="28" height="28" rx="7" fill="#3a7d2c"/>
+        <path d="M14 22c0 0-7-4.5-7-9.5C7 9 10.134 7 14 7s7 2 7 5.5C21 17.5 14 22 14 22z" fill="#fff" opacity=".9"/>
+        <path id="logo-stem" d="M14 22 L14 12" stroke="#3a7d2c" stroke-width="1.5" stroke-linecap="round"/>
+        <path id="logo-leaf1" d="M14 15 Q11 13 10 10" stroke="#3a7d2c" stroke-width="1" stroke-linecap="round"/>
+        <path id="logo-leaf2" d="M14 18 Q17 16 18 13" stroke="#3a7d2c" stroke-width="1" stroke-linecap="round"/>
+      </svg>
+      MXT<span id="lab-text">Lab</span>
+      <span class="nav-badge">Agriculture</span>
+    </a>
+    <ul class="nav-links">
+      <li class="has-drop">
+        <a href="/topics.html">Topics <span class="drop-arrow">▾</span></a>
+        <div class="dropdown">
+          <a href="/topics.html?grade=9">🌾 Grade 9 Agriculture</a>
+          <a href="/topics.html?grade=10">🌿 Grade 10 Agriculture</a>
+        </div>
+      </li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/resources.html">Resources</a></li>
+      <li><a href="/careers.html">Careers</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="nav-icon-btn" id="search-trigger" aria-label="Search">
+        <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+      <button class="theme-toggle" id="theme-toggle">
+        <span id="t-icon">🌙</span><span id="t-lbl">Dark</span>
+      </button>
+      <a class="btn-nav-cta" href="/topics.html">Explore Topics →</a>
+      <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Open navigation menu">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-drawer" id="mobile-drawer" role="navigation" aria-label="Mobile navigation">
+  <ul class="mob-links">
+    <li><a href="/">🏠 Home</a></li>
+    <div class="mob-label">Topics</div>
+    <li><a href="/topics.html?grade=9">🌾 Grade 9 Agriculture</a></li>
+    <li><a href="/topics.html?grade=10">🌿 Grade 10 Agriculture</a></li>
+    <li><a href="/about.html">👥 About MXT Lab</a></li>
+    <li><a href="/resources.html">📚 Resources</a></li>
+    <li><a href="/careers.html">🌱 Careers</a></li>
+    <li><a href="/contact.html">✉️ Contact</a></li>
+  </ul>
+</div>
+
+<div id="search-overlay" role="dialog" aria-modal="true" aria-label="Search lessons">
+  <div class="search-box">
+    <div class="search-row">
+      <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="search" id="search-input" placeholder="Search topics..." autocomplete="off"/>
+      <button class="s-close" id="search-close">Esc</button>
+    </div>
+    <div class="s-results" id="s-results"></div>
+  </div>
+</div>
+
+<main id="main">
+    <div class="page active" id="page-lesson">
+      <div class="lesson-wrap">
+        <div class="lesson-breadcrumb">
+          <a href="/">Home</a>
+          <span class="sep">›</span>
+          <a href="/topics.html?grade=10">Grade 10 Topics</a>
+          <span class="sep">›</span>
+          <span style="color:var(--ink)">Animal Nutrition, Feeding & Health</span>
+        </div>
+
+        <div class="lesson-header">
+          <div class="lesson-strand-badge">🌾 Strand 2: Animals · Unit 2 · Grade 10</div>
+          <h1>Animal Nutrition, Feeding & Health</h1>
+          <div class="lesson-meta-row">
+            <span>📖 3 lessons</span>
+            <span>🇵🇬 Papua New Guinea Curriculum</span>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">
+            <span class="chip chip-g" style="cursor:default">Principles of Animal Nutrition</span>
+            <span class="chip" style="cursor:default">Poultry Feeding & Water</span>
+            <span class="chip" style="cursor:default">Animal Diseases & Prevention</span></div>
+        </div>
+
+        <div class="lesson-body">
+          <div class="lesson-objectives">
+            <h3>Learning Objectives</h3>
+            <ul><li>Identify the five key nutrients required in good quality animal feed</li><li>Explain the importance of water and good quality feed in poultry production</li><li>Describe the causes of poultry diseases and distinguish between infectious and non-infectious agents</li></ul>
+          </div>
+
+
+  <div class="lesson-section">
+    <h2>The Five Key Nutrients in Animal Feed</h2>
+    <p>Good quality animal feed contains five essential nutrients:</p>
+    <ul>
+      <li><strong>Protein</strong> — one of the most important parts of poultry feed. Protein is found in beans (soybeans, cowpeas, mung beans), fish meal, oil seed cakes (sesame cake, soya cake, cottonseed cake), insects, and leaves of legumes such as Leucaena, cassava leaves, and bean leaves.</li>
+      <li><strong>Carbohydrates (starches)</strong> — the largest source of energy for chickens. Sources include rice, root crops, starchy fruits, and seeds.</li>
+      <li><strong>Fats and oils</strong> — most grains have some fats and oils. Other sources include oil seed meals. Fats provide concentrated energy.</li>
+      <li><strong>Minerals</strong> — important for proper bone growth and egg production. Sources include shells (eggshells, oyster shells, snail shells), bone meal (made by heating then crushing bones), and limestone products (lime is a good source of calcium).</li>
+      <li><strong>Vitamins</strong> — important for body functions. Found in fresh plant leaves, seeds, and fruits.</li>
+    </ul>
+  </div>
+  <div class="lesson-section">
+    <h2>Water and Feed in Poultry Production</h2>
+    <h3>Water</h3>
+    <p>Water is the most important part of poultry nutrition. Birds need a constant supply of fresh clean water — birds cannot lay eggs if they lack water. Only use water that you would drink yourself. Dirty water can make birds sick. Clean waterers regularly, especially in warmer climates where micro-organisms multiply more quickly.</p>
+    <h3>Good Quality Feed</h3>
+    <p>Good quality feed produces three key outcomes for poultry:</p>
+    <ul>
+      <li>Better health</li>
+      <li>More eggs</li>
+      <li>Birds grow faster</li>
+    </ul>
+    <p>Production can be classified by the type of product:</p>
+    <ul>
+      <li><strong>Meat breeds</strong> — great at producing meat but not efficient at egg production</li>
+      <li><strong>Egg breeds</strong> — good egg production but poor meat production. Hens do not need males present to lay eggs.</li>
+      <li><strong>Dual purpose breeds</strong> — produce both meat and eggs but at lower rates than specialist breeds</li>
+    </ul>
+  </div>
+  <div class="lesson-section">
+    <h2>Animal Diseases and Prevention</h2>
+    <p>Poultry diseases can be caused by any condition that results in deviation from normal function. Diseases occur due to the interaction between three main factors: the <strong>agent</strong> (cause), the <strong>host</strong> (animal), and the <strong>environment</strong>.</p>
+    <h3>Infectious Agents</h3>
+    <ul>
+      <li><strong>Bacteria</strong> — cause many diseases but can usually be treated with antibiotics</li>
+      <li><strong>Viruses</strong> — cause diseases that cannot be treated. Prevention through vaccination is the only way to protect birds. Examples: Newcastle disease, fowl pox, Gumboro disease</li>
+      <li><strong>Parasites</strong> — most can be treated with conventional medicine (anthelmintics) or traditional remedies</li>
+      <li><strong>Fungi</strong> — no reliable treatment; antibiotics may help in some cases</li>
+    </ul>
+    <h3>Non-Infectious Agents</h3>
+    <ul>
+      <li><strong>Chemical</strong> — birds can come into contact with poisons when farms are not kept clean; poisons used to kill rodents; farm chemicals stored in chicken houses</li>
+      <li><strong>Physical</strong> — injury to the bird from rough handling or equipment</li>
+      <li><strong>Dietary deficiency</strong> — improper feed formulation or mixing leads to nutritional diseases</li>
+    </ul>
+    <h3>Host Factors</h3>
+    <p>The following host factors affect an animal's vulnerability to disease: breed, age, sex, and immune status. The weaker the host, the more vulnerable it is to agents that cause stress and disease. Note that not all poultry health and production problems are caused by infectious agents — many can be traced to management factors.</p>
+  </div>
+
+          <div class="key-terms">
+            <h3>Key Terms</h3>
+            <div class="term-list">
+                <div class="term"><span class="term-word">Protein</span><span class="term-def">One of the most important nutrients in poultry feed. Sources include soybeans, fish meal, oil seed cakes, insects, and legume leaves.</span></div>
+
+                <div class="term"><span class="term-word">Carbohydrates</span><span class="term-def">The largest source of energy for chickens. Sources include rice, root crops, starchy fruits, and seeds.</span></div>
+
+                <div class="term"><span class="term-word">Minerals</span><span class="term-def">Nutrients important for proper bone growth and egg production. Sources include eggshells, oyster shells, bone meal, and limestone.</span></div>
+
+                <div class="term"><span class="term-word">Vitamins</span><span class="term-def">Nutrients important for body functions. Found in fresh plant leaves, seeds, and fruits.</span></div>
+
+                <div class="term"><span class="term-word">Infectious agent</span><span class="term-def">A pathogen (bacteria, virus, parasite, or fungus) that causes disease by invading and harming the animal host.</span></div>
+
+                <div class="term"><span class="term-word">Newcastle disease</span><span class="term-def">A serious viral disease of poultry. Cannot be treated — vaccination is the only way to protect birds.</span></div></div>
+          </div>
+
+          <div class="summary-box">
+            <h3>📝 Summary — What You Should Know</h3>
+            <ul><li>The five key nutrients in animal feed are: protein, carbohydrates, fats and oils, minerals, and vitamins</li><li>Water is the most important part of poultry nutrition — birds cannot lay eggs without a constant clean supply</li><li>Poultry can be classified as meat breeds, egg breeds, or dual purpose breeds</li><li>Diseases result from interaction between agent (pathogen), host (animal), and environment</li><li>Viral diseases like Newcastle disease cannot be treated — vaccination is the only protection</li><li>Non-infectious causes include chemical poisoning, physical injury, and dietary deficiency</li></ul>
+          </div>
+
+
+          <div class="key-terms" style="border-color:var(--blue);margin-top:0">
+            <h3 style="color:var(--blue)">Further Reading</h3>
+            <div style="display:flex;flex-direction:column;gap:10px">
+
+                <a href="https://www.fao.org/poultry-production-products/en/" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:flex-start;gap:10px;font-size:.87rem;color:var(--ink2);transition:color .18s" onmouseover="this.style.color='var(--blue)'" onmouseout="this.style.color='var(--ink2)'">
+                  <span style="color:var(--blue);flex-shrink:0">↗</span>
+                  <span><strong style="color:var(--blue)">FAO Poultry</strong> — Poultry nutrition, disease management, and poultry production resources from the FAO.</span>
+                </a>
+            </div>
+          </div>
+
+          <div class="quiz-section" id="quiz-section">
+            <div class="quiz-header">
+              <div class="quiz-icon">❓</div>
+              <div>
+                <h2>Check Your Understanding</h2>
+                <p style="font-size:.8rem;color:var(--ink3);margin:2px 0 0">Answer all questions then submit to see how you did.</p>
+              </div>
+            </div>
+
+              <div class="quiz-q" id="qq-0" data-ans="1">
+                <p>1. Which nutrient is the largest source of energy for chickens?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-0-0">
+                      <input type="radio" name="q0" value="0" /> Protein
+                    </label>
+
+                    <label class="qopt" id="qopt-0-1">
+                      <input type="radio" name="q0" value="1" /> Carbohydrates
+                    </label>
+
+                    <label class="qopt" id="qopt-0-2">
+                      <input type="radio" name="q0" value="2" /> Minerals
+                    </label>
+
+                    <label class="qopt" id="qopt-0-3">
+                      <input type="radio" name="q0" value="3" /> Vitamins
+                    </label>
+
+                </div>
+              </div>
+
+              <div class="quiz-q" id="qq-1" data-ans="2">
+                <p>2. What is the most important part of poultry nutrition?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-1-0">
+                      <input type="radio" name="q1" value="0" /> Protein-rich feed
+                    </label>
+
+                    <label class="qopt" id="qopt-1-1">
+                      <input type="radio" name="q1" value="1" /> Mineral supplements
+                    </label>
+
+                    <label class="qopt" id="qopt-1-2">
+                      <input type="radio" name="q1" value="2" /> Fresh clean water
+                    </label>
+
+                    <label class="qopt" id="qopt-1-3">
+                      <input type="radio" name="q1" value="3" /> Vitamin injections
+                    </label>
+
+                </div>
+              </div>
+
+              <div class="quiz-q" id="qq-2" data-ans="2">
+                <p>3. Why is vaccination the most important protection against Newcastle disease?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-2-0">
+                      <input type="radio" name="q2" value="0" /> Newcastle disease can be cured with antibiotics
+                    </label>
+
+                    <label class="qopt" id="qopt-2-1">
+                      <input type="radio" name="q2" value="1" /> Newcastle disease is caused by a fungus
+                    </label>
+
+                    <label class="qopt" id="qopt-2-2">
+                      <input type="radio" name="q2" value="2" /> Newcastle disease is a viral disease that cannot be treated once contracted
+                    </label>
+
+                    <label class="qopt" id="qopt-2-3">
+                      <input type="radio" name="q2" value="3" /> Newcastle disease only affects older birds
+                    </label>
+
+                </div>
+              </div>
+
+              <div class="quiz-q" id="qq-3" data-ans="2">
+                <p>4. Which of the following is a good source of minerals for poultry?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-3-0">
+                      <input type="radio" name="q3" value="0" /> Rice bran and maize
+                    </label>
+
+                    <label class="qopt" id="qopt-3-1">
+                      <input type="radio" name="q3" value="1" /> Fresh plant leaves and fruits
+                    </label>
+
+                    <label class="qopt" id="qopt-3-2">
+                      <input type="radio" name="q3" value="2" /> Oyster shells, bone meal, and limestone
+                    </label>
+
+                    <label class="qopt" id="qopt-3-3">
+                      <input type="radio" name="q3" value="3" /> Fish meal and soybeans
+                    </label>
+
+                </div>
+              </div>
+
+              <div class="quiz-q" id="qq-4" data-ans="1">
+                <p>5. What are the three factors that interact to cause animal disease?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-4-0">
+                      <input type="radio" name="q4" value="0" /> Feed, water, and shelter
+                    </label>
+
+                    <label class="qopt" id="qopt-4-1">
+                      <input type="radio" name="q4" value="1" /> Agent, host, and environment
+                    </label>
+
+                    <label class="qopt" id="qopt-4-2">
+                      <input type="radio" name="q4" value="2" /> Breed, age, and immune status
+                    </label>
+
+                    <label class="qopt" id="qopt-4-3">
+                      <input type="radio" name="q4" value="3" /> Bacteria, viruses, and parasites
+                    </label>
+
+                </div>
+              </div>
+            <button class="btn btn-primary btn-sm" id="quiz-submit-btn" onclick="submitLessonQuiz()">Submit Answers →</button>
+            <div class="quiz-result" id="quiz-result" style="display:none"></div>
+          </div>
+
+          <div class="lesson-nav">
+            <a class="lesson-nav-btn" href="/lessons/g10-animal-husbandry.html">← Previous Topic</a>
+            <a class="btn btn-ghost btn-sm" href="/topics.html?grade=10">All Topics</a>
+            <a class="lesson-nav-btn" href="/lessons/g10-animal-postharvest.html">Next Topic →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="fl" href="/">
+          <svg width="22" height="22" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="28" height="28" rx="7" fill="#3a7d2c"/>
+            <path d="M14 22c0 0-7-4.5-7-9.5C7 9 10.134 7 14 7s7 2 7 5.5C21 17.5 14 22 14 22z" fill="#fff" opacity=".9"/>
+          </svg>
+          MXT<span>Lab</span>
+        </a>
+        <p class="fd">Interactive Agriculture learning for Grade 9 and Grade 10 students in Papua New Guinea.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button id="back-top" onclick="backToTop()" aria-label="Back to top">↑</button>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
