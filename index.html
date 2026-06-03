@@ -6,11 +6,11 @@
   <script src="/assets/js/main.js" defer></script>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="MXT Lab — Interactive Agriculture learning for Grade 9 and Grade 10 students in Papua New Guinea."/>
+  <meta name="description" content="MXT Lab — Interactive Agriculture learning for Grade 9 and Grade 10 students in Papua New Guinea. Covering all five strands."/>
   <meta name="robots" content="index, follow"/>
   <meta name="author" content="MXT Lab"/>
   <meta property="og:title" content="MXT Lab — Agriculture | Grade 9 & 10"/>
-  <meta property="og:description" content="Interactive Agriculture learning for Grade 9 and Grade 10 students in Papua New Guinea. Covering all five strands: Crops, Animals, Aquaculture, Natural Resource Management, and Agribusiness."/>
+  <meta property="og:description" content="Interactive Agriculture learning for Grade 9 and Grade 10 students in Papua New Guinea. Covering Crops, Animals, Aquaculture, Natural Resources, and Agribusiness."/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://mxtlab.online"/>
   <meta property="og:image" content="https://mxtlab.online/og-image.png"/>
@@ -19,7 +19,7 @@
   <meta property="og:site_name" content="MXT Lab"/>
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="MXT Lab — Agriculture | Grade 9 & 10"/>
-  <meta name="twitter:description" content="Interactive Agriculture learning for Grade 9 and Grade 10 students in Papua New Guinea. Covering all five strands: Crops, Animals, Aquaculture, Natural Resource Management, and Agribusiness."/>
+  <meta name="twitter:description" content="Interactive Agriculture learning for Grade 9 and Grade 10 students in Papua New Guinea. Covering Crops, Animals, Aquaculture, Natural Resources, and Agribusiness."/>
   <meta name="twitter:image" content="https://mxtlab.online/og-image.png"/>
   <link rel="canonical" href="https://mxtlab.online"/>
   <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
@@ -30,8 +30,8 @@
   <title>MXT Lab — Agriculture | Grade 9 & 10</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700;800&family=Fraunces:ital,wght@0,300;0,600"/>
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700;800&family=Fraunces:ital,wght@0,300;0,600"/></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700;800&family=Fraunces:ital,wght@0,300;0,600&display=swap"/>
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700;800&family=Fraunces:ital,wght@0,300;0,600&display=swap"/></noscript>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -52,6 +52,48 @@
   <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
+  <!-- Grain texture overlay -->
+  <div id="grain" aria-hidden="true"></div>
+
+  <!-- Search overlay -->
+  <div id="search-overlay" role="dialog" aria-hidden="true" aria-labelledby="search-title">
+    <div class="search-box">
+      <div class="search-row">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <circle cx="11" cy="11" r="8"/>
+          <path d="m21 21-4.35-4.35"/>
+        </svg>
+        <input id="search-input" type="search" placeholder="Search topics..." autocomplete="off"/>
+        <button class="s-close" id="search-close" aria-label="Close search">✕</button>
+      </div>
+      <div class="s-results" id="search-results">
+        <div class="s-hint">
+          <span>🔍</span>
+          <span>Start typing to search topics, lessons, and resources</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile navigation drawer -->
+  <div id="mobile-drawer" class="mobile-drawer" role="navigation" aria-label="Mobile navigation">
+    <ul class="mob-links">
+      <li class="mob-label">Topics</li>
+      <li><a href="/topics.html?grade=9">🌾 Grade 9 Agriculture</a></li>
+      <li><a href="/topics.html?grade=10">🌿 Grade 10 Agriculture</a></li>
+      <li class="mob-label" style="margin-top:12px">Site</li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/resources.html">Resources</a></li>
+      <li><a href="/careers.html">Careers</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="mob-footer">
+      <button class="btn-full btn-full-green" id="mob-theme-toggle" aria-label="Toggle theme">
+        <span id="mob-t-icon">🌙</span> Dark
+      </button>
+    </div>
+  </div>
+
   <nav id="navbar" aria-label="Main navigation">
     <div class="nav-wrap">
       <a class="nav-logo" href="/">
@@ -79,10 +121,10 @@
         <li><a href="/contact.html">Contact</a></li>
       </ul>
       <div class="nav-right">
-        <button class="nav-icon-btn" id="search-trigger" aria-label="Search">
+        <button class="nav-icon-btn" id="search-trigger" aria-label="Search topics">
           <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
         </button>
-        <button class="theme-toggle" id="theme-toggle">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
           <span id="t-icon">🌙</span><span id="t-lbl">Dark</span>
         </button>
         <a class="btn-nav-cta" href="/topics.html">Explore Topics →</a>
@@ -101,7 +143,7 @@
             <div>
               <div class="hero-badge" data-reveal data-delay="1"><div class="pulse"></div>Agriculture · Grade 9 & 10 · Papua New Guinea</div>
               <h1 class="h-xl" data-reveal data-delay="2">Learn Agriculture<br>the <span class="serif">right way</span></h1>
-              <p class="subtext" style="margin-top:16px" data-reveal data-delay="3">MXT Lab is an interactive learning space for Grade 9 and Grade 10 Agriculture students in Papua New Guinea. We cover all five strands of the national curriculum with explanations, examples, and quizzes.</p>
+              <p class="subtext" style="margin-top:16px" data-reveal data-delay="3">MXT Lab is an interactive learning space for Grade 9 and Grade 10 Agriculture students in Papua New Guinea. We cover all five strands with complete lessons ready to study now.</p>
               <div class="hero-actions" data-reveal data-delay="4">
                 <a class="btn btn-primary" href="/topics.html">Explore Topics →</a>
                 <a class="btn btn-ghost" href="/about.html">How It Works</a>
@@ -212,6 +254,12 @@
     </div>
   </main>
 
+  <!-- Toast notification -->
+  <div id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Back to top button -->
+  <button id="back-top" aria-label="Back to top" title="Back to top"></button>
+
   <footer>
     <div class="container">
       <div class="footer-grid">
@@ -249,12 +297,36 @@
       <div class="footer-bottom">
         <div>© 2026 MXT Lab. Content aligned with the Papua New Guinea Grade 9 & 10 Agriculture curriculum.</div>
         <div class="socials">
-          <a class="soc" href="https://whatsapp.com/channel/0029VbCWBUbBA1ezAlkfJ928" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.773 1.149c-.4.214-.809.51-1.207.906-1.23 1.23-1.901 2.868-1.901 4.61 0 3.707 3.008 6.718 6.71 6.718 1.745 0 3.376-.671 4.607-1.898.394-.394.688-.796.9-1.196a9.856 9.856 0 001.15-4.773c0-2.649-.975-5.065-2.578-6.968a9.888 9.888 0 00-3.908-2.607zm9.261-12.234C6.455.848.706 6.597.706 13.652a13.2 13.2 0 001.828 6.993L.705 23.294l7.108-2.272a13.202 13.202 0 006.515 1.658c7.056 0 12.804-5.748 12.804-12.804 0-3.368-1.313-6.532-3.696-8.916-2.383-2.384-5.548-3.696-8.916-3.696z"/></svg></a>
-          <a class="soc" href="https://www.facebook.com/profile.php?id=61576167391940" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-          <a class="soc" href="https://youtube.com/@mxtlab?si=pwye5W3cMl5h_ft5" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
-          <a class="soc" href="https://vm.tiktok.com/ZS9YRsdqEWsQY-LfGx1/" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19.498 3c-1.037 0-1.996.185-2.883.525.52.779 1.281 1.423 2.156 1.798-1.151.645-2.47 1.027-3.902 1.027-4.142 0-7.492-3.35-7.492-7.492S6.078.866 10.22.866c3.268 0 6.025 2.1 7.078 4.947V3zm4.502 7.5V3h-3v7.5c0 2.209-1.791 4-4 4s-4-1.791-4-4 1.791-4 4-4c.907 0 1.744.311 2.411.831v-3.168c-1.02-.335-2.094-.513-3.161-.513-4.142 0-7.5 3.358-7.5 7.5s3.358 7.5 7.5 7.5c4.142 0 7.5-3.358 7.5-7.5z"/></svg></a>
-          <a class="soc" href="https://www.instagram.com/mxtlabcreative?igsh=MXU3OTNueDZpYnBuag==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.07 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163C8.756 0 8.331.012 7.052.07 2.693.278.278 2.882.07 7.052.012 8.331 0 8.756 0 12s.012 3.669.07 4.948c.208 4.171 2.623 6.774 6.794 6.972 1.279.058 1.704.07 4.849.07s3.668-.012 4.948-.07c4.171-.208 6.782-2.616 6.979-6.798.059-1.28.071-1.704.071-4.948 0-3.243-.012-3.668-.071-4.948-.196-4.171-2.823-6.774-6.994-6.972C15.668.012 15.243 0 12 0z"/><path d="M12 5.838c-3.403 0-6.162 2.759-6.162 6.162S8.597 18.162 12 18.162s6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4z"/><circle cx="18.406" cy="5.594" r="1.44"/></svg></a>
-          <a class="soc" href="https://t.me/mxtcreativestudio" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.82-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.336-.373-.122l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.461c.54-.203 1.01.122.84.951z"/></svg></a>
+          <a class="soc" href="https://whatsapp.com/channel/0029VbCWBUbBA1ezAlkfJ928" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.869 1.176l-.313.156-.325-.052c-1.126-.196-2.079-.534-2.915-1.096L2.884 2.5l.951 2.853c-.469.765-.749 1.653-.749 2.629 0 4.268 3.577 7.748 7.921 7.748 1.03 0 2.04-.107 3.007-.32l.315-.033.306.243c.765.606 1.584 1.088 2.438 1.386.852.297 1.789.472 2.748.472.558 0 1.114-.034 1.66-.102l2.169-.303-.87-2.614c.46-.798.722-1.78.722-2.828 0-4.268-3.577-7.748-7.921-7.748"/>
+            </svg>
+          </a>
+          <a class="soc" href="https://www.facebook.com/profile.php?id=61576167391940" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </a>
+          <a class="soc" href="https://youtube.com/@mxtlab?si=pwye5W3cMl5h_ft5" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </a>
+          <a class="soc" href="https://vm.tiktok.com/ZS9YRsdqEWsQY-LfGx1/" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.68v13.67a2.4 2.4 0 1 1-4.77-1.42 2.38 2.38 0 0 1 2.38 2.37V20.1a6.1 6.1 0 1 1 8.86-5.92v-3.48a6.11 6.11 0 0 0-3.02-.68z"/>
+            </svg>
+          </a>
+          <a class="soc" href="https://www.instagram.com/mxtlabcreative?igsh=MXU3OTNueDZpYnBuag==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0m0 2.25c2.36 0 2.636.009 3.562.051.86.039 1.33.179 1.64.304.412.16.708.35.996.64.29.286.48.584.64.996.125.31.265.78.304 1.64.041.926.05 1.202.05 3.562s-.009 2.636-.051 3.562c-.039.86-.179 1.33-.304 1.64-.16.412-.35.708-.64.996-.286.29-.584.48-.996.64-.31.125-.78.265-1.64.304-.926.041-1.202.05-3.562.05s-2.636-.009-3.562-.051c-.86-.039-1.33-.179-1.64-.304-.412-.16-.708-.35-.996-.64-.29-.286-.48-.584-.64-.996-.125-.31-.265-.78-.304-1.64-.041-.926-.05-1.202-.05-3.562s.009-2.636.051-3.562c.039-.86.179-1.33.304-1.64.16-.412.35-.708.64-.996.286-.29.584-.48.996-.64.31-.125.78-.265 1.64-.304.926-.041 1.202-.05 3.562-.05zm0 1.913a5.837 5.837 0 110 11.674 5.837 5.837 0 010-11.674zm0 1.6a4.237 4.237 0 100 8.474 4.237 4.237 0 000-8.474zm6.406-1.845a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/>
+            </svg>
+          </a>
+          <a class="soc" href="https://t.me/mxtcreativestudio" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0m5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.33-.373-.117l-6.869 4.332-2.96-.924c-.64-.203-.658-.64.136-.954l11.566-4.458c.54-.203 1.01.132.84.957z"/>
+            </svg>
+          </a>
         </div>
       </div>
     </div>
