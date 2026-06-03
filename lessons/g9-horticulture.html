@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-57V6ZXCDK8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-57V6ZXCDK8');
+</script>
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7249885633789743" crossorigin="anonymous"></script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Horticulture — Fruits, Vegetables & Spices — Agriculture lesson for Grade 9 students."/>
+<meta name="robots" content="index, follow"/>
+<meta name="author" content="MXT Lab"/>
+<meta property="og:title" content="Horticulture — Fruits, Vegetables & Spices | MXT Lab"/>
+<meta property="og:description" content="Interactive lesson on Horticulture — Fruits, Vegetables & Spices for Grade 9 Agriculture students."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://mxtlab.online/lessons/g9-horticulture.html"/>
+<meta property="og:image" content="https://mxtlab.online/og-image.png"/>
+<link rel="canonical" href="https://mxtlab.online/lessons/g9-horticulture.html"/>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg"/>
+<title>Horticulture — Fruits, Vegetables & Spices — MXT Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700;800&family=Fraunces:ital,wght@0,300;0,600;1,300&display=swap">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+<div id="grain" aria-hidden="true"></div>
+
+<nav id="navbar" aria-label="Main navigation">
+  <div class="nav-wrap">
+    <a class="nav-logo" href="/">
+      <svg class="logo-mark" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect id="logo-bg" width="28" height="28" rx="7" fill="#3a7d2c"/>
+        <path d="M14 22c0 0-7-4.5-7-9.5C7 9 10.134 7 14 7s7 2 7 5.5C21 17.5 14 22 14 22z" fill="#fff" opacity=".9"/>
+        <path id="logo-stem" d="M14 22 L14 12" stroke="#3a7d2c" stroke-width="1.5" stroke-linecap="round"/>
+        <path id="logo-leaf1" d="M14 15 Q11 13 10 10" stroke="#3a7d2c" stroke-width="1" stroke-linecap="round"/>
+        <path id="logo-leaf2" d="M14 18 Q17 16 18 13" stroke="#3a7d2c" stroke-width="1" stroke-linecap="round"/>
+      </svg>
+      MXT<span id="lab-text">Lab</span>
+      <span class="nav-badge">Agriculture</span>
+    </a>
+    <ul class="nav-links">
+      <li class="has-drop">
+        <a href="/topics.html">Topics <span class="drop-arrow">▾</span></a>
+        <div class="dropdown">
+          <a href="/topics.html?grade=9">🌾 Grade 9 Agriculture</a>
+          <a href="/topics.html?grade=10">🌿 Grade 10 Agriculture</a>
+        </div>
+      </li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/resources.html">Resources</a></li>
+      <li><a href="/careers.html">Careers</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="nav-icon-btn" id="search-trigger" aria-label="Search">
+        <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+      <button class="theme-toggle" id="theme-toggle">
+        <span id="t-icon">🌙</span><span id="t-lbl">Dark</span>
+      </button>
+      <a class="btn-nav-cta" href="/topics.html">Explore Topics →</a>
+      <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Open navigation menu">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-drawer" id="mobile-drawer" role="navigation" aria-label="Mobile navigation">
+  <ul class="mob-links">
+    <li><a href="/">🏠 Home</a></li>
+    <div class="mob-label">Topics</div>
+    <li><a href="/topics.html?grade=9">🌾 Grade 9 Agriculture</a></li>
+    <li><a href="/topics.html?grade=10">🌿 Grade 10 Agriculture</a></li>
+    <li><a href="/about.html">👥 About MXT Lab</a></li>
+    <li><a href="/resources.html">📚 Resources</a></li>
+    <li><a href="/careers.html">🌱 Careers</a></li>
+    <li><a href="/contact.html">✉️ Contact</a></li>
+  </ul>
+</div>
+
+<div id="search-overlay" role="dialog" aria-modal="true" aria-label="Search lessons">
+  <div class="search-box">
+    <div class="search-row">
+      <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="search" id="search-input" placeholder="Search topics..." autocomplete="off"/>
+      <button class="s-close" id="search-close">Esc</button>
+    </div>
+    <div class="s-results" id="s-results"></div>
+  </div>
+</div>
+
+<main id="main">
+    <div class="page active" id="page-lesson">
+      <div class="lesson-wrap">
+        <div class="lesson-breadcrumb">
+          <a href="/">Home</a>
+          <span class="sep">›</span>
+          <a href="/topics.html?grade=9">Grade 9 Topics</a>
+          <span class="sep">›</span>
+          <span style="color:var(--ink)">Horticulture — Fruits, Vegetables & Spices</span>
+        </div>
+
+        <div class="lesson-header">
+          <div class="lesson-strand-badge">🍅 Strand 1: Crops · Unit 5 · Grade 9</div>
+          <h1>Horticulture — Fruits, Vegetables & Spices</h1>
+          <div class="lesson-meta-row">
+            <span>📖 4 lessons</span>
+            <span>🇵🇬 Papua New Guinea Curriculum</span>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">
+            <span class="chip chip-g" style="cursor:default">Introduction to Horticulture</span>
+            <span class="chip" style="cursor:default">Fruit Tree Cultivation</span>
+            <span class="chip" style="cursor:default">Vegetable & Spice Cultivation</span>
+            <span class="chip" style="cursor:default">Processing & Marketing</span></div>
+        </div>
+
+        <div class="lesson-body">
+          <div class="lesson-objectives">
+            <h3>Learning Objectives</h3>
+            <ul><li>Explain what horticulture is and identify the types of horticultural plants</li><li>Describe how fruit trees, vegetables, and spices are cultivated and processed</li><li>Explain how horticultural plant products are preserved and marketed</li></ul>
+          </div>
+
+
+  <div class="lesson-section">
+    <h2>What is Horticulture?</h2>
+    <p><strong>Horticulture</strong> is a branch of plant agriculture that deals with garden crops — fruits, vegetables, and ornamental plants. The word comes from the Latin <em>hortus</em> (garden) and <em>cultura</em> (cultivation).</p>
+    <p>Horticultural plants need their seeds planted in a seedbed and are looked after for some weeks before being transplanted to the field. Irrigation and nursery management are very important — crops cannot be successfully produced where water is insufficient.</p>
+    <h3>The Three Main Types of Horticultural Plants</h3>
+    <ul>
+      <li><strong>Fruit trees</strong> — trees which bear fruits consumed by humans and animals. Examples: mango, pawpaw, citrus, avocado, pineapple</li>
+      <li><strong>Vegetables</strong> — the edible parts of plants including flower, fruit, stem, or leaf. Examples: tomato, cabbage, beans, pumpkin, spinach</li>
+      <li><strong>Spices</strong> — seeds, fruits, roots, bark, or other plant substances used mainly for flavouring, colouring, or preserving food. Examples: ginger, chilli, turmeric, pepper, vanilla</li>
+    </ul>
+  </div>
+  <div class="lesson-section">
+    <h2>Importance and Benefits of Horticulture</h2>
+    <ul>
+      <li>Provides nutritious food — fruits and vegetables supply vitamins, minerals, and fibre</li>
+      <li>Provides income — horticultural products are sold at local markets and can be exported</li>
+      <li>Can be grown on small plots, making it suitable for subsistence and smallholder farmers</li>
+      <li>Improves food security at family and community level</li>
+      <li>Provides raw materials for food processing industries</li>
+      <li>Ornamental horticulture improves the environment and supports tourism</li>
+    </ul>
+  </div>
+  <div class="lesson-section">
+    <h2>Fruit Tree Cultivation</h2>
+    <p>Fruit trees are cultivated in different ways depending on the environment:</p>
+    <ul>
+      <li><strong>Seedling propagation</strong> — growing trees from seeds. Slower but inexpensive</li>
+      <li><strong>Grafting</strong> — joining a shoot from a productive tree onto a strong rootstock. Produces fruit faster and maintains desired characteristics</li>
+      <li><strong>Budding</strong> — inserting a single bud from one tree into the bark of another. Used for citrus, mango, and avocado</li>
+      <li><strong>Cuttings</strong> — using stem sections to grow new plants. Used for cassava, sugarcane, and some fruits</li>
+    </ul>
+    <p>Good fruit tree cultivation also requires: correct spacing, regular pruning, weed control, fertilising, pest and disease management, and irrigation during dry periods.</p>
+  </div>
+  <div class="lesson-section">
+    <h2>Vegetable Cultivation</h2>
+    <p>Vegetables need fertile, well-drained soil with consistent moisture. Key steps in vegetable cultivation:</p>
+    <ol>
+      <li>Land preparation — clearing, tilling, and improving the soil</li>
+      <li>Seedbed preparation — creating a fine, level bed for planting</li>
+      <li>Planting — direct seeding or transplanting seedlings raised in a nursery</li>
+      <li>Irrigation — especially during dry periods</li>
+      <li>Fertilising — organic compost or appropriate fertilisers</li>
+      <li>Pest and disease management — monitoring and treating as needed</li>
+      <li>Harvesting — at the right stage of maturity for best quality</li>
+    </ol>
+  </div>
+  <div class="lesson-section">
+    <h2>Processing, Preserving and Marketing of Horticultural Products</h2>
+    <p>After harvest, horticultural products must be handled carefully to maintain quality:</p>
+    <ul>
+      <li><strong>Processing</strong> — cleaning, sorting, grading, and sometimes cooking or drying products</li>
+      <li><strong>Preservation</strong> — extending the shelf life through drying, pickling, freezing, canning, or smoking</li>
+      <li><strong>Packaging</strong> — using appropriate containers to protect produce during transport</li>
+      <li><strong>Marketing</strong> — selling at markets, roadside stalls, to wholesalers, or through cooperatives</li>
+    </ul>
+    <div class="info-box"><strong>🇵🇬 PNG Example:</strong> Spice crops like vanilla and ginger are important horticultural exports from Papua New Guinea. They require careful post-harvest handling to maintain quality for export markets.</div>
+  </div>
+
+          <div class="key-terms">
+            <h3>Key Terms</h3>
+            <div class="term-list">
+                <div class="term"><span class="term-word">Horticulture</span><span class="term-def">A branch of agriculture dealing with garden crops including fruits, vegetables, and ornamental plants</span></div>
+
+                <div class="term"><span class="term-word">Grafting</span><span class="term-def">A propagation technique where a shoot from one plant is joined onto the rootstock of another to grow as a single plant</span></div>
+
+                <div class="term"><span class="term-word">Nursery</span><span class="term-def">A place where young plants are raised from seeds before transplanting to the field</span></div>
+
+                <div class="term"><span class="term-word">Processing</span><span class="term-def">Preparing a harvested product for sale or further use — including cleaning, sorting, grading, and packaging</span></div>
+
+                <div class="term"><span class="term-word">Preservation</span><span class="term-def">Extending the shelf life of a food product through methods such as drying, freezing, pickling, or canning</span></div></div>
+          </div>
+
+          <div class="summary-box">
+            <h3>📝 Summary — What You Should Know</h3>
+            <ul><li>Horticulture covers fruits, vegetables, spices, and ornamental plants</li><li>Horticultural plants provide nutrition, income, and food security</li><li>Fruit trees can be propagated by seeds, grafting, budding, or cuttings</li><li>Vegetable cultivation requires fertile soil, irrigation, fertilising, and pest management</li><li>Post-harvest handling — processing, preservation, packaging — is essential to maintain quality and earn good prices</li></ul>
+          </div>
+
+
+
+          <div class="quiz-section" id="quiz-section">
+            <div class="quiz-header">
+              <div class="quiz-icon">❓</div>
+              <div>
+                <h2>Check Your Understanding</h2>
+                <p style="font-size:.8rem;color:var(--ink3);margin:2px 0 0">Answer all questions then submit to see how you did.</p>
+              </div>
+            </div>
+
+              <div class="quiz-q" id="qq-0" data-ans="1">
+                <p>1. What is horticulture?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-0-0">
+                      <input type="radio" name="q0" value="0" /> The study of weather and its effects on crops
+                    </label>
+
+                    <label class="qopt" id="qopt-0-1">
+                      <input type="radio" name="q0" value="1" /> A branch of agriculture dealing with garden crops including fruits, vegetables, and ornamental plants
+                    </label>
+
+                    <label class="qopt" id="qopt-0-2">
+                      <input type="radio" name="q0" value="2" /> The raising of livestock for food
+                    </label>
+
+                    <label class="qopt" id="qopt-0-3">
+                      <input type="radio" name="q0" value="3" /> Large-scale commercial grain farming
+                    </label>
+
+                </div>
+              </div>
+
+              <div class="quiz-q" id="qq-1" data-ans="2">
+                <p>2. Which propagation method joins a shoot from a productive tree onto a strong rootstock?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-1-0">
+                      <input type="radio" name="q1" value="0" /> Direct seeding
+                    </label>
+
+                    <label class="qopt" id="qopt-1-1">
+                      <input type="radio" name="q1" value="1" /> Cuttings
+                    </label>
+
+                    <label class="qopt" id="qopt-1-2">
+                      <input type="radio" name="q1" value="2" /> Grafting
+                    </label>
+
+                    <label class="qopt" id="qopt-1-3">
+                      <input type="radio" name="q1" value="3" /> Budding
+                    </label>
+
+                </div>
+              </div>
+
+              <div class="quiz-q" id="qq-2" data-ans="2">
+                <p>3. Which of the following is a spice crop?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-2-0">
+                      <input type="radio" name="q2" value="0" /> Tomato
+                    </label>
+
+                    <label class="qopt" id="qopt-2-1">
+                      <input type="radio" name="q2" value="1" /> Mango
+                    </label>
+
+                    <label class="qopt" id="qopt-2-2">
+                      <input type="radio" name="q2" value="2" /> Ginger
+                    </label>
+
+                    <label class="qopt" id="qopt-2-3">
+                      <input type="radio" name="q2" value="3" /> Cabbage
+                    </label>
+
+                </div>
+              </div>
+
+              <div class="quiz-q" id="qq-3" data-ans="1">
+                <p>4. What is the purpose of preservation in horticulture?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-3-0">
+                      <input type="radio" name="q3" value="0" /> To make fruits grow faster
+                    </label>
+
+                    <label class="qopt" id="qopt-3-1">
+                      <input type="radio" name="q3" value="1" /> To extend the shelf life of harvested products
+                    </label>
+
+                    <label class="qopt" id="qopt-3-2">
+                      <input type="radio" name="q3" value="2" /> To improve soil quality
+                    </label>
+
+                    <label class="qopt" id="qopt-3-3">
+                      <input type="radio" name="q3" value="3" /> To control pests during growing
+                    </label>
+
+                </div>
+              </div>
+
+              <div class="quiz-q" id="qq-4" data-ans="1">
+                <p>5. Why is irrigation particularly important in horticulture?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-4-0">
+                      <input type="radio" name="q4" value="0" /> It replaces the need for fertiliser
+                    </label>
+
+                    <label class="qopt" id="qopt-4-1">
+                      <input type="radio" name="q4" value="1" /> Horticultural crops cannot be produced where water is insufficient
+                    </label>
+
+                    <label class="qopt" id="qopt-4-2">
+                      <input type="radio" name="q4" value="2" /> It prevents all pests from attacking crops
+                    </label>
+
+                    <label class="qopt" id="qopt-4-3">
+                      <input type="radio" name="q4" value="3" /> Horticultural crops only grow in flooded fields
+                    </label>
+
+                </div>
+              </div>
+            <button class="btn btn-primary btn-sm" id="quiz-submit-btn" onclick="submitLessonQuiz()">Submit Answers →</button>
+            <div class="quiz-result" id="quiz-result" style="display:none"></div>
+          </div>
+
+          <div class="lesson-nav">
+            <a class="lesson-nav-btn" href="/lessons/g9-crop-technology.html">← Previous Topic</a>
+            <a class="btn btn-ghost btn-sm" href="/topics.html?grade=9">All Topics</a>
+            <a class="lesson-nav-btn" href="/lessons/g9-pomology-olericulture.html">Next Topic →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="fl" href="/">
+          <svg width="22" height="22" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="28" height="28" rx="7" fill="#3a7d2c"/>
+            <path d="M14 22c0 0-7-4.5-7-9.5C7 9 10.134 7 14 7s7 2 7 5.5C21 17.5 14 22 14 22z" fill="#fff" opacity=".9"/>
+          </svg>
+          MXT<span>Lab</span>
+        </a>
+        <p class="fd">Interactive Agriculture learning for Grade 9 and Grade 10 students in Papua New Guinea.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button id="back-top" onclick="backToTop()" aria-label="Back to top">↑</button>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

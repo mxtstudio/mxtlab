@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-57V6ZXCDK8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-57V6ZXCDK8');
+</script>
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7249885633789743" crossorigin="anonymous"></script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Aqua Farming Management Systems — Agriculture lesson for Grade 10 students."/>
+<meta name="robots" content="index, follow"/>
+<meta name="author" content="MXT Lab"/>
+<meta property="og:title" content="Aqua Farming Management Systems | MXT Lab"/>
+<meta property="og:description" content="Interactive lesson on Aqua Farming Management Systems for Grade 10 Agriculture students."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://mxtlab.online/lessons/g10-aqua-management.html"/>
+<meta property="og:image" content="https://mxtlab.online/og-image.png"/>
+<link rel="canonical" href="https://mxtlab.online/lessons/g10-aqua-management.html"/>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg"/>
+<title>Aqua Farming Management Systems — MXT Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700;800&family=Fraunces:ital,wght@0,300;0,600;1,300&display=swap">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+<div id="grain" aria-hidden="true"></div>
+
+<nav id="navbar" aria-label="Main navigation">
+  <div class="nav-wrap">
+    <a class="nav-logo" href="/">
+      <svg class="logo-mark" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect id="logo-bg" width="28" height="28" rx="7" fill="#3a7d2c"/>
+        <path d="M14 22c0 0-7-4.5-7-9.5C7 9 10.134 7 14 7s7 2 7 5.5C21 17.5 14 22 14 22z" fill="#fff" opacity=".9"/>
+        <path id="logo-stem" d="M14 22 L14 12" stroke="#3a7d2c" stroke-width="1.5" stroke-linecap="round"/>
+        <path id="logo-leaf1" d="M14 15 Q11 13 10 10" stroke="#3a7d2c" stroke-width="1" stroke-linecap="round"/>
+        <path id="logo-leaf2" d="M14 18 Q17 16 18 13" stroke="#3a7d2c" stroke-width="1" stroke-linecap="round"/>
+      </svg>
+      MXT<span id="lab-text">Lab</span>
+      <span class="nav-badge">Agriculture</span>
+    </a>
+    <ul class="nav-links">
+      <li class="has-drop">
+        <a href="/topics.html">Topics <span class="drop-arrow">▾</span></a>
+        <div class="dropdown">
+          <a href="/topics.html?grade=9">🌾 Grade 9 Agriculture</a>
+          <a href="/topics.html?grade=10">🌿 Grade 10 Agriculture</a>
+        </div>
+      </li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/resources.html">Resources</a></li>
+      <li><a href="/careers.html">Careers</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="nav-icon-btn" id="search-trigger" aria-label="Search">
+        <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+      <button class="theme-toggle" id="theme-toggle">
+        <span id="t-icon">🌙</span><span id="t-lbl">Dark</span>
+      </button>
+      <a class="btn-nav-cta" href="/topics.html">Explore Topics →</a>
+      <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Open navigation menu">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-drawer" id="mobile-drawer" role="navigation" aria-label="Mobile navigation">
+  <ul class="mob-links">
+    <li><a href="/">🏠 Home</a></li>
+    <div class="mob-label">Topics</div>
+    <li><a href="/topics.html?grade=9">🌾 Grade 9 Agriculture</a></li>
+    <li><a href="/topics.html?grade=10">🌿 Grade 10 Agriculture</a></li>
+    <li><a href="/about.html">👥 About MXT Lab</a></li>
+    <li><a href="/resources.html">📚 Resources</a></li>
+    <li><a href="/careers.html">🌱 Careers</a></li>
+    <li><a href="/contact.html">✉️ Contact</a></li>
+  </ul>
+</div>
+
+<div id="search-overlay" role="dialog" aria-modal="true" aria-label="Search lessons">
+  <div class="search-box">
+    <div class="search-row">
+      <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="search" id="search-input" placeholder="Search topics..." autocomplete="off"/>
+      <button class="s-close" id="search-close">Esc</button>
+    </div>
+    <div class="s-results" id="s-results"></div>
+  </div>
+</div>
+
+<main id="main">
+    <div class="page active" id="page-lesson">
+      <div class="lesson-wrap">
+        <div class="lesson-breadcrumb">
+          <a href="/">Home</a>
+          <span class="sep">›</span>
+          <a href="/topics.html?grade=10">Grade 10 Topics</a>
+          <span class="sep">›</span>
+          <span style="color:var(--ink)">Aqua Farming Management Systems</span>
+        </div>
+
+        <div class="lesson-header">
+          <div class="lesson-strand-badge">🦈 Strand 3: Aquaculture · Unit 2 · Grade 10</div>
+          <h1>Aqua Farming Management Systems</h1>
+          <div class="lesson-meta-row">
+            <span>📖 3 lessons</span>
+            <span>🇵🇬 Papua New Guinea Curriculum</span>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">
+            <span class="chip chip-g" style="cursor:default">Fish Farming Methods</span>
+            <span class="chip" style="cursor:default">Fish Management Practices</span>
+            <span class="chip" style="cursor:default">Preserving Aquatic Species & Environments</span></div>
+        </div>
+
+        <div class="lesson-body">
+          <div class="lesson-objectives">
+            <h3>Learning Objectives</h3>
+            <ul><li>Explain the common methods used to produce fish in different aquaculture systems</li><li>Identify good fish management practices including pond preparation, stocking, and harvesting</li><li>Discuss different ways of preserving plant, animal, and fish species and sustaining aquatic environments</li></ul>
+          </div>
+
+
+  <div class="lesson-section">
+    <h2>Fish Farming Methods</h2>
+    <p>There are four common methods of fish farming:</p>
+    <ul>
+      <li><strong>Pond system</strong> — the oldest type of fish farming, originating thousands of years ago. Pond farms include earthen ponds, ditch, or canal systems with clay-based soils that can easily be diked to make enclosures. Water is maintained through rain, canals, or bores.</li>
+      <li><strong>Open net pens</strong> — a framework made from metal, wood, or bamboo that floats on the surface of a water body and supports a mesh enclosure. Fish farmers favour net pens because of their flexibility, versatility, and scale. They allow water to flow freely through, which helps deal with waste. They are anchored to the bottom or attached to a secure structure.</li>
+      <li><strong>Submersible net pens</strong> — an alternative to open net pens. Instead of floating on the surface, these are fully underwater, often taking the form of a large closed-off cage. Being beneath the surface shelters them from the elements and reduces the chance that captive fish will escape.</li>
+      <li><strong>Recirculating systems</strong> — essentially high-tech pond systems. Fish stocks are reared in a series of interconnected, fully controlled indoor tanks with virtually no chance of contact with wild stocks. Water is continuously filtered and recycled.</li>
+    </ul>
+  </div>
+  <div class="lesson-section">
+    <h2>Fish Management Practices</h2>
+    <p>Regardless of the specific system used, fish farming management involves six basic activities:</p>
+    <ol>
+      <li><strong>Pond preparation/conditioning</strong> — ponds are totally drained and dried before pesticides are applied to eliminate predators and wild species. Agricultural lime is applied to correct soil pH to at least 6.5. Organic or inorganic fertiliser is then applied to stimulate natural plankton growth before water is let in.</li>
+      <li><strong>Stocking</strong> — introducing fish to the pond at appropriate stocking densities. Density varies by species and system (e.g. milkfish 2,000–5,000/ha; tilapia 5,000–20,000/ha).</li>
+      <li><strong>Feeding and/or fertilisation</strong> — extensive ponds rely on natural food from regular fertilisation; intensive ponds use formulated feed. Semi-intensive ponds use a mix of both.</li>
+      <li><strong>Water management</strong> — maintaining water quality including oxygen levels, temperature, salinity, and pH throughout the production cycle.</li>
+      <li><strong>Pond maintenance</strong> — regular monitoring, repair of bunds/dikes, control of unwanted vegetation, and management of predators.</li>
+      <li><strong>Harvesting</strong> — collecting fish at the end of the production cycle using appropriate gear and techniques.</li>
+    </ol>
+  </div>
+  <div class="lesson-section">
+    <h2>Preserving Aquatic Species and Environments</h2>
+    <p>Aquatic organisms face serious threats from overfishing, climate change, pollution, and oil spills.</p>
+    <ul>
+      <li><strong>Overfishing</strong> — harvesting a particular type of fish so frequently and in such great numbers that the population becomes severely depleted, risking endangerment and potential extinction. Overfishing affects the human food supply, the fishing industry, and the environment.</li>
+      <li><strong>Climate change</strong> — marine organisms have disappeared from their habitats at twice the rate of wildlife on land due to global warming. Rising sea temperatures destroy coral reefs and disrupt marine ecosystems.</li>
+      <li><strong>Pollution</strong> — aquatic life suffers when toxins and waste reduce dissolved oxygen levels in water bodies, harming fish and other aquatic organisms.</li>
+    </ul>
+    <h3>Methods of Preservation</h3>
+    <ul>
+      <li>Drying, salting, pickling, and smoking — ancient fish preservation methods still widely used today</li>
+      <li>Freezing and canning — modern techniques that have taken on large importance for commercial fish preservation</li>
+      <li>Fish curing — includes drying, salting, and smoking. Fish are first cleaned, scaled, and eviscerated before curing.</li>
+    </ul>
+  </div>
+
+          <div class="key-terms">
+            <h3>Key Terms</h3>
+            <div class="term-list">
+                <div class="term"><span class="term-word">Pond system</span><span class="term-def">The oldest type of fish farming, using earthen ponds or ditch systems with clay-based soils that can easily be diked to make enclosures.</span></div>
+
+                <div class="term"><span class="term-word">Open net pens</span><span class="term-def">A framework made from metal, wood, or bamboo floating on a water body, supporting a mesh enclosure for fish culture.</span></div>
+
+                <div class="term"><span class="term-word">Submersible net pens</span><span class="term-def">Fully submerged, closed cages placed underwater, providing shelter from the elements and reducing the risk of fish escape.</span></div>
+
+                <div class="term"><span class="term-word">Recirculating systems</span><span class="term-def">High-tech enclosed tank systems that continuously filter and recycle water, allowing fish to be raised indoors with no contact with wild stocks.</span></div>
+
+                <div class="term"><span class="term-word">Pond preparation</span><span class="term-def">The process of draining, drying, treating, and liming pond bottoms before stocking fish, to eliminate predators and condition the soil.</span></div>
+
+                <div class="term"><span class="term-word">Overfishing</span><span class="term-def">Harvesting fish so often and in such great numbers that the population becomes severely depleted, potentially leading to extinction.</span></div></div>
+          </div>
+
+          <div class="summary-box">
+            <h3>📝 Summary — What You Should Know</h3>
+            <ul><li>Four common fish farming methods: pond systems, open net pens, submersible net pens, and recirculating systems</li><li>Six fish management activities: pond preparation, stocking, feeding/fertilisation, water management, maintenance, and harvesting</li><li>Pond preparation involves draining, drying, applying pesticide, liming to pH 6.5, and fertilising before stocking</li><li>Aquatic species face threats from overfishing, climate change, and pollution</li><li>Ancient fish preservation methods include drying, salting, pickling, and smoking</li><li>Modern preservation methods include freezing and canning, widely used for commercial fish products</li></ul>
+          </div>
+
+
+          <div class="key-terms" style="border-color:var(--blue);margin-top:0">
+            <h3 style="color:var(--blue)">Further Reading</h3>
+            <div style="display:flex;flex-direction:column;gap:10px">
+
+                <a href="https://www.fao.org/fishery/en/aquaculture" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:flex-start;gap:10px;font-size:.87rem;color:var(--ink2);transition:color .18s" onmouseover="this.style.color='var(--blue)'" onmouseout="this.style.color='var(--ink2)'">
+                  <span style="color:var(--blue);flex-shrink:0">↗</span>
+                  <span><strong style="color:var(--blue)">FAO Aquaculture Management</strong> — Fish farming management systems, pond preparation, and sustainable aquaculture practices.</span>
+                </a>
+            </div>
+          </div>
+
+          <div class="quiz-section" id="quiz-section">
+            <div class="quiz-header">
+              <div class="quiz-icon">❓</div>
+              <div>
+                <h2>Check Your Understanding</h2>
+                <p style="font-size:.8rem;color:var(--ink3);margin:2px 0 0">Answer all questions then submit to see how you did.</p>
+              </div>
+            </div>
+
+              <div class="quiz-q" id="qq-0" data-ans="2">
+                <p>1. Which fish farming system keeps fish in fully enclosed, submerged underwater cages?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-0-0">
+                      <input type="radio" name="q0" value="0" /> Open net pens
+                    </label>
+
+                    <label class="qopt" id="qopt-0-1">
+                      <input type="radio" name="q0" value="1" /> Pond system
+                    </label>
+
+                    <label class="qopt" id="qopt-0-2">
+                      <input type="radio" name="q0" value="2" /> Submersible net pens
+                    </label>
+
+                    <label class="qopt" id="qopt-0-3">
+                      <input type="radio" name="q0" value="3" /> Recirculating systems
+                    </label>
+
+                </div>
+              </div>
+
+              <div class="quiz-q" id="qq-1" data-ans="1">
+                <p>2. What is the purpose of applying agricultural lime during pond preparation?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-1-0">
+                      <input type="radio" name="q1" value="0" /> To kill all fish before restocking
+                    </label>
+
+                    <label class="qopt" id="qopt-1-1">
+                      <input type="radio" name="q1" value="1" /> To correct soil pH and bring it up to at least 6.5
+                    </label>
+
+                    <label class="qopt" id="qopt-1-2">
+                      <input type="radio" name="q1" value="2" /> To add nitrogen nutrients for fish growth
+                    </label>
+
+                    <label class="qopt" id="qopt-1-3">
+                      <input type="radio" name="q1" value="3" /> To colour the water so fish are easier to see
+                    </label>
+
+                </div>
+              </div>
+
+              <div class="quiz-q" id="qq-2" data-ans="1">
+                <p>3. What is overfishing?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-2-0">
+                      <input type="radio" name="q2" value="0" /> Farming too many fish species in one pond
+                    </label>
+
+                    <label class="qopt" id="qopt-2-1">
+                      <input type="radio" name="q2" value="1" /> Harvesting fish so often and in such numbers that the population becomes severely depleted
+                    </label>
+
+                    <label class="qopt" id="qopt-2-2">
+                      <input type="radio" name="q2" value="2" /> Using too much feed in an intensive fish farm
+                    </label>
+
+                    <label class="qopt" id="qopt-2-3">
+                      <input type="radio" name="q2" value="3" /> Releasing farmed fish into wild water bodies
+                    </label>
+
+                </div>
+              </div>
+
+              <div class="quiz-q" id="qq-3" data-ans="2">
+                <p>4. Which modern fish preservation method has largely replaced older traditional methods?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-3-0">
+                      <input type="radio" name="q3" value="0" /> Salting and smoking
+                    </label>
+
+                    <label class="qopt" id="qopt-3-1">
+                      <input type="radio" name="q3" value="1" /> Drying in sunlight
+                    </label>
+
+                    <label class="qopt" id="qopt-3-2">
+                      <input type="radio" name="q3" value="2" /> Freezing and canning
+                    </label>
+
+                    <label class="qopt" id="qopt-3-3">
+                      <input type="radio" name="q3" value="3" /> Pickling in brine
+                    </label>
+
+                </div>
+              </div>
+
+              <div class="quiz-q" id="qq-4" data-ans="1">
+                <p>5. What is the main advantage of recirculating fish farming systems?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-4-0">
+                      <input type="radio" name="q4" value="0" /> They require no electricity or technology
+                    </label>
+
+                    <label class="qopt" id="qopt-4-1">
+                      <input type="radio" name="q4" value="1" /> Fish are kept entirely indoors with no contact with wild stocks and water is continuously recycled
+                    </label>
+
+                    <label class="qopt" id="qopt-4-2">
+                      <input type="radio" name="q4" value="2" /> They use the largest ponds of any fish farming system
+                    </label>
+
+                    <label class="qopt" id="qopt-4-3">
+                      <input type="radio" name="q4" value="3" /> They are the cheapest system to build and operate
+                    </label>
+
+                </div>
+              </div>
+            <button class="btn btn-primary btn-sm" id="quiz-submit-btn" onclick="submitLessonQuiz()">Submit Answers →</button>
+            <div class="quiz-result" id="quiz-result" style="display:none"></div>
+          </div>
+
+          <div class="lesson-nav">
+            <a class="lesson-nav-btn" href="/lessons/g10-aqua-environments.html">← Previous Topic</a>
+            <a class="btn btn-ghost btn-sm" href="/topics.html?grade=10">All Topics</a>
+            <a class="lesson-nav-btn" href="/lessons/g10-capture-fishery.html">Next Topic →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="fl" href="/">
+          <svg width="22" height="22" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="28" height="28" rx="7" fill="#3a7d2c"/>
+            <path d="M14 22c0 0-7-4.5-7-9.5C7 9 10.134 7 14 7s7 2 7 5.5C21 17.5 14 22 14 22z" fill="#fff" opacity=".9"/>
+          </svg>
+          MXT<span>Lab</span>
+        </a>
+        <p class="fd">Interactive Agriculture learning for Grade 9 and Grade 10 students in Papua New Guinea.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button id="back-top" onclick="backToTop()" aria-label="Back to top">↑</button>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

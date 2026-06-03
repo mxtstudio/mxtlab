@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-57V6ZXCDK8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-57V6ZXCDK8');
+</script>
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7249885633789743" crossorigin="anonymous"></script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Agricultural Imports & Exports — Agriculture lesson for Grade 9 students."/>
+<meta name="robots" content="index, follow"/>
+<meta name="author" content="MXT Lab"/>
+<meta property="og:title" content="Agricultural Imports & Exports | MXT Lab"/>
+<meta property="og:description" content="Interactive lesson on Agricultural Imports & Exports for Grade 9 Agriculture students."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://mxtlab.online/lessons/g9-agri-imports-exports.html"/>
+<meta property="og:image" content="https://mxtlab.online/og-image.png"/>
+<link rel="canonical" href="https://mxtlab.online/lessons/g9-agri-imports-exports.html"/>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg"/>
+<title>Agricultural Imports & Exports — MXT Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700;800&family=Fraunces:ital,wght@0,300;0,600;1,300&display=swap">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+<div id="grain" aria-hidden="true"></div>
+
+<nav id="navbar" aria-label="Main navigation">
+  <div class="nav-wrap">
+    <a class="nav-logo" href="/">
+      <svg class="logo-mark" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect id="logo-bg" width="28" height="28" rx="7" fill="#3a7d2c"/>
+        <path d="M14 22c0 0-7-4.5-7-9.5C7 9 10.134 7 14 7s7 2 7 5.5C21 17.5 14 22 14 22z" fill="#fff" opacity=".9"/>
+        <path id="logo-stem" d="M14 22 L14 12" stroke="#3a7d2c" stroke-width="1.5" stroke-linecap="round"/>
+        <path id="logo-leaf1" d="M14 15 Q11 13 10 10" stroke="#3a7d2c" stroke-width="1" stroke-linecap="round"/>
+        <path id="logo-leaf2" d="M14 18 Q17 16 18 13" stroke="#3a7d2c" stroke-width="1" stroke-linecap="round"/>
+      </svg>
+      MXT<span id="lab-text">Lab</span>
+      <span class="nav-badge">Agriculture</span>
+    </a>
+    <ul class="nav-links">
+      <li class="has-drop">
+        <a href="/topics.html">Topics <span class="drop-arrow">▾</span></a>
+        <div class="dropdown">
+          <a href="/topics.html?grade=9">🌾 Grade 9 Agriculture</a>
+          <a href="/topics.html?grade=10">🌿 Grade 10 Agriculture</a>
+        </div>
+      </li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/resources.html">Resources</a></li>
+      <li><a href="/careers.html">Careers</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="nav-icon-btn" id="search-trigger" aria-label="Search">
+        <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+      <button class="theme-toggle" id="theme-toggle">
+        <span id="t-icon">🌙</span><span id="t-lbl">Dark</span>
+      </button>
+      <a class="btn-nav-cta" href="/topics.html">Explore Topics →</a>
+      <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Open navigation menu">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-drawer" id="mobile-drawer" role="navigation" aria-label="Mobile navigation">
+  <ul class="mob-links">
+    <li><a href="/">🏠 Home</a></li>
+    <div class="mob-label">Topics</div>
+    <li><a href="/topics.html?grade=9">🌾 Grade 9 Agriculture</a></li>
+    <li><a href="/topics.html?grade=10">🌿 Grade 10 Agriculture</a></li>
+    <li><a href="/about.html">👥 About MXT Lab</a></li>
+    <li><a href="/resources.html">📚 Resources</a></li>
+    <li><a href="/careers.html">🌱 Careers</a></li>
+    <li><a href="/contact.html">✉️ Contact</a></li>
+  </ul>
+</div>
+
+<div id="search-overlay" role="dialog" aria-modal="true" aria-label="Search lessons">
+  <div class="search-box">
+    <div class="search-row">
+      <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="search" id="search-input" placeholder="Search topics..." autocomplete="off"/>
+      <button class="s-close" id="search-close">Esc</button>
+    </div>
+    <div class="s-results" id="s-results"></div>
+  </div>
+</div>
+
+<main id="main">
+    <div class="page active" id="page-lesson">
+      <div class="lesson-wrap">
+        <div class="lesson-breadcrumb">
+          <a href="/">Home</a>
+          <span class="sep">›</span>
+          <a href="/topics.html?grade=9">Grade 9 Topics</a>
+          <span class="sep">›</span>
+          <span style="color:var(--ink)">Agricultural Imports & Exports</span>
+        </div>
+
+        <div class="lesson-header">
+          <div class="lesson-strand-badge">🌏 Strand 5: Agribusiness · Unit 2 · Grade 9</div>
+          <h1>Agricultural Imports & Exports</h1>
+          <div class="lesson-meta-row">
+            <span>📖 3 lessons</span>
+            <span>🇵🇬 Papua New Guinea Curriculum</span>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">
+            <span class="chip chip-g" style="cursor:default">The International Agribusiness Market</span>
+            <span class="chip" style="cursor:default">Agricultural Imports</span>
+            <span class="chip" style="cursor:default">Exporting Agricultural Products</span></div>
+        </div>
+
+        <div class="lesson-body">
+          <div class="lesson-objectives">
+            <h3>Learning Objectives</h3>
+            <ul><li>Identify and discuss the processes and importance of agricultural imports and exports</li><li>Describe the impact of imports and exports on agribusiness in Papua New Guinea</li><li>Identify methods that agribusinesses might use to enter international markets</li></ul>
+          </div>
+
+
+  <div class="lesson-section">
+    <h2>Why International Markets Matter for Agribusiness</h2>
+    <p>There are many reasons for agribusinesses to be interested in international markets. The exporting of agricultural products boosts employment within a country's economy — in production, wholesale and retail trade, services, food processing, and feed processing.</p>
+    <p>Benefits of entering international markets include:</p>
+    <ul>
+      <li>Increased exports and sales revenue</li>
+      <li>Ability to take advantage of scale economies</li>
+      <li>Capture benefits of a global brand</li>
+      <li>Reduce business risk by diversifying across markets</li>
+      <li>Lower costs of production through efficient large-scale operations</li>
+      <li>Access to lower-cost raw materials through international sourcing (imports)</li>
+      <li>Broader access to credit and finance</li>
+    </ul>
+    <p>Technology — particularly internet, email, and mobile communication — has made small agribusinesses in PNG highly competitive with larger firms for emerging-market growth potential. Small agribusiness firms are often more flexible than large corporations, allowing them to adapt quickly to the changing demands of the international food industry.</p>
+  </div>
+  <div class="lesson-section">
+    <h2>Two Approaches to Exporting</h2>
+    <h3>1. Indirect Exporting</h3>
+    <p>Indirect exporting uses a <strong>trading company or export management company</strong> to handle the logistics of exporting. These experts manage procedures and regulations, and use their established relationships with buyers and distributors to place the product in international markets. This is considered a low-risk strategy requiring lower investment — suited to first-time exporters and small agribusinesses. The main disadvantage is reduced profitability as the trading company takes a share.</p>
+    <h3>2. Direct Exporting</h3>
+    <p>Direct exporting is where the agribusiness itself handles all the details of exporting — conducting research, establishing contacts in the target country, and setting up its own distribution channels. Firms often open an overseas sales office to manage operations. Direct exporting involves higher investment but offers much greater profit potential and full control over product distribution and brand representation.</p>
+  </div>
+
+          <div class="key-terms">
+            <h3>Key Terms</h3>
+            <div class="term-list">
+                <div class="term"><span class="term-word">Import</span><span class="term-def">Goods and services brought into a country from abroad for sale or use.</span></div>
+
+                <div class="term"><span class="term-word">Export</span><span class="term-def">Goods and services produced in one country and sold to buyers in another country.</span></div>
+
+                <div class="term"><span class="term-word">International market</span><span class="term-def">The global marketplace where goods and services are bought and sold across national borders.</span></div>
+
+                <div class="term"><span class="term-word">Indirect exporting</span><span class="term-def">Using a trading company or export management company to handle the logistics of exporting on behalf of an agribusiness.</span></div>
+
+                <div class="term"><span class="term-word">Direct exporting</span><span class="term-def">Where an agribusiness itself handles all the details of exporting — including research, distribution, and overseas contacts.</span></div>
+
+                <div class="term"><span class="term-word">Scale economies</span><span class="term-def">Cost advantages that a business gains by increasing its output — producing more reduces the average cost per unit.</span></div></div>
+          </div>
+
+          <div class="summary-box">
+            <h3>📝 Summary — What You Should Know</h3>
+            <ul><li>International trade in agriculture creates employment in production, processing, wholesale, retail, and services</li><li>Key benefits: higher sales, scale economies, risk diversification, global brand building, and access to credit</li><li>Indirect exporting uses a trading company to handle logistics — low risk and lower investment</li><li>Direct exporting is handled by the agribusiness itself — higher investment but greater profit potential and control</li><li>Technology has made it easier for small PNG agribusinesses to compete in international markets</li><li>Flexibility and adaptability are key advantages that small agribusiness firms have in global markets</li></ul>
+          </div>
+
+
+          <div class="key-terms" style="border-color:var(--blue);margin-top:0">
+            <h3 style="color:var(--blue)">Further Reading</h3>
+            <div style="display:flex;flex-direction:column;gap:10px">
+
+                <a href="https://www.fao.org/markets-and-trade/en/" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:flex-start;gap:10px;font-size:.87rem;color:var(--ink2);transition:color .18s" onmouseover="this.style.color='var(--blue)'" onmouseout="this.style.color='var(--ink2)'">
+                  <span style="color:var(--blue);flex-shrink:0">↗</span>
+                  <span><strong style="color:var(--blue)">FAO Markets & Trade</strong> — Agricultural marketing, trade systems, and international agribusiness resources from the FAO.</span>
+                </a>
+            </div>
+          </div>
+
+          <div class="quiz-section" id="quiz-section">
+            <div class="quiz-header">
+              <div class="quiz-icon">❓</div>
+              <div>
+                <h2>Check Your Understanding</h2>
+                <p style="font-size:.8rem;color:var(--ink3);margin:2px 0 0">Answer all questions then submit to see how you did.</p>
+              </div>
+            </div>
+
+              <div class="quiz-q" id="qq-0" data-ans="1">
+                <p>1. What is indirect exporting?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-0-0">
+                      <input type="radio" name="q0" value="0" /> The business opens its own office overseas
+                    </label>
+
+                    <label class="qopt" id="qopt-0-1">
+                      <input type="radio" name="q0" value="1" /> The business uses a trading company to handle exports on its behalf
+                    </label>
+
+                    <label class="qopt" id="qopt-0-2">
+                      <input type="radio" name="q0" value="2" /> The business avoids international markets
+                    </label>
+
+                    <label class="qopt" id="qopt-0-3">
+                      <input type="radio" name="q0" value="3" /> The business produces goods only for local sale
+                    </label>
+
+                </div>
+              </div>
+
+              <div class="quiz-q" id="qq-1" data-ans="2">
+                <p>2. Which of the following is an advantage of direct exporting?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-1-0">
+                      <input type="radio" name="q1" value="0" /> Lower investment cost
+                    </label>
+
+                    <label class="qopt" id="qopt-1-1">
+                      <input type="radio" name="q1" value="1" /> Less paperwork
+                    </label>
+
+                    <label class="qopt" id="qopt-1-2">
+                      <input type="radio" name="q1" value="2" /> Higher profit potential and full control over distribution
+                    </label>
+
+                    <label class="qopt" id="qopt-1-3">
+                      <input type="radio" name="q1" value="3" /> No need to conduct market research
+                    </label>
+
+                </div>
+              </div>
+
+              <div class="quiz-q" id="qq-2" data-ans="2">
+                <p>3. Which of the following is a benefit of entering international markets for an agribusiness?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-2-0">
+                      <input type="radio" name="q2" value="0" /> Reduced product quality standards
+                    </label>
+
+                    <label class="qopt" id="qopt-2-1">
+                      <input type="radio" name="q2" value="1" /> Higher domestic competition
+                    </label>
+
+                    <label class="qopt" id="qopt-2-2">
+                      <input type="radio" name="q2" value="2" /> Reduced risk by diversifying across markets
+                    </label>
+
+                    <label class="qopt" id="qopt-2-3">
+                      <input type="radio" name="q2" value="3" /> Fewer customers to serve
+                    </label>
+
+                </div>
+              </div>
+
+              <div class="quiz-q" id="qq-3" data-ans="1">
+                <p>4. What has technology done for small agribusinesses seeking international markets?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-3-0">
+                      <input type="radio" name="q3" value="0" /> Made it more expensive to trade globally
+                    </label>
+
+                    <label class="qopt" id="qopt-3-1">
+                      <input type="radio" name="q3" value="1" /> Made them highly competitive with larger firms
+                    </label>
+
+                    <label class="qopt" id="qopt-3-2">
+                      <input type="radio" name="q3" value="2" /> Reduced access to international buyers
+                    </label>
+
+                    <label class="qopt" id="qopt-3-3">
+                      <input type="radio" name="q3" value="3" /> Removed the need for export regulations
+                    </label>
+
+                </div>
+              </div>
+
+              <div class="quiz-q" id="qq-4" data-ans="2">
+                <p>5. Agricultural exports primarily boost which sector of the economy?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-4-0">
+                      <input type="radio" name="q4" value="0" /> Banking and finance
+                    </label>
+
+                    <label class="qopt" id="qopt-4-1">
+                      <input type="radio" name="q4" value="1" /> Mining
+                    </label>
+
+                    <label class="qopt" id="qopt-4-2">
+                      <input type="radio" name="q4" value="2" /> Employment in production and food processing
+                    </label>
+
+                    <label class="qopt" id="qopt-4-3">
+                      <input type="radio" name="q4" value="3" /> Tourism
+                    </label>
+
+                </div>
+              </div>
+            <button class="btn btn-primary btn-sm" id="quiz-submit-btn" onclick="submitLessonQuiz()">Submit Answers →</button>
+            <div class="quiz-result" id="quiz-result" style="display:none"></div>
+          </div>
+
+          <div class="lesson-nav">
+            <a class="lesson-nav-btn" href="/lessons/g9-agribusiness-economics.html">← Previous Topic</a>
+            <a class="btn btn-ghost btn-sm" href="/topics.html?grade=9">All Topics</a>
+            <a class="lesson-nav-btn" href="/lessons/g9-agribusiness-planning.html">Next Topic →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="fl" href="/">
+          <svg width="22" height="22" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="28" height="28" rx="7" fill="#3a7d2c"/>
+            <path d="M14 22c0 0-7-4.5-7-9.5C7 9 10.134 7 14 7s7 2 7 5.5C21 17.5 14 22 14 22z" fill="#fff" opacity=".9"/>
+          </svg>
+          MXT<span>Lab</span>
+        </a>
+        <p class="fd">Interactive Agriculture learning for Grade 9 and Grade 10 students in Papua New Guinea.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button id="back-top" onclick="backToTop()" aria-label="Back to top">↑</button>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

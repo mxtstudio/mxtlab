@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-57V6ZXCDK8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-57V6ZXCDK8');
+</script>
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7249885633789743" crossorigin="anonymous"></script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Managing Risk in Agribusiness — Agriculture lesson for Grade 10 students."/>
+<meta name="robots" content="index, follow"/>
+<meta name="author" content="MXT Lab"/>
+<meta property="og:title" content="Managing Risk in Agribusiness | MXT Lab"/>
+<meta property="og:description" content="Interactive lesson on Managing Risk in Agribusiness for Grade 10 Agriculture students."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://mxtlab.online/lessons/g10-agribusiness-risk.html"/>
+<meta property="og:image" content="https://mxtlab.online/og-image.png"/>
+<link rel="canonical" href="https://mxtlab.online/lessons/g10-agribusiness-risk.html"/>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg"/>
+<title>Managing Risk in Agribusiness — MXT Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700;800&family=Fraunces:ital,wght@0,300;0,600;1,300&display=swap">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+<div id="grain" aria-hidden="true"></div>
+
+<nav id="navbar" aria-label="Main navigation">
+  <div class="nav-wrap">
+    <a class="nav-logo" href="/">
+      <svg class="logo-mark" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect id="logo-bg" width="28" height="28" rx="7" fill="#3a7d2c"/>
+        <path d="M14 22c0 0-7-4.5-7-9.5C7 9 10.134 7 14 7s7 2 7 5.5C21 17.5 14 22 14 22z" fill="#fff" opacity=".9"/>
+        <path id="logo-stem" d="M14 22 L14 12" stroke="#3a7d2c" stroke-width="1.5" stroke-linecap="round"/>
+        <path id="logo-leaf1" d="M14 15 Q11 13 10 10" stroke="#3a7d2c" stroke-width="1" stroke-linecap="round"/>
+        <path id="logo-leaf2" d="M14 18 Q17 16 18 13" stroke="#3a7d2c" stroke-width="1" stroke-linecap="round"/>
+      </svg>
+      MXT<span id="lab-text">Lab</span>
+      <span class="nav-badge">Agriculture</span>
+    </a>
+    <ul class="nav-links">
+      <li class="has-drop">
+        <a href="/topics.html">Topics <span class="drop-arrow">▾</span></a>
+        <div class="dropdown">
+          <a href="/topics.html?grade=9">🌾 Grade 9 Agriculture</a>
+          <a href="/topics.html?grade=10">🌿 Grade 10 Agriculture</a>
+        </div>
+      </li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/resources.html">Resources</a></li>
+      <li><a href="/careers.html">Careers</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="nav-icon-btn" id="search-trigger" aria-label="Search">
+        <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+      <button class="theme-toggle" id="theme-toggle">
+        <span id="t-icon">🌙</span><span id="t-lbl">Dark</span>
+      </button>
+      <a class="btn-nav-cta" href="/topics.html">Explore Topics →</a>
+      <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Open navigation menu">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-drawer" id="mobile-drawer" role="navigation" aria-label="Mobile navigation">
+  <ul class="mob-links">
+    <li><a href="/">🏠 Home</a></li>
+    <div class="mob-label">Topics</div>
+    <li><a href="/topics.html?grade=9">🌾 Grade 9 Agriculture</a></li>
+    <li><a href="/topics.html?grade=10">🌿 Grade 10 Agriculture</a></li>
+    <li><a href="/about.html">👥 About MXT Lab</a></li>
+    <li><a href="/resources.html">📚 Resources</a></li>
+    <li><a href="/careers.html">🌱 Careers</a></li>
+    <li><a href="/contact.html">✉️ Contact</a></li>
+  </ul>
+</div>
+
+<div id="search-overlay" role="dialog" aria-modal="true" aria-label="Search lessons">
+  <div class="search-box">
+    <div class="search-row">
+      <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="search" id="search-input" placeholder="Search topics..." autocomplete="off"/>
+      <button class="s-close" id="search-close">Esc</button>
+    </div>
+    <div class="s-results" id="s-results"></div>
+  </div>
+</div>
+
+<main id="main">
+    <div class="page active" id="page-lesson">
+      <div class="lesson-wrap">
+        <div class="lesson-breadcrumb">
+          <a href="/">Home</a>
+          <span class="sep">›</span>
+          <a href="/topics.html?grade=10">Grade 10 Topics</a>
+          <span class="sep">›</span>
+          <span style="color:var(--ink)">Managing Risk in Agribusiness</span>
+        </div>
+
+        <div class="lesson-header">
+          <div class="lesson-strand-badge">⚠️ Strand 5: Agribusiness · Unit 1 · Grade 10</div>
+          <h1>Managing Risk in Agribusiness</h1>
+          <div class="lesson-meta-row">
+            <span>📖 3 lessons</span>
+            <span>🇵🇬 Papua New Guinea Curriculum</span>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">
+            <span class="chip chip-g" style="cursor:default">Sources of Risk</span>
+            <span class="chip" style="cursor:default">Importance of Risk Management</span>
+            <span class="chip" style="cursor:default">Risk Management Strategies</span></div>
+        </div>
+
+        <div class="lesson-body">
+          <div class="lesson-objectives">
+            <h3>Learning Objectives</h3>
+            <ul><li>Identify the sources of risk and uncertainty in farming businesses</li><li>Explain why risk management is important in agribusiness</li><li>Describe strategies used to manage and reduce agricultural risk</li></ul>
+          </div>
+
+
+  <div class="lesson-section">
+    <h2>What is Risk in Agribusiness?</h2>
+    <p>In any business, <strong>risk</strong> is the possibility that things will not go as planned and that money will be lost. Agribusiness faces particularly high levels of risk because farmers depend on weather, living organisms, and unpredictable market prices — all of which are largely outside their control.</p>
+  </div>
+  <div class="lesson-section">
+    <h2>Sources of Risk in Agribusiness</h2>
+    <ul>
+      <li><strong>Production risk</strong> — the risk that crops or animals will fail to produce expected yields due to weather (drought, flood, frost), pests, disease, or poor management. This is the most common risk in PNG agriculture.</li>
+      <li><strong>Price/market risk</strong> — the risk that prices will fall after the farmer has already planted and invested in a crop. Global commodity prices for coffee and cocoa can drop significantly.</li>
+      <li><strong>Financial risk</strong> — the risk of not being able to repay loans or cover operating costs if income falls short. Many smallholder farmers in PNG have limited access to credit.</li>
+      <li><strong>Human risk</strong> — illness, death, or departure of key people in the business can disrupt production and management</li>
+      <li><strong>Institutional risk</strong> — changes in government policy, land tenure disputes, or unreliable infrastructure (roads, electricity) that affect the business</li>
+      <li><strong>Environmental/climate risk</strong> — increasingly severe weather events, sea level rise, and changing rainfall patterns due to climate change</li>
+    </ul>
+  </div>
+  <div class="lesson-section">
+    <h2>Why Risk Management is Important</h2>
+    <p>Without managing risk, agribusinesses can:</p>
+    <ul>
+      <li>Lose their entire investment in a single bad season</li>
+      <li>Fail to repay loans and become indebted</li>
+      <li>Be forced to abandon farming permanently</li>
+      <li>Leave families without food or income</li>
+    </ul>
+    <p>Effective risk management does not eliminate risk — it reduces the impact of bad outcomes so the business can survive and recover.</p>
+  </div>
+  <div class="lesson-section">
+    <h2>Risk Management Strategies</h2>
+    <ul>
+      <li><strong>Diversification</strong> — growing multiple crops or combining crops with livestock so that if one enterprise fails, others can compensate. "Don't put all your eggs in one basket."</li>
+      <li><strong>Savings</strong> — maintaining financial reserves to cover costs during bad seasons</li>
+      <li><strong>Crop insurance</strong> — paying a premium in good years so that losses are partially covered in bad years (limited availability in PNG)</li>
+      <li><strong>Improved crop varieties</strong> — using drought-tolerant, disease-resistant varieties that reduce production risk</li>
+      <li><strong>Irrigation</strong> — reducing dependence on unreliable rainfall</li>
+      <li><strong>Contract farming</strong> — agreeing in advance on a buyer and price for a crop, reducing market risk</li>
+      <li><strong>Market information</strong> — monitoring market prices and selling when prices are favourable rather than immediately after harvest (when many farmers sell and prices are lowest)</li>
+      <li><strong>Cooperatives</strong> — joining a farmer group or cooperative gives individual farmers more bargaining power with buyers and access to shared resources</li>
+    </ul>
+    <div class="info-box"><strong>🇵🇬 PNG Example:</strong> Coffee farmers in the Highlands face significant price risk because global coffee prices are set in New York and London. Joining a cooperative and obtaining Fair Trade or organic certification are strategies that can secure better, more stable prices.</div>
+  </div>
+
+          <div class="key-terms">
+            <h3>Key Terms</h3>
+            <div class="term-list">
+                <div class="term"><span class="term-word">Risk</span><span class="term-def">The possibility that actual outcomes will differ from planned outcomes, potentially resulting in financial loss</span></div>
+
+                <div class="term"><span class="term-word">Diversification</span><span class="term-def">Spreading production across multiple crops or enterprises so that failure of one does not destroy the whole business</span></div>
+
+                <div class="term"><span class="term-word">Contract farming</span><span class="term-def">An arrangement where a buyer agrees in advance to purchase a farmer's crop at a set price, reducing market risk</span></div>
+
+                <div class="term"><span class="term-word">Cooperative</span><span class="term-def">An organisation owned and operated by a group of farmers who work together to buy inputs, process products, or access markets</span></div>
+
+                <div class="term"><span class="term-word">Production risk</span><span class="term-def">The risk that crops or animals will fail to produce expected yields due to weather, pests, disease, or poor management</span></div></div>
+          </div>
+
+          <div class="summary-box">
+            <h3>📝 Summary — What You Should Know</h3>
+            <ul><li>Risk in agribusiness includes production, price, financial, human, institutional, and environmental risk</li><li>Production risk (crop failure from weather or pests) is the most common risk in Papua New Guinea</li><li>Risk management does not eliminate risk — it reduces the impact so the business can survive</li><li>Key strategies include diversification, savings, improved varieties, irrigation, contract farming, and cooperatives</li><li>Joining a cooperative can help individual smallholder farmers access better prices and shared resources</li></ul>
+          </div>
+
+
+
+          <div class="quiz-section" id="quiz-section">
+            <div class="quiz-header">
+              <div class="quiz-icon">❓</div>
+              <div>
+                <h2>Check Your Understanding</h2>
+                <p style="font-size:.8rem;color:var(--ink3);margin:2px 0 0">Answer all questions then submit to see how you did.</p>
+              </div>
+            </div>
+
+              <div class="quiz-q" id="qq-0" data-ans="1">
+                <p>1. What is production risk in agribusiness?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-0-0">
+                      <input type="radio" name="q0" value="0" /> The risk of buying too many inputs
+                    </label>
+
+                    <label class="qopt" id="qopt-0-1">
+                      <input type="radio" name="q0" value="1" /> The risk that crops or animals fail to produce expected yields due to weather, pests, or disease
+                    </label>
+
+                    <label class="qopt" id="qopt-0-2">
+                      <input type="radio" name="q0" value="2" /> The risk of market prices rising too high
+                    </label>
+
+                    <label class="qopt" id="qopt-0-3">
+                      <input type="radio" name="q0" value="3" /> The risk of a business partner leaving the farm
+                    </label>
+
+                </div>
+              </div>
+
+              <div class="quiz-q" id="qq-1" data-ans="1">
+                <p>2. What does diversification mean in risk management?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-1-0">
+                      <input type="radio" name="q1" value="0" /> Investing all resources in one high-value crop
+                    </label>
+
+                    <label class="qopt" id="qopt-1-1">
+                      <input type="radio" name="q1" value="1" /> Spreading production across multiple crops or enterprises
+                    </label>
+
+                    <label class="qopt" id="qopt-1-2">
+                      <input type="radio" name="q1" value="2" /> Selling products in multiple markets only
+                    </label>
+
+                    <label class="qopt" id="qopt-1-3">
+                      <input type="radio" name="q1" value="3" /> Hiring more workers for peak seasons
+                    </label>
+
+                </div>
+              </div>
+
+              <div class="quiz-q" id="qq-2" data-ans="1">
+                <p>3. What is a cooperative?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-2-0">
+                      <input type="radio" name="q2" value="0" /> A government agricultural agency
+                    </label>
+
+                    <label class="qopt" id="qopt-2-1">
+                      <input type="radio" name="q2" value="1" /> An organisation owned and run by a group of farmers working together
+                    </label>
+
+                    <label class="qopt" id="qopt-2-2">
+                      <input type="radio" name="q2" value="2" /> A type of crop insurance scheme
+                    </label>
+
+                    <label class="qopt" id="qopt-2-3">
+                      <input type="radio" name="q2" value="3" /> A contract between a farmer and a supermarket
+                    </label>
+
+                </div>
+              </div>
+
+              <div class="quiz-q" id="qq-3" data-ans="1">
+                <p>4. Why do coffee farmers in PNG face significant price risk?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-3-0">
+                      <input type="radio" name="q3" value="0" /> Coffee is only grown in one area
+                    </label>
+
+                    <label class="qopt" id="qopt-3-1">
+                      <input type="radio" name="q3" value="1" /> Global coffee prices are set on international markets far outside farmers' control
+                    </label>
+
+                    <label class="qopt" id="qopt-3-2">
+                      <input type="radio" name="q3" value="2" /> PNG coffee has poor quality
+                    </label>
+
+                    <label class="qopt" id="qopt-3-3">
+                      <input type="radio" name="q3" value="3" /> Coffee is always in low demand locally
+                    </label>
+
+                </div>
+              </div>
+
+              <div class="quiz-q" id="qq-4" data-ans="2">
+                <p>5. Which risk management strategy involves agreeing on a buyer and price BEFORE planting?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-4-0">
+                      <input type="radio" name="q4" value="0" /> Crop insurance
+                    </label>
+
+                    <label class="qopt" id="qopt-4-1">
+                      <input type="radio" name="q4" value="1" /> Savings
+                    </label>
+
+                    <label class="qopt" id="qopt-4-2">
+                      <input type="radio" name="q4" value="2" /> Contract farming
+                    </label>
+
+                    <label class="qopt" id="qopt-4-3">
+                      <input type="radio" name="q4" value="3" /> Diversification
+                    </label>
+
+                </div>
+              </div>
+            <button class="btn btn-primary btn-sm" id="quiz-submit-btn" onclick="submitLessonQuiz()">Submit Answers →</button>
+            <div class="quiz-result" id="quiz-result" style="display:none"></div>
+          </div>
+
+          <div class="lesson-nav">
+            <a class="lesson-nav-btn" href="/lessons/g10-forestry-tech.html">← Previous Topic</a>
+            <a class="btn btn-ghost btn-sm" href="/topics.html?grade=10">All Topics</a>
+            <a class="lesson-nav-btn" href="/lessons/g10-agribusiness-marketing.html">Next Topic →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="fl" href="/">
+          <svg width="22" height="22" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="28" height="28" rx="7" fill="#3a7d2c"/>
+            <path d="M14 22c0 0-7-4.5-7-9.5C7 9 10.134 7 14 7s7 2 7 5.5C21 17.5 14 22 14 22z" fill="#fff" opacity=".9"/>
+          </svg>
+          MXT<span>Lab</span>
+        </a>
+        <p class="fd">Interactive Agriculture learning for Grade 9 and Grade 10 students in Papua New Guinea.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button id="back-top" onclick="backToTop()" aria-label="Back to top">↑</button>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

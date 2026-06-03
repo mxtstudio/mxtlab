@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-57V6ZXCDK8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-57V6ZXCDK8');
+</script>
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7249885633789743" crossorigin="anonymous"></script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Forestry Technology: Harvesting & Processing — Agriculture lesson for Grade 10 students."/>
+<meta name="robots" content="index, follow"/>
+<meta name="author" content="MXT Lab"/>
+<meta property="og:title" content="Forestry Technology: Harvesting & Processing | MXT Lab"/>
+<meta property="og:description" content="Interactive lesson on Forestry Technology: Harvesting & Processing for Grade 10 Agriculture students."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://mxtlab.online/lessons/g10-forestry-tech.html"/>
+<meta property="og:image" content="https://mxtlab.online/og-image.png"/>
+<link rel="canonical" href="https://mxtlab.online/lessons/g10-forestry-tech.html"/>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg"/>
+<title>Forestry Technology: Harvesting & Processing — MXT Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700;800&family=Fraunces:ital,wght@0,300;0,600;1,300&display=swap">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+<div id="grain" aria-hidden="true"></div>
+
+<nav id="navbar" aria-label="Main navigation">
+  <div class="nav-wrap">
+    <a class="nav-logo" href="/">
+      <svg class="logo-mark" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect id="logo-bg" width="28" height="28" rx="7" fill="#3a7d2c"/>
+        <path d="M14 22c0 0-7-4.5-7-9.5C7 9 10.134 7 14 7s7 2 7 5.5C21 17.5 14 22 14 22z" fill="#fff" opacity=".9"/>
+        <path id="logo-stem" d="M14 22 L14 12" stroke="#3a7d2c" stroke-width="1.5" stroke-linecap="round"/>
+        <path id="logo-leaf1" d="M14 15 Q11 13 10 10" stroke="#3a7d2c" stroke-width="1" stroke-linecap="round"/>
+        <path id="logo-leaf2" d="M14 18 Q17 16 18 13" stroke="#3a7d2c" stroke-width="1" stroke-linecap="round"/>
+      </svg>
+      MXT<span id="lab-text">Lab</span>
+      <span class="nav-badge">Agriculture</span>
+    </a>
+    <ul class="nav-links">
+      <li class="has-drop">
+        <a href="/topics.html">Topics <span class="drop-arrow">▾</span></a>
+        <div class="dropdown">
+          <a href="/topics.html?grade=9">🌾 Grade 9 Agriculture</a>
+          <a href="/topics.html?grade=10">🌿 Grade 10 Agriculture</a>
+        </div>
+      </li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/resources.html">Resources</a></li>
+      <li><a href="/careers.html">Careers</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="nav-icon-btn" id="search-trigger" aria-label="Search">
+        <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+      <button class="theme-toggle" id="theme-toggle">
+        <span id="t-icon">🌙</span><span id="t-lbl">Dark</span>
+      </button>
+      <a class="btn-nav-cta" href="/topics.html">Explore Topics →</a>
+      <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Open navigation menu">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-drawer" id="mobile-drawer" role="navigation" aria-label="Mobile navigation">
+  <ul class="mob-links">
+    <li><a href="/">🏠 Home</a></li>
+    <div class="mob-label">Topics</div>
+    <li><a href="/topics.html?grade=9">🌾 Grade 9 Agriculture</a></li>
+    <li><a href="/topics.html?grade=10">🌿 Grade 10 Agriculture</a></li>
+    <li><a href="/about.html">👥 About MXT Lab</a></li>
+    <li><a href="/resources.html">📚 Resources</a></li>
+    <li><a href="/careers.html">🌱 Careers</a></li>
+    <li><a href="/contact.html">✉️ Contact</a></li>
+  </ul>
+</div>
+
+<div id="search-overlay" role="dialog" aria-modal="true" aria-label="Search lessons">
+  <div class="search-box">
+    <div class="search-row">
+      <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="search" id="search-input" placeholder="Search topics..." autocomplete="off"/>
+      <button class="s-close" id="search-close">Esc</button>
+    </div>
+    <div class="s-results" id="s-results"></div>
+  </div>
+</div>
+
+<main id="main">
+    <div class="page active" id="page-lesson">
+      <div class="lesson-wrap">
+        <div class="lesson-breadcrumb">
+          <a href="/">Home</a>
+          <span class="sep">›</span>
+          <a href="/topics.html?grade=10">Grade 10 Topics</a>
+          <span class="sep">›</span>
+          <span style="color:var(--ink)">Forestry Technology: Harvesting & Processing</span>
+        </div>
+
+        <div class="lesson-header">
+          <div class="lesson-strand-badge">🪵 Strand 4: Natural Resources · Unit 6 · Grade 10</div>
+          <h1>Forestry Technology: Harvesting & Processing</h1>
+          <div class="lesson-meta-row">
+            <span>📖 3 lessons</span>
+            <span>🇵🇬 Papua New Guinea Curriculum</span>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">
+            <span class="chip chip-g" style="cursor:default">Forest Monitoring & Preservation Technology</span>
+            <span class="chip" style="cursor:default">Forest Harvesting Technology</span>
+            <span class="chip" style="cursor:default">Processing Forest Products</span></div>
+        </div>
+
+        <div class="lesson-body">
+          <div class="lesson-objectives">
+            <h3>Learning Objectives</h3>
+            <ul><li>Investigate and explain forest monitoring and preservation technology used in different environments</li><li>Identify the tools and equipment used in harvesting and processing forest products</li><li>Evaluate the strengths and weaknesses of technology used in forestry</li></ul>
+          </div>
+
+
+  <div class="lesson-section">
+    <h2>Forest Monitoring and Preservation Technology</h2>
+    <p>Forests are among the most important resources for human survival and social development, protecting the balance of the earth's ecology. There is a need to design smart and efficient forest monitoring systems.</p>
+    <p>Forest protection is a branch of forestry concerned with the preservation or improvement of forests and the prevention and control of damage from natural or man-made causes — including fire, animals, insects, fungi, injurious plants, and adverse climatic conditions.</p>
+    <h3>Forest Fire Monitoring Technology</h3>
+    <p>In recent years, prevention and monitoring of forest fires has become a global concern. Traditional forest fire monitoring measures include:</p>
+    <ul>
+      <li>Ground patrolling by forest rangers</li>
+      <li>Watching towers providing elevated visual surveillance</li>
+      <li>Aerial patrolling by aircraft or helicopters</li>
+      <li>Long-distance video monitoring using cameras</li>
+      <li>Satellite monitoring — detecting heat signatures and smoke from space</li>
+    </ul>
+    <p>Advanced technology now includes sensor-based detection systems that detect smoke or fires using sensors. Data from the sensors is processed in a microcontroller and transmitted wirelessly to a receiver unit, enabling immediate response.</p>
+    <h3>Remote Sensing and GIS</h3>
+    <ul>
+      <li><strong>Satellite imagery</strong> — used to monitor forest cover change, identify deforestation hot-spots, and track forest fires across large areas</li>
+      <li><strong>Drones (UAVs)</strong> — used for detailed aerial surveys of forest health, timber volume estimation, and post-fire assessment</li>
+      <li><strong>GPS mapping</strong> — enables precise mapping of forest boundaries, logging roads, and protected areas</li>
+      <li><strong>GIS (Geographic Information Systems)</strong> — software platforms that integrate satellite data, GPS data, and other information to produce detailed forest maps</li>
+    </ul>
+  </div>
+  <div class="lesson-section">
+    <h2>Forest Harvesting Technology</h2>
+    <p>Forest harvesting requires a range of tools depending on the scale of the operation and the harvesting method used:</p>
+    <h3>Hand Tools</h3>
+    <ul>
+      <li><strong>Chainsaws</strong> — portable mechanical saws for felling trees and cutting logs. Used in selective cutting and strip cutting operations.</li>
+      <li><strong>Axes and machetes</strong> — used for clearing undergrowth, removing branches, and smaller cutting tasks.</li>
+      <li><strong>Diameter tapes and hypsometers</strong> — measuring tools used to estimate tree diameter and height for timber volume calculations.</li>
+    </ul>
+    <h3>Heavy Machinery</h3>
+    <ul>
+      <li><strong>Skidders</strong> — wheeled or tracked machines that drag felled logs from the cutting site to loading areas, reducing manual labour.</li>
+      <li><strong>Forwarders</strong> — carry logs on a trailer rather than dragging them, causing less soil compaction.</li>
+      <li><strong>Log loaders</strong> — cranes or claw machines that lift and load logs onto trucks for transport to sawmills.</li>
+      <li><strong>Bulldozers</strong> — used for road construction in forest areas to allow vehicle and machinery access.</li>
+    </ul>
+    <h3>Forest Processing Technology</h3>
+    <ul>
+      <li><strong>Sawmills</strong> — fixed or portable facilities where logs are cut into planks, boards, and timber products. Portable sawmills can operate without heavy road construction.</li>
+      <li><strong>Wood chippers</strong> — machines that process small-diameter wood and branches into wood chips for paper production or biomass energy.</li>
+      <li><strong>Kilns</strong> — drying chambers that remove moisture from sawn timber to prevent warping and improve strength and durability.</li>
+    </ul>
+  </div>
+  <div class="lesson-section">
+    <h2>Strengths and Weaknesses of Forestry Technology</h2>
+    <h3>Strengths</h3>
+    <ul>
+      <li>Increases speed and volume of timber harvesting operations</li>
+      <li>Reduces physical danger to workers through mechanisation</li>
+      <li>Enables better monitoring and conservation through remote sensing and GIS</li>
+      <li>Improves accuracy of forest inventories and replanting schedules</li>
+      <li>Sensor-based fire detection allows faster response to forest fires</li>
+    </ul>
+    <h3>Weaknesses</h3>
+    <ul>
+      <li>High capital cost of machinery is beyond the reach of small-scale operators and PNG rural communities</li>
+      <li>Heavy machinery compacts soil, damages root systems, and leaves tracks that cause erosion</li>
+      <li>Road construction for machinery access fragments forest habitats, increasing threats to biodiversity</li>
+      <li>Technology enables faster harvesting — if not managed carefully, this can accelerate unsustainable deforestation</li>
+      <li>Requires skilled operators and regular maintenance, which may not be available in remote PNG locations</li>
+    </ul>
+    <p>The solution is to apply <strong>reduced-impact logging</strong> techniques that minimise soil disturbance and damage to remaining trees, combined with sustainable harvesting quotas enforced through government regulation and forest inventory data.</p>
+  </div>
+
+          <div class="key-terms">
+            <h3>Key Terms</h3>
+            <div class="term-list">
+                <div class="term"><span class="term-word">Forest protection</span><span class="term-def">A branch of forestry concerned with the preservation or improvement of a forest and the prevention and control of damage from natural or man-made causes.</span></div>
+
+                <div class="term"><span class="term-word">Remote sensing</span><span class="term-def">The use of satellite or aerial imagery to collect information about forest cover, deforestation, and forest health from a distance.</span></div>
+
+                <div class="term"><span class="term-word">Forest fire monitoring</span><span class="term-def">Systems and technology used to detect, track, and respond to wildfires in forest areas, including satellite monitoring, aerial patrolling, and sensor-based detection.</span></div>
+
+                <div class="term"><span class="term-word">Sawmill</span><span class="term-def">A facility where logs are cut into planks, boards, and other timber products using mechanical saws.</span></div>
+
+                <div class="term"><span class="term-word">Chainsaw</span><span class="term-def">A portable mechanical saw powered by a petrol or electric motor, used to fell trees and cut logs during harvesting operations.</span></div>
+
+                <div class="term"><span class="term-word">Reduced-impact logging</span><span class="term-def">A set of forestry practices designed to minimise the environmental impact of timber harvesting while maintaining commercial viability.</span></div></div>
+          </div>
+
+          <div class="summary-box">
+            <h3>📝 Summary — What You Should Know</h3>
+            <ul><li>Forest protection covers prevention and control of damage from fire, insects, fungi, animals, and climatic conditions</li><li>Forest fire monitoring uses ground patrols, watch towers, aerial surveillance, satellites, and wireless sensor networks</li><li>Remote sensing, drones, GPS, and GIS software enable large-scale forest monitoring without physical access to every area</li><li>Harvesting tools include chainsaws, axes, skidders, forwarders, log loaders, and bulldozers</li><li>Sawmills, wood chippers, and kilns process logs into usable timber products</li><li>Strengths: efficiency, worker safety, better monitoring; Weaknesses: high cost, soil compaction, habitat fragmentation</li></ul>
+          </div>
+
+
+          <div class="key-terms" style="border-color:var(--blue);margin-top:0">
+            <h3 style="color:var(--blue)">Further Reading</h3>
+            <div style="display:flex;flex-direction:column;gap:10px">
+
+                <a href="https://www.fao.org/forestry/en/" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:flex-start;gap:10px;font-size:.87rem;color:var(--ink2);transition:color .18s" onmouseover="this.style.color='var(--blue)'" onmouseout="this.style.color='var(--ink2)'">
+                  <span style="color:var(--blue);flex-shrink:0">↗</span>
+                  <span><strong style="color:var(--blue)">FAO Forestry Technology</strong> — Forest monitoring technology, harvesting tools, and sustainable forestry practices from the FAO.</span>
+                </a>
+            </div>
+          </div>
+
+          <div class="quiz-section" id="quiz-section">
+            <div class="quiz-header">
+              <div class="quiz-icon">❓</div>
+              <div>
+                <h2>Check Your Understanding</h2>
+                <p style="font-size:.8rem;color:var(--ink3);margin:2px 0 0">Answer all questions then submit to see how you did.</p>
+              </div>
+            </div>
+
+              <div class="quiz-q" id="qq-0" data-ans="0">
+                <p>1. What is the purpose of a hypsometer in forestry?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-0-0">
+                      <input type="radio" name="q0" value="0" /> To measure tree height for timber volume calculation
+                    </label>
+
+                    <label class="qopt" id="qopt-0-1">
+                      <input type="radio" name="q0" value="1" /> To detect fire and smoke in forest areas
+                    </label>
+
+                    <label class="qopt" id="qopt-0-2">
+                      <input type="radio" name="q0" value="2" /> To drill holes in trees for sap collection
+                    </label>
+
+                    <label class="qopt" id="qopt-0-3">
+                      <input type="radio" name="q0" value="3" /> To compact soil after logging operations
+                    </label>
+
+                </div>
+              </div>
+
+              <div class="quiz-q" id="qq-1" data-ans="2">
+                <p>2. Which technology transmits fire and smoke detection data wirelessly to a receiver unit for immediate response?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-1-0">
+                      <input type="radio" name="q1" value="0" /> Chainsaw GPS systems
+                    </label>
+
+                    <label class="qopt" id="qopt-1-1">
+                      <input type="radio" name="q1" value="1" /> Satellite-only monitoring
+                    </label>
+
+                    <label class="qopt" id="qopt-1-2">
+                      <input type="radio" name="q1" value="2" /> Sensor-based detection systems with wireless microcontrollers
+                    </label>
+
+                    <label class="qopt" id="qopt-1-3">
+                      <input type="radio" name="q1" value="3" /> Ground patrol radio communications
+                    </label>
+
+                </div>
+              </div>
+
+              <div class="quiz-q" id="qq-2" data-ans="1">
+                <p>3. What is an advantage of portable sawmills over fixed sawmills in PNG forestry?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-2-0">
+                      <input type="radio" name="q2" value="0" /> They produce higher quality timber products
+                    </label>
+
+                    <label class="qopt" id="qopt-2-1">
+                      <input type="radio" name="q2" value="1" /> They can operate without heavy road construction, reducing habitat fragmentation
+                    </label>
+
+                    <label class="qopt" id="qopt-2-2">
+                      <input type="radio" name="q2" value="2" /> They are cheaper to purchase and operate
+                    </label>
+
+                    <label class="qopt" id="qopt-2-3">
+                      <input type="radio" name="q2" value="3" /> They process larger logs than fixed sawmills
+                    </label>
+
+                </div>
+              </div>
+
+              <div class="quiz-q" id="qq-3" data-ans="2">
+                <p>4. Which of the following is a weakness of using heavy machinery in forest harvesting?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-3-0">
+                      <input type="radio" name="q3" value="0" /> Heavy machinery improves worker safety
+                    </label>
+
+                    <label class="qopt" id="qopt-3-1">
+                      <input type="radio" name="q3" value="1" /> Machinery enables better monitoring of forest health
+                    </label>
+
+                    <label class="qopt" id="qopt-3-2">
+                      <input type="radio" name="q3" value="2" /> Heavy machinery compacts soil and damages root systems
+                    </label>
+
+                    <label class="qopt" id="qopt-3-3">
+                      <input type="radio" name="q3" value="3" /> Machinery reduces the speed of timber harvesting
+                    </label>
+
+                </div>
+              </div>
+
+              <div class="quiz-q" id="qq-4" data-ans="1">
+                <p>5. What does remote sensing allow foresters to do?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-4-0">
+                      <input type="radio" name="q4" value="0" /> Operate chainsaws from a safe distance
+                    </label>
+
+                    <label class="qopt" id="qopt-4-1">
+                      <input type="radio" name="q4" value="1" /> Monitor forest cover change and detect deforestation from satellites without physical access to every area
+                    </label>
+
+                    <label class="qopt" id="qopt-4-2">
+                      <input type="radio" name="q4" value="2" /> Process logs into timber products more efficiently
+                    </label>
+
+                    <label class="qopt" id="qopt-4-3">
+                      <input type="radio" name="q4" value="3" /> Calculate the market price of timber products
+                    </label>
+
+                </div>
+              </div>
+            <button class="btn btn-primary btn-sm" id="quiz-submit-btn" onclick="submitLessonQuiz()">Submit Answers →</button>
+            <div class="quiz-result" id="quiz-result" style="display:none"></div>
+          </div>
+
+          <div class="lesson-nav">
+            <a class="lesson-nav-btn" href="/lessons/g10-forest-conservation.html">← Previous Topic</a>
+            <a class="btn btn-ghost btn-sm" href="/topics.html?grade=10">All Topics</a>
+            <a class="lesson-nav-btn" href="/lessons/g10-agribusiness-risk.html">Next Topic →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="fl" href="/">
+          <svg width="22" height="22" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="28" height="28" rx="7" fill="#3a7d2c"/>
+            <path d="M14 22c0 0-7-4.5-7-9.5C7 9 10.134 7 14 7s7 2 7 5.5C21 17.5 14 22 14 22z" fill="#fff" opacity=".9"/>
+          </svg>
+          MXT<span>Lab</span>
+        </a>
+        <p class="fd">Interactive Agriculture learning for Grade 9 and Grade 10 students in Papua New Guinea.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button id="back-top" onclick="backToTop()" aria-label="Back to top">↑</button>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

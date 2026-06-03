@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-57V6ZXCDK8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-57V6ZXCDK8');
+</script>
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7249885633789743" crossorigin="anonymous"></script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Plant Propagation Technology — Agriculture lesson for Grade 10 students."/>
+<meta name="robots" content="index, follow"/>
+<meta name="author" content="MXT Lab"/>
+<meta property="og:title" content="Plant Propagation Technology | MXT Lab"/>
+<meta property="og:description" content="Interactive lesson on Plant Propagation Technology for Grade 10 Agriculture students."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://mxtlab.online/lessons/g10-plant-propagation.html"/>
+<meta property="og:image" content="https://mxtlab.online/og-image.png"/>
+<link rel="canonical" href="https://mxtlab.online/lessons/g10-plant-propagation.html"/>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg"/>
+<title>Plant Propagation Technology — MXT Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700;800&family=Fraunces:ital,wght@0,300;0,600;1,300&display=swap">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+<div id="grain" aria-hidden="true"></div>
+
+<nav id="navbar" aria-label="Main navigation">
+  <div class="nav-wrap">
+    <a class="nav-logo" href="/">
+      <svg class="logo-mark" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect id="logo-bg" width="28" height="28" rx="7" fill="#3a7d2c"/>
+        <path d="M14 22c0 0-7-4.5-7-9.5C7 9 10.134 7 14 7s7 2 7 5.5C21 17.5 14 22 14 22z" fill="#fff" opacity=".9"/>
+        <path id="logo-stem" d="M14 22 L14 12" stroke="#3a7d2c" stroke-width="1.5" stroke-linecap="round"/>
+        <path id="logo-leaf1" d="M14 15 Q11 13 10 10" stroke="#3a7d2c" stroke-width="1" stroke-linecap="round"/>
+        <path id="logo-leaf2" d="M14 18 Q17 16 18 13" stroke="#3a7d2c" stroke-width="1" stroke-linecap="round"/>
+      </svg>
+      MXT<span id="lab-text">Lab</span>
+      <span class="nav-badge">Agriculture</span>
+    </a>
+    <ul class="nav-links">
+      <li class="has-drop">
+        <a href="/topics.html">Topics <span class="drop-arrow">▾</span></a>
+        <div class="dropdown">
+          <a href="/topics.html?grade=9">🌾 Grade 9 Agriculture</a>
+          <a href="/topics.html?grade=10">🌿 Grade 10 Agriculture</a>
+        </div>
+      </li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/resources.html">Resources</a></li>
+      <li><a href="/careers.html">Careers</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="nav-icon-btn" id="search-trigger" aria-label="Search">
+        <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+      <button class="theme-toggle" id="theme-toggle">
+        <span id="t-icon">🌙</span><span id="t-lbl">Dark</span>
+      </button>
+      <a class="btn-nav-cta" href="/topics.html">Explore Topics →</a>
+      <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Open navigation menu">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-drawer" id="mobile-drawer" role="navigation" aria-label="Mobile navigation">
+  <ul class="mob-links">
+    <li><a href="/">🏠 Home</a></li>
+    <div class="mob-label">Topics</div>
+    <li><a href="/topics.html?grade=9">🌾 Grade 9 Agriculture</a></li>
+    <li><a href="/topics.html?grade=10">🌿 Grade 10 Agriculture</a></li>
+    <li><a href="/about.html">👥 About MXT Lab</a></li>
+    <li><a href="/resources.html">📚 Resources</a></li>
+    <li><a href="/careers.html">🌱 Careers</a></li>
+    <li><a href="/contact.html">✉️ Contact</a></li>
+  </ul>
+</div>
+
+<div id="search-overlay" role="dialog" aria-modal="true" aria-label="Search lessons">
+  <div class="search-box">
+    <div class="search-row">
+      <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="search" id="search-input" placeholder="Search topics..." autocomplete="off"/>
+      <button class="s-close" id="search-close">Esc</button>
+    </div>
+    <div class="s-results" id="s-results"></div>
+  </div>
+</div>
+
+<main id="main">
+    <div class="page active" id="page-lesson">
+      <div class="lesson-wrap">
+        <div class="lesson-breadcrumb">
+          <a href="/">Home</a>
+          <span class="sep">›</span>
+          <a href="/topics.html?grade=10">Grade 10 Topics</a>
+          <span class="sep">›</span>
+          <span style="color:var(--ink)">Plant Propagation Technology</span>
+        </div>
+
+        <div class="lesson-header">
+          <div class="lesson-strand-badge">🌱 Strand 1: Crops · Unit 4 · Grade 10</div>
+          <h1>Plant Propagation Technology</h1>
+          <div class="lesson-meta-row">
+            <span>📖 3 lessons</span>
+            <span>🇵🇬 Papua New Guinea Curriculum</span>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">
+            <span class="chip chip-g" style="cursor:default">Sexual Propagation</span>
+            <span class="chip" style="cursor:default">Asexual / Vegetative Propagation</span>
+            <span class="chip" style="cursor:default">Technology in Plant Propagation</span></div>
+        </div>
+
+        <div class="lesson-body">
+          <div class="lesson-objectives">
+            <h3>Learning Objectives</h3>
+            <ul><li>Explain what plant propagation is and distinguish between sexual and asexual propagation</li><li>Evaluate the advantages and disadvantages of different propagation methods</li><li>Identify how technology has improved plant propagation in horticulture and crop farming</li></ul>
+          </div>
+
+
+  <div class="lesson-section">
+    <h2>Sexual Propagation (Seed Propagation)</h2>
+    <p>Sexual propagation involves the union of pollen and egg, leading to seed formation. It is an old, easy, simple, and effective technique for ornamental plants, vegetables, fruits, and medicinal plants.</p>
+    <p><strong>Advantages:</strong> produces large numbers quickly; seeds can be handled in large numbers; can produce hybrids with desirable traits.</p>
+    <p><strong>Disadvantages:</strong> some plants produce no viable seeds; some seeds are very difficult or slow to germinate; causes genetic variability — offspring may not be identical to the parent plant.</p>
+  </div>
+  <div class="lesson-section">
+    <h2>Asexual Propagation (Vegetative Propagation)</h2>
+    <p>Asexual propagation uses vegetative parts of plants — leaves, stems, roots, or modified organs — to produce new plants. It produces clones: plants genetically identical to the parent. Methods include cutting, division, layering, grafting, budding, and tissue culture.</p>
+    <p><strong>Advantages:</strong> all offspring are true-to-type; suitable for plants that cannot be propagated from seeds; decreases time to flowering (especially grafting and budding).</p>
+    <p><strong>Disadvantages:</strong> only a small number of plants can be produced from each parent (except tissue culture); requires significant labour.</p>
+  </div>
+  <div class="lesson-section">
+    <h2>Tissue Culture</h2>
+    <p>Tissue culture grows new plants from small pieces of plant tissue in a controlled laboratory environment.</p>
+    <p><strong>Advantages:</strong> large numbers produced in a short time from a tiny amount of tissue; plants are more likely to be disease-free; can be done year-round regardless of season.</p>
+    <p><strong>Disadvantages:</strong> requires more labour and higher cost; plants may be less resilient if not properly acclimatised; material must be carefully screened before culture.</p>
+  </div>
+  <div class="lesson-section">
+    <h2>Technology in Plant Propagation</h2>
+    <p>Technology has improved plant propagation in several important ways:</p>
+    <ul>
+      <li><strong>Vegetative crop solutions</strong> — used in fields, greenhouses, and laboratories to produce cuttings or transplants at scale.</li>
+      <li><strong>Heat propagators</strong> — devices that maintain warmth and moisture in newly propagated plants, significantly improving survival rates.</li>
+      <li><strong>Seed propagation mats</strong> — electric heated rubber mats that maintain consistent soil temperature for seedlings, allowing year-round gardening even in cold conditions.</li>
+      <li><strong>Tissue culture expansion</strong> — most commonly applied to herbaceous ornamentals and fruits. Provides uniform, disease-free plants where virus infestations had previously been a serious problem.</li>
+    </ul>
+  </div>
+
+          <div class="key-terms">
+            <h3>Key Terms</h3>
+            <div class="term-list">
+                <div class="term"><span class="term-word">Plant propagation</span><span class="term-def">The process of growing new plants from a variety of sources: seeds, cuttings, and other plant parts.</span></div>
+
+                <div class="term"><span class="term-word">Sexual propagation</span><span class="term-def">Propagation involving the union of pollen and egg, leading to seed formation. Also called seed propagation.</span></div>
+
+                <div class="term"><span class="term-word">Asexual propagation</span><span class="term-def">Propagation using vegetative parts of the plant (leaves, stems, roots) to produce plants identical to the parent.</span></div>
+
+                <div class="term"><span class="term-word">Tissue culture</span><span class="term-def">A propagation technique that grows new plants from small pieces of plant tissue in a laboratory environment.</span></div>
+
+                <div class="term"><span class="term-word">Clone</span><span class="term-def">A group of plants derived from the same parent plant by asexual propagation — all genetically identical to the parent.</span></div>
+
+                <div class="term"><span class="term-word">Heat propagator</span><span class="term-def">A device used in horticulture to maintain warmth and moisture in newly propagated plants, improving survival rate.</span></div></div>
+          </div>
+
+          <div class="summary-box">
+            <h3>📝 Summary — What You Should Know</h3>
+            <ul><li>Plant propagation grows new plants from seeds (sexual) or vegetative parts (asexual)</li><li>Sexual propagation produces large numbers quickly but offspring may vary genetically</li><li>Asexual propagation produces clones identical to the parent — best for maintaining desirable traits</li><li>Tissue culture produces disease-free, uniform plants year-round from tiny amounts of plant tissue</li><li>Heat propagators and seed mats use technology to maintain ideal conditions for plant establishment</li><li>The main drive behind propagation technology is increasing food production to meet growing demand</li></ul>
+          </div>
+
+
+          <div class="key-terms" style="border-color:var(--blue);margin-top:0">
+            <h3 style="color:var(--blue)">Further Reading</h3>
+            <div style="display:flex;flex-direction:column;gap:10px">
+
+                <a href="https://www.fao.org/horticulture/en/" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:flex-start;gap:10px;font-size:.87rem;color:var(--ink2);transition:color .18s" onmouseover="this.style.color='var(--blue)'" onmouseout="this.style.color='var(--ink2)'">
+                  <span style="color:var(--blue);flex-shrink:0">↗</span>
+                  <span><strong style="color:var(--blue)">FAO Horticulture</strong> — Plant propagation, horticulture technology, and crop production from the FAO.</span>
+                </a>
+            </div>
+          </div>
+
+          <div class="quiz-section" id="quiz-section">
+            <div class="quiz-header">
+              <div class="quiz-icon">❓</div>
+              <div>
+                <h2>Check Your Understanding</h2>
+                <p style="font-size:.8rem;color:var(--ink3);margin:2px 0 0">Answer all questions then submit to see how you did.</p>
+              </div>
+            </div>
+
+              <div class="quiz-q" id="qq-0" data-ans="2">
+                <p>1. Which type of propagation produces plants that are genetically identical to the parent?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-0-0">
+                      <input type="radio" name="q0" value="0" /> Sexual propagation
+                    </label>
+
+                    <label class="qopt" id="qopt-0-1">
+                      <input type="radio" name="q0" value="1" /> Seed propagation
+                    </label>
+
+                    <label class="qopt" id="qopt-0-2">
+                      <input type="radio" name="q0" value="2" /> Asexual (vegetative) propagation
+                    </label>
+
+                    <label class="qopt" id="qopt-0-3">
+                      <input type="radio" name="q0" value="3" /> Hybrid propagation
+                    </label>
+
+                </div>
+              </div>
+
+              <div class="quiz-q" id="qq-1" data-ans="1">
+                <p>2. What is a disadvantage of sexual propagation?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-1-0">
+                      <input type="radio" name="q1" value="0" /> It produces too many plants
+                    </label>
+
+                    <label class="qopt" id="qopt-1-1">
+                      <input type="radio" name="q1" value="1" /> Offspring may not be identical to the parent due to genetic variability
+                    </label>
+
+                    <label class="qopt" id="qopt-1-2">
+                      <input type="radio" name="q1" value="2" /> It requires laboratory equipment
+                    </label>
+
+                    <label class="qopt" id="qopt-1-3">
+                      <input type="radio" name="q1" value="3" /> It can only be done in certain seasons
+                    </label>
+
+                </div>
+              </div>
+
+              <div class="quiz-q" id="qq-2" data-ans="1">
+                <p>3. What is the main advantage of tissue culture over conventional asexual propagation?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-2-0">
+                      <input type="radio" name="q2" value="0" /> It is cheaper and requires less equipment
+                    </label>
+
+                    <label class="qopt" id="qopt-2-1">
+                      <input type="radio" name="q2" value="1" /> It produces large numbers of disease-free plants year-round from tiny amounts of tissue
+                    </label>
+
+                    <label class="qopt" id="qopt-2-2">
+                      <input type="radio" name="q2" value="2" /> It produces hybrids only
+                    </label>
+
+                    <label class="qopt" id="qopt-2-3">
+                      <input type="radio" name="q2" value="3" /> It does not require laboratory conditions
+                    </label>
+
+                </div>
+              </div>
+
+              <div class="quiz-q" id="qq-3" data-ans="1">
+                <p>4. A heat propagator is used in plant propagation to:</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-3-0">
+                      <input type="radio" name="q3" value="0" /> Cut stems into uniform lengths
+                    </label>
+
+                    <label class="qopt" id="qopt-3-1">
+                      <input type="radio" name="q3" value="1" /> Maintain warmth and moisture in newly propagated plants
+                    </label>
+
+                    <label class="qopt" id="qopt-3-2">
+                      <input type="radio" name="q3" value="2" /> Test soil pH before planting
+                    </label>
+
+                    <label class="qopt" id="qopt-3-3">
+                      <input type="radio" name="q3" value="3" /> Apply fertilisers to seedlings
+                    </label>
+
+                </div>
+              </div>
+
+              <div class="quiz-q" id="qq-4" data-ans="2">
+                <p>5. What is a clone in plant propagation?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-4-0">
+                      <input type="radio" name="q4" value="0" /> A plant produced by cross-pollination
+                    </label>
+
+                    <label class="qopt" id="qopt-4-1">
+                      <input type="radio" name="q4" value="1" /> A plant that has been genetically modified in a laboratory
+                    </label>
+
+                    <label class="qopt" id="qopt-4-2">
+                      <input type="radio" name="q4" value="2" /> A group of plants derived from the same parent by asexual propagation
+                    </label>
+
+                    <label class="qopt" id="qopt-4-3">
+                      <input type="radio" name="q4" value="3" /> A seed-produced hybrid variety
+                    </label>
+
+                </div>
+              </div>
+            <button class="btn btn-primary btn-sm" id="quiz-submit-btn" onclick="submitLessonQuiz()">Submit Answers →</button>
+            <div class="quiz-result" id="quiz-result" style="display:none"></div>
+          </div>
+
+          <div class="lesson-nav">
+            <a class="lesson-nav-btn" href="/lessons/g10-crop-management.html">← Previous Topic</a>
+            <a class="btn btn-ghost btn-sm" href="/topics.html?grade=10">All Topics</a>
+            <a class="lesson-nav-btn" href="/lessons/g10-types-plants.html">Next Topic →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="fl" href="/">
+          <svg width="22" height="22" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="28" height="28" rx="7" fill="#3a7d2c"/>
+            <path d="M14 22c0 0-7-4.5-7-9.5C7 9 10.134 7 14 7s7 2 7 5.5C21 17.5 14 22 14 22z" fill="#fff" opacity=".9"/>
+          </svg>
+          MXT<span>Lab</span>
+        </a>
+        <p class="fd">Interactive Agriculture learning for Grade 9 and Grade 10 students in Papua New Guinea.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button id="back-top" onclick="backToTop()" aria-label="Back to top">↑</button>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

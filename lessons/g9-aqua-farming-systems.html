@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-57V6ZXCDK8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-57V6ZXCDK8');
+</script>
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7249885633789743" crossorigin="anonymous"></script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Aqua Farming Systems & Practices — Agriculture lesson for Grade 9 students."/>
+<meta name="robots" content="index, follow"/>
+<meta name="author" content="MXT Lab"/>
+<meta property="og:title" content="Aqua Farming Systems & Practices | MXT Lab"/>
+<meta property="og:description" content="Interactive lesson on Aqua Farming Systems & Practices for Grade 9 Agriculture students."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://mxtlab.online/lessons/g9-aqua-farming-systems.html"/>
+<meta property="og:image" content="https://mxtlab.online/og-image.png"/>
+<link rel="canonical" href="https://mxtlab.online/lessons/g9-aqua-farming-systems.html"/>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg"/>
+<title>Aqua Farming Systems & Practices — MXT Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700;800&family=Fraunces:ital,wght@0,300;0,600;1,300&display=swap">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+<div id="grain" aria-hidden="true"></div>
+
+<nav id="navbar" aria-label="Main navigation">
+  <div class="nav-wrap">
+    <a class="nav-logo" href="/">
+      <svg class="logo-mark" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect id="logo-bg" width="28" height="28" rx="7" fill="#3a7d2c"/>
+        <path d="M14 22c0 0-7-4.5-7-9.5C7 9 10.134 7 14 7s7 2 7 5.5C21 17.5 14 22 14 22z" fill="#fff" opacity=".9"/>
+        <path id="logo-stem" d="M14 22 L14 12" stroke="#3a7d2c" stroke-width="1.5" stroke-linecap="round"/>
+        <path id="logo-leaf1" d="M14 15 Q11 13 10 10" stroke="#3a7d2c" stroke-width="1" stroke-linecap="round"/>
+        <path id="logo-leaf2" d="M14 18 Q17 16 18 13" stroke="#3a7d2c" stroke-width="1" stroke-linecap="round"/>
+      </svg>
+      MXT<span id="lab-text">Lab</span>
+      <span class="nav-badge">Agriculture</span>
+    </a>
+    <ul class="nav-links">
+      <li class="has-drop">
+        <a href="/topics.html">Topics <span class="drop-arrow">▾</span></a>
+        <div class="dropdown">
+          <a href="/topics.html?grade=9">🌾 Grade 9 Agriculture</a>
+          <a href="/topics.html?grade=10">🌿 Grade 10 Agriculture</a>
+        </div>
+      </li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/resources.html">Resources</a></li>
+      <li><a href="/careers.html">Careers</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="nav-icon-btn" id="search-trigger" aria-label="Search">
+        <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+      <button class="theme-toggle" id="theme-toggle">
+        <span id="t-icon">🌙</span><span id="t-lbl">Dark</span>
+      </button>
+      <a class="btn-nav-cta" href="/topics.html">Explore Topics →</a>
+      <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Open navigation menu">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-drawer" id="mobile-drawer" role="navigation" aria-label="Mobile navigation">
+  <ul class="mob-links">
+    <li><a href="/">🏠 Home</a></li>
+    <div class="mob-label">Topics</div>
+    <li><a href="/topics.html?grade=9">🌾 Grade 9 Agriculture</a></li>
+    <li><a href="/topics.html?grade=10">🌿 Grade 10 Agriculture</a></li>
+    <li><a href="/about.html">👥 About MXT Lab</a></li>
+    <li><a href="/resources.html">📚 Resources</a></li>
+    <li><a href="/careers.html">🌱 Careers</a></li>
+    <li><a href="/contact.html">✉️ Contact</a></li>
+  </ul>
+</div>
+
+<div id="search-overlay" role="dialog" aria-modal="true" aria-label="Search lessons">
+  <div class="search-box">
+    <div class="search-row">
+      <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="search" id="search-input" placeholder="Search topics..." autocomplete="off"/>
+      <button class="s-close" id="search-close">Esc</button>
+    </div>
+    <div class="s-results" id="s-results"></div>
+  </div>
+</div>
+
+<main id="main">
+    <div class="page active" id="page-lesson">
+      <div class="lesson-wrap">
+        <div class="lesson-breadcrumb">
+          <a href="/">Home</a>
+          <span class="sep">›</span>
+          <a href="/topics.html?grade=9">Grade 9 Topics</a>
+          <span class="sep">›</span>
+          <span style="color:var(--ink)">Aqua Farming Systems & Practices</span>
+        </div>
+
+        <div class="lesson-header">
+          <div class="lesson-strand-badge">🦐 Strand 3: Aquaculture · Unit 2 · Grade 9</div>
+          <h1>Aqua Farming Systems & Practices</h1>
+          <div class="lesson-meta-row">
+            <span>📖 3 lessons</span>
+            <span>🇵🇬 Papua New Guinea Curriculum</span>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">
+            <span class="chip chip-g" style="cursor:default">Principles of Aqua Farming</span>
+            <span class="chip" style="cursor:default">Types of Aqua Farming Systems</span>
+            <span class="chip" style="cursor:default">Monoculture & Polyculture</span></div>
+        </div>
+
+        <div class="lesson-body">
+          <div class="lesson-objectives">
+            <h3>Learning Objectives</h3>
+            <ul><li>Explain the management principles of different types of aqua farming</li><li>Identify and describe different aqua farming systems and practices used in different environments</li><li>Distinguish between monoculture and polyculture fish production systems</li></ul>
+          </div>
+
+
+  <div class="lesson-section">
+    <h2>Principles of Aqua Farming</h2>
+    <p>Aquaculture is the farming of aquatic organisms such as fish, crustaceans, molluscs, and aquatic plants. Successful aquaculture takes into consideration the biology of the aquatic species — including feeding habits, water flow and temperature needs, and disease prevention — as well as the engineering design of the farming system, including water source, pond design, filtration, and aeration.</p>
+    <p>The key principles of freshwater aquaculture include:</p>
+    <ul>
+      <li>Principles of organic aquaculture</li>
+      <li>Pre-stocking and post-stocking pond management</li>
+      <li>Criteria for selection of candidate species for culture</li>
+      <li>Water and soil quality management in relation to fish production</li>
+      <li>Estimation of pond productivity and factors affecting it</li>
+    </ul>
+  </div>
+  <div class="lesson-section">
+    <h2>Classification of Aquaculture Systems</h2>
+    <p>Aquaculture practices are classified in several ways based on water type, intensity of management, and enclosure type.</p>
+    <h3>By Water Type</h3>
+    <ul>
+      <li><strong>Freshwater farming</strong> — farming in zero-salinity water, mostly inland. Common species: catla, rohu, tilapia, freshwater prawn.</li>
+      <li><strong>Brackish water farming</strong> — farming in water with partial salinity, found near estuaries and river mouths.</li>
+      <li><strong>Marine water farming (Mariculture)</strong> — farming in seawater. Includes molluscs, prawns, shellfish, seaweed, and fish in open sea cages.</li>
+    </ul>
+    <h3>By Intensity of Management</h3>
+    <ul>
+      <li><strong>Extensive system</strong> — large ponds (1–5 ha), low stocking density (under 5,000 fish/ha), no supplemental feeding. Fish depend on natural food. Low yield (500 kg to 2 tonnes/ha) but low cost.</li>
+      <li><strong>Semi-intensive system</strong> — smaller ponds (0.5–1 ha), stocking density of 10,000–15,000 fish/ha. Natural food supplemented with fertilisation and feeding. Moderate yield (3–10 tonnes/ha).</li>
+      <li><strong>Intensive system</strong> — small ponds or tanks, very high stocking density (10–50 fish/m³). Fish fed completely on formulated feed. Water quality actively managed using aerators. Highest yields (15–100+ tonnes/ha) but high capital cost.</li>
+    </ul>
+    <h3>By Enclosure Type</h3>
+    <ul>
+      <li><strong>Pond culture</strong> — the most common method. Water held in an enclosed area by artificial bunds. Ponds filled by rain, canals, or bores.</li>
+      <li><strong>Cage culture</strong> — fish raised in cages enclosed on all sides, allowing free water circulation. Suited to lakes, reservoirs, and rivers. Fish species include carps, tilapia, trout, and catfish.</li>
+      <li><strong>Pen culture</strong> — fish raised in an enclosure open at the bottom, with the lake floor forming the base. Fish can feed on natural benthic fauna.</li>
+      <li><strong>Raceway culture</strong> — fish raised in running water at high stocking density. Two types: linear (ponds in sequence) and lateral (ponds in parallel). Lateral type reduces disease spread between ponds.</li>
+    </ul>
+  </div>
+  <div class="lesson-section">
+    <h2>Monoculture and Polyculture</h2>
+    <p><strong>Monoculture</strong> is a production system in which only one fish species is reared. Common monoculture species include trout, tilapia, catfish, carps, and shrimp. It is widely practised in intensive systems where supplemental feeding is essential.</p>
+    <p><strong>Polyculture</strong> is a system in which two or more different species are farmed together. Species are chosen so that they occupy different water depths and have different food preferences, avoiding competition. Polyculture generally produces higher yields than monoculture under the same conditions.</p>
+    <p>The principal requirements for a successful polyculture system are:</p>
+    <ul>
+      <li>Species must have different feeding habits</li>
+      <li>Species should occupy different columns (levels) within the pond</li>
+      <li>All species should reach marketable size at the same time</li>
+      <li>Species should be non-predatory toward each other</li>
+    </ul>
+  </div>
+
+          <div class="key-terms">
+            <h3>Key Terms</h3>
+            <div class="term-list">
+                <div class="term"><span class="term-word">Aquaculture</span><span class="term-def">The farming of aquatic organisms such as fish, crustaceans, molluscs, and aquatic plants under controlled conditions.</span></div>
+
+                <div class="term"><span class="term-word">Extensive system</span><span class="term-def">A low-input aquaculture system with large ponds and low stocking density, relying mainly on natural food production.</span></div>
+
+                <div class="term"><span class="term-word">Intensive system</span><span class="term-def">A high-input aquaculture system with small ponds, high stocking density, and formulated feed to achieve maximum production.</span></div>
+
+                <div class="term"><span class="term-word">Semi-intensive system</span><span class="term-def">An intermediate system combining natural food production with supplemental feeding to achieve moderate yields.</span></div>
+
+                <div class="term"><span class="term-word">Monoculture</span><span class="term-def">A fish production system in which only one fish species is reared in the culture system.</span></div>
+
+                <div class="term"><span class="term-word">Polyculture</span><span class="term-def">A fish production system in which two or more different species are farmed together, using different food sources to reduce competition.</span></div>
+
+                <div class="term"><span class="term-word">Cage culture</span><span class="term-def">Rearing fish in a volume of water enclosed on all sides including bottom, allowing free circulation of water.</span></div>
+
+                <div class="term"><span class="term-word">Pond culture</span><span class="term-def">The most common method of fish culture, where water is maintained in an enclosed area by artificial construction of dikes or bunds.</span></div></div>
+          </div>
+
+          <div class="summary-box">
+            <h3>📝 Summary — What You Should Know</h3>
+            <ul><li>Aquaculture is the controlled farming of fish, crustaceans, molluscs, and aquatic plants</li><li>Systems are classified by water type: freshwater, brackish water, and marine (mariculture)</li><li>By intensity: extensive (low input/yield), semi-intensive (moderate), and intensive (high input/yield)</li><li>By enclosure type: pond culture, cage culture, pen culture, and raceway culture</li><li>Monoculture farms one species; polyculture farms two or more species with different food habits</li><li>Intensive systems use aerators, formulated feed, and small tanks to achieve the highest yields</li></ul>
+          </div>
+
+
+          <div class="key-terms" style="border-color:var(--blue);margin-top:0">
+            <h3 style="color:var(--blue)">Further Reading</h3>
+            <div style="display:flex;flex-direction:column;gap:10px">
+
+                <a href="https://www.fao.org/fishery/en/aquaculture" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:flex-start;gap:10px;font-size:.87rem;color:var(--ink2);transition:color .18s" onmouseover="this.style.color='var(--blue)'" onmouseout="this.style.color='var(--ink2)'">
+                  <span style="color:var(--blue);flex-shrink:0">↗</span>
+                  <span><strong style="color:var(--blue)">FAO Aquaculture</strong> — Aquaculture systems, fish farming practices, and Pacific fisheries information from the FAO.</span>
+                </a>
+            </div>
+          </div>
+
+          <div class="quiz-section" id="quiz-section">
+            <div class="quiz-header">
+              <div class="quiz-icon">❓</div>
+              <div>
+                <h2>Check Your Understanding</h2>
+                <p style="font-size:.8rem;color:var(--ink3);margin:2px 0 0">Answer all questions then submit to see how you did.</p>
+              </div>
+            </div>
+
+              <div class="quiz-q" id="qq-0" data-ans="2">
+                <p>1. Which aquaculture system requires the highest capital investment but produces the greatest yield?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-0-0">
+                      <input type="radio" name="q0" value="0" /> Extensive
+                    </label>
+
+                    <label class="qopt" id="qopt-0-1">
+                      <input type="radio" name="q0" value="1" /> Semi-intensive
+                    </label>
+
+                    <label class="qopt" id="qopt-0-2">
+                      <input type="radio" name="q0" value="2" /> Intensive
+                    </label>
+
+                    <label class="qopt" id="qopt-0-3">
+                      <input type="radio" name="q0" value="3" /> Pond culture
+                    </label>
+
+                </div>
+              </div>
+
+              <div class="quiz-q" id="qq-1" data-ans="1">
+                <p>2. What is the main advantage of polyculture over monoculture?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-1-0">
+                      <input type="radio" name="q1" value="0" /> It requires less water
+                    </label>
+
+                    <label class="qopt" id="qopt-1-1">
+                      <input type="radio" name="q1" value="1" /> Different species use different food sources, reducing competition and increasing yield
+                    </label>
+
+                    <label class="qopt" id="qopt-1-2">
+                      <input type="radio" name="q1" value="2" /> It only requires one type of feed
+                    </label>
+
+                    <label class="qopt" id="qopt-1-3">
+                      <input type="radio" name="q1" value="3" /> It is cheaper to set up
+                    </label>
+
+                </div>
+              </div>
+
+              <div class="quiz-q" id="qq-2" data-ans="1">
+                <p>3. In cage culture, what happens to water?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-2-0">
+                      <input type="radio" name="q2" value="0" /> It is pumped in and out manually
+                    </label>
+
+                    <label class="qopt" id="qopt-2-1">
+                      <input type="radio" name="q2" value="1" /> It circulates freely through the cage
+                    </label>
+
+                    <label class="qopt" id="qopt-2-2">
+                      <input type="radio" name="q2" value="2" /> It is treated with chemicals daily
+                    </label>
+
+                    <label class="qopt" id="qopt-2-3">
+                      <input type="radio" name="q2" value="3" /> It remains still around the cage
+                    </label>
+
+                </div>
+              </div>
+
+              <div class="quiz-q" id="qq-3" data-ans="2">
+                <p>4. What type of aquaculture involves farming in seawater?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-3-0">
+                      <input type="radio" name="q3" value="0" /> Freshwater farming
+                    </label>
+
+                    <label class="qopt" id="qopt-3-1">
+                      <input type="radio" name="q3" value="1" /> Brackish water farming
+                    </label>
+
+                    <label class="qopt" id="qopt-3-2">
+                      <input type="radio" name="q3" value="2" /> Mariculture
+                    </label>
+
+                    <label class="qopt" id="qopt-3-3">
+                      <input type="radio" name="q3" value="3" /> Raceway culture
+                    </label>
+
+                </div>
+              </div>
+
+              <div class="quiz-q" id="qq-4" data-ans="2">
+                <p>5. In an extensive aquaculture system, what do fish primarily rely on for food?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-4-0">
+                      <input type="radio" name="q4" value="0" /> Formulated pellet feed
+                    </label>
+
+                    <label class="qopt" id="qopt-4-1">
+                      <input type="radio" name="q4" value="1" /> Organic manure only
+                    </label>
+
+                    <label class="qopt" id="qopt-4-2">
+                      <input type="radio" name="q4" value="2" /> Natural food produced in the pond
+                    </label>
+
+                    <label class="qopt" id="qopt-4-3">
+                      <input type="radio" name="q4" value="3" /> Feed from automatic feeders
+                    </label>
+
+                </div>
+              </div>
+            <button class="btn btn-primary btn-sm" id="quiz-submit-btn" onclick="submitLessonQuiz()">Submit Answers →</button>
+            <div class="quiz-result" id="quiz-result" style="display:none"></div>
+          </div>
+
+          <div class="lesson-nav">
+            <a class="lesson-nav-btn" href="/lessons/g9-intro-aquaculture.html">← Previous Topic</a>
+            <a class="btn btn-ghost btn-sm" href="/topics.html?grade=9">All Topics</a>
+            <a class="lesson-nav-btn" href="/lessons/g9-aqua-technology.html">Next Topic →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="fl" href="/">
+          <svg width="22" height="22" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="28" height="28" rx="7" fill="#3a7d2c"/>
+            <path d="M14 22c0 0-7-4.5-7-9.5C7 9 10.134 7 14 7s7 2 7 5.5C21 17.5 14 22 14 22z" fill="#fff" opacity=".9"/>
+          </svg>
+          MXT<span>Lab</span>
+        </a>
+        <p class="fd">Interactive Agriculture learning for Grade 9 and Grade 10 students in Papua New Guinea.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button id="back-top" onclick="backToTop()" aria-label="Back to top">↑</button>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

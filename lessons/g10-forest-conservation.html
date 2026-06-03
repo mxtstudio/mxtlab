@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-57V6ZXCDK8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-57V6ZXCDK8');
+</script>
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7249885633789743" crossorigin="anonymous"></script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Preserving & Sustaining Forests — Agriculture lesson for Grade 10 students."/>
+<meta name="robots" content="index, follow"/>
+<meta name="author" content="MXT Lab"/>
+<meta property="og:title" content="Preserving & Sustaining Forests | MXT Lab"/>
+<meta property="og:description" content="Interactive lesson on Preserving & Sustaining Forests for Grade 10 Agriculture students."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://mxtlab.online/lessons/g10-forest-conservation.html"/>
+<meta property="og:image" content="https://mxtlab.online/og-image.png"/>
+<link rel="canonical" href="https://mxtlab.online/lessons/g10-forest-conservation.html"/>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg"/>
+<title>Preserving & Sustaining Forests — MXT Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700;800&family=Fraunces:ital,wght@0,300;0,600;1,300&display=swap">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+<div id="grain" aria-hidden="true"></div>
+
+<nav id="navbar" aria-label="Main navigation">
+  <div class="nav-wrap">
+    <a class="nav-logo" href="/">
+      <svg class="logo-mark" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect id="logo-bg" width="28" height="28" rx="7" fill="#3a7d2c"/>
+        <path d="M14 22c0 0-7-4.5-7-9.5C7 9 10.134 7 14 7s7 2 7 5.5C21 17.5 14 22 14 22z" fill="#fff" opacity=".9"/>
+        <path id="logo-stem" d="M14 22 L14 12" stroke="#3a7d2c" stroke-width="1.5" stroke-linecap="round"/>
+        <path id="logo-leaf1" d="M14 15 Q11 13 10 10" stroke="#3a7d2c" stroke-width="1" stroke-linecap="round"/>
+        <path id="logo-leaf2" d="M14 18 Q17 16 18 13" stroke="#3a7d2c" stroke-width="1" stroke-linecap="round"/>
+      </svg>
+      MXT<span id="lab-text">Lab</span>
+      <span class="nav-badge">Agriculture</span>
+    </a>
+    <ul class="nav-links">
+      <li class="has-drop">
+        <a href="/topics.html">Topics <span class="drop-arrow">▾</span></a>
+        <div class="dropdown">
+          <a href="/topics.html?grade=9">🌾 Grade 9 Agriculture</a>
+          <a href="/topics.html?grade=10">🌿 Grade 10 Agriculture</a>
+        </div>
+      </li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/resources.html">Resources</a></li>
+      <li><a href="/careers.html">Careers</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="nav-icon-btn" id="search-trigger" aria-label="Search">
+        <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+      <button class="theme-toggle" id="theme-toggle">
+        <span id="t-icon">🌙</span><span id="t-lbl">Dark</span>
+      </button>
+      <a class="btn-nav-cta" href="/topics.html">Explore Topics →</a>
+      <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Open navigation menu">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-drawer" id="mobile-drawer" role="navigation" aria-label="Mobile navigation">
+  <ul class="mob-links">
+    <li><a href="/">🏠 Home</a></li>
+    <div class="mob-label">Topics</div>
+    <li><a href="/topics.html?grade=9">🌾 Grade 9 Agriculture</a></li>
+    <li><a href="/topics.html?grade=10">🌿 Grade 10 Agriculture</a></li>
+    <li><a href="/about.html">👥 About MXT Lab</a></li>
+    <li><a href="/resources.html">📚 Resources</a></li>
+    <li><a href="/careers.html">🌱 Careers</a></li>
+    <li><a href="/contact.html">✉️ Contact</a></li>
+  </ul>
+</div>
+
+<div id="search-overlay" role="dialog" aria-modal="true" aria-label="Search lessons">
+  <div class="search-box">
+    <div class="search-row">
+      <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="search" id="search-input" placeholder="Search topics..." autocomplete="off"/>
+      <button class="s-close" id="search-close">Esc</button>
+    </div>
+    <div class="s-results" id="s-results"></div>
+  </div>
+</div>
+
+<main id="main">
+    <div class="page active" id="page-lesson">
+      <div class="lesson-wrap">
+        <div class="lesson-breadcrumb">
+          <a href="/">Home</a>
+          <span class="sep">›</span>
+          <a href="/topics.html?grade=10">Grade 10 Topics</a>
+          <span class="sep">›</span>
+          <span style="color:var(--ink)">Preserving & Sustaining Forests</span>
+        </div>
+
+        <div class="lesson-header">
+          <div class="lesson-strand-badge">🌿 Strand 4: Natural Resources · Unit 5 · Grade 10</div>
+          <h1>Preserving & Sustaining Forests</h1>
+          <div class="lesson-meta-row">
+            <span>📖 3 lessons</span>
+            <span>🇵🇬 Papua New Guinea Curriculum</span>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">
+            <span class="chip chip-g" style="cursor:default">Conservation of Forests</span>
+            <span class="chip" style="cursor:default">Forest Preservation Methods</span>
+            <span class="chip" style="cursor:default">Sustainable Forestry Practices</span></div>
+        </div>
+
+        <div class="lesson-body">
+          <div class="lesson-objectives">
+            <h3>Learning Objectives</h3>
+            <ul><li>Explain what forest conservation is and describe the threats that make conservation necessary</li><li>Identify different ways of preserving and sustaining forests in different environments</li><li>Describe sustainable forestry practices that allow forests to be used without being permanently destroyed</li></ul>
+          </div>
+
+
+  <div class="lesson-section">
+    <h2>What is Forest Conservation?</h2>
+    <p>Conservation of the forest means saving the forest environment from destruction. Forest conservation is the preservation and protection of forests. It also involves the reversal of deforestation and environmental pollution. The preservation of all natural resources is absolutely essential for the balance of our ecosystem.</p>
+    <p>Forests face threats from human activities including: agriculture expansion (clearing land for farms and pastures), transport infrastructure development (road building through forested areas), unsustainable logging, air pollution, and intentional burning of forests.</p>
+  </div>
+  <div class="lesson-section">
+    <h2>Ways of Preserving and Sustaining Forests</h2>
+    <h3>Controlled Deforestation</h3>
+    <p>While deforestation cannot be avoided completely, it must be controlled. Young and immature trees should not be felled. Large-scale commercial deforestation must be avoided. Adapting practices such as clear-cutting in rotation with natural regeneration, or selective cutting, will be beneficial in the long run. Sustainable use of the forest means harvesting at the rate at which forests can regenerate.</p>
+    <h3>Protection Against Forest Fires</h3>
+    <p>Forest fires are one of the most common and deadly causes of forest loss. They can start due to natural causes (lightning) or accidents caused by humans, or even intentionally. Once a fire spreads in a forest it is very difficult to control. Precautions include:</p>
+    <ul>
+      <li>Making fire lanes — cleared strips that act as barriers to stop fire spreading</li>
+      <li>Spreading fire retardant chemicals in high-risk areas</li>
+      <li>Clearing out dry leaves and dead trees that act as fuel</li>
+      <li>Early warning monitoring systems using sensors and drones</li>
+    </ul>
+    <h3>Afforestation</h3>
+    <p>Afforestation is the process of planting more trees in an area to increase forest cover. It can be done through manual transplantation or fresh plantation of native tree species. It is an attempt to balance our ecosystem and reduce the effects of deforestation and environmental pollution of all types.</p>
+    <h3>Better Farming Practices</h3>
+    <p>Slash and burn farming, overgrazing by cattle, and shifting agriculture are all farming practices that are harmful to the environment and particularly to forests. These practices must be kept under control and replaced with sustainable alternatives such as:</p>
+    <ul>
+      <li>Agroforestry — integrating trees with crops and animals to reduce the pressure to clear new forest land</li>
+      <li>Permanent field agriculture — farming the same land continuously using soil improvement techniques rather than clearing new forest areas</li>
+      <li>Community forest management — giving local communities rights and responsibility for sustainably managing their forest resources</li>
+    </ul>
+  </div>
+  <div class="lesson-section">
+    <h2>Papua New Guinea and Forest Conservation</h2>
+    <p>Papua New Guinea is home to some of the world's largest and most biodiverse tropical forests. PNG's forests cover approximately 70% of the country's land area and are home to thousands of plant and animal species found nowhere else on Earth.</p>
+    <p>Key conservation challenges in PNG include: large-scale commercial logging concessions, land clearing for oil palm plantations, shifting cultivation by smallholder farmers, and illegal logging in protected areas. Conservation efforts are supported through: community-based forest management agreements, protected area networks, REDD+ programs (Reducing Emissions from Deforestation and Forest Degradation), and PNG government forestry regulations under the Forestry Act 1993.</p>
+  </div>
+
+          <div class="key-terms">
+            <h3>Key Terms</h3>
+            <div class="term-list">
+                <div class="term"><span class="term-word">Forest conservation</span><span class="term-def">The preservation and protection of forests from destruction, including the reversal of deforestation and environmental pollution.</span></div>
+
+                <div class="term"><span class="term-word">Controlled deforestation</span><span class="term-def">Managing the rate and extent of tree felling so that forests are not cleared faster than they can regenerate.</span></div>
+
+                <div class="term"><span class="term-word">Afforestation</span><span class="term-def">The process of planting trees in an area to increase forest cover, balance the ecosystem, and reduce the effects of deforestation.</span></div>
+
+                <div class="term"><span class="term-word">Fire lane</span><span class="term-def">A cleared strip of land created in a forest to act as a barrier to prevent fire from spreading from one area to another.</span></div>
+
+                <div class="term"><span class="term-word">Slash and burn farming</span><span class="term-def">A farming practice where vegetation is cut down and burned to clear land for agriculture. Harmful to forest ecosystems.</span></div>
+
+                <div class="term"><span class="term-word">Shifting agriculture</span><span class="term-def">A farming practice where cultivated land is left fallow after a few years and new forest areas are cleared. Can cause permanent deforestation.</span></div></div>
+          </div>
+
+          <div class="summary-box">
+            <h3>📝 Summary — What You Should Know</h3>
+            <ul><li>Forest conservation means preserving and protecting forests from destruction and reversing deforestation</li><li>Threats include agriculture expansion, road building, unsustainable logging, pollution, and burning</li><li>Controlled deforestation means harvesting at the rate forests can regenerate, avoiding clear-cutting young trees</li><li>Fire lanes, fire retardant chemicals, and early monitoring systems protect against forest fires</li><li>Afforestation increases forest cover through planting native trees to restore degraded areas</li><li>Sustainable alternatives to slash-and-burn include agroforestry and permanent field agriculture</li></ul>
+          </div>
+
+
+          <div class="key-terms" style="border-color:var(--blue);margin-top:0">
+            <h3 style="color:var(--blue)">Further Reading</h3>
+            <div style="display:flex;flex-direction:column;gap:10px">
+
+                <a href="https://www.fao.org/forestry/en/" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:flex-start;gap:10px;font-size:.87rem;color:var(--ink2);transition:color .18s" onmouseover="this.style.color='var(--blue)'" onmouseout="this.style.color='var(--ink2)'">
+                  <span style="color:var(--blue);flex-shrink:0">↗</span>
+                  <span><strong style="color:var(--blue)">FAO Forest Conservation</strong> — Forest conservation, afforestation, and sustainable forest management resources from the FAO.</span>
+                </a>
+            </div>
+          </div>
+
+          <div class="quiz-section" id="quiz-section">
+            <div class="quiz-header">
+              <div class="quiz-icon">❓</div>
+              <div>
+                <h2>Check Your Understanding</h2>
+                <p style="font-size:.8rem;color:var(--ink3);margin:2px 0 0">Answer all questions then submit to see how you did.</p>
+              </div>
+            </div>
+
+              <div class="quiz-q" id="qq-0" data-ans="1">
+                <p>1. What is the main goal of forest conservation?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-0-0">
+                      <input type="radio" name="q0" value="0" /> Clearing forests for agriculture and development
+                    </label>
+
+                    <label class="qopt" id="qopt-0-1">
+                      <input type="radio" name="q0" value="1" /> Saving forests from destruction and reversing deforestation
+                    </label>
+
+                    <label class="qopt" id="qopt-0-2">
+                      <input type="radio" name="q0" value="2" /> Maximising timber production from all forest areas
+                    </label>
+
+                    <label class="qopt" id="qopt-0-3">
+                      <input type="radio" name="q0" value="3" /> Replacing natural forests with commercial plantations
+                    </label>
+
+                </div>
+              </div>
+
+              <div class="quiz-q" id="qq-1" data-ans="1">
+                <p>2. What is a fire lane in forest management?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-1-0">
+                      <input type="radio" name="q1" value="0" /> A road used by fire trucks in urban areas
+                    </label>
+
+                    <label class="qopt" id="qopt-1-1">
+                      <input type="radio" name="q1" value="1" /> A cleared strip of land that acts as a barrier to prevent fire from spreading
+                    </label>
+
+                    <label class="qopt" id="qopt-1-2">
+                      <input type="radio" name="q1" value="2" /> A chemical sprayed on trees to make them fire-resistant
+                    </label>
+
+                    <label class="qopt" id="qopt-1-3">
+                      <input type="radio" name="q1" value="3" /> A zone where controlled burning is allowed
+                    </label>
+
+                </div>
+              </div>
+
+              <div class="quiz-q" id="qq-2" data-ans="1">
+                <p>3. What is afforestation?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-2-0">
+                      <input type="radio" name="q2" value="0" /> The cutting down of old trees to make room for new growth
+                    </label>
+
+                    <label class="qopt" id="qopt-2-1">
+                      <input type="radio" name="q2" value="1" /> The process of planting trees in an area to increase forest cover
+                    </label>
+
+                    <label class="qopt" id="qopt-2-2">
+                      <input type="radio" name="q2" value="2" /> The removal of invasive tree species from a forest
+                    </label>
+
+                    <label class="qopt" id="qopt-2-3">
+                      <input type="radio" name="q2" value="3" /> The practice of burning forest undergrowth to stimulate tree growth
+                    </label>
+
+                </div>
+              </div>
+
+              <div class="quiz-q" id="qq-3" data-ans="2">
+                <p>4. Which farming practice is most harmful to forest ecosystems in PNG?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-3-0">
+                      <input type="radio" name="q3" value="0" /> Agroforestry with permanent tree crops
+                    </label>
+
+                    <label class="qopt" id="qopt-3-1">
+                      <input type="radio" name="q3" value="1" /> Permanent field agriculture with soil improvement
+                    </label>
+
+                    <label class="qopt" id="qopt-3-2">
+                      <input type="radio" name="q3" value="2" /> Slash and burn farming and shifting agriculture
+                    </label>
+
+                    <label class="qopt" id="qopt-3-3">
+                      <input type="radio" name="q3" value="3" /> Community-based forest management
+                    </label>
+
+                </div>
+              </div>
+
+              <div class="quiz-q" id="qq-4" data-ans="2">
+                <p>5. PNG's forests cover approximately what percentage of the country's land area?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-4-0">
+                      <input type="radio" name="q4" value="0" /> 30%
+                    </label>
+
+                    <label class="qopt" id="qopt-4-1">
+                      <input type="radio" name="q4" value="1" /> 50%
+                    </label>
+
+                    <label class="qopt" id="qopt-4-2">
+                      <input type="radio" name="q4" value="2" /> 70%
+                    </label>
+
+                    <label class="qopt" id="qopt-4-3">
+                      <input type="radio" name="q4" value="3" /> 90%
+                    </label>
+
+                </div>
+              </div>
+            <button class="btn btn-primary btn-sm" id="quiz-submit-btn" onclick="submitLessonQuiz()">Submit Answers →</button>
+            <div class="quiz-result" id="quiz-result" style="display:none"></div>
+          </div>
+
+          <div class="lesson-nav">
+            <a class="lesson-nav-btn" href="/lessons/g10-forest-management.html">← Previous Topic</a>
+            <a class="btn btn-ghost btn-sm" href="/topics.html?grade=10">All Topics</a>
+            <a class="lesson-nav-btn" href="/lessons/g10-forestry-tech.html">Next Topic →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="fl" href="/">
+          <svg width="22" height="22" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="28" height="28" rx="7" fill="#3a7d2c"/>
+            <path d="M14 22c0 0-7-4.5-7-9.5C7 9 10.134 7 14 7s7 2 7 5.5C21 17.5 14 22 14 22z" fill="#fff" opacity=".9"/>
+          </svg>
+          MXT<span>Lab</span>
+        </a>
+        <p class="fd">Interactive Agriculture learning for Grade 9 and Grade 10 students in Papua New Guinea.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button id="back-top" onclick="backToTop()" aria-label="Back to top">↑</button>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

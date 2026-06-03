@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-57V6ZXCDK8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-57V6ZXCDK8');
+</script>
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7249885633789743" crossorigin="anonymous"></script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Technology in Aquaculture & Capture Fishery — Agriculture lesson for Grade 10 students."/>
+<meta name="robots" content="index, follow"/>
+<meta name="author" content="MXT Lab"/>
+<meta property="og:title" content="Technology in Aquaculture & Capture Fishery | MXT Lab"/>
+<meta property="og:description" content="Interactive lesson on Technology in Aquaculture & Capture Fishery for Grade 10 Agriculture students."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://mxtlab.online/lessons/g10-aqua-tech.html"/>
+<meta property="og:image" content="https://mxtlab.online/og-image.png"/>
+<link rel="canonical" href="https://mxtlab.online/lessons/g10-aqua-tech.html"/>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg"/>
+<title>Technology in Aquaculture & Capture Fishery — MXT Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700;800&family=Fraunces:ital,wght@0,300;0,600;1,300&display=swap">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+<div id="grain" aria-hidden="true"></div>
+
+<nav id="navbar" aria-label="Main navigation">
+  <div class="nav-wrap">
+    <a class="nav-logo" href="/">
+      <svg class="logo-mark" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect id="logo-bg" width="28" height="28" rx="7" fill="#3a7d2c"/>
+        <path d="M14 22c0 0-7-4.5-7-9.5C7 9 10.134 7 14 7s7 2 7 5.5C21 17.5 14 22 14 22z" fill="#fff" opacity=".9"/>
+        <path id="logo-stem" d="M14 22 L14 12" stroke="#3a7d2c" stroke-width="1.5" stroke-linecap="round"/>
+        <path id="logo-leaf1" d="M14 15 Q11 13 10 10" stroke="#3a7d2c" stroke-width="1" stroke-linecap="round"/>
+        <path id="logo-leaf2" d="M14 18 Q17 16 18 13" stroke="#3a7d2c" stroke-width="1" stroke-linecap="round"/>
+      </svg>
+      MXT<span id="lab-text">Lab</span>
+      <span class="nav-badge">Agriculture</span>
+    </a>
+    <ul class="nav-links">
+      <li class="has-drop">
+        <a href="/topics.html">Topics <span class="drop-arrow">▾</span></a>
+        <div class="dropdown">
+          <a href="/topics.html?grade=9">🌾 Grade 9 Agriculture</a>
+          <a href="/topics.html?grade=10">🌿 Grade 10 Agriculture</a>
+        </div>
+      </li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/resources.html">Resources</a></li>
+      <li><a href="/careers.html">Careers</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="nav-icon-btn" id="search-trigger" aria-label="Search">
+        <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+      <button class="theme-toggle" id="theme-toggle">
+        <span id="t-icon">🌙</span><span id="t-lbl">Dark</span>
+      </button>
+      <a class="btn-nav-cta" href="/topics.html">Explore Topics →</a>
+      <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Open navigation menu">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-drawer" id="mobile-drawer" role="navigation" aria-label="Mobile navigation">
+  <ul class="mob-links">
+    <li><a href="/">🏠 Home</a></li>
+    <div class="mob-label">Topics</div>
+    <li><a href="/topics.html?grade=9">🌾 Grade 9 Agriculture</a></li>
+    <li><a href="/topics.html?grade=10">🌿 Grade 10 Agriculture</a></li>
+    <li><a href="/about.html">👥 About MXT Lab</a></li>
+    <li><a href="/resources.html">📚 Resources</a></li>
+    <li><a href="/careers.html">🌱 Careers</a></li>
+    <li><a href="/contact.html">✉️ Contact</a></li>
+  </ul>
+</div>
+
+<div id="search-overlay" role="dialog" aria-modal="true" aria-label="Search lessons">
+  <div class="search-box">
+    <div class="search-row">
+      <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="search" id="search-input" placeholder="Search topics..." autocomplete="off"/>
+      <button class="s-close" id="search-close">Esc</button>
+    </div>
+    <div class="s-results" id="s-results"></div>
+  </div>
+</div>
+
+<main id="main">
+    <div class="page active" id="page-lesson">
+      <div class="lesson-wrap">
+        <div class="lesson-breadcrumb">
+          <a href="/">Home</a>
+          <span class="sep">›</span>
+          <a href="/topics.html?grade=10">Grade 10 Topics</a>
+          <span class="sep">›</span>
+          <span style="color:var(--ink)">Technology in Aquaculture & Capture Fishery</span>
+        </div>
+
+        <div class="lesson-header">
+          <div class="lesson-strand-badge">📡 Strand 3 & 4: Aquaculture & NRM · Unit 3 · Grade 10</div>
+          <h1>Technology in Aquaculture & Capture Fishery</h1>
+          <div class="lesson-meta-row">
+            <span>📖 3 lessons</span>
+            <span>🇵🇬 Papua New Guinea Curriculum</span>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">
+            <span class="chip chip-g" style="cursor:default">Fish Harvest Technology</span>
+            <span class="chip" style="cursor:default">Fish Processing Technology</span>
+            <span class="chip" style="cursor:default">Advantages & Disadvantages of Technology</span></div>
+        </div>
+
+        <div class="lesson-body">
+          <div class="lesson-objectives">
+            <h3>Learning Objectives</h3>
+            <ul><li>Explain how technology is used in fish farming, harvesting, and preservation in different environments</li><li>Describe the steps involved in processing fish products for commercial purposes</li><li>Evaluate the advantages and disadvantages of using technology in capture fishery</li></ul>
+          </div>
+
+
+  <div class="lesson-section">
+    <h2>Fish Harvest Technology</h2>
+    <p>Fish harvest technology provides employment and economic benefits to large sections of societies. It encompasses various processes of catching aquatic organisms, from the simplest gathering of organisms to the most highly sophisticated systems used to capture large tuna and whales.</p>
+    <p>The most significant technological developments supporting the evolution of fish harvest technology are:</p>
+    <ul>
+      <li><strong>Developments in craft technology</strong> — mechanisation of propulsion, gear, and catch handling</li>
+      <li><strong>Introduction of synthetic gear materials</strong> — nylon and other synthetic fibres that are stronger, lighter, and more durable than natural materials</li>
+      <li><strong>Developments in acoustic fish detection</strong> — sonar systems that locate fish schools underwater; satellite-based remote sensing</li>
+      <li><strong>Electronic navigation and position fixing</strong> — GPS technology that has positively influenced the safety of fishermen, providing better communication, navigation, and emergency rescue systems (GMDSS)</li>
+      <li><strong>Awareness of responsible fishing</strong> — technology developed to ensure sustainability, protect biodiversity, and improve energy efficiency</li>
+    </ul>
+  </div>
+  <div class="lesson-section">
+    <h2>Fish Processing Technology</h2>
+    <p>When fish are captured or harvested for commercial purposes, they need preprocessing to be delivered to the next part of the marketing chain in a fresh and undamaged condition. There are four main preprocessing steps:</p>
+    <ul>
+      <li><strong>Handling the catch</strong> — transferring catch from fishing gear to the vessel; sorting and grading; bleeding, gutting, and washing; chilling; and storing until landing. The key rule: kill fish immediately after catching, cut off the head and gills, wash with clean running water, then put fish on ice in insulated boxes. Get fish to the landing area as fast as possible.</li>
+      <li><strong>Removal of scales</strong> — wash the fish, cut off the head, then use a sharp knife to scrape scales toward the head. Turn the fish and scale the other side.</li>
+      <li><strong>Cutting (gutting)</strong> — removing the guts (intestines). Gutting should be carried out regardless of the preservation method to be used. Wash thoroughly with clean running water after gutting.</li>
+      <li><strong>Filleting</strong> — cutting the flesh into strips parallel to the backbone. Fillets may be with or without skin. Fillets are dipped in brine to enhance appearance, reduce drip, and add a salty flavour. They are then packaged and frozen at -35°C to -40°C and stored at -23°C.</li>
+    </ul>
+    <h3>Fish Preservation Technology</h3>
+    <p>Fish preservation methods used in different environments include: control of temperature through refrigeration and freezing; control of water activity through drying, salting, and smoking; physical control of microbial loads through canning; and chemical control through biopreservation and fermentation.</p>
+  </div>
+  <div class="lesson-section">
+    <h2>Advantages and Disadvantages of Technology in Capture Fishery</h2>
+    <p>Each fishery technology has advantages and disadvantages that should be balanced in a protective approach. Responsible fishery technology achieves specific management objectives with the minimum damaging side effects.</p>
+    <h3>Advantages</h3>
+    <ul>
+      <li>More efficient and economically viable fishing operations — e.g., LED lights attached to nets can attract the right catch and guide non-target species to safety</li>
+      <li>Reduction of physical labour required by fishers</li>
+      <li>Improved access to fishery resources</li>
+      <li>Empowers small-scale fishers with market information, allowing better business decisions</li>
+      <li>Improves fisheries management practices and seafood traceability, giving consumers better information</li>
+    </ul>
+    <h3>Disadvantages</h3>
+    <ul>
+      <li><strong>Overfishing</strong> — improved technology combined with increased demand and poor management can exhaust fish populations or cause stocks to collapse completely</li>
+      <li><strong>Habitat damage</strong> — heavy or large fishing gear can harm the environment. Dredging and bottom trawling impact the sea-floor habitat; in areas with sensitive deep-sea corals, gear can cause long-term damage</li>
+      <li><strong>Cost</strong> — technology used in capture fishery is costly, making it inaccessible to many small-scale fishers in developing countries</li>
+    </ul>
+  </div>
+
+          <div class="key-terms">
+            <h3>Key Terms</h3>
+            <div class="term-list">
+                <div class="term"><span class="term-word">Fish harvest technology</span><span class="term-def">Equipment and practices used for finding, catching, handling, and distributing fish from capture fisheries or aquaculture.</span></div>
+
+                <div class="term"><span class="term-word">GPS (Global Positioning System)</span><span class="term-def">Satellite-based technology used for navigation and tracking of fishing vessel locations, improving safety and monitoring.</span></div>
+
+                <div class="term"><span class="term-word">Acoustic fish detection</span><span class="term-def">Technology that uses sound waves (sonar) to locate schools of fish underwater.</span></div>
+
+                <div class="term"><span class="term-word">Filleting</span><span class="term-def">The process of cutting the flesh of a fish into strips (fillets) parallel to the backbone, producing a boneless product.</span></div>
+
+                <div class="term"><span class="term-word">Responsible fishing technology</span><span class="term-def">Fishery technology that achieves specific management objectives with minimum damaging side effects on the ecosystem.</span></div>
+
+                <div class="term"><span class="term-word">LED fishing lights</span><span class="term-def">Energy-efficient lights attached to fishing nets that can attract target species while guiding non-target species away to safety.</span></div></div>
+          </div>
+
+          <div class="summary-box">
+            <h3>📝 Summary — What You Should Know</h3>
+            <ul><li>Key fish harvest technologies include acoustic fish detection, GPS navigation, synthetic gear materials, and mechanised propulsion</li><li>GPS has improved the safety of fishermen through better navigation and emergency rescue systems</li><li>Four main fish preprocessing steps: handling, scale removal, gutting, and filleting</li><li>Fish preservation methods include temperature control (refrigeration, freezing), drying, salting, smoking, and canning</li><li>Technology advantages: efficiency, reduced labour, empowers small-scale fishers, better management data</li><li>Technology disadvantages: risk of overfishing, habitat damage from trawling, and high cost</li></ul>
+          </div>
+
+
+          <div class="key-terms" style="border-color:var(--blue);margin-top:0">
+            <h3 style="color:var(--blue)">Further Reading</h3>
+            <div style="display:flex;flex-direction:column;gap:10px">
+
+                <a href="https://www.fao.org/fishery/en/" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:flex-start;gap:10px;font-size:.87rem;color:var(--ink2);transition:color .18s" onmouseover="this.style.color='var(--blue)'" onmouseout="this.style.color='var(--ink2)'">
+                  <span style="color:var(--blue);flex-shrink:0">↗</span>
+                  <span><strong style="color:var(--blue)">FAO Fishery Technology</strong> — Fish harvesting technology, processing, and sustainable fisheries management from the FAO.</span>
+                </a>
+            </div>
+          </div>
+
+          <div class="quiz-section" id="quiz-section">
+            <div class="quiz-header">
+              <div class="quiz-icon">❓</div>
+              <div>
+                <h2>Check Your Understanding</h2>
+                <p style="font-size:.8rem;color:var(--ink3);margin:2px 0 0">Answer all questions then submit to see how you did.</p>
+              </div>
+            </div>
+
+              <div class="quiz-q" id="qq-0" data-ans="1">
+                <p>1. What is the purpose of GPS technology in capture fishery?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-0-0">
+                      <input type="radio" name="q0" value="0" /> To automatically catch fish without human involvement
+                    </label>
+
+                    <label class="qopt" id="qopt-0-1">
+                      <input type="radio" name="q0" value="1" /> To improve navigation, vessel safety, and monitoring of fishing locations
+                    </label>
+
+                    <label class="qopt" id="qopt-0-2">
+                      <input type="radio" name="q0" value="2" /> To measure the depth of fish ponds
+                    </label>
+
+                    <label class="qopt" id="qopt-0-3">
+                      <input type="radio" name="q0" value="3" /> To process and fillet fish on board the vessel
+                    </label>
+
+                </div>
+              </div>
+
+              <div class="quiz-q" id="qq-1" data-ans="1">
+                <p>2. What is filleting?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-1-0">
+                      <input type="radio" name="q1" value="0" /> Removing scales from the outside of the fish
+                    </label>
+
+                    <label class="qopt" id="qopt-1-1">
+                      <input type="radio" name="q1" value="1" /> Cutting fish flesh into strips parallel to the backbone
+                    </label>
+
+                    <label class="qopt" id="qopt-1-2">
+                      <input type="radio" name="q1" value="2" /> Drying fish in sunlight to preserve it
+                    </label>
+
+                    <label class="qopt" id="qopt-1-3">
+                      <input type="radio" name="q1" value="3" /> Freezing whole fish at -35°C
+                    </label>
+
+                </div>
+              </div>
+
+              <div class="quiz-q" id="qq-2" data-ans="1">
+                <p>3. What is one advantage of LED lights attached to fishing nets?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-2-0">
+                      <input type="radio" name="q2" value="0" /> They illuminate the entire ocean floor
+                    </label>
+
+                    <label class="qopt" id="qopt-2-1">
+                      <input type="radio" name="q2" value="1" /> They attract the right target species while guiding non-target species away
+                    </label>
+
+                    <label class="qopt" id="qopt-2-2">
+                      <input type="radio" name="q2" value="2" /> They replace the need for sonar fish detection
+                    </label>
+
+                    <label class="qopt" id="qopt-2-3">
+                      <input type="radio" name="q2" value="3" /> They reduce the cost of fishing vessel fuel
+                    </label>
+
+                </div>
+              </div>
+
+              <div class="quiz-q" id="qq-3" data-ans="2">
+                <p>4. Which fishing practice can cause long-term damage to deep-sea coral habitats?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-3-0">
+                      <input type="radio" name="q3" value="0" /> Handlining
+                    </label>
+
+                    <label class="qopt" id="qopt-3-1">
+                      <input type="radio" name="q3" value="1" /> Gillnet fishing
+                    </label>
+
+                    <label class="qopt" id="qopt-3-2">
+                      <input type="radio" name="q3" value="2" /> Bottom trawling
+                    </label>
+
+                    <label class="qopt" id="qopt-3-3">
+                      <input type="radio" name="q3" value="3" /> Cast net fishing
+                    </label>
+
+                </div>
+              </div>
+
+              <div class="quiz-q" id="qq-4" data-ans="2">
+                <p>5. At what temperature should fish fillets be frozen for preservation?</p>
+                <div class="quiz-opts">
+
+                    <label class="qopt" id="qopt-4-0">
+                      <input type="radio" name="q4" value="0" /> 0°C to 5°C
+                    </label>
+
+                    <label class="qopt" id="qopt-4-1">
+                      <input type="radio" name="q4" value="1" /> 10°C to 15°C
+                    </label>
+
+                    <label class="qopt" id="qopt-4-2">
+                      <input type="radio" name="q4" value="2" /> -35°C to -40°C
+                    </label>
+
+                    <label class="qopt" id="qopt-4-3">
+                      <input type="radio" name="q4" value="3" /> -5°C to -10°C
+                    </label>
+
+                </div>
+              </div>
+            <button class="btn btn-primary btn-sm" id="quiz-submit-btn" onclick="submitLessonQuiz()">Submit Answers →</button>
+            <div class="quiz-result" id="quiz-result" style="display:none"></div>
+          </div>
+
+          <div class="lesson-nav">
+            <a class="lesson-nav-btn" href="/lessons/g10-capture-fishery.html">← Previous Topic</a>
+            <a class="btn btn-ghost btn-sm" href="/topics.html?grade=10">All Topics</a>
+            <a class="lesson-nav-btn" href="/lessons/g10-forests-types.html">Next Topic →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="fl" href="/">
+          <svg width="22" height="22" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="28" height="28" rx="7" fill="#3a7d2c"/>
+            <path d="M14 22c0 0-7-4.5-7-9.5C7 9 10.134 7 14 7s7 2 7 5.5C21 17.5 14 22 14 22z" fill="#fff" opacity=".9"/>
+          </svg>
+          MXT<span>Lab</span>
+        </a>
+        <p class="fd">Interactive Agriculture learning for Grade 9 and Grade 10 students in Papua New Guinea.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button id="back-top" onclick="backToTop()" aria-label="Back to top">↑</button>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
