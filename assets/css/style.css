@@ -92,8 +92,6 @@ img{max-width:100%}
 .s-hint{padding:10px 20px 14px;font-size:.73rem;color:var(--ink3);display:flex;gap:16px}
 
 /* PAGES */
-.page{display:none}
-.page.active{display:block;animation:pageIn .45s var(--ease) both}
 @keyframes pageIn{from{opacity:0;transform:translateY(18px) scale(.995)}to{opacity:1;transform:translateY(0) scale(1)}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 
