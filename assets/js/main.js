@@ -4483,7 +4483,7 @@ function initReveal(){
   });
   // Also stagger-reveal cards that are immediately visible
   setTimeout(() => {
-    document.querySelectorAll('.page.active [data-reveal]').forEach(el => {
+    document.querySelectorAll('[data-reveal]').forEach(el => {
       const rect = el.getBoundingClientRect();
       if(rect.top < window.innerHeight) el.classList.add('revealed');
     });
@@ -4492,10 +4492,7 @@ function initReveal(){
 
 // Parallax disabled for performance
 
-const _origNav = nav;
-
 /* INIT */
-nav('home');
 
 function submitLessonQuiz() {
     const quizSection = document.getElementById('quiz-section');
