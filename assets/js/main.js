@@ -5417,13 +5417,13 @@ const STRANDS_9 = [
     id:'crops9', strand:'Strand 1', name:'Crops', icon:'🌾', bg:'#e8f5e2', color:'#3a7d2c',
     desc:'Soil science, crop types, farming practices, horticulture, and technology used in crop production.',
     topics:[
-      {id:'g9-soil-formation',title:'Unit 1 — Soil: Types & Formation',icon:'🌱',bg:'#e8f5e2',desc:'What soil is made of, how it forms, and the physical and chemical properties of different soil types.',status:'coming-soon',lessons:4},
-      {id:'g9-types-crops',title:'Unit 2 — Types of Crops & Their Environments',icon:'🌽',bg:'#fdf3d6',desc:'The different types of crops, where they grow best, and the environmental conditions they need.',status:'coming-soon',lessons:3},
-      {id:'g9-crop-farming',title:'Unit 3 — Crop Farming Practices & Management',icon:'🚜',bg:'#e8f5e2',desc:'How crops are planted, managed, and harvested — different farming methods and crop management systems.',status:'coming-soon',lessons:3},
-      {id:'g9-crop-technology',title:'Unit 4 — Crop Farming Technology',icon:'⚙️',bg:'#e0f2fe',desc:'The tools and technologies used in crop cultivation and management — and the advantages and disadvantages.',status:'coming-soon',lessons:3},
-      {id:'g9-horticulture',title:'Unit 5 — Types of Plants: Introduction to Horticulture',icon:'🍅',bg:'#fdf3d6',desc:'Introduction to horticulture: fruit trees, vegetables, and spice crops — how they are cultivated and processed.',status:'coming-soon',lessons:4},
-      {id:'g9-pomology-olericulture',title:'Unit 6 — Plant Farming Practices (Pomology & Olericulture)',icon:'🌿',bg:'#e8f5e2',desc:'Cultivation and management of pomology (fruit growing), olericulture (vegetable growing), ornamental plants, and arboriculture.',status:'coming-soon',lessons:4},
-      {id:'g9-horticulture-technology',title:'Unit 7 — Technology in Horticulture',icon:'💡',bg:'#e0f2fe',desc:'How technology is used to improve cultivation, processing, and marketing of horticulture plants.',status:'coming-soon',lessons:3},
+      {id:'g9-soil-formation',title:'Unit 1 — Soil: Types & Formation',icon:'🌱',bg:'#e8f5e2',desc:'What soil is made of, how it forms, and the physical and chemical properties of different soil types.',status:'available',lessons:4},
+      {id:'g9-types-crops',title:'Unit 2 — Types of Crops & Their Environments',icon:'🌽',bg:'#fdf3d6',desc:'The different types of crops, where they grow best, and the environmental conditions they need.',status:'available',lessons:3},
+      {id:'g9-crop-farming',title:'Unit 3 — Crop Farming Practices & Management',icon:'🚜',bg:'#e8f5e2',desc:'How crops are planted, managed, and harvested — different farming methods and crop management systems.',status:'available',lessons:3},
+      {id:'g9-crop-technology',title:'Unit 4 — Crop Farming Technology',icon:'⚙️',bg:'#e0f2fe',desc:'The tools and technologies used in crop cultivation and management — and the advantages and disadvantages.',status:'available',lessons:3},
+      {id:'g9-horticulture',title:'Unit 5 — Types of Plants: Introduction to Horticulture',icon:'🍅',bg:'#fdf3d6',desc:'Introduction to horticulture: fruit trees, vegetables, and spice crops — how they are cultivated and processed.',status:'available',lessons:4},
+      {id:'g9-pomology-olericulture',title:'Unit 6 — Plant Farming Practices (Pomology & Olericulture)',icon:'🌿',bg:'#e8f5e2',desc:'Cultivation and management of pomology (fruit growing), olericulture (vegetable growing), ornamental plants, and arboriculture.',status:'available',lessons:4},
+      {id:'g9-horticulture-technology',title:'Unit 7 — Technology in Horticulture',icon:'💡',bg:'#e0f2fe',desc:'How technology is used to improve cultivation, processing, and marketing of horticulture plants.',status:'available',lessons:3},
     ]
   },
   {
@@ -6334,6 +6334,7 @@ function buildGlossary(){
   if(glossaryData.length) return;
   const allLessons = Object.values(LESSONS);
   allLessons.forEach(L=>{
+    if(!L.keyTerms||!L.keyTerms.length) return;
     L.keyTerms.forEach(t=>{
       if(!glossaryData.find(g=>g.word.toLowerCase()===t.word.toLowerCase())){
         glossaryData.push({word:t.word,def:t.def,strand:L.strand.split(':')[1]?.trim()||L.strand,grade:L.grade});
