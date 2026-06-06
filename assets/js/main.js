@@ -20,7 +20,10 @@ const LESSONS = {
   <div class="lesson-section">
     <h2>What is Soil?</h2>
     <p>Soil is the thin layer of material covering the earth's surface that supports plant life. All soils are different because of where and how they formed. Basically, soil is formed by the weathering or breakdown of rock on the upper layers of the solid earth — and this very rock is called the <strong>parent material</strong>.</p>
-
+    <figure class="lesson-figure">
+      <img src="Images/Crops.png" alt="Soil profile showing different layers from topsoil to bedrock" loading="lazy"/>
+      <figcaption>A typical soil profile showing the distinct layers (horizons) from topsoil down to bedrock.</figcaption>
+    </figure>
     <div class="fact-grid">
       <div class="fact-box"><div class="fact-n">45%</div><div class="fact-l">Mineral matter</div></div>
       <div class="fact-box"><div class="fact-n">25%</div><div class="fact-l">Water</div></div>
@@ -438,7 +441,7 @@ const LESSONS = {
   <div class="lesson-section">
     <h2>Monogastric Animals</h2>
     <figure class="lesson-figure">
-      <img src="Image/animals.webp" alt="Farm animals raised in Papua New Guinea" loading="lazy"/>
+      <img src="Images/Animals.png" alt="Farm animals raised in Papua New Guinea" loading="lazy"/>
       <figcaption>Common farm animals raised in Papua New Guinea, including pigs, cattle, and poultry.</figcaption>
     </figure>
     <p>A <strong>monogastric animal</strong> has a simple, single-chambered stomach. Their digestive system is similar to humans — food passes through the stomach once, enzymes break it down, and nutrients are absorbed.</p>
@@ -518,7 +521,7 @@ const LESSONS = {
     <p><strong>Aquaculture</strong> is the controlled farming of aquatic organisms — fish, shellfish, crustaceans, and aquatic plants — in freshwater, brackish water, or saltwater environments. It is sometimes described as "the underwater equivalent of agriculture."</p>
     <p>Unlike capture fishery (where fish are caught from the wild), aquaculture involves deliberately stocking, feeding, and managing aquatic species to increase production.</p>
     <figure class="lesson-figure">
-      <img src="Image/aquaculture.webp" alt="Fish farming pond used in freshwater aquaculture" loading="lazy"/>
+      <img src="Images/Aquaculture.png" alt="Fish farming pond used in freshwater aquaculture" loading="lazy"/>
       <figcaption>A freshwater fish farming pond — one of the most common forms of aquaculture practised in Papua New Guinea and across the Pacific.</figcaption>
     </figure>
     <h3>Brief History of Aquaculture</h3>
@@ -605,7 +608,7 @@ const LESSONS = {
     <h2>Types of Forests</h2>
     <p>Papua New Guinea has some of the world\'s most biodiverse tropical forests — covering approximately 70% of the country\'s land area. Different forest types exist based on altitude, rainfall, and soil conditions.</p>
     <figure class="lesson-figure">
-      <img src="Image/nrm.webp" alt="Tropical rainforest canopy similar to Papua New Guinea forests" loading="lazy"/>
+      <img src="Images/Nrm.png" alt="Tropical rainforest canopy similar to Papua New Guinea forests" loading="lazy"/>
       <figcaption>Tropical rainforest — the dominant forest type in Papua New Guinea, covering vast areas of lowland and highland terrain.</figcaption>
     </figure>
     <h3>Lowland Tropical Rainforest</h3>
@@ -684,7 +687,7 @@ const LESSONS = {
   <div class="lesson-section">
     <h2>What is Agribusiness?</h2>
     <figure class="lesson-figure">
-      <img src="Image/AgriBusiness.webp" alt="Agribusiness activities from farm to market in Papua New Guinea" loading="lazy"/>
+      <img src="Images/Agribusiness.png" alt="Agribusiness activities from farm to market in Papua New Guinea" loading="lazy"/>
       <figcaption>Agribusiness covers the full chain from farm production to processing, distribution, and sale of agricultural products.</figcaption>
     </figure>
     <p><strong>Agribusiness</strong> refers to all the economic activities related to agriculture — from producing food to processing it, packaging it, transporting it, and selling it to consumers. It covers the entire chain from "farm to fork."</p>
@@ -3874,6 +3877,1535 @@ const LESSONS = {
   ]
 },
 
+/* ══════════════════════════════════════════════════════════
+   GRADE 11 LESSONS
+   ══════════════════════════════════════════════════════════ */
+
+'g11-soil-nutrients': {
+  title: 'Soil Nutrients: Macro & Micro',
+  strand: 'Strand 1: Crops · Unit 1', grade: 11, icon: '🌱',
+  lessons: ['Macro Nutrients','Micro Nutrients'],
+  currentLesson: 0,
+  objectives: [
+    'Explain the role of macro nutrients in plant growth and identify their deficiency signs',
+    'Distinguish between macro nutrients and micro nutrients',
+    'Describe the importance of soil nutrients for crop production'
+  ],
+  keyTerms: [
+    {word:'Soil nutrients',def:'Substances that plants absorb from the soil in order to grow and reproduce.'},
+    {word:'Macro nutrients',def:'Nutrients required by plants in relatively large amounts — including non-mineral elements (C, H, O) and primary nutrients (N, P, K).'},
+    {word:'Micro nutrients',def:'Nutrients required by plants only in very small quantities, such as boron, copper, iron, manganese, and zinc.'},
+    {word:'Primary nutrients',def:'The three most critical macro nutrients: Nitrogen (N), Phosphorus (P), and Potassium (K).'},
+    {word:'Secondary nutrients',def:'Macro nutrients required in smaller amounts: Magnesium (Mg), Calcium (Ca), and Sulphur (S).'},
+    {word:'Deficiency signs',def:'Visual symptoms on plants when a nutrient is lacking — such as yellowing of leaves or stunted growth.'},
+  ],
+  content: `
+  <div class="lesson-section">
+    <h2>What Are Soil Nutrients?</h2>
+    <p>Soil nutrients are substances that plants absorb from the soil to grow and reproduce. They are divided into <strong>macro nutrients</strong> (needed in large amounts) and <strong>micro nutrients</strong> (needed in small amounts). Both must be present for fertile soil.</p>
+  </div>
+  <div class="lesson-section">
+    <h2>Macro Nutrients</h2>
+    <h3>Non-Mineral Elements</h3>
+    <p>Carbon (C), Hydrogen (H), and Oxygen (O) — always available from air and water; no deficiency signs.</p>
+    <h3>Primary Nutrients</h3>
+    <ul>
+      <li><strong>Nitrogen (N)</strong> — older leaves turn yellow or light green; slow, dwarfed growth.</li>
+      <li><strong>Phosphorus (P)</strong> — older leaves develop purple colour; stunted growth.</li>
+      <li><strong>Potassium (K)</strong> — older leaf margins turn yellow; stunted growth.</li>
+    </ul>
+    <h3>Secondary Nutrients</h3>
+    <ul>
+      <li><strong>Magnesium (Mg)</strong> — yellowing between leaf veins on older leaves.</li>
+      <li><strong>Calcium (Ca)</strong> — poor root and shoot growth in young plants.</li>
+      <li><strong>Sulphur (S)</strong> — yellowing in both young and old leaves.</li>
+    </ul>
+  </div>
+  <div class="lesson-section">
+    <h2>Micro Nutrients</h2>
+    <ul>
+      <li><strong>Boron (B)</strong> — terminal buds die.</li>
+      <li><strong>Copper (Cu)</strong> — dark green leaves and stunted growth.</li>
+      <li><strong>Iron (Fe)</strong> — yellowing on the veins of leaves.</li>
+      <li><strong>Manganese (Mn)</strong> — palm fronds stunted and deformed; slow growth.</li>
+      <li><strong>Zinc (Zn)</strong> — yellowing between the veins of leaves.</li>
+    </ul>
+  </div>`,
+  summary: [
+    'Soil nutrients are divided into macro nutrients (large amounts) and micro nutrients (small amounts)',
+    'Primary macro nutrients: Nitrogen (N), Phosphorus (P), Potassium (K)',
+    'Secondary macro nutrients: Magnesium (Mg), Calcium (Ca), Sulphur (S)',
+    'Micro nutrients include Boron, Copper, Iron, Manganese, and Zinc',
+    'Nitrogen deficiency causes older leaves to yellow or turn light green',
+    'Each nutrient deficiency produces specific visible symptoms on plants',
+  ],
+  quiz: [
+    {q:'Which nutrient deficiency causes older leaves to turn yellow or light green?', opts:['Phosphorus','Potassium','Nitrogen','Calcium'], ans:2},
+    {q:'What are micro nutrients?', opts:['Nutrients required in large amounts','Nutrients required in very small quantities','Non-mineral elements like C, H, O','Nutrients only found in water'], ans:1},
+    {q:'Which of the following is a primary macro nutrient?', opts:['Magnesium','Boron','Phosphorus','Zinc'], ans:2},
+    {q:'Which deficiency causes palm fronds to become stunted and deformed?', opts:['Nitrogen','Iron','Potassium','Manganese'], ans:3},
+    {q:'What are the non-mineral elements plants absorb from air and water?', opts:['N, P, K','Mg, Ca, S','C, H, O','B, Cu, Fe'], ans:2},
+  ],
+  furtherReading: [
+    {url:'https://www.fao.org/soils-portal/en/',label:'FAO Soils Portal',desc:'Comprehensive resources on soil nutrients, fertility, and management.'},
+  ]
+},
+
+'g11-aromatic-plants': {
+  title: 'Aromatic & Herbal Plants',
+  strand: 'Strand 1: Crops · Units 5–6', grade: 11, icon: '🌿',
+  lessons: ['Types of Aromatic Plants','Characteristics & Benefits','Cultivation & Propagation','Preservation Techniques'],
+  currentLesson: 0,
+  objectives: [
+    'Identify and examine different types of aromatic and herbal plants in PNG',
+    'Explain the characteristics and benefits of aromatic and herbal plants',
+    'Describe how aromatic and herbal plants are cultivated, propagated, and preserved'
+  ],
+  keyTerms: [
+    {word:'Aromatic plant',def:'A plant that produces fragrant compounds used in food, medicine, perfumes, or cosmetics — such as lemongrass, ginger, and turmeric.'},
+    {word:'Herbal plant',def:'A plant valued for medicinal, flavouring, or aromatic properties — including aloe vera, basil, and mint.'},
+    {word:'Essential oil',def:'A concentrated liquid containing volatile aroma compounds extracted from aromatic plants — used in perfumes, medicine, and flavourings.'},
+    {word:'Micropropagation',def:'A tissue culture technique to propagate plants in large numbers in a controlled environment using cells, tissues, or plant parts.'},
+    {word:'Preservation',def:'Techniques to extend the shelf life of plant products — including drying, freezing, pickling, and oil extraction.'},
+  ],
+  content: `
+  <div class="lesson-section">
+    <h2>Types of Aromatic and Herbal Plants</h2>
+    <p>Aromatic plants produce fragrant compounds and are widely used in PNG for food, traditional medicine, cosmetics, and income generation:</p>
+    <ul>
+      <li><strong>Lemongrass</strong> — used in cooking and herbal teas; has antibacterial properties.</li>
+      <li><strong>Ginger</strong> — used as a spice and in traditional medicine for digestive health.</li>
+      <li><strong>Turmeric</strong> — used as food colouring, spice, and anti-inflammatory medicine.</li>
+      <li><strong>Aloe vera</strong> — used for skin care, wound healing, and digestive health.</li>
+      <li><strong>Basil and mint</strong> — common culinary herbs with aromatic and medicinal uses.</li>
+      <li><strong>Pandan</strong> — used in PNG and Pacific cuisine for its fragrant leaf extracts.</li>
+    </ul>
+  </div>
+  <div class="lesson-section">
+    <h2>Characteristics and Benefits</h2>
+    <ul>
+      <li>They produce <strong>essential oils</strong> that give them their distinctive fragrances.</li>
+      <li>Many have <strong>medicinal properties</strong> — antibacterial, anti-inflammatory, or antifungal.</li>
+      <li>Often <strong>hardy and adaptable</strong> — growing in a wide range of climates and soils.</li>
+    </ul>
+    <p>Benefits include food flavouring, natural medicines, income generation, cosmetics, and attracting pollinators.</p>
+  </div>
+  <div class="lesson-section">
+    <h2>Cultivation and Propagation</h2>
+    <ul>
+      <li><strong>Seeds</strong> — suitable for annual herbs like basil and coriander.</li>
+      <li><strong>Cuttings</strong> — used for lemongrass, mint, and rosemary.</li>
+      <li><strong>Division</strong> — clumping plants like lemongrass are divided and replanted.</li>
+      <li><strong>Suckers and offsets</strong> — aloe vera produces offsets that can be separated and replanted.</li>
+      <li><strong>Tissue culture (micropropagation)</strong> — commercial technique for producing disease-free plants at scale.</li>
+    </ul>
+  </div>
+  <div class="lesson-section">
+    <h2>Preservation Techniques</h2>
+    <ul>
+      <li><strong>Drying</strong> — air-drying, sun-drying, or oven-drying; used for basil, mint, lemongrass.</li>
+      <li><strong>Freezing</strong> — fresh herbs frozen in water or oil for long-term storage.</li>
+      <li><strong>Oil infusion</strong> — herbs immersed in oil to extract and preserve active compounds.</li>
+      <li><strong>Steam distillation</strong> — commercial extraction of essential oils.</li>
+    </ul>
+  </div>`,
+  summary: [
+    'Aromatic plants produce fragrant essential oils and are used in food, medicine, cosmetics, and perfumery',
+    'Common aromatic plants in PNG include lemongrass, ginger, turmeric, aloe vera, basil, mint, and pandan',
+    'Propagation methods include seeds, cuttings, division, suckers, and tissue culture (micropropagation)',
+    'Preservation methods include drying, freezing, oil infusion, and steam distillation',
+    'Essential oils are extracted commercially through steam distillation and have high market value',
+    'Most aromatic plants prefer well-drained, fertile soil and adequate sunlight',
+  ],
+  quiz: [
+    {q:'Which aromatic plant is widely used in PNG cuisine for its fragrant leaf extracts?', opts:['Wheat','Pandan','Coffee','Rubber'], ans:1},
+    {q:'What is micropropagation?', opts:['Growing crops on very small farms','A tissue culture technique producing large numbers of plants in a controlled environment','Extracting essential oils from aromatic plants','A preservation method using micro-organisms'], ans:1},
+    {q:'Which propagation method is most commonly used for lemongrass?', opts:['Seeds','Grafting','Cuttings and division','Tissue culture only'], ans:2},
+    {q:'Which preservation technique is used commercially to extract essential oils?', opts:['Pickling','Sun-drying','Freezing','Steam distillation'], ans:3},
+    {q:'What do essential oils contain that give aromatic plants their distinctive fragrances?', opts:['High sugar content','Volatile aroma compounds','Large amounts of Nitrogen','Complex protein structures'], ans:1},
+  ],
+  furtherReading: [
+    {url:'https://www.fao.org/horticulture/en/',label:'FAO Horticulture',desc:'Resources on aromatic plants, herbal crops, and horticulture production.'},
+  ]
+},
+
+'g11-apiculture': {
+  title: 'Apiculture: Beekeeping in PNG',
+  strand: 'Strand 2: Animals · Unit 1', grade: 11, icon: '🐝',
+  lessons: ['Introduction to Apiculture','Cultivation & Management','Purposes and Benefits'],
+  currentLesson: 0,
+  objectives: [
+    'Explain the terminology of apiculture and identify types of insects used for it',
+    'Examine the purposes, cultivation, and management systems of apiculture',
+    'Discuss the methods and processes used in apiculture production in PNG'
+  ],
+  keyTerms: [
+    {word:'Apiculture',def:'The science and practice of keeping and managing honeybee colonies in hives for honey, beeswax, or pollination.'},
+    {word:'Apiary',def:'A place where beehives are kept — also called a bee yard. Location is critical for colony health and productivity.'},
+    {word:'Queen bee',def:'The single fertile female bee in a colony, responsible for all egg-laying. Replace every 1–2 years for productivity.'},
+    {word:'Honeycomb',def:'The wax structure built by bees inside the hive, made up of hexagonal cells used for honey, pollen, and larvae.'},
+    {word:'Pollination',def:'The transfer of pollen enabling plant reproduction — a critical ecological service provided by bees.'},
+  ],
+  content: `
+  <div class="lesson-section">
+    <h2>What is Apiculture?</h2>
+    <p>Apiculture is the practice of keeping and managing honeybee colonies in hives. It provides bees with a safe environment and is important because bees pollinate many of our food sources. Beekeepers keep bees for:</p>
+    <ul>
+      <li><strong>Honey production</strong> — high nutritional and commercial value.</li>
+      <li><strong>Beeswax production</strong> — used in cosmetics, candles, and traditional medicines.</li>
+      <li><strong>Crop pollination</strong> — hives placed in orchards and gardens improve yields.</li>
+      <li><strong>Sale of bees</strong> — producing and selling colonies to other beekeepers.</li>
+    </ul>
+  </div>
+  <div class="lesson-section">
+    <h2>Cultivation and Management Practices</h2>
+    <ul>
+      <li><strong>Site selection</strong> — non-humid areas, away from cold winds, pollution, and industrial areas.</li>
+      <li><strong>Hive identification</strong> — each hive is given a unique numerical code for tracking.</li>
+      <li><strong>Regular health checks</strong> — inspect colonies regularly; reduce during winter or unfavourable weather.</li>
+      <li><strong>Comb renewal</strong> — replace honeycombs every two years for hygiene and productivity.</li>
+      <li><strong>Queen replacement</strong> — replace queens every 1–2 years to maintain vigour.</li>
+      <li><strong>Quarantine measures</strong> — quarantine any new introductions to prevent disease spread.</li>
+    </ul>
+  </div>
+  <div class="lesson-section">
+    <h2>Benefits of Apiculture for PNG Communities</h2>
+    <ul>
+      <li><strong>Income generation</strong> — honey and beeswax are high-value products for local sale or export.</li>
+      <li><strong>Low capital requirement</strong> — can be started on a small scale with minimal investment.</li>
+      <li><strong>Environmental benefit</strong> — bees pollinate native plants and food crops.</li>
+      <li><strong>Nutritional value</strong> — honey is nutritious and used in traditional healing.</li>
+      <li><strong>Sustainable livelihood</strong> — does not require land clearing; coexists with forest conservation.</li>
+    </ul>
+  </div>`,
+  summary: [
+    'Apiculture (beekeeping) is the practice of keeping and managing honeybee colonies in hives',
+    'Purposes include honey, beeswax, crop pollination, and the sale of bee colonies',
+    'Good site selection, regular inspections, comb renewal, and queen replacement are key practices',
+    'Bees provide the critical ecological service of pollination, supporting crop production and biodiversity',
+    'Apiculture offers low-capital, sustainable income opportunities for PNG communities',
+    'Quarantine must be applied to any new introductions to the apiary to prevent disease',
+  ],
+  quiz: [
+    {q:'What is apiculture?', opts:['Cultivation of ornamental plants','The science and practice of keeping and managing honeybee colonies','Harvesting wild honey from forest trees','Study of insect pests in crop farming'], ans:1},
+    {q:'What is the primary product of beekeeping?', opts:['Pollen','Royal jelly','Honey','Beeswax'], ans:2},
+    {q:'How often should honeycombs be renewed?', opts:['Every month','Every six months','Every two years','Every five years'], ans:2},
+    {q:'Why is bee pollination important for agriculture?', opts:['Bees reduce need for fertilisers','Bees transfer pollen enabling plants to reproduce','Bees produce a natural pesticide','Bees improve soil fertility'], ans:1},
+    {q:'Which benefit of apiculture is especially suitable for PNG communities?', opts:['Requires large capital to start','Requires forest land clearing','Provides sustainable income with low capital','Only suitable for large commercial farms'], ans:2},
+  ],
+  furtherReading: [
+    {url:'https://www.fao.org/apimondia/en/',label:'FAO Beekeeping Resources',desc:'FAO resources on apiculture practices, honey production, and bee management.'},
+  ]
+},
+
+'g11-fish-species': {
+  title: 'Fish Species & Cultivation Environments',
+  strand: 'Strand 3: Aquaculture · Unit 1', grade: 11, icon: '🐠',
+  lessons: ['Fish Species in Different Water Environments','Cultivation of Fish'],
+  currentLesson: 0,
+  objectives: [
+    'Examine the characteristics of fish species in freshwater, brackish, and saltwater',
+    'Investigate the cultivation of fish in brackish and saltwater environments'
+  ],
+  keyTerms: [
+    {word:'Freshwater fish',def:'Fish that live in rivers, lakes, and ponds — such as tilapia, barramundi (juvenile), catfish, and carp.'},
+    {word:'Brackish water',def:'Water saltier than freshwater but less salty than seawater — found in estuaries and mangroves. Salinity 0.5–30 ppt.'},
+    {word:'Stocking density',def:'The number of fish per unit of water volume or area — a key factor affecting growth and water quality.'},
+    {word:'Aquaculture',def:'The farming of fish, shellfish, and aquatic plants in controlled environments for food or income.'},
+  ],
+  content: `
+  <div class="lesson-section">
+    <h2>Fish Species in Different Water Environments</h2>
+    <h3>Freshwater Species</h3>
+    <ul>
+      <li><strong>Tilapia</strong> — hardy, fast-growing, well-suited to tropical PNG conditions. Most widely farmed freshwater fish globally.</li>
+      <li><strong>Barramundi</strong> — juveniles begin in freshwater; also farmed in ponds.</li>
+      <li><strong>Catfish</strong> — adaptable bottom-feeding fish suited to warm tropical waters.</li>
+    </ul>
+    <h3>Brackish Water Species</h3>
+    <ul>
+      <li><strong>Milkfish (Bangus)</strong> — popular in Southeast Asia and the Pacific.</li>
+      <li><strong>Mud crab</strong> — high-value crustacean farmed in mangrove environments in PNG.</li>
+      <li><strong>Giant tiger prawn</strong> — commercially important in coastal areas.</li>
+    </ul>
+    <h3>Saltwater Species</h3>
+    <ul>
+      <li><strong>Coral trout and grouper</strong> — high-value reef fish farmed in sea cages.</li>
+      <li><strong>Snapper</strong> — farmed in offshore cages in PNG coastal waters.</li>
+    </ul>
+  </div>
+  <div class="lesson-section">
+    <h2>Cultivation of Fish</h2>
+    <h3>Pond Cultivation (Freshwater)</h3>
+    <p>Most common aquaculture in PNG. Key aspects: proper pond construction, appropriate stocking density, regular feeding, and water quality monitoring (pH, dissolved oxygen, temperature).</p>
+    <h3>Brackish Water Cultivation</h3>
+    <p>Uses tidal ponds or earthen ponds in mangrove areas. Mud crab farming is particularly suited to PNG coastal communities.</p>
+    <h3>Marine Cage Culture</h3>
+    <p>Floating net cages anchored in sheltered coastal bays — capital-intensive but enables farming of high-value species like coral trout.</p>
+  </div>`,
+  summary: [
+    'Fish are farmed across three water environments: freshwater, brackish, and saltwater',
+    'Common freshwater species in PNG include tilapia, barramundi, and catfish',
+    'Brackish water species include milkfish, mud crab, and giant tiger prawn',
+    'Saltwater farming uses sea cages for coral trout, grouper, and snapper',
+    'Pond aquaculture requires proper construction, stocking density, feeding, and water quality management',
+    'Mud crab farming in mangroves is well-suited to PNG coastal communities',
+  ],
+  quiz: [
+    {q:'What is brackish water?', opts:['Completely fresh water','Deep ocean water','Water saltier than fresh but less salty than seawater','Polluted freshwater'], ans:2},
+    {q:'Which fish is described as hardy, fast-growing, and well-suited to tropical PNG?', opts:['Barramundi','Milkfish','Tilapia','Coral trout'], ans:2},
+    {q:'What is the most common form of fish farming in PNG?', opts:['Sea cage culture','Recirculating systems','Pond cultivation','Open ocean ranching'], ans:2},
+    {q:'Which high-value species is commonly farmed in mangrove environments in PNG?', opts:['Coral trout','Giant tiger prawn','Mud crab','Tilapia'], ans:2},
+    {q:'What is stocking density in aquaculture?', opts:['The depth of the fish pond','Number of fish per unit of water volume or area','Weight of fish feed used per day','Salinity level of the water'], ans:1},
+  ],
+  furtherReading: [
+    {url:'https://www.fao.org/fishery/en/aquaculture',label:'FAO Aquaculture',desc:'FAO resources on fish species, cultivation systems, and aquaculture management.'},
+  ]
+},
+
+'g11-capture-fishery': {
+  title: 'Capture Fishery: Cultivation & Regulations',
+  strand: 'Strand 4: Natural Resources · Units 1–3', grade: 11, icon: '🎣',
+  lessons: ['Capture Fishery Environments','Fishery Marketing & Prices','PNG Fisheries Regulations'],
+  currentLesson: 0,
+  objectives: [
+    'Examine capture fishery cultivation in different natural environments',
+    'Explain the fishery marketing process and price determination in PNG',
+    'Interpret PNG fisheries policies, rules, and regulations'
+  ],
+  keyTerms: [
+    {word:'Capture fishery',def:'The harvesting of wild fish and aquatic organisms from natural environments — seas, rivers, and lakes.'},
+    {word:'Sea ranching',def:'Releasing hatchery-raised juvenile fish into the sea to grow wild and be harvested later — a form of stock enhancement.'},
+    {word:'NFA',def:'National Fisheries Authority — PNG\'s primary regulatory body for the fisheries sector.'},
+    {word:'Fisheries Management Act 1998',def:'PNG\'s principal law governing all fisheries activities — empowering the NFA to manage all fishery resources.'},
+    {word:'EEZ',def:'Exclusive Economic Zone — a 200-nautical-mile zone from PNG\'s coast where PNG has sovereign fishing rights.'},
+  ],
+  content: `
+  <div class="lesson-section">
+    <h2>Capture Fishery Environments in PNG</h2>
+    <ul>
+      <li><strong>Sea ranching</strong> — juvenile fish raised in hatcheries are released into coastal waters to grow naturally and be harvested later.</li>
+      <li><strong>Coastal lagoon farming</strong> — shallow enclosed coastal lagoons raise milkfish, mullet, and shrimp.</li>
+      <li><strong>Stocking of inland lagoons</strong> — freshwater lagoons, lakes, and dams are stocked with fish for subsistence and commercial harvest.</li>
+      <li><strong>Flood plain fisheries</strong> — PNG river flood plains (Fly River, Sepik) support rich seasonal fish populations managed for sustainable harvest.</li>
+    </ul>
+  </div>
+  <div class="lesson-section">
+    <h2>Fish Markets and Price Determination</h2>
+    <p>Fish distribution in PNG involves three market levels:</p>
+    <ul>
+      <li><strong>Primary markets</strong> — near fishing areas; fishers sell directly.</li>
+      <li><strong>Secondary markets</strong> — intermediaries transport fish to port markets and wholesalers.</li>
+      <li><strong>City/terminal markets</strong> — retailers sell directly to consumers (e.g. Koki Fish Market, Port Moresby).</li>
+    </ul>
+    <p>Price factors: transport cost, production cost, supply and demand, competition, processing technique, and species variety.</p>
+  </div>
+  <div class="lesson-section">
+    <h2>PNG Fisheries Regulations</h2>
+    <p>The <strong>Fisheries Management Act 1998</strong> governs all PNG fisheries. The <strong>NFA</strong> manages, controls, and regulates all fishery resources and issues licences.</p>
+    <p>PNG\'s <strong>EEZ</strong> under the UN Convention on the Law of the Sea extends 200 nautical miles and gives PNG sovereign rights over vast marine resources.</p>
+    <p>Example regulations for Barramundi: prohibited net mesh sizes during peak spawning (Oct–Nov); total allowable catch of 260 metric tonnes per year.</p>
+  </div>`,
+  summary: [
+    'Capture fishery involves harvesting wild fish from seas, rivers, lagoons, and flood plains',
+    'PNG capture environments include coastal seas, lagoons, inland rivers, and mangrove areas',
+    'Fish distribution involves primary, secondary, and city/terminal markets — Koki Fish Market is PNG\'s main city market',
+    'Fish prices are determined by transport cost, supply/demand, processing, species, and competition',
+    'The Fisheries Management Act 1998 and NFA govern all PNG fisheries activities',
+    'PNG\'s 200-nautical-mile EEZ gives sovereign rights over vast marine resources',
+  ],
+  quiz: [
+    {q:'What is sea ranching?', opts:['Farming fish in open ocean cages','Releasing hatchery-raised juveniles to grow wild and be harvested later','Setting up fish markets in coastal villages','Monitoring sea levels for sustainable fishing'], ans:1},
+    {q:'What is the Fisheries Management Act 1998?', opts:['An international fishing agreement','The principal PNG law governing all fisheries activities','A regulation for freshwater aquaculture only','A marketing standard for fish exports'], ans:1},
+    {q:'Which is PNG\'s well-known primary city fish market?', opts:['Gordons Market','Koki Fish Market','Boroko Market','Waigani Market'], ans:1},
+    {q:'What is PNG\'s EEZ?', opts:['A freshwater zone for small-scale fishers','A 200-nautical-mile zone where PNG has sovereign fishing rights','A restricted military zone around the coastline','The 12-nautical-mile artisanal fishing zone'], ans:1},
+    {q:'What are flood plain fisheries in PNG?', opts:['Fish farms built on flat coastal land','Rich seasonal fish populations in river flood plains like the Fly River delta','Deep-water trawling in offshore areas','Tilapia ponds on floodplain soils'], ans:1},
+  ],
+  furtherReading: [
+    {url:'https://www.fao.org/fishery/en/',label:'FAO Fisheries',desc:'FAO resources on capture fishery management, policy, and sustainable harvesting.'},
+  ]
+},
+
+'g11-forest-products': {
+  title: 'Forest Products, Regulations & Technology',
+  strand: 'Strand 4: Natural Resources · Units 4–6', grade: 11, icon: '🌲',
+  lessons: ['Forest Products & Preservation','PNG Forestry Regulations','Technology in Timber Growing'],
+  currentLesson: 0,
+  objectives: [
+    'Evaluate approaches and practices for producing and preserving forest products',
+    'Explain how the forestry industry in PNG is regulated',
+    'Identify technologies used in growing timber species in PNG'
+  ],
+  keyTerms: [
+    {word:'Non-wood forest products (NWFP)',def:'Products from forests other than timber — including fruits, honey, bamboo, and medicinal plants.'},
+    {word:'PNGFA',def:'Papua New Guinea Forest Authority — the government body responsible for monitoring and controlling the forest industry.'},
+    {word:'Forestry Act 1991',def:'PNG\'s primary legislation for the management, development, and protection of forest resources.'},
+    {word:'LiDAR',def:'Light Detection and Ranging — laser technology that creates detailed digital maps of forest structure and terrain from the air.'},
+    {word:'Reforestation',def:'Planting trees in areas where forests have been removed or depleted.'},
+  ],
+  content: `
+  <div class="lesson-section">
+    <h2>Forest Products and Preservation</h2>
+    <p>Forests provide a wide range of products:</p>
+    <ul>
+      <li><strong>Wood products</strong> — timber, sandalwood, plywood.</li>
+      <li><strong>Non-wood forest products (NWFP)</strong> — bamboo, honey, medicinal plants, kendu leaves.</li>
+      <li><strong>Industrial products</strong> — rubber, cashews, spices, biodiesel plants.</li>
+    </ul>
+    <p>Steps to preserve forest resources: regulated and planned cutting; fire control; reforestation and afforestation; protecting key areas (national parks); and proper utilisation to minimise waste.</p>
+  </div>
+  <div class="lesson-section">
+    <h2>PNG Forestry Regulations</h2>
+    <ul>
+      <li><strong>Forestry Act 1991</strong> — makes provision for the management, development, and protection of PNG\'s forest resources.</li>
+      <li><strong>PNG Forest Authority (PNGFA)</strong> — monitors and controls the wood industry and manages PNG\'s forests.</li>
+    </ul>
+    <p>Forest policy addresses: rent capture from timber harvesting, market-based pricing, domestic processing promotion, and sustainable development investment.</p>
+  </div>
+  <div class="lesson-section">
+    <h2>Technology in Timber Growing</h2>
+    <ul>
+      <li><strong>Drones</strong> — aerial surveys, mapping, detecting damaged trees.</li>
+      <li><strong>LiDAR</strong> — shoots laser beams from the air creating precise 3D maps of forests.</li>
+      <li><strong>GIS</strong> — Geographic Information Systems integrating data to produce detailed forest maps.</li>
+      <li><strong>Advanced tree-breeding</strong> — selecting the hardiest-growing trees for seedling production.</li>
+      <li><strong>Controlled nurseries</strong> — greenhouses with precise water, light, and space management for healthier seedlings.</li>
+      <li><strong>Digital growth monitoring</strong> — programs that track forest growth and predict future yields.</li>
+    </ul>
+  </div>`,
+  summary: [
+    'Forests provide timber, non-wood products (honey, bamboo, medicinal plants), and industrial products (rubber, spices)',
+    'Forest preservation includes regulated logging, fire control, reforestation, and protection of key areas',
+    'PNG\'s Forestry Act 1991 and PNGFA govern the forest industry',
+    'Technologies in timber growing include drones, LiDAR, GIS, tree-breeding, and digital monitoring systems',
+    'LiDAR technology maps tree height, density, and terrain with extreme precision',
+    'Value-adding forest products significantly increases income compared to raw log sales',
+  ],
+  quiz: [
+    {q:'What does NWFP stand for?', opts:['National Woodland Forestry Program','Non-Wood Forest Products','Natural Wildlife and Flora Protection','New Woodland Farming Practices'], ans:1},
+    {q:'Which body monitors and controls the forest industry in PNG?', opts:['National Fisheries Authority','Department of Agriculture and Livestock','PNG Forest Authority (PNGFA)','PNG Investment Promotion Authority'], ans:2},
+    {q:'What does the Forestry Act 1991 do?', opts:['Bans all commercial logging in PNG','Provides for the management, development, and protection of PNG\'s forest resources','Regulates fish harvesting in coastal areas','Establishes national parks in PNG'], ans:1},
+    {q:'What does LiDAR technology do in forestry?', opts:['Cuts timber using lasers','Creates precise digital maps of forest structure using laser beams','Provides GPS for logging vehicles','Monitors water quality in forest streams'], ans:1},
+    {q:'Which is a step for preserving forest resources?', opts:['Maximising the speed of timber extraction','Reforestation and afforestation','Removing all non-commercial tree species','Encouraging slash-and-burn near forests'], ans:1},
+  ],
+  furtherReading: [
+    {url:'https://www.fao.org/forestry/en/',label:'FAO Forestry',desc:'FAO resources on sustainable forest management, regulations, and forest product preservation.'},
+  ]
+},
+
+'g11-financial-management': {
+  title: 'Agribusiness Financial Management',
+  strand: 'Strand 5: Agribusiness · Unit 1', grade: 11, icon: '📒',
+  lessons: ['Financial Management Principles','Credit & Financing','Financial Statements & Cash Flow'],
+  currentLesson: 0,
+  objectives: [
+    'Explain the principles of managing finances in agribusiness and the importance of business records',
+    'Identify formal and informal credit organisations and compare debt and equity financing',
+    'Identify the four types of financial statements and explain cash flow analysis'
+  ],
+  keyTerms: [
+    {word:'Profit',def:'The amount remaining from sales revenue after all costs of production and operating expenses are paid — the "bottom line" of the income statement.'},
+    {word:'Balance sheet',def:'A financial statement showing assets, liabilities, and owner\'s equity at a specific date.'},
+    {word:'Income statement',def:'A financial statement (Profit and Loss Statement) reporting income, expenses, and net profit or loss over a period.'},
+    {word:'Debt financing',def:'Raising capital by borrowing money from lenders — repaid with interest regardless of business performance.'},
+    {word:'Equity financing',def:'Raising capital by selling ownership shares to investors — no repayment obligation but investors share in profits.'},
+    {word:'Cash flow statement',def:'A financial statement showing all cash inflows and outflows through operations, investing, and financing activities.'},
+  ],
+  content: `
+  <div class="lesson-section">
+    <h2>Financial Management Principles</h2>
+    <p><strong>Profit</strong> is the central measure of agribusiness success — the amount remaining after all costs are deducted from revenue. Successful managers must understand the interrelationships of all financial accounts — not just the bottom line. Business records are essential for:</p>
+    <ul>
+      <li>Tracking income and expenses; determining profitability</li>
+      <li>Meeting tax obligations; supporting loan applications</li>
+      <li>Making informed decisions about expansion or cost reduction</li>
+    </ul>
+    <p>The two primary financial documents are the <strong>balance sheet</strong> (financial position) and the <strong>income statement</strong> (financial performance). This system originated in Italy over 600 years ago.</p>
+  </div>
+  <div class="lesson-section">
+    <h2>Credit Organisations and Financing</h2>
+    <p><strong>Formal credit</strong>: commercial banks, government development banks, microfinance institutions (regulated, formal contracts).</p>
+    <p><strong>Informal credit</strong>: family savings groups (wantok system), local moneylenders, input suppliers offering credit.</p>
+    <h3>Debt vs Equity Financing</h3>
+    <ul>
+      <li><strong>Debt financing</strong> — predictable repayments; lender has no control; interest is tax-deductible. Risk: must repay regardless of performance.</li>
+      <li><strong>Equity financing</strong> — no repayment obligation; extra working capital. Risk: must share ownership, profits, and decisions with investors.</li>
+    </ul>
+  </div>
+  <div class="lesson-section">
+    <h2>Financial Statements and Cash Flow</h2>
+    <p>The four types of financial statements:</p>
+    <ol>
+      <li><strong>Balance Sheet</strong> — assets, liabilities, and equity at a specific date.</li>
+      <li><strong>Income Statement</strong> — income minus expenses = net profit or loss.</li>
+      <li><strong>Cash Flow Statement</strong> — tracks cash from operations, investing, and financing.</li>
+      <li><strong>Statement of Changes in Equity</strong> — movement in owner\'s equity over a period.</li>
+    </ol>
+    <p>Key insight: a profitable business can be <strong>cash-poor</strong> if customers have not yet paid (accounts receivable). The cash flow statement reveals this problem.</p>
+    <p><strong>Profitability</strong> measures long-term success (income statement). <strong>Liquidity</strong> measures ability to meet short-term obligations (balance sheet current assets). Both are essential.</p>
+  </div>`,
+  summary: [
+    'Profit is the central measure of agribusiness success — revenue minus all costs and expenses',
+    'Business records are essential for tracking performance, taxes, and loan applications',
+    'The two primary financial documents are the balance sheet and the income statement',
+    'Formal credit comes from banks and microfinance; informal credit from wantok groups and moneylenders',
+    'Debt financing must be repaid; equity financing trades ownership for capital with no repayment obligation',
+    'The four types of financial statements are the balance sheet, income statement, cash flow statement, and statement of changes in equity',
+  ],
+  quiz: [
+    {q:'What is profit in agribusiness?', opts:['Total sales revenue','The amount remaining from revenue after all costs are paid','The value of all assets owned','The difference between assets and liabilities'], ans:1},
+    {q:'What is the main advantage of equity financing?', opts:['Lower interest rates','You retain full ownership','No obligation to repay the money acquired','Investors cannot join business decisions'], ans:2},
+    {q:'What is the main risk of debt financing?', opts:['Lenders take ownership','Must repay regardless of business performance','Interest cannot be deducted from tax','Loans can only buy equipment'], ans:1},
+    {q:'Which financial statement tracks cash from operations, investing, and financing?', opts:['Balance sheet','Income statement','Cash flow statement','Statement of changes in equity'], ans:2},
+    {q:'Why can a profitable business face a cash shortage?', opts:['By earning too much profit','By selling too cheaply','Customers have not yet paid — accounts receivable','By having too many employees'], ans:2},
+  ],
+  furtherReading: [
+    {url:'https://www.fao.org/rural-employment/agribusiness/en/',label:'FAO Agribusiness Finance',desc:'FAO resources on agribusiness financial management, credit, and cash flow.'},
+  ]
+},
+
+/* ══════════════════════════════════════════════════════════
+   GRADE 12 LESSONS
+   ══════════════════════════════════════════════════════════ */
+
+'g12-soil-topography': {
+  title: 'Soil Topography & Crop Production Returns',
+  strand: 'Strand 1: Crops · Unit 1', grade: 12, icon: '🗺️',
+  lessons: ['Soil Topography','Soil Analysis & Crop Production'],
+  currentLesson: 0,
+  objectives: [
+    'Explain soil topography and its effect on soil formation and erosion',
+    'Describe soil analysis, soil pH testing, and nutrient balance assessment',
+    'Explain how soil type affects cultivation decisions and crop production returns'
+  ],
+  keyTerms: [
+    {word:'Soil topography',def:'A detailed map of the surface features of the land — mountains, hills, creeks, valleys — and how these affect soil formation through erosion.'},
+    {word:'Soil analysis',def:'A process to determine the amount of plant nutrients available in the soil.'},
+    {word:'Soil pH',def:'Measure of acidity or alkalinity on a scale of 0–14 — most crops grow best between pH 6.0 and 7.0.'},
+    {word:'Nutrient balance',def:'An assessment of the nutritional quality of soil and the ability of crops to cope with biotic and abiotic stresses.'},
+  ],
+  content: `
+  <div class="lesson-section">
+    <h2>Soil Topography</h2>
+    <p>Soil topography is a detailed map of the land surface — including mountains, hills, creeks, and rivers. Topography significantly affects soil formation through <strong>erosion</strong>: soils on steep hillsides are shallow and less developed because erosion carries particles downslope. Flat, low-lying areas accumulate deep, fertile soils. Valley floors and flood plains are usually the most productive agricultural land.</p>
+  </div>
+  <div class="lesson-section">
+    <h2>Soil Analysis</h2>
+    <p>Soil analysis determines available plant nutrients. Key tests:</p>
+    <ul>
+      <li><strong>Soil pH test</strong> — most crops grow best between pH 6.0 and 7.0. Below 6, nutrients become less available; above 7, micronutrients can be locked up.</li>
+      <li><strong>Nutrient balance test</strong> — determines the level of major and minor mineral elements.</li>
+      <li><strong>Organic matter content</strong> — higher organic matter means better structure, water retention, and fertility.</li>
+    </ul>
+  </div>
+  <div class="lesson-section">
+    <h2>Soil Types and Cultivation Decisions</h2>
+    <ul>
+      <li><strong>Sandy soils</strong> — minimise ground pressure; use deep tines for sub-soiling.</li>
+      <li><strong>Silty soils</strong> — bed systems for vegetables; reduce tillage where possible.</li>
+      <li><strong>Clay soils</strong> — minimal cultivation; reduced tillage with deep loosening every 3–4 years and mole draining every 4–7 years.</li>
+      <li><strong>Loam soils</strong> — reduced cultivation suitable where free lime is present.</li>
+      <li><strong>Peat soils</strong> — avoid excessive cultivation to prevent wind erosion of dry surface layers.</li>
+    </ul>
+  </div>`,
+  summary: [
+    'Soil topography studies surface features and their effect on soil formation and erosion',
+    'Steep slopes have shallow, eroded soils; flat valleys have deeper, more fertile soils',
+    'Soil analysis measures nutrient levels, pH, and organic matter content',
+    'Most crops grow best between soil pH 6.0 and 7.0',
+    'Cultivation decisions should match soil type — sandy, silty, clay, loam, and peat soils each need different approaches',
+    'Crop production returns incorporate yield, fertiliser costs, and selling prices — all vary with soil type',
+  ],
+  quiz: [
+    {q:'What is soil topography?', opts:['Chemical composition of soil nutrients','A detailed study of surface features and their effect on soil formation','The process of analysing soil pH levels','A method for predicting rainfall'], ans:1},
+    {q:'What is the ideal pH range for most crops?', opts:['3.0–5.0','6.0–7.0','7.5–9.0','1.0–3.0'], ans:1},
+    {q:'Why do hillside soils tend to be shallow?', opts:['Less rainfall','Different rock types','Erosion carries soil particles downslope','Dense forest prevents soil development'], ans:2},
+    {q:'Which soil type requires minimal cultivation and mole draining every 4–7 years?', opts:['Sandy soil','Loam soil','Clay soil','Peat soil'], ans:2},
+    {q:'What does a nutrient balance test determine?', opts:['Best crop varieties for the region','Level of mineral elements and soil ability to support growth under stress','Amount of rainfall needed per season','Number of insects living in the soil'], ans:1},
+  ],
+  furtherReading: [
+    {url:'https://www.fao.org/soils-portal/soil-management/en/',label:'FAO Soil Management',desc:'FAO resources on soil topography, analysis, and fertility management.'},
+  ]
+},
+
+'g12-crop-physiology': {
+  title: 'Crop Physiology & Farming Practices',
+  strand: 'Strand 1: Crops · Units 2–3', grade: 12, icon: '🌾',
+  lessons: ['Fundamental Crop Processes','Crop Physiology & Yield','Crop Marketing & Regulation'],
+  currentLesson: 0,
+  objectives: [
+    'Explain photosynthesis, respiration, plant nutrition, plant hormones, and photo-morphogenesis',
+    'Describe crop physiology and how it affects yield',
+    'Investigate how crops are processed, stored, transported, and regulated in PNG'
+  ],
+  keyTerms: [
+    {word:'Photosynthesis',def:'The process by which plants use sunlight, water, and CO₂ to produce oxygen and sugar.'},
+    {word:'Plant hormones',def:'Chemicals produced by plants that regulate growth, development, and reproduction.'},
+    {word:'Auxins',def:'A plant hormone that promotes cell enlargement and differentiation — important for shoot and root growth.'},
+    {word:'Photo-morphogenesis',def:'Light-mediated plant development — how growth patterns respond to the light spectrum.'},
+    {word:'Crop physiology',def:'The study of internal functions of crop plants and how they determine productivity and yield.'},
+  ],
+  content: `
+  <div class="lesson-section">
+    <h2>Fundamental Crop Processes</h2>
+    <ol>
+      <li><strong>Photosynthesis</strong> — plants capture sunlight using chlorophyll to convert H₂O and CO₂ into oxygen and sugar. The foundation of all plant productivity.</li>
+      <li><strong>Respiration</strong> — controlled oxidation of sugars inside cells to release energy for growth and maintenance.</li>
+      <li><strong>Plant nutrition</strong> — autotrophic plants make their own food from air and water via photosynthesis.</li>
+      <li><strong>Plant hormones</strong> — chemical signals regulating growth:
+        <ul>
+          <li><strong>Auxins</strong> — promote cell enlargement and differentiation</li>
+          <li><strong>Gibberellins</strong> — break dormancy in seeds and buds</li>
+          <li><strong>Cytokinins</strong> — promote cell division</li>
+          <li><strong>Abscisic acid</strong> — promotes dormancy in seeds and buds</li>
+        </ul>
+      </li>
+      <li><strong>Photo-morphogenesis</strong> — plants detect light quality, intensity, and duration to control germination, flowering, and growth direction.</li>
+    </ol>
+  </div>
+  <div class="lesson-section">
+    <h2>Crop Physiology and Yield</h2>
+    <ul>
+      <li><strong>Source–sink relationships</strong> — sugars move from leaves (source) to growing tissues and seeds (sink). Managing this balance improves yield.</li>
+      <li><strong>Leaf area index (LAI)</strong> — total leaf area relative to ground area. Higher LAI means more light is captured for photosynthesis.</li>
+      <li><strong>Harvest index</strong> — the proportion of total crop biomass that is harvestable. Crop breeding aims to improve harvest index.</li>
+    </ul>
+  </div>
+  <div class="lesson-section">
+    <h2>Crop Marketing, Storage and Regulation</h2>
+    <p>After harvest, crops must be processed (cleaning, grading, packaging), stored (cool rooms, silos), and transported efficiently to market.</p>
+    <p>Crop production and marketing in PNG is regulated by the <strong>Department of Agriculture and Livestock (DAL)</strong> and commodity agencies such as the Coffee Industry Corporation and the Cocoa Board — which set quality standards and issue licences.</p>
+  </div>`,
+  summary: [
+    'The five fundamental crop processes: photosynthesis, respiration, plant nutrition, plant hormones, photo-morphogenesis',
+    'Photosynthesis converts sunlight, water, and CO₂ into oxygen and sugar — the basis of all plant productivity',
+    'Four plant hormones: auxins (cell enlargement), gibberellins (break dormancy), cytokinins (cell division), abscisic acid (promote dormancy)',
+    'Photo-morphogenesis describes how plants respond to light quality and duration',
+    'Crop physiology examines source-sink relationships, LAI, and harvest index as determinants of yield',
+    'Crop marketing in PNG is regulated by DAL and commodity-specific agencies that set quality standards',
+  ],
+  quiz: [
+    {q:'What is photosynthesis?', opts:['Breakdown of sugar for energy','Plants using sunlight, water, and CO₂ to produce oxygen and sugar','Movement of water from roots to leaves','How plants respond to different light spectrums'], ans:1},
+    {q:'Which plant hormone promotes cell division?', opts:['Auxins','Gibberellins','Cytokinins','Abscisic acid'], ans:2},
+    {q:'What does photo-morphogenesis describe?', opts:['Plant nutrition through sunlight','How plant growth patterns respond to the light spectrum','Chemical breakdown of plant hormones','Storage of sugars in plant roots'], ans:1},
+    {q:'What is the harvest index?', opts:['Total crop land available','Proportion of total crop biomass that is harvestable','Number of harvests per year','Yield per hectare adjusted for rainfall'], ans:1},
+    {q:'Which hormone breaks dormancy in seeds and buds?', opts:['Auxins','Cytokinins','Abscisic acid','Gibberellins'], ans:3},
+  ],
+  furtherReading: [
+    {url:'https://www.fao.org/agriculture/crops/en/',label:'FAO Crop Production',desc:'FAO resources on crop physiology, production management, and regulation.'},
+  ]
+},
+
+'g12-horticulture-commercialisation': {
+  title: 'Plants, Horticulture & Commercialisation',
+  strand: 'Strand 1: Crops · Units 5–7', grade: 12, icon: '🪴',
+  lessons: ['Plant Anatomy & Physiology','Horticulture Marketing','Greenhouse & Genetic Engineering'],
+  currentLesson: 0,
+  objectives: [
+    'Explain the anatomy and physiology of fruit trees, spice, herbal, aromatic, and ornamental plants',
+    'Discuss marketing principles and channels for horticulture products',
+    'Explain greenhouse cultivation and evaluate genetic engineering implications for horticulture'
+  ],
+  keyTerms: [
+    {word:'Marketing channel',def:'The path a horticulture product takes from producer to final consumer — including farm gate, local market, wholesaler, retailer, and export.'},
+    {word:'Marketing function',def:'Key activities in moving a product from producer to consumer — buying, selling, transporting, storing, grading, packaging, and risk management.'},
+    {word:'Greenhouse',def:'A structure with glass or plastic walls providing a controlled growing environment — regulating temperature, humidity, and light.'},
+    {word:'Genetic engineering',def:'Direct manipulation of an organism\'s DNA to introduce new traits — disease resistance, longer shelf life, or improved nutrition.'},
+  ],
+  content: `
+  <div class="lesson-section">
+    <h2>Plant Anatomy and Physiology</h2>
+    <ul>
+      <li><strong>Fruit trees</strong> (mango, banana, coconut) — deep root systems, large vascular networks, specialised reproductive structures producing commercially valuable fruit.</li>
+      <li><strong>Flowering trees</strong> (frangipani, flamboyant) — physiology oriented toward attracting pollinators.</li>
+      <li><strong>Spice and herbal plants</strong> (ginger, vanilla, chilli) — produce secondary metabolites (essential oils, capsaicin) for chemical defence or attraction.</li>
+      <li><strong>Ornamental plants</strong> — bred for visual appeal; managed to maximise flower colour, form, and longevity.</li>
+    </ul>
+  </div>
+  <div class="lesson-section">
+    <h2>Horticulture Marketing Systems</h2>
+    <p>Marketing channels for PNG horticulture include:</p>
+    <ul>
+      <li><strong>Farm gate sales</strong> — directly from farm to customers or buyers.</li>
+      <li><strong>Local markets</strong> — village and town markets (e.g. Koki Market).</li>
+      <li><strong>Supermarket and retail</strong> — supplying urban supermarkets, hotels, and restaurants.</li>
+      <li><strong>Export</strong> — selling to overseas buyers through agents, meeting international quality standards.</li>
+    </ul>
+    <p>Marketing functions include: buying, selling, transport, storage, grading, packaging, financing, risk management, and market information.</p>
+  </div>
+  <div class="lesson-section">
+    <h2>Greenhouse Cultivation and Genetic Engineering</h2>
+    <h3>Greenhouse Cultivation</h3>
+    <p>Greenhouses allow year-round production in controlled conditions — protecting crops from pests, disease, and extreme weather, and producing higher-quality yields.</p>
+    <h3>Genetic Engineering</h3>
+    <p>Applications include: disease resistance (reducing pesticide use), improved shelf life (reducing post-harvest losses), enhanced nutritional content, and tolerance to drought, salt, or extreme temperatures.</p>
+    <p><strong>Concerns:</strong> ecological risks from cross-pollination with wild plants; ethical concerns about corporate control of food; unknown long-term health effects.</p>
+  </div>`,
+  summary: [
+    'Fruit trees, flowering trees, spice, herbal, and ornamental plants each have distinct anatomy and physiology',
+    'Horticulture marketing channels: farm gate, local markets, retail, and export',
+    'Marketing functions include buying, selling, transport, storage, grading, and risk management',
+    'Greenhouses provide year-round, controlled-environment production with higher yields and quality',
+    'Genetic engineering introduces disease resistance, improved shelf life, and drought tolerance',
+    'Concerns about genetic engineering include ecological risks, corporate food control, and unknown health effects',
+  ],
+  quiz: [
+    {q:'What is a marketing channel?', opts:['A TV channel for advertising farms','The path a product takes from producer to consumer','A method of paying for farm inputs','A type of storage for horticulture products'], ans:1},
+    {q:'Which is a marketing function in horticulture?', opts:['Photosynthesis','Genetic modification','Grading and standardisation','Reforestation'], ans:2},
+    {q:'What is the main advantage of greenhouse cultivation?', opts:['Eliminates need for fertilisers','Allows year-round production in a controlled environment','Removes need for irrigation','Eliminates need for marketing channels'], ans:1},
+    {q:'Which is an application of genetic engineering in horticulture?', opts:['Crop rotation to improve soil','Introducing disease resistance by modifying plant DNA','Using predators to control pests','Applying compost for organic matter'], ans:1},
+    {q:'What is one concern about genetic engineering in food crops?', opts:['Crops grow too slowly','Cross-pollination with wild plants may have unknown ecological effects','Reduces the size of fruits','Makes crops impossible to export'], ans:1},
+  ],
+  furtherReading: [
+    {url:'https://www.fao.org/horticulture/en/',label:'FAO Horticulture',desc:'FAO resources on horticulture marketing, greenhouse production, and plant biotechnology.'},
+  ]
+},
+
+'g12-quality-animal-products': {
+  title: 'Quality Animal Products & Technology',
+  strand: 'Strand 2: Animals · Units 1–3', grade: 12, icon: '🥩',
+  lessons: ['Factors for Quality Products','Value-Added Products','Electronic Agriculture'],
+  currentLesson: 0,
+  objectives: [
+    'Identify factors contributing to quality monogastric, polygastric, and apiculture products',
+    'Explain value-added animal products and how they increase farm income',
+    'Investigate electronic agriculture and emerging trends in animal production'
+  ],
+  keyTerms: [
+    {word:'Value-added product',def:'A product processed beyond its raw state to increase market value — such as sausage, cheese, or bottled honey.'},
+    {word:'E-agriculture',def:'Using information and communications technology (ICT) — mobile phones, internet, and sensors — to improve agricultural production and marketing.'},
+    {word:'Precision livestock farming',def:'Using sensors, GPS, and data analytics to monitor individual animal behaviour, health, and productivity in real time.'},
+    {word:'Quality standard',def:'A defined level of quality a product must meet to be sold in a particular market — especially important for export.'},
+  ],
+  content: `
+  <div class="lesson-section">
+    <h2>Factors Contributing to Quality Animal Products</h2>
+    <h3>Monogastric Products (pigs, chickens)</h3>
+    <ul>
+      <li>Genetics and breed — high-producing breeds yield better meat-to-fat ratios.</li>
+      <li>Nutrition and feed quality — balanced diets with correct protein, energy, and micronutrients.</li>
+      <li>Animal health — disease-free animals produce safer, higher-quality products.</li>
+      <li>Slaughter and processing hygiene — prevents contamination.</li>
+    </ul>
+    <h3>Polygastric Products (cattle, goats, sheep)</h3>
+    <ul>
+      <li>Pasture quality directly affects milk composition and meat quality.</li>
+      <li>Stress during transport or slaughter adversely affects meat quality (dark, firm meat in cattle).</li>
+    </ul>
+    <h3>Apiculture Products (honey, beeswax)</h3>
+    <ul>
+      <li>Hive location and flora determine honey flavour, colour, and nutritional profile.</li>
+      <li>Moisture content must be controlled — high moisture causes honey to ferment rapidly.</li>
+    </ul>
+  </div>
+  <div class="lesson-section">
+    <h2>Value-Added Animal Products</h2>
+    <p>Processing raw products increases their market value and extends shelf life:</p>
+    <ul>
+      <li><strong>Monogastric</strong> — smoked pork, bacon, sausages, processed chicken.</li>
+      <li><strong>Polygastric</strong> — cheese, yoghurt, butter, dried beef, leather goods.</li>
+      <li><strong>Apiculture</strong> — bottled honey, beeswax candles, cosmetics, propolis extract.</li>
+    </ul>
+    <p>Value-adding is a critical strategy for PNG farmers to increase income from the same quantity of raw product.</p>
+  </div>
+  <div class="lesson-section">
+    <h2>Electronic Agriculture and Emerging Trends</h2>
+    <p>E-agriculture (electronic agriculture) uses ICT to improve animal production:</p>
+    <ul>
+      <li><strong>Mobile phones and internet</strong> — market price information, veterinary advice, connecting sellers with buyers.</li>
+      <li><strong>Sensors and automation</strong> — monitor temperature, humidity, and feed levels in real time.</li>
+      <li><strong>GPS ear tags</strong> — track individual animals over large grazing areas.</li>
+    </ul>
+    <p>Emerging trends: precision livestock farming with wearable sensors; drone surveillance of grazing areas; genomic selection using DNA testing; insect farming (black soldier fly) as sustainable feed.</p>
+  </div>`,
+  summary: [
+    'Quality in animal products is determined by genetics, nutrition, health management, and processing hygiene',
+    'Stress during transport adversely affects meat quality in polygastric animals — producing dark, firm meat',
+    'Moisture control is critical for honey quality — high moisture causes rapid fermentation',
+    'Value-added products (sausages, cheese, bottled honey) significantly increase farm income',
+    'E-agriculture uses mobile phones, sensors, and GPS to improve animal production management',
+    'Emerging trends include precision livestock farming, drone surveillance, and genomic selection',
+  ],
+  quiz: [
+    {q:'What is a value-added animal product?', opts:['An unprocessed raw animal product','A product processed beyond its raw state to increase market value','A product certified as organic','A product sold directly from the farm gate'], ans:1},
+    {q:'What does e-agriculture use to improve animal production?', opts:['Traditional hand tools only','ICT such as mobile phones, internet, and sensors','Only genetic engineering and biotechnology','Government subsidies and price controls'], ans:1},
+    {q:'What factor most directly affects the flavour and colour of honey?', opts:['The age of the beekeeper','The hive location and surrounding flora','The container type used for storage','The harvest season'], ans:1},
+    {q:'Why does stress during transport adversely affect cattle meat quality?', opts:['Animals lose weight rapidly','Stress causes dark, firm, poor-quality meat','Stressed animals produce excess fat','Stress reduces milk production'], ans:1},
+    {q:'What is precision livestock farming?', opts:['Traditional small family farm methods','Using sensors, GPS, and data analytics to monitor animal behaviour and productivity in real time','A government livestock improvement program','Growing livestock feed using precision irrigation'], ans:1},
+  ],
+  furtherReading: [
+    {url:'https://www.fao.org/animal-production/en/',label:'FAO Animal Production',desc:'FAO resources on quality animal products, value-adding, and trends in animal agriculture.'},
+  ]
+},
+
+'g12-aqua-advanced': {
+  title: 'Advanced Aqua Farming & Post-Harvest Technology',
+  strand: 'Strand 3: Aquaculture · Units 1–3', grade: 12, icon: '🌊',
+  lessons: ['Advanced Aquaculture Systems','Post-Harvest Technology','Global Aquaculture Trade'],
+  currentLesson: 0,
+  objectives: [
+    'Investigate advanced aqua farming systems and their advantages and disadvantages',
+    'Explain post-harvest technologies for handling, processing, and maintaining fish quality',
+    'Discuss global trading of aquaculture products and communication technologies in marketing'
+  ],
+  keyTerms: [
+    {word:'Recirculating Aquaculture System (RAS)',def:'A closed-loop fish farming system that recycles and treats water — enabling high-density, year-round production with minimal water use.'},
+    {word:'Post-harvest technology',def:'Methods used after harvesting to handle, process, store, and transport fish while maintaining quality and safety.'},
+    {word:'Cold chain',def:'The temperature-controlled supply chain maintaining quality of perishable fish from harvest to consumer.'},
+    {word:'HACCP',def:'Hazard Analysis and Critical Control Points — an international food safety management system for fish processing.'},
+    {word:'Biofloc technology',def:'A system where microorganisms in the water convert fish waste into microbial protein the fish can eat — reducing feed costs.'},
+  ],
+  content: `
+  <div class="lesson-section">
+    <h2>Advanced Aqua Farming Systems</h2>
+    <ul>
+      <li><strong>Recirculating Aquaculture Systems (RAS)</strong> — closed-loop systems treating and recycling water continuously. Advantages: year-round production, water efficiency, biosecurity. Disadvantage: high capital and energy cost.</li>
+      <li><strong>Cage culture</strong> — fish grown in net cages in lakes, rivers, or the sea. Lower capital cost; production depends on water conditions.</li>
+      <li><strong>Integrated farming</strong> — fish ponds combined with rice or poultry, where waste from one system feeds another (e.g. fish-rice systems).</li>
+      <li><strong>Biofloc technology</strong> — microorganisms cultivated in water convert fish waste to protein, reducing feed costs and improving water quality.</li>
+    </ul>
+  </div>
+  <div class="lesson-section">
+    <h2>Post-Harvest Technology</h2>
+    <p>Fish deteriorate rapidly after death. Key post-harvest steps:</p>
+    <ul>
+      <li><strong>Handling</strong> — rapid chilling immediately after harvest is the single most important step.</li>
+      <li><strong>Processing</strong> — gutting, filleting, smoking, drying, canning, or fermenting depending on market requirements.</li>
+      <li><strong>Cold chain management</strong> — maintaining a continuous temperature-controlled supply chain using ice, refrigeration, or freezing.</li>
+      <li><strong>HACCP systems</strong> — required for fish processing targeting export markets.</li>
+    </ul>
+  </div>
+  <div class="lesson-section">
+    <h2>Global Trade and Communication Technology</h2>
+    <p>PNG exports tuna, prawns, and seafood to Asia, Australia, and Europe — requiring compliance with international quality and safety standards.</p>
+    <p>Communication technologies transforming PNG aquaculture marketing:</p>
+    <ul>
+      <li>Mobile phones and SMS for real-time market prices</li>
+      <li>Internet and e-commerce connecting farmers directly with buyers</li>
+      <li>GPS-enabled temperature loggers tracking cold chain integrity</li>
+    </ul>
+  </div>`,
+  summary: [
+    'Advanced aquaculture systems: RAS, cage culture, integrated farming, and biofloc technology',
+    'RAS provides precise environmental control and high density but requires high capital and energy',
+    'Post-harvest: chilling, processing, cold chain management, and HACCP food safety systems',
+    'Rapid chilling immediately after harvest is the most important step for fish quality',
+    'PNG exports tuna, prawns, and seafood requiring strict international quality standards',
+    'Mobile phones, internet, and e-commerce are transforming PNG aquaculture marketing',
+  ],
+  quiz: [
+    {q:'What is a Recirculating Aquaculture System (RAS)?', opts:['A large open-water fish cage','A closed-loop system recycling water for high-density fish farming','A natural pond using seasonal flooding','A government fish hatchery'], ans:1},
+    {q:'What is the most important post-harvest step for fish quality?', opts:['Packaging in attractive containers','Rapid chilling immediately after harvest','Smoking fish within 24 hours','Adding salt to transport water'], ans:1},
+    {q:'What does biofloc technology do in aquaculture?', opts:['Removes salt from seawater','Converts fish waste to microbial protein — reducing feed costs','Monitors fish growth using GPS','Produces fish vaccines automatically'], ans:1},
+    {q:'What is the HACCP system?', opts:['Hazard Analysis and Critical Control Points — international food safety management','High Aquaculture Culture and Certification Process','Harvest and Cold Chain Processing','Healthy Agriculture Consumer Care Program'], ans:0},
+    {q:'Why must PNG aquaculture exporters meet international quality standards?', opts:['To avoid import duties in PNG','To access premium markets in Asia, Australia, and Europe','To qualify for domestic subsidies','To increase pond stocking density'], ans:1},
+  ],
+  furtherReading: [
+    {url:'https://www.fao.org/fishery/en/aquaculture',label:'FAO Advanced Aquaculture',desc:'FAO resources on advanced aquaculture systems, post-harvest technology, and global fish trade.'},
+  ]
+},
+
+'g12-forestry-processing': {
+  title: 'Forestry Processing, Silviculture & Technology',
+  strand: 'Strand 4: Natural Resources · Units 4–6', grade: 12, icon: '🪵',
+  lessons: ['Processing Forest Products','Plantation & Sawmilling','Silviculture & Constraints'],
+  currentLesson: 0,
+  objectives: [
+    'Describe how forest products are harvested, processed, and marketed',
+    'Explain nursery operations, plantation establishment, and sawmilling in PNG forestry',
+    'Evaluate silviculture techniques and constraints facing the PNG forestry sector'
+  ],
+  keyTerms: [
+    {word:'Sawmill',def:'A facility where logs are cut into planks, boards, and timber products using mechanical saws.'},
+    {word:'Plantation forestry',def:'Growing trees as a crop in organised, managed forests using selected species for commercial timber production.'},
+    {word:'Silviculture',def:'The practice of controlling forest establishment, growth, composition, health, and quality to meet management objectives.'},
+    {word:'Land tenure',def:'The system of rights governing who owns, uses, and manages land — in PNG, most forest land is customary-owned by local communities.'},
+  ],
+  content: `
+  <div class="lesson-section">
+    <h2>Processing Forest Products</h2>
+    <h3>Timber Processing</h3>
+    <ul>
+      <li><strong>Sawmill conversion</strong> — logs are cut into planks, boards, and beams. Efficiency determines timber recovery per log.</li>
+      <li><strong>Drying</strong> — green timber must be air-dried or kiln-dried to reduce moisture and prevent warping, splitting, and decay.</li>
+      <li><strong>Grading and sorting</strong> — timber is graded by quality (structural vs. appearance grade) for different markets.</li>
+      <li><strong>Value-adding</strong> — producing furniture, flooring, mouldings, and housing materials greatly increases income.</li>
+    </ul>
+  </div>
+  <div class="lesson-section">
+    <h2>Nursery Operations and Plantation Establishment</h2>
+    <h3>Nursery Operations</h3>
+    <p>Key stages: seed selection from proven trees; germination beds under shade; hardening off seedlings before transplanting.</p>
+    <h3>Plantation Establishment</h3>
+    <ol>
+      <li>Site preparation — clearing competing vegetation, ripping soil, applying base fertiliser.</li>
+      <li>Planting at correct spacing — determines competition for light and timing of first thinning.</li>
+      <li>Early maintenance — weeding, pest control, fertiliser application.</li>
+    </ol>
+    <h3>Sawmilling in PNG</h3>
+    <p>PNG sawmills range from large commercial operations to portable chainsaw mills used by community groups. Key constraints: high fuel costs, blade maintenance, access to logs of appropriate size.</p>
+  </div>
+  <div class="lesson-section">
+    <h2>Silviculture and Constraints</h2>
+    <h3>Silviculture Techniques</h3>
+    <ul>
+      <li><strong>Fertiliser application</strong> — promotes faster growth and reduces rotation age to harvest.</li>
+      <li><strong>Thinning</strong> — removing weaker trees to reduce competition and improve quality of remaining trees.</li>
+      <li><strong>Pruning</strong> — removing lower branches to produce knot-free, high-value timber.</li>
+    </ul>
+    <h3>Constraints in PNG Forestry</h3>
+    <ul>
+      <li><strong>Land tenure</strong> — most forest land is customary-owned; negotiating access takes time and can create conflict.</li>
+      <li><strong>Labour costs</strong> — skilled labour in remote areas is expensive relative to timber revenues.</li>
+      <li><strong>Maturity time</strong> — many commercial species take 20–50 years to reach harvest maturity.</li>
+    </ul>
+  </div>`,
+  summary: [
+    'Timber processing: sawmill conversion, drying, grading, sorting, and value-adding to furniture and housing materials',
+    'Nursery: seed selection, germination, and hardening off before transplanting to plantation sites',
+    'Plantation establishment: site preparation, correct spacing, and early maintenance',
+    'Silviculture — fertiliser, thinning, and pruning — improves timber quality and growth rate',
+    'Key PNG forestry constraints: customary land tenure, labour costs, and long maturity times',
+    'Value-adding forest products (furniture, honey, bamboo goods) significantly increases income over raw log sales',
+  ],
+  quiz: [
+    {q:'What is a sawmill?', opts:['A machine for planting tree seedlings','A facility where logs are cut into planks and timber products','A chemical treatment plant for preserving timber','A portable water mill used in nurseries'], ans:1},
+    {q:'Why must green (freshly cut) timber be dried?', opts:['To remove insects','To reduce moisture and prevent warping, splitting, and fungal decay','To make it easier to cut','To increase weight for sale'], ans:1},
+    {q:'What is silviculture?', opts:['Study of silver compounds in wood preservation','Controlling forest establishment, growth, and quality to meet management objectives','Extracting non-timber forest products','Carbon accounting in forestry'], ans:1},
+    {q:'What is the main land tenure challenge in PNG forestry?', opts:['Government owns too much forest','Most forest land is customary-owned requiring complex negotiations','Plantation forests cannot be established legally','Foreigners own most valuable forest'], ans:1},
+    {q:'What does thinning achieve in plantation forestry?', opts:['Removes all trees for replanting','Removes weaker trees reducing competition and improving remaining tree quality','Applies herbicide to undergrowth','Plants more seedlings between existing trees'], ans:1},
+  ],
+  furtherReading: [
+    {url:'https://www.fao.org/forestry/en/',label:'FAO Forestry',desc:'FAO resources on plantation forestry, silviculture, sawmilling, and sustainable forest management.'},
+  ]
+},
+
+'g12-advanced-finance': {
+  title: 'Advanced Agribusiness Finance & Capital',
+  strand: 'Strand 5: Agribusiness · Unit 1', grade: 12, icon: '📊',
+  lessons: ['Advanced Financial Analysis','Capital Management','Preparing Cash Flow Statements'],
+  currentLesson: 0,
+  objectives: [
+    'Calculate and interpret key financial ratios including net profit margin, current ratio, and debt-to-equity ratio',
+    'Explain working capital management and debt management in agribusiness',
+    'Prepare and interpret a basic cash flow statement for an agricultural enterprise'
+  ],
+  keyTerms: [
+    {word:'Working capital',def:'Current assets minus current liabilities — the capital available for day-to-day operations. Insufficient working capital causes cash flow problems.'},
+    {word:'Net profit margin',def:'Net profit as a percentage of total revenue — measures how efficiently a business converts sales into profit.'},
+    {word:'Current ratio',def:'Current assets divided by current liabilities — a ratio above 1.0 indicates the business can meet its short-term obligations.'},
+    {word:'Accounts receivable',def:'Money owed to the business by customers for goods delivered but not yet paid — a current asset on the balance sheet.'},
+    {word:'Return on equity (ROE)',def:'Net profit divided by owner\'s equity — measures how effectively the owner\'s investment is generating profit.'},
+  ],
+  content: `
+  <div class="lesson-section">
+    <h2>Advanced Financial Analysis</h2>
+    <p>Key financial ratios for agribusiness analysis:</p>
+    <ul>
+      <li><strong>Net profit margin</strong> = (Net profit ÷ Total revenue) × 100. A higher margin means more revenue is kept as profit.</li>
+      <li><strong>Current ratio</strong> = Current assets ÷ Current liabilities. Above 1.0 = good liquidity.</li>
+      <li><strong>Debt-to-equity ratio</strong> = Total debt ÷ Total equity. A lower ratio = less financial risk.</li>
+      <li><strong>Return on equity (ROE)</strong> = Net profit ÷ Owner\'s equity. Measures effectiveness of the owner\'s investment.</li>
+    </ul>
+  </div>
+  <div class="lesson-section">
+    <h2>Capital Management and Debt Management</h2>
+    <p>Effective working capital management involves:</p>
+    <ul>
+      <li>Managing <strong>accounts receivable</strong> — ensure customers pay on time to maintain cash flow.</li>
+      <li>Managing <strong>accounts payable</strong> — negotiate payment terms with suppliers to preserve working capital.</li>
+      <li>Managing <strong>inventory</strong> — hold sufficient stock without tying up excessive capital.</li>
+    </ul>
+    <p>Debt management rules: loan repayments should not exceed a set proportion of operating cash flow; long-term assets (land, equipment) should be financed by long-term debt, not short-term credit.</p>
+  </div>
+  <div class="lesson-section">
+    <h2>Preparing a Cash Flow Statement</h2>
+    <p>A cash flow statement for a small agribusiness covers three sections:</p>
+    <ol>
+      <li><strong>Operating activities</strong> — cash from crop/livestock sales minus cash paid for inputs, feed, and labour.</li>
+      <li><strong>Investing activities</strong> — cash paid for land, equipment, or vehicles; or received from selling long-term assets.</li>
+      <li><strong>Financing activities</strong> — loan receipts minus loan repayments and interest payments.</li>
+    </ol>
+    <p>The sum of the three sections = <strong>net change in cash position</strong>. Positive = cash generated; negative = cash consumed.</p>
+    <div class="info-box" style="background:var(--green-lt);padding:14px 16px;border-radius:8px;margin-top:14px">
+      <strong>Example:</strong> A farmer receives K5,000 from sales (operating), pays K2,500 for feed, K800 loan repayment, K200 bank charges. Net cash flow = K5,000 − K2,500 − K800 − K200 = <strong>K1,500 positive</strong>.
+    </div>
+  </div>`,
+  summary: [
+    'Key financial ratios: net profit margin, current ratio, debt-to-equity ratio, and return on equity (ROE)',
+    'Current ratio above 1.0 indicates the business can meet its short-term obligations',
+    'Working capital = current assets minus current liabilities — the lifeblood of day-to-day operations',
+    'Effective capital management: timely accounts receivable collection, supplier payment terms, and inventory control',
+    'A cash flow statement has three sections: operating, investing, and financing activities',
+    'Net change in cash position shows whether the business generated or consumed cash over the period',
+  ],
+  quiz: [
+    {q:'What does the current ratio measure?', opts:['Business profitability per year','Whether the business can meet short-term obligations (current assets ÷ current liabilities)','Revenue proportion that becomes profit','Debt relative to equity'], ans:1},
+    {q:'What is working capital?', opts:['Capital invested at business start','Current assets minus current liabilities','Total long-term debt','Cash received from crop sales'], ans:1},
+    {q:'Which cash flow section records purchase of farm equipment?', opts:['Operating activities','Investing activities','Financing activities','Capital activities'], ans:1},
+    {q:'A farmer receives K5,000 from sales, pays K2,500 for feed and K800 for loan repayments. What is the net cash flow?', opts:['K1,700','K1,500','K2,500','K5,000'], ans:0},
+    {q:'What does a high debt-to-equity ratio indicate?', opts:['High profitability','High financial risk from heavy borrowing','Strong working capital management','Good return on equity'], ans:1},
+  ],
+  furtherReading: [
+    {url:'https://www.fao.org/rural-employment/agribusiness/en/',label:'FAO Agribusiness Finance',desc:'FAO resources on agribusiness financial management, capital planning, and cash flow analysis.'},
+  ]
+},
+
+'g11-biennial-crops': {
+  title: 'Biennial Crops & Crop Protection',
+  strand: 'Strand 1: Crops · Units 2–3', grade: 11, icon: '🌽',
+  lessons: ['Characteristics of Biennial Crops','Crop Pest Management','Practices of Crop Protection'],
+  currentLesson: 0,
+  objectives: [
+    'Identify and explain the characteristics and physiology of biennial crops',
+    'Investigate and explain factors affecting crop production',
+    'Describe principles and practices of crop protection against pests and diseases'
+  ],
+  keyTerms: [
+    {word:'Biennial crop',def:'A crop that completes its life cycle over two growing seasons — producing vegetation in the first year and seeds or fruit in the second year before dying.'},
+    {word:'Vernalisation',def:'Exposure to cold temperatures that triggers flowering in biennial crops during their second growing season.'},
+    {word:'Crop pest',def:'Any organism that causes damage to a crop — including insects, birds, rodents, weeds, fungi, bacteria, and viruses.'},
+    {word:'Integrated Pest Management (IPM)',def:'A strategy combining biological, cultural, physical, and chemical tools to minimise risks from pests with low economic, health, and environmental impact.'},
+    {word:'Biological control',def:'Using natural predators, parasites, or pathogens of the pest to limit pest populations — a key component of IPM.'},
+  ],
+  content: `
+  <div class="lesson-section">
+    <h2>Characteristics of Biennial Crops</h2>
+    <p>A <strong>biennial crop</strong> takes two growing seasons to complete its life cycle. In the first season it produces vegetative growth (leaves, stems, roots). In the second season it flowers, sets seed, and dies. Examples include carrot, cabbage, beetroot, and sugar beet.</p>
+    <ul>
+      <li>They require <strong>vernalisation</strong> — a period of cold — to trigger flowering in year two.</li>
+      <li>The harvested part (root, bulb, or tuber) is usually produced in the first growing season.</li>
+      <li>They have different nutrient requirements in each growing season.</li>
+    </ul>
+  </div>
+  <div class="lesson-section">
+    <h2>Factors Affecting Crop Production</h2>
+    <ul>
+      <li><strong>Soil fertility and fertiliser</strong> — available nutrients determine growth rate and yield.</li>
+      <li><strong>Water availability</strong> — adequate rainfall or irrigation is essential for most crops.</li>
+      <li><strong>Climate</strong> — temperature, light, and rainfall patterns directly influence crop growth.</li>
+      <li><strong>Pests and diseases</strong> — insects, fungi, bacteria, and viruses can significantly reduce yields if not controlled.</li>
+    </ul>
+  </div>
+  <div class="lesson-section">
+    <h2>Principles and Practices of Crop Protection</h2>
+    <p>Crop protection prevents or reduces damage from pests, diseases, and weeds:</p>
+    <ul>
+      <li><strong>Cultural control</strong> — crop rotation, intercropping, and resistant varieties reduce pest pressure without chemicals.</li>
+      <li><strong>Biological control</strong> — using natural predators or parasites to limit pest populations.</li>
+      <li><strong>Chemical control</strong> — applying pesticides, herbicides, or fungicides for specific pests or diseases.</li>
+      <li><strong>Integrated Pest Management (IPM)</strong> — combining multiple approaches for sustainable, cost-effective control.</li>
+    </ul>
+    <p>Effective crop protection starts with <strong>regular monitoring</strong> — inspecting crops early to detect pest outbreaks before major damage occurs.</p>
+  </div>`,
+  summary: [
+    'Biennial crops complete their life cycle over two growing seasons — vegetative growth in year one, flowering and seeding in year two',
+    'Examples include carrot, cabbage, beetroot, and sugar beet',
+    'Vernalisation — exposure to cold — triggers flowering in the second season',
+    'Key crop production factors: soil fertility, water, climate, pests, and diseases',
+    'Crop protection methods include cultural, biological, and chemical control',
+    'IPM combines multiple tools for sustainable, low-impact pest management',
+  ],
+  quiz: [
+    {q:'What is a biennial crop?', opts:['A crop harvested twice a year','A crop completing its life cycle over two growing seasons','A crop grown only in biennial rotation','A crop that dies after one season'], ans:1},
+    {q:'Which is an example of a biennial crop?', opts:['Maize','Sweet potato','Carrot','Cassava'], ans:2},
+    {q:'What is vernalisation?', opts:['Applying fertiliser to crops','Exposure to cold that triggers flowering in biennial crops','A type of pesticide','Removing weeds from a crop field'], ans:1},
+    {q:'Which crop protection method uses natural predators to control pests?', opts:['Chemical control','Cultural control','Biological control','Mechanical control'], ans:2},
+    {q:'What does IPM stand for?', opts:['International Pest Monitoring','Integrated Plant Management','Integrated Pest Management','Improved Pest Mitigation'], ans:2},
+  ],
+  furtherReading: [
+    {url:'https://www.fao.org/pest-and-pesticide-management/en/',label:'FAO Pest Management',desc:'FAO resources on integrated pest management and crop protection strategies.'},
+  ]
+},
+
+'g11-horticulture-tech': {
+  title: 'Horticulture Technology & Constraints',
+  strand: 'Strand 1: Crops · Unit 7', grade: 11, icon: '💡',
+  lessons: ['Technologies in Mass Production','Constraints & Solutions'],
+  currentLesson: 0,
+  objectives: [
+    'Explain how technology is used to mass-produce and commercialise horticulture plants in PNG',
+    'Identify constraints in cultivation and marketing of horticulture products and suggest solutions'
+  ],
+  keyTerms: [
+    {word:'Tissue culture',def:'A laboratory technique for propagating plants using cells, tissues, or organs in a sterile, controlled environment — used to mass-produce clonal plants.'},
+    {word:'Bioreactor',def:'A device providing a suitable environment for plant cells to grow and develop — used to mass-produce over 80 types of crops commercially.'},
+    {word:'Constraint',def:'A limiting factor that prevents or reduces agricultural production — such as lack of inputs, poor infrastructure, or inadequate technical knowledge.'},
+    {word:'Commercialisation',def:'The process of making a product available for sale and generating income — moving from subsistence to market-oriented production.'},
+    {word:'In vitro propagation',def:'Propagating plant material in a laboratory environment to produce exact DNA copies of desired plant characteristics.'},
+  ],
+  content: `
+  <div class="lesson-section">
+    <h2>Technologies in Horticulture Mass Production</h2>
+    <p>With rapid global population growth, horticulture production struggles to meet demand. Technology offers powerful solutions for scaling up production.</p>
+    <h3>Tissue Culture (Micropropagation)</h3>
+    <p>Tissue culture propagates plants in a controlled environment using cells, tissues, or plant parts — such as leaf, lateral bud, shoot tip, stem, and root tissue. Benefits:</p>
+    <ul>
+      <li>Rapid production of large numbers of genetically identical (clonal) plants</li>
+      <li>Disease-free planting material</li>
+      <li>Year-round production regardless of season</li>
+      <li>Conservation of rare or endangered plant varieties</li>
+    </ul>
+    <h3>Bioreactors</h3>
+    <p>Bioreactors provide a controlled active environment for plant cells to grow and develop. The technique has been used to mass-produce over 80 crops commercially, with many more in experimentation.</p>
+    <h3>In Vitro Propagation</h3>
+    <p>Uses gene amplification to produce exact copies of desired plant DNA — enabling precise replication of desirable characteristics at commercial scale.</p>
+  </div>
+  <div class="lesson-section">
+    <h2>Constraints in Horticulture Cultivation and Marketing</h2>
+    <p>PNG horticulture is still characterised by low farm output, low productivity, and poor product quality. Farmers face high marketing costs and limited market access.</p>
+    <table style="width:100%;border-collapse:collapse;font-size:.87rem">
+      <thead><tr style="background:var(--green-lt)"><th style="padding:8px;text-align:left">Constraint</th><th style="padding:8px;text-align:left">Solution</th></tr></thead>
+      <tbody>
+        <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px"><strong>Low input use</strong> (seeds, fertilisers)</td><td style="padding:8px">Improve availability and distribution of inputs so farmers can access them when needed</td></tr>
+        <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px"><strong>Lack of technological knowledge</strong></td><td style="padding:8px">Provide training in modern production, packaging, and storage techniques</td></tr>
+        <tr><td style="padding:8px"><strong>Poor roads and transport</strong></td><td style="padding:8px">Invest in rural roads, storage, and communication facilities to connect farmers to markets</td></tr>
+      </tbody>
+    </table>
+  </div>`,
+  summary: [
+    'Tissue culture (micropropagation) mass-produces disease-free clonal horticulture plants in a laboratory',
+    'Bioreactors are used commercially to mass-produce over 80 types of crops',
+    'Key constraints in PNG horticulture: low input use, lack of technical knowledge, poor transport',
+    'Solutions include improving input access, farmer training, and investment in rural infrastructure',
+    'Commercialisation of aromatic, herbal, and ornamental plants offers significant income opportunities in PNG',
+  ],
+  quiz: [
+    {q:'What is the main advantage of tissue culture for horticulture?', opts:['Eliminates need for fertilisers','Produces large numbers of disease-free clonal plants rapidly','Reduces need for irrigation','Removes all marketing constraints'], ans:1},
+    {q:'What are bioreactors used for?', opts:['Testing soil nutrient levels','Providing a controlled environment for plant cells to grow in mass production','Filtering irrigation water','Processing harvested fruits'], ans:1},
+    {q:'Which is a major constraint for PNG horticulture farmers?', opts:['Too much rainfall','Excess supply of farming inputs','Poor road and transport infrastructure','Overproduction of horticulture products'], ans:2},
+    {q:'What does commercialisation in horticulture mean?', opts:['Growing plants only for family use','Making horticulture products available for sale and generating income','Preserving plants using chemicals','Growing crops only in commercial greenhouses'], ans:1},
+    {q:'Which solution addresses lack of technological knowledge?', opts:['Importing all produce from overseas','Reducing the number of crops grown','Providing training in modern production and handling techniques','Switching entirely to chemical farming'], ans:2},
+  ],
+  furtherReading: [
+    {url:'https://www.plantcelltechnology.com',label:'Plant Cell Technology',desc:'Resources on tissue culture, micropropagation, and horticulture plant production technology.'},
+  ]
+},
+
+'g11-livestock-management': {
+  title: 'Livestock Management & Husbandry',
+  strand: 'Strand 2: Animals · Unit 2', grade: 11, icon: '🐄',
+  lessons: ['Feeding Regimes & Grazing','Husbandry Principles','Mass Production Practices'],
+  currentLesson: 0,
+  objectives: [
+    'Analyse the challenges of managing livestock using feeding regimes, grazing land tenure, and herding arrangements',
+    'Discuss and evaluate husbandry principles and practices used in mass production of animal products'
+  ],
+  keyTerms: [
+    {word:'Feeding regime',def:'A planned, structured approach to providing food to livestock — specifying what to feed, how much, and how often for optimal production.'},
+    {word:'Grazing land tenure',def:'The rights, rules, and systems governing who can use grazing land — including ownership, lease, communal access, and management responsibilities.'},
+    {word:'Rotational grazing',def:'Moving the herd between paddocks on a planned schedule, allowing pastures to recover before the animals return.'},
+    {word:'Husbandry',def:'The science and practice of breeding and caring for farm animals — including feeding, health management, housing, and reproduction.'},
+    {word:'Biosecurity',def:'Practical measures taken to prevent the introduction and spread of disease in a livestock operation.'},
+  ],
+  content: `
+  <div class="lesson-section">
+    <h2>Feeding Regimes for Livestock</h2>
+    <p>A feeding regime is a planned approach to meeting the nutritional needs of livestock. It must account for the animal's age, weight, production stage, and the product being produced (meat, milk, eggs).</p>
+    <ul>
+      <li><strong>Energy</strong> — carbohydrates and fats provide energy for maintenance and production.</li>
+      <li><strong>Protein</strong> — essential for growth, milk production, and reproduction.</li>
+      <li><strong>Minerals and vitamins</strong> — calcium, phosphorus, and salt licks are important for livestock health.</li>
+      <li><strong>Water</strong> — clean, fresh water must always be available; it is the most critical nutrient.</li>
+    </ul>
+  </div>
+  <div class="lesson-section">
+    <h2>Grazing Land Tenure and Herding Arrangements</h2>
+    <p>In PNG, land is largely customary-owned, so grazing arrangements often involve community agreements and traditional governance.</p>
+    <p>Types of grazing systems:</p>
+    <ul>
+      <li><strong>Continuous grazing</strong> — animals graze the same area year-round. Simple to manage but risks overgrazing.</li>
+      <li><strong>Rotational grazing</strong> — the herd moves between paddocks on a planned schedule, allowing pastures to recover.</li>
+      <li><strong>Strip grazing</strong> — animals confined to narrow strips of pasture using temporary fencing, moved regularly for fresh feed.</li>
+    </ul>
+  </div>
+  <div class="lesson-section">
+    <h2>Husbandry Principles in Mass Production</h2>
+    <p>Mass production uses intensive management systems with large numbers of animals in controlled conditions:</p>
+    <ul>
+      <li><strong>Biosecurity</strong> — controlling access to the farm to prevent disease introduction.</li>
+      <li><strong>Health management</strong> — regular vaccination, deworming, and veterinary inspections.</li>
+      <li><strong>Genetic selection</strong> — using high-producing breeds to maximise output.</li>
+      <li><strong>Record keeping</strong> — tracking feed, production, health, and costs to inform management decisions.</li>
+    </ul>
+  </div>`,
+  summary: [
+    'A feeding regime plans what, how much, and how often to feed livestock based on species, age, and production stage',
+    'Key livestock nutrients: energy, protein, minerals, vitamins, and clean fresh water',
+    'In PNG, grazing land is largely customary-owned — community agreements govern access and use',
+    'Rotational grazing is the most productive and sustainable system — paddocks are rested between grazings',
+    'Mass production uses biosecurity, health management, genetic selection, and record keeping',
+    'Record keeping is essential for monitoring performance and making informed management decisions',
+  ],
+  quiz: [
+    {q:'What is a feeding regime?', opts:['A type of pasture fencing system','A planned approach to meeting the nutritional needs of livestock','The system of land tenure used for grazing','A record of livestock production outputs'], ans:1},
+    {q:'Which nutrient is described as the most critical for livestock health?', opts:['Protein','Calcium','Water','Energy'], ans:2},
+    {q:'What is rotational grazing?', opts:['Animals grazing continuously on one pasture','Moving animals between paddocks on a schedule to allow pasture recovery','Grazing animals only at night','Feeding livestock in the barn only'], ans:1},
+    {q:'What does biosecurity in animal farming mean?', opts:['Using biological pesticides','Controlling farm access to prevent disease introduction','Growing crops alongside animals','Providing biological supplements in animal feed'], ans:1},
+    {q:'Why is record keeping important in livestock management?', opts:['It is required by law in all countries','It helps monitor farm performance and inform management decisions','It replaces the need for veterinary visits','It is only needed at year end'], ans:1},
+  ],
+  furtherReading: [
+    {url:'https://www.fao.org/animal-production/en/',label:'FAO Animal Production',desc:'FAO resources on livestock feeding, husbandry, and mass production systems.'},
+  ]
+},
+
+'g11-poultry-processing': {
+  title: 'Poultry Processing, Regulation & Technology',
+  strand: 'Strand 2: Animals · Units 5–6', grade: 11, icon: '🐔',
+  lessons: ['Processing & Preserving Bird Products','Poultry Regulations in PNG','Technology in Poultry Farming'],
+  currentLesson: 0,
+  objectives: [
+    'Explain how bird products are processed and preserved',
+    'Investigate how poultry production is regulated in PNG',
+    'Identify technologies used to manage, monitor, and improve poultry production'
+  ],
+  keyTerms: [
+    {word:'Evisceration',def:'The process of removing the internal organs (viscera) of a slaughtered bird during poultry processing.'},
+    {word:'Pasteurisation',def:'A heat treatment process that kills harmful microorganisms in liquid egg products, making them safe for consumption.'},
+    {word:'NAQIA',def:'National Agriculture Quarantine and Inspections Authority — the PNG government body responsible for agricultural quarantine and inspection standards.'},
+    {word:'ICCC',def:'Independent Consumer and Competition Commission — the PNG regulatory body overseeing pricing and competition, including poultry product prices.'},
+    {word:'Biosecurity',def:'Measures taken to prevent the introduction and spread of disease in a poultry operation.'},
+  ],
+  content: `
+  <div class="lesson-section">
+    <h2>Processing and Preserving Bird Products</h2>
+    <p>Poultry processing follows four major stages:</p>
+    <ol>
+      <li><strong>Receiving and slaughtering</strong> — birds are hung upside down, stunned, then slaughtered with a single cut.</li>
+      <li><strong>Cleaning and evisceration</strong> — feathers removed using hot water; internal organs removed and each bird inspected.</li>
+      <li><strong>Processing and preparation</strong> — microbiology tests conducted after chilling; carcass cut and deboned for different product types.</li>
+      <li><strong>Packaging and shipping</strong> — products packed in trays, wrapped, inspected, and shipped to retail points.</li>
+    </ol>
+    <h3>Preservation Methods for Bird Products</h3>
+    <p>Canning, drying/dehydration, freezing, chilling, curing, smoking, and radiation preservation.</p>
+    <h3>Egg Processing</h3>
+    <p>Receiving shell eggs → washing and sanitising → candling → breaking → filtering → blending → pasteurisation → freezing or drying → packaging → cold storage.</p>
+  </div>
+  <div class="lesson-section">
+    <h2>Poultry Regulations in PNG</h2>
+    <p>Poultry farming is regulated by the <strong>Department of Agriculture and Livestock (DAL)</strong> and <strong>NAQIA</strong>. Key regulations:</p>
+    <ul>
+      <li>Poultry houses must be clean, well-ventilated, and regularly maintained.</li>
+      <li>Slaughterhouses and equipment must be sanitised and sterilised.</li>
+      <li>Birds must be 7–8 weeks old before being sold or slaughtered.</li>
+      <li>Only healthy-looking birds may be sold or consumed.</li>
+      <li>Prices must remain within the range set by the <strong>ICCC</strong>.</li>
+      <li>Frozen products must carry a use-by date within three months.</li>
+    </ul>
+  </div>
+  <div class="lesson-section">
+    <h2>Technology in Poultry Farming</h2>
+    <ul>
+      <li><strong>Automatic feeding lines</strong> — self-refilling feeders in commercial poultry houses.</li>
+      <li><strong>Thermal sensors</strong> — detect intruders or monitor temperature and humidity.</li>
+      <li><strong>Automatic switches</strong> — control ventilation, heating, and lighting based on conditions.</li>
+      <li><strong>Digital monitoring</strong> — computers and mobile phones allow remote farm management.</li>
+    </ul>
+    <p><strong>Zenag Chicken</strong> in PNG uses completely enclosed, automated facilities with strict biosecurity protocols — a leading example of technology in PNG poultry farming.</p>
+  </div>`,
+  summary: [
+    'Poultry processing stages: receiving and slaughtering, cleaning and evisceration, processing, and packaging and shipping',
+    'Preservation methods include canning, drying, freezing, chilling, curing, smoking, and radiation',
+    'PNG poultry farming is regulated by DAL and NAQIA — covering housing, hygiene, slaughter age, and prices',
+    'Birds must be 7–8 weeks old before being sold or slaughtered under PNG regulations',
+    'Poultry technology ranges from automatic feeders to fully automated houses with digital monitoring',
+    'Zenag Chicken uses automated, enclosed facilities with strict biosecurity — a PNG industry leader',
+  ],
+  quiz: [
+    {q:'What is evisceration in poultry processing?', opts:['Removing feathers from a slaughtered bird','Removing the internal organs during processing','Preserving poultry meat by drying','Hot water treatment to loosen feathers'], ans:1},
+    {q:'Under PNG regulations, how old must birds be before being sold or slaughtered?', opts:['3–4 weeks','5–6 weeks','7–8 weeks','10–12 weeks'], ans:2},
+    {q:'Which PNG body regulates poultry product prices?', opts:['NAQIA','Department of Agriculture','ICCC','PNG Forest Authority'], ans:2},
+    {q:'What is pasteurisation used for in egg processing?', opts:['Removing the shell from eggs','Killing harmful microorganisms in liquid egg products','Cooling eggs for cold storage','Adding colour to egg yolks'], ans:1},
+    {q:'Which technology does Zenag Chicken use to minimise disease risk?', opts:['Open-range free grazing','Manual daily inspections','Automated facilities with strict biosecurity protocols','Herbal feed supplements'], ans:2},
+  ],
+  furtherReading: [
+    {url:'https://www.fao.org/poultry-production-products/en/',label:'FAO Poultry Production',desc:'FAO resources on poultry processing, regulations, and technology in developing countries.'},
+  ]
+},
+
+'g11-aqua-marketing': {
+  title: 'Aquaculture Production, Marketing & Regulations',
+  strand: 'Strand 3: Aquaculture · Units 2–3', grade: 11, icon: '🌊',
+  lessons: ['Factors Affecting Production','Fish Markets & Prices','PNG Fisheries Regulations'],
+  currentLesson: 0,
+  objectives: [
+    'Investigate and explain the factors affecting aquaculture production in different environments',
+    'Describe how fish are marketed and how prices are determined in PNG',
+    'Interpret PNG fisheries policies, regulations, and rules'
+  ],
+  keyTerms: [
+    {word:'National Fisheries Authority (NFA)',def:'The primary regulatory and management body for the fisheries sector in PNG — responsible for licensing, export certification, and sustainable resource management.'},
+    {word:'Fisheries Management Act 1998',def:'The principal legislation governing all fisheries activities in PNG — empowering the NFA to manage, control, and regulate PNG\'s fishery resources.'},
+    {word:'EEZ',def:'Exclusive Economic Zone — a zone extending 200 nautical miles from PNG\'s coast where the state has sovereign rights over fishing and all other marine resources.'},
+    {word:'Price determination',def:'The process by which the selling price of fish is set — influenced by transport cost, production cost, supply and demand, competition, and fish variety.'},
+    {word:'Primary fish market',def:'The first point of sale for fish — usually near the fishing or farming area, where fishers or farmers sell directly to local buyers.'},
+  ],
+  content: `
+  <div class="lesson-section">
+    <h2>Factors Affecting Aquaculture Production</h2>
+    <ul>
+      <li><strong>Climate</strong> — temperature, rainfall, and seasonal variation affect fish growth and health.</li>
+      <li><strong>Water quality</strong> — dissolved oxygen, pH, salinity, and temperature must stay within suitable ranges.</li>
+      <li><strong>Physical environment</strong> — topography and access to water sources affect where aquaculture can operate.</li>
+      <li><strong>Feed availability</strong> — access to quality feed is critical for growth and profitability.</li>
+      <li><strong>Disease management</strong> — fish diseases can devastate production without proper biosecurity and treatment.</li>
+    </ul>
+  </div>
+  <div class="lesson-section">
+    <h2>Fish Markets and Price Determination in PNG</h2>
+    <p>Fish distribution in PNG operates at three market levels:</p>
+    <ul>
+      <li><strong>Primary markets</strong> — near fishing/farming areas; fishers sell fish directly here.</li>
+      <li><strong>Secondary markets</strong> — intermediaries transport fish to port markets or wholesalers.</li>
+      <li><strong>City/terminal markets</strong> — retailers sell directly to consumers (e.g. Koki Fish Market, Port Moresby).</li>
+    </ul>
+    <p>Factors determining fish prices in PNG:</p>
+    <ul>
+      <li>Transport cost and distance from market</li>
+      <li>Production cost (feed, labour, equipment)</li>
+      <li>Supply and demand at the time of sale</li>
+      <li>Competition from other sellers</li>
+      <li>Processing technique (fresh vs smoked vs frozen)</li>
+      <li>Species and variety of fish</li>
+    </ul>
+  </div>
+  <div class="lesson-section">
+    <h2>PNG Fisheries Regulations</h2>
+    <p>The <strong>Fisheries Management Act 1998</strong> governs all fisheries activities in PNG. The <strong>NFA</strong> is empowered to manage, control, and regulate PNG\'s fishery resources.</p>
+    <p>PNG manages its fisheries within the framework of the <strong>UN Convention on the Law of the Sea</strong> — with a 200-nautical-mile EEZ giving sovereign rights over all marine resources.</p>
+    <p>Example regulations for Barramundi (<em>Lates calcarifer</em>) in PNG:</p>
+    <ul>
+      <li>Prohibited to use seine and gill nets with mesh sizes over 15 cm.</li>
+      <li>Spawning grounds closed to commercial fishing from 1 October–30 November.</li>
+      <li>Total allowable catch set at 260 metric tonnes per year.</li>
+    </ul>
+  </div>`,
+  summary: [
+    'Key aquaculture production factors: climate, water quality, physical environment, feed, and disease management',
+    'PNG fish distribution: primary (farm level), secondary (wholesale), and city/terminal markets',
+    'Fish prices are determined by transport, production cost, supply/demand, competition, processing, and species',
+    'The Fisheries Management Act 1998 and NFA govern all PNG fisheries activities',
+    'PNG\'s 200-nautical-mile EEZ gives sovereign rights over a vast marine territory',
+    'Barramundi regulations include mesh size restrictions and seasonal spawning closures',
+  ],
+  quiz: [
+    {q:'What is the primary role of the NFA in PNG?', opts:['To promote fish consumption in schools','To manage, control, and regulate PNG\'s fishery resources','To import fish from other countries','To set market prices for all seafood'], ans:1},
+    {q:'Which PNG law governs all fisheries activities?', opts:['PNG Conservation Act','Fisheries Management Act 1998','Agriculture and Livestock Act','Marine Resources Protection Act'], ans:1},
+    {q:'Which factor does NOT typically affect fish prices in PNG?', opts:['Transport cost','The colour of the fishing boat','Supply and demand','Competition from other sellers'], ans:1},
+    {q:'What is a primary fish market?', opts:['The largest market in Port Moresby','The first point of sale near the fishing area','A government fish processing facility','A market selling only imported seafood'], ans:1},
+    {q:'What is PNG\'s EEZ?', opts:['A protected freshwater zone for tilapia farming','A 200-nautical-mile zone where PNG has sovereign fishing rights','A government-regulated zone only for licensed boats','Waters within 12 nautical miles for small-scale fishers'], ans:1},
+  ],
+  furtherReading: [
+    {url:'https://www.fao.org/fishery/code/en/',label:'FAO Code of Conduct for Responsible Fisheries',desc:'FAO international guidelines for sustainable fisheries and aquaculture management.'},
+  ]
+},
+
+'g11-credit-financing': {
+  title: 'Credit Organisations & Financing',
+  strand: 'Strand 5: Agribusiness · Unit 1', grade: 11, icon: '💰',
+  lessons: ['Formal & Informal Credit','Debt Financing','Equity Financing'],
+  currentLesson: 0,
+  objectives: [
+    'Identify and classify formal and informal credit organisations available to agribusinesses in PNG',
+    'Compare debt and equity financing and explain their advantages and disadvantages'
+  ],
+  keyTerms: [
+    {word:'Formal credit',def:'Credit provided by officially regulated financial institutions — such as commercial banks, government development banks, and microfinance organisations.'},
+    {word:'Informal credit',def:'Credit from non-institutional sources — such as family members, savings groups, or local moneylenders — usually with more flexible terms.'},
+    {word:'Debt financing',def:'Raising capital by borrowing money from lenders — repaid with interest over time regardless of business performance.'},
+    {word:'Equity financing',def:'Raising capital by selling ownership shares to investors — no repayment obligation, but investors share in profits and decisions.'},
+    {word:'Debt-to-equity ratio',def:'Total debt divided by total equity — a key indicator of financial risk and leverage in a business.'},
+  ],
+  content: `
+  <div class="lesson-section">
+    <h2>Formal and Informal Credit Markets</h2>
+    <h3>Formal Credit Sources</h3>
+    <ul>
+      <li>Commercial banks (e.g. Bank South Pacific in PNG)</li>
+      <li>Government development banks and agricultural lending programs</li>
+      <li>Microfinance institutions</li>
+      <li>International organisations (World Bank, Asian Development Bank)</li>
+    </ul>
+    <h3>Informal Credit Sources</h3>
+    <ul>
+      <li>Family and community savings groups (wantok system in PNG)</li>
+      <li>Local moneylenders</li>
+      <li>Input suppliers offering credit on seeds or fertilisers</li>
+      <li>Trade credit from buyers paying in advance</li>
+    </ul>
+    <p>Public funds for agricultural lending have declined sharply in recent decades — making private savings, capital markets, and informal credit increasingly important for PNG agribusinesses.</p>
+  </div>
+  <div class="lesson-section">
+    <h2>Debt Financing</h2>
+    <p><strong>Advantages:</strong> lender has no control after repayment; interest is tax-deductible; predictable repayments aid forecasting.</p>
+    <p><strong>Disadvantages:</strong> must be repaid regardless of business performance — risky in poor trading conditions; lenders may require personal assets as security.</p>
+  </div>
+  <div class="lesson-section">
+    <h2>Equity Financing</h2>
+    <p><strong>Advantages:</strong> no repayment obligation — no pressure on cash flow; provides extra working capital; no interest costs.</p>
+    <p><strong>Disadvantages:</strong> must give investors a percentage of the company and share profits; investors share in business decisions; buying out investors later is usually expensive.</p>
+    <p>Most agribusinesses use a <strong>combination of debt and equity financing</strong>. The right balance depends on cash flow, access to capital, and the owner's preference for control.</p>
+  </div>`,
+  summary: [
+    'Formal credit comes from regulated institutions (banks, microfinance); informal credit from family, savings groups, and moneylenders',
+    'The wantok system is an important informal credit source for PNG agribusinesses',
+    'Debt financing must be repaid with interest — predictable but risky if the business performs poorly',
+    'Equity financing raises capital by selling ownership shares — no repayment but investors share profits and decisions',
+    'The debt-to-equity ratio measures how much of a business is financed by debt versus equity',
+    'Most agribusinesses use a mix of debt and equity financing to balance risk and maintain control',
+  ],
+  quiz: [
+    {q:'What is formal credit?', opts:['Money borrowed from family members','Credit from officially regulated financial institutions','A loan with no interest charges','Advance payment from a crop buyer'], ans:1},
+    {q:'What is the main advantage of equity financing over debt?', opts:['Lower interest rates','You retain full ownership','No obligation to repay the money acquired','Investors cannot participate in decisions'], ans:2},
+    {q:'What is the main disadvantage of debt financing?', opts:['Lenders take ownership','Must repay regardless of business performance','Interest cannot be deducted from tax','Loans can only be used for equipment'], ans:1},
+    {q:'Which is an example of informal credit in PNG?', opts:['A commercial bank loan','The wantok savings group system','An Asian Development Bank grant','A microfinance institution loan'], ans:1},
+    {q:'What does the debt-to-equity ratio measure?', opts:['Annual profitability of the business','How much financing comes from debt versus equity','Total assets divided by total liabilities','The interest rate charged by the bank'], ans:1},
+  ],
+  furtherReading: [
+    {url:'https://www.fao.org/rural-employment/agribusiness/en/',label:'FAO Agribusiness Finance',desc:'FAO resources on rural credit, agribusiness financing, and access to capital.'},
+  ]
+},
+
+'g11-financial-statements': {
+  title: 'Financial Statements & Cash Flow',
+  strand: 'Strand 5: Agribusiness · Unit 1', grade: 11, icon: '📈',
+  lessons: ['The Four Financial Statements','Cash Flow Analysis','Profitability vs Liquidity'],
+  currentLesson: 0,
+  objectives: [
+    'Identify and explain the four main types of financial statements',
+    'Demonstrate how to prepare and analyse a basic cash flow statement',
+    'Explain the difference between profitability and liquidity in agribusiness'
+  ],
+  keyTerms: [
+    {word:'Cash flow statement',def:'A financial statement showing all cash inflows and outflows of a business over a period — tracking cash from operations, investment, and financing.'},
+    {word:'Profitability',def:'How well a business is performing in terms of generating profit relative to its revenue and costs — shown in the income statement.'},
+    {word:'Liquidity',def:'The ability of a business to meet its short-term financial obligations — having enough cash or near-cash assets to pay bills when due.'},
+    {word:'Net cash flow',def:'The sum of cash flows from operations, investing, and financing — the overall change in a business\'s cash position over a period.'},
+    {word:'Statement of Changes in Equity',def:'A financial statement detailing the movement in owner\'s equity over a reporting period — also called the Statement of Retained Earnings.'},
+  ],
+  content: `
+  <div class="lesson-section">
+    <h2>The Four Types of Financial Statements</h2>
+    <ol>
+      <li><strong>Balance Sheet (Statement of Financial Position)</strong> — shows what the business owns (assets), owes (liabilities), and the owner's equity at a specific point in time.</li>
+      <li><strong>Income Statement (Profit and Loss Statement)</strong> — reports income earned and expenses incurred over a period. Net profit = income minus expenses.</li>
+      <li><strong>Cash Flow Statement</strong> — presents the movement of cash in and out of the business through three activities: operations, investing, and financing.</li>
+      <li><strong>Statement of Changes in Equity</strong> — details the movement in owner's equity over the reporting period.</li>
+    </ol>
+  </div>
+  <div class="lesson-section">
+    <h2>Cash Flow Statement Analysis</h2>
+    <p>The cash flow statement tracks money moving through the business across three sections:</p>
+    <ul>
+      <li><strong>Operating activities</strong> — cash from day-to-day business (buying supplies, paying wages, receiving payments).</li>
+      <li><strong>Investing activities</strong> — cash used to buy or received from selling long-term assets (equipment, vehicles, land).</li>
+      <li><strong>Financing activities</strong> — cash from lenders and investors minus loan repayments and dividend payments.</li>
+    </ul>
+    <p>Key insight: a business can be <strong>profitable but cash-poor</strong>. A farm may show a profit on its income statement but struggle to pay wages if customers have not paid yet (accounts receivable). The cash flow statement reveals this problem.</p>
+  </div>
+  <div class="lesson-section">
+    <h2>Profitability vs Liquidity</h2>
+    <ul>
+      <li><strong>Profitability</strong> measures long-term financial performance — how well the business generates profit. Shown in the income statement.</li>
+      <li><strong>Liquidity</strong> measures the ability to meet short-term obligations — whether the business can pay its bills today. Shown in the balance sheet's current assets section.</li>
+    </ul>
+    <p>A company can be highly profitable but illiquid — earning well long-term but unable to pay bills today. Both profitability and liquidity are essential for a healthy agribusiness.</p>
+  </div>`,
+  summary: [
+    'The four financial statements: Balance Sheet, Income Statement, Cash Flow Statement, Statement of Changes in Equity',
+    'The cash flow statement tracks inflows and outflows through operations, investing, and financing activities',
+    'A business can be profitable but cash-poor — because profit and cash are different things',
+    'Profitability measures long-term performance; liquidity measures ability to meet short-term obligations',
+    'Net cash flow is the overall change in a business\'s cash position over the period',
+    'Both profitability and liquidity must be managed for a sustainable agribusiness',
+  ],
+  quiz: [
+    {q:'What does the cash flow statement show?', opts:['Assets and liabilities at a point in time','All cash inflows and outflows over a period','Changes in business ownership','Predicted future profits'], ans:1},
+    {q:'Which is a cash flow from operations?', opts:['Purchasing new farm machinery','Repaying a bank loan','Receiving payment from a crop buyer','Selling shares to a new investor'], ans:2},
+    {q:'What is liquidity in agribusiness?', opts:['Volume of water used in irrigation','Profitability over the financial year','The ability to meet short-term financial obligations','Total value of all assets owned'], ans:2},
+    {q:'How can a profitable agribusiness still face financial difficulties?', opts:['By earning too much profit','By selling products too cheaply','Customers have not paid yet — accounts receivable outstanding','By having too many employees'], ans:2},
+    {q:'What does the income statement show?', opts:['Cash movements from operations, investing, and financing','Changes in owner\'s equity','Income, expenses, and net profit or loss over a period','Assets and liabilities at a specific date'], ans:2},
+  ],
+  furtherReading: [
+    {url:'https://www.fao.org/rural-employment/agribusiness/en/',label:'FAO Agribusiness Management',desc:'FAO guidance on financial statements, cash flow management, and agribusiness finance.'},
+  ]
+},
+
+'g12-poultry-project': {
+  title: 'Bird Anatomy & Planning a Poultry Project',
+  strand: 'Strand 2: Animals · Units 4–5', grade: 12, icon: '🐔',
+  lessons: ['Bird Anatomy & Physiology','Planning a Poultry Project','Managing the Flock'],
+  currentLesson: 0,
+  objectives: [
+    'Describe the anatomy and physiology of domesticated birds',
+    'Plan and design a basic poultry project including site selection, house design, and equipment',
+    'Explain the key stages of managing a broiler or layer flock'
+  ],
+  keyTerms: [
+    {word:'Broiler',def:'A chicken bred and raised specifically for meat production — characterised by fast growth rates and high feed conversion efficiency.'},
+    {word:'Layer',def:'A chicken bred specifically for egg production — selected for high egg-laying frequency and feed-to-egg conversion efficiency.'},
+    {word:'Brooder',def:'A heated enclosure keeping day-old chicks warm during the first weeks of life before they can regulate their own body temperature.'},
+    {word:'Cloaca',def:'The common posterior opening in birds through which the digestive, urinary, and reproductive systems all empty.'},
+    {word:'Air sac',def:'Thin-walled sacs connected to bird lungs that allow one-directional airflow — making birds highly efficient respirators but sensitive to airborne disease.'},
+    {word:'Gizzard',def:'A muscular organ in the bird\'s digestive system that grinds food — replacing the function of teeth. Grit in the feed aids grinding efficiency.'},
+  ],
+  content: `
+  <div class="lesson-section">
+    <h2>Bird Anatomy and Physiology</h2>
+    <h3>Skeletal and Structural Features</h3>
+    <ul>
+      <li><strong>Lightweight skeleton</strong> — many bones are hollow (pneumatised), reducing weight. In domesticated poultry, this energy is redirected to growth and egg production.</li>
+      <li><strong>Keel (breastbone)</strong> — a large flat bone to which flight muscles attach. Well-developed in broilers due to breast meat breeding.</li>
+      <li><strong>Beak</strong> — replaces teeth; used for pecking food. Sometimes trimmed in commercial poultry to reduce injurious pecking.</li>
+    </ul>
+    <h3>Digestive System</h3>
+    <ul>
+      <li><strong>Crop</strong> — a pouch in the oesophagus where food is temporarily stored and moistened.</li>
+      <li><strong>Proventriculus</strong> — the glandular stomach that secretes digestive enzymes and acids.</li>
+      <li><strong>Gizzard</strong> — muscular organ that grinds food. Grit in feed helps grinding efficiency.</li>
+      <li><strong>Cloaca</strong> — common exit for digestive waste, urine, and eggs.</li>
+    </ul>
+    <h3>Respiratory System</h3>
+    <p>Birds have <strong>air sacs</strong> that allow one-directional, continuous airflow through the lungs — more efficient than the mammalian system. This makes birds highly sensitive to airborne diseases and poor ventilation.</p>
+  </div>
+  <div class="lesson-section">
+    <h2>Planning a Poultry Project</h2>
+    <ol>
+      <li><strong>Market assessment</strong> — determine who will buy the birds and estimate demand.</li>
+      <li><strong>Site selection</strong> — choose a site with good drainage, protection from wind, access to clean water, and security from predators.</li>
+      <li><strong>House design</strong> — appropriate size, ventilation, lighting, and ease of cleaning. Allow 0.1 m² per broiler for intensive production.</li>
+      <li><strong>Mobilise materials</strong> — secure funding, day-old chicks (DOC), feed, and equipment before starting.</li>
+      <li><strong>Set up brooder</strong> — brooder temperature should be 35°C in week one, reduced by 3°C per week until reaching ambient temperature.</li>
+    </ol>
+  </div>
+  <div class="lesson-section">
+    <h2>Managing the Flock</h2>
+    <ul>
+      <li><strong>Feed and nutrition</strong> — starter ration (22–24% protein) for weeks 1–3; grower/finisher ration from week 4. Fresh water always available.</li>
+      <li><strong>Health and vaccination</strong> — follow a vaccination schedule for Newcastle disease, Gumboro, and Marek\'s disease. Monitor daily for signs of illness.</li>
+      <li><strong>Biosecurity</strong> — control farm access; clean and disinfect all equipment; implement a "downtime" period between batches to break the disease cycle.</li>
+      <li><strong>Record keeping</strong> — track mortality, feed consumption, growth rates, and costs to evaluate performance and profitability.</li>
+    </ul>
+  </div>`,
+  summary: [
+    'Birds have unique features: hollow bones, a keel, crop, proventriculus, gizzard, and cloaca',
+    'Air sacs allow one-directional airflow through bird lungs — making birds very sensitive to airborne pathogens',
+    'Poultry project planning: market assessment, site selection, house design, material sourcing, and brooder setup',
+    'Brooder temperature for day-old chicks: 35°C in week one, reduced by 3°C per week',
+    'Flock management includes nutrition management, vaccination, biosecurity, and record keeping',
+    'A downtime period between batches breaks the disease cycle — critical for long-term flock health',
+  ],
+  quiz: [
+    {q:'What is the function of the gizzard in a bird?', opts:['Stores food before digestion','Secretes digestive enzymes and acids','Grinds food, replacing the function of teeth','Absorbs water from digested food'], ans:2},
+    {q:'Why are birds sensitive to airborne diseases and poor ventilation?', opts:['Feathers trap air pollutants','Air sacs allow continuous airflow directly through the lungs','Birds produce no antibodies against respiratory diseases','Their skin is thinner than mammalian skin'], ans:1},
+    {q:'What temperature should a brooder be in the first week for day-old chicks?', opts:['20°C','25°C','35°C','40°C'], ans:2},
+    {q:'What is a broiler?', opts:['A type of brooder for heating chicks','A chicken bred specifically for egg production','A chicken bred and raised specifically for meat production','A hen that has completed her laying cycle'], ans:2},
+    {q:'What is the purpose of a downtime period between poultry batches?', opts:['To let the farmer rest','To reduce labour costs','To break the disease cycle by cleaning and disinfecting the house','To allow chick prices to stabilise before restocking'], ans:2},
+  ],
+  furtherReading: [
+    {url:'https://www.fao.org/poultry-production-products/en/',label:'FAO Poultry Management',desc:'FAO resources on bird anatomy, poultry project planning, and flock management.'},
+  ]
+},
 }; // end LESSONS
 
 /* ══════════════════════════════════════════
@@ -3885,20 +5417,20 @@ const STRANDS_9 = [
     id:'crops9', strand:'Strand 1', name:'Crops', icon:'🌾', bg:'#e8f5e2', color:'#3a7d2c',
     desc:'Soil science, crop types, farming practices, horticulture, and technology used in crop production.',
     topics:[
-      {id:'g9-soil-formation',title:'Unit 1 — Soil: Types & Formation',icon:'🌱',bg:'#e8f5e2',desc:'What soil is made of, how it forms, and the physical and chemical properties of different soil types.',status:'available',lessons:4},
-      {id:'g9-types-crops',title:'Unit 2 — Types of Crops & Their Environments',icon:'🌽',bg:'#fdf3d6',desc:'The different types of crops, where they grow best, and the environmental conditions they need.',status:'available',lessons:3},
-      {id:'g9-crop-farming',title:'Unit 3 — Crop Farming Practices & Management',icon:'🚜',bg:'#e8f5e2',desc:'How crops are planted, managed, and harvested — different farming methods and crop management systems.',status:'available',lessons:3},
-      {id:'g9-crop-technology',title:'Unit 4 — Crop Farming Technology',icon:'⚙️',bg:'#e0f2fe',desc:'The tools and technologies used in crop cultivation and management — and the advantages and disadvantages.',status:'available',lessons:3},
-      {id:'g9-horticulture',title:'Unit 5 — Types of Plants: Introduction to Horticulture',icon:'🍅',bg:'#fdf3d6',desc:'Introduction to horticulture: fruit trees, vegetables, and spice crops — how they are cultivated and processed.',status:'available',lessons:4},
-      {id:'g9-pomology-olericulture',title:'Unit 6 — Plant Farming Practices (Pomology & Olericulture)',icon:'🌿',bg:'#e8f5e2',desc:'Cultivation and management of pomology (fruit growing), olericulture (vegetable growing), ornamental plants, and arboriculture.',status:'available',lessons:4},
-      {id:'g9-horticulture-technology',title:'Unit 7 — Technology in Horticulture',icon:'💡',bg:'#e0f2fe',desc:'How technology is used to improve cultivation, processing, and marketing of horticulture plants.',status:'available',lessons:3},
+      {id:'g9-soil-formation',title:'Unit 1 — Soil: Types & Formation',icon:'🌱',bg:'#e8f5e2',desc:'What soil is made of, how it forms, and the physical and chemical properties of different soil types.',status:'coming-soon',lessons:4},
+      {id:'g9-types-crops',title:'Unit 2 — Types of Crops & Their Environments',icon:'🌽',bg:'#fdf3d6',desc:'The different types of crops, where they grow best, and the environmental conditions they need.',status:'coming-soon',lessons:3},
+      {id:'g9-crop-farming',title:'Unit 3 — Crop Farming Practices & Management',icon:'🚜',bg:'#e8f5e2',desc:'How crops are planted, managed, and harvested — different farming methods and crop management systems.',status:'coming-soon',lessons:3},
+      {id:'g9-crop-technology',title:'Unit 4 — Crop Farming Technology',icon:'⚙️',bg:'#e0f2fe',desc:'The tools and technologies used in crop cultivation and management — and the advantages and disadvantages.',status:'coming-soon',lessons:3},
+      {id:'g9-horticulture',title:'Unit 5 — Types of Plants: Introduction to Horticulture',icon:'🍅',bg:'#fdf3d6',desc:'Introduction to horticulture: fruit trees, vegetables, and spice crops — how they are cultivated and processed.',status:'coming-soon',lessons:4},
+      {id:'g9-pomology-olericulture',title:'Unit 6 — Plant Farming Practices (Pomology & Olericulture)',icon:'🌿',bg:'#e8f5e2',desc:'Cultivation and management of pomology (fruit growing), olericulture (vegetable growing), ornamental plants, and arboriculture.',status:'coming-soon',lessons:4},
+      {id:'g9-horticulture-technology',title:'Unit 7 — Technology in Horticulture',icon:'💡',bg:'#e0f2fe',desc:'How technology is used to improve cultivation, processing, and marketing of horticulture plants.',status:'coming-soon',lessons:3},
     ]
   },
   {
     id:'animals9', strand:'Strand 2', name:'Animals', icon:'🐄', bg:'#f5ece4', color:'#7c4a1e',
     desc:'Monogastric and polygastric animals, their characteristics, care, poultry farming, and management systems.',
     topics:[
-      {id:'g9-monogastric-polygastric',title:'Unit 1 — Monogastric & Polygastric Animals',icon:'🐷',bg:'#f5ece4',desc:'What monogastric animals and polygastric (ruminant) animals are — and how they differ.',status:'available',lessons:3},
+      {id:'g9-monogastric-polygastric',title:'Unit 1 — Monogastric & Polygastric Animals',icon:'🐷',bg:'#f5ece4',desc:'What monogastric animals and polygastric (ruminant) animals are — and how they differ.',status:'coming-soon',lessons:3},
       {id:'g9-animal-anatomy',title:'Unit 2 — Anatomy of Farm Animals',icon:'🐄',bg:'#e8f5e2',desc:'The body systems of monogastric and polygastric animals — how their digestive systems work.',status:'available',lessons:3},
       {id:'g9-animal-farming',title:'Unit 3 — Animal Farming Practices & Management',icon:'🏠',bg:'#fdf3d6',desc:'How farm animals are housed, fed, and cared for — extensive, semi-intensive, and intensive systems.',status:'available',lessons:4},
       {id:'g9-poultry-types',title:'Unit 4 — Types of Poultry & Their Behaviour',icon:'🐔',bg:'#f5ece4',desc:'Domesticated and farmed birds — their characteristics, behaviours, purposes, and how they are kept.',status:'available',lessons:3},
@@ -3992,18 +5524,112 @@ const STRANDS_10 = [
   },
 ];
 
+/* ══════════════════════════════════════════
+   GRADE 11 STRAND DATA
+   ══════════════════════════════════════════ */
+const STRANDS_11 = [
+  {
+    id:'crops11', strand:'Strand 1', name:'Crops', icon:'🌾', bg:'#e8f5e2', color:'#3a7d2c',
+    desc:'Soil nutrients, biennial crops, crop protection, aromatic & herbal plants, and horticulture technology.',
+    topics:[
+      {id:'g11-soil-nutrients',title:'Unit 1 — Soil Nutrients: Macro & Micro',icon:'🌱',bg:'#e8f5e2',desc:'What macro and micro nutrients are, their deficiency signs, and how they affect crop growth.',status:'available',lessons:2},
+      {id:'g11-biennial-crops',title:'Unit 2 — Biennial Crops & Crop Protection',icon:'🌽',bg:'#fdf3d6',desc:'Characteristics of biennial crops, crop pest management, and principles of crop protection.',status:'available',lessons:3},
+      {id:'g11-aromatic-plants',title:'Units 5–6 — Aromatic & Herbal Plants',icon:'🌿',bg:'#e8f5e2',desc:'Types, characteristics, cultivation, propagation, and preservation of aromatic and herbal plants.',status:'available',lessons:4},
+      {id:'g11-horticulture-tech',title:'Unit 7 — Horticulture Technology & Constraints',icon:'💡',bg:'#e0f2fe',desc:'Technology for mass-producing horticulture plants and constraints in cultivation and marketing.',status:'available',lessons:2},
+    ]
+  },
+  {
+    id:'animals11', strand:'Strand 2', name:'Animals', icon:'🐝', bg:'#fdf3d6', color:'#c8900a',
+    desc:'Apiculture (beekeeping), livestock management, animal farming technology, and poultry production.',
+    topics:[
+      {id:'g11-apiculture',title:'Unit 1 — Apiculture: Beekeeping in PNG',icon:'🐝',bg:'#fdf3d6',desc:'What apiculture is, purposes of beekeeping, cultivation practices, and management systems.',status:'available',lessons:3},
+      {id:'g11-livestock-management',title:'Unit 2 — Livestock Management & Husbandry',icon:'🐄',bg:'#f5ece4',desc:'Feeding regimes, grazing land tenure, herding arrangements, and mass production husbandry practices.',status:'available',lessons:3},
+      {id:'g11-poultry-processing',title:'Units 5–6 — Poultry Processing, Regulation & Technology',icon:'🐔',bg:'#e8f5e2',desc:'Processing and preserving bird products, poultry regulations, and technology in poultry farming.',status:'available',lessons:3},
+    ]
+  },
+  {
+    id:'aqua11', strand:'Strand 3', name:'Aquaculture', icon:'🐟', bg:'#e0f2fe', color:'#0369a1',
+    desc:'Fish species in different water environments, aquaculture production factors, and fisheries regulations.',
+    topics:[
+      {id:'g11-fish-species',title:'Unit 1 — Fish Species & Cultivation Environments',icon:'🐠',bg:'#e0f2fe',desc:'Types of fish species in freshwater, brackish, and saltwater, and how they are cultivated.',status:'available',lessons:2},
+      {id:'g11-aqua-marketing',title:'Unit 2 — Aquaculture Production, Marketing & Regulations',icon:'🌊',bg:'#e8f5e2',desc:'Factors affecting aquaculture production, fish markets, price determination, and fisheries regulations.',status:'available',lessons:3},
+    ]
+  },
+  {
+    id:'nrm11', strand:'Strand 4', name:'Natural Resource Management', icon:'🌳', bg:'#dcfce7', color:'#16a34a',
+    desc:'Capture fishery, forest products, forestry regulations, and technology in growing timber species.',
+    topics:[
+      {id:'g11-capture-fishery',title:'Units 1–3 — Capture Fishery: Cultivation & Regulations',icon:'🎣',bg:'#dcfce7',desc:'Capture fishery environments, fisheries management, and PNG fisheries laws and regulations.',status:'available',lessons:3},
+      {id:'g11-forest-products',title:'Units 4–6 — Forest Products, Regulations & Technology',icon:'🌲',bg:'#e8f5e2',desc:'Forest products, preservation of forest resources, PNG forestry regulations, and technology in timber growing.',status:'available',lessons:3},
+    ]
+  },
+  {
+    id:'agri11', strand:'Strand 5', name:'Agribusiness', icon:'📊', bg:'#fdf3d6', color:'#c8900a',
+    desc:'Financial management, credit organisations, debt vs equity financing, and cash flow statements.',
+    topics:[
+      {id:'g11-financial-management',title:'Unit 1 — Financial Management & Business Records',icon:'📒',bg:'#fdf3d6',desc:'Financial management principles, importance of business records, and the role of the balance sheet.',status:'available',lessons:2},
+      {id:'g11-credit-financing',title:'Unit 1 — Credit Organisations & Financing',icon:'💰',bg:'#e8f5e2',desc:'Formal and informal credit markets, debt financing, equity financing, and their impact on agribusiness.',status:'available',lessons:2},
+      {id:'g11-financial-statements',title:'Unit 1 — Financial Statements & Cash Flow',icon:'📈',bg:'#fdf3d6',desc:'Types of financial statements, cash flow analysis, and the difference between profitability and liquidity.',status:'available',lessons:2},
+    ]
+  },
+];
+
+/* ══════════════════════════════════════════
+   GRADE 12 STRAND DATA
+   ══════════════════════════════════════════ */
+const STRANDS_12 = [
+  {
+    id:'crops12', strand:'Strand 1', name:'Crops', icon:'🌾', bg:'#e8f5e2', color:'#3a7d2c',
+    desc:'Soil topography, crop physiology, crop marketing and regulation, and horticulture commercialisation.',
+    topics:[
+      {id:'g12-soil-topography',title:'Unit 1 — Soil Topography & Crop Production Returns',icon:'🗺️',bg:'#e8f5e2',desc:'Soil topography, soil analysis, pH testing, soil types and their effect on crop yields.',status:'available',lessons:2},
+      {id:'g12-crop-physiology',title:'Units 2–3 — Crop Physiology & Farming Practices',icon:'🌾',bg:'#fdf3d6',desc:'Photosynthesis, respiration, plant hormones, photo-morphogenesis, and crop marketing and regulation.',status:'available',lessons:3},
+      {id:'g12-horticulture-commercialisation',title:'Units 5–7 — Plants, Horticulture & Commercialisation',icon:'🪴',bg:'#e0f2fe',desc:'Plant anatomy and physiology, horticulture marketing systems, greenhouse cultivation, and genetic engineering.',status:'available',lessons:3},
+    ]
+  },
+  {
+    id:'animals12', strand:'Strand 2', name:'Animals', icon:'🐄', bg:'#f5ece4', color:'#7c4a1e',
+    desc:'Quality animal and apiculture products, value-added products, trends in animal agriculture, and poultry planning.',
+    topics:[
+      {id:'g12-quality-animal-products',title:'Units 1–3 — Quality Animal Products & Technology',icon:'🥩',bg:'#f5ece4',desc:'Factors for quality monogastric, polygastric, and apiculture products, value-added products, and electronic agriculture.',status:'available',lessons:3},
+      {id:'g12-poultry-project',title:'Units 4–5 — Bird Anatomy & Planning a Poultry Project',icon:'🐔',bg:'#fdf3d6',desc:'Bird anatomy and physiology, and step-by-step planning and management of a poultry project.',status:'available',lessons:3},
+    ]
+  },
+  {
+    id:'aqua12', strand:'Strand 3', name:'Aquaculture', icon:'🐟', bg:'#e0f2fe', color:'#0369a1',
+    desc:'Advanced aqua farming systems, post-harvest technology, and global trading of aquaculture products.',
+    topics:[
+      {id:'g12-aqua-advanced',title:'Units 1–3 — Advanced Aqua Farming & Post-Harvest Technology',icon:'🌊',bg:'#e0f2fe',desc:'Advanced aqua farming systems, post-harvest handling and processing, and global aquaculture trade.',status:'available',lessons:3},
+    ]
+  },
+  {
+    id:'nrm12', strand:'Strand 4', name:'Natural Resource Management', icon:'🌳', bg:'#dcfce7', color:'#16a34a',
+    desc:'Forestry products processing, silviculture, land tenure, plantation establishment, and sawmilling.',
+    topics:[
+      {id:'g12-forestry-processing',title:'Units 4–6 — Forestry Processing, Silviculture & Technology',icon:'🪵',bg:'#dcfce7',desc:'Processing forest products, nursery and plantation establishment, sawmilling, silviculture, and GIS technology.',status:'available',lessons:3},
+    ]
+  },
+  {
+    id:'agri12', strand:'Strand 5', name:'Agribusiness', icon:'📊', bg:'#fdf3d6', color:'#c8900a',
+    desc:'Advanced financial statements, cash flow management, capital acquisition, and agribusiness growth strategies.',
+    topics:[
+      {id:'g12-advanced-finance',title:'Unit 1 — Advanced Agribusiness Finance & Capital',icon:'📊',bg:'#fdf3d6',desc:'Advanced financial analysis, capital management, debt management, and preparing detailed financial statements.',status:'available',lessons:3},
+    ]
+  },
+];
+
 const POSTS = [
   {title:'What is Soil and Why Does It Matter?',cat:'Grade 9 — Crops',icon:'🌱',bg:'#e8f5e2',date:'May 5, 2026',read:'5 min',ex:'Soil is much more than dirt. It is a living system that determines whether crops will thrive or fail. Understanding soil composition, physical properties, and chemical properties is a foundation for all crop farming.',id:'g9-soil-formation',grade:9,ref:'https://www.fao.org/soils-portal/en/',refLabel:'FAO Soils Portal'},
   {title:'Monogastric vs Polygastric Animals — What is the Difference?',cat:'Grade 9 — Animals',icon:'🐷',bg:'#f5ece4',date:'Apr 22, 2026',read:'4 min',ex:'Pigs and cattle are both farm animals — but their digestive systems are completely different. Understanding the distinction between monogastric and polygastric animals is essential for Grade 9 Animal Science.',id:'g9-monogastric-polygastric',grade:9,ref:'https://www.fao.org/animal-production/en/',refLabel:'FAO Animal Production'},
   {title:'An Introduction to Aquaculture in Papua New Guinea',cat:'Grade 9 — Aquaculture',icon:'🐟',bg:'#e0f2fe',date:'Apr 10, 2026',read:'5 min',ex:'Papua New Guinea has some of the richest aquatic environments in the world. Aquaculture — the farming of fish and aquatic plants — is a growing industry that plays an important role in food security.',id:'g9-intro-aquaculture',grade:9,ref:'https://www.fao.org/fishery/en/aquaculture',refLabel:'FAO Aquaculture'},
   {title:'Soil Improvement — Natural vs Artificial Techniques',cat:'Grade 10 — Crops',icon:'🌿',bg:'#dcfce7',date:'Mar 28, 2026',read:'5 min',ex:'Grade 10 students go beyond understanding soil — they need to know how to improve it. From composting and green manuring to lime application and inorganic fertilisers, soil improvement is central to sustainable crop farming.',id:'g10-soil-improvement',grade:10,ref:'https://www.fao.org/soils-portal/soil-management/en/',refLabel:'FAO Soil Management'},
-  {title:'What is Agribusiness? A Plain Language Guide',cat:'Grade 9 & 10 — Agribusiness',icon:'📊',bg:'#fdf3d6',date:'Mar 14, 2026',read:'4 min',ex:'Agribusiness is not just farming — it covers everything from production to marketing to finance. This guide explains economic principles, supply and demand, and how they apply to farming businesses in Papua New Guinea.',id:'g9-agribusiness-economics',grade:9,ref:'https://www.fao.org/rural-employment/en/',refLabel:'FAO Agribusiness Resources'},
+  {title:'What is Agribusiness? A Plain Language Guide',cat:'Grade 9–12 — Agribusiness',icon:'📊',bg:'#fdf3d6',date:'Mar 14, 2026',read:'4 min',ex:'Agribusiness is not just farming — it covers everything from production to marketing to finance. This guide explains economic principles, supply and demand, and how they apply to farming businesses in Papua New Guinea.',id:'g9-agribusiness-economics',grade:9,ref:'https://www.fao.org/rural-employment/en/',refLabel:'FAO Agribusiness Resources'},
   {title:'Forest Types in Papua New Guinea',cat:'Grade 9 — Natural Resources',icon:'🌳',bg:'#dcfce7',date:'Feb 28, 2026',read:'5 min',ex:"Papua New Guinea is home to some of the world\'s most biodiverse forests. This article covers the major forest types — tropical rainforest, monsoon forest, mangrove, and grassland — and the resources each provides.",id:'g9-forests',grade:9,ref:'https://www.fao.org/forestry/en/',refLabel:'FAO Forestry'},
   {title:'Pomology, Olericulture & Ornamental Horticulture',cat:'Grade 9 — Crops (Unit 6)',icon:'🌿',bg:'#e8f5e2',date:'Feb 14, 2026',read:'5 min',ex:'The horticulture industry covers three main areas: pomology (fruit growing), olericulture (vegetable growing), and ornamental horticulture. Each has distinct management practices, cultivation techniques, and markets.',id:'g9-pomology-olericulture',grade:9,ref:'https://www.fao.org/horticulture/en/',refLabel:'FAO Horticulture'},
   {title:'Technology in Horticulture Production',cat:'Grade 9 — Crops (Unit 7)',icon:'💡',bg:'#e0f2fe',date:'Jan 30, 2026',read:'4 min',ex:'Technology is changing how horticulture products are grown, preserved, and marketed in Papua New Guinea — from irrigation systems and pest control to E-Commerce and digital marketing tools for small farmers.',id:'g9-horticulture-technology',grade:9,ref:'https://www.fao.org/digital-agriculture/en/',refLabel:'FAO Digital Agriculture'},
 ];
 
-const TAGS = ['Soil Science','Crops','Horticulture','Farm Animals','Aquaculture','Forestry','Agribusiness','Grade 9','Grade 10','PNG Agriculture','Poultry','Fish Farming'];
+const TAGS = ['Soil Science','Crops','Horticulture','Farm Animals','Aquaculture','Forestry','Agribusiness','Grade 9','Grade 10','Grade 11','Grade 12','PNG Agriculture','Poultry','Fish Farming'];
 
 /* ══════════════════════════════════════════
    STATE
@@ -4013,30 +5639,33 @@ let currentLessonId = null;
 let quizAnswers = {};
 let quizSubmitted = false;
 
-function setGrade(g){
-  const url = new URL(window.location.href);
-  url.pathname = '/topics.html';
-  url.searchParams.set('grade', g);
-  window.location.href = url.toString();
-}
+function setGrade(g){ currentGrade = g; }
 
 /* ══════════════════════════════════════════
    NAVIGATION
    ══════════════════════════════════════════ */
 function nav(page){
-  const pageMap = {
-    'home': '/',
-    'modules': '/topics.html',
-    'blog': '/resources.html',
-    'about': '/about.html',
-    'careers': '/careers.html',
-    'contact': '/contact.html',
-    'privacy': '/privacy.html',
-    'terms': '/terms.html'
-  };
-  if (pageMap[page]) {
-    window.location.href = pageMap[page];
+  const current = document.querySelector('.page.active');
+  if(current){
+    current.style.opacity='0';
+    current.style.transform='translateY(-8px)';
+    current.style.transition='opacity .15s ease,transform .15s ease';
   }
+  setTimeout(()=>{
+    document.querySelectorAll('.page').forEach(p=>{
+      p.classList.remove('active');
+      p.style.opacity='';
+      p.style.transform='';
+      p.style.transition='';
+    });
+    const t = document.getElementById('page-'+page);
+    if(t) t.classList.add('active');
+    scrollTo({top:0,behavior:'smooth'});
+    setTimeout(initReveal, 80);
+    if(page==='home'){ renderBlogPreview(); setLogoColor(DEFAULT_COLOR); }
+    if(page==='modules') renderModules(currentGrade);
+    if(page==='blog') renderBlogFull();
+  }, current ? 150 : 0);
 }
 
 /* ══════════════════════════════════════════
@@ -4046,10 +5675,11 @@ function filterGrade(g){
   currentGrade = g;
   document.querySelectorAll('.grade-tab').forEach(t=>t.classList.toggle('active',+t.dataset.grade===g));
   renderModules(g);
+  renderProgressBar(g);
 }
 
 function renderModules(grade){
-  const strands = grade===9 ? STRANDS_9 : STRANDS_10;
+  const strands = grade===9 ? STRANDS_9 : grade===10 ? STRANDS_10 : grade===11 ? STRANDS_11 : STRANDS_12;
   const el = document.getElementById('modules-content');
   if(!el) return;
   el.innerHTML = strands.map(s=>`
@@ -4080,7 +5710,9 @@ function renderModules(grade){
             </div>
           </article>
         `).join('')}
-      </div></a>`).join("");
+      </div>
+    </div>
+  `).join('');
 }
 
 /* ══════════════════════════════════════════
@@ -4124,14 +5756,33 @@ function getStrandColor(strandStr){
   return DEFAULT_COLOR;
 }
 
-function openLesson(id){ window.location.href = '/lessons/' + id + '.html'; }
+function openLesson(id){
+  const L = LESSONS[id];
+  if(!L){ toast('⚠️','Lesson not found'); return; }
   currentLessonId = id;
   quizAnswers = {};
   quizSubmitted = false;
   setLogoColor(getStrandColor(L.strand));
 
+  // Show skeleton first
+  const lessonEl = document.getElementById('lesson-content');
+  if(lessonEl){
+    lessonEl.innerHTML = `<div class="skeleton-wrap">
+      <div class="skeleton-line lg"></div>
+      <div class="skeleton-line sm"></div>
+      <div class="skeleton-block"></div>
+      <div class="skeleton-line md"></div>
+      <div class="skeleton-line"></div>
+      <div class="skeleton-line sm"></div>
+      <div class="skeleton-block"></div>
+      <div class="skeleton-line md"></div>
+      <div class="skeleton-line"></div>
+    </div>`;
+  }
+  nav('lesson');
+
   // Find prev/next available lessons in same grade
-  const strands = L.grade === 9 ? STRANDS_9 : STRANDS_10;
+  const strands = L.grade === 9 ? STRANDS_9 : L.grade === 10 ? STRANDS_10 : L.grade === 11 ? STRANDS_11 : STRANDS_12;
   const allAvailable = strands.flatMap(s=>s.topics).filter(t=>t.status==='available'&&t.id);
   const idx = allAvailable.findIndex(t=>t.id===id);
   const prevId = idx > 0 ? allAvailable[idx-1].id : null;
@@ -4147,7 +5798,9 @@ function openLesson(id){ window.location.href = '/lessons/' + id + '.html'; }
             <input type="radio" name="q${qi}" value="${oi}" onchange="selectAnswer(${qi},${oi})"/> ${opt}
           </label>
         `).join('')}
-      </div></a>`).join("");
+      </div>
+    </div>
+  `).join('');
 
   // Build terms HTML
   const termsHTML = L.keyTerms.map(t=>`
@@ -4164,11 +5817,13 @@ function openLesson(id){ window.location.href = '/lessons/' + id + '.html'; }
 
   const html = `
     <div class="lesson-breadcrumb">
-      <span onclick="nav('home')">Home</span>
+      <span onclick="nav('home')">🏠 Home</span>
       <span class="sep">›</span>
-      <span onclick="setGrade(${L.grade});nav('modules')">Grade ${L.grade} Topics</span>
+      <span onclick="setGrade(${L.grade});nav('modules')">Grade ${L.grade}</span>
       <span class="sep">›</span>
-      <span style="color:var(--ink)">${L.title}</span>
+      <span onclick="setGrade(${L.grade});nav('modules')">${L.strand.split(':')[0]}</span>
+      <span class="sep">›</span>
+      <span class="crumb-current">${L.title}</span>
     </div>
 
     <div class="lesson-header">
@@ -4178,7 +5833,16 @@ function openLesson(id){ window.location.href = '/lessons/' + id + '.html'; }
         <span>📖 ${L.lessons.length} lessons</span>
         <span>🇵🇬 Papua New Guinea Curriculum</span>
       </div>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">${lessonTabsHTML}</div>
+      <div class="lesson-actions">
+        <div style="display:flex;gap:8px;flex-wrap:wrap">${lessonTabsHTML}</div>
+        <button class="complete-btn ${isCompleted(id)?'done':''}" id="complete-btn" onclick="toggleComplete('${id}')">
+          ${isCompleted(id)?'✓ Completed':'Mark as Complete'}
+        </button>
+        <a class="wa-share" href="https://wa.me/?text=${encodeURIComponent('Check out this lesson on MXT Lab: '+L.title+' — https://mxtlab.online')}" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Share on WhatsApp
+        </a>
+      </div>
     </div>
 
     <div class="lesson-body">
@@ -4225,6 +5889,11 @@ function openLesson(id){ window.location.href = '/lessons/' + id + '.html'; }
         <div class="quiz-result" id="quiz-result"></div>
       </div>
 
+      <div class="related-section" id="related-section">
+        <h3>📚 Related Lessons</h3>
+        <div class="related-grid" id="related-grid"></div>
+      </div>
+
       <div class="lesson-nav">
         <button class="lesson-nav-btn" onclick="${prevId?`openLesson('${prevId}')`:'void(0)'}" ${!prevId?'disabled':''}>
           ← Previous Topic
@@ -4239,7 +5908,7 @@ function openLesson(id){ window.location.href = '/lessons/' + id + '.html'; }
     </div>
   `;
 
-  document.getElementById('lesson-content').innerHTML = html;
+  setTimeout(()=>{ document.getElementById('lesson-content').innerHTML = html; setTimeout(initReveal,60); renderRelated(id); renderProgressBar(currentGrade); }, 280);
   nav('lesson');
 }
 
@@ -4275,11 +5944,12 @@ function submitQuiz(){
   const pass = pct >= 60;
   const resultEl = document.getElementById('quiz-result');
   resultEl.className = `quiz-result ${pass?'pass':'fail'}`;
-  resultEl.textContent = pass
-    ? `✅ Great work! You scored ${correct}/${total} (${pct}%). Well done!`
-    : `You scored ${correct}/${total} (${pct}%). Review the lesson content above and try again.`;
+  resultEl.innerHTML = pass
+    ? `<span class="quiz-score-big">${pct}%</span>✅ Great work! You scored ${correct}/${total}. Well done!`
+    : `<span class="quiz-score-big">${pct}%</span>You scored ${correct}/${total}. Review the lesson content above and try again.`;
   resultEl.style.display = 'block';
   document.getElementById('quiz-submit-btn').style.display = 'none';
+  if(pass){ launchConfetti(); markComplete(currentLessonId); }
 
   scrollTo({top:document.getElementById('quiz-section').getBoundingClientRect().top+scrollY-80,behavior:'smooth'});
 }
@@ -4329,9 +5999,10 @@ function renderBlogFull(){
    ══════════════════════════════════════════ */
 function buildSearchIndex(){
   const items = [];
-  [...STRANDS_9,...STRANDS_10].forEach(s=>{
+  [...STRANDS_9,...STRANDS_10,...STRANDS_11,...STRANDS_12].forEach(s=>{
     s.topics.filter(t=>t.status==='available'&&t.id).forEach(t=>{
-      items.push({id:t.id,title:t.title,meta:`Grade ${s.name==='Crops'&&s.id.includes('9')?9:s.id.includes('9')?9:10} · ${s.strand}: ${s.name}`,icon:t.icon,grade:s.id.includes('10')?10:9});
+      const g = s.id.includes('12') ? 12 : s.id.includes('11') ? 11 : s.id.includes('10') ? 10 : 9;
+      items.push({id:t.id,title:t.title,meta:`Grade ${g} · ${s.strand}: ${s.name}`,icon:t.icon,grade:g});
     });
   });
   return items;
@@ -4346,16 +6017,20 @@ document.getElementById('search-input').addEventListener('input', function(){
   const el = document.getElementById('s-results');
   if(!results.length){ el.innerHTML='<div style="padding:14px 16px;font-size:.84rem;color:var(--ink3)">No results found.</div>'; return; }
   el.innerHTML = results.map(r=>`
-    <a href="/lessons/${r.id}.html" class="sri">
+    <div class="sri" onclick="openLesson('${r.id}');closeSearch()">
       <div class="sri-ic">${r.icon}</div>
-      <div><div class="sri-t">${r.title}</div><div class="sri-m">Grade ${r.grade} · ${r.meta.split('·')[1]||''}</div></div></a>`).join("");
+      <div><div class="sri-t">${r.title}</div><div class="sri-m">Grade ${r.grade} · ${r.meta.split('·')[1]||''}</div></div>
+    </div>
+  `).join('');
 });
 
 // Populate default results
 document.getElementById('s-results').innerHTML = SEARCH_INDEX.slice(0,5).map(r=>`
-  <a href="/lessons/${r.id}.html" class="sri">
+  <div class="sri" onclick="openLesson('${r.id}');closeSearch()">
     <div class="sri-ic">${r.icon}</div>
-    <div><div class="sri-t">${r.title}</div><div class="sri-m">Grade ${r.grade}</div></div></a>`).join("");
+    <div><div class="sri-t">${r.title}</div><div class="sri-m">Grade ${r.grade}</div></div>
+  </div>
+`).join('');
 
 document.getElementById('search-trigger').addEventListener('click',()=>{
   document.getElementById('search-overlay').classList.add('open');
@@ -4388,24 +6063,18 @@ function filterCareers(strand, btn){
 /* ══════════════════════════════════════════
    DARK MODE
    ══════════════════════════════════════════ */
-let dark=false;
-document.getElementById('theme-toggle').addEventListener('click',()=>{
-  dark=!dark;
+let dark=localStorage.getItem('mxt-theme')==='dark';
+function applyTheme(){
   document.documentElement.setAttribute('data-theme',dark?'dark':'light');
   document.getElementById('t-icon').textContent=dark?'☀️':'🌙';
   document.getElementById('t-lbl').textContent=dark?'Light':'Dark';
+  localStorage.setItem('mxt-theme',dark?'dark':'light');
+}
+applyTheme();
+document.getElementById('theme-toggle').addEventListener('click',()=>{
+  dark=!dark;
+  applyTheme();
 });
-
-/* ══════════════════════════════════════════
-   LAZY-LOAD ADSENSE (uncomment when approved)
-   ══════════════════════════════════════════ */
-// window.addEventListener('load', function() {
-//   var s = document.createElement('script');
-//   s.async = true;
-//   s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7249885633789743';
-//   s.crossOrigin = 'anonymous';
-//   document.head.appendChild(s);
-// });
 
 /* ══════════════════════════════════════════
    SCROLL
@@ -4413,7 +6082,7 @@ document.getElementById('theme-toggle').addEventListener('click',()=>{
 window.addEventListener('scroll',()=>{
   document.getElementById('navbar').classList.toggle('scrolled',scrollY>20);
   document.getElementById('back-top').classList.toggle('visible',scrollY>300);
-},{ passive: true });
+});
 
 /* ══════════════════════════════════════════
    MISC
@@ -4483,63 +6152,177 @@ function initReveal(){
   });
   // Also stagger-reveal cards that are immediately visible
   setTimeout(() => {
-    document.querySelectorAll('[data-reveal]').forEach(el => {
+    document.querySelectorAll('.page.active [data-reveal]').forEach(el => {
       const rect = el.getBoundingClientRect();
       if(rect.top < window.innerHeight) el.classList.add('revealed');
     });
   }, 60);
 }
 
-// Parallax disabled for performance
+// Parallax on hero
+window.addEventListener('scroll', () => {
+  const hero = document.querySelector('.hero');
+  if(hero && document.getElementById('page-home').classList.contains('active')){
+    const y = scrollY * 0.3;
+    hero.style.backgroundPositionY = y + 'px';
+    const visual = hero.querySelector('.hero-visual');
+    if(visual) visual.style.transform = `translateY(${-y * 0.15}px)`;
+  }
+});
 
-/* INIT */
+const _origNav = nav;
 
-function submitLessonQuiz() {
-    const quizSection = document.getElementById('quiz-section');
-    if(!quizSection) return;
-    const questions = quizSection.querySelectorAll('.quiz-q');
-    let correct = 0;
-    let total = questions.length;
-    let allAnswered = true;
 
-    questions.forEach((q, i) => {
-        const selected = q.querySelector('input[type="radio"]:checked');
-        if(!selected) { allAnswered = false; return; }
-        const ans = parseInt(q.dataset.ans);
-        const val = parseInt(selected.value);
-
-        q.querySelectorAll('.qopt').forEach((opt, oi) => {
-            opt.classList.add('revealed');
-            if(oi === ans) opt.classList.add('correct');
-            else if(oi === val && val !== ans) opt.classList.add('wrong');
-        });
-
-        if(val === ans) correct++;
-    });
-
-    if(!allAnswered) { alert('Please answer all questions first'); return; }
-
-    const pct = Math.round((correct/total)*100);
-    const resultEl = document.getElementById('quiz-result');
-    if(resultEl) {
-        resultEl.className = 'quiz-result ' + (pct >= 60 ? 'pass' : 'fail');
-        resultEl.innerHTML = pct >= 60 ? '✅ Great work! You scored ' + correct + '/' + total + ' (' + pct + '%). Well done!' : 'You scored ' + correct + '/' + total + ' (' + pct + '%). Review the content and try again.';
-        resultEl.style.display = 'block';
-    }
-    const submitBtn = document.getElementById('quiz-submit-btn');
-    if(submitBtn) submitBtn.style.display = 'none';
+/* ══════════════════════════════════════════
+   PROGRESS TRACKING
+   ══════════════════════════════════════════ */
+function getCompleted(){ try{ return JSON.parse(localStorage.getItem('mxt-completed')||'[]'); }catch(e){ return []; } }
+function isCompleted(id){ return getCompleted().includes(id); }
+function markComplete(id){
+  if(!id) return;
+  const c = getCompleted();
+  if(!c.includes(id)){ c.push(id); localStorage.setItem('mxt-completed',JSON.stringify(c)); }
+  const btn = document.getElementById('complete-btn');
+  if(btn){ btn.textContent='✓ Completed'; btn.classList.add('done'); }
+  // Update topic card if visible
+  const cards = document.querySelectorAll('.topic-card');
+  cards.forEach(card=>{ if(card.getAttribute('onclick')&&card.getAttribute('onclick').includes(id)) card.classList.add('completed'); });
+}
+function toggleComplete(id){
+  const c = getCompleted();
+  const idx = c.indexOf(id);
+  if(idx===-1){ c.push(id); } else { c.splice(idx,1); }
+  localStorage.setItem('mxt-completed',JSON.stringify(c));
+  const btn = document.getElementById('complete-btn');
+  const done = c.includes(id);
+  if(btn){ btn.textContent=done?'✓ Completed':'Mark as Complete'; btn.classList.toggle('done',done); }
+  renderProgressBar(currentGrade);
+}
+function renderProgressBar(grade){
+  const wrap = document.getElementById('grade-progress-wrap');
+  if(!wrap) return;
+  const strands = grade===9?STRANDS_9:grade===10?STRANDS_10:grade===11?STRANDS_11:STRANDS_12;
+  const all = strands.flatMap(s=>s.topics).filter(t=>t.status==='available'&&t.id);
+  const done = all.filter(t=>isCompleted(t.id)).length;
+  const pct = all.length ? Math.round((done/all.length)*100) : 0;
+  wrap.innerHTML = `<div class="grade-progress">
+    <span>Grade ${grade} Progress</span>
+    <div class="grade-progress-bar"><div class="grade-progress-fill" style="width:${pct}%"></div></div>
+    <span class="grade-progress-label">${done}/${all.length}</span>
+  </div>`;
 }
 
-(function initMPA() {
-    const path = window.location.pathname;
-    if (path === '/' || path.endsWith('index.html') || path === '') {
-        if (typeof renderBlogPreview === 'function') renderBlogPreview();
-    } else if (path.includes('topics.html')) {
-        const urlParams = new URLSearchParams(window.location.search);
-        const grade = parseInt(urlParams.get('grade')) || 9;
-        if (typeof filterGrade === 'function') filterGrade(grade);
-    } else if (path.includes('resources.html')) {
-        if (typeof renderBlogFull === 'function') renderBlogFull();
-    }
-    if (typeof initReveal === 'function') initReveal();
-})();
+/* ══════════════════════════════════════════
+   CONFETTI
+   ══════════════════════════════════════════ */
+function launchConfetti(){
+  const canvas = document.getElementById('confetti-canvas');
+  const ctx = canvas.getContext('2d');
+  canvas.style.display='block';
+  canvas.width=window.innerWidth;
+  canvas.height=window.innerHeight;
+  const pieces=[];
+  const colors=['#3a7d2c','#c8900a','#0369a1','#16a34a','#f59e0b','#ef4444','#8b5cf6'];
+  for(let i=0;i<120;i++){
+    pieces.push({
+      x:Math.random()*canvas.width, y:Math.random()*canvas.height-canvas.height,
+      w:Math.random()*10+5, h:Math.random()*5+3,
+      color:colors[Math.floor(Math.random()*colors.length)],
+      rot:Math.random()*360, vx:(Math.random()-0.5)*4,
+      vy:Math.random()*4+2, vr:Math.random()*4-2
+    });
+  }
+  let frame=0;
+  function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    pieces.forEach(p=>{
+      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rot*Math.PI/180);
+      ctx.fillStyle=p.color; ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h); ctx.restore();
+      p.x+=p.vx; p.y+=p.vy; p.rot+=p.vr; p.vy+=0.08;
+    });
+    frame++;
+    if(frame<120) requestAnimationFrame(draw);
+    else{ ctx.clearRect(0,0,canvas.width,canvas.height); canvas.style.display='none'; }
+  }
+  draw();
+}
+
+/* ══════════════════════════════════════════
+   RELATED LESSONS
+   ══════════════════════════════════════════ */
+function renderRelated(id){
+  const L = LESSONS[id];
+  const grid = document.getElementById('related-grid');
+  if(!L||!grid) return;
+  const strands = L.grade===9?STRANDS_9:L.grade===10?STRANDS_10:L.grade===11?STRANDS_11:STRANDS_12;
+  // Same strand first, then other strands
+  const strand = strands.find(s=>s.topics.some(t=>t.id===id));
+  const sameStrand = strand ? strand.topics.filter(t=>t.id!==id&&t.status==='available'&&t.id) : [];
+  const others = strands.flatMap(s=>s.topics).filter(t=>t.id!==id&&t.status==='available'&&t.id&&!sameStrand.includes(t));
+  const related = [...sameStrand,...others].slice(0,3);
+  if(!related.length){ document.getElementById('related-section').style.display='none'; return; }
+  grid.innerHTML = related.map(t=>`
+    <div class="related-card" onclick="openLesson('${t.id}')">
+      <div class="related-icon">${t.icon}</div>
+      <div class="related-info">
+        <strong>${t.title}</strong>
+        <span>⏱ ~${Math.ceil(t.lessons*3)} min · Grade ${L.grade}</span>
+      </div>
+    </div>
+  `).join('');
+}
+
+/* ══════════════════════════════════════════
+   GLOSSARY
+   ══════════════════════════════════════════ */
+let glossaryData=[];
+let glossaryFilter='all';
+function buildGlossary(){
+  if(glossaryData.length) return;
+  const allLessons = Object.values(LESSONS);
+  allLessons.forEach(L=>{
+    L.keyTerms.forEach(t=>{
+      if(!glossaryData.find(g=>g.word.toLowerCase()===t.word.toLowerCase())){
+        glossaryData.push({word:t.word,def:t.def,strand:L.strand.split(':')[1]?.trim()||L.strand,grade:L.grade});
+      }
+    });
+  });
+  glossaryData.sort((a,b)=>a.word.localeCompare(b.word));
+}
+function renderGlossary(filter){
+  buildGlossary();
+  if(filter) glossaryFilter=filter;
+  const q=(document.getElementById('glossary-search')||{}).value||'';
+  const data = glossaryData.filter(g=>{
+    const matchQ = !q||g.word.toLowerCase().includes(q.toLowerCase())||g.def.toLowerCase().includes(q.toLowerCase());
+    const matchF = glossaryFilter==='all'||g.grade===parseInt(glossaryFilter);
+    return matchQ&&matchF;
+  });
+  const grid=document.getElementById('glossary-grid');
+  const count=document.getElementById('glossary-count');
+  const filters=document.getElementById('glossary-filters');
+  if(count) count.textContent=`Showing ${data.length} of ${glossaryData.length} terms`;
+  if(filters&&!filters.innerHTML){
+    filters.innerHTML=['all',9,10,11,12].map(g=>`
+      <button class="grade-tab${g==='all'?' active':''}" onclick="renderGlossary('${g}')">${g==='all'?'All Grades':'Grade '+g}</button>
+    `).join('');
+  }
+  if(filters){
+    filters.querySelectorAll('.grade-tab').forEach(b=>{
+      b.classList.toggle('active', b.textContent.trim()===(glossaryFilter==='all'?'All Grades':'Grade '+glossaryFilter)||
+        (glossaryFilter==='all'&&b.textContent.trim()==='All Grades'));
+    });
+  }
+  if(grid) grid.innerHTML = data.length
+    ? data.map(g=>`
+      <div class="glossary-card">
+        <div class="glossary-word">${g.word}</div>
+        <div class="glossary-def">${g.def}</div>
+        <span class="glossary-tag">Grade ${g.grade} · ${g.strand}</span>
+      </div>`).join('')
+    : '<p style="color:var(--ink3);grid-column:1/-1">No terms found.</p>';
+}
+function filterGlossary(q){ renderGlossary(glossaryFilter); }
+
+
+/* INIT */
