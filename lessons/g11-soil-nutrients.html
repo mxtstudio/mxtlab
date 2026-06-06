@@ -145,7 +145,12 @@
         <span class="sep">›</span><span>Strand 1: Crops · Unit 1</span>
         <span class="sep">›</span><span>Soil Nutrients: Macro & Micro</span>
       </div>
-      <div class="lesson-header">
+      <div class="lesson-hero">
+      <div class="lesson-hero-placeholder">🌱</div>
+      <div class="lesson-hero-bg" id="lesson-hero-bg"></div>
+      <div class="lesson-hero-overlay"></div>
+    </div>
+    <div class="lesson-header">
         <div class="lesson-strand-badge">🌱 Strand 1: Crops · Unit 1</div>
         <h1>Soil Nutrients: Macro & Micro</h1>
         <div class="lesson-meta-row">
@@ -266,5 +271,16 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const title = document.querySelector('.lesson-header h1');
+      const badge = document.querySelector('.lesson-strand-badge');
+      if(title && badge) {
+        const strandText = badge.textContent.trim().split('·')[0].trim().replace(/^[^\w]+/,'');
+        applyLessonHeroImage('g11-soil-nutrients', title.textContent, strandText);
+      }
+    });
+  </script>
 </body>
 </html>

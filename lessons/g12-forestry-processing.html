@@ -145,7 +145,12 @@
         <span class="sep">›</span><span>Strand 4: Natural Resources · Units 4–6</span>
         <span class="sep">›</span><span>Forestry Processing, Silviculture & Technology</span>
       </div>
-      <div class="lesson-header">
+      <div class="lesson-hero">
+      <div class="lesson-hero-placeholder">🪵</div>
+      <div class="lesson-hero-bg" id="lesson-hero-bg"></div>
+      <div class="lesson-hero-overlay"></div>
+    </div>
+    <div class="lesson-header">
         <div class="lesson-strand-badge">🪵 Strand 4: Natural Resources · Units 4–6</div>
         <h1>Forestry Processing, Silviculture & Technology</h1>
         <div class="lesson-meta-row">
@@ -273,5 +278,16 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const title = document.querySelector('.lesson-header h1');
+      const badge = document.querySelector('.lesson-strand-badge');
+      if(title && badge) {
+        const strandText = badge.textContent.trim().split('·')[0].trim().replace(/^[^\w]+/,'');
+        applyLessonHeroImage('g12-forestry-processing', title.textContent, strandText);
+      }
+    });
+  </script>
 </body>
 </html>
