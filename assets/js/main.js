@@ -5665,6 +5665,7 @@ function nav(page){
     if(page==='home'){ renderBlogPreview(); setLogoColor(DEFAULT_COLOR); }
     if(page==='modules') renderModules(currentGrade);
     if(page==='blog') renderBlogFull();
+    if(page==='glossary') renderGlossary();
   }, current ? 150 : 0);
 }
 
