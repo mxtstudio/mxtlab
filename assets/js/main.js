@@ -5761,8 +5761,6 @@ function getStrandColor(strandStr){
 /* ═══════════════════════════════════════════════════
    UNSPLASH AUTO IMAGE — fetches relevant lesson image
    ═══════════════════════════════════════════════════ */
-const UNSPLASH_KEY = 'uEeLxwLJZt6H-ydjasLp-pQ0AtUc8da03U2GEfZ7HVc';
-const UNSPLASH_CACHE = {};
 const STRAND_FALLBACKS = {
   'Crops':             'Image/crops.webp',
   'Animals':           'Image/animals.webp',
@@ -5771,36 +5769,11 @@ const STRAND_FALLBACKS = {
   'Agribusiness':      'Image/AgriBusiness.webp',
 };
 
-async function fetchLessonImage(lessonId, title, strand) {
-  // Return cached result immediately
-  if (UNSPLASH_CACHE[lessonId]) return UNSPLASH_CACHE[lessonId];
-
-  // Build a focused search query from title + strand
-  const strandKeyword = strand.split(':')[0].trim();
-  const query = encodeURIComponent(title + ' ' + strandKeyword + ' agriculture Papua New Guinea');
-
-  try {
-    const res = await fetch(
-      `https://api.unsplash.com/photos/random?query=${query}&orientation=landscape&content_filter=high&client_id=${UNSPLASH_KEY}`,
-      { headers: { 'Accept-Version': 'v1' } }
-    );
-    if (!res.ok) throw new Error('Unsplash API error');
-    const data = await res.json();
-    const url = data.urls.regular; // 1080px wide — good quality, reasonable size
-    UNSPLASH_CACHE[lessonId] = url;
-    return url;
-  } catch(e) {
-    // Fallback to strand image
-    const fallback = STRAND_FALLBACKS[strandKeyword] || 'Image/hero.webp';
-    UNSPLASH_CACHE[lessonId] = fallback;
-    return fallback;
-  }
-}
-
-async function applyLessonHeroImage(lessonId, title, strand) {
+function applyLessonHeroImage(lessonId, title, strand) {
   const hero = document.getElementById('lesson-hero-bg');
   if (!hero) return;
-  const url = await fetchLessonImage(lessonId, title, strand);
+  const strandKeyword = strand.split(':')[0].trim();
+  const url = STRAND_FALLBACKS[strandKeyword] || 'Image/hero.webp';
   hero.style.backgroundImage = `url('${url}')`;
   hero.style.opacity = '1';
 }
