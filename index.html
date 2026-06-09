@@ -1020,7 +1020,6 @@ initReveal();return false">
     <li><a onclick="setGrade(11);nav('modules');closeDrawer()">🌱 Grade 11 Agriculture</a></li>
     <li><a onclick="setGrade(12);nav('modules');closeDrawer()">🌻 Grade 12 Agriculture</a></li>
     <li><a onclick="nav('about');closeDrawer()">👥 About MXT Lab</a></li>
-    <li><a onclick="nav('glossary');renderGlossary();closeDrawer()">📖 Glossary</a></li>
     <li><a onclick="nav('blog');closeDrawer()">📚 Resources</a></li>
     <li><a onclick="nav('careers');closeDrawer()">🌱 Careers</a></li>
     <li><a onclick="nav('contact');closeDrawer()">✉️ Contact</a></li>
@@ -1703,27 +1702,6 @@ initReveal();return false">
   </section>
 </div>
 
-
-
-<!-- ═══ GLOSSARY ═══ -->
-<div class="page" id="page-glossary">
-  <div class="page-hero">
-    <div class="container">
-      <div class="label">Reference</div>
-      <h1 class="h-xl" style="max-width:580px">Glossary —<br><span class="serif">All Key Terms</span></h1>
-      <p class="subtext" style="margin-top:12px">Every key term across all 4 grades and 5 strands in one searchable list.</p>
-    </div>
-  </div>
-  <section class="sec">
-    <div class="container">
-      <input class="glossary-search" id="glossary-search" type="text" placeholder="Search terms..." oninput="filterGlossary(this.value)"/>
-      <div class="glossary-filters" id="glossary-filters"></div>
-      <div class="glossary-count" id="glossary-count"></div>
-      <div class="glossary-grid" id="glossary-grid"></div>
-    </div>
-  </section>
-</div>
-
 </main>
 
 <footer>
@@ -1776,6 +1754,25 @@ initReveal();return false">
   </div>
 </footer>
 
+
+<!-- ═══ GLOSSARY ═══ -->
+<div class="page" id="page-glossary">
+  <div class="page-hero">
+    <div class="container">
+      <div class="label">Reference</div>
+      <h1 class="h-xl" style="max-width:580px">Glossary —<br><span class="serif">All Key Terms</span></h1>
+      <p class="subtext" style="margin-top:12px">Every key term across all 4 grades and 5 strands in one searchable list.</p>
+    </div>
+  </div>
+  <section class="sec">
+    <div class="container">
+      <input class="glossary-search" id="glossary-search" type="text" placeholder="Search terms..." oninput="filterGlossary(this.value)"/>
+      <div class="glossary-filters" id="glossary-filters"></div>
+      <div class="glossary-count" id="glossary-count"></div>
+      <div class="glossary-grid" id="glossary-grid"></div>
+    </div>
+  </section>
+</div>
 
 <button id="back-top" onclick="backToTop()">↑</button>
 <div id="toast"><span id="t-ic2"></span> <span id="t-msg2"></span></div>
@@ -8112,5 +8109,7 @@ function filterGlossary(q){ renderGlossary(glossaryFilter); }
 nav('home');
 
 </script>
+<!-- Adsterra Social Bar -->
+<script src="https://pl29680283.effectivecpmnetwork.com/b4/ad/6c/b4ad6cb009aa992510e4d54ff415f0ef.js"></script>
 </body>
 </html>
