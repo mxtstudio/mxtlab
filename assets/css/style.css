@@ -376,7 +376,8 @@ textarea.fc{resize:vertical;min-height:130px}
 .cta-sec p{color:rgba(255,255,255,.72);margin:13px auto 26px;max-width:450px}
 
 /* ADS — placeholder for future ad units */
-.ad-wrap{text-align:center;padding:16px 24px;background:var(--bg)}
+.ad-wrap{text-align:center;padding:16px 0;background:var(--bg);width:100%;overflow:hidden}
+.ad-wrap iframe{width:100%!important;max-width:100%!important;display:block;margin:0 auto}
 
 /* FOOTER */
 footer{background:#0e1208;color:rgba(255,255,255,.5);padding:52px 0 28px}
