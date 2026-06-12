@@ -7,27 +7,27 @@
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-57V6ZXCDK8');</script>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Browse all Grade 9, 10, 11 and 12 Agriculture topics across five strands: Crops, Animals, Aquaculture, Natural Resource Management, and Agribusiness."/>
+  <meta name="description" content="Every key Agriculture term across Grade 9, 10, 11 and 12 — searchable by grade and strand."/>
   <meta name="robots" content="index, follow"/>
   <meta name="author" content="MXT Lab"/>
-  <meta property="og:title" content="Agriculture Topics — MXT Lab | Grade 9–12 PNG"/>
-  <meta property="og:description" content="Browse all Grade 9, 10, 11 and 12 Agriculture topics across five strands: Crops, Animals, Aquaculture, Natural Resource Management, and Agribusiness."/>
+  <meta property="og:title" content="Agriculture Glossary — MXT Lab | All Key Terms"/>
+  <meta property="og:description" content="Every key Agriculture term across Grade 9, 10, 11 and 12 — searchable by grade and strand."/>
   <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://mxtlab.online/topics.html"/>
+  <meta property="og:url" content="https://mxtlab.online/glossary.html"/>
   <meta property="og:image" content="https://mxtlab.online/og-image.png"/>
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
   <meta property="og:site_name" content="MXT Lab"/>
   <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Agriculture Topics — MXT Lab | Grade 9–12 PNG"/>
-  <meta name="twitter:description" content="Browse all Grade 9, 10, 11 and 12 Agriculture topics across five strands: Crops, Animals, Aquaculture, Natural Resource Management, and Agribusiness."/>
+  <meta name="twitter:title" content="Agriculture Glossary — MXT Lab | All Key Terms"/>
+  <meta name="twitter:description" content="Every key Agriculture term across Grade 9, 10, 11 and 12 — searchable by grade and strand."/>
   <meta name="twitter:image" content="https://mxtlab.online/og-image.png"/>
-  <link rel="canonical" href="https://mxtlab.online/topics.html"/>
+  <link rel="canonical" href="https://mxtlab.online/glossary.html"/>
   <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"/>
   <link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png"/>
   <link rel="preload" as="image" href="Image/hero.webp" fetchpriority="high"/>
-  <title>Topics — MXT Lab</title>
+  <title>Glossary — MXT Lab</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700;800&family=Fraunces:ital,wght@0,300;0,600;1,300&display=swap" onload="this.rel='stylesheet'"/>
@@ -120,6 +120,7 @@
           </div>
         </li>
         <li><a href="/about.html">About</a></li>
+        <li><a href="/glossary.html" style="color:var(--green)">Glossary</a></li>
         <li><a href="/resources.html">Resources</a></li>
         <li><a href="/careers.html">Careers</a></li>
         <li><a href="/contact.html">Contact</a></li>
@@ -141,38 +142,26 @@
   <main id="main">
     <div class="page-hero">
       <div class="container">
-        <div class="label">Browse All Topics</div>
-        <h1 class="h-xl">Agriculture Topics</h1>
-        <p class="subtext">Explore all Grade 9, 10, 11 and 12 Agriculture lessons. Select a grade to filter topics by strand.</p>
-      </div>
-    </div>
-<h1 class="h-xl">Agriculture Topics</h1>
-        <p class="subtext">Explore all Grade 9, 10, 11 and 12 Agriculture lessons. Select a grade to filter topics by strand.</p>
-        <div class="grade-tabs" style="margin-top:20px">
-          <button class="grade-tab active" data-grade="9" onclick="filterGrade(9)">🌾 Grade 9</button>
-          <button class="grade-tab" data-grade="10" onclick="filterGrade(10)">🌿 Grade 10</button>
-          <button class="grade-tab" data-grade="11" onclick="filterGrade(11)">🌱 Grade 11</button>
-          <button class="grade-tab" data-grade="12" onclick="filterGrade(12)">🌻 Grade 12</button>
-        </div>
+        <div class="label">Key Terms</div>
+        <h1 class="h-xl">Glossary — <em>All Key Terms</em></h1>
+        <p class="subtext">Every key term across all 4 grades and 5 strands in one searchable list.</p>
       </div>
     </div>
   <!-- Adsterra Ad — Rectangle 300x250 -->
   <div class="ad-wrap" style="text-align:center;margin:32px auto;overflow:hidden;">
     <script>
-  atOptions = {
-    'key' : '4549af4b6f2e59d48c530d2a3dfa6378',
-    'format' : 'iframe',
-    'height' : 250,
-    'width' : 300,
-    'params' : {}
-  };
+  atOptions = {'key':'4549af4b6f2e59d48c530d2a3dfa6378','format':'iframe','height':250,'width':300,'params':{}};
 </script>
 <script src="https://www.highperformanceformat.com/4549af4b6f2e59d48c530d2a3dfa6378/invoke.js"></script>
   </div>
     <div class="sec">
       <div class="container">
-        <div id="modules-content"></div>
+        <input class="glossary-search" id="glossary-search" type="search" placeholder="Search terms…" oninput="filterGlossary(this.value)" autocomplete="off"/>
+        <div class="glossary-filters" id="glossary-filters"></div>
+        <div class="glossary-count" id="glossary-count"></div>
+        <div class="glossary-grid" id="glossary-grid"></div>
       </div>
+    </div>
   </main>
 
   <div id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
@@ -237,5 +226,10 @@
 
 <!-- Adsterra Social Bar -->
 <script src="https://pl29680283.effectivecpmnetwork.com/b4/ad/6c/b4ad6cb009aa992510e4d54ff415f0ef.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    if(typeof renderGlossary === 'function') renderGlossary();
+  });
+</script>
 </body>
 </html>
