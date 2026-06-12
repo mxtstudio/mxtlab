@@ -5665,7 +5665,7 @@ function nav(page){
     if(page==='home'){ renderBlogPreview(); setLogoColor(DEFAULT_COLOR); }
     if(page==='modules') renderModules(currentGrade);
     if(page==='blog') renderBlogFull();
-    if(page==='glossary') renderGlossary();
+    if(page==='glossary'){ window.location.href='/glossary.html'; return; }
   }, current ? 150 : 0);
 }
 
@@ -6117,6 +6117,15 @@ window.addEventListener('scroll',()=>{
 document.addEventListener('keydown',e=>{ if(e.key==='Escape'){ closeSearch(); closeDrawer(); } });
 document.getElementById('announce-close').addEventListener('click',()=>document.getElementById('announce-bar').style.display='none');
 
+// Navbar glass effect on scroll
+(function(){
+  const nav = document.getElementById('navbar');
+  if(!nav) return;
+  const onScroll = () => nav.classList.toggle('scrolled', scrollY > 40);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+
 function toast(ic,msg){
   document.getElementById('t-ic2').textContent=ic;
   document.getElementById('t-msg2').textContent=msg;
@@ -6177,27 +6186,37 @@ function initReveal(){
     el.classList.remove('revealed');
     revealObserver.observe(el);
   });
+  document.querySelectorAll('[data-reveal-group]').forEach(el => {
+    el.classList.remove('revealed');
+    revealObserver.observe(el);
+  });
   // Also stagger-reveal cards that are immediately visible
   setTimeout(() => {
-    document.querySelectorAll('.page.active [data-reveal]').forEach(el => {
+    document.querySelectorAll('[data-reveal]').forEach(el => {
       const rect = el.getBoundingClientRect();
       if(rect.top < window.innerHeight) el.classList.add('revealed');
     });
   }, 60);
 }
 
-// Parallax on hero
+// Parallax on hero - GPU only
+let ticking = false;
 window.addEventListener('scroll', () => {
-  const hero = document.querySelector('.hero');
-  if(hero && document.getElementById('page-home').classList.contains('active')){
-    const y = scrollY * 0.3;
-    hero.style.backgroundPositionY = y + 'px';
-    const visual = hero.querySelector('.hero-visual');
-    if(visual) visual.style.transform = `translateY(${-y * 0.15}px)`;
+  if(!ticking){
+    requestAnimationFrame(() => {
+      const hero = document.querySelector('.hero');
+      if(hero){
+        const y = scrollY * 0.28;
+        hero.style.backgroundPositionY = y + 'px';
+        const visual = hero.querySelector('.hero-visual');
+        if(visual) visual.style.transform = `translateY(${-y * 0.12}px)`;
+      }
+      ticking = false;
+    });
+    ticking = true;
   }
-});
+}, { passive: true });
 
-const _origNav = nav;
 
 
 /* ══════════════════════════════════════════
