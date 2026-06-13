@@ -5696,7 +5696,7 @@ function renderModules(grade){
       </div>
       <div class="topics-grid">
         ${s.topics.map(t=>`
-          <article class="topic-card${t.status==='coming'?' locked':''}" ${t.status==='available'&&t.id?`onclick="openLesson('${t.id}')"`:''}>
+          <article class="topic-card" ${t.id?`onclick="window.location='/lessons/'+t.id+'.html'"`:''}>
             <div class="tc-thumb" style="background:${t.bg}">
               ${t.icon}
               <span class="tc-status available">Available</span>
@@ -5708,7 +5708,7 @@ function renderModules(grade){
             <div class="tc-foot">
               <div class="tc-meta">📖 ${t.lessons} lessons</div>
               ${t.id
-                ? `<button class="tc-btn" onclick="event.stopPropagation();openLesson('${t.id}')">Start →</button>`
+                ? `<a class="tc-btn" href="/lessons/${t.id}.html">Start →</a>`
                 : `<button class="tc-btn" disabled>Coming Soon</button>`}
             </div>
           </article>
@@ -5807,7 +5807,7 @@ function openLesson(id){
 
   // Find prev/next available lessons in same grade
   const strands = L.grade === 9 ? STRANDS_9 : L.grade === 10 ? STRANDS_10 : L.grade === 11 ? STRANDS_11 : STRANDS_12;
-  const allAvailable = strands.flatMap(s=>s.topics).filter(t=>t.status==='available'&&t.id);
+  const allAvailable = strands.flatMap(s=>s.topics).filter(t=>t.id);
   const idx = allAvailable.findIndex(t=>t.id===id);
   const prevId = idx > 0 ? allAvailable[idx-1].id : null;
   const nextId = idx < allAvailable.length-1 ? allAvailable[idx+1].id : null;
@@ -5924,11 +5924,11 @@ function openLesson(id){
       </div>
 
       <div class="lesson-nav">
-        <button class="lesson-nav-btn" onclick="${prevId?`openLesson('${prevId}')`:'void(0)'}" ${!prevId?'disabled':''}>
+        <button class="lesson-nav-btn" onclick="${prevId?`window.location='/lessons/'+prevId+'.html'`:'void(0)'}" ${!prevId?'disabled':''}>
           ← Previous Topic
         </button>
         <button class="btn btn-ghost btn-sm" onclick="setGrade(${L.grade});nav('modules')">All Topics</button>
-        <button class="lesson-nav-btn" onclick="${nextId?`openLesson('${nextId}')`:'void(0)'}" ${!nextId?'disabled':''}>
+        <button class="lesson-nav-btn" onclick="${nextId?`window.location='/lessons/'+nextId+'.html'`:'void(0)'}" ${!nextId?'disabled':''}>
           Next Topic →
         </button>
       </div>
@@ -5990,7 +5990,7 @@ function renderBlogPreview(){
   const g = document.getElementById('blog-preview');
   if(!g) return;
   g.innerHTML = POSTS.slice(0,3).map(p=>`
-    <article class="topic-card" style="cursor:pointer" onclick="openLesson('${p.id}')">
+    <article class="topic-card" style="cursor:pointer" onclick="window.location='/lessons/'+p.id+'.html'">
       <div class="tc-thumb" style="background:${p.bg}">${p.icon}</div>
       <div class="tc-body">
         <div class="blog-meta"><span class="chip">${p.cat}</span><span style="font-size:.7rem;color:var(--ink3)">${p.read} read</span></div>
@@ -6006,7 +6006,7 @@ function renderBlogFull(){
   const g = document.getElementById('blog-main');
   if(!g) return;
   g.innerHTML = POSTS.map(p=>`
-    <article class="blc" style="cursor:pointer" onclick="openLesson('${p.id}')">
+    <article class="blc" style="cursor:pointer" onclick="window.location='/lessons/'+p.id+'.html'">
       <div class="blc-thumb" style="background:${p.bg}">${p.icon}</div>
       <div class="blc-body">
         <div class="blog-meta"><span class="chip">${p.cat}</span><span style="font-size:.7rem;color:var(--ink3)">${p.date}</span><span style="font-size:.7rem;color:var(--ink3)">${p.read} read</span></div>
@@ -6046,7 +6046,7 @@ document.getElementById('search-input').addEventListener('input', function(){
   const el = document.getElementById('s-results');
   if(!results.length){ el.innerHTML='<div style="padding:14px 16px;font-size:.84rem;color:var(--ink3)">No results found.</div>'; return; }
   el.innerHTML = results.map(r=>`
-    <div class="sri" onclick="openLesson('${r.id}');closeSearch()">
+    <div class="sri" onclick="window.location='/lessons/'+r.id+'.html';closeSearch()">
       <div class="sri-ic">${r.icon}</div>
       <div><div class="sri-t">${r.title}</div><div class="sri-m">Grade ${r.grade} · ${r.meta.split('·')[1]||''}</div></div>
     </div>
@@ -6055,7 +6055,7 @@ document.getElementById('search-input').addEventListener('input', function(){
 
 // Populate default results
 document.getElementById('s-results').innerHTML = SEARCH_INDEX.slice(0,5).map(r=>`
-  <div class="sri" onclick="openLesson('${r.id}');closeSearch()">
+  <div class="sri" onclick="window.location='/lessons/'+r.id+'.html';closeSearch()">
     <div class="sri-ic">${r.icon}</div>
     <div><div class="sri-t">${r.title}</div><div class="sri-m">Grade ${r.grade}</div></div>
   </div>
@@ -6310,7 +6310,7 @@ function renderRelated(id){
   const related = [...sameStrand,...others].slice(0,3);
   if(!related.length){ document.getElementById('related-section').style.display='none'; return; }
   grid.innerHTML = related.map(t=>`
-    <div class="related-card" onclick="openLesson('${t.id}')">
+    <div class="related-card" onclick="window.location='/lessons/'+t.id+'.html'">
       <div class="related-icon">${t.icon}</div>
       <div class="related-info">
         <strong>${t.title}</strong>
