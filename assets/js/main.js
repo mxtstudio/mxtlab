@@ -5430,7 +5430,7 @@ const STRANDS_9 = [
     id:'animals9', strand:'Strand 2', name:'Animals', icon:'🐄', bg:'#f5ece4', color:'#7c4a1e',
     desc:'Monogastric and polygastric animals, their characteristics, care, poultry farming, and management systems.',
     topics:[
-      {id:'g9-monogastric-polygastric',title:'Unit 1 — Monogastric & Polygastric Animals',icon:'🐷',bg:'#f5ece4',desc:'What monogastric animals and polygastric (ruminant) animals are — and how they differ.',status:'coming-soon',lessons:3},
+      {id:'g9-monogastric-polygastric',title:'Unit 1 — Monogastric & Polygastric Animals',icon:'🐷',bg:'#f5ece4',desc:'What monogastric animals and polygastric (ruminant) animals are — and how they differ.',status:'available',lessons:3},
       {id:'g9-animal-anatomy',title:'Unit 2 — Anatomy of Farm Animals',icon:'🐄',bg:'#e8f5e2',desc:'The body systems of monogastric and polygastric animals — how their digestive systems work.',status:'available',lessons:3},
       {id:'g9-animal-farming',title:'Unit 3 — Animal Farming Practices & Management',icon:'🏠',bg:'#fdf3d6',desc:'How farm animals are housed, fed, and cared for — extensive, semi-intensive, and intensive systems.',status:'available',lessons:4},
       {id:'g9-poultry-types',title:'Unit 4 — Types of Poultry & Their Behaviour',icon:'🐔',bg:'#f5ece4',desc:'Domesticated and farmed birds — their characteristics, behaviours, purposes, and how they are kept.',status:'available',lessons:3},
@@ -5639,7 +5639,7 @@ let currentLessonId = null;
 let quizAnswers = {};
 let quizSubmitted = false;
 
-function setGrade(g){ currentGrade = g; }
+function setGrade(g){ currentGrade = g; try{ localStorage.setItem("mxt_grade", g); }catch(e){} }
 
 /* ══════════════════════════════════════════
    NAVIGATION
@@ -5666,6 +5666,8 @@ function nav(page){
     if(page==='modules') renderModules(currentGrade);
     if(page==='blog') renderBlogFull();
     if(page==='glossary'){ window.location.href='/glossary.html'; return; }
+    // Save current page so refresh restores it
+    try{ localStorage.setItem('mxt_page', page); }catch(e){}
   }, current ? 150 : 0);
 }
 
@@ -5697,7 +5699,7 @@ function renderModules(grade){
           <article class="topic-card${t.status==='coming'?' locked':''}" ${t.status==='available'&&t.id?`onclick="openLesson('${t.id}')"`:''}>
             <div class="tc-thumb" style="background:${t.bg}">
               ${t.icon}
-              <span class="tc-status ${t.status}">${t.status==='available'?'Available':'In Progress'}</span>
+              <span class="tc-status available">Available</span>
             </div>
             <div class="tc-body">
               <h3>${t.title}</h3>
@@ -5705,9 +5707,9 @@ function renderModules(grade){
             </div>
             <div class="tc-foot">
               <div class="tc-meta">📖 ${t.lessons} lessons</div>
-              ${t.status==='available'&&t.id
+              ${t.id
                 ? `<button class="tc-btn" onclick="event.stopPropagation();openLesson('${t.id}')">Start →</button>`
-                : `<button class="tc-btn locked-btn" disabled>In Progress</button>`}
+                : `<button class="tc-btn" disabled>Coming Soon</button>`}
             </div>
           </article>
         `).join('')}
@@ -6372,4 +6374,13 @@ function renderGlossary(filter){
 function filterGlossary(q){ renderGlossary(glossaryFilter); }
 
 
-/* INIT */
+/* INIT — only run SPA nav on index.html */
+(function(){
+  if(!document.getElementById('page-home')) return; // not index.html, skip
+  const validPages = ['home','modules','lesson','about','blog','contact','privacy','terms','careers'];
+  const saved = (function(){ try{ return localStorage.getItem('mxt_page'); }catch(e){ return null; } })();
+  const startPage = (saved && validPages.includes(saved)) ? saved : 'home';
+  const savedGrade = (function(){ try{ return parseInt(localStorage.getItem('mxt_grade'))||9; }catch(e){ return 9; } })();
+  currentGrade = savedGrade;
+  nav(startPage);
+})();
