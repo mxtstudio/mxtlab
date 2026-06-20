@@ -8,7 +8,7 @@ const LESSONS = {
 
 'g9-soil-formation': {
   title: 'Soil — Types & Formation',
-  strand: 'Strand 1: Crops · Unit 1', grade: 9, icon: '🌱',
+  strand: 'Strand 1: Crops · Unit 1', grade: 9, icon: '',
   lessons: ['Soil Composition & Components','Physical Properties of Soil','Chemical Properties of Soil','Soil Types Summary'],
   currentLesson: 0,
   objectives: [
@@ -51,7 +51,7 @@ const LESSONS = {
       <li><strong>Wind</strong> — in dry areas, wind blows sand against rock, wearing it down slowly</li>
       <li><strong>Carbon dioxide</strong> — in the air, CO₂ forms weak carbonic acid that can dissolve limestone and chalk rock</li>
     </ul>
-    <div class="info-box"><strong>📌 Important:</strong> The activities of plants and animals also contribute to soil formation by adding organic materials as they die and decompose.</div>
+    <div class="info-box"><strong>Important:</strong> The activities of plants and animals also contribute to soil formation by adding organic materials as they die and decompose.</div>
   </div>
   <div class="lesson-section">
     <h2>Physical Properties of Soil</h2>
@@ -101,7 +101,7 @@ const LESSONS = {
 
 'g9-types-crops': {
   title: 'Types of Crops & Their Environments',
-  strand: 'Strand 1: Crops · Unit 2', grade: 9, icon: '🌽',
+  strand: 'Strand 1: Crops · Unit 2', grade: 9, icon: '',
   lessons: ['Types of Crops by Use','Environmental Requirements','Crop Characteristics & Life Cycle'],
   currentLesson: 0,
   objectives: [
@@ -121,7 +121,7 @@ const LESSONS = {
       <li><strong>Ornamental crops</strong> — grown for decoration and landscape design. Examples: flowers, garden bushes, pot plants</li>
       <li><strong>Industrial crops</strong> — grown for industrial manufacturing. Examples: rubber, sugar cane, tobacco</li>
     </ul>
-    <div class="info-box"><strong>🇵🇬 PNG Context:</strong> Papua New Guinea\'s key food crops include sweet potato, banana, taro, cassava, and yam. Important cash crops include coffee, cocoa, oil palm, copra, and rubber.</div>
+    <div class="info-box"><strong>PNG Context:</strong> Papua New Guinea\'s key food crops include sweet potato, banana, taro, cassava, and yam. Important cash crops include coffee, cocoa, oil palm, copra, and rubber.</div>
   </div>
   <div class="lesson-section">
     <h2>Environmental Requirements of Crops</h2>
@@ -174,7 +174,7 @@ const LESSONS = {
 
 'g9-crop-farming': {
   title: 'Crop Farming Practices & Management',
-  strand: 'Strand 1: Crops · Unit 3', grade: 9, icon: '🚜',
+  strand: 'Strand 1: Crops · Unit 3', grade: 9, icon: '',
   lessons: ['Types of Farming Systems','Crop Management Practices','Improving Crop Farming'],
   currentLesson: 0,
   objectives: [
@@ -229,7 +229,7 @@ const LESSONS = {
       <li><strong>Using renewable energy</strong> — solar pumps for irrigation instead of diesel</li>
       <li><strong>Agroforestry</strong> — planting trees among crops to improve soil, shade, and biodiversity</li>
     </ul>
-    <div class="info-box"><strong>⚠️ Poor agricultural practices</strong> — such as overuse of chemicals — reduce soil porosity, increase salinity and alkalinity, and disturb the natural nutrient composition of soil. These effects reduce productivity over time.</div>
+    <div class="info-box"><strong>Poor agricultural practices</strong> — such as overuse of chemicals — reduce soil porosity, increase salinity and alkalinity, and disturb the natural nutrient composition of soil. These effects reduce productivity over time.</div>
   </div>`,
   keyTerms: [
     {word:'Subsistence farming', def:'Farming where food is grown mainly for the farmer\'s own family with little surplus for sale'},
@@ -261,7 +261,7 @@ const LESSONS = {
 
 'g9-crop-technology': {
   title: 'Crop Farming Technology',
-  strand: 'Strand 1: Crops · Unit 4', grade: 9, icon: '⚙️',
+  strand: 'Strand 1: Crops · Unit 4', grade: 9, icon: '',
   lessons: ['Technology in Crop Cultivation','Advantages of Agricultural Technology','Disadvantages & Crop Management Tech'],
   currentLesson: 0,
   objectives: [
@@ -299,7 +299,7 @@ const LESSONS = {
       <li>Technology has many side effects if not used correctly</li>
       <li>Most farmers in developing countries may lack literacy to use modern technologies</li>
     </ul>
-    <div class="info-box"><strong>💡 Key Insight:</strong> The best approach is to combine traditional knowledge with appropriate modern technology. Technology should match the scale and resources of the farmer.</div>
+    <div class="info-box"><strong>Key Insight:</strong> The best approach is to combine traditional knowledge with appropriate modern technology. Technology should match the scale and resources of the farmer.</div>
   </div>
   <div class="lesson-section">
     <h2>Precision Farming and Crop Management Technology</h2>
@@ -336,7 +336,7 @@ const LESSONS = {
 
 'g9-horticulture': {
   title: 'Horticulture — Fruits, Vegetables & Spices',
-  strand: 'Strand 1: Crops · Unit 5', grade: 9, icon: '🍅',
+  strand: 'Strand 1: Crops · Unit 5', grade: 9, icon: '',
   lessons: ['Introduction to Horticulture','Fruit Tree Cultivation','Vegetable & Spice Cultivation','Processing & Marketing'],
   currentLesson: 0,
   objectives: [
@@ -400,7 +400,7 @@ const LESSONS = {
       <li><strong>Packaging</strong> — using appropriate containers to protect produce during transport</li>
       <li><strong>Marketing</strong> — selling at markets, roadside stalls, to wholesalers, or through cooperatives</li>
     </ul>
-    <div class="info-box"><strong>🇵🇬 PNG Example:</strong> Spice crops like vanilla and ginger are important horticultural exports from Papua New Guinea. They require careful post-harvest handling to maintain quality for export markets.</div>
+    <div class="info-box"><strong>PNG Example:</strong> Spice crops like vanilla and ginger are important horticultural exports from Papua New Guinea. They require careful post-harvest handling to maintain quality for export markets.</div>
   </div>`,
   keyTerms: [
     {word:'Horticulture', def:'A branch of agriculture dealing with garden crops including fruits, vegetables, and ornamental plants'},
@@ -429,7 +429,7 @@ const LESSONS = {
 
 'g9-monogastric-polygastric': {
   title: 'Monogastric & Polygastric Animals',
-  strand: 'Strand 2: Animals · Unit 1', grade: 9, icon: '🐷',
+  strand: 'Strand 2: Animals · Unit 1', grade: 9, icon: '',
   lessons: ['What are Monogastric Animals?','What are Polygastric Animals?','Comparison & Benefits'],
   currentLesson: 0,
   objectives: [
@@ -478,7 +478,7 @@ const LESSONS = {
       <div class="fact-box"><div class="fact-n">4</div><div class="fact-l">Stomach chambers (polygastric)</div></div>
     </div>
     <p>The key practical difference is feeding: polygastric animals can graze on grass and pasture, which is cheap and widely available. Monogastric animals need more concentrated feeds like grain, which are more expensive but result in faster weight gain.</p>
-    <div class="info-box"><strong>🇵🇬 PNG Context:</strong> Pigs hold cultural and economic importance in Papua New Guinea — they are central to bride price ceremonies (bridewealth), feasts, and community events. Pig farming is one of the most widespread livestock activities in the country.</div>
+    <div class="info-box"><strong>PNG Context:</strong> Pigs hold cultural and economic importance in Papua New Guinea — they are central to bride price ceremonies (bridewealth), feasts, and community events. Pig farming is one of the most widespread livestock activities in the country.</div>
   </div>`,
   keyTerms: [
     {word:'Monogastric', def:'An animal with a simple, single-chambered stomach — e.g. pig, chicken, rabbit'},
@@ -507,7 +507,7 @@ const LESSONS = {
 
 'g9-intro-aquaculture': {
   title: 'Introduction to Aquaculture',
-  strand: 'Strand 3: Aquaculture · Unit 1', grade: 9, icon: '🐟',
+  strand: 'Strand 3: Aquaculture · Unit 1', grade: 9, icon: '',
   lessons: ['What is Aquaculture?','Types of Aquatic Environments','Importance in Papua New Guinea'],
   currentLesson: 0,
   objectives: [
@@ -565,7 +565,7 @@ const LESSONS = {
       <li><strong>Employment</strong> — the aquaculture industry creates jobs in rural communities</li>
       <li><strong>Export earnings</strong> — sea cucumber, coral trout, and other species are exported to international markets</li>
     </ul>
-    <div class="info-box"><strong>🐟 PNG Opportunity:</strong> Tilapia ponds are widely promoted in PNG highlands communities as an affordable way to produce protein. Barramundi (locally called "seabass") is farmed in coastal areas for both local markets and export.</div>
+    <div class="info-box"><strong>PNG Opportunity:</strong> Tilapia ponds are widely promoted in PNG highlands communities as an affordable way to produce protein. Barramundi (locally called "seabass") is farmed in coastal areas for both local markets and export.</div>
   </div>`,
   keyTerms: [
     {word:'Aquaculture', def:'The controlled farming of fish, shellfish, and aquatic plants in freshwater, brackish, or saltwater environments'},
@@ -595,7 +595,7 @@ const LESSONS = {
 
 'g9-forests': {
   title: 'Types of Forests & Forest Resources',
-  strand: 'Strand 4: NRM · Unit 1', grade: 9, icon: '🌳',
+  strand: 'Strand 4: NRM · Unit 1', grade: 9, icon: '',
   lessons: ['Types of Forests','Forest Resources & Products','Importance of Forests'],
   currentLesson: 0,
   objectives: [
@@ -645,7 +645,7 @@ const LESSONS = {
       <li><strong>Cultural importance</strong> — forests have deep spiritual and cultural significance for many communities in Papua New Guinea</li>
       <li><strong>Economic value</strong> — logging, ecotourism, and non-timber products all contribute to national and local economies</li>
     </ul>
-    <div class="info-box"><strong>⚠️ Threat:</strong> Papua New Guinea is experiencing significant deforestation due to large-scale logging, conversion to oil palm plantations, and subsistence clearing. Sustainable forest management is essential to protect these resources for future generations.</div>
+    <div class="info-box"><strong>Threat:</strong> Papua New Guinea is experiencing significant deforestation due to large-scale logging, conversion to oil palm plantations, and subsistence clearing. Sustainable forest management is essential to protect these resources for future generations.</div>
   </div>`,
   keyTerms: [
     {word:'Biodiversity', def:'The variety of living species in an area — including plants, animals, fungi, and micro-organisms'},
@@ -675,7 +675,7 @@ const LESSONS = {
 
 'g9-agribusiness-economics': {
   title: 'Economic Principles in Agribusiness',
-  strand: 'Strand 5: Agribusiness · Unit 1', grade: 9, icon: '💰',
+  strand: 'Strand 5: Agribusiness · Unit 1', grade: 9, icon: '',
   lessons: ['What is Agribusiness?','Micro and Macro Economics','Supply, Demand & Agricultural Markets'],
   currentLesson: 0,
   objectives: [
@@ -699,7 +699,7 @@ const LESSONS = {
       <li><strong>Distribution and logistics</strong> — transporting and storing products from farm to market</li>
       <li><strong>Retail and marketing</strong> — selling final products to consumers</li>
     </ul>
-    <div class="info-box"><strong>🇵🇬 PNG Context:</strong> Agriculture contributes significantly to Papua New Guinea\'s economy. Key agribusinesses include coffee, cocoa, oil palm, copra (coconut), and rubber — all major export earners.</div>
+    <div class="info-box"><strong>PNG Context:</strong> Agriculture contributes significantly to Papua New Guinea\'s economy. Key agribusinesses include coffee, cocoa, oil palm, copra (coconut), and rubber — all major export earners.</div>
   </div>
   <div class="lesson-section">
     <h2>Microeconomics in Agribusiness</h2>
@@ -764,7 +764,7 @@ const LESSONS = {
 
 'g10-soil-improvement': {
   title: 'Soil Improvement Practices',
-  strand: 'Strand 1: Crops · Unit 1', grade: 10, icon: '🌱',
+  strand: 'Strand 1: Crops · Unit 1', grade: 10, icon: '',
   lessons: ['Natural Soil Improvement','Artificial Soil Improvement','Sustaining Soil Fertility'],
   currentLesson: 0,
   objectives: [
@@ -801,7 +801,7 @@ const LESSONS = {
       <li><strong>Irrigation</strong> — supplying water artificially to prevent moisture stress that limits nutrient uptake</li>
       <li><strong>Soil conditioners</strong> — manufactured products (e.g. zeolite, biochar) that improve soil water retention and nutrient holding capacity</li>
     </ul>
-    <div class="info-box"><strong>⚖️ Balance:</strong> The best soil management combines natural and artificial techniques. Synthetic fertilisers can boost yields quickly, but relying on them alone degrades soil health over time. Natural methods build long-term fertility.</div>
+    <div class="info-box"><strong>Balance:</strong> The best soil management combines natural and artificial techniques. Synthetic fertilisers can boost yields quickly, but relying on them alone degrades soil health over time. Natural methods build long-term fertility.</div>
   </div>
   <div class="lesson-section">
     <h2>Strategies for Sustaining Soil Fertility</h2>
@@ -841,7 +841,7 @@ const LESSONS = {
 
 'g10-crop-classification': {
   title: 'Crop Classification',
-  strand: 'Strand 1: Crops · Unit 2', grade: 10, icon: '🌾',
+  strand: 'Strand 1: Crops · Unit 2', grade: 10, icon: '',
   lessons: ['Classification by Growing Cycle & Species','Classification by Season & Land Type','Classification by Product & Processing'],
   currentLesson: 0,
   objectives: [
@@ -927,7 +927,7 @@ const LESSONS = {
 
 'g10-agribusiness-risk': {
   title: 'Managing Risk in Agribusiness',
-  strand: 'Strand 5: Agribusiness · Unit 1', grade: 10, icon: '⚠️',
+  strand: 'Strand 5: Agribusiness · Unit 1', grade: 10, icon: '',
   lessons: ['Sources of Risk','Importance of Risk Management','Risk Management Strategies'],
   currentLesson: 0,
   objectives: [
@@ -974,7 +974,7 @@ const LESSONS = {
       <li><strong>Market information</strong> — monitoring market prices and selling when prices are favourable rather than immediately after harvest (when many farmers sell and prices are lowest)</li>
       <li><strong>Cooperatives</strong> — joining a farmer group or cooperative gives individual farmers more bargaining power with buyers and access to shared resources</li>
     </ul>
-    <div class="info-box"><strong>🇵🇬 PNG Example:</strong> Coffee farmers in the Highlands face significant price risk because global coffee prices are set in New York and London. Joining a cooperative and obtaining Fair Trade or organic certification are strategies that can secure better, more stable prices.</div>
+    <div class="info-box"><strong>PNG Example:</strong> Coffee farmers in the Highlands face significant price risk because global coffee prices are set in New York and London. Joining a cooperative and obtaining Fair Trade or organic certification are strategies that can secure better, more stable prices.</div>
   </div>`,
   keyTerms: [
     {word:'Risk', def:'The possibility that actual outcomes will differ from planned outcomes, potentially resulting in financial loss'},
@@ -1001,7 +1001,7 @@ const LESSONS = {
 
 'g10-agribusiness-marketing': {
   title: 'Agribusiness Communication & Marketing',
-  strand: 'Strand 5: Agribusiness · Unit 2', grade: 10, icon: '📣',
+  strand: 'Strand 5: Agribusiness · Unit 2', grade: 10, icon: '',
   lessons: ['Agricultural Markets','Marketing Principles','Sales Strategies & the Sales Process'],
   currentLesson: 0,
   objectives: [
@@ -1079,7 +1079,7 @@ const LESSONS = {
 
 'g9-animal-anatomy': {
   title: 'Anatomy of Farm Animals',
-  strand: 'Strand 2: Animals · Unit 2', grade: 9, icon: '🐄',
+  strand: 'Strand 2: Animals · Unit 2', grade: 9, icon: '',
   lessons: ['Monogastric vs Polygastric Digestive Systems','Anatomy & Body Systems','Skeletal & Muscular Systems','Reproductive Systems Overview'],
   currentLesson: 0,
   objectives: [
@@ -1108,7 +1108,7 @@ const LESSONS = {
       <li>Microorganisms synthesize vitamins and amino acids</li>
       <li>More efficient at converting pasture to meat/milk</li>
     </ul>
-    <div class="info-box"><strong>💡 Key Difference:</strong> Monogastrics need grain supplements; ruminants thrive on grass and hay. This affects feed costs and farm management.</div>
+    <div class="info-box"><strong>Key Difference:</strong> Monogastrics need grain supplements; ruminants thrive on grass and hay. This affects feed costs and farm management.</div>
   </div>
   <div class="lesson-section">
     <h2>Skeletal System</h2>
@@ -1175,7 +1175,7 @@ const LESSONS = {
 
 'g9-animal-farming': {
   title: 'Animal Farming Practices & Management',
-  strand: 'Strand 2: Animals · Unit 3', grade: 9, icon: '🏠',
+  strand: 'Strand 2: Animals · Unit 3', grade: 9, icon: '',
   lessons: ['Housing Systems','Feeding & Nutrition','Health Management','Breeding & Reproduction'],
   currentLesson: 0,
   objectives: [
@@ -1285,7 +1285,7 @@ const LESSONS = {
 
 'g9-poultry-types': {
   title: 'Types of Poultry & Their Behaviour',
-  strand: 'Strand 2: Animals · Unit 4', grade: 9, icon: '🐔',
+  strand: 'Strand 2: Animals · Unit 4', grade: 9, icon: '',
   lessons: ['Domesticated Poultry Species','Poultry Breeds & Characteristics','Poultry Behaviour','Purpose & Selection'],
   currentLesson: 0,
   objectives: [
@@ -1435,7 +1435,7 @@ const LESSONS = {
 
 'g9-poultry-farming': {
   title: 'Poultry Farming Principles & Systems',
-  strand: 'Strand 2: Animals · Unit 5', grade: 9, icon: '🥚',
+  strand: 'Strand 2: Animals · Unit 5', grade: 9, icon: '',
   lessons: ['Free-Range Systems','Semi-Intensive Systems','Intensive Systems','Management Practices'],
   currentLesson: 0,
   objectives: [
@@ -1582,7 +1582,7 @@ const LESSONS = {
 
 'g9-pomology-olericulture': {
   title: 'Plant Farming Practices — Pomology & Olericulture',
-  strand: 'Strand 1: Crops · Unit 6', grade: 9, icon: '🌿',
+  strand: 'Strand 1: Crops · Unit 6', grade: 9, icon: '',
   lessons: ['Types of Horticulture Industry','Pomology — Fruit Crop Management','Olericulture — Vegetable Crop Management','Arboriculture & Landscaping Horticulture'],
   currentLesson: 0,
   objectives: [
@@ -1606,7 +1606,7 @@ const LESSONS = {
       <li><strong>Crop enhancement</strong> — pollination and thinning. Introduced varieties have higher yields than common varieties.</li>
       <li><strong>Harvesting and packing</strong> — the proper time to remove fruit is governed by whether the product will be sold and consumed within hours, or stored for weeks, months or even a year. Most fruits are harvested as close as possible to the time they are eaten.</li>
     </ol>
-    <div class="info-box"><strong>🌳 Nursery:</strong> The type of nursery depends on the type of tree crop. Most fruit trees use poly bag nursery before being planted into the field.</div>
+    <div class="info-box"><strong>Nursery:</strong> The type of nursery depends on the type of tree crop. Most fruit trees use poly bag nursery before being planted into the field.</div>
   </div>
   <div class="lesson-section">
     <h2>Olericulture</h2>
@@ -1678,7 +1678,7 @@ const LESSONS = {
 
 'g9-horticulture-technology': {
   title: 'Technology in Horticulture Production',
-  strand: 'Strand 1: Crops · Unit 7', grade: 9, icon: '💡',
+  strand: 'Strand 1: Crops · Unit 7', grade: 9, icon: '',
   lessons: ['Technology in Cultivation','Processing & Preservation Technology','Marketing Technology & Regulation'],
   currentLesson: 0,
   objectives: [
@@ -1713,7 +1713,7 @@ const LESSONS = {
       <li>Technology has many side effects if not used correctly</li>
       <li>Most farmers in developing countries may lack literacy to use modern machines</li>
     </ul>
-    <div class="info-box"><strong>💡 Precision Farming:</strong> Precision farming is a systems approach to managing crops and land selectively, according to their needs. It utilises expertise from many disciplines and integrates the latest information technology tools and techniques to enable farm managers to get a better understanding and control of their fields.</div>
+    <div class="info-box"><strong>Precision Farming:</strong> Precision farming is a systems approach to managing crops and land selectively, according to their needs. It utilises expertise from many disciplines and integrates the latest information technology tools and techniques to enable farm managers to get a better understanding and control of their fields.</div>
   </div>
   <div class="lesson-section">
     <h2>Processing and Preservation Technology</h2>
@@ -1774,7 +1774,7 @@ const LESSONS = {
 
 'g9-aqua-farming-systems': {
   title: 'Aqua Farming Systems & Practices',
-  strand: 'Strand 3: Aquaculture · Unit 2', grade: 9, icon: '🦐',
+  strand: 'Strand 3: Aquaculture · Unit 2', grade: 9, icon: '',
   lessons: ['Principles of Aqua Farming','Types of Aqua Farming Systems','Monoculture & Polyculture'],
   currentLesson: 0,
   objectives: [
@@ -1862,7 +1862,7 @@ const LESSONS = {
 
 'g9-aqua-technology': {
   title: 'Gears & Technology in Aqua Farming',
-  strand: 'Strand 3: Aquaculture · Unit 3', grade: 9, icon: '🎣',
+  strand: 'Strand 3: Aquaculture · Unit 3', grade: 9, icon: '',
   lessons: ['Fishing Gears & Devices','Aqua Farming Technology','Challenges & Solutions'],
   currentLesson: 0,
   objectives: [
@@ -1928,7 +1928,7 @@ const LESSONS = {
 
 'g9-forest-harvesting': {
   title: 'Forest Harvesting Practices',
-  strand: 'Strand 4: Natural Resources · Unit 5', grade: 9, icon: '🪓',
+  strand: 'Strand 4: Natural Resources · Unit 5', grade: 9, icon: '',
   lessons: ['Principles of Forest Management','Forest Harvesting Practices','Impact of Harvesting'],
   currentLesson: 0,
   objectives: [
@@ -1994,7 +1994,7 @@ const LESSONS = {
 
 'g9-forest-management': {
   title: 'Forest Management & Conservation',
-  strand: 'Strand 4: Natural Resources · Unit 4', grade: 9, icon: '🌲',
+  strand: 'Strand 4: Natural Resources · Unit 4', grade: 9, icon: '',
   lessons: ['Types of Forests','Forest Attributes & Classification','Forests & the Global Ecosystem'],
   currentLesson: 0,
   objectives: [
@@ -2066,7 +2066,7 @@ const LESSONS = {
 
 'g9-forestry-technology': {
   title: 'Forestry Technology: Tools & Challenges',
-  strand: 'Strand 4: Natural Resources · Unit 6', grade: 9, icon: '⚙️',
+  strand: 'Strand 4: Natural Resources · Unit 6', grade: 9, icon: '',
   lessons: ['Tools & Equipment in Forest Harvesting','Technologies Used in Forestry','Challenges & Solutions'],
   currentLesson: 0,
   objectives: [
@@ -2142,7 +2142,7 @@ const LESSONS = {
 
 'g9-agri-imports-exports': {
   title: 'Agricultural Imports & Exports',
-  strand: 'Strand 5: Agribusiness · Unit 2', grade: 9, icon: '🌏',
+  strand: 'Strand 5: Agribusiness · Unit 2', grade: 9, icon: '',
   lessons: ['The International Agribusiness Market','Agricultural Imports','Exporting Agricultural Products'],
   currentLesson: 0,
   objectives: [
@@ -2203,7 +2203,7 @@ const LESSONS = {
 
 'g9-agribusiness-planning': {
   title: 'Planning & Managing an Agribusiness',
-  strand: 'Strand 5: Agribusiness · Unit 3', grade: 9, icon: '📋',
+  strand: 'Strand 5: Agribusiness · Unit 3', grade: 9, icon: '',
   lessons: ['What is an Enterprise?','Types of Business Ownership','Planning an Agribusiness'],
   currentLesson: 0,
   objectives: [
@@ -2272,7 +2272,7 @@ const LESSONS = {
 
 'g10-crop-management': {
   title: 'Crop Management Systems & Practices',
-  strand: 'Strand 1: Crops · Unit 3', grade: 10, icon: '🌾',
+  strand: 'Strand 1: Crops · Unit 3', grade: 10, icon: '',
   lessons: ['Crop Management Practices','Crop Cultivation Principles','Organic Farming Principles'],
   currentLesson: 0,
   objectives: [
@@ -2346,7 +2346,7 @@ const LESSONS = {
 
 'g10-plant-propagation': {
   title: 'Plant Propagation Technology',
-  strand: 'Strand 1: Crops · Unit 4', grade: 10, icon: '🌱',
+  strand: 'Strand 1: Crops · Unit 4', grade: 10, icon: '',
   lessons: ['Sexual Propagation','Asexual / Vegetative Propagation','Technology in Plant Propagation'],
   currentLesson: 0,
   objectives: [
@@ -2413,7 +2413,7 @@ const LESSONS = {
 
 'g10-types-plants': {
   title: 'Types of Agricultural Plants',
-  strand: 'Strand 1: Crops · Unit 5', grade: 10, icon: '🌺',
+  strand: 'Strand 1: Crops · Unit 5', grade: 10, icon: '',
   lessons: ['Plantation Crops','Ornamental Plants','Bedding Plants & Classification'],
   currentLesson: 0,
   objectives: [
@@ -2492,7 +2492,7 @@ const LESSONS = {
 
 'g10-ornamental-cultivation': {
   title: 'Cultivation of Ornamental & Bedding Plants',
-  strand: 'Strand 1: Crops · Unit 6', grade: 10, icon: '🌸',
+  strand: 'Strand 1: Crops · Unit 6', grade: 10, icon: '',
   lessons: ['Cultivating Ornamental Plants','Propagating Ornamentals','Care & Maintenance'],
   currentLesson: 0,
   objectives: [
@@ -2563,7 +2563,7 @@ const LESSONS = {
 
 'g10-horticulture-tech': {
   title: 'Technology in Horticulture Production',
-  strand: 'Strand 1: Crops · Unit 7', grade: 10, icon: '💡',
+  strand: 'Strand 1: Crops · Unit 7', grade: 10, icon: '',
   lessons: ['Processing & Preservation Technology','Packaging & Transportation','Marketing Technology & Regulation'],
   currentLesson: 0,
   objectives: [
@@ -2640,7 +2640,7 @@ const LESSONS = {
 
 'g10-agribusiness-startup': {
   title: 'Starting Up an Agribusiness',
-  strand: 'Strand 5: Agribusiness · Unit 3', grade: 10, icon: '🚀',
+  strand: 'Strand 5: Agribusiness · Unit 3', grade: 10, icon: '',
   lessons: ['Managing Risk in Agribusiness','Sources of Start-up Capital','Managing Start-up Capital'],
   currentLesson: 0,
   objectives: [
@@ -2714,7 +2714,7 @@ const LESSONS = {
 
 'g10-animal-breeds': {
   title: 'Breeds of Monogastric & Polygastric Animals',
-  strand: 'Strand 2: Animals · Unit 1', grade: 10, icon: '🐄',
+  strand: 'Strand 2: Animals · Unit 1', grade: 10, icon: '',
   lessons: ['Characteristics of Monogastric & Polygastric Animals','Physiology: Digestive & Reproductive Systems','Online Marketing of Animal Products'],
   currentLesson: 0,
   objectives: [
@@ -2800,7 +2800,7 @@ const LESSONS = {
 
 'g10-animal-physiology': {
   title: 'Animal Physiology: Digestive & Reproductive Systems',
-  strand: 'Strand 2: Animals · Unit 1', grade: 10, icon: '🔬',
+  strand: 'Strand 2: Animals · Unit 1', grade: 10, icon: '',
   lessons: ['Monogastric Digestive Physiology','Polygastric Digestive Physiology','Reproductive Physiology'],
   currentLesson: 0,
   objectives: [
@@ -2868,7 +2868,7 @@ const LESSONS = {
 
 'g10-animal-husbandry': {
   title: 'Animal Husbandry & Management Practices',
-  strand: 'Strand 2: Animals · Unit 2', grade: 10, icon: '🐖',
+  strand: 'Strand 2: Animals · Unit 2', grade: 10, icon: '',
   lessons: ['What is Animal Husbandry?','Livestock Management Systems','Approaches & Strategies for Animal Management'],
   currentLesson: 0,
   objectives: [
@@ -2951,7 +2951,7 @@ const LESSONS = {
 
 'g10-animal-nutrition': {
   title: 'Animal Nutrition, Feeding & Health',
-  strand: 'Strand 2: Animals · Unit 2', grade: 10, icon: '🌾',
+  strand: 'Strand 2: Animals · Unit 2', grade: 10, icon: '',
   lessons: ['Principles of Animal Nutrition','Poultry Feeding & Water','Animal Diseases & Prevention'],
   currentLesson: 0,
   objectives: [
@@ -3038,7 +3038,7 @@ const LESSONS = {
 
 'g10-animal-postharvest': {
   title: 'Post-Harvest Processing of Animal Products',
-  strand: 'Strand 2: Animals · Unit 3', grade: 10, icon: '🥩',
+  strand: 'Strand 2: Animals · Unit 3', grade: 10, icon: '',
   lessons: ['Food Processing Methods','Food Preservation Techniques','Benefits & Drawbacks of Processing'],
   currentLesson: 0,
   objectives: [
@@ -3133,7 +3133,7 @@ const LESSONS = {
 
 'g10-poultry-management': {
   title: 'Poultry Breeds, Management & Technology',
-  strand: 'Strand 2: Animals · Unit 4-6', grade: 10, icon: '🐔',
+  strand: 'Strand 2: Animals · Unit 4-6', grade: 10, icon: '',
   lessons: ['Breeds of Farmed Birds','Poultry Production Systems','Technology in Poultry Farming'],
   currentLesson: 0,
   objectives: [
@@ -3219,7 +3219,7 @@ const LESSONS = {
 
 'g10-aqua-environments': {
   title: 'Freshwater, Brackish & Saltwater Farming',
-  strand: 'Strand 3: Aquaculture · Unit 1', grade: 10, icon: '🐠',
+  strand: 'Strand 3: Aquaculture · Unit 1', grade: 10, icon: '',
   lessons: ['Common Characteristics of Fish','Farming Environments','Benefits of Aquaculture'],
   currentLesson: 0,
   objectives: [
@@ -3298,7 +3298,7 @@ const LESSONS = {
 
 'g10-aqua-management': {
   title: 'Aqua Farming Management Systems',
-  strand: 'Strand 3: Aquaculture · Unit 2', grade: 10, icon: '🦈',
+  strand: 'Strand 3: Aquaculture · Unit 2', grade: 10, icon: '',
   lessons: ['Fish Farming Methods','Fish Management Practices','Preserving Aquatic Species & Environments'],
   currentLesson: 0,
   objectives: [
@@ -3374,7 +3374,7 @@ const LESSONS = {
 
 'g10-capture-fishery': {
   title: 'Capture Fishery: Harvesting & Management',
-  strand: 'Strand 4: Natural Resources · Unit 1-2', grade: 10, icon: '🎣',
+  strand: 'Strand 4: Natural Resources · Unit 1-2', grade: 10, icon: '',
   lessons: ['Harvesting Methods & Gear','Capture Fishery Management Systems','Fishery Regulation & Monitoring'],
   currentLesson: 0,
   objectives: [
@@ -3459,7 +3459,7 @@ const LESSONS = {
 
 'g10-aqua-tech': {
   title: 'Technology in Aquaculture & Capture Fishery',
-  strand: 'Strand 3 & 4: Aquaculture & NRM · Unit 3', grade: 10, icon: '📡',
+  strand: 'Strand 3 & 4: Aquaculture & NRM · Unit 3', grade: 10, icon: '',
   lessons: ['Fish Harvest Technology','Fish Processing Technology','Advantages & Disadvantages of Technology'],
   currentLesson: 0,
   objectives: [
@@ -3540,7 +3540,7 @@ const LESSONS = {
 
 'g10-forests-types': {
   title: 'Tropical Forests & Their Characteristics',
-  strand: 'Strand 4: Natural Resources · Unit 4', grade: 10, icon: '🌴',
+  strand: 'Strand 4: Natural Resources · Unit 4', grade: 10, icon: '',
   lessons: ['Types of Tropical Forests','Forestry Types & Systems','Agroforestry & Community Forestry'],
   currentLesson: 0,
   objectives: [
@@ -3625,7 +3625,7 @@ const LESSONS = {
 
 'g10-forest-management': {
   title: 'Forest Management & Monitoring Systems',
-  strand: 'Strand 4: Natural Resources · Unit 5', grade: 10, icon: '📊',
+  strand: 'Strand 4: Natural Resources · Unit 5', grade: 10, icon: '',
   lessons: ['Sustainable Forest Management','Forest Regulation in PNG','Forest Monitoring Systems'],
   currentLesson: 0,
   objectives: [
@@ -3704,7 +3704,7 @@ const LESSONS = {
 
 'g10-forest-conservation': {
   title: 'Preserving & Sustaining Forests',
-  strand: 'Strand 4: Natural Resources · Unit 5', grade: 10, icon: '🌿',
+  strand: 'Strand 4: Natural Resources · Unit 5', grade: 10, icon: '',
   lessons: ['Conservation of Forests','Forest Preservation Methods','Sustainable Forestry Practices'],
   currentLesson: 0,
   objectives: [
@@ -3775,7 +3775,7 @@ const LESSONS = {
 
 'g10-forestry-tech': {
   title: 'Forestry Technology: Harvesting & Processing',
-  strand: 'Strand 4: Natural Resources · Unit 6', grade: 10, icon: '🪵',
+  strand: 'Strand 4: Natural Resources · Unit 6', grade: 10, icon: '',
   lessons: ['Forest Monitoring & Preservation Technology','Forest Harvesting Technology','Processing Forest Products'],
   currentLesson: 0,
   objectives: [
@@ -3883,7 +3883,7 @@ const LESSONS = {
 
 'g11-soil-nutrients': {
   title: 'Soil Nutrients: Macro & Micro',
-  strand: 'Strand 1: Crops · Unit 1', grade: 11, icon: '🌱',
+  strand: 'Strand 1: Crops · Unit 1', grade: 11, icon: '',
   lessons: ['Macro Nutrients','Micro Nutrients'],
   currentLesson: 0,
   objectives: [
@@ -3953,7 +3953,7 @@ const LESSONS = {
 
 'g11-aromatic-plants': {
   title: 'Aromatic & Herbal Plants',
-  strand: 'Strand 1: Crops · Units 5–6', grade: 11, icon: '🌿',
+  strand: 'Strand 1: Crops · Units 5–6', grade: 11, icon: '',
   lessons: ['Types of Aromatic Plants','Characteristics & Benefits','Cultivation & Propagation','Preservation Techniques'],
   currentLesson: 0,
   objectives: [
@@ -4031,7 +4031,7 @@ const LESSONS = {
 
 'g11-apiculture': {
   title: 'Apiculture: Beekeeping in PNG',
-  strand: 'Strand 2: Animals · Unit 1', grade: 11, icon: '🐝',
+  strand: 'Strand 2: Animals · Unit 1', grade: 11, icon: '',
   lessons: ['Introduction to Apiculture','Cultivation & Management','Purposes and Benefits'],
   currentLesson: 0,
   objectives: [
@@ -4100,7 +4100,7 @@ const LESSONS = {
 
 'g11-fish-species': {
   title: 'Fish Species & Cultivation Environments',
-  strand: 'Strand 3: Aquaculture · Unit 1', grade: 11, icon: '🐠',
+  strand: 'Strand 3: Aquaculture · Unit 1', grade: 11, icon: '',
   lessons: ['Fish Species in Different Water Environments','Cultivation of Fish'],
   currentLesson: 0,
   objectives: [
@@ -4165,7 +4165,7 @@ const LESSONS = {
 
 'g11-capture-fishery': {
   title: 'Capture Fishery: Cultivation & Regulations',
-  strand: 'Strand 4: Natural Resources · Units 1–3', grade: 11, icon: '🎣',
+  strand: 'Strand 4: Natural Resources · Units 1–3', grade: 11, icon: '',
   lessons: ['Capture Fishery Environments','Fishery Marketing & Prices','PNG Fisheries Regulations'],
   currentLesson: 0,
   objectives: [
@@ -4228,7 +4228,7 @@ const LESSONS = {
 
 'g11-forest-products': {
   title: 'Forest Products, Regulations & Technology',
-  strand: 'Strand 4: Natural Resources · Units 4–6', grade: 11, icon: '🌲',
+  strand: 'Strand 4: Natural Resources · Units 4–6', grade: 11, icon: '',
   lessons: ['Forest Products & Preservation','PNG Forestry Regulations','Technology in Timber Growing'],
   currentLesson: 0,
   objectives: [
@@ -4295,7 +4295,7 @@ const LESSONS = {
 
 'g11-financial-management': {
   title: 'Agribusiness Financial Management',
-  strand: 'Strand 5: Agribusiness · Unit 1', grade: 11, icon: '📒',
+  strand: 'Strand 5: Agribusiness · Unit 1', grade: 11, icon: '',
   lessons: ['Financial Management Principles','Credit & Financing','Financial Statements & Cash Flow'],
   currentLesson: 0,
   objectives: [
@@ -4370,7 +4370,7 @@ const LESSONS = {
 
 'g12-soil-topography': {
   title: 'Soil Topography & Crop Production Returns',
-  strand: 'Strand 1: Crops · Unit 1', grade: 12, icon: '🗺️',
+  strand: 'Strand 1: Crops · Unit 1', grade: 12, icon: '',
   lessons: ['Soil Topography','Soil Analysis & Crop Production'],
   currentLesson: 0,
   objectives: [
@@ -4430,7 +4430,7 @@ const LESSONS = {
 
 'g12-crop-physiology': {
   title: 'Crop Physiology & Farming Practices',
-  strand: 'Strand 1: Crops · Units 2–3', grade: 12, icon: '🌾',
+  strand: 'Strand 1: Crops · Units 2–3', grade: 12, icon: '',
   lessons: ['Fundamental Crop Processes','Crop Physiology & Yield','Crop Marketing & Regulation'],
   currentLesson: 0,
   objectives: [
@@ -4498,7 +4498,7 @@ const LESSONS = {
 
 'g12-horticulture-commercialisation': {
   title: 'Plants, Horticulture & Commercialisation',
-  strand: 'Strand 1: Crops · Units 5–7', grade: 12, icon: '🪴',
+  strand: 'Strand 1: Crops · Units 5–7', grade: 12, icon: '',
   lessons: ['Plant Anatomy & Physiology','Horticulture Marketing','Greenhouse & Genetic Engineering'],
   currentLesson: 0,
   objectives: [
@@ -4563,7 +4563,7 @@ const LESSONS = {
 
 'g12-quality-animal-products': {
   title: 'Quality Animal Products & Technology',
-  strand: 'Strand 2: Animals · Units 1–3', grade: 12, icon: '🥩',
+  strand: 'Strand 2: Animals · Units 1–3', grade: 12, icon: '',
   lessons: ['Factors for Quality Products','Value-Added Products','Electronic Agriculture'],
   currentLesson: 0,
   objectives: [
@@ -4640,7 +4640,7 @@ const LESSONS = {
 
 'g12-aqua-advanced': {
   title: 'Advanced Aqua Farming & Post-Harvest Technology',
-  strand: 'Strand 3: Aquaculture · Units 1–3', grade: 12, icon: '🌊',
+  strand: 'Strand 3: Aquaculture · Units 1–3', grade: 12, icon: '',
   lessons: ['Advanced Aquaculture Systems','Post-Harvest Technology','Global Aquaculture Trade'],
   currentLesson: 0,
   objectives: [
@@ -4707,7 +4707,7 @@ const LESSONS = {
 
 'g12-forestry-processing': {
   title: 'Forestry Processing, Silviculture & Technology',
-  strand: 'Strand 4: Natural Resources · Units 4–6', grade: 12, icon: '🪵',
+  strand: 'Strand 4: Natural Resources · Units 4–6', grade: 12, icon: '',
   lessons: ['Processing Forest Products','Plantation & Sawmilling','Silviculture & Constraints'],
   currentLesson: 0,
   objectives: [
@@ -4782,7 +4782,7 @@ const LESSONS = {
 
 'g12-advanced-finance': {
   title: 'Advanced Agribusiness Finance & Capital',
-  strand: 'Strand 5: Agribusiness · Unit 1', grade: 12, icon: '📊',
+  strand: 'Strand 5: Agribusiness · Unit 1', grade: 12, icon: '',
   lessons: ['Advanced Financial Analysis','Capital Management','Preparing Cash Flow Statements'],
   currentLesson: 0,
   objectives: [
@@ -4853,7 +4853,7 @@ const LESSONS = {
 
 'g11-biennial-crops': {
   title: 'Biennial Crops & Crop Protection',
-  strand: 'Strand 1: Crops · Units 2–3', grade: 11, icon: '🌽',
+  strand: 'Strand 1: Crops · Units 2–3', grade: 11, icon: '',
   lessons: ['Characteristics of Biennial Crops','Crop Pest Management','Practices of Crop Protection'],
   currentLesson: 0,
   objectives: [
@@ -4920,7 +4920,7 @@ const LESSONS = {
 
 'g11-horticulture-tech': {
   title: 'Horticulture Technology & Constraints',
-  strand: 'Strand 1: Crops · Unit 7', grade: 11, icon: '💡',
+  strand: 'Strand 1: Crops · Unit 7', grade: 11, icon: '',
   lessons: ['Technologies in Mass Production','Constraints & Solutions'],
   currentLesson: 0,
   objectives: [
@@ -4984,7 +4984,7 @@ const LESSONS = {
 
 'g11-livestock-management': {
   title: 'Livestock Management & Husbandry',
-  strand: 'Strand 2: Animals · Unit 2', grade: 11, icon: '🐄',
+  strand: 'Strand 2: Animals · Unit 2', grade: 11, icon: '',
   lessons: ['Feeding Regimes & Grazing','Husbandry Principles','Mass Production Practices'],
   currentLesson: 0,
   objectives: [
@@ -5051,7 +5051,7 @@ const LESSONS = {
 
 'g11-poultry-processing': {
   title: 'Poultry Processing, Regulation & Technology',
-  strand: 'Strand 2: Animals · Units 5–6', grade: 11, icon: '🐔',
+  strand: 'Strand 2: Animals · Units 5–6', grade: 11, icon: '',
   lessons: ['Processing & Preserving Bird Products','Poultry Regulations in PNG','Technology in Poultry Farming'],
   currentLesson: 0,
   objectives: [
@@ -5125,7 +5125,7 @@ const LESSONS = {
 
 'g11-aqua-marketing': {
   title: 'Aquaculture Production, Marketing & Regulations',
-  strand: 'Strand 3: Aquaculture · Units 2–3', grade: 11, icon: '🌊',
+  strand: 'Strand 3: Aquaculture · Units 2–3', grade: 11, icon: '',
   lessons: ['Factors Affecting Production','Fish Markets & Prices','PNG Fisheries Regulations'],
   currentLesson: 0,
   objectives: [
@@ -5202,7 +5202,7 @@ const LESSONS = {
 
 'g11-credit-financing': {
   title: 'Credit Organisations & Financing',
-  strand: 'Strand 5: Agribusiness · Unit 1', grade: 11, icon: '💰',
+  strand: 'Strand 5: Agribusiness · Unit 1', grade: 11, icon: '',
   lessons: ['Formal & Informal Credit','Debt Financing','Equity Financing'],
   currentLesson: 0,
   objectives: [
@@ -5268,7 +5268,7 @@ const LESSONS = {
 
 'g11-financial-statements': {
   title: 'Financial Statements & Cash Flow',
-  strand: 'Strand 5: Agribusiness · Unit 1', grade: 11, icon: '📈',
+  strand: 'Strand 5: Agribusiness · Unit 1', grade: 11, icon: '',
   lessons: ['The Four Financial Statements','Cash Flow Analysis','Profitability vs Liquidity'],
   currentLesson: 0,
   objectives: [
@@ -5333,7 +5333,7 @@ const LESSONS = {
 
 'g12-poultry-project': {
   title: 'Bird Anatomy & Planning a Poultry Project',
-  strand: 'Strand 2: Animals · Units 4–5', grade: 12, icon: '🐔',
+  strand: 'Strand 2: Animals · Units 4–5', grade: 12, icon: '',
   lessons: ['Bird Anatomy & Physiology','Planning a Poultry Project','Managing the Flock'],
   currentLesson: 0,
   objectives: [
@@ -5414,112 +5414,112 @@ const LESSONS = {
 
 const STRANDS_9 = [
   {
-    id:'crops9', strand:'Strand 1', name:'Crops', icon:'🌾', bg:'#e8f5e2', color:'#3a7d2c',
+    id:'crops9', strand:'Strand 1', name:'Crops', icon:'', bg:'#e8f5e2', color:'#3a7d2c',
     desc:'Soil science, crop types, farming practices, horticulture, and technology used in crop production.',
     topics:[
-      {id:'g9-soil-formation',title:'Unit 1 — Soil: Types & Formation',icon:'🌱',bg:'#e8f5e2',desc:'What soil is made of, how it forms, and the physical and chemical properties of different soil types.',status:'available',lessons:4},
-      {id:'g9-types-crops',title:'Unit 2 — Types of Crops & Their Environments',icon:'🌽',bg:'#fdf3d6',desc:'The different types of crops, where they grow best, and the environmental conditions they need.',status:'available',lessons:3},
-      {id:'g9-crop-farming',title:'Unit 3 — Crop Farming Practices & Management',icon:'🚜',bg:'#e8f5e2',desc:'How crops are planted, managed, and harvested — different farming methods and crop management systems.',status:'available',lessons:3},
-      {id:'g9-crop-technology',title:'Unit 4 — Crop Farming Technology',icon:'⚙️',bg:'#e0f2fe',desc:'The tools and technologies used in crop cultivation and management — and the advantages and disadvantages.',status:'available',lessons:3},
-      {id:'g9-horticulture',title:'Unit 5 — Types of Plants: Introduction to Horticulture',icon:'🍅',bg:'#fdf3d6',desc:'Introduction to horticulture: fruit trees, vegetables, and spice crops — how they are cultivated and processed.',status:'available',lessons:4},
-      {id:'g9-pomology-olericulture',title:'Unit 6 — Plant Farming Practices (Pomology & Olericulture)',icon:'🌿',bg:'#e8f5e2',desc:'Cultivation and management of pomology (fruit growing), olericulture (vegetable growing), ornamental plants, and arboriculture.',status:'available',lessons:4},
-      {id:'g9-horticulture-technology',title:'Unit 7 — Technology in Horticulture',icon:'💡',bg:'#e0f2fe',desc:'How technology is used to improve cultivation, processing, and marketing of horticulture plants.',status:'available',lessons:3},
+      {id:'g9-soil-formation',title:'Unit 1 — Soil: Types & Formation',icon:'',bg:'#e8f5e2',desc:'What soil is made of, how it forms, and the physical and chemical properties of different soil types.',status:'available',lessons:4},
+      {id:'g9-types-crops',title:'Unit 2 — Types of Crops & Their Environments',icon:'',bg:'#fdf3d6',desc:'The different types of crops, where they grow best, and the environmental conditions they need.',status:'available',lessons:3},
+      {id:'g9-crop-farming',title:'Unit 3 — Crop Farming Practices & Management',icon:'',bg:'#e8f5e2',desc:'How crops are planted, managed, and harvested — different farming methods and crop management systems.',status:'available',lessons:3},
+      {id:'g9-crop-technology',title:'Unit 4 — Crop Farming Technology',icon:'',bg:'#e0f2fe',desc:'The tools and technologies used in crop cultivation and management — and the advantages and disadvantages.',status:'available',lessons:3},
+      {id:'g9-horticulture',title:'Unit 5 — Types of Plants: Introduction to Horticulture',icon:'',bg:'#fdf3d6',desc:'Introduction to horticulture: fruit trees, vegetables, and spice crops — how they are cultivated and processed.',status:'available',lessons:4},
+      {id:'g9-pomology-olericulture',title:'Unit 6 — Plant Farming Practices (Pomology & Olericulture)',icon:'',bg:'#e8f5e2',desc:'Cultivation and management of pomology (fruit growing), olericulture (vegetable growing), ornamental plants, and arboriculture.',status:'available',lessons:4},
+      {id:'g9-horticulture-technology',title:'Unit 7 — Technology in Horticulture',icon:'',bg:'#e0f2fe',desc:'How technology is used to improve cultivation, processing, and marketing of horticulture plants.',status:'available',lessons:3},
     ]
   },
   {
-    id:'animals9', strand:'Strand 2', name:'Animals', icon:'🐄', bg:'#f5ece4', color:'#7c4a1e',
+    id:'animals9', strand:'Strand 2', name:'Animals', icon:'', bg:'#f5ece4', color:'#7c4a1e',
     desc:'Monogastric and polygastric animals, their characteristics, care, poultry farming, and management systems.',
     topics:[
-      {id:'g9-monogastric-polygastric',title:'Unit 1 — Monogastric & Polygastric Animals',icon:'🐷',bg:'#f5ece4',desc:'What monogastric animals and polygastric (ruminant) animals are — and how they differ.',status:'available',lessons:3},
-      {id:'g9-animal-anatomy',title:'Unit 2 — Anatomy of Farm Animals',icon:'🐄',bg:'#e8f5e2',desc:'The body systems of monogastric and polygastric animals — how their digestive systems work.',status:'available',lessons:3},
-      {id:'g9-animal-farming',title:'Unit 3 — Animal Farming Practices & Management',icon:'🏠',bg:'#fdf3d6',desc:'How farm animals are housed, fed, and cared for — extensive, semi-intensive, and intensive systems.',status:'available',lessons:4},
-      {id:'g9-poultry-types',title:'Unit 4 — Types of Poultry & Their Behaviour',icon:'🐔',bg:'#f5ece4',desc:'Domesticated and farmed birds — their characteristics, behaviours, purposes, and how they are kept.',status:'available',lessons:3},
-      {id:'g9-poultry-farming',title:'Unit 5 — Poultry Farming Principles & Systems',icon:'🥚',bg:'#e8f5e2',desc:'Free-range, semi-intensive, and intensive poultry systems and how each is practised.',status:'available',lessons:3},
+      {id:'g9-monogastric-polygastric',title:'Unit 1 — Monogastric & Polygastric Animals',icon:'',bg:'#f5ece4',desc:'What monogastric animals and polygastric (ruminant) animals are — and how they differ.',status:'available',lessons:3},
+      {id:'g9-animal-anatomy',title:'Unit 2 — Anatomy of Farm Animals',icon:'',bg:'#e8f5e2',desc:'The body systems of monogastric and polygastric animals — how their digestive systems work.',status:'available',lessons:3},
+      {id:'g9-animal-farming',title:'Unit 3 — Animal Farming Practices & Management',icon:'',bg:'#fdf3d6',desc:'How farm animals are housed, fed, and cared for — extensive, semi-intensive, and intensive systems.',status:'available',lessons:4},
+      {id:'g9-poultry-types',title:'Unit 4 — Types of Poultry & Their Behaviour',icon:'',bg:'#f5ece4',desc:'Domesticated and farmed birds — their characteristics, behaviours, purposes, and how they are kept.',status:'available',lessons:3},
+      {id:'g9-poultry-farming',title:'Unit 5 — Poultry Farming Principles & Systems',icon:'',bg:'#e8f5e2',desc:'Free-range, semi-intensive, and intensive poultry systems and how each is practised.',status:'available',lessons:3},
     ]
   },
   {
-    id:'aqua9', strand:'Strand 3', name:'Aquaculture', icon:'🐟', bg:'#e0f2fe', color:'#0369a1',
+    id:'aqua9', strand:'Strand 3', name:'Aquaculture', icon:'', bg:'#e0f2fe', color:'#0369a1',
     desc:'Fish farming in freshwater, brackish, and saltwater environments. Aqua farming practices and technology.',
     topics:[
-      {id:'g9-intro-aquaculture',title:'Unit 1 — Introduction to Aquaculture',icon:'🐟',bg:'#e0f2fe',desc:'What aquaculture is, why it matters in Papua New Guinea, and the types of environments.',status:'available',lessons:3},
-      {id:'g9-aqua-farming-systems',title:'Unit 2 — Aqua Farming Systems & Practices',icon:'🌊',bg:'#e8f5e2',desc:'How fish and aquatic plants are farmed in freshwater, brackish, and saltwater environments.',status:'available',lessons:4},
-      {id:'g9-aqua-technology',title:'Unit 3 — Gears & Technology in Aqua Farming',icon:'⚓',bg:'#e0f2fe',desc:'The equipment and technology used in aquaculture — and how technology improves fish farming.',status:'available',lessons:3},
+      {id:'g9-intro-aquaculture',title:'Unit 1 — Introduction to Aquaculture',icon:'',bg:'#e0f2fe',desc:'What aquaculture is, why it matters in Papua New Guinea, and the types of environments.',status:'available',lessons:3},
+      {id:'g9-aqua-farming-systems',title:'Unit 2 — Aqua Farming Systems & Practices',icon:'',bg:'#e8f5e2',desc:'How fish and aquatic plants are farmed in freshwater, brackish, and saltwater environments.',status:'available',lessons:4},
+      {id:'g9-aqua-technology',title:'Unit 3 — Gears & Technology in Aqua Farming',icon:'',bg:'#e0f2fe',desc:'The equipment and technology used in aquaculture — and how technology improves fish farming.',status:'available',lessons:3},
     ]
   },
   {
-    id:'nrm9', strand:'Strand 4', name:'Natural Resource Management', icon:'🌳', bg:'#dcfce7', color:'#16a34a',
+    id:'nrm9', strand:'Strand 4', name:'Natural Resource Management', icon:'', bg:'#dcfce7', color:'#16a34a',
     desc:'Forestry, forest types, land management, sustainable harvesting practices, and resource protection.',
     topics:[
-      {id:'g9-forests',title:'Unit 1 — Types of Forests & Forest Resources',icon:'🌳',bg:'#dcfce7',desc:'The different types of forests in Papua New Guinea, their characteristics, and the resources they provide.',status:'available',lessons:3},
-      {id:'g9-forest-harvesting',title:'Unit 2 — Forest Harvesting Practices',icon:'🪓',bg:'#fdf3d6',desc:'Selective cutting, clear cutting, and strip cutting — how timber is harvested and the environmental consequences.',status:'available',lessons:3},
-      {id:'g9-forest-management',title:'Unit 3 — Forest Management & Conservation',icon:'♻️',bg:'#dcfce7',desc:'How forests are managed sustainably and the importance of protecting forest ecosystems.',status:'available',lessons:3},
-      {id:'g9-forestry-technology',title:'Unit 4 — Forestry Technology',icon:'🔧',bg:'#e0f2fe',desc:'The tools and technologies used in forest harvesting — and their strengths and weaknesses.',status:'available',lessons:2},
+      {id:'g9-forests',title:'Unit 1 — Types of Forests & Forest Resources',icon:'',bg:'#dcfce7',desc:'The different types of forests in Papua New Guinea, their characteristics, and the resources they provide.',status:'available',lessons:3},
+      {id:'g9-forest-harvesting',title:'Unit 2 — Forest Harvesting Practices',icon:'',bg:'#fdf3d6',desc:'Selective cutting, clear cutting, and strip cutting — how timber is harvested and the environmental consequences.',status:'available',lessons:3},
+      {id:'g9-forest-management',title:'Unit 3 — Forest Management & Conservation',icon:'',bg:'#dcfce7',desc:'How forests are managed sustainably and the importance of protecting forest ecosystems.',status:'available',lessons:3},
+      {id:'g9-forestry-technology',title:'Unit 4 — Forestry Technology',icon:'',bg:'#e0f2fe',desc:'The tools and technologies used in forest harvesting — and their strengths and weaknesses.',status:'available',lessons:2},
     ]
   },
   {
-    id:'agri9', strand:'Strand 5', name:'Agribusiness', icon:'📊', bg:'#fdf3d6', color:'#c8900a',
+    id:'agri9', strand:'Strand 5', name:'Agribusiness', icon:'', bg:'#fdf3d6', color:'#c8900a',
     desc:'Starting and managing an agricultural business — economics, imports and exports, and business planning.',
     topics:[
-      {id:'g9-agribusiness-economics',title:'Unit 1 — Economic Principles in Agribusiness',icon:'💰',bg:'#fdf3d6',desc:'What agribusiness is and how micro and macroeconomic principles apply to farming businesses.',status:'available',lessons:3},
-      {id:'g9-agri-imports-exports',title:'Unit 2 — Agricultural Imports & Exports',icon:'🚢',bg:'#e8f5e2',desc:'The role of imports and exports in Papua New Guinea — how global trade affects local farming.',status:'available',lessons:3},
-      {id:'g9-agribusiness-planning',title:'Unit 3 — Planning & Managing an Agribusiness',icon:'📋',bg:'#fdf3d6',desc:'Entrepreneurship, types of business ownership, and how to write a basic agribusiness plan.',status:'available',lessons:4},
+      {id:'g9-agribusiness-economics',title:'Unit 1 — Economic Principles in Agribusiness',icon:'',bg:'#fdf3d6',desc:'What agribusiness is and how micro and macroeconomic principles apply to farming businesses.',status:'available',lessons:3},
+      {id:'g9-agri-imports-exports',title:'Unit 2 — Agricultural Imports & Exports',icon:'',bg:'#e8f5e2',desc:'The role of imports and exports in Papua New Guinea — how global trade affects local farming.',status:'available',lessons:3},
+      {id:'g9-agribusiness-planning',title:'Unit 3 — Planning & Managing an Agribusiness',icon:'',bg:'#fdf3d6',desc:'Entrepreneurship, types of business ownership, and how to write a basic agribusiness plan.',status:'available',lessons:4},
     ]
   },
 ];
 
 const STRANDS_10 = [
   {
-    id:'crops10', strand:'Strand 1', name:'Crops', icon:'🌾', bg:'#e8f5e2', color:'#3a7d2c',
+    id:'crops10', strand:'Strand 1', name:'Crops', icon:'', bg:'#e8f5e2', color:'#3a7d2c',
     desc:'Soil improvement, crop classification, crop management systems, plant propagation technology, and horticulture.',
     topics:[
-      {id:'g10-soil-improvement',title:'Unit 1 — Soil Improvement Practices',icon:'🌱',bg:'#e8f5e2',desc:'Natural and artificial techniques to improve soil — and strategies to sustain soil fertility over time.',status:'available',lessons:3},
-      {id:'g10-crop-classification',title:'Unit 2 — Crop Classification',icon:'🌾',bg:'#fdf3d6',desc:'How crops are classified by growing cycle, species, season, land type, and type of product.',status:'available',lessons:3},
-      {id:'g10-crop-management',title:'Unit 3 — Crop Management Systems & Practices',icon:'🚜',bg:'#e8f5e2',desc:'Different crop management systems used in various contexts and principles of effective crop cultivation.',status:'available',lessons:4},
-      {id:'g10-plant-propagation',title:'Unit 4 — Plant Propagation Technology',icon:'🌿',bg:'#e0f2fe',desc:'How technology improves plant propagation — and its impact on plant anatomy and physiology.',status:'available',lessons:3},
-      {id:'g10-types-plants',title:'Unit 5 — Types of Agricultural Plants',icon:'🪴',bg:'#f5ece4',desc:'Plantation crops, ornamental plants, and bedding plants — benefits, functions, and classification.',status:'available',lessons:3},
-      {id:'g10-ornamental-cultivation',title:'Unit 6 — Cultivation of Ornamental & Bedding Plants',icon:'🌸',bg:'#fce7f3',desc:'How ornamental and bedding plants are cultivated, processed, and marketed.',status:'available',lessons:3},
-      {id:'g10-horticulture-tech',title:'Unit 7 — Technology in Horticulture Production',icon:'💡',bg:'#e0f2fe',desc:'Post-harvest technology, processing, packaging, transportation, and marketing.',status:'available',lessons:3},
+      {id:'g10-soil-improvement',title:'Unit 1 — Soil Improvement Practices',icon:'',bg:'#e8f5e2',desc:'Natural and artificial techniques to improve soil — and strategies to sustain soil fertility over time.',status:'available',lessons:3},
+      {id:'g10-crop-classification',title:'Unit 2 — Crop Classification',icon:'',bg:'#fdf3d6',desc:'How crops are classified by growing cycle, species, season, land type, and type of product.',status:'available',lessons:3},
+      {id:'g10-crop-management',title:'Unit 3 — Crop Management Systems & Practices',icon:'',bg:'#e8f5e2',desc:'Different crop management systems used in various contexts and principles of effective crop cultivation.',status:'available',lessons:4},
+      {id:'g10-plant-propagation',title:'Unit 4 — Plant Propagation Technology',icon:'',bg:'#e0f2fe',desc:'How technology improves plant propagation — and its impact on plant anatomy and physiology.',status:'available',lessons:3},
+      {id:'g10-types-plants',title:'Unit 5 — Types of Agricultural Plants',icon:'',bg:'#f5ece4',desc:'Plantation crops, ornamental plants, and bedding plants — benefits, functions, and classification.',status:'available',lessons:3},
+      {id:'g10-ornamental-cultivation',title:'Unit 6 — Cultivation of Ornamental & Bedding Plants',icon:'',bg:'#fce7f3',desc:'How ornamental and bedding plants are cultivated, processed, and marketed.',status:'available',lessons:3},
+      {id:'g10-horticulture-tech',title:'Unit 7 — Technology in Horticulture Production',icon:'',bg:'#e0f2fe',desc:'Post-harvest technology, processing, packaging, transportation, and marketing.',status:'available',lessons:3},
     ]
   },
   {
-    id:'animals10', strand:'Strand 2', name:'Animals', icon:'🐄', bg:'#f5ece4', color:'#7c4a1e',
+    id:'animals10', strand:'Strand 2', name:'Animals', icon:'', bg:'#f5ece4', color:'#7c4a1e',
     desc:'Animal breeds and physiology, husbandry, post-harvest technology, and online marketing of animal products.',
     topics:[
-      {id:'g10-animal-breeds',title:'Unit 1 — Breeds of Monogastric & Polygastric Animals',icon:'🐷',bg:'#f5ece4',desc:'Classification of pig, goat, sheep, and cattle breeds — their characteristics and purposes.',status:'available',lessons:4},
-      {id:'g10-animal-physiology',title:'Unit 2 — Animal Physiology: Digestive & Reproductive Systems',icon:'🔬',bg:'#e8f5e2',desc:'How digestive and reproductive systems of farm animals work — including the oestrous cycle.',status:'available',lessons:4},
-      {id:'g10-animal-husbandry',title:'Unit 3 — Animal Husbandry & Management Practices',icon:'🏠',bg:'#fdf3d6',desc:'Extensive, semi-intensive, and intensive management systems and day-to-day husbandry.',status:'available',lessons:4},
-      {id:'g10-animal-nutrition',title:'Unit 4 — Animal Nutrition, Feeding & Health',icon:'🌿',bg:'#e8f5e2',desc:'How animals are fed, grazing land management, and how animal health and housing are maintained.',status:'available',lessons:3},
-      {id:'g10-animal-postharvest',title:'Unit 5 — Post-Harvest Processing of Animal Products',icon:'🥩',bg:'#f5ece4',desc:'Technology used to process, preserve, and package animal products.',status:'available',lessons:3},
-      {id:'g10-poultry-management',title:'Unit 6 — Poultry Breeds, Management & Technology',icon:'🐔',bg:'#fdf3d6',desc:'Breeds of domesticated birds, poultry production systems, and technology impact.',status:'available',lessons:4},
+      {id:'g10-animal-breeds',title:'Unit 1 — Breeds of Monogastric & Polygastric Animals',icon:'',bg:'#f5ece4',desc:'Classification of pig, goat, sheep, and cattle breeds — their characteristics and purposes.',status:'available',lessons:4},
+      {id:'g10-animal-physiology',title:'Unit 2 — Animal Physiology: Digestive & Reproductive Systems',icon:'',bg:'#e8f5e2',desc:'How digestive and reproductive systems of farm animals work — including the oestrous cycle.',status:'available',lessons:4},
+      {id:'g10-animal-husbandry',title:'Unit 3 — Animal Husbandry & Management Practices',icon:'',bg:'#fdf3d6',desc:'Extensive, semi-intensive, and intensive management systems and day-to-day husbandry.',status:'available',lessons:4},
+      {id:'g10-animal-nutrition',title:'Unit 4 — Animal Nutrition, Feeding & Health',icon:'',bg:'#e8f5e2',desc:'How animals are fed, grazing land management, and how animal health and housing are maintained.',status:'available',lessons:3},
+      {id:'g10-animal-postharvest',title:'Unit 5 — Post-Harvest Processing of Animal Products',icon:'',bg:'#f5ece4',desc:'Technology used to process, preserve, and package animal products.',status:'available',lessons:3},
+      {id:'g10-poultry-management',title:'Unit 6 — Poultry Breeds, Management & Technology',icon:'',bg:'#fdf3d6',desc:'Breeds of domesticated birds, poultry production systems, and technology impact.',status:'available',lessons:4},
     ]
   },
   {
-    id:'aqua10', strand:'Strand 3', name:'Aquaculture', icon:'🐟', bg:'#e0f2fe', color:'#0369a1',
+    id:'aqua10', strand:'Strand 3', name:'Aquaculture', icon:'', bg:'#e0f2fe', color:'#0369a1',
     desc:'Freshwater, brackish, and saltwater aqua farming — systems, capture fishery, sustainability, and technology.',
     topics:[
-      {id:'g10-aqua-environments',title:'Unit 1 — Freshwater, Brackish & Saltwater Farming',icon:'💧',bg:'#e0f2fe',desc:'How fish and aquatic plants are cultivated in different water environments.',status:'available',lessons:4},
-      {id:'g10-aqua-management',title:'Unit 2 — Aqua Farming Management Systems',icon:'🌊',bg:'#e8f5e2',desc:'Fish and aqua plant farming management systems and sustainable practices.',status:'available',lessons:4},
-      {id:'g10-capture-fishery',title:'Unit 3 — Capture Fishery: Harvesting & Management',icon:'🎣',bg:'#e0f2fe',desc:'How capture fish and other aquatic organisms are harvested and managed.',status:'available',lessons:3},
-      {id:'g10-aqua-tech',title:'Unit 4 — Technology in Aquaculture & Capture Fishery',icon:'⚙️',bg:'#fdf3d6',desc:'Technology for farming, harvesting, processing, and preserving fish.',status:'available',lessons:3},
+      {id:'g10-aqua-environments',title:'Unit 1 — Freshwater, Brackish & Saltwater Farming',icon:'',bg:'#e0f2fe',desc:'How fish and aquatic plants are cultivated in different water environments.',status:'available',lessons:4},
+      {id:'g10-aqua-management',title:'Unit 2 — Aqua Farming Management Systems',icon:'',bg:'#e8f5e2',desc:'Fish and aqua plant farming management systems and sustainable practices.',status:'available',lessons:4},
+      {id:'g10-capture-fishery',title:'Unit 3 — Capture Fishery: Harvesting & Management',icon:'',bg:'#e0f2fe',desc:'How capture fish and other aquatic organisms are harvested and managed.',status:'available',lessons:3},
+      {id:'g10-aqua-tech',title:'Unit 4 — Technology in Aquaculture & Capture Fishery',icon:'',bg:'#fdf3d6',desc:'Technology for farming, harvesting, processing, and preserving fish.',status:'available',lessons:3},
     ]
   },
   {
-    id:'nrm10', strand:'Strand 4', name:'Natural Resource Management', icon:'🌳', bg:'#dcfce7', color:'#16a34a',
+    id:'nrm10', strand:'Strand 4', name:'Natural Resource Management', icon:'', bg:'#dcfce7', color:'#16a34a',
     desc:'Tropical forestry, forest management, regulation and monitoring, preservation technology.',
     topics:[
-      {id:'g10-forests-types',title:'Unit 1 — Tropical Forests & Their Characteristics',icon:'🌴',bg:'#dcfce7',desc:'Types of tropical forests in PNG — farm forestry, agroforestry, community forestry, and silviculture.',status:'available',lessons:3},
-      {id:'g10-forest-management',title:'Unit 2 — Forest Management & Monitoring Systems',icon:'📋',bg:'#e8f5e2',desc:'Sustainable forest management — ecosystem approach, regulations, and monitoring practices.',status:'available',lessons:3},
-      {id:'g10-forest-conservation',title:'Unit 3 — Preserving & Sustaining Forests',icon:'♻️',bg:'#dcfce7',desc:'Why forest preservation matters and the ways forests can be sustained.',status:'available',lessons:3},
-      {id:'g10-forestry-tech',title:'Unit 4 — Forestry Technology: Harvesting & Processing',icon:'🔧',bg:'#e0f2fe',desc:'Technology for monitoring, preserving, processing, and marketing forestry products.',status:'available',lessons:2},
+      {id:'g10-forests-types',title:'Unit 1 — Tropical Forests & Their Characteristics',icon:'',bg:'#dcfce7',desc:'Types of tropical forests in PNG — farm forestry, agroforestry, community forestry, and silviculture.',status:'available',lessons:3},
+      {id:'g10-forest-management',title:'Unit 2 — Forest Management & Monitoring Systems',icon:'',bg:'#e8f5e2',desc:'Sustainable forest management — ecosystem approach, regulations, and monitoring practices.',status:'available',lessons:3},
+      {id:'g10-forest-conservation',title:'Unit 3 — Preserving & Sustaining Forests',icon:'',bg:'#dcfce7',desc:'Why forest preservation matters and the ways forests can be sustained.',status:'available',lessons:3},
+      {id:'g10-forestry-tech',title:'Unit 4 — Forestry Technology: Harvesting & Processing',icon:'',bg:'#e0f2fe',desc:'Technology for monitoring, preserving, processing, and marketing forestry products.',status:'available',lessons:2},
     ]
   },
   {
-    id:'agri10', strand:'Strand 5', name:'Agribusiness', icon:'📊', bg:'#fdf3d6', color:'#c8900a',
+    id:'agri10', strand:'Strand 5', name:'Agribusiness', icon:'', bg:'#fdf3d6', color:'#c8900a',
     desc:'Risk management, marketing strategies, sales, and obtaining and managing start-up capital.',
     topics:[
-      {id:'g10-agribusiness-risk',title:'Unit 1 — Managing Risk in Agribusiness',icon:'⚠️',bg:'#fdf3d6',desc:'Sources of risk and uncertainty in farming businesses — and strategies to manage and reduce them.',status:'available',lessons:3},
-      {id:'g10-agribusiness-marketing',title:'Unit 2 — Agribusiness Communication & Marketing',icon:'📣',bg:'#e8f5e2',desc:'Markets, marketing principles, sales strategies, and the components of an effective sales process.',status:'available',lessons:3},
-      {id:'g10-agribusiness-startup',title:'Unit 3 — Starting Up an Agribusiness',icon:'🚀',bg:'#fdf3d6',desc:'How to obtain start-up capital, manage it, and launch a farming business.',status:'available',lessons:3},
+      {id:'g10-agribusiness-risk',title:'Unit 1 — Managing Risk in Agribusiness',icon:'',bg:'#fdf3d6',desc:'Sources of risk and uncertainty in farming businesses — and strategies to manage and reduce them.',status:'available',lessons:3},
+      {id:'g10-agribusiness-marketing',title:'Unit 2 — Agribusiness Communication & Marketing',icon:'',bg:'#e8f5e2',desc:'Markets, marketing principles, sales strategies, and the components of an effective sales process.',status:'available',lessons:3},
+      {id:'g10-agribusiness-startup',title:'Unit 3 — Starting Up an Agribusiness',icon:'',bg:'#fdf3d6',desc:'How to obtain start-up capital, manage it, and launch a farming business.',status:'available',lessons:3},
     ]
   },
 ];
@@ -5529,47 +5529,47 @@ const STRANDS_10 = [
    ══════════════════════════════════════════ */
 const STRANDS_11 = [
   {
-    id:'crops11', strand:'Strand 1', name:'Crops', icon:'🌾', bg:'#e8f5e2', color:'#3a7d2c',
+    id:'crops11', strand:'Strand 1', name:'Crops', icon:'', bg:'#e8f5e2', color:'#3a7d2c',
     desc:'Soil nutrients, biennial crops, crop protection, aromatic & herbal plants, and horticulture technology.',
     topics:[
-      {id:'g11-soil-nutrients',title:'Unit 1 — Soil Nutrients: Macro & Micro',icon:'🌱',bg:'#e8f5e2',desc:'What macro and micro nutrients are, their deficiency signs, and how they affect crop growth.',status:'available',lessons:2},
-      {id:'g11-biennial-crops',title:'Unit 2 — Biennial Crops & Crop Protection',icon:'🌽',bg:'#fdf3d6',desc:'Characteristics of biennial crops, crop pest management, and principles of crop protection.',status:'available',lessons:3},
-      {id:'g11-aromatic-plants',title:'Units 5–6 — Aromatic & Herbal Plants',icon:'🌿',bg:'#e8f5e2',desc:'Types, characteristics, cultivation, propagation, and preservation of aromatic and herbal plants.',status:'available',lessons:4},
-      {id:'g11-horticulture-tech',title:'Unit 7 — Horticulture Technology & Constraints',icon:'💡',bg:'#e0f2fe',desc:'Technology for mass-producing horticulture plants and constraints in cultivation and marketing.',status:'available',lessons:2},
+      {id:'g11-soil-nutrients',title:'Unit 1 — Soil Nutrients: Macro & Micro',icon:'',bg:'#e8f5e2',desc:'What macro and micro nutrients are, their deficiency signs, and how they affect crop growth.',status:'available',lessons:2},
+      {id:'g11-biennial-crops',title:'Unit 2 — Biennial Crops & Crop Protection',icon:'',bg:'#fdf3d6',desc:'Characteristics of biennial crops, crop pest management, and principles of crop protection.',status:'available',lessons:3},
+      {id:'g11-aromatic-plants',title:'Units 5–6 — Aromatic & Herbal Plants',icon:'',bg:'#e8f5e2',desc:'Types, characteristics, cultivation, propagation, and preservation of aromatic and herbal plants.',status:'available',lessons:4},
+      {id:'g11-horticulture-tech',title:'Unit 7 — Horticulture Technology & Constraints',icon:'',bg:'#e0f2fe',desc:'Technology for mass-producing horticulture plants and constraints in cultivation and marketing.',status:'available',lessons:2},
     ]
   },
   {
-    id:'animals11', strand:'Strand 2', name:'Animals', icon:'🐝', bg:'#fdf3d6', color:'#c8900a',
+    id:'animals11', strand:'Strand 2', name:'Animals', icon:'', bg:'#fdf3d6', color:'#c8900a',
     desc:'Apiculture (beekeeping), livestock management, animal farming technology, and poultry production.',
     topics:[
-      {id:'g11-apiculture',title:'Unit 1 — Apiculture: Beekeeping in PNG',icon:'🐝',bg:'#fdf3d6',desc:'What apiculture is, purposes of beekeeping, cultivation practices, and management systems.',status:'available',lessons:3},
-      {id:'g11-livestock-management',title:'Unit 2 — Livestock Management & Husbandry',icon:'🐄',bg:'#f5ece4',desc:'Feeding regimes, grazing land tenure, herding arrangements, and mass production husbandry practices.',status:'available',lessons:3},
-      {id:'g11-poultry-processing',title:'Units 5–6 — Poultry Processing, Regulation & Technology',icon:'🐔',bg:'#e8f5e2',desc:'Processing and preserving bird products, poultry regulations, and technology in poultry farming.',status:'available',lessons:3},
+      {id:'g11-apiculture',title:'Unit 1 — Apiculture: Beekeeping in PNG',icon:'',bg:'#fdf3d6',desc:'What apiculture is, purposes of beekeeping, cultivation practices, and management systems.',status:'available',lessons:3},
+      {id:'g11-livestock-management',title:'Unit 2 — Livestock Management & Husbandry',icon:'',bg:'#f5ece4',desc:'Feeding regimes, grazing land tenure, herding arrangements, and mass production husbandry practices.',status:'available',lessons:3},
+      {id:'g11-poultry-processing',title:'Units 5–6 — Poultry Processing, Regulation & Technology',icon:'',bg:'#e8f5e2',desc:'Processing and preserving bird products, poultry regulations, and technology in poultry farming.',status:'available',lessons:3},
     ]
   },
   {
-    id:'aqua11', strand:'Strand 3', name:'Aquaculture', icon:'🐟', bg:'#e0f2fe', color:'#0369a1',
+    id:'aqua11', strand:'Strand 3', name:'Aquaculture', icon:'', bg:'#e0f2fe', color:'#0369a1',
     desc:'Fish species in different water environments, aquaculture production factors, and fisheries regulations.',
     topics:[
-      {id:'g11-fish-species',title:'Unit 1 — Fish Species & Cultivation Environments',icon:'🐠',bg:'#e0f2fe',desc:'Types of fish species in freshwater, brackish, and saltwater, and how they are cultivated.',status:'available',lessons:2},
-      {id:'g11-aqua-marketing',title:'Unit 2 — Aquaculture Production, Marketing & Regulations',icon:'🌊',bg:'#e8f5e2',desc:'Factors affecting aquaculture production, fish markets, price determination, and fisheries regulations.',status:'available',lessons:3},
+      {id:'g11-fish-species',title:'Unit 1 — Fish Species & Cultivation Environments',icon:'',bg:'#e0f2fe',desc:'Types of fish species in freshwater, brackish, and saltwater, and how they are cultivated.',status:'available',lessons:2},
+      {id:'g11-aqua-marketing',title:'Unit 2 — Aquaculture Production, Marketing & Regulations',icon:'',bg:'#e8f5e2',desc:'Factors affecting aquaculture production, fish markets, price determination, and fisheries regulations.',status:'available',lessons:3},
     ]
   },
   {
-    id:'nrm11', strand:'Strand 4', name:'Natural Resource Management', icon:'🌳', bg:'#dcfce7', color:'#16a34a',
+    id:'nrm11', strand:'Strand 4', name:'Natural Resource Management', icon:'', bg:'#dcfce7', color:'#16a34a',
     desc:'Capture fishery, forest products, forestry regulations, and technology in growing timber species.',
     topics:[
-      {id:'g11-capture-fishery',title:'Units 1–3 — Capture Fishery: Cultivation & Regulations',icon:'🎣',bg:'#dcfce7',desc:'Capture fishery environments, fisheries management, and PNG fisheries laws and regulations.',status:'available',lessons:3},
-      {id:'g11-forest-products',title:'Units 4–6 — Forest Products, Regulations & Technology',icon:'🌲',bg:'#e8f5e2',desc:'Forest products, preservation of forest resources, PNG forestry regulations, and technology in timber growing.',status:'available',lessons:3},
+      {id:'g11-capture-fishery',title:'Units 1–3 — Capture Fishery: Cultivation & Regulations',icon:'',bg:'#dcfce7',desc:'Capture fishery environments, fisheries management, and PNG fisheries laws and regulations.',status:'available',lessons:3},
+      {id:'g11-forest-products',title:'Units 4–6 — Forest Products, Regulations & Technology',icon:'',bg:'#e8f5e2',desc:'Forest products, preservation of forest resources, PNG forestry regulations, and technology in timber growing.',status:'available',lessons:3},
     ]
   },
   {
-    id:'agri11', strand:'Strand 5', name:'Agribusiness', icon:'📊', bg:'#fdf3d6', color:'#c8900a',
+    id:'agri11', strand:'Strand 5', name:'Agribusiness', icon:'', bg:'#fdf3d6', color:'#c8900a',
     desc:'Financial management, credit organisations, debt vs equity financing, and cash flow statements.',
     topics:[
-      {id:'g11-financial-management',title:'Unit 1 — Financial Management & Business Records',icon:'📒',bg:'#fdf3d6',desc:'Financial management principles, importance of business records, and the role of the balance sheet.',status:'available',lessons:2},
-      {id:'g11-credit-financing',title:'Unit 1 — Credit Organisations & Financing',icon:'💰',bg:'#e8f5e2',desc:'Formal and informal credit markets, debt financing, equity financing, and their impact on agribusiness.',status:'available',lessons:2},
-      {id:'g11-financial-statements',title:'Unit 1 — Financial Statements & Cash Flow',icon:'📈',bg:'#fdf3d6',desc:'Types of financial statements, cash flow analysis, and the difference between profitability and liquidity.',status:'available',lessons:2},
+      {id:'g11-financial-management',title:'Unit 1 — Financial Management & Business Records',icon:'',bg:'#fdf3d6',desc:'Financial management principles, importance of business records, and the role of the balance sheet.',status:'available',lessons:2},
+      {id:'g11-credit-financing',title:'Unit 1 — Credit Organisations & Financing',icon:'',bg:'#e8f5e2',desc:'Formal and informal credit markets, debt financing, equity financing, and their impact on agribusiness.',status:'available',lessons:2},
+      {id:'g11-financial-statements',title:'Unit 1 — Financial Statements & Cash Flow',icon:'',bg:'#fdf3d6',desc:'Types of financial statements, cash flow analysis, and the difference between profitability and liquidity.',status:'available',lessons:2},
     ]
   },
 ];
@@ -5579,54 +5579,54 @@ const STRANDS_11 = [
    ══════════════════════════════════════════ */
 const STRANDS_12 = [
   {
-    id:'crops12', strand:'Strand 1', name:'Crops', icon:'🌾', bg:'#e8f5e2', color:'#3a7d2c',
+    id:'crops12', strand:'Strand 1', name:'Crops', icon:'', bg:'#e8f5e2', color:'#3a7d2c',
     desc:'Soil topography, crop physiology, crop marketing and regulation, and horticulture commercialisation.',
     topics:[
-      {id:'g12-soil-topography',title:'Unit 1 — Soil Topography & Crop Production Returns',icon:'🗺️',bg:'#e8f5e2',desc:'Soil topography, soil analysis, pH testing, soil types and their effect on crop yields.',status:'available',lessons:2},
-      {id:'g12-crop-physiology',title:'Units 2–3 — Crop Physiology & Farming Practices',icon:'🌾',bg:'#fdf3d6',desc:'Photosynthesis, respiration, plant hormones, photo-morphogenesis, and crop marketing and regulation.',status:'available',lessons:3},
-      {id:'g12-horticulture-commercialisation',title:'Units 5–7 — Plants, Horticulture & Commercialisation',icon:'🪴',bg:'#e0f2fe',desc:'Plant anatomy and physiology, horticulture marketing systems, greenhouse cultivation, and genetic engineering.',status:'available',lessons:3},
+      {id:'g12-soil-topography',title:'Unit 1 — Soil Topography & Crop Production Returns',icon:'',bg:'#e8f5e2',desc:'Soil topography, soil analysis, pH testing, soil types and their effect on crop yields.',status:'available',lessons:2},
+      {id:'g12-crop-physiology',title:'Units 2–3 — Crop Physiology & Farming Practices',icon:'',bg:'#fdf3d6',desc:'Photosynthesis, respiration, plant hormones, photo-morphogenesis, and crop marketing and regulation.',status:'available',lessons:3},
+      {id:'g12-horticulture-commercialisation',title:'Units 5–7 — Plants, Horticulture & Commercialisation',icon:'',bg:'#e0f2fe',desc:'Plant anatomy and physiology, horticulture marketing systems, greenhouse cultivation, and genetic engineering.',status:'available',lessons:3},
     ]
   },
   {
-    id:'animals12', strand:'Strand 2', name:'Animals', icon:'🐄', bg:'#f5ece4', color:'#7c4a1e',
+    id:'animals12', strand:'Strand 2', name:'Animals', icon:'', bg:'#f5ece4', color:'#7c4a1e',
     desc:'Quality animal and apiculture products, value-added products, trends in animal agriculture, and poultry planning.',
     topics:[
-      {id:'g12-quality-animal-products',title:'Units 1–3 — Quality Animal Products & Technology',icon:'🥩',bg:'#f5ece4',desc:'Factors for quality monogastric, polygastric, and apiculture products, value-added products, and electronic agriculture.',status:'available',lessons:3},
-      {id:'g12-poultry-project',title:'Units 4–5 — Bird Anatomy & Planning a Poultry Project',icon:'🐔',bg:'#fdf3d6',desc:'Bird anatomy and physiology, and step-by-step planning and management of a poultry project.',status:'available',lessons:3},
+      {id:'g12-quality-animal-products',title:'Units 1–3 — Quality Animal Products & Technology',icon:'',bg:'#f5ece4',desc:'Factors for quality monogastric, polygastric, and apiculture products, value-added products, and electronic agriculture.',status:'available',lessons:3},
+      {id:'g12-poultry-project',title:'Units 4–5 — Bird Anatomy & Planning a Poultry Project',icon:'',bg:'#fdf3d6',desc:'Bird anatomy and physiology, and step-by-step planning and management of a poultry project.',status:'available',lessons:3},
     ]
   },
   {
-    id:'aqua12', strand:'Strand 3', name:'Aquaculture', icon:'🐟', bg:'#e0f2fe', color:'#0369a1',
+    id:'aqua12', strand:'Strand 3', name:'Aquaculture', icon:'', bg:'#e0f2fe', color:'#0369a1',
     desc:'Advanced aqua farming systems, post-harvest technology, and global trading of aquaculture products.',
     topics:[
-      {id:'g12-aqua-advanced',title:'Units 1–3 — Advanced Aqua Farming & Post-Harvest Technology',icon:'🌊',bg:'#e0f2fe',desc:'Advanced aqua farming systems, post-harvest handling and processing, and global aquaculture trade.',status:'available',lessons:3},
+      {id:'g12-aqua-advanced',title:'Units 1–3 — Advanced Aqua Farming & Post-Harvest Technology',icon:'',bg:'#e0f2fe',desc:'Advanced aqua farming systems, post-harvest handling and processing, and global aquaculture trade.',status:'available',lessons:3},
     ]
   },
   {
-    id:'nrm12', strand:'Strand 4', name:'Natural Resource Management', icon:'🌳', bg:'#dcfce7', color:'#16a34a',
+    id:'nrm12', strand:'Strand 4', name:'Natural Resource Management', icon:'', bg:'#dcfce7', color:'#16a34a',
     desc:'Forestry products processing, silviculture, land tenure, plantation establishment, and sawmilling.',
     topics:[
-      {id:'g12-forestry-processing',title:'Units 4–6 — Forestry Processing, Silviculture & Technology',icon:'🪵',bg:'#dcfce7',desc:'Processing forest products, nursery and plantation establishment, sawmilling, silviculture, and GIS technology.',status:'available',lessons:3},
+      {id:'g12-forestry-processing',title:'Units 4–6 — Forestry Processing, Silviculture & Technology',icon:'',bg:'#dcfce7',desc:'Processing forest products, nursery and plantation establishment, sawmilling, silviculture, and GIS technology.',status:'available',lessons:3},
     ]
   },
   {
-    id:'agri12', strand:'Strand 5', name:'Agribusiness', icon:'📊', bg:'#fdf3d6', color:'#c8900a',
+    id:'agri12', strand:'Strand 5', name:'Agribusiness', icon:'', bg:'#fdf3d6', color:'#c8900a',
     desc:'Advanced financial statements, cash flow management, capital acquisition, and agribusiness growth strategies.',
     topics:[
-      {id:'g12-advanced-finance',title:'Unit 1 — Advanced Agribusiness Finance & Capital',icon:'📊',bg:'#fdf3d6',desc:'Advanced financial analysis, capital management, debt management, and preparing detailed financial statements.',status:'available',lessons:3},
+      {id:'g12-advanced-finance',title:'Unit 1 — Advanced Agribusiness Finance & Capital',icon:'',bg:'#fdf3d6',desc:'Advanced financial analysis, capital management, debt management, and preparing detailed financial statements.',status:'available',lessons:3},
     ]
   },
 ];
 
 const POSTS = [
-  {title:'What is Soil and Why Does It Matter?',cat:'Grade 9 — Crops',icon:'🌱',bg:'#e8f5e2',date:'May 5, 2026',read:'5 min',ex:'Soil is much more than dirt. It is a living system that determines whether crops will thrive or fail. Understanding soil composition, physical properties, and chemical properties is a foundation for all crop farming.',id:'g9-soil-formation',grade:9,ref:'https://www.fao.org/soils-portal/en/',refLabel:'FAO Soils Portal'},
-  {title:'Monogastric vs Polygastric Animals — What is the Difference?',cat:'Grade 9 — Animals',icon:'🐷',bg:'#f5ece4',date:'Apr 22, 2026',read:'4 min',ex:'Pigs and cattle are both farm animals — but their digestive systems are completely different. Understanding the distinction between monogastric and polygastric animals is essential for Grade 9 Animal Science.',id:'g9-monogastric-polygastric',grade:9,ref:'https://www.fao.org/animal-production/en/',refLabel:'FAO Animal Production'},
-  {title:'An Introduction to Aquaculture in Papua New Guinea',cat:'Grade 9 — Aquaculture',icon:'🐟',bg:'#e0f2fe',date:'Apr 10, 2026',read:'5 min',ex:'Papua New Guinea has some of the richest aquatic environments in the world. Aquaculture — the farming of fish and aquatic plants — is a growing industry that plays an important role in food security.',id:'g9-intro-aquaculture',grade:9,ref:'https://www.fao.org/fishery/en/aquaculture',refLabel:'FAO Aquaculture'},
-  {title:'Soil Improvement — Natural vs Artificial Techniques',cat:'Grade 10 — Crops',icon:'🌿',bg:'#dcfce7',date:'Mar 28, 2026',read:'5 min',ex:'Grade 10 students go beyond understanding soil — they need to know how to improve it. From composting and green manuring to lime application and inorganic fertilisers, soil improvement is central to sustainable crop farming.',id:'g10-soil-improvement',grade:10,ref:'https://www.fao.org/soils-portal/soil-management/en/',refLabel:'FAO Soil Management'},
-  {title:'What is Agribusiness? A Plain Language Guide',cat:'Grade 9–12 — Agribusiness',icon:'📊',bg:'#fdf3d6',date:'Mar 14, 2026',read:'4 min',ex:'Agribusiness is not just farming — it covers everything from production to marketing to finance. This guide explains economic principles, supply and demand, and how they apply to farming businesses in Papua New Guinea.',id:'g9-agribusiness-economics',grade:9,ref:'https://www.fao.org/rural-employment/en/',refLabel:'FAO Agribusiness Resources'},
-  {title:'Forest Types in Papua New Guinea',cat:'Grade 9 — Natural Resources',icon:'🌳',bg:'#dcfce7',date:'Feb 28, 2026',read:'5 min',ex:"Papua New Guinea is home to some of the world\'s most biodiverse forests. This article covers the major forest types — tropical rainforest, monsoon forest, mangrove, and grassland — and the resources each provides.",id:'g9-forests',grade:9,ref:'https://www.fao.org/forestry/en/',refLabel:'FAO Forestry'},
-  {title:'Pomology, Olericulture & Ornamental Horticulture',cat:'Grade 9 — Crops (Unit 6)',icon:'🌿',bg:'#e8f5e2',date:'Feb 14, 2026',read:'5 min',ex:'The horticulture industry covers three main areas: pomology (fruit growing), olericulture (vegetable growing), and ornamental horticulture. Each has distinct management practices, cultivation techniques, and markets.',id:'g9-pomology-olericulture',grade:9,ref:'https://www.fao.org/horticulture/en/',refLabel:'FAO Horticulture'},
-  {title:'Technology in Horticulture Production',cat:'Grade 9 — Crops (Unit 7)',icon:'💡',bg:'#e0f2fe',date:'Jan 30, 2026',read:'4 min',ex:'Technology is changing how horticulture products are grown, preserved, and marketed in Papua New Guinea — from irrigation systems and pest control to E-Commerce and digital marketing tools for small farmers.',id:'g9-horticulture-technology',grade:9,ref:'https://www.fao.org/digital-agriculture/en/',refLabel:'FAO Digital Agriculture'},
+  {title:'What is Soil and Why Does It Matter?',cat:'Grade 9 — Crops',icon:'',bg:'#e8f5e2',date:'May 5, 2026',read:'5 min',ex:'Soil is much more than dirt. It is a living system that determines whether crops will thrive or fail. Understanding soil composition, physical properties, and chemical properties is a foundation for all crop farming.',id:'g9-soil-formation',grade:9,ref:'https://www.fao.org/soils-portal/en/',refLabel:'FAO Soils Portal'},
+  {title:'Monogastric vs Polygastric Animals — What is the Difference?',cat:'Grade 9 — Animals',icon:'',bg:'#f5ece4',date:'Apr 22, 2026',read:'4 min',ex:'Pigs and cattle are both farm animals — but their digestive systems are completely different. Understanding the distinction between monogastric and polygastric animals is essential for Grade 9 Animal Science.',id:'g9-monogastric-polygastric',grade:9,ref:'https://www.fao.org/animal-production/en/',refLabel:'FAO Animal Production'},
+  {title:'An Introduction to Aquaculture in Papua New Guinea',cat:'Grade 9 — Aquaculture',icon:'',bg:'#e0f2fe',date:'Apr 10, 2026',read:'5 min',ex:'Papua New Guinea has some of the richest aquatic environments in the world. Aquaculture — the farming of fish and aquatic plants — is a growing industry that plays an important role in food security.',id:'g9-intro-aquaculture',grade:9,ref:'https://www.fao.org/fishery/en/aquaculture',refLabel:'FAO Aquaculture'},
+  {title:'Soil Improvement — Natural vs Artificial Techniques',cat:'Grade 10 — Crops',icon:'',bg:'#dcfce7',date:'Mar 28, 2026',read:'5 min',ex:'Grade 10 students go beyond understanding soil — they need to know how to improve it. From composting and green manuring to lime application and inorganic fertilisers, soil improvement is central to sustainable crop farming.',id:'g10-soil-improvement',grade:10,ref:'https://www.fao.org/soils-portal/soil-management/en/',refLabel:'FAO Soil Management'},
+  {title:'What is Agribusiness? A Plain Language Guide',cat:'Grade 9–12 — Agribusiness',icon:'',bg:'#fdf3d6',date:'Mar 14, 2026',read:'4 min',ex:'Agribusiness is not just farming — it covers everything from production to marketing to finance. This guide explains economic principles, supply and demand, and how they apply to farming businesses in Papua New Guinea.',id:'g9-agribusiness-economics',grade:9,ref:'https://www.fao.org/rural-employment/en/',refLabel:'FAO Agribusiness Resources'},
+  {title:'Forest Types in Papua New Guinea',cat:'Grade 9 — Natural Resources',icon:'',bg:'#dcfce7',date:'Feb 28, 2026',read:'5 min',ex:"Papua New Guinea is home to some of the world\'s most biodiverse forests. This article covers the major forest types — tropical rainforest, monsoon forest, mangrove, and grassland — and the resources each provides.",id:'g9-forests',grade:9,ref:'https://www.fao.org/forestry/en/',refLabel:'FAO Forestry'},
+  {title:'Pomology, Olericulture & Ornamental Horticulture',cat:'Grade 9 — Crops (Unit 6)',icon:'',bg:'#e8f5e2',date:'Feb 14, 2026',read:'5 min',ex:'The horticulture industry covers three main areas: pomology (fruit growing), olericulture (vegetable growing), and ornamental horticulture. Each has distinct management practices, cultivation techniques, and markets.',id:'g9-pomology-olericulture',grade:9,ref:'https://www.fao.org/horticulture/en/',refLabel:'FAO Horticulture'},
+  {title:'Technology in Horticulture Production',cat:'Grade 9 — Crops (Unit 7)',icon:'',bg:'#e0f2fe',date:'Jan 30, 2026',read:'4 min',ex:'Technology is changing how horticulture products are grown, preserved, and marketed in Papua New Guinea — from irrigation systems and pest control to E-Commerce and digital marketing tools for small farmers.',id:'g9-horticulture-technology',grade:9,ref:'https://www.fao.org/digital-agriculture/en/',refLabel:'FAO Digital Agriculture'},
 ];
 
 const TAGS = ['Soil Science','Crops','Horticulture','Farm Animals','Aquaculture','Forestry','Agribusiness','Grade 9','Grade 10','Grade 11','Grade 12','PNG Agriculture','Poultry','Fish Farming'];
@@ -5640,6 +5640,75 @@ let quizAnswers = {};
 let quizSubmitted = false;
 
 function setGrade(g){ currentGrade = g; try{ localStorage.setItem("mxt_grade", g); }catch(e){} }
+
+/* ══════════════════════════════════════════
+   QUIZ GRADING
+   ══════════════════════════════════════════ */
+function getCurrentLessonSlug(){
+  const path = location.pathname;
+  return path.substring(path.lastIndexOf('/')+1).replace('.html','');
+}
+
+function submitQuiz(){
+  const slug = getCurrentLessonSlug();
+  const lesson = LESSONS[slug];
+  const resultEl = document.getElementById('quiz-result');
+  if(!lesson || !lesson.quiz){
+    if(resultEl){ resultEl.textContent = 'Could not load quiz data for this lesson.'; resultEl.style.display='block'; }
+    return;
+  }
+
+  const qEls = document.querySelectorAll('#quiz-section .quiz-q');
+  let answered = 0, score = 0;
+
+  qEls.forEach((qEl, i) => {
+    const correctIdx = lesson.quiz[i] ? lesson.quiz[i].ans : -1;
+    const opts = qEl.querySelectorAll('.qopt');
+    const checked = qEl.querySelector('input[type="radio"]:checked');
+    const selectedIdx = checked ? parseInt(checked.value, 10) : -1;
+    if(checked) answered++;
+    if(selectedIdx === correctIdx) score++;
+
+    opts.forEach((opt, idx) => {
+      opt.classList.add('revealed');
+      if(idx === correctIdx) opt.classList.add('correct');
+      else if(idx === selectedIdx) opt.classList.add('wrong');
+    });
+  });
+
+  const total = qEls.length;
+  const pct = total ? Math.round((score/total)*100) : 0;
+
+  if(resultEl){
+    let msg = `You scored ${score} / ${total} (${pct}%).`;
+    if(answered < total) msg = `You answered ${answered} of ${total} questions. ` + msg;
+    if(pct === 100) msg += ' Perfect score!';
+    else if(pct >= 70) msg += ' Good job!';
+    else msg += ' Review the lesson and try again.';
+    resultEl.textContent = msg;
+    resultEl.classList.remove('pass','fail');
+    resultEl.classList.add(pct >= 70 ? 'pass' : 'fail');
+    resultEl.style.display = 'block';
+  }
+
+  const btn = document.getElementById('quiz-submit-btn');
+  if(btn){
+    btn.textContent = 'Try Again';
+    btn.onclick = resetQuiz;
+  }
+
+  quizSubmitted = true;
+}
+
+function resetQuiz(){
+  document.querySelectorAll('#quiz-section input[type=radio]').forEach(r => r.checked = false);
+  document.querySelectorAll('#quiz-section .qopt').forEach(o => o.classList.remove('correct','wrong','revealed'));
+  const resultEl = document.getElementById('quiz-result');
+  if(resultEl){ resultEl.style.display = 'none'; resultEl.classList.remove('pass','fail'); }
+  const btn = document.getElementById('quiz-submit-btn');
+  if(btn){ btn.textContent = 'Check Answers'; btn.onclick = submitQuiz; }
+  quizSubmitted = false;
+}
 
 /* ══════════════════════════════════════════
    NAVIGATION
@@ -5706,7 +5775,7 @@ function renderModules(grade){
               <p>${t.desc}</p>
             </div>
             <div class="tc-foot">
-              <div class="tc-meta">📖 ${t.lessons} lessons</div>
+              <div class="tc-meta">${t.lessons} lessons</div>
               ${t.id
                 ? `<a class="tc-btn" href="/lessons/${t.id}.html">Start →</a>`
                 : `<button class="tc-btn" disabled>Coming Soon</button>`}
@@ -5723,27 +5792,27 @@ function renderModules(grade){
    ══════════════════════════════════════════ */
 /* ── LOGO COLOR SWITCHER ── */
 const STRAND_COLORS = {
-  'Crops':       '#3a7d2c',
-  'Animals':     '#c47c00',
+  'Crops': '#3a7d2c',
+  'Animals': '#c47c00',
   'Aquaculture': '#0891b2',
-  'NRM':         '#166534',
+  'NRM': '#166534',
   'Agribusiness':'#7c3aed'
 };
 const DEFAULT_COLOR = '#3a7d2c';
 
 function setLogoColor(color){
-  const bg    = document.getElementById('logo-bg');
-  const stem  = document.getElementById('logo-stem');
+  const bg = document.getElementById('logo-bg');
+  const stem = document.getElementById('logo-stem');
   const leaf1 = document.getElementById('logo-leaf1');
   const leaf2 = document.getElementById('logo-leaf2');
-  const lab   = document.getElementById('lab-text');
-  if(bg)    bg.setAttribute('fill', color);
-  if(stem)  stem.setAttribute('stroke', color);
+  const lab = document.getElementById('lab-text');
+  if(bg) bg.setAttribute('fill', color);
+  if(stem) stem.setAttribute('stroke', color);
   if(leaf1) leaf1.setAttribute('stroke', color);
   if(leaf2) leaf2.setAttribute('stroke', color);
-  if(lab)   lab.style.color = color;
+  if(lab) lab.style.color = color;
   // Update favicon
-  const faviconSVG = `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='${color}'/><text y='.9em' font-size='72' x='12'>🌾</text></svg>`;
+  const faviconSVG = `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='${color}'/><text y='.9em' font-size='72' x='12'></text></svg>`;
   let link = document.querySelector("link[rel~='icon']");
   if(link) link.href = 'data:image/svg+xml,' + encodeURIComponent(faviconSVG);
 }
@@ -5751,9 +5820,9 @@ function setLogoColor(color){
 function getStrandColor(strandStr){
   if(!strandStr) return DEFAULT_COLOR;
   const s = strandStr.toLowerCase();
-  if(s.includes('crop'))  return STRAND_COLORS['Crops'];
+  if(s.includes('crop')) return STRAND_COLORS['Crops'];
   if(s.includes('animal')) return STRAND_COLORS['Animals'];
-  if(s.includes('aqua'))  return STRAND_COLORS['Aquaculture'];
+  if(s.includes('aqua')) return STRAND_COLORS['Aquaculture'];
   if(s.includes('nrm') || s.includes('natural')) return STRAND_COLORS['NRM'];
   if(s.includes('agribusiness')) return STRAND_COLORS['Agribusiness'];
   return DEFAULT_COLOR;
@@ -5764,11 +5833,11 @@ function getStrandColor(strandStr){
    UNSPLASH AUTO IMAGE — fetches relevant lesson image
    ═══════════════════════════════════════════════════ */
 const STRAND_FALLBACKS = {
-  'Crops':             'Image/crops.webp',
-  'Animals':           'Image/animals.webp',
-  'Aquaculture':       'Image/aquaculture.webp',
+  'Crops': 'Image/crops.webp',
+  'Animals': 'Image/animals.webp',
+  'Aquaculture': 'Image/aquaculture.webp',
   'Natural Resources': 'Image/nrm.webp',
-  'Agribusiness':      'Image/AgriBusiness.webp',
+  'Agribusiness': 'Image/AgriBusiness.webp',
 };
 
 function applyLessonHeroImage(lessonId, title, strand) {
@@ -5898,7 +5967,7 @@ function filterCareers(strand, btn){
 let dark=localStorage.getItem('mxt-theme')==='dark';
 function applyTheme(){
   document.documentElement.setAttribute('data-theme',dark?'dark':'light');
-  document.getElementById('t-icon').textContent=dark?'☀️':'🌙';
+  document.getElementById('t-icon').textContent=dark?'':'';
   document.getElementById('t-lbl').textContent=dark?'Light':'Dark';
   localStorage.setItem('mxt-theme',dark?'dark':'light');
 }
@@ -5945,7 +6014,7 @@ async function submitForm(){
   const e=document.getElementById('fe').value;
   const r=document.getElementById('fg2').value;
   const m=document.getElementById('fm').value;
-  if(!n||!e){ toast('⚠️','Please fill in your name and email.'); return; }
+  if(!n||!e){ toast('','Please fill in your name and email.'); return; }
   const btn=document.querySelector('#cform .btn-primary');
   btn.textContent='Sending…';btn.disabled=true;
   document.getElementById('cform').style.opacity='.6';
@@ -5958,12 +6027,12 @@ async function submitForm(){
     if(res.ok){
       document.getElementById('cform').style.display='none';
       document.getElementById('form-ok').classList.add('show');
-      toast('✅','Message sent!');
+      toast('','Message sent!');
     } else {
       throw new Error('Server error');
     }
   } catch(err){
-    toast('⚠️','Something went wrong. Please try again.');
+    toast('','Something went wrong. Please try again.');
     btn.textContent='Send Message →';btn.disabled=false;
     document.getElementById('cform').style.opacity='1';
   }
@@ -6034,7 +6103,7 @@ function markComplete(id){
   const c = getCompleted();
   if(!c.includes(id)){ c.push(id); localStorage.setItem('mxt-completed',JSON.stringify(c)); }
   const btn = document.getElementById('complete-btn');
-  if(btn){ btn.textContent='✓ Completed'; btn.classList.add('done'); }
+  if(btn){ btn.textContent='Completed'; btn.classList.add('done'); }
   // Update topic card if visible
   const cards = document.querySelectorAll('.topic-card');
   cards.forEach(card=>{ if(card.getAttribute('onclick')&&card.getAttribute('onclick').includes(id)) card.classList.add('completed'); });
@@ -6046,7 +6115,7 @@ function toggleComplete(id){
   localStorage.setItem('mxt-completed',JSON.stringify(c));
   const btn = document.getElementById('complete-btn');
   const done = c.includes(id);
-  if(btn){ btn.textContent=done?'✓ Completed':'Mark as Complete'; btn.classList.toggle('done',done); }
+  if(btn){ btn.textContent=done?'Completed':'Mark as Complete'; btn.classList.toggle('done',done); }
   renderProgressBar(currentGrade);
 }
 function renderProgressBar(grade){
