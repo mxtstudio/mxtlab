@@ -1,0 +1,128 @@
+/* lesson-enhance.css — styles for lesson pages not covered by style.css */
+
+/* Lesson page layout */
+.lesson-content{
+  max-width:860px;
+  margin:0 auto;
+  padding:0 24px;
+}
+
+/* Lesson header metadata */
+.lesson-meta{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:14px;
+}
+.grade-badge{
+  background:var(--green-lt);
+  color:var(--green);
+  font-size:.72rem;
+  font-weight:700;
+  padding:3px 10px;
+  border-radius:50px;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+}
+.category-tag{
+  background:var(--brown-lt);
+  color:var(--brown);
+  font-size:.72rem;
+  font-weight:600;
+  padding:3px 10px;
+  border-radius:50px;
+}
+[data-theme="dark"] .category-tag{
+  background:rgba(124,74,30,.2);
+  color:#c8905a;
+}
+
+/* Lesson footer nav */
+.lesson-footer-nav{
+  margin:32px 0 0;
+  padding-top:20px;
+  border-top:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+/* Secondary button (outline style) */
+.btn.secondary{
+  background:transparent;
+  border:1.5px solid var(--border);
+  color:var(--ink2);
+  padding:9px 20px;
+  border-radius:50px;
+  font-size:.84rem;
+  font-weight:600;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  transition:border-color .18s,background .18s,color .18s;
+}
+.btn.secondary:hover{
+  border-color:var(--green);
+  background:var(--green-lt);
+  color:var(--green);
+}
+
+/* Quiz container & cards */
+.quiz-container{
+  background:var(--surface);
+  border:2px solid var(--green);
+  border-radius:var(--radius);
+  padding:24px 28px;
+  margin-top:36px;
+}
+.quiz-card{
+  margin-bottom:24px;
+}
+.quiz-card:last-of-type{
+  margin-bottom:0;
+}
+
+/* Quiz question & options */
+.q-text{
+  font-size:.9rem;
+  font-weight:600;
+  color:var(--ink);
+  margin-bottom:12px;
+  line-height:1.5;
+}
+.qopts{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.opt-text{
+  flex:1;
+  line-height:1.5;
+}
+
+/* Quiz actions */
+.quiz-actions{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-top:20px;
+  padding-top:16px;
+  border-top:1px solid var(--border);
+  flex-wrap:wrap;
+}
+
+/* Chart containers */
+.chart-wrap{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:20px;
+  margin:18px 0;
+}
+
+@media(max-width:600px){
+  .lesson-content{padding:0 16px}
+  .quiz-container{padding:16px}
+  .lesson-footer-nav{flex-direction:column;align-items:flex-start}
+}
