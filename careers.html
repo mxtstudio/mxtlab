@@ -6,6 +6,9 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-57V6ZXCDK8"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-57V6ZXCDK8');</script>
   <meta charset="UTF-8"/>
+  <meta http-equiv="X-Content-Type-Options" content="nosniff"/>
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin"/>
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Discover career pathways in Agriculture, Aquaculture, Forestry, and Agribusiness available to students in Papua New Guinea."/>
   <meta name="robots" content="index, follow"/>
@@ -51,11 +54,34 @@
   </script>
   <link rel="stylesheet" href="/assets/css/style.css"/>
   <script src="/assets/js/main.js" defer></script>
+  <style>
+    .career-filter{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
+    .cf-btn{padding:8px 16px;border-radius:50px;border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);font-size:.82rem;font-weight:600;cursor:pointer;transition:all .2s}
+    .cf-btn:hover,.cf-btn.active{background:var(--green);color:#fff;border-color:var(--green)}
+    .career-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+    .career-card{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius);padding:24px;transition:transform .25s ease,box-shadow .25s ease}
+    .career-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(58,125,44,.12)}
+    .career-card-head{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+    .career-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0}
+    .career-card h3{font-size:1rem;font-weight:700;color:var(--ink1);margin:0}
+    .strand-tag{display:inline-block;padding:3px 10px;border-radius:50px;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin-bottom:10px}
+    .tag-crops{background:#e8f5e2;color:#3a7d2c}
+    .tag-animals{background:#fff3e0;color:#e65100}
+    .tag-aquaculture{background:#e0f4f8;color:#006064}
+    .tag-nrm{background:#e8f5e9;color:#1b5e20}
+    .tag-agribusiness{background:#f3e5f5;color:#6a1b9a}
+    .career-desc{font-size:.85rem;color:var(--ink2);line-height:1.6;margin-bottom:16px}
+    .career-details{display:flex;flex-direction:column;gap:8px}
+    .career-detail{display:flex;gap:10px;font-size:.8rem}
+    .career-detail-label{font-weight:700;color:var(--ink1);min-width:90px;flex-shrink:0}
+    .career-detail-val{color:var(--ink2);line-height:1.5}
+    @media(max-width:600px){.career-grid{grid-template-columns:1fr}}
+  </style>
 </head>
 <body>
 
   <div id="announce-bar">
-    MXT Lab Agriculture is now open for Grade 9, 10, 11 &amp; 12 students in Papua New Guinea —
+    🌱 MXT Lab Agriculture is now open for Grade 9, 10, 11 &amp; 12 students in Papua New Guinea —
     <a href="/topics.html">Explore topics →</a>
     <button id="announce-close" aria-label="Close">✕</button>
   </div>
@@ -75,23 +101,23 @@
 
   <div id="mobile-drawer" class="mobile-drawer" role="navigation" aria-label="Mobile navigation">
     <ul class="mob-links">
-      <li><a href="/">Home</a></li>
+      <li><a href="/">🏠 Home</a></li>
       <div class="mob-label">Topics</div>
-      <li><a href="/topics.html?grade=9">Grade 9 Agriculture</a></li>
-      <li><a href="/topics.html?grade=10">Grade 10 Agriculture</a></li>
-      <li><a href="/topics.html?grade=11">Grade 11 Agriculture</a></li>
-      <li><a href="/topics.html?grade=12">Grade 12 Agriculture</a></li>
+      <li><a href="/topics.html?grade=9">🌾 Grade 9 Agriculture</a></li>
+      <li><a href="/topics.html?grade=10">🌿 Grade 10 Agriculture</a></li>
+      <li><a href="/topics.html?grade=11">🌱 Grade 11 Agriculture</a></li>
+      <li><a href="/topics.html?grade=12">🌻 Grade 12 Agriculture</a></li>
       <div class="mob-label" style="margin-top:8px">Site</div>
-      <li><a href="/about.html">About MXT Lab</a></li>
-      <li><a href="/resources.html">Resources</a></li>
-      <li><a href="/careers.html">Careers</a></li>
-      <li><a href="/contact.html">Contact</a></li>
-      <li><a href="/privacy.html">Privacy Policy</a></li>
-      <li><a href="/terms.html">Terms of Use</a></li>
+      <li><a href="/about.html">👥 About MXT Lab</a></li>
+      <li><a href="/resources.html">📚 Resources</a></li>
+      <li><a href="/careers.html">🌱 Careers</a></li>
+      <li><a href="/contact.html">✉️ Contact</a></li>
+      <li><a href="/privacy.html">🔒 Privacy Policy</a></li>
+      <li><a href="/terms.html">📄 Terms of Use</a></li>
     </ul>
     <div class="mob-footer">
       <button class="btn-full btn-full-green" id="mob-theme-toggle" aria-label="Toggle theme">
-        <span id="mob-t-icon"></span> Dark
+        <span id="mob-t-icon">🌙</span> Dark
       </button>
     </div>
   </div>
@@ -113,10 +139,10 @@
         <li class="has-drop">
           <a href="/topics.html">Topics <span class="drop-arrow">▾</span></a>
           <div class="dropdown">
-            <a href="/topics.html?grade=9">Grade 9 Agriculture</a>
-            <a href="/topics.html?grade=10">Grade 10 Agriculture</a>
-            <a href="/topics.html?grade=11">Grade 11 Agriculture</a>
-            <a href="/topics.html?grade=12">Grade 12 Agriculture</a>
+            <a href="/topics.html?grade=9">🌾 Grade 9 Agriculture</a>
+            <a href="/topics.html?grade=10">🌿 Grade 10 Agriculture</a>
+            <a href="/topics.html?grade=11">🌱 Grade 11 Agriculture</a>
+            <a href="/topics.html?grade=12">🌻 Grade 12 Agriculture</a>
           </div>
         </li>
         <li><a href="/about.html">About</a></li>
@@ -129,7 +155,7 @@
           <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
         </button>
         <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-          <span id="t-icon"></span><span id="t-lbl">Dark</span>
+          <span id="t-icon">🌙</span><span id="t-lbl">Dark</span>
         </button>
         <a class="btn-nav-cta" href="/topics.html">Explore Topics →</a>
         <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Open navigation menu">
@@ -143,6 +169,10 @@
       <div class="container">
         <div class="label">Agriculture Careers</div>
         <h1 class="h-xl">Career Pathways</h1>
+        <p class="subtext">Discover the wide range of careers available in Agriculture, Aquaculture, Forestry, and Agribusiness in Papua New Guinea.</p>
+      </div>
+    </div>
+<h1 class="h-xl">Career Pathways</h1>
         <p class="subtext">Discover the wide range of careers available in Agriculture, Aquaculture, Forestry, and Agribusiness in Papua New Guinea.</p>
       </div>
     </div>
@@ -163,13 +193,200 @@
       <div class="container">
         <div class="career-filter" id="career-filter">
           <button class="cf-btn active" onclick="filterCareers('all',this)">All Strands</button>
-          <button class="cf-btn" onclick="filterCareers('crops',this)">Crops</button>
-          <button class="cf-btn" onclick="filterCareers('animals',this)">Animals</button>
-          <button class="cf-btn" onclick="filterCareers('aquaculture',this)">Aquaculture</button>
-          <button class="cf-btn" onclick="filterCareers('nrm',this)">Natural Resources</button>
-          <button class="cf-btn" onclick="filterCareers('agribusiness',this)">Agribusiness</button>
+          <button class="cf-btn" onclick="filterCareers('crops',this)">🌾 Crops</button>
+          <button class="cf-btn" onclick="filterCareers('animals',this)">🐄 Animals</button>
+          <button class="cf-btn" onclick="filterCareers('aquaculture',this)">🐟 Aquaculture</button>
+          <button class="cf-btn" onclick="filterCareers('nrm',this)">🌿 Natural Resources</button>
+          <button class="cf-btn" onclick="filterCareers('agribusiness',this)">📊 Agribusiness</button>
         </div>
-        <div class="career-grid" id="career-grid"></div>
+        <div class="career-grid" id="career-grid">
+          <!-- CROPS -->
+          <div class="career-card" data-strand="crops">
+            <div class="career-card-head"><div class="career-icon" style="background:#e8f5e2">🌱</div><h3>Agronomist</h3></div>
+            <span class="strand-tag tag-crops">Crops</span>
+            <p class="career-desc">Agronomists advise farmers on soil health, crop varieties, fertiliser use, and pest management to improve yields sustainably. Coffee and cocoa — PNG's two biggest cash crops — rely heavily on agronomists.</p>
+            <div class="career-details">
+              <div class="career-detail"><span class="career-detail-label">Qualifications</span><span class="career-detail-val">Bachelor in Sustainable Tropical Agriculture (BSTA) or BSc in Agriculture</span></div>
+              <div class="career-detail"><span class="career-detail-label">Institutions</span><span class="career-detail-val">PNG UNRE (Kerevat); UNITECH — BSc Agriculture, Lae</span></div>
+              <div class="career-detail"><span class="career-detail-label">Employers</span><span class="career-detail-val">NARI, Dept. of Agriculture &amp; Livestock, Coffee Industry Corporation, NGOs</span></div>
+            </div>
+          </div>
+          <div class="career-card" data-strand="crops">
+            <div class="career-card-head"><div class="career-icon" style="background:#e8f5e2">🔬</div><h3>Agricultural Research Scientist</h3></div>
+            <span class="strand-tag tag-crops">Crops</span>
+            <p class="career-desc">Research scientists develop improved crop varieties, study plant diseases, and find solutions to farming challenges. NARI leads this work in PNG.</p>
+            <div class="career-details">
+              <div class="career-detail"><span class="career-detail-label">Qualifications</span><span class="career-detail-val">BSc Agriculture; postgraduate MSc, MPhil or PhD preferred</span></div>
+              <div class="career-detail"><span class="career-detail-label">Institutions</span><span class="career-detail-val">UNITECH — BSc Ag, MSc Ag; PNG UNRE (Kerevat)</span></div>
+              <div class="career-detail"><span class="career-detail-label">Employers</span><span class="career-detail-val">NARI, international research bodies (CGIAR, FAO), universities</span></div>
+            </div>
+          </div>
+          <div class="career-card" data-strand="crops">
+            <div class="career-card-head"><div class="career-icon" style="background:#e8f5e2">🌿</div><h3>Agricultural Extension Officer</h3></div>
+            <span class="strand-tag tag-crops">Crops</span>
+            <p class="career-desc">Extension officers work directly with rural farming communities, translating research into practical advice on crops, soil, and farming techniques. A critical role in PNG's rural provinces.</p>
+            <div class="career-details">
+              <div class="career-detail"><span class="career-detail-label">Qualifications</span><span class="career-detail-val">Diploma or Bachelor in Agriculture; BARD available by distance</span></div>
+              <div class="career-detail"><span class="career-detail-label">Institutions</span><span class="career-detail-val">UNITECH — BARD distance mode (Lae); PNG UNRE; technical colleges</span></div>
+              <div class="career-detail"><span class="career-detail-label">Employers</span><span class="career-detail-val">Dept. of Agriculture &amp; Livestock, provincial governments, NGOs</span></div>
+            </div>
+          </div>
+          <div class="career-card" data-strand="crops">
+            <div class="career-card-head"><div class="career-icon" style="background:#e8f5e2">🍅</div><h3>Horticulturalist</h3></div>
+            <span class="strand-tag tag-crops">Crops</span>
+            <p class="career-desc">Horticulturalists specialise in growing fruits, vegetables, and ornamental plants. In PNG, this includes managing market gardens, spice crops, and export horticulture.</p>
+            <div class="career-details">
+              <div class="career-detail"><span class="career-detail-label">Qualifications</span><span class="career-detail-val">Certificate or Diploma in Horticulture; BSc Agriculture (Crop Science)</span></div>
+              <div class="career-detail"><span class="career-detail-label">Institutions</span><span class="career-detail-val">PNG UNRE; Vudal University College; technical colleges</span></div>
+              <div class="career-detail"><span class="career-detail-label">Employers</span><span class="career-detail-val">Fresh Produce Development Agency (FPDA), private farms, export companies</span></div>
+            </div>
+          </div>
+          <!-- ANIMALS -->
+          <div class="career-card" data-strand="animals">
+            <div class="career-card-head"><div class="career-icon" style="background:#fff3e0">🐄</div><h3>Livestock Production Officer</h3></div>
+            <span class="strand-tag tag-animals">Animals</span>
+            <p class="career-desc">Livestock officers manage the breeding, feeding, and health of farm animals including cattle, pigs, and poultry. They advise farmers on sustainable livestock production across PNG provinces.</p>
+            <div class="career-details">
+              <div class="career-detail"><span class="career-detail-label">Qualifications</span><span class="career-detail-val">Bachelor in Sustainable Livestock Production (BSLP) or BSc Agriculture (Animal Science)</span></div>
+              <div class="career-detail"><span class="career-detail-label">Institutions</span><span class="career-detail-val">PNG UNRE (Kerevat); UNITECH — BSc Agriculture (Lae)</span></div>
+              <div class="career-detail"><span class="career-detail-label">Employers</span><span class="career-detail-val">Dept. of Agriculture &amp; Livestock, provincial governments, private farms</span></div>
+            </div>
+          </div>
+          <div class="career-card" data-strand="animals">
+            <div class="career-card-head"><div class="career-icon" style="background:#fff3e0">🐾</div><h3>Veterinary Officer</h3></div>
+            <span class="strand-tag tag-animals">Animals</span>
+            <p class="career-desc">Veterinary officers diagnose and treat disease in livestock, monitor animal health, and enforce biosecurity regulations to protect PNG's food security and animal trade.</p>
+            <div class="career-details">
+              <div class="career-detail"><span class="career-detail-label">Qualifications</span><span class="career-detail-val">Bachelor of Veterinary Science — PNG students typically study overseas</span></div>
+              <div class="career-detail"><span class="career-detail-label">Institutions</span><span class="career-detail-val">James Cook University (Australia); University of the Philippines; Charles Sturt University</span></div>
+              <div class="career-detail"><span class="career-detail-label">Employers</span><span class="career-detail-val">Dept. of Agriculture &amp; Livestock, NAQIA</span></div>
+            </div>
+          </div>
+          <div class="career-card" data-strand="animals">
+            <div class="career-card-head"><div class="career-icon" style="background:#fff3e0">🐔</div><h3>Poultry &amp; Piggery Farm Manager</h3></div>
+            <span class="strand-tag tag-animals">Animals</span>
+            <p class="career-desc">Farm managers oversee day-to-day operations of poultry and pig farms — managing nutrition, disease prevention, breeding records, and production targets for commercial output.</p>
+            <div class="career-details">
+              <div class="career-detail"><span class="career-detail-label">Qualifications</span><span class="career-detail-val">Diploma or Bachelor in Sustainable Livestock Production or BSc Agriculture</span></div>
+              <div class="career-detail"><span class="career-detail-label">Institutions</span><span class="career-detail-val">PNG UNRE (Kerevat); UNITECH (Lae); technical vocational colleges</span></div>
+              <div class="career-detail"><span class="career-detail-label">Employers</span><span class="career-detail-val">Private poultry farms, cooperatives, agribusiness companies</span></div>
+            </div>
+          </div>
+          <div class="career-card" data-strand="animals">
+            <div class="career-card-head"><div class="career-icon" style="background:#fff3e0">🐝</div><h3>Apiculturist (Beekeeper)</h3></div>
+            <span class="strand-tag tag-animals">Animals</span>
+            <p class="career-desc">Apiculturists manage honeybee colonies to produce honey, beeswax, and pollination services. PNG has a growing apiculture industry with strong export potential for organic honey.</p>
+            <div class="career-details">
+              <div class="career-detail"><span class="career-detail-label">Qualifications</span><span class="career-detail-val">Certificate in Agriculture or Apiculture; short courses through DAL</span></div>
+              <div class="career-detail"><span class="career-detail-label">Institutions</span><span class="career-detail-val">Dept. of Agriculture training centres; PNG UNRE</span></div>
+              <div class="career-detail"><span class="career-detail-label">Employers</span><span class="career-detail-val">Private beekeeping businesses, cooperatives, export companies, NGOs</span></div>
+            </div>
+          </div>
+          <!-- AQUACULTURE -->
+          <div class="career-card" data-strand="aquaculture">
+            <div class="career-card-head"><div class="career-icon" style="background:#e0f4f8">🐟</div><h3>Fisheries &amp; Aquaculture Officer</h3></div>
+            <span class="strand-tag tag-aquaculture">Aquaculture</span>
+            <p class="career-desc">Aquaculture officers manage fish farming systems in freshwater and marine environments, advise on pond management, fish health, and help communities establish sustainable fish farms.</p>
+            <div class="career-details">
+              <div class="career-detail"><span class="career-detail-label">Qualifications</span><span class="career-detail-val">Bachelor in Sustainable Aquaculture (BSAq) or BSc Fisheries Science</span></div>
+              <div class="career-detail"><span class="career-detail-label">Institutions</span><span class="career-detail-val">PNG UNRE (Kerevat); UNITECH (Lae); UPNG</span></div>
+              <div class="career-detail"><span class="career-detail-label">Employers</span><span class="career-detail-val">National Fisheries Authority (NFA), Dept. of Agriculture, provincial governments</span></div>
+            </div>
+          </div>
+          <div class="career-card" data-strand="aquaculture">
+            <div class="career-card-head"><div class="career-icon" style="background:#e0f4f8">🌊</div><h3>Marine Resources Scientist</h3></div>
+            <span class="strand-tag tag-aquaculture">Aquaculture</span>
+            <p class="career-desc">Marine scientists study ocean ecosystems, fish populations, and coral reef health. PNG has some of the world's richest marine biodiversity, making this a highly relevant career.</p>
+            <div class="career-details">
+              <div class="career-detail"><span class="career-detail-label">Qualifications</span><span class="career-detail-val">BSc Marine Biology or Fisheries Science; postgraduate MSc preferred</span></div>
+              <div class="career-detail"><span class="career-detail-label">Institutions</span><span class="career-detail-val">UPNG; James Cook University (Australia); University of the South Pacific</span></div>
+              <div class="career-detail"><span class="career-detail-label">Employers</span><span class="career-detail-val">National Fisheries Authority, conservation organisations, international research bodies</span></div>
+            </div>
+          </div>
+          <div class="career-card" data-strand="aquaculture">
+            <div class="career-card-head"><div class="career-icon" style="background:#e0f4f8">🦐</div><h3>Aquaculture Farm Operator</h3></div>
+            <span class="strand-tag tag-aquaculture">Aquaculture</span>
+            <p class="career-desc">Farm operators run freshwater or brackish water fish farms, managing feeding, water quality, harvesting, and sales. Tilapia and giant freshwater prawns are common species farmed in PNG.</p>
+            <div class="career-details">
+              <div class="career-detail"><span class="career-detail-label">Qualifications</span><span class="career-detail-val">Certificate or Diploma in Aquaculture; hands-on training through NFA</span></div>
+              <div class="career-detail"><span class="career-detail-label">Institutions</span><span class="career-detail-val">National Fisheries Authority training programs; PNG UNRE</span></div>
+              <div class="career-detail"><span class="career-detail-label">Employers</span><span class="career-detail-val">Private fish farms, cooperatives, self-employment</span></div>
+            </div>
+          </div>
+          <!-- NRM -->
+          <div class="career-card" data-strand="nrm">
+            <div class="career-card-head"><div class="career-icon" style="background:#e8f5e9">🌲</div><h3>Forestry Officer</h3></div>
+            <span class="strand-tag tag-nrm">Natural Resources</span>
+            <p class="career-desc">Forestry officers manage PNG's vast forest resources — overseeing sustainable logging, reforestation, and conservation programs. PNG has the third largest tropical rainforest in the world.</p>
+            <div class="career-details">
+              <div class="career-detail"><span class="career-detail-label">Qualifications</span><span class="career-detail-val">Bachelor of Forest Science (BFS) or BSc Natural Resource Management</span></div>
+              <div class="career-detail"><span class="career-detail-label">Institutions</span><span class="career-detail-val">PNG UNRE (Kerevat); UNITECH (Lae)</span></div>
+              <div class="career-detail"><span class="career-detail-label">Employers</span><span class="career-detail-val">PNG Forest Authority, logging companies, conservation NGOs, provincial governments</span></div>
+            </div>
+          </div>
+          <div class="career-card" data-strand="nrm">
+            <div class="career-card-head"><div class="career-icon" style="background:#e8f5e9">♻️</div><h3>Environmental Conservation Officer</h3></div>
+            <span class="strand-tag tag-nrm">Natural Resources</span>
+            <p class="career-desc">Conservation officers protect PNG's biodiversity — monitoring land use, enforcing environmental laws, and working with communities on sustainable resource management.</p>
+            <div class="career-details">
+              <div class="career-detail"><span class="career-detail-label">Qualifications</span><span class="career-detail-val">BSc Environmental Science or Natural Resource Management</span></div>
+              <div class="career-detail"><span class="career-detail-label">Institutions</span><span class="career-detail-val">UPNG; PNG UNRE; UNITECH</span></div>
+              <div class="career-detail"><span class="career-detail-label">Employers</span><span class="career-detail-val">CEPA, WWF, TNC, logging companies</span></div>
+            </div>
+          </div>
+          <div class="career-card" data-strand="nrm">
+            <div class="career-card-head"><div class="career-icon" style="background:#e8f5e9">🌍</div><h3>Land Use Planner</h3></div>
+            <span class="strand-tag tag-nrm">Natural Resources</span>
+            <p class="career-desc">Land use planners assess how land should be used for farming, forestry, conservation, or development. They help balance economic growth with environmental sustainability in PNG provinces.</p>
+            <div class="career-details">
+              <div class="career-detail"><span class="career-detail-label">Qualifications</span><span class="career-detail-val">BSc Natural Resource Management or Environmental Planning</span></div>
+              <div class="career-detail"><span class="career-detail-label">Institutions</span><span class="career-detail-val">UNITECH; UPNG; PNG UNRE</span></div>
+              <div class="career-detail"><span class="career-detail-label">Employers</span><span class="career-detail-val">Dept. of Lands, provincial governments, mining companies, NGOs</span></div>
+            </div>
+          </div>
+          <!-- AGRIBUSINESS -->
+          <div class="career-card" data-strand="agribusiness">
+            <div class="career-card-head"><div class="career-icon" style="background:#f3e5f5">📊</div><h3>Agribusiness Manager</h3></div>
+            <span class="strand-tag tag-agribusiness">Agribusiness</span>
+            <p class="career-desc">Agribusiness managers oversee the business side of agriculture — managing budgets, supply chains, marketing, and operations for farms, cooperatives, or agricultural companies in PNG.</p>
+            <div class="career-details">
+              <div class="career-detail"><span class="career-detail-label">Qualifications</span><span class="career-detail-val">Bachelor of Agribusiness Management or BBus (Agriculture)</span></div>
+              <div class="career-detail"><span class="career-detail-label">Institutions</span><span class="career-detail-val">PNG UNRE; UNITECH; Divine Word University (Madang)</span></div>
+              <div class="career-detail"><span class="career-detail-label">Employers</span><span class="career-detail-val">Cocoa Board, Coffee Industry Corporation, commodity export companies, banks</span></div>
+            </div>
+          </div>
+          <div class="career-card" data-strand="agribusiness">
+            <div class="career-card-head"><div class="career-icon" style="background:#f3e5f5">💰</div><h3>Agricultural Finance Officer</h3></div>
+            <span class="strand-tag tag-agribusiness">Agribusiness</span>
+            <p class="career-desc">Agricultural finance officers assess and approve loans for farmers, evaluate farm business plans, and help rural communities access credit through banks and microfinance institutions.</p>
+            <div class="career-details">
+              <div class="career-detail"><span class="career-detail-label">Qualifications</span><span class="career-detail-val">BBus (Finance) or Bachelor of Agribusiness with finance major</span></div>
+              <div class="career-detail"><span class="career-detail-label">Institutions</span><span class="career-detail-val">UNITECH; Divine Word University; PNG UNRE</span></div>
+              <div class="career-detail"><span class="career-detail-label">Employers</span><span class="career-detail-val">Bank South Pacific, Nationwide Microbank, Development Finance Corporation</span></div>
+            </div>
+          </div>
+          <div class="career-card" data-strand="agribusiness">
+            <div class="career-card-head"><div class="career-icon" style="background:#f3e5f5">🚚</div><h3>Agricultural Supply Chain Officer</h3></div>
+            <span class="strand-tag tag-agribusiness">Agribusiness</span>
+            <p class="career-desc">Supply chain officers manage how agricultural products move from farm to market — coordinating transport, storage, processing, and export logistics for commodities like coffee, cocoa, and palm oil.</p>
+            <div class="career-details">
+              <div class="career-detail"><span class="career-detail-label">Qualifications</span><span class="career-detail-val">BBus (Logistics) or Bachelor of Agribusiness Management</span></div>
+              <div class="career-detail"><span class="career-detail-label">Institutions</span><span class="career-detail-val">UNITECH; PNG UNRE; Divine Word University</span></div>
+              <div class="career-detail"><span class="career-detail-label">Employers</span><span class="career-detail-val">New Britain Palm Oil, commodity exporters, freight companies, cooperatives</span></div>
+            </div>
+          </div>
+          <div class="career-card" data-strand="agribusiness">
+            <div class="career-card-head"><div class="career-icon" style="background:#f3e5f5">📈</div><h3>Agricultural Marketing Specialist</h3></div>
+            <span class="strand-tag tag-agribusiness">Agribusiness</span>
+            <p class="career-desc">Marketing specialists promote agricultural products to local and export markets, develop pricing strategies, and help farmers get better prices through improved market access.</p>
+            <div class="career-details">
+              <div class="career-detail"><span class="career-detail-label">Qualifications</span><span class="career-detail-val">BBus (Marketing) or Bachelor of Agribusiness with marketing focus</span></div>
+              <div class="career-detail"><span class="career-detail-label">Institutions</span><span class="career-detail-val">UNITECH; Divine Word University; PNG UNRE</span></div>
+              <div class="career-detail"><span class="career-detail-label">Employers</span><span class="career-detail-val">Fresh Produce Development Agency, Coffee Industry Corporation, export companies</span></div>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
     <section class="cta-sec">
@@ -228,14 +445,15 @@
         </div>
       </div>
       <div class="footer-bottom">
+        <a href="https://beta.publishers.adsterra.com/referral/JL2wTU1R3Y" rel="nofollow" style="font-size:.72rem;color:var(--ink3);text-decoration:none;">Advertise with Adsterra</a>
         <div>© 2026 MXT Lab. Content aligned with the Papua New Guinea Grade 9–12 Agriculture curriculum.</div>
         <div class="socials">
-          <a class="soc" href="https://whatsapp.com/channel/0029VbCWBUbBA1ezAlkfJ928" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+          <a class="soc" href="https://whatsapp.com/channel/0029VbCWBUbBA1ezAlkfJ928" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.869 1.176l-.313.156-.325-.052c-1.126-.196-2.079-.534-2.915-1.096L2.884 2.5l.951 2.853c-.469.765-.749 1.653-.749 2.629 0 4.268 3.577 7.748 7.921 7.748 1.03 0 2.04-.107 3.007-.32l.315-.033.306.243c.765.606 1.584 1.088 2.438 1.386.852.297 1.789.472 2.748.472.558 0 1.114-.034 1.66-.102l2.169-.303-.87-2.614c.46-.798.722-1.78.722-2.828 0-4.268-3.577-7.748-7.921-7.748"/></svg></a>
           <a class="soc" href="https://www.facebook.com/profile.php?id=61576167391940" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-          <a class="soc" href="https://youtube.com/@mxtlab?si=pwye5W3cMl5h_ft5" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg></a>
-          <a class="soc" href="https://vm.tiktok.com/ZS9YRsdqEWsQY-LfGx1/" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
-          <a class="soc" href="https://www.instagram.com/mxtlabcreative?igsh=MXU3OTNueDZpYnBuag==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
-          <a class="soc" href="https://t.me/mxtcreativestudio" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+          <a class="soc" href="https://youtube.com/@mxtlab?si=pwye5W3cMl5h_ft5" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+          <a class="soc" href="https://vm.tiktok.com/ZS9YRsdqEWsQY-LfGx1/" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.68v13.67a2.4 2.4 0 1 1-4.77-1.42 2.38 2.38 0 0 1 2.38 2.37V20.1a6.1 6.1 0 1 1 8.86-5.92v-3.48a6.11 6.11 0 0 0-3.02-.68z"/></svg></a>
+          <a class="soc" href="https://www.instagram.com/mxtlabcreative?igsh=MXU3OTNueDZpYnBuag==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0m0 2.25c2.36 0 2.636.009 3.562.051.86.039 1.33.179 1.64.304.412.16.708.35.996.64.29.286.48.584.64.996.125.31.265.78.304 1.64.041.926.05 1.202.05 3.562s-.009 2.636-.051 3.562c-.039.86-.179 1.33-.304 1.64-.16.412-.35.708-.64.996-.286.29-.584.48-.996.64-.31.125-.78.265-1.64.304-.926.041-1.202.05-3.562.05s-2.636-.009-3.562-.051c-.86-.039-1.33-.179-1.64-.304-.412-.16-.708-.35-.996-.64-.29-.286-.48-.584-.64-.996-.125-.31-.265-.78-.304-1.64-.041-.926-.05-1.202-.05-3.562s.009-2.636.051-3.562c.039-.86.179-1.33.304-1.64.16-.412.35-.708.64-.996.286-.29.584-.48.996-.64.31-.125.78-.265 1.64-.304.926-.041 1.202-.05 3.562-.05zm0 1.913a5.837 5.837 0 110 11.674 5.837 5.837 0 010-11.674zm0 1.6a4.237 4.237 0 100 8.474 4.237 4.237 0 000-8.474zm6.406-1.845a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/></svg></a>
+          <a class="soc" href="https://t.me/mxtcreativestudio" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0m5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.33-.373-.117l-6.869 4.332-2.96-.924c-.64-.203-.658-.64.136-.954l11.566-4.458c.54-.203 1.01.132.84.957z"/></svg></a>
         </div>
       </div>
     </div>

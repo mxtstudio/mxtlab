@@ -2,306 +2,422 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://mxtlab.online/</loc>
+    <lastmod>2026-06-25</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/topics.html</loc>
+    <lastmod>2026-05-01</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/resources.html</loc>
+    <lastmod>2026-05-01</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/about.html</loc>
+    <lastmod>2026-05-01</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/careers.html</loc>
+    <lastmod>2026-05-01</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/contact.html</loc>
+    <lastmod>2026-05-01</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/privacy.html</loc>
+    <lastmod>2026-05-01</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/terms.html</loc>
+    <lastmod>2026-05-01</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g10-agribusiness-marketing.html</loc>
+    <lastmod>2026-06-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g10-agribusiness-risk.html</loc>
+    <lastmod>2026-06-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g10-agribusiness-startup.html</loc>
+    <lastmod>2026-06-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g10-animal-breeds.html</loc>
+    <lastmod>2026-06-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g10-animal-husbandry.html</loc>
+    <lastmod>2026-06-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g10-animal-nutrition.html</loc>
+    <lastmod>2026-06-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g10-animal-physiology.html</loc>
+    <lastmod>2026-06-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g10-animal-postharvest.html</loc>
+    <lastmod>2026-06-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g10-aqua-environments.html</loc>
+    <lastmod>2026-06-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g10-aqua-management.html</loc>
+    <lastmod>2026-06-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g10-aqua-tech.html</loc>
+    <lastmod>2026-06-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g10-capture-fishery.html</loc>
+    <lastmod>2026-06-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g10-crop-classification.html</loc>
+    <lastmod>2026-06-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g10-crop-management.html</loc>
+    <lastmod>2026-06-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g10-forest-conservation.html</loc>
+    <lastmod>2026-06-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g10-forest-management.html</loc>
+    <lastmod>2026-06-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g10-forestry-tech.html</loc>
+    <lastmod>2026-06-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g10-forests-types.html</loc>
+    <lastmod>2026-06-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g10-horticulture-tech.html</loc>
+    <lastmod>2026-06-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g10-ornamental-cultivation.html</loc>
+    <lastmod>2026-06-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g10-plant-propagation.html</loc>
+    <lastmod>2026-06-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g10-poultry-management.html</loc>
+    <lastmod>2026-06-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g10-soil-improvement.html</loc>
+    <lastmod>2026-06-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g10-types-plants.html</loc>
+    <lastmod>2026-06-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g9-agri-imports-exports.html</loc>
+    <lastmod>2026-06-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g9-agribusiness-economics.html</loc>
+    <lastmod>2026-06-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g9-agribusiness-planning.html</loc>
+    <lastmod>2026-06-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g9-animal-anatomy.html</loc>
+    <lastmod>2026-06-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g9-animal-farming.html</loc>
+    <lastmod>2026-06-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g9-aqua-farming-systems.html</loc>
+    <lastmod>2026-06-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g9-aqua-technology.html</loc>
+    <lastmod>2026-06-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g9-crop-farming.html</loc>
+    <lastmod>2026-06-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g9-crop-technology.html</loc>
+    <lastmod>2026-06-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g9-forest-harvesting.html</loc>
+    <lastmod>2026-06-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g9-forest-management.html</loc>
+    <lastmod>2026-06-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g9-forestry-technology.html</loc>
+    <lastmod>2026-06-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g9-forests.html</loc>
+    <lastmod>2026-06-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g9-horticulture-technology.html</loc>
+    <lastmod>2026-06-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g9-horticulture.html</loc>
+    <lastmod>2026-06-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g9-intro-aquaculture.html</loc>
+    <lastmod>2026-06-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g9-monogastric-polygastric.html</loc>
+    <lastmod>2026-06-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g9-pomology-olericulture.html</loc>
+    <lastmod>2026-06-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g9-poultry-farming.html</loc>
+    <lastmod>2026-06-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g9-poultry-types.html</loc>
+    <lastmod>2026-06-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g9-soil-formation.html</loc>
+    <lastmod>2026-06-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g9-types-crops.html</loc>
+    <lastmod>2026-06-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g11-apiculture.html</loc>
-    <priority>0.6</priority>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g11-aqua-marketing.html</loc>
-    <priority>0.6</priority>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g11-aromatic-plants.html</loc>
-    <priority>0.6</priority>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g11-biennial-crops.html</loc>
-    <priority>0.6</priority>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g11-capture-fishery.html</loc>
-    <priority>0.6</priority>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g11-credit-financing.html</loc>
-    <priority>0.6</priority>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g11-financial-management.html</loc>
-    <priority>0.6</priority>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g11-financial-statements.html</loc>
-    <priority>0.6</priority>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g11-fish-species.html</loc>
-    <priority>0.6</priority>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g11-forest-products.html</loc>
-    <priority>0.6</priority>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g11-horticulture-tech.html</loc>
-    <priority>0.6</priority>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g11-livestock-management.html</loc>
-    <priority>0.6</priority>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g11-poultry-processing.html</loc>
-    <priority>0.6</priority>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g11-soil-nutrients.html</loc>
-    <priority>0.6</priority>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g12-advanced-finance.html</loc>
-    <priority>0.6</priority>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g12-aqua-advanced.html</loc>
-    <priority>0.6</priority>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g12-crop-physiology.html</loc>
-    <priority>0.6</priority>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g12-forestry-processing.html</loc>
-    <priority>0.6</priority>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g12-horticulture-commercialisation.html</loc>
-    <priority>0.6</priority>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g12-poultry-project.html</loc>
-    <priority>0.6</priority>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g12-quality-animal-products.html</loc>
-    <priority>0.6</priority>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mxtlab.online/lessons/g12-soil-topography.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mxtlab.online/quiz.html</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mxtlab.online/downloads.html</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mxtlab.online/glossary.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 </urlset>
