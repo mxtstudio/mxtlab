@@ -12,9 +12,6 @@
   gtag('config', 'G-57V6ZXCDK8');
 </script>
 <meta charset="UTF-8"/>
-  <meta http-equiv="X-Content-Type-Options" content="nosniff"/>
-  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin"/>
-  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="description" content="MXT Lab — Interactive Agriculture learning for Grade 9, 10, 11 and 12 students in Papua New Guinea."/>
 <meta name="robots" content="index, follow"/>
@@ -37,9 +34,6 @@
 <title>MXT Lab — Agriculture | Grade 9–12</title>
 <link rel="preload" as="image" href="Image/hero.webp" fetchpriority="high"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link rel="dns-prefetch" href="https://www.highperformanceformat.com"/>
-<link rel="dns-prefetch" href="https://pl29680283.effectivecpmnetwork.com"/>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700;800&family=Fraunces:ital,wght@0,300;0,600;1,300&display=swap" onload="this.rel='stylesheet'"/>
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700;800&family=Fraunces:ital,wght@0,300;0,600;1,300&display=swap"/></noscript>
 <script type="application/ld+json">
@@ -56,20 +50,6 @@
     "@type": "EducationalAudience",
     "educationalRole": "student",
     "geographicArea": "Papua New Guinea"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "MXT Lab",
-  "url": "https://mxtlab.online",
-  "description": "Interactive Agriculture learning for Grade 9–12 students in Papua New Guinea.",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://mxtlab.online/?q={search_term_string}",
-    "query-input": "required name=search_term_string"
   }
 }
 </script>
@@ -452,7 +432,7 @@ textarea.fc{resize:vertical;min-height:130px}
 .cta-sec p{color:rgba(255,255,255,.72);margin:13px auto 26px;max-width:450px}
 
 /* ADS — placeholder for future ad units */
-.ad-wrap{text-align:center;padding:16px 24px;background:var(--bg);min-height:106px}
+.ad-wrap{text-align:center;padding:16px 24px;background:var(--bg)}
 
 /* FOOTER */
 footer{background:#0e1208;color:rgba(255,255,255,.5);padding:52px 0 28px}
@@ -972,8 +952,6 @@ body.adsense-active .ad-slot-label{display:none}
 </head>
 <body>
 
-<a href="#main" class="skip-nav" style="position:absolute;left:-9999px;top:4px;z-index:9999;background:var(--green);color:#fff;padding:8px 16px;border-radius:4px;font-weight:600;font-size:.875rem;text-decoration:none" onfocus="this.style.left='4px'" onblur="this.style.left='-9999px'">Skip to main content</a>
-
 <canvas id="confetti-canvas"></canvas>
 <div id="grain" aria-hidden="true"></div>
 
@@ -1009,11 +987,18 @@ initReveal();return false">
           <a onclick="setGrade(12);nav('modules');return false">Grade 12 Agriculture</a>
         </div>
       </li>
-      <li><a href="/quiz.html">Quiz Hub</a></li>
-      <li><a href="/downloads.html">Downloads</a></li>
       <li><a href="/about.html">About</a></li>
+      <li><a href="/glossary.html">Glossary</a></li>
       <li><a href="/resources.html">Resources</a></li>
+      <li><a href="/quiz.html">Quiz Hub</a></li>
+            <li><a href="/downloads.html">Revision Packs</a></li>
+            <li><a href="/careers.html">Careers</a></li>
+        <li><a href="/quiz.html">Quiz Hub</a></li>
+            <li><a href="/downloads.html">Revision Packs</a></li>
+            <li><a href="/careers.html">Careers</a></li>
       <li><a href="/careers.html">Careers</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+            <li><a href="/teachers.html">For Teachers</a></li>
     </ul>
     <div class="nav-right">
       <button class="nav-icon-btn" id="search-trigger" aria-label="Search">
@@ -1039,12 +1024,17 @@ initReveal();return false">
     <li><a onclick="setGrade(10);nav('modules');closeDrawer()">Grade 10 Agriculture</a></li>
     <li><a onclick="setGrade(11);nav('modules');closeDrawer()">Grade 11 Agriculture</a></li>
     <li><a onclick="setGrade(12);nav('modules');closeDrawer()">Grade 12 Agriculture</a></li>
-    <li><a href="/quiz.html">📝 Quiz Hub</a></li>
-    <li><a href="/downloads.html">⬇ Downloads</a></li>
     <li><a href="/about.html">About MXT Lab</a></li>
     <li><a href="/resources.html">Resources</a></li>
+      <li><a href="/quiz.html">Quiz Hub</a></li>
+            <li><a href="/downloads.html">Revision Packs</a></li>
+            <li><a href="/careers.html">Careers</a></li>
+        <li><a href="/quiz.html">Quiz Hub</a></li>
+            <li><a href="/downloads.html">Revision Packs</a></li>
+            <li><a href="/careers.html">Careers</a></li>
     <li><a href="/careers.html">Careers</a></li>
     <li><a href="/contact.html">Contact</a></li>
+            <li><a href="/teachers.html">For Teachers</a></li>
     <li><a href="/privacy.html">Privacy Policy</a></li>
     <li><a href="/terms.html">Terms of Use</a></li>
   </ul>
@@ -1170,7 +1160,7 @@ initReveal();return false">
   </section>
 
     <!-- Adsterra Ad — Leaderboard 728x90 -->
-  <div class="ad-wrap" style="text-align:center;margin:24px auto;overflow:hidden;min-height:106px">
+  <div class="ad-wrap" style="text-align:center;margin:24px auto;overflow:hidden;">
     <script>
   atOptions = {
     'key' : '786dbfd756d7723d536ee2266a0b1572',
@@ -1182,48 +1172,6 @@ initReveal();return false">
 </script>
 <script src="https://www.highperformanceformat.com/786dbfd756d7723d536ee2266a0b1572/invoke.js"></script>
   </div>
-
-  <!-- FEATURED THIS WEEK -->
-  <section class="sec" id="featured-week" style="padding-bottom:0">
-    <div class="container">
-      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:16px">
-        <div class="label">Featured This Week</div>
-        <a href="quiz.html" class="btn btn-ghost" style="font-size:.8rem">📝 Quiz Hub →</a>
-      </div>
-      <div class="featured-week" id="fw-card">
-        <span class="fw-badge">This Week</span>
-        <div class="fw-content">
-          <span class="fw-strand" id="fw-strand"></span>
-          <h3 id="fw-title"></h3>
-          <p id="fw-desc"></p>
-        </div>
-        <div class="fw-cta">
-          <a class="btn primary" id="fw-link" href="#">Study Now →</a>
-        </div>
-      </div>
-      <!-- Quick-access bar -->
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-top:12px;margin-bottom:0" id="quick-bar">
-        <a href="quiz.html" style="display:flex;align-items:center;gap:8px;background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:12px 14px;font-size:.82rem;font-weight:600;color:var(--ink);transition:all .2s" onmouseover="this.style.borderColor='var(--green)'" onmouseout="this.style.borderColor='var(--border)'">
-          <span style="font-size:1.1rem">📝</span> Quiz Hub
-        </a>
-        <a href="downloads.html" style="display:flex;align-items:center;gap:8px;background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:12px 14px;font-size:.82rem;font-weight:600;color:var(--ink);transition:all .2s" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
-          <span style="font-size:1.1rem">⬇</span> Revision Packs
-        </a>
-        <a href="topics.html?grade=9" style="display:flex;align-items:center;gap:8px;background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:12px 14px;font-size:.82rem;font-weight:600;color:var(--ink);transition:all .2s" onmouseover="this.style.borderColor='var(--green)'" onmouseout="this.style.borderColor='var(--border)'">
-          <span style="font-size:1.1rem">🌱</span> Grade 9
-        </a>
-        <a href="topics.html?grade=10" style="display:flex;align-items:center;gap:8px;background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:12px 14px;font-size:.82rem;font-weight:600;color:var(--ink);transition:all .2s" onmouseover="this.style.borderColor='var(--green)'" onmouseout="this.style.borderColor='var(--border)'">
-          <span style="font-size:1.1rem">🌿</span> Grade 10
-        </a>
-        <a href="topics.html?grade=11" style="display:flex;align-items:center;gap:8px;background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:12px 14px;font-size:.82rem;font-weight:600;color:var(--ink);transition:all .2s" onmouseover="this.style.borderColor='var(--green)'" onmouseout="this.style.borderColor='var(--border)'">
-          <span style="font-size:1.1rem">🌳</span> Grade 11
-        </a>
-        <a href="topics.html?grade=12" style="display:flex;align-items:center;gap:8px;background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:12px 14px;font-size:.82rem;font-weight:600;color:var(--ink);transition:all .2s" onmouseover="this.style.borderColor='var(--green)'" onmouseout="this.style.borderColor='var(--border)'">
-          <span style="font-size:1.1rem">🎓</span> Grade 12
-        </a>
-      </div>
-    </div>
-  </section>
 
   <section class="sec" id="how-it-works">
     <div class="container">
@@ -1268,7 +1216,7 @@ initReveal();return false">
     </div>
   </div>
     <!-- Adsterra Ad — Rectangle 300x250 -->
-  <div class="ad-wrap" style="text-align:center;margin:24px auto;overflow:hidden;min-height:106px">
+  <div class="ad-wrap" style="text-align:center;margin:24px auto;overflow:hidden;">
     <script>
   atOptions = {
     'key' : '4549af4b6f2e59d48c530d2a3dfa6378',
@@ -1344,8 +1292,7 @@ initReveal();return false">
         <div class="blog-list" id="blog-main"></div>
         <aside class="sidebar">
             <!-- Adsterra Ad — Native Banner -->
-  <div class="ad-wrap" style="text-align:center;margin:24px auto;overflow:hidden;min-height:106px">
-    <script async="async" data-cfasync="false" src="https://pl29680282.effectivecpmnetwork.com/4d4f8b02d1a51dce0992115572170e3d/invoke.js"></script>
+  <div class="ad-wrap" style="text-align:center;margin:24px auto;overflow:hidden;">
 <div id="container-4d4f8b02d1a51dce0992115572170e3d"></div>
   </div>
           <div class="sw">
@@ -1415,7 +1362,7 @@ initReveal();return false">
     <div class="container" style="max-width:780px">
       <div class="lesson-section">
         <h2>Who We Are</h2>
-        <p>MXT Lab (<a href="mxtlab.online" style="color:var(--green)">mxtlab.online</a>) is a free educational resource providing Agriculture study materials for Grade 9, 10, 11 and 12 students in Papua New Guinea. We are operated by MXT Lab, contactable at <a href="mailto:mxtlab.png@gmail.com" style="color:var(--green)">mxtlab.png@gmail.com</a>.</p>
+        <p>MXT Lab (<a href="https://mxtlab.online" style="color:var(--green)">mxtlab.online</a>) is a free educational resource providing Agriculture study materials for Grade 9, 10, 11 and 12 students in Papua New Guinea. We are operated by MXT Lab, contactable at <a href="mailto:mxtlab.png@gmail.com" style="color:var(--green)">mxtlab.png@gmail.com</a>.</p>
       </div>
       <div class="lesson-section">
         <h2>Information We Collect</h2>
@@ -1467,7 +1414,7 @@ initReveal();return false">
     <div class="container" style="max-width:780px">
       <div class="lesson-section">
         <h2>Acceptance of Terms</h2>
-        <p>By accessing and using MXT Lab (<a href="mxtlab.online" style="color:var(--green)">mxtlab.online</a>), you agree to be bound by these Terms of Use. If you do not agree with any part of these terms, please do not use this site.</p>
+        <p>By accessing and using MXT Lab (<a href="https://mxtlab.online" style="color:var(--green)">mxtlab.online</a>), you agree to be bound by these Terms of Use. If you do not agree with any part of these terms, please do not use this site.</p>
       </div>
       <div class="lesson-section">
         <h2>Purpose of This Site</h2>
@@ -1787,6 +1734,11 @@ initReveal();return false">
           <li><a onclick="setGrade(11);nav('modules')">Grade 11 Agriculture</a></li>
           <li><a onclick="setGrade(12);nav('modules')">Grade 12 Agriculture</a></li>
           <li><a href="/resources.html">Study Resources</a></li>
+            <li><a href="/quiz.html">Quiz Hub</a></li>
+            <li><a href="/downloads.html">Revision Packs</a></li>
+            <li><a href="/quiz.html">Quiz Hub</a></li>
+            <li><a href="/downloads.html">Revision Packs</a></li>
+            <li><a href="/careers.html">Careers</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -1794,6 +1746,7 @@ initReveal();return false">
         <ul>
           <li><a href="/about.html">About Us</a></li>
           <li><a href="/contact.html">Contact</a></li>
+            <li><a href="/teachers.html">For Teachers</a></li>
           <li><a href="/privacy.html">Privacy Policy</a></li>
           <li><a href="/terms.html">Terms of Use</a></li>
         </ul>
@@ -2545,46 +2498,5 @@ nav('home');
 
 </script>
 <!-- Adsterra Social Bar -->
-<script src="https://pl29680283.effectivecpmnetwork.com/b4/ad/6c/b4ad6cb009aa992510e4d54ff415f0ef.js"></script>
-
-<!-- WHATSAPP STICKY BANNER -->
-<div id="wa-sticky" role="complementary" aria-label="WhatsApp channel promotion">
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-  <span class="wa-hide">Get new Agriculture lessons on WhatsApp</span>
-  <a href="https://whatsapp.com/channel/0029VbCWBUbBA1ezAlkfJ928" target="_blank" rel="noopener noreferrer">Join Channel</a>
-  <button id="wa-sticky-close" aria-label="Dismiss">X</button>
-</div>
-<script>
-(function(){
-  var b=document.getElementById('wa-sticky'),c=document.getElementById('wa-sticky-close');
-  if(!b)return;
-  if(localStorage.getItem('mxt_wa_dismissed'))return;
-  setTimeout(function(){b.classList.add('visible');},3000);
-  c.addEventListener('click',function(){b.classList.remove('visible');try{localStorage.setItem('mxt_wa_dismissed','1');}catch(e){}});
-})();
-(function(){
-  var featured=[
-    {slug:'g9-soil-formation',title:'Soil \u2014 Types & Formation',strand:'Grade 9 \u00b7 Crops',desc:'How soil forms from parent rock, and how texture and pH affect plant growth in PNG conditions.'},
-    {slug:'g9-monogastric-polygastric',title:'Monogastric & Polygastric Animals',strand:'Grade 9 \u00b7 Animals',desc:'Understand how pigs, chickens, cattle and goats digest food differently \u2014 key for PNG livestock farming.'},
-    {slug:'g9-intro-aquaculture',title:'Introduction to Aquaculture',strand:'Grade 9 \u00b7 Aquaculture',desc:'Freshwater and marine fish farming systems including tilapia and barramundi farming in Papua New Guinea.'},
-    {slug:'g10-soil-improvement',title:'Soil Improvement Practices',strand:'Grade 10 \u00b7 Crops',desc:'Compost, lime, green manure and terracing \u2014 practical soil improvement for PNG farmers.'},
-    {slug:'g10-animal-nutrition',title:'Animal Nutrition & Feed',strand:'Grade 10 \u00b7 Animals',desc:'Formulating balanced rations for poultry, pigs, and cattle using locally available PNG feed ingredients.'},
-    {slug:'g11-financial-statements',title:'Farm Financial Statements',strand:'Grade 11 \u00b7 Agribusiness',desc:'Profit & loss statements and balance sheets for an agribusiness \u2014 essential for PNGDSCC exams.'},
-    {slug:'g9-agribusiness-economics',title:'Economic Principles in Agribusiness',strand:'Grade 9 \u00b7 Agribusiness',desc:'Supply, demand, market pricing and opportunity cost \u2014 how economics drives decisions on PNG farms.'},
-    {slug:'g12-crop-physiology',title:'Crop Physiology',strand:'Grade 12 \u00b7 Crops',desc:'Photosynthesis, transpiration, and how plants respond to PNG tropical climate at Grade 12 level.'},
-    {slug:'g11-soil-nutrients',title:'Soil Nutrients & Fertilisers',strand:'Grade 11 \u00b7 Crops',desc:'NPK macronutrients, micronutrients, organic vs synthetic fertilisers on PNG agricultural land.'},
-    {slug:'g10-agribusiness-startup',title:'Starting an Agribusiness',strand:'Grade 10 \u00b7 Agribusiness',desc:'Business planning, capital, and market research for starting a small agribusiness in PNG.'},
-    {slug:'g9-forests',title:'Types of Forests & Forest Resources',strand:'Grade 9 \u00b7 NRM',desc:'PNG rainforests, cloud forests, mangroves and their resources \u2014 plus sustainable management.'},
-    {slug:'g12-advanced-finance',title:'Advanced Agribusiness Finance',strand:'Grade 12 \u00b7 Agribusiness',desc:'Cash flow forecasting, break-even analysis and investment appraisal for Grade 12 students.'}
-  ];
-  var weekNum=Math.floor((new Date()-new Date(new Date().getFullYear(),0,1))/(7*24*60*60*1000));
-  var pick=featured[weekNum%featured.length];
-  var t=document.getElementById('fw-title'),s=document.getElementById('fw-strand'),d=document.getElementById('fw-desc'),l=document.getElementById('fw-link');
-  if(t)t.textContent=pick.title;
-  if(s)s.textContent=pick.strand;
-  if(d)d.textContent=pick.desc;
-  if(l)l.href='lessons/'+pick.slug+'.html';
-})();
-</script>
 </body>
 </html>
