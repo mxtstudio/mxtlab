@@ -6232,73 +6232,35 @@ function filterGlossary(q){ renderGlossary(glossaryFilter); }
   currentGrade = savedGrade;
   nav(startPage);
 })();
-const QH_LESSONS = [
-  {slug:'g9-soil-formation',title:"Soil \u2014 Types & Formation",strand:"Crops",unit:"Unit 1",grade:9,qcount:5},
-  {slug:'g9-types-crops',title:"Types of Crops & Their Environments",strand:"Crops",unit:"Unit 2",grade:9,qcount:5},
-  {slug:'g9-crop-farming',title:"Crop Farming Practices & Management",strand:"Crops",unit:"Unit 3",grade:9,qcount:5},
-  {slug:'g9-crop-technology',title:"Crop Farming Technology",strand:"Crops",unit:"Unit 4",grade:9,qcount:4},
-  {slug:'g9-horticulture',title:"Horticulture \u2014 Fruits, Vegetables & Spices",strand:"Crops",unit:"Unit 5",grade:9,qcount:5},
-  {slug:'g9-monogastric-polygastric',title:"Monogastric & Polygastric Animals",strand:"Animals",unit:"Unit 1",grade:9,qcount:5},
-  {slug:'g9-intro-aquaculture',title:"Introduction to Aquaculture",strand:"Aquaculture",unit:"Unit 1",grade:9,qcount:5},
-  {slug:'g9-forests',title:"Types of Forests & Forest Resources",strand:"NRM",unit:"Unit 1",grade:9,qcount:5},
-  {slug:'g9-agribusiness-economics',title:"Economic Principles in Agribusiness",strand:"Agribusiness",unit:"Unit 1",grade:9,qcount:5},
-  {slug:'g10-soil-improvement',title:"Soil Improvement Practices",strand:"Crops",unit:"Unit 1",grade:10,qcount:5},
-  {slug:'g10-crop-classification',title:"Crop Classification",strand:"Crops",unit:"Unit 2",grade:10,qcount:5},
-  {slug:'g10-agribusiness-risk',title:"Managing Risk in Agribusiness",strand:"Agribusiness",unit:"Unit 1",grade:10,qcount:5},
-  {slug:'g10-agribusiness-marketing',title:"Agribusiness Communication & Marketing",strand:"Agribusiness",unit:"Unit 2",grade:10,qcount:5},
-  {slug:'g9-animal-anatomy',title:"Anatomy of Farm Animals",strand:"Animals",unit:"Unit 2",grade:9,qcount:5},
-  {slug:'g9-animal-farming',title:"Animal Farming Practices & Management",strand:"Animals",unit:"Unit 3",grade:9,qcount:5},
-  {slug:'g9-poultry-types',title:"Types of Poultry & Their Behaviour",strand:"Animals",unit:"Unit 4",grade:9,qcount:5},
-  {slug:'g9-poultry-farming',title:"Poultry Farming Principles & Systems",strand:"Animals",unit:"Unit 5",grade:9,qcount:5},
-  {slug:'g9-pomology-olericulture',title:"Plant Farming Practices \u2014 Pomology & Olericulture",strand:"Crops",unit:"Unit 6",grade:9,qcount:5},
-  {slug:'g9-horticulture-technology',title:"Technology in Horticulture Production",strand:"Crops",unit:"Unit 7",grade:9,qcount:5},
-  {slug:'g9-aqua-farming-systems',title:"Aqua Farming Systems & Practices",strand:"Aquaculture",unit:"Unit 2",grade:9,qcount:5},
-  {slug:'g9-aqua-technology',title:"Gears & Technology in Aqua Farming",strand:"Aquaculture",unit:"Unit 3",grade:9,qcount:5},
-  {slug:'g9-forest-harvesting',title:"Forest Harvesting Practices",strand:"Natural Resources",unit:"Unit 5",grade:9,qcount:5},
-  {slug:'g9-forest-management',title:"Forest Management & Conservation",strand:"Natural Resources",unit:"Unit 4",grade:9,qcount:5},
-  {slug:'g9-forestry-technology',title:"Forestry Technology: Tools & Challenges",strand:"Natural Resources",unit:"Unit 6",grade:9,qcount:5},
-  {slug:'g9-agri-imports-exports',title:"Agricultural Imports & Exports",strand:"Agribusiness",unit:"Unit 2",grade:9,qcount:5},
-  {slug:'g9-agribusiness-planning',title:"Planning & Managing an Agribusiness",strand:"Agribusiness",unit:"Unit 3",grade:9,qcount:5},
-  {slug:'g10-crop-management',title:"Crop Management Systems & Practices",strand:"Crops",unit:"Unit 3",grade:10,qcount:5},
-  {slug:'g10-plant-propagation',title:"Plant Propagation Technology",strand:"Crops",unit:"Unit 4",grade:10,qcount:5},
-  {slug:'g10-types-plants',title:"Types of Agricultural Plants",strand:"Crops",unit:"Unit 5",grade:10,qcount:5},
-  {slug:'g10-ornamental-cultivation',title:"Cultivation of Ornamental & Bedding Plants",strand:"Crops",unit:"Unit 6",grade:10,qcount:5},
-  {slug:'g10-horticulture-tech',title:"Technology in Horticulture Production",strand:"Crops",unit:"Unit 7",grade:10,qcount:5},
-  {slug:'g10-agribusiness-startup',title:"Starting Up an Agribusiness",strand:"Agribusiness",unit:"Unit 3",grade:10,qcount:5},
-  {slug:'g10-animal-breeds',title:"Breeds of Monogastric & Polygastric Animals",strand:"Animals",unit:"Unit 1",grade:10,qcount:5},
-  {slug:'g10-animal-physiology',title:"Animal Physiology: Digestive & Reproductive Systems",strand:"Animals",unit:"Unit 1",grade:10,qcount:5},
-  {slug:'g10-animal-husbandry',title:"Animal Husbandry & Management Practices",strand:"Animals",unit:"Unit 2",grade:10,qcount:5},
-  {slug:'g10-animal-nutrition',title:"Animal Nutrition, Feeding & Health",strand:"Animals",unit:"Unit 2",grade:10,qcount:5},
-  {slug:'g10-animal-postharvest',title:"Post-Harvest Processing of Animal Products",strand:"Animals",unit:"Unit 3",grade:10,qcount:5},
-  {slug:'g10-poultry-management',title:"Poultry Breeds, Management & Technology",strand:"Animals",unit:"Unit 4-6",grade:10,qcount:5},
-  {slug:'g10-aqua-environments',title:"Freshwater, Brackish & Saltwater Farming",strand:"Aquaculture",unit:"Unit 1",grade:10,qcount:5},
-  {slug:'g10-aqua-management',title:"Aqua Farming Management Systems",strand:"Aquaculture",unit:"Unit 2",grade:10,qcount:5},
-  {slug:'g10-capture-fishery',title:"Capture Fishery: Harvesting & Management",strand:"Natural Resources",unit:"Unit 1-2",grade:10,qcount:5},
-  {slug:'g10-aqua-tech',title:"Technology in Aquaculture & Capture Fishery",strand:"Strand 3 & 4: Aquaculture & NRM",unit:"Unit 3",grade:10,qcount:5},
-  {slug:'g10-forests-types',title:"Tropical Forests & Their Characteristics",strand:"Natural Resources",unit:"Unit 4",grade:10,qcount:5},
-  {slug:'g10-forest-management',title:"Forest Management & Monitoring Systems",strand:"Natural Resources",unit:"Unit 5",grade:10,qcount:5},
-  {slug:'g10-forest-conservation',title:"Preserving & Sustaining Forests",strand:"Natural Resources",unit:"Unit 5",grade:10,qcount:5},
-  {slug:'g10-forestry-tech',title:"Forestry Technology: Harvesting & Processing",strand:"Natural Resources",unit:"Unit 6",grade:10,qcount:5},
-  {slug:'g11-soil-nutrients',title:"Soil Nutrients: Macro & Micro",strand:"Crops",unit:"Unit 1",grade:11,qcount:5},
-  {slug:'g11-aromatic-plants',title:"Aromatic & Herbal Plants",strand:"Crops",unit:"Units 5\u20136",grade:11,qcount:5},
-  {slug:'g11-apiculture',title:"Apiculture: Beekeeping in PNG",strand:"Animals",unit:"Unit 1",grade:11,qcount:5},
-  {slug:'g11-fish-species',title:"Fish Species & Cultivation Environments",strand:"Aquaculture",unit:"Unit 1",grade:11,qcount:5},
-  {slug:'g11-capture-fishery',title:"Capture Fishery: Cultivation & Regulations",strand:"Natural Resources",unit:"Units 1\u20133",grade:11,qcount:5},
-  {slug:'g11-forest-products',title:"Forest Products, Regulations & Technology",strand:"Natural Resources",unit:"Units 4\u20136",grade:11,qcount:5},
-  {slug:'g11-financial-management',title:"Agribusiness Financial Management",strand:"Agribusiness",unit:"Unit 1",grade:11,qcount:5},
-  {slug:'g12-soil-topography',title:"Soil Topography & Crop Production Returns",strand:"Crops",unit:"Unit 1",grade:12,qcount:5},
-  {slug:'g12-crop-physiology',title:"Crop Physiology & Farming Practices",strand:"Crops",unit:"Units 2\u20133",grade:12,qcount:5},
-  {slug:'g12-horticulture-commercialisation',title:"Plants, Horticulture & Commercialisation",strand:"Crops",unit:"Units 5\u20137",grade:12,qcount:5},
-  {slug:'g12-quality-animal-products',title:"Quality Animal Products & Technology",strand:"Animals",unit:"Units 1\u20133",grade:12,qcount:5},
-  {slug:'g12-aqua-advanced',title:"Advanced Aqua Farming & Post-Harvest Technology",strand:"Aquaculture",unit:"Units 1\u20133",grade:12,qcount:5},
-  {slug:'g12-forestry-processing',title:"Forestry Processing, Silviculture & Technology",strand:"Natural Resources",unit:"Units 4\u20136",grade:12,qcount:5},
-  {slug:'g12-advanced-finance',title:"Advanced Agribusiness Finance & Capital",strand:"Agribusiness",unit:"Unit 1",grade:12,qcount:5},
-  {slug:'g11-biennial-crops',title:"Biennial Crops & Crop Protection",strand:"Crops",unit:"Units 2\u20133",grade:11,qcount:5},
-  {slug:'g11-horticulture-tech',title:"Horticulture Technology & Constraints",strand:"Crops",unit:"Unit 7",grade:11,qcount:5},
-  {slug:'g11-livestock-management',title:"Livestock Management & Husbandry",strand:"Animals",unit:"Unit 2",grade:11,qcount:5},
-  {slug:'g11-poultry-processing',title:"Poultry Processing, Regulation & Technology",strand:"Animals",unit:"Units 5\u20136",grade:11,qcount:5},
-  {slug:'g11-aqua-marketing',title:"Aquaculture Production, Marketing & Regulations",strand:"Aquaculture",unit:"Units 2\u20133",grade:11,qcount:5},
-  {slug:'g11-credit-financing',title:"Credit Organisations & Financing",strand:"Agribusiness",unit:"Unit 1",grade:11,qcount:5},
-  {slug:'g11-financial-statements',title:"Financial Statements & Cash Flow",strand:"Agribusiness",unit:"Unit 1",grade:11,qcount:5},
-  {slug:'g12-poultry-project',title:"Bird Anatomy & Planning a Poultry Project",strand:"Animals",unit:"Units 4\u20135",grade:12,qcount:5}
-];
+
+/* ═══════════════════════════════════════════
+   WHATSAPP STICKY CTA BANNER
+   ═══════════════════════════════════════════ */
+(function(){
+  var WA_KEY = 'mxt_wa_banner_dismissed';
+  function showBanner(){
+    if(sessionStorage.getItem(WA_KEY)) return;
+    var el = document.getElementById('wa-sticky-banner');
+    if(el) el.classList.add('show');
+  }
+  function initBanner(){
+    if(sessionStorage.getItem(WA_KEY)) return;
+    var banner = document.createElement('div');
+    banner.id = 'wa-sticky-banner';
+    banner.setAttribute('role','complementary');
+    banner.setAttribute('aria-label','Join MXT Lab on WhatsApp');
+    banner.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>'
+      + '<a href="https://whatsapp.com/channel/0029VbCWBUbBA1ezAlkfJ928" target="_blank" rel="noopener noreferrer">'
+      + 'Get new lessons on WhatsApp<span class="wa-text-hide"> — Follow the MXT Lab channel</span> →'
+      + '</a>'
+      + '<button id="wa-sticky-close" aria-label="Close WhatsApp banner">✕</button>';
+    document.body.appendChild(banner);
+    document.getElementById('wa-sticky-close').addEventListener('click', function(){
+      banner.classList.remove('show');
+      try{ sessionStorage.setItem(WA_KEY,'1'); }catch(e){}
+    });
+    setTimeout(showBanner, 8000);
+  }
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initBanner);
+  else initBanner();
+})();
