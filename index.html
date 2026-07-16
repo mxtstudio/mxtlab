@@ -127,6 +127,14 @@ img{max-width:100%}
 .mob-links a:hover{background:var(--bg2)}
 .mob-label{padding:12px 16px 4px;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3)}
 .mob-footer{margin-top:28px;display:flex;flex-direction:column;gap:10px}
+.google-signin-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.btn-full.google-signin-btn{display:flex}
+.profile-badge{display:none;align-items:center;gap:8px;cursor:pointer;padding:4px 10px 4px 4px;border-radius:50px;transition:background .18s}
+.profile-badge:hover{background:var(--bg2)}
+.profile-badge img{width:28px;height:28px;border-radius:50%;object-fit:cover;background:var(--bg2)}
+.profile-badge span{font-size:.85rem;font-weight:600}
+.mob-footer .profile-badge{width:100%;justify-content:center;padding:13px;border-radius:50px;background:var(--bg2)}
+.mob-footer .profile-badge img{width:24px;height:24px}
 .btn-full{display:block;text-align:center;padding:13px;border-radius:50px;font-weight:600;font-size:.92rem}
 .btn-full-green{background:var(--green);color:#fff}
 
@@ -991,14 +999,10 @@ initReveal();return false">
       <li><a href="/glossary.html">Glossary</a></li>
       <li><a href="/resources.html">Resources</a></li>
       <li><a href="/quiz.html">Quiz Hub</a></li>
-            <li><a href="/downloads.html">Revision Packs</a></li>
-            <li><a href="/careers.html">Careers</a></li>
-        <li><a href="/quiz.html">Quiz Hub</a></li>
-            <li><a href="/downloads.html">Revision Packs</a></li>
-            <li><a href="/careers.html">Careers</a></li>
+      <li><a href="/downloads.html">Revision Packs</a></li>
       <li><a href="/careers.html">Careers</a></li>
       <li><a href="/contact.html">Contact</a></li>
-            <li><a href="/teachers.html">For Teachers</a></li>
+      <li><a href="/teachers.html">For Teachers</a></li>
     </ul>
     <div class="nav-right">
       <button class="nav-icon-btn" id="search-trigger" aria-label="Search">
@@ -1008,6 +1012,14 @@ initReveal();return false">
         <span id="t-icon"></span><span id="t-lbl">Dark</span>
       </button>
       <button class="btn-nav-cta" onclick="nav('modules')">Explore Topics →</button>
+      <button id="google-signin" class="google-signin-btn">
+        <svg width="16" height="16" viewBox="0 0 18 18"><path fill="#4285F4" d="M17.64 9.2c0-.64-.06-1.25-.16-1.84H9v3.48h4.84a4.14 4.14 0 0 1-1.8 2.72v2.26h2.91c1.7-1.57 2.69-3.88 2.69-6.62z"/><path fill="#34A853" d="M9 18c2.43 0 4.47-.8 5.96-2.18l-2.91-2.26c-.81.54-1.84.86-3.05.86-2.35 0-4.34-1.58-5.05-3.71H.94v2.33A9 9 0 0 0 9 18z"/><path fill="#FBBC05" d="M3.95 10.71A5.4 5.4 0 0 1 3.67 9c0-.59.1-1.17.28-1.71V4.96H.94A9 9 0 0 0 0 9c0 1.45.35 2.83.94 4.04l3.01-2.33z"/><path fill="#EA4335" d="M9 3.58c1.32 0 2.51.46 3.44 1.35l2.58-2.58C13.46.89 11.43 0 9 0A9 9 0 0 0 .94 4.96l3.01 2.33C4.66 5.16 6.65 3.58 9 3.58z"/></svg>
+        Sign in with Google
+      </button>
+      <div id="profile-badge" class="profile-badge">
+        <img id="profile-avatar" alt="">
+        <span id="profile-name"></span>
+      </div>
       <button class="hamburger" id="hamburger" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -1024,21 +1036,23 @@ initReveal();return false">
     <li><a onclick="setGrade(10);nav('modules');closeDrawer()">Grade 10 Agriculture</a></li>
     <li><a onclick="setGrade(11);nav('modules');closeDrawer()">Grade 11 Agriculture</a></li>
     <li><a onclick="setGrade(12);nav('modules');closeDrawer()">Grade 12 Agriculture</a></li>
-    <li><a href="/about.html">About MXT Lab</a></li>
+    <li><a href="/quiz.html">Quiz Hub</a></li>
+    <li><a href="/downloads.html">Revision Packs</a></li>
     <li><a href="/resources.html">Resources</a></li>
-      <li><a href="/quiz.html">Quiz Hub</a></li>
-            <li><a href="/downloads.html">Revision Packs</a></li>
-            <li><a href="/careers.html">Careers</a></li>
-        <li><a href="/quiz.html">Quiz Hub</a></li>
-            <li><a href="/downloads.html">Revision Packs</a></li>
-            <li><a href="/careers.html">Careers</a></li>
+    <li><a href="/about.html">About MXT Lab</a></li>
+    <li><a href="/teachers.html">For Teachers</a></li>
     <li><a href="/careers.html">Careers</a></li>
     <li><a href="/contact.html">Contact</a></li>
-            <li><a href="/teachers.html">For Teachers</a></li>
-    <li><a href="/privacy.html">Privacy Policy</a></li>
-    <li><a href="/terms.html">Terms of Use</a></li>
   </ul>
   <div class="mob-footer">
+    <button class="btn-full google-signin-btn" id="google-signin-mobile">
+      <svg width="16" height="16" viewBox="0 0 18 18"><path fill="#4285F4" d="M17.64 9.2c0-.64-.06-1.25-.16-1.84H9v3.48h4.84a4.14 4.14 0 0 1-1.8 2.72v2.26h2.91c1.7-1.57 2.69-3.88 2.69-6.62z"/><path fill="#34A853" d="M9 18c2.43 0 4.47-.8 5.96-2.18l-2.91-2.26c-.81.54-1.84.86-3.05.86-2.35 0-4.34-1.58-5.05-3.71H.94v2.33A9 9 0 0 0 9 18z"/><path fill="#FBBC05" d="M3.95 10.71A5.4 5.4 0 0 1 3.67 9c0-.59.1-1.17.28-1.71V4.96H.94A9 9 0 0 0 0 9c0 1.45.35 2.83.94 4.04l3.01-2.33z"/><path fill="#EA4335" d="M9 3.58c1.32 0 2.51.46 3.44 1.35l2.58-2.58C13.46.89 11.43 0 9 0A9 9 0 0 0 .94 4.96l3.01 2.33C4.66 5.16 6.65 3.58 9 3.58z"/></svg>
+      Sign in with Google
+    </button>
+    <div id="profile-badge-mobile" class="profile-badge">
+      <img id="profile-avatar-mobile" alt="">
+      <span id="profile-name-mobile"></span>
+    </div>
     <button class="btn-full btn-full-green" onclick="nav('modules');closeDrawer()">Explore Topics →</button>
   </div>
 </div>
@@ -1734,11 +1748,9 @@ initReveal();return false">
           <li><a onclick="setGrade(11);nav('modules')">Grade 11 Agriculture</a></li>
           <li><a onclick="setGrade(12);nav('modules')">Grade 12 Agriculture</a></li>
           <li><a href="/resources.html">Study Resources</a></li>
-            <li><a href="/quiz.html">Quiz Hub</a></li>
-            <li><a href="/downloads.html">Revision Packs</a></li>
-            <li><a href="/quiz.html">Quiz Hub</a></li>
-            <li><a href="/downloads.html">Revision Packs</a></li>
-            <li><a href="/careers.html">Careers</a></li>
+          <li><a href="/quiz.html">Quiz Hub</a></li>
+          <li><a href="/downloads.html">Revision Packs</a></li>
+          <li><a href="/careers.html">Careers</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -2497,6 +2509,9 @@ function filterGlossary(q){ renderGlossary(glossaryFilter); }
 nav('home');
 
 </script>
+
+<script type="module" src="/assets/js/auth.js"></script>
+
 <!-- Adsterra Social Bar -->
 </body>
 </html>

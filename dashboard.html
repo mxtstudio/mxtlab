@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>if(localStorage.getItem('mxt-theme')==='dark')document.documentElement.setAttribute('data-theme','dark');</script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-57V6ZXCDK8"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-57V6ZXCDK8');</script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Your MXT Lab dashboard — track your Agriculture learning progress across all five strands."/>
+  <meta name="robots" content="noindex, follow"/>
+  <meta name="author" content="MXT Lab"/>
+  <link rel="canonical" href="https://mxtlab.online/dashboard.html"/>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png"/>
+  <title>My Dashboard — MXT Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700;800&family=Fraunces:ital,wght@0,300;0,600;1,300&display=swap" onload="this.rel='stylesheet'"/>
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700;800&family=Fraunces:ital,wght@0,300;0,600;1,300&display=swap"/></noscript>
+  <link rel="stylesheet" href="/assets/css/style.css"/>
+  <script src="/assets/js/main.js" defer></script>
+  <style>
+    .dash-wrap{max-width:760px;margin:0 auto;padding:60px 20px 100px}
+    .dash-loading,.dash-signedout{text-align:center;padding:80px 20px}
+    .dash-signedout .google-signin-btn{margin:24px auto 0;max-width:260px}
+    .dash-header{display:flex;align-items:center;gap:16px;margin-bottom:32px}
+    .dash-header img{width:64px;height:64px;border-radius:50%;background:var(--bg2)}
+    .dash-header h1{font-size:1.4rem;margin:0}
+    .dash-header p{margin:2px 0 0;color:var(--muted,#777);font-size:.9rem}
+    .dash-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:32px}
+    .dash-stat{background:var(--bg2);border-radius:14px;padding:18px;text-align:center}
+    .dash-stat .num{font-size:1.8rem;font-weight:700;display:block}
+    .dash-stat .lbl{font-size:.8rem;color:var(--muted,#777)}
+    .dash-badges{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-bottom:32px}
+    .dash-badge{background:var(--bg2);border-radius:12px;padding:14px;text-align:center;font-size:.85rem;opacity:.4}
+    .dash-badge.earned{opacity:1;background:#eaf6e6}
+    .dash-badge .emoji{font-size:1.6rem;display:block;margin-bottom:4px}
+    .dash-signout{margin-top:20px}
+    .dash-section-title{font-size:1rem;font-weight:600;margin:0 0 12px}
+  </style>
+</head>
+<body>
+
+  <div id="grain" aria-hidden="true"></div>
+
+  <nav id="navbar" aria-label="Main navigation">
+    <div class="nav-wrap">
+      <a class="nav-logo" href="/">
+        <svg class="logo-mark" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect id="logo-bg" width="28" height="28" rx="7" fill="#3a7d2c"/>
+          <path d="M14 22c0 0-7-4.5-7-9.5C7 9 10.134 7 14 7s7 2 7 5.5C21 17.5 14 22 14 22z" fill="#fff" opacity=".9"/>
+          <path id="logo-stem" d="M14 22 L14 12" stroke="#3a7d2c" stroke-width="1.5" stroke-linecap="round"/>
+          <path id="logo-leaf1" d="M14 15 Q11 13 10 10" stroke="#3a7d2c" stroke-width="1" stroke-linecap="round"/>
+          <path id="logo-leaf2" d="M14 18 Q17 16 18 13" stroke="#3a7d2c" stroke-width="1" stroke-linecap="round"/>
+        </svg>
+        MXT<span id="lab-text">Lab</span>
+        <span class="nav-badge">Agriculture</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/topics.html">Topics</a></li>
+        <li><a href="/quiz.html">Quiz Hub</a></li>
+        <li><a href="/downloads.html">Revision Packs</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+          <span id="t-icon"></span><span id="t-lbl">Dark</span>
+        </button>
+        <button id="google-signin" class="google-signin-btn">
+          <svg width="16" height="16" viewBox="0 0 18 18"><path fill="#4285F4" d="M17.64 9.2c0-.64-.06-1.25-.16-1.84H9v3.48h4.84a4.14 4.14 0 0 1-1.8 2.72v2.26h2.91c1.7-1.57 2.69-3.88 2.69-6.62z"/><path fill="#34A853" d="M9 18c2.43 0 4.47-.8 5.96-2.18l-2.91-2.26c-.81.54-1.84.86-3.05.86-2.35 0-4.34-1.58-5.05-3.71H.94v2.33A9 9 0 0 0 9 18z"/><path fill="#FBBC05" d="M3.95 10.71A5.4 5.4 0 0 1 3.67 9c0-.59.1-1.17.28-1.71V4.96H.94A9 9 0 0 0 0 9c0 1.45.35 2.83.94 4.04l3.01-2.33z"/><path fill="#EA4335" d="M9 3.58c1.32 0 2.51.46 3.44 1.35l2.58-2.58C13.46.89 11.43 0 9 0A9 9 0 0 0 .94 4.96l3.01 2.33C4.66 5.16 6.65 3.58 9 3.58z"/></svg>
+          Sign in with Google
+        </button>
+        <div id="profile-badge" class="profile-badge">
+          <img id="profile-avatar" alt="">
+          <span id="profile-name"></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <div class="dash-wrap">
+
+      <div id="dash-loading" class="dash-loading">
+        <p>Loading your dashboard…</p>
+      </div>
+
+      <div id="dash-signedout" class="dash-signedout" style="display:none">
+        <h1>Sign in to see your dashboard</h1>
+        <p>Track your lesson progress, streaks, and strand badges once you're signed in.</p>
+        <button id="google-signin-2" class="google-signin-btn btn-full">
+          <svg width="16" height="16" viewBox="0 0 18 18"><path fill="#4285F4" d="M17.64 9.2c0-.64-.06-1.25-.16-1.84H9v3.48h4.84a4.14 4.14 0 0 1-1.8 2.72v2.26h2.91c1.7-1.57 2.69-3.88 2.69-6.62z"/><path fill="#34A853" d="M9 18c2.43 0 4.47-.8 5.96-2.18l-2.91-2.26c-.81.54-1.84.86-3.05.86-2.35 0-4.34-1.58-5.05-3.71H.94v2.33A9 9 0 0 0 9 18z"/><path fill="#FBBC05" d="M3.95 10.71A5.4 5.4 0 0 1 3.67 9c0-.59.1-1.17.28-1.71V4.96H.94A9 9 0 0 0 0 9c0 1.45.35 2.83.94 4.04l3.01-2.33z"/><path fill="#EA4335" d="M9 3.58c1.32 0 2.51.46 3.44 1.35l2.58-2.58C13.46.89 11.43 0 9 0A9 9 0 0 0 .94 4.96l3.01 2.33C4.66 5.16 6.65 3.58 9 3.58z"/></svg>
+          Sign in with Google
+        </button>
+      </div>
+
+      <div id="dash-content" style="display:none">
+        <div class="dash-header">
+          <img id="dash-avatar" alt="">
+          <div>
+            <h1 id="dash-greeting">Welcome back</h1>
+            <p id="dash-role"></p>
+          </div>
+        </div>
+
+        <div class="dash-stats">
+          <div class="dash-stat">
+            <span class="num" id="dash-streak">0</span>
+            <span class="lbl">Day streak</span>
+          </div>
+          <div class="dash-stat">
+            <span class="num" id="dash-longest">0</span>
+            <span class="lbl">Longest streak</span>
+          </div>
+        </div>
+
+        <p class="dash-section-title">Strand Badges</p>
+        <div class="dash-badges" id="dash-badges">
+          <!-- populated by JS -->
+        </div>
+
+        <a href="/topics.html" class="btn-full btn-full-green">Continue Learning →</a>
+        <button id="dash-signout" class="btn-full dash-signout">Sign out</button>
+      </div>
+
+    </div>
+  </main>
+
+  <script type="module" src="/assets/js/auth.js"></script>
+  <script type="module">
+    import { supabase, getCurrentUserProfile, signInWithGoogle, signOut } from '/assets/js/auth.js';
+
+    const STRANDS = [
+      { key: 'Crops', emoji: '🌾' },
+      { key: 'Animals', emoji: '🐄' },
+      { key: 'Aquaculture', emoji: '🐟' },
+      { key: 'Natural Resource Management', emoji: '🌳' },
+      { key: 'Agribusiness', emoji: '💰' },
+    ];
+
+    async function renderDashboard() {
+      const { data: { session } } = await supabase.auth.getSession();
+      document.getElementById('dash-loading').style.display = 'none';
+
+      if (!session) {
+        document.getElementById('dash-signedout').style.display = 'block';
+        document.getElementById('google-signin-2').onclick = signInWithGoogle;
+        return;
+      }
+
+      const profile = await getCurrentUserProfile();
+      const meta = session.user.user_metadata || {};
+      const firstName = (meta.full_name || meta.name || session.user.email || '').split(' ')[0];
+
+      document.getElementById('dash-content').style.display = 'block';
+      document.getElementById('dash-avatar').src = meta.avatar_url || meta.picture || '';
+      document.getElementById('dash-greeting').textContent = `Welcome back, ${firstName}`;
+      document.getElementById('dash-role').textContent = profile?.role
+        ? profile.role.charAt(0).toUpperCase() + profile.role.slice(1)
+        : '';
+      document.getElementById('dash-streak').textContent = profile?.current_streak ?? 0;
+      document.getElementById('dash-longest').textContent = profile?.longest_streak ?? 0;
+
+      // Strand badges
+      const { data: badges } = await supabase
+        .from('strand_badges')
+        .select('strand')
+        .eq('student_id', session.user.id);
+      const earned = new Set((badges || []).map(b => b.strand));
+
+      const badgesEl = document.getElementById('dash-badges');
+      badgesEl.innerHTML = STRANDS.map(s => `
+        <div class="dash-badge ${earned.has(s.key) ? 'earned' : ''}">
+          <span class="emoji">${s.emoji}</span>
+          ${s.key}
+        </div>
+      `).join('');
+
+      document.getElementById('dash-signout').onclick = signOut;
+    }
+
+    renderDashboard();
+  </script>
+
+<!-- Adsterra Social Bar -->
+</body>
+</html>
