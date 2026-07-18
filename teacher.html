@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>if(localStorage.getItem('mxt-theme')==='dark')document.documentElement.setAttribute('data-theme','dark');</script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="MXT Lab Teacher OS — plan, submit, and review Agriculture lesson plans."/>
+  <meta name="robots" content="noindex, follow"/>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+  <title>Lesson Planner — MXT Lab Teacher OS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700;800&display=swap" onload="this.rel='stylesheet'"/>
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700;800&display=swap"/></noscript>
+  <link rel="stylesheet" href="/assets/css/style.css"/>
+  <script src="/assets/js/main.js" defer></script>
+  <style>
+    /* Scoped to this page — reuses the site's existing --tokens, doesn't fight style.css */
+    .tos-wrap{max-width:820px;margin:0 auto;padding:60px 20px 100px}
+    .tos-loading,.tos-signedout,.tos-nodept{text-align:center;padding:80px 20px}
+    .tos-signedout .google-signin-btn{margin:24px auto 0;max-width:260px}
+    .tos-eyebrow{font-family:var(--font-body);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--green)}
+    .tos-h1{font-size:1.6rem;margin:2px 0 24px}
+    .tos-tabs{display:flex;gap:24px;border-bottom:1px solid var(--border);margin-bottom:24px}
+    .tos-tab{font-family:var(--font-body);font-weight:600;font-size:.9rem;background:none;border:none;padding:10px 2px;color:var(--ink3);cursor:pointer;border-bottom:2px solid transparent}
+    .tos-tab.active{color:var(--ink);border-bottom-color:var(--green)}
+    .tos-panel-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;gap:12px;flex-wrap:wrap}
+    .tos-panel-header h2{font-size:1.1rem;margin:0}
+    .tos-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+    .tos-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;box-shadow:var(--shadow-sm)}
+    .tos-card h3{font-size:1rem;margin:0 0 4px}
+    .tos-card-meta{font-size:.82rem;color:var(--ink3);margin:0 0 6px}
+    .tos-card-preview{font-size:.82rem;color:var(--ink2);margin:0 0 8px}
+    .tos-card-notes{font-size:.82rem;color:var(--brown);margin:4px 0 0}
+    .tos-card-side{display:flex;flex-direction:column;align-items:flex-end;gap:8px;min-width:150px}
+    .tos-card-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+    .tos-card-waiting{font-size:.78rem;color:var(--ink3);font-style:italic}
+    .tos-badge{font-family:var(--font-body);font-size:.7rem;letter-spacing:.03em;text-transform:uppercase;padding:4px 10px;border-radius:999px;white-space:nowrap}
+    .tos-badge-draft{background:var(--bg2);color:var(--ink3)}
+    .tos-badge-submitted{background:var(--gold-lt);color:var(--gold)}
+    .tos-badge-approved{background:var(--green-lt);color:var(--green)}
+    .tos-badge-rejected{background:var(--brown-lt);color:var(--brown)}
+    .tos-badge-archived{background:var(--bg2);color:var(--ink3)}
+    .tos-empty{color:var(--ink3);font-size:.9rem;padding:24px 0;text-align:center}
+    .tos-btn{font-family:var(--font-body);font-size:.82rem;font-weight:600;padding:8px 14px;border-radius:8px;border:1px solid transparent;cursor:pointer}
+    .tos-btn-primary{background:var(--green);color:#fff}
+    .tos-btn-ghost{background:none;color:var(--ink);border-color:var(--border)}
+    .tos-btn-danger{background:none;color:var(--brown);border-color:var(--brown-lt)}
+    .tos-form{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px;display:flex;flex-direction:column;gap:14px;box-shadow:var(--shadow-sm)}
+    .tos-form h2{font-size:1.1rem;margin:0}
+    .tos-field{display:flex;flex-direction:column;gap:4px;font-size:.82rem;color:var(--ink2);flex:1}
+    .tos-field-row{display:flex;gap:12px;flex-wrap:wrap}
+    .tos-field-narrow{max-width:100px}
+    .tos-field input,.tos-field select,.tos-field textarea,.tos-notes{font-family:var(--font-body);font-size:.92rem;padding:8px 10px;border:1px solid var(--border);border-radius:6px;background:var(--bg);color:var(--ink)}
+    .tos-notes{width:100%;margin-top:8px;box-sizing:border-box}
+    .tos-form-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:4px}
+    .tos-error{color:var(--brown);font-size:.85rem;background:var(--brown-lt);border-radius:6px;padding:8px 12px;margin:0}
+    @media (max-width:600px){.tos-card{flex-direction:column}.tos-card-side{align-items:flex-start;width:100%}}
+  </style>
+</head>
+<body>
+
+  <div id="grain" aria-hidden="true"></div>
+
+  <nav id="navbar" aria-label="Main navigation">
+    <div class="nav-wrap">
+      <a class="nav-logo" href="/">
+        <svg class="logo-mark" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect id="logo-bg" width="28" height="28" rx="7" fill="#3a7d2c"/>
+          <path d="M14 22c0 0-7-4.5-7-9.5C7 9 10.134 7 14 7s7 2 7 5.5C21 17.5 14 22 14 22z" fill="#fff" opacity=".9"/>
+          <path id="logo-stem" d="M14 22 L14 12" stroke="#3a7d2c" stroke-width="1.5" stroke-linecap="round"/>
+          <path id="logo-leaf1" d="M14 15 Q11 13 10 10" stroke="#3a7d2c" stroke-width="1" stroke-linecap="round"/>
+          <path id="logo-leaf2" d="M14 18 Q17 16 18 13" stroke="#3a7d2c" stroke-width="1" stroke-linecap="round"/>
+        </svg>
+        MXT<span id="lab-text">Lab</span>
+        <span class="nav-badge">Teacher OS</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/topics.html">Topics</a></li>
+        <li><a href="/dashboard.html">My Dashboard</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+          <span id="t-icon"></span><span id="t-lbl">Dark</span>
+        </button>
+        <button id="google-signin" class="google-signin-btn">Sign in with Google</button>
+        <div id="profile-badge" class="profile-badge">
+          <img id="profile-avatar" alt="">
+          <span id="profile-name"></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <div class="tos-wrap">
+
+      <div id="tos-loading" class="tos-loading"><p>Loading your workspace…</p></div>
+
+      <div id="tos-signedout" class="tos-signedout" style="display:none">
+        <h1>Sign in to plan lessons</h1>
+        <p>Teachers and department heads sign in with the same Google account used on MXT Lab.</p>
+        <button id="google-signin-2" class="google-signin-btn btn-full">Sign in with Google</button>
+      </div>
+
+      <div id="tos-nodept" class="tos-nodept" style="display:none">
+        <h1>Not assigned to a department yet</h1>
+        <p>Ask your admin to add you to the Agriculture department before you can create lesson plans.</p>
+      </div>
+
+      <div id="tos-content" style="display:none">
+        <span class="tos-eyebrow" id="tos-dept-name">Agriculture Department</span>
+        <h1 class="tos-h1">Lesson planner</h1>
+
+        <nav class="tos-tabs" id="tos-tabs" style="display:none">
+          <button class="tos-tab active" data-tab="mine">My lesson plans</button>
+          <button class="tos-tab" data-tab="queue">Approval queue</button>
+        </nav>
+
+        <div id="tos-panel-mine"></div>
+        <div id="tos-panel-queue" style="display:none"></div>
+      </div>
+
+    </div>
+  </main>
+
+  <script type="module" src="/assets/js/auth.js"></script>
+  <script type="module">
+    import { supabase, getCurrentUserProfile, signInWithGoogle } from '/assets/js/auth.js';
+
+    const STRANDS = ['CROPS', 'ANIMALS', 'AQUACULTURE', 'NATURAL_RESOURCES', 'AGRIBUSINESS'];
+    const GRADES = ['GRADE_9', 'GRADE_10', 'GRADE_11', 'GRADE_12'];
+    const STATUS_LABELS = { DRAFT: 'Draft', SUBMITTED: 'Pending review', APPROVED: 'Approved', REJECTED: 'Needs changes', ARCHIVED: 'Archived' };
+
+    let profile = null;
+    let department = null;
+    let isHodOrAdmin = false;
+
+    function badge(status) {
+      return `<span class="tos-badge tos-badge-${status.toLowerCase()}">${STATUS_LABELS[status] ?? status}</span>`;
+    }
+
+    function esc(str) {
+      const div = document.createElement('div');
+      div.textContent = str ?? '';
+      return div.innerHTML;
+    }
+
+    // ---------- MY LESSON PLANS ----------
+
+    async function renderMine() {
+      const panel = document.getElementById('tos-panel-mine');
+      panel.innerHTML = `
+        <div class="tos-panel-header">
+          <h2>My lesson plans</h2>
+          <button class="tos-btn tos-btn-primary" id="tos-new-btn">+ New lesson plan</button>
+        </div>
+        <div id="tos-mine-body"><p class="tos-empty">Loading…</p></div>
+      `;
+      document.getElementById('tos-new-btn').onclick = () => renderForm(null);
+
+      const { data, error } = await supabase
+        .from('lesson_plans')
+        .select('*')
+        .eq('teacher_id', profile.id)
+        .order('updated_at', { ascending: false });
+
+      const body = document.getElementById('tos-mine-body');
+      if (error) { body.innerHTML = `<p class="tos-error">${esc(error.message)}</p>`; return; }
+      if (!data.length) { body.innerHTML = `<p class="tos-empty">No lesson plans yet. Start your first one for this term.</p>`; return; }
+
+      body.innerHTML = `<ul class="tos-list">${data.map(plan => `
+        <li class="tos-card" data-id="${plan.id}">
+          <div>
+            <h3>${esc(plan.title)}</h3>
+            <p class="tos-card-meta">${plan.grade_level.replace('_',' ')} · ${(plan.strand||'').replace('_',' ')} · ${plan.duration_minutes} min</p>
+            ${plan.hod_review_notes ? `<p class="tos-card-notes">HOD notes: ${esc(plan.hod_review_notes)}</p>` : ''}
+          </div>
+          <div class="tos-card-side">
+            ${badge(plan.status)}
+            <div class="tos-card-actions">
+              ${(plan.status === 'DRAFT' || plan.status === 'REJECTED') ? `
+                <button class="tos-btn tos-btn-ghost" data-action="edit">Edit</button>
+                <button class="tos-btn tos-btn-primary" data-action="submit">Submit for review</button>
+              ` : plan.status === 'SUBMITTED' ? `<span class="tos-card-waiting">Awaiting HOD review</span>` : ''}
+            </div>
+          </div>
+        </li>
+      `).join('')}</ul>`;
+
+      body.querySelectorAll('.tos-card').forEach(card => {
+        const plan = data.find(p => p.id === card.dataset.id);
+        card.querySelector('[data-action="edit"]')?.addEventListener('click', () => renderForm(plan));
+        card.querySelector('[data-action="submit"]')?.addEventListener('click', async () => {
+          const { error: err } = await supabase.rpc('submit_lesson_plan', { _lesson_plan_id: plan.id });
+          if (err) alert(err.message); else renderMine();
+        });
+      });
+    }
+
+    function renderForm(plan) {
+      const panel = document.getElementById('tos-panel-mine');
+      const p = plan ?? {};
+      panel.innerHTML = `
+        <form class="tos-form" id="tos-plan-form">
+          <h2>${plan ? 'Edit lesson plan' : 'New lesson plan'}</h2>
+          <div id="tos-form-error"></div>
+          <label class="tos-field"><span>Title</span>
+            <input required name="title" value="${esc(p.title)}" placeholder="e.g. Soil Types and Crop Selection"/>
+          </label>
+          <div class="tos-field-row">
+            <label class="tos-field"><span>Grade</span>
+              <select name="grade_level">${GRADES.map(g => `<option value="${g}" ${p.grade_level===g?'selected':''}>${g.replace('_',' ')}</option>`).join('')}</select>
+            </label>
+            <label class="tos-field"><span>Strand</span>
+              <select name="strand">${STRANDS.map(s => `<option value="${s}" ${p.strand===s?'selected':''}>${s.replace('_',' ')}</option>`).join('')}</select>
+            </label>
+            <label class="tos-field tos-field-narrow"><span>Minutes</span>
+              <input type="number" min="10" step="5" name="duration_minutes" value="${p.duration_minutes ?? 40}"/>
+            </label>
+          </div>
+          <label class="tos-field"><span>Topic</span><input name="topic" value="${esc(p.topic)}" placeholder="e.g. Soil & Crops"/></label>
+          <label class="tos-field"><span>Learning objectives (one per line)</span>
+            <textarea required name="learning_objectives" rows="3">${esc((p.learning_objectives||[]).join('\n'))}</textarea>
+          </label>
+          <label class="tos-field"><span>Materials needed (one per line)</span>
+            <textarea name="materials_needed" rows="2">${esc((p.materials_needed||[]).join('\n'))}</textarea>
+          </label>
+          <label class="tos-field"><span>Introduction / hook</span><textarea name="introduction" rows="2">${esc(p.introduction)}</textarea></label>
+          <label class="tos-field"><span>Main content</span><textarea name="main_content" rows="4">${esc(p.main_content)}</textarea></label>
+          <label class="tos-field"><span>Practical activity</span><textarea name="practical_activity" rows="3">${esc(p.practical_activity)}</textarea></label>
+          <label class="tos-field"><span>Conclusion</span><textarea name="conclusion" rows="2">${esc(p.conclusion)}</textarea></label>
+          <label class="tos-field"><span>Homework</span><textarea name="homework" rows="2">${esc(p.homework)}</textarea></label>
+          <div class="tos-form-actions">
+            <button type="button" class="tos-btn tos-btn-ghost" id="tos-cancel-btn">Cancel</button>
+            <button type="submit" class="tos-btn tos-btn-primary" id="tos-save-btn">Save draft</button>
+          </div>
+        </form>
+      `;
+
+      document.getElementById('tos-cancel-btn').onclick = renderMine;
+      document.getElementById('tos-plan-form').onsubmit = async (e) => {
+        e.preventDefault();
+        const fd = new FormData(e.target);
+        const payload = {
+          title: fd.get('title').trim(),
+          grade_level: fd.get('grade_level'),
+          strand: fd.get('strand'),
+          topic: fd.get('topic').trim(),
+          duration_minutes: Number(fd.get('duration_minutes')) || 40,
+          learning_objectives: fd.get('learning_objectives').split('\n').map(s => s.trim()).filter(Boolean),
+          materials_needed: fd.get('materials_needed').split('\n').map(s => s.trim()).filter(Boolean),
+          introduction: fd.get('introduction'),
+          main_content: fd.get('main_content'),
+          practical_activity: fd.get('practical_activity'),
+          conclusion: fd.get('conclusion'),
+          homework: fd.get('homework'),
+        };
+
+        const saveBtn = document.getElementById('tos-save-btn');
+        saveBtn.disabled = true;
+        saveBtn.textContent = 'Saving…';
+
+        const result = plan?.id
+          ? await supabase.from('lesson_plans').update(payload).eq('id', plan.id).select().single()
+          : await supabase.from('lesson_plans').insert({ ...payload, teacher_id: profile.id, department_id: profile.department_id }).select().single();
+
+        if (result.error) {
+          document.getElementById('tos-form-error').innerHTML = `<p class="tos-error">${esc(result.error.message)}</p>`;
+          saveBtn.disabled = false;
+          saveBtn.textContent = 'Save draft';
+          return;
+        }
+        renderMine();
+      };
+    }
+
+    // ---------- APPROVAL QUEUE ----------
+
+    async function renderQueue() {
+      const panel = document.getElementById('tos-panel-queue');
+      panel.innerHTML = `<div class="tos-panel-header"><h2>Approval queue</h2></div><div id="tos-queue-body"><p class="tos-empty">Loading…</p></div>`;
+
+      const { data, error } = await supabase
+        .from('lesson_plans')
+        .select('*, profiles:teacher_id (full_name)')
+        .eq('department_id', profile.department_id)
+        .eq('status', 'SUBMITTED')
+        .order('created_at', { ascending: true });
+
+      const body = document.getElementById('tos-queue-body');
+      if (error) { body.innerHTML = `<p class="tos-error">${esc(error.message)}</p>`; return; }
+      if (!data.length) { body.innerHTML = `<p class="tos-empty">Nothing waiting for review.</p>`; return; }
+
+      body.innerHTML = `<ul class="tos-list">${data.map(plan => `
+        <li class="tos-card" data-id="${plan.id}">
+          <div>
+            <h3>${esc(plan.title)}</h3>
+            <p class="tos-card-meta">${esc(plan.profiles?.full_name || 'Unknown teacher')} · ${plan.grade_level.replace('_',' ')} · ${(plan.strand||'').replace('_',' ')}</p>
+            <p class="tos-card-preview">${esc((plan.main_content||'').slice(0,180)) || 'No content preview.'}</p>
+            <textarea class="tos-notes" rows="2" placeholder="Notes for the teacher (optional)"></textarea>
+          </div>
+          <div class="tos-card-side">
+            ${badge(plan.status)}
+            <div class="tos-card-actions">
+              <button class="tos-btn tos-btn-danger" data-action="reject">Reject</button>
+              <button class="tos-btn tos-btn-primary" data-action="approve">Approve</button>
+            </div>
+          </div>
+        </li>
+      `).join('')}</ul>`;
+
+      body.querySelectorAll('.tos-card').forEach(card => {
+        const id = card.dataset.id;
+        const notesEl = card.querySelector('.tos-notes');
+        async function decide(decision) {
+          const { error: err } = await supabase.rpc('review_lesson_plan', { _lesson_plan_id: id, _decision: decision, _notes: notesEl.value || null });
+          if (err) alert(err.message); else renderQueue();
+        }
+        card.querySelector('[data-action="approve"]').onclick = () => decide('APPROVED');
+        card.querySelector('[data-action="reject"]').onclick = () => decide('REJECTED');
+      });
+    }
+
+    // ---------- BOOTSTRAP ----------
+
+    async function init() {
+      const { data: { session } } = await supabase.auth.getSession();
+      document.getElementById('tos-loading').style.display = 'none';
+
+      if (!session) {
+        document.getElementById('tos-signedout').style.display = 'block';
+        document.getElementById('google-signin-2').onclick = signInWithGoogle;
+        return;
+      }
+
+      profile = await getCurrentUserProfile();
+      if (!profile?.department_id) {
+        document.getElementById('tos-nodept').style.display = 'block';
+        return;
+      }
+
+      const { data: dept } = await supabase.from('departments').select('*').eq('id', profile.department_id).single();
+      department = dept;
+      isHodOrAdmin = profile.role === 'admin' || dept?.head_of_department_id === profile.id;
+
+      document.getElementById('tos-content').style.display = 'block';
+      document.getElementById('tos-dept-name').textContent = dept?.display_name ?? 'Department';
+
+      if (isHodOrAdmin) {
+        document.getElementById('tos-tabs').style.display = 'flex';
+        document.querySelectorAll('.tos-tab').forEach(tab => {
+          tab.onclick = () => {
+            document.querySelectorAll('.tos-tab').forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            const isMine = tab.dataset.tab === 'mine';
+            document.getElementById('tos-panel-mine').style.display = isMine ? 'block' : 'none';
+            document.getElementById('tos-panel-queue').style.display = isMine ? 'none' : 'block';
+            if (!isMine) renderQueue();
+          };
+        });
+      }
+
+      renderMine();
+    }
+
+    init();
+  </script>
+
+</body>
+</html>
