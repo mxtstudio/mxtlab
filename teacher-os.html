@@ -4,7 +4,7 @@
   <script>if(localStorage.getItem('mxt-theme')==='dark')document.documentElement.setAttribute('data-theme','dark');</script>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="MXT Lab Teacher OS — plan, submit, and review Agriculture lesson plans."/>
+  <meta name="description" content="MXT Lab Teacher OS — plan, submit, and review lesson plans across Science department subjects."/>
   <meta name="robots" content="noindex, follow"/>
   <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
   <title>Teacher OS — MXT Lab</title>
@@ -108,22 +108,31 @@
 
       <div id="tos-nodept" class="tos-nodept" style="display:none">
         <h1>Not assigned to a department yet</h1>
-        <p>Ask your admin to add you to the Agriculture department before you can create lesson plans.</p>
+        <p>Ask your admin to add you to the Science department before you can create lesson plans.</p>
+      </div>
+
+      <div id="tos-notstaff" class="tos-nodept" style="display:none">
+        <h1>Teacher OS is for staff accounts</h1>
+        <p>This page is only for teachers and administrators. If you believe this is a mistake, contact your school admin.</p>
       </div>
 
       <div id="tos-content" style="display:none">
-        <span class="tos-eyebrow" id="tos-dept-name">Agriculture Department</span>
+        <span class="tos-eyebrow" id="tos-dept-name">Science Department</span>
         <h1 class="tos-h1">Lesson planner</h1>
 
         <nav class="tos-tabs" id="tos-tabs">
           <button class="tos-tab active" data-tab="mine">My lesson plans</button>
           <button class="tos-tab" data-tab="queue" id="tos-tab-queue" style="display:none">Approval queue</button>
           <button class="tos-tab" data-tab="resources">Resources</button>
+          <button class="tos-tab" data-tab="curriculum">Curriculum</button>
+          <button class="tos-tab" data-tab="admin" id="tos-tab-admin" style="display:none">Admin</button>
         </nav>
 
         <div id="tos-panel-mine"></div>
         <div id="tos-panel-queue" style="display:none"></div>
         <div id="tos-panel-resources" style="display:none"></div>
+        <div id="tos-panel-curriculum" style="display:none"></div>
+        <div id="tos-panel-admin" style="display:none"></div>
       </div>
 
     </div>
@@ -133,6 +142,7 @@
   <script type="module">
     import { supabase, getCurrentUserProfile, signInWithGoogle } from '/assets/js/auth.js';
 
+    const SUBJECTS = ['Agriculture', 'Maths', 'PD', 'Physics', 'Biology', 'Chemistry', 'TIA'];
     const STRANDS = ['CROPS', 'ANIMALS', 'AQUACULTURE', 'NATURAL_RESOURCES', 'AGRIBUSINESS'];
     const GRADES = ['GRADE_9', 'GRADE_10', 'GRADE_11', 'GRADE_12'];
     const STATUS_LABELS = { DRAFT: 'Draft', SUBMITTED: 'Pending review', APPROVED: 'Approved', REJECTED: 'Needs changes', ARCHIVED: 'Archived' };
@@ -177,6 +187,7 @@
       body.innerHTML = `<ul class="tos-list">${data.map(plan => `
         <li class="tos-card" data-id="${plan.id}">
           <div>
+            <span class="tos-resource-type">${esc(plan.subject || 'Subject not set')}</span>
             <h3>${esc(plan.title)}</h3>
             <p class="tos-card-meta">${plan.grade_level.replace('_',' ')} · ${(plan.strand||'').replace('_',' ')} · ${plan.duration_minutes} min</p>
             ${plan.hod_review_notes ? `<p class="tos-card-notes">HOD notes: ${esc(plan.hod_review_notes)}</p>` : ''}
@@ -214,15 +225,24 @@
             <input required name="title" value="${esc(p.title)}" placeholder="e.g. Soil Types and Crop Selection"/>
           </label>
           <div class="tos-field-row">
+            <label class="tos-field"><span>Subject</span>
+              <select name="subject" id="tos-subject-select">${SUBJECTS.map(s => `<option value="${s}" ${(p.subject ?? profile.subjects?.[0])===s?'selected':''}>${s}</option>`).join('')}</select>
+            </label>
             <label class="tos-field"><span>Grade</span>
               <select name="grade_level">${GRADES.map(g => `<option value="${g}" ${p.grade_level===g?'selected':''}>${g.replace('_',' ')}</option>`).join('')}</select>
-            </label>
-            <label class="tos-field"><span>Strand</span>
-              <select name="strand">${STRANDS.map(s => `<option value="${s}" ${p.strand===s?'selected':''}>${s.replace('_',' ')}</option>`).join('')}</select>
             </label>
             <label class="tos-field tos-field-narrow"><span>Minutes</span>
               <input type="number" min="10" step="5" name="duration_minutes" value="${p.duration_minutes ?? 40}"/>
             </label>
+          </div>
+          <label class="tos-field" id="tos-strand-field"><span>Strand (Agriculture only)</span>
+            <select name="strand">${STRANDS.map(s => `<option value="${s}" ${p.strand===s?'selected':''}>${s.replace('_',' ')}</option>`).join('')}</select>
+          </label>
+          <div class="tos-field-row" style="align-items:flex-end">
+            <label class="tos-field"><span>Load from curriculum</span>
+              <select id="tos-curr-topic-select"><option value="">— Select a curriculum topic —</option></select>
+            </label>
+            <button type="button" class="tos-btn tos-btn-ghost" id="tos-curr-fill-btn">Fill in fields</button>
           </div>
           <label class="tos-field"><span>Topic</span><input name="topic" value="${esc(p.topic)}" placeholder="e.g. Soil & Crops"/></label>
           <label class="tos-field"><span>Learning objectives (one per line)</span>
@@ -243,14 +263,51 @@
         </form>
       `;
 
+      const strandField = document.getElementById('tos-strand-field');
+      const subjectSelect = document.getElementById('tos-subject-select');
+      const gradeSelect = panel.querySelector('select[name="grade_level"]');
+      const currTopicSelect = document.getElementById('tos-curr-topic-select');
+      const syncStrandVisibility = () => { strandField.style.display = subjectSelect.value === 'Agriculture' ? 'flex' : 'none'; };
+      subjectSelect.onchange = syncStrandVisibility;
+      syncStrandVisibility();
+
+      let curriculumCache = [];
+      async function loadCurriculumOptions() {
+        const { data } = await supabase
+          .from('curriculum_units')
+          .select('*')
+          .eq('department_id', profile.department_id)
+          .eq('subject', subjectSelect.value)
+          .eq('grade_level', gradeSelect.value)
+          .order('topic');
+        curriculumCache = data || [];
+        currTopicSelect.innerHTML = `<option value="">— Select a curriculum topic —</option>` +
+          curriculumCache.map(u => `<option value="${u.id}">${esc(u.topic)}</option>`).join('');
+      }
+      subjectSelect.onchange = () => { syncStrandVisibility(); loadCurriculumOptions(); };
+      gradeSelect.onchange = loadCurriculumOptions;
+      loadCurriculumOptions();
+
+      document.getElementById('tos-curr-fill-btn').onclick = () => {
+        const unit = curriculumCache.find(u => u.id === currTopicSelect.value);
+        if (!unit) return;
+        panel.querySelector('[name="topic"]').value = unit.topic;
+        if (unit.strand) panel.querySelector('[name="strand"]').value = unit.strand;
+        panel.querySelector('[name="learning_objectives"]').value = unit.learning_outcomes.join('\n');
+        if (unit.suggested_materials?.length) panel.querySelector('[name="materials_needed"]').value = unit.suggested_materials.join('\n');
+        if (unit.suggested_practical_activity) panel.querySelector('[name="practical_activity"]').value = unit.suggested_practical_activity;
+      };
+
       document.getElementById('tos-cancel-btn').onclick = renderMine;
+
       document.getElementById('tos-plan-form').onsubmit = async (e) => {
         e.preventDefault();
         const fd = new FormData(e.target);
         const payload = {
           title: fd.get('title').trim(),
+          subject: fd.get('subject'),
           grade_level: fd.get('grade_level'),
-          strand: fd.get('strand'),
+          strand: fd.get('subject') === 'Agriculture' ? fd.get('strand') : null,
           topic: fd.get('topic').trim(),
           duration_minutes: Number(fd.get('duration_minutes')) || 40,
           learning_objectives: fd.get('learning_objectives').split('\n').map(s => s.trim()).filter(Boolean),
@@ -300,6 +357,7 @@
       body.innerHTML = `<ul class="tos-list">${data.map(plan => `
         <li class="tos-card" data-id="${plan.id}">
           <div>
+            <span class="tos-resource-type">${esc(plan.subject || 'Subject not set')}</span>
             <h3>${esc(plan.title)}</h3>
             <p class="tos-card-meta">${esc(plan.profiles?.full_name || 'Unknown teacher')} · ${plan.grade_level.replace('_',' ')} · ${(plan.strand||'').replace('_',' ')}</p>
             <p class="tos-card-preview">${esc((plan.main_content||'').slice(0,180)) || 'No content preview.'}</p>
@@ -339,6 +397,9 @@
         <form class="tos-form" id="tos-upload-form">
           <div class="tos-upload-row">
             <label class="tos-field"><span>Title</span><input required name="title" placeholder="e.g. Term 2 Crops Worksheet"/></label>
+            <label class="tos-field"><span>Subject</span>
+              <select name="subject">${SUBJECTS.map(s => `<option value="${s}" ${profile.subjects?.[0]===s?'selected':''}>${s}</option>`).join('')}</select>
+            </label>
             <label class="tos-field"><span>Type</span>
               <select name="resource_type">${RESOURCE_TYPES.map(t => `<option value="${t}">${RESOURCE_LABELS[t]}</option>`).join('')}</select>
             </label>
@@ -355,6 +416,7 @@
         const fd = new FormData(e.target);
         const file = fd.get('file');
         const title = fd.get('title').trim();
+        const subject = fd.get('subject');
         const resourceType = fd.get('resource_type');
         if (!file || !file.name) return;
 
@@ -375,6 +437,7 @@
           department_id: profile.department_id,
           created_by: profile.id,
           title,
+          subject,
           resource_type: resourceType,
           file_url: path,
         });
@@ -402,7 +465,7 @@
       body.innerHTML = `<ul class="tos-list">${data.map(r => `
         <li class="tos-card" data-id="${r.id}" data-path="${esc(r.file_url)}">
           <div>
-            <span class="tos-resource-type">${RESOURCE_LABELS[r.resource_type] ?? r.resource_type}</span>
+            <span class="tos-resource-type">${esc(r.subject || 'General')} · ${RESOURCE_LABELS[r.resource_type] ?? r.resource_type}</span>
             <h3>${esc(r.title)}</h3>
             <p class="tos-card-meta">Shared by ${esc(r.profiles?.full_name || 'Unknown')} · ${r.download_count} download${r.download_count === 1 ? '' : 's'}</p>
           </div>
@@ -425,6 +488,210 @@
       });
     }
 
+    // ---------- CURRICULUM INTELLIGENCE ----------
+
+    async function renderCurriculum() {
+      const panel = document.getElementById('tos-panel-curriculum');
+      panel.innerHTML = `
+        <div class="tos-panel-header"><h2>Curriculum library</h2></div>
+        <form class="tos-form" id="tos-curriculum-form">
+          <h2>Add curriculum unit</h2>
+          <div id="tos-curriculum-error"></div>
+          <div class="tos-field-row">
+            <label class="tos-field"><span>Subject</span>
+              <select name="subject">${SUBJECTS.map(s => `<option value="${s}">${s}</option>`).join('')}</select>
+            </label>
+            <label class="tos-field"><span>Grade</span>
+              <select name="grade_level">${GRADES.map(g => `<option value="${g}">${g.replace('_',' ')}</option>`).join('')}</select>
+            </label>
+            <label class="tos-field" id="tos-curr-strand-field"><span>Strand (Agriculture only)</span>
+              <select name="strand">${STRANDS.map(s => `<option value="${s}">${s.replace('_',' ')}</option>`).join('')}</select>
+            </label>
+          </div>
+          <label class="tos-field"><span>Topic</span><input required name="topic" placeholder="e.g. Soil Types and Crop Selection"/></label>
+          <label class="tos-field"><span>Unit title</span><input name="unit_title" placeholder="e.g. Unit 3: Soil Science"/></label>
+          <label class="tos-field"><span>Learning outcomes (one per line)</span><textarea name="learning_outcomes" rows="3"></textarea></label>
+          <label class="tos-field"><span>KSVAs (one per line)</span><textarea name="ksvas" rows="2" placeholder="Knowledge, Skills, Values, Attitudes"></textarea></label>
+          <label class="tos-field"><span>Suggested materials (one per line)</span><textarea name="suggested_materials" rows="2"></textarea></label>
+          <label class="tos-field"><span>Suggested practical activity</span><textarea name="suggested_practical_activity" rows="2"></textarea></label>
+          <div class="tos-form-actions">
+            <button type="submit" class="tos-btn tos-btn-primary" id="tos-curr-save-btn">Add to library</button>
+          </div>
+        </form>
+        <div id="tos-curriculum-body" style="margin-top:16px"><p class="tos-empty">Loading…</p></div>
+      `;
+
+      const currStrandField = document.getElementById('tos-curr-strand-field');
+      const currSubjectSelect = panel.querySelector('select[name="subject"]');
+      const syncCurrStrand = () => { currStrandField.style.display = currSubjectSelect.value === 'Agriculture' ? 'flex' : 'none'; };
+      currSubjectSelect.onchange = syncCurrStrand;
+      syncCurrStrand();
+
+      document.getElementById('tos-curriculum-form').onsubmit = async (e) => {
+        e.preventDefault();
+        const fd = new FormData(e.target);
+        const subject = fd.get('subject');
+        const payload = {
+          department_id: profile.department_id,
+          created_by: profile.id,
+          subject,
+          grade_level: fd.get('grade_level'),
+          strand: subject === 'Agriculture' ? fd.get('strand') : null,
+          topic: fd.get('topic').trim(),
+          unit_title: fd.get('unit_title').trim() || null,
+          learning_outcomes: fd.get('learning_outcomes').split('\n').map(s => s.trim()).filter(Boolean),
+          ksvas: fd.get('ksvas').split('\n').map(s => s.trim()).filter(Boolean),
+          suggested_materials: fd.get('suggested_materials').split('\n').map(s => s.trim()).filter(Boolean),
+          suggested_practical_activity: fd.get('suggested_practical_activity').trim() || null,
+        };
+
+        const btn = document.getElementById('tos-curr-save-btn');
+        btn.disabled = true;
+        btn.textContent = 'Saving…';
+
+        const { error } = await supabase.from('curriculum_units').insert(payload);
+        if (error) {
+          document.getElementById('tos-curriculum-error').innerHTML = `<p class="tos-error">${esc(error.message)}</p>`;
+          btn.disabled = false;
+          btn.textContent = 'Add to library';
+          return;
+        }
+        renderCurriculum();
+      };
+
+      const { data, error } = await supabase
+        .from('curriculum_units')
+        .select('*')
+        .eq('department_id', profile.department_id)
+        .order('subject', { ascending: true })
+        .order('grade_level', { ascending: true });
+
+      const body = document.getElementById('tos-curriculum-body');
+      if (error) { body.innerHTML = `<p class="tos-error">${esc(error.message)}</p>`; return; }
+      if (!data.length) { body.innerHTML = `<p class="tos-empty">No curriculum units added yet.</p>`; return; }
+
+      body.innerHTML = `<ul class="tos-list">${data.map(u => `
+        <li class="tos-card" data-id="${u.id}">
+          <div>
+            <span class="tos-resource-type">${esc(u.subject)} · ${u.grade_level.replace('_',' ')}${u.strand ? ' · ' + u.strand.replace('_',' ') : ''}</span>
+            <h3>${esc(u.topic)}</h3>
+            ${u.unit_title ? `<p class="tos-card-meta">${esc(u.unit_title)}</p>` : ''}
+            ${u.learning_outcomes?.length ? `<p class="tos-card-meta">${u.learning_outcomes.length} learning outcome${u.learning_outcomes.length===1?'':'s'}</p>` : ''}
+          </div>
+        </li>
+      `).join('')}</ul>`;
+    }
+
+    // ---------- ADMIN (HOD/admin only) ----------
+
+    async function renderAdmin() {
+      const panel = document.getElementById('tos-panel-admin');
+      panel.innerHTML = `
+        <div class="tos-panel-header"><h2>Department members</h2></div>
+        <div id="tos-members-body"><p class="tos-empty">Loading…</p></div>
+        <form class="tos-form" id="tos-assign-form" style="margin-top:20px">
+          <h2>Assign a teacher</h2>
+          <p class="tos-card-meta">Only shows accounts that have signed in at least once but aren't assigned to a department yet.</p>
+          <div id="tos-assign-error"></div>
+          <div class="tos-field-row">
+            <label class="tos-field"><span>Candidate</span>
+              <select name="profile_id" id="tos-candidate-select"><option value="">Loading…</option></select>
+            </label>
+            <label class="tos-field"><span>Department role</span>
+              <select name="dept_role">
+                <option value="teacher">Teacher</option>
+                <option value="hod">HOD</option>
+              </select>
+            </label>
+          </div>
+          <label class="tos-field"><span>Subjects they teach</span>
+            <select name="subjects" multiple size="7">${SUBJECTS.map(s => `<option value="${s}">${s}</option>`).join('')}</select>
+          </label>
+          <div class="tos-form-actions">
+            <button type="submit" class="tos-btn tos-btn-primary" id="tos-assign-btn">Assign to department</button>
+          </div>
+        </form>
+      `;
+
+      // Current members
+      const { data: members, error: memErr } = await supabase
+        .from('department_roles')
+        .select('role, profiles:profile_id (id, full_name, subjects)')
+        .eq('department_id', profile.department_id);
+
+      const membersBody = document.getElementById('tos-members-body');
+      if (memErr) { membersBody.innerHTML = `<p class="tos-error">${esc(memErr.message)}</p>`; }
+      else if (!members.length) { membersBody.innerHTML = `<p class="tos-empty">No members yet.</p>`; }
+      else {
+        membersBody.innerHTML = `<ul class="tos-list">${members.map(m => `
+          <li class="tos-card" data-id="${m.profiles.id}">
+            <div>
+              <span class="tos-resource-type">${m.role === 'hod' ? 'HOD' : 'Teacher'}</span>
+              <h3>${esc(m.profiles.full_name || 'Unnamed')}</h3>
+              <p class="tos-card-meta">${(m.profiles.subjects || []).join(', ') || 'No subjects set'}</p>
+            </div>
+            <div class="tos-card-side">
+              <button class="tos-btn tos-btn-ghost" data-action="remove">Remove from department</button>
+            </div>
+          </li>
+        `).join('')}</ul>`;
+
+        membersBody.querySelectorAll('[data-action="remove"]').forEach(btn => {
+          btn.onclick = async () => {
+            const id = btn.closest('.tos-card').dataset.id;
+            if (!confirm('Remove this person from the department?')) return;
+            const { error } = await supabase.rpc('remove_department_member', { _profile_id: id, _department_id: profile.department_id });
+            if (error) alert(error.message); else renderAdmin();
+          };
+        });
+      }
+
+      // Candidates: signed-in accounts not yet assigned (default role='student')
+      const { data: candidates, error: candErr } = await supabase
+        .from('profiles')
+        .select('id, full_name')
+        .eq('role', 'student')
+        .is('department_id', null)
+        .order('full_name');
+
+      const select = document.getElementById('tos-candidate-select');
+      if (candErr) {
+        select.innerHTML = `<option value="">Error loading candidates</option>`;
+      } else if (!candidates.length) {
+        select.innerHTML = `<option value="">No unassigned accounts found</option>`;
+      } else {
+        select.innerHTML = `<option value="">— Select —</option>` +
+          candidates.map(c => `<option value="${c.id}">${esc(c.full_name || c.id)}</option>`).join('');
+      }
+
+      document.getElementById('tos-assign-form').onsubmit = async (e) => {
+        e.preventDefault();
+        const fd = new FormData(e.target);
+        const profileId = fd.get('profile_id');
+        if (!profileId) return;
+        const subjects = Array.from(e.target.querySelector('[name="subjects"]').selectedOptions).map(o => o.value);
+
+        const btn = document.getElementById('tos-assign-btn');
+        btn.disabled = true;
+        btn.textContent = 'Assigning…';
+
+        const { error } = await supabase.rpc('assign_department_member', {
+          _profile_id: profileId,
+          _department_id: profile.department_id,
+          _dept_role: fd.get('dept_role'),
+          _subjects: subjects,
+        });
+
+        if (error) {
+          document.getElementById('tos-assign-error').innerHTML = `<p class="tos-error">${esc(error.message)}</p>`;
+          btn.disabled = false;
+          btn.textContent = 'Assign to department';
+          return;
+        }
+        renderAdmin();
+      };
+    }
+
     // ---------- BOOTSTRAP ----------
 
     async function init() {
@@ -438,6 +705,10 @@
       }
 
       profile = await getCurrentUserProfile();
+      if (!profile || !['teacher','admin'].includes(profile.role)) {
+        document.getElementById('tos-notstaff').style.display = 'block';
+        return;
+      }
       if (!profile?.department_id) {
         document.getElementById('tos-nodept').style.display = 'block';
         return;
@@ -463,10 +734,11 @@
 
       if (isHodOrAdmin) {
         document.getElementById('tos-tab-queue').style.display = 'inline-block';
+        document.getElementById('tos-tab-admin').style.display = 'inline-block';
       }
 
-      const panels = { mine: 'tos-panel-mine', queue: 'tos-panel-queue', resources: 'tos-panel-resources' };
-      const renderers = { mine: renderMine, queue: renderQueue, resources: renderResources };
+      const panels = { mine: 'tos-panel-mine', queue: 'tos-panel-queue', resources: 'tos-panel-resources', curriculum: 'tos-panel-curriculum', admin: 'tos-panel-admin' };
+      const renderers = { mine: renderMine, queue: renderQueue, resources: renderResources, curriculum: renderCurriculum, admin: renderAdmin };
 
       document.querySelectorAll('.tos-tab').forEach(tab => {
         tab.onclick = () => {
