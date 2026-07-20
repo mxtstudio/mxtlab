@@ -522,47 +522,5 @@ atOptions = {'key':'c1bf93f1cb38ab7f074868bbee66420b','format':'iframe','height'
 })();
 </script>
 
-<script>
-(function(){
-  function standaloneQuiz(){
-    var section = document.getElementById('quiz-section');
-    if(!section) return;
-    var qs = section.querySelectorAll('.quiz-q[data-ans]');
-    if(!qs.length) return;
-    var submitBtn = document.getElementById('quiz-submit-btn');
-    var resultEl  = document.getElementById('quiz-result');
-    if(!submitBtn || !resultEl) return;
-    if(submitBtn.dataset.bound) return;
-    submitBtn.dataset.bound = '1';
-    submitBtn.style.display = 'block';
-    submitBtn.addEventListener('click', function(){
-      var total = qs.length, correct = 0, unanswered = 0;
-      qs.forEach(function(qDiv){
-        var ans = parseInt(qDiv.dataset.ans, 10);
-        var opts = qDiv.querySelectorAll('.qopt');
-        var selected = qDiv.querySelector('input[type=radio]:checked');
-        if(!selected){ unanswered++; return; }
-        var chosen = parseInt(selected.value, 10);
-        opts.forEach(function(opt, oi){
-          opt.classList.remove('correct','wrong','revealed');
-          opt.classList.add('revealed');
-          if(oi === ans) opt.classList.add('correct');
-          else if(oi === chosen && chosen !== ans) opt.classList.add('wrong');
-        });
-        if(chosen === ans) correct++;
-      });
-      if(unanswered > 0){ alert('Please answer all questions before submitting.'); return; }
-      var pass = correct >= Math.ceil(total * 0.6);
-      resultEl.style.display = 'block';
-      resultEl.className = 'quiz-result ' + (pass ? 'pass' : 'fail');
-      resultEl.textContent = (pass ? '✅' : '❌') + ' ' + correct + '/' + total + ' correct — ' + (pass ? 'Well done!' : 'Review the lesson and try again.');
-      submitBtn.style.display = 'none';
-    });
-  }
-  if(document.readyState === 'loading'){
-    document.addEventListener('DOMContentLoaded', standaloneQuiz);
-  } else { standaloneQuiz(); }
-})();
-</script>
 </body>
 </html>
