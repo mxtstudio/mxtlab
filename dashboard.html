@@ -39,6 +39,12 @@
     .dash-badge .emoji{font-size:1.6rem;display:block;margin-bottom:4px}
     .dash-signout{margin-top:20px}
     .dash-section-title{font-size:1rem;font-weight:600;margin:0 0 12px}
+    .school-claim-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;align-items:center;justify-content:center;z-index:1000;padding:20px}
+    .school-claim-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px 24px;max-width:360px;width:100%}
+    .school-claim-card h2{font-size:1.15rem;margin:0 0 6px}
+    .school-claim-card p{color:var(--ink3);font-size:.88rem;margin:0 0 18px}
+    .school-claim-card select{width:100%;padding:11px 12px;border-radius:var(--radius-sm);border:1px solid var(--border);background:var(--bg2);color:var(--ink);font-size:.9rem;margin-bottom:14px}
+    .school-claim-error{color:#c0392b;font-size:.82rem;margin:8px 0 0;display:none}
   </style>
 </head>
 <body>
@@ -78,6 +84,18 @@
       </div>
     </div>
   </nav>
+
+  <div id="school-claim-overlay" class="school-claim-overlay">
+    <div class="school-claim-card">
+      <h2>Which school are you at?</h2>
+      <p>Pick your school to unlock your lessons and progress.</p>
+      <select id="school-claim-select">
+        <option value="" disabled selected>Select your school…</option>
+      </select>
+      <button id="school-claim-submit" class="btn-full btn-full-green">Continue</button>
+      <p id="school-claim-error" class="school-claim-error"></p>
+    </div>
+  </div>
 
   <main id="main">
     <div class="dash-wrap">
@@ -153,6 +171,14 @@
       const meta = session.user.user_metadata || {};
       const firstName = (meta.full_name || meta.name || session.user.email || '').split(' ')[0];
 
+      // First-time users land on the "Platform" fallback school until they
+      // claim a real one. Block the rest of the dashboard behind that choice.
+      const PLATFORM_SCHOOL_ID = '00000000-0000-0000-0000-000000000001';
+      if (profile?.school_id === PLATFORM_SCHOOL_ID && profile?.role === 'student') {
+        await showSchoolClaim();
+        return;
+      }
+
       document.getElementById('dash-content').style.display = 'block';
       document.getElementById('dash-avatar').src = meta.avatar_url || meta.picture || '';
       document.getElementById('dash-greeting').textContent = `Welcome back, ${firstName}`;
@@ -178,6 +204,49 @@
       `).join('');
 
       document.getElementById('dash-signout').onclick = signOut;
+    }
+
+    async function showSchoolClaim() {
+      document.getElementById('dash-loading').style.display = 'none';
+      const PLATFORM_SCHOOL_ID = '00000000-0000-0000-0000-000000000001';
+
+      const { data: schools } = await supabase
+        .from('schools')
+        .select('id, name')
+        .neq('id', PLATFORM_SCHOOL_ID)
+        .order('name');
+
+      const select = document.getElementById('school-claim-select');
+      (schools || []).forEach((s) => {
+        const opt = document.createElement('option');
+        opt.value = s.id;
+        opt.textContent = s.name;
+        select.appendChild(opt);
+      });
+
+      document.getElementById('school-claim-overlay').style.display = 'flex';
+
+      document.getElementById('school-claim-submit').onclick = async () => {
+        const errorEl = document.getElementById('school-claim-error');
+        errorEl.style.display = 'none';
+
+        if (!select.value) {
+          errorEl.textContent = 'Please select a school.';
+          errorEl.style.display = 'block';
+          return;
+        }
+
+        const { error } = await supabase.rpc('claim_school', { p_school_id: select.value });
+
+        if (error) {
+          errorEl.textContent = error.message;
+          errorEl.style.display = 'block';
+          return;
+        }
+
+        document.getElementById('school-claim-overlay').style.display = 'none';
+        renderDashboard();
+      };
     }
 
     renderDashboard();
