@@ -54,6 +54,9 @@ export async function getCurrentUserProfile() {
  * Updates the nav UI to reflect signed-in / signed-out state.
  * Swaps the "Sign in with Google" button for an avatar + name badge,
  * on both desktop nav and mobile drawer. Click the badge to sign out.
+ * Also drives the mobile drawer's Dashboard link and Sign out button,
+ * where present. Every element lookup is guarded with `if(el)` since
+ * not every page has every element.
  */
 function renderAuthUI(session) {
   const pairs = [
@@ -82,7 +85,21 @@ function renderAuthUI(session) {
       signInBtn.style.display = '';
       badgeEl.style.display = 'none';
     }
+
+    // Reveal now that we know which state applies -- prevents the
+    // sign-in button flashing before the session check resolves.
+    signInBtn.classList.add('auth-ready');
+    badgeEl.classList.add('auth-ready');
   });
+
+  // Mobile drawer extras: Dashboard link and Sign out button.
+  const dashLink = document.getElementById('mob-dashboard-link');
+  const signOutBtn = document.getElementById('mob-signout');
+  if (dashLink) dashLink.style.display = session ? 'block' : 'none';
+  if (signOutBtn) {
+    signOutBtn.style.display = session ? 'block' : 'none';
+    signOutBtn.onclick = signOut;
+  }
 }
 
 // Run once on page load to reflect any existing session.
