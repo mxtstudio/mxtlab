@@ -5748,7 +5748,31 @@ function filterGrade(g){
   document.querySelectorAll('.grade-tab').forEach(t=>t.classList.toggle('active',+t.dataset.grade===g));
   renderModules(g);
   renderProgressBar(g);
+  // Keep the URL in sync so the current grade is shareable/bookmarkable,
+  // without adding a history entry for every tab click.
+  try{
+    const url = new URL(window.location.href);
+    url.searchParams.set('grade', g);
+    window.history.replaceState({}, '', url);
+  }catch(e){}
 }
+
+// On any page with a #modules-content element (i.e. topics.html), render
+// the right grade on load -- reading ?grade= from the URL when present,
+// since every "Grade X" link across the site points to
+// /topics.html?grade=X and nothing was previously reading that param.
+// Falls back to grade 9 (matching the default active tab) otherwise.
+(function initModulesFromURL(){
+  function run(){
+    if(!document.getElementById('modules-content')) return;
+    const params = new URLSearchParams(window.location.search);
+    const requested = parseInt(params.get('grade'), 10);
+    const grade = [9,10,11,12].includes(requested) ? requested : 9;
+    filterGrade(grade);
+  }
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
+  else run();
+})();
 
 function renderModules(grade){
   const strands = grade===9 ? STRANDS_9 : grade===10 ? STRANDS_10 : grade===11 ? STRANDS_11 : STRANDS_12;
