@@ -21,7 +21,7 @@ const LESSONS = {
     <h2>What is Soil?</h2>
     <p>Soil is the thin layer of material covering the earth's surface that supports plant life. All soils are different because of where and how they formed. Basically, soil is formed by the weathering or breakdown of rock on the upper layers of the solid earth — and this very rock is called the <strong>parent material</strong>.</p>
     <figure class="lesson-figure">
-      <img src="Images/Crops.png" alt="Soil profile showing different layers from topsoil to bedrock" loading="lazy"/>
+      <img src="Image/crops.webp" alt="Soil profile showing different layers from topsoil to bedrock" loading="lazy"/>
       <figcaption>A typical soil profile showing the distinct layers (horizons) from topsoil down to bedrock.</figcaption>
     </figure>
     <div class="fact-grid">
@@ -441,7 +441,7 @@ const LESSONS = {
   <div class="lesson-section">
     <h2>Monogastric Animals</h2>
     <figure class="lesson-figure">
-      <img src="Images/Animals.png" alt="Farm animals raised in Papua New Guinea" loading="lazy"/>
+      <img src="Image/animals.webp" alt="Farm animals raised in Papua New Guinea" loading="lazy"/>
       <figcaption>Common farm animals raised in Papua New Guinea, including pigs, cattle, and poultry.</figcaption>
     </figure>
     <p>A <strong>monogastric animal</strong> has a simple, single-chambered stomach. Their digestive system is similar to humans — food passes through the stomach once, enzymes break it down, and nutrients are absorbed.</p>
@@ -521,7 +521,7 @@ const LESSONS = {
     <p><strong>Aquaculture</strong> is the controlled farming of aquatic organisms — fish, shellfish, crustaceans, and aquatic plants — in freshwater, brackish water, or saltwater environments. It is sometimes described as "the underwater equivalent of agriculture."</p>
     <p>Unlike capture fishery (where fish are caught from the wild), aquaculture involves deliberately stocking, feeding, and managing aquatic species to increase production.</p>
     <figure class="lesson-figure">
-      <img src="Images/Aquaculture.png" alt="Fish farming pond used in freshwater aquaculture" loading="lazy"/>
+      <img src="Image/aquaculture.webp" alt="Fish farming pond used in freshwater aquaculture" loading="lazy"/>
       <figcaption>A freshwater fish farming pond — one of the most common forms of aquaculture practised in Papua New Guinea and across the Pacific.</figcaption>
     </figure>
     <h3>Brief History of Aquaculture</h3>
@@ -608,7 +608,7 @@ const LESSONS = {
     <h2>Types of Forests</h2>
     <p>Papua New Guinea has some of the world\'s most biodiverse tropical forests — covering approximately 70% of the country\'s land area. Different forest types exist based on altitude, rainfall, and soil conditions.</p>
     <figure class="lesson-figure">
-      <img src="Images/Nrm.png" alt="Tropical rainforest canopy similar to Papua New Guinea forests" loading="lazy"/>
+      <img src="Image/nrm.webp" alt="Tropical rainforest canopy similar to Papua New Guinea forests" loading="lazy"/>
       <figcaption>Tropical rainforest — the dominant forest type in Papua New Guinea, covering vast areas of lowland and highland terrain.</figcaption>
     </figure>
     <h3>Lowland Tropical Rainforest</h3>
@@ -687,7 +687,7 @@ const LESSONS = {
   <div class="lesson-section">
     <h2>What is Agribusiness?</h2>
     <figure class="lesson-figure">
-      <img src="Images/Agribusiness.png" alt="Agribusiness activities from farm to market in Papua New Guinea" loading="lazy"/>
+      <img src="Image/AgriBusiness.webp" alt="Agribusiness activities from farm to market in Papua New Guinea" loading="lazy"/>
       <figcaption>Agribusiness covers the full chain from farm production to processing, distribution, and sale of agricultural products.</figcaption>
     </figure>
     <p><strong>Agribusiness</strong> refers to all the economic activities related to agriculture — from producing food to processing it, packaging it, transporting it, and selling it to consumers. It covers the entire chain from "farm to fork."</p>

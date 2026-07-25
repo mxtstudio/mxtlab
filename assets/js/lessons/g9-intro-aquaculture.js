@@ -16,7 +16,7 @@ window.LESSONS['g9-intro-aquaculture'] = {
     <p><strong>Aquaculture</strong> is the controlled farming of aquatic organisms — fish, shellfish, crustaceans, and aquatic plants — in freshwater, brackish water, or saltwater environments. It is sometimes described as "the underwater equivalent of agriculture."</p>
     <p>Unlike capture fishery (where fish are caught from the wild), aquaculture involves deliberately stocking, feeding, and managing aquatic species to increase production.</p>
     <figure class="lesson-figure">
-      <img src="Images/Aquaculture.png" alt="Fish farming pond used in freshwater aquaculture" loading="lazy"/>
+      <img src="Image/aquaculture.webp" alt="Fish farming pond used in freshwater aquaculture" loading="lazy"/>
       <figcaption>A freshwater fish farming pond — one of the most common forms of aquaculture practised in Papua New Guinea and across the Pacific.</figcaption>
     </figure>
     <h3>Brief History of Aquaculture</h3>

@@ -14,7 +14,7 @@ window.LESSONS['g9-monogastric-polygastric'] = {
   <div class="lesson-section">
     <h2>Monogastric Animals</h2>
     <figure class="lesson-figure">
-      <img src="Images/Animals.png" alt="Farm animals raised in Papua New Guinea" loading="lazy"/>
+      <img src="Image/animals.webp" alt="Farm animals raised in Papua New Guinea" loading="lazy"/>
       <figcaption>Common farm animals raised in Papua New Guinea, including pigs, cattle, and poultry.</figcaption>
     </figure>
     <p>A <strong>monogastric animal</strong> has a simple, single-chambered stomach. Their digestive system is similar to humans — food passes through the stomach once, enzymes break it down, and nutrients are absorbed.</p>

@@ -15,7 +15,7 @@ window.LESSONS['g9-soil-formation'] = {
     <h2>What is Soil?</h2>
     <p>Soil is the thin layer of material covering the earth's surface that supports plant life. All soils are different because of where and how they formed. Basically, soil is formed by the weathering or breakdown of rock on the upper layers of the solid earth — and this very rock is called the <strong>parent material</strong>.</p>
     <figure class="lesson-figure">
-      <img src="Images/Crops.png" alt="Soil profile showing different layers from topsoil to bedrock" loading="lazy"/>
+      <img src="Image/crops.webp" alt="Soil profile showing different layers from topsoil to bedrock" loading="lazy"/>
       <figcaption>A typical soil profile showing the distinct layers (horizons) from topsoil down to bedrock.</figcaption>
     </figure>
     <div class="fact-grid">
