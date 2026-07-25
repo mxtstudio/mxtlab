@@ -5659,7 +5659,7 @@ function submitQuiz(){
   }
 
   const qEls = document.querySelectorAll('#quiz-section .quiz-q');
-  let answered = 0, score = 0;
+  let answered = 0, score = 0, missed = [];
 
   qEls.forEach((qEl, i) => {
     const correctIdx = lesson.quiz[i] ? lesson.quiz[i].ans : -1;
@@ -5667,7 +5667,7 @@ function submitQuiz(){
     const checked = qEl.querySelector('input[type="radio"]:checked');
     const selectedIdx = checked ? parseInt(checked.value, 10) : -1;
     if(checked) answered++;
-    if(selectedIdx === correctIdx) score++;
+    if(selectedIdx === correctIdx){ score++; } else { missed.push(i+1); }
 
     opts.forEach((opt, idx) => {
       opt.classList.add('revealed');
@@ -5682,6 +5682,7 @@ function submitQuiz(){
   if(resultEl){
     let msg = `You scored ${score} / ${total} (${pct}%).`;
     if(answered < total) msg = `You answered ${answered} of ${total} questions. ` + msg;
+    if(pct >= 70) markComplete(slug);
     if(pct === 100) msg += ' Perfect score!';
     else if(pct >= 70) msg += ' Good job!';
     else msg += ' Review the lesson and try again.';
@@ -5689,6 +5690,21 @@ function submitQuiz(){
     resultEl.classList.remove('pass','fail');
     resultEl.classList.add(pct >= 70 ? 'pass' : 'fail');
     resultEl.style.display = 'block';
+
+    const feedbackEl = document.getElementById('quiz-feedback');
+    if(feedbackEl){
+      if(pct === 100){
+        feedbackEl.innerHTML = '🎉 Perfect! You got every question right.';
+        feedbackEl.className = 'quiz-feedback pass';
+      } else if(missed.length > 0){
+        feedbackEl.innerHTML = '<strong>Review needed:</strong> Question' +
+          (missed.length > 1 ? 's ' : ' ') +
+          missed.map(n => '<span class="missed-q">Q'+n+'</span>').join(', ') +
+          ' — re-read those sections before trying again.';
+        feedbackEl.className = 'quiz-feedback fail';
+      }
+      feedbackEl.style.display = 'block';
+    }
   }
 
   const btn = document.getElementById('quiz-submit-btn');
@@ -5705,6 +5721,8 @@ function resetQuiz(){
   document.querySelectorAll('#quiz-section .qopt').forEach(o => o.classList.remove('correct','wrong','revealed'));
   const resultEl = document.getElementById('quiz-result');
   if(resultEl){ resultEl.style.display = 'none'; resultEl.classList.remove('pass','fail'); }
+  const feedbackEl = document.getElementById('quiz-feedback');
+  if(feedbackEl){ feedbackEl.style.display = 'none'; feedbackEl.className = 'quiz-feedback'; }
   const btn = document.getElementById('quiz-submit-btn');
   if(btn){ btn.textContent = 'Check Answers'; btn.onclick = submitQuiz; }
   quizSubmitted = false;
@@ -5789,7 +5807,7 @@ function renderModules(grade){
       </div>
       <div class="topics-grid">
         ${s.topics.map(t=>`
-          <article class="topic-card" ${t.id?`onclick="window.location='/lessons/'+t.id+'.html'"`:''}>
+          <article class="topic-card" ${t.id?`onclick="window.location='/lessons/${t.id}.html'"`:''}>
             <div class="tc-thumb" style="background:${t.bg}">
               ${t.icon}
               <span class="tc-status available">Available</span>
@@ -5886,7 +5904,7 @@ function renderBlogPreview(){
   const g = document.getElementById('blog-preview');
   if(!g) return;
   g.innerHTML = POSTS.slice(0,3).map(p=>`
-    <article class="topic-card" style="cursor:pointer" onclick="window.location='/lessons/'+p.id+'.html'">
+    <article class="topic-card" style="cursor:pointer" onclick="window.location='/lessons/${p.id}.html'">
       <div class="tc-thumb" style="background:${p.bg}">${p.icon}</div>
       <div class="tc-body">
         <div class="blog-meta"><span class="chip">${p.cat}</span><span style="font-size:.7rem;color:var(--ink3)">${p.read} read</span></div>
@@ -5902,7 +5920,7 @@ function renderBlogFull(){
   const g = document.getElementById('blog-main');
   if(!g) return;
   g.innerHTML = POSTS.map(p=>`
-    <article class="blc" style="cursor:pointer" onclick="window.location='/lessons/'+p.id+'.html'">
+    <article class="blc" style="cursor:pointer" onclick="window.location='/lessons/${p.id}.html'">
       <div class="blc-thumb" style="background:${p.bg}">${p.icon}</div>
       <div class="blc-body">
         <div class="blog-meta"><span class="chip">${p.cat}</span><span style="font-size:.7rem;color:var(--ink3)">${p.date}</span><span style="font-size:.7rem;color:var(--ink3)">${p.read} read</span></div>
@@ -5942,7 +5960,7 @@ document.getElementById('search-input').addEventListener('input', function(){
   const el = document.getElementById('s-results');
   if(!results.length){ el.innerHTML='<div style="padding:14px 16px;font-size:.84rem;color:var(--ink3)">No results found.</div>'; return; }
   el.innerHTML = results.map(r=>`
-    <div class="sri" onclick="window.location='/lessons/'+r.id+'.html';closeSearch()">
+    <div class="sri" onclick="window.location='/lessons/${r.id}.html';closeSearch()">
       <div class="sri-ic">${r.icon}</div>
       <div><div class="sri-t">${r.title}</div><div class="sri-m">Grade ${r.grade} · ${r.meta.split('·')[1]||''}</div></div>
     </div>
@@ -5951,7 +5969,7 @@ document.getElementById('search-input').addEventListener('input', function(){
 
 // Populate default results
 document.getElementById('s-results').innerHTML = SEARCH_INDEX.slice(0,5).map(r=>`
-  <div class="sri" onclick="window.location='/lessons/'+r.id+'.html';closeSearch()">
+  <div class="sri" onclick="window.location='/lessons/${r.id}.html';closeSearch()">
     <div class="sri-ic">${r.icon}</div>
     <div><div class="sri-t">${r.title}</div><div class="sri-m">Grade ${r.grade}</div></div>
   </div>
