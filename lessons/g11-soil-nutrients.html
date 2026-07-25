@@ -51,6 +51,7 @@
   </script>
   <link rel="stylesheet" href="../assets/css/style.css"/>
   <link rel="stylesheet" href="../assets/css/lesson-enhance.css"/>
+  <script src="../assets/js/quiz-data.js" defer></script>
   <script src="../assets/js/main.js" defer></script>
 <style>.ad-728{display:none;}@media(min-width:769px){.ad-728{display:block!important;}}.ad-320{display:block;}@media(min-width:769px){.ad-320{display:none!important;}}</style>
 </head>
@@ -277,6 +278,7 @@
       <div class="quiz-q" data-ans="2"><p class="q-text"><strong>Q1:</strong> Which nutrient deficiency causes older leaves to turn yellow or light green?</p><div class="quiz-opts"><label class="qopt"><input type="radio" name="q0" value="0"><span class="opt-text">Phosphorus</span></label><label class="qopt"><input type="radio" name="q0" value="1"><span class="opt-text">Potassium</span></label><label class="qopt"><input type="radio" name="q0" value="2"><span class="opt-text">Nitrogen</span></label><label class="qopt"><input type="radio" name="q0" value="3"><span class="opt-text">Calcium</span></label></div></div><div class="quiz-q" data-ans="1"><p class="q-text"><strong>Q2:</strong> What are micro nutrients?</p><div class="quiz-opts"><label class="qopt"><input type="radio" name="q1" value="0"><span class="opt-text">Nutrients required in large amounts</span></label><label class="qopt"><input type="radio" name="q1" value="1"><span class="opt-text">Nutrients required in very small quantities</span></label><label class="qopt"><input type="radio" name="q1" value="2"><span class="opt-text">Non-mineral elements like C, H, O</span></label><label class="qopt"><input type="radio" name="q1" value="3"><span class="opt-text">Nutrients only found in water</span></label></div></div><div class="quiz-q" data-ans="2"><p class="q-text"><strong>Q3:</strong> Which of the following is a primary macro nutrient?</p><div class="quiz-opts"><label class="qopt"><input type="radio" name="q2" value="0"><span class="opt-text">Magnesium</span></label><label class="qopt"><input type="radio" name="q2" value="1"><span class="opt-text">Boron</span></label><label class="qopt"><input type="radio" name="q2" value="2"><span class="opt-text">Phosphorus</span></label><label class="qopt"><input type="radio" name="q2" value="3"><span class="opt-text">Zinc</span></label></div></div><div class="quiz-q" data-ans="3"><p class="q-text"><strong>Q4:</strong> Which deficiency causes palm fronds to become stunted and deformed?</p><div class="quiz-opts"><label class="qopt"><input type="radio" name="q3" value="0"><span class="opt-text">Nitrogen</span></label><label class="qopt"><input type="radio" name="q3" value="1"><span class="opt-text">Iron</span></label><label class="qopt"><input type="radio" name="q3" value="2"><span class="opt-text">Potassium</span></label><label class="qopt"><input type="radio" name="q3" value="3"><span class="opt-text">Manganese</span></label></div></div><div class="quiz-q" data-ans="2"><p class="q-text"><strong>Q5:</strong> What are the non-mineral elements plants absorb from air and water?</p><div class="quiz-opts"><label class="qopt"><input type="radio" name="q4" value="0"><span class="opt-text">N, P, K</span></label><label class="qopt"><input type="radio" name="q4" value="1"><span class="opt-text">Mg, Ca, S</span></label><label class="qopt"><input type="radio" name="q4" value="2"><span class="opt-text">C, H, O</span></label><label class="qopt"><input type="radio" name="q4" value="3"><span class="opt-text">B, Cu, Fe</span></label></div></div>
       <div class="quiz-submit"><button class="btn btn-primary" onclick="submitQuiz()">Check Answers</button></div>
       <div class="quiz-result" id="quiz-result"></div>
+      <div id="quiz-feedback" class="quiz-feedback" style="display:none"></div>
     </div>
       </div>
       <!-- Adsterra 300x250 -->
@@ -294,7 +296,12 @@ atOptions = {'key':'4549af4b6f2e59d48c530d2a3dfa6378','format':'iframe','height'
   <div id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
   <button id="back-top" aria-label="Back to top" title="Back to top">↑</button>
 
-  <footer>
+  
+<nav class="lesson-nav-bar" aria-label="Lesson navigation">
+  <a class="lesson-nav-btn prev" href="/lessons/g10-agribusiness-startup.html">← Unit 3 — Starting Up an Agribusiness</a>
+  <a class="lesson-nav-btn next" href="/lessons/g11-biennial-crops.html">Unit 2 — Biennial Crops & Crop Protection →</a>
+</nav>
+<footer>
     <div class="container">
       <div class="footer-grid">
         <div>

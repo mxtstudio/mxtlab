@@ -51,6 +51,7 @@
   </script>
   <link rel="stylesheet" href="../assets/css/style.css"/>
   <link rel="stylesheet" href="../assets/css/lesson-enhance.css"/>
+  <script src="../assets/js/quiz-data.js" defer></script>
   <script src="../assets/js/main.js" defer></script>
 <style>.ad-728{display:none;}@media(min-width:769px){.ad-728{display:block!important;}}.ad-320{display:block;}@media(min-width:769px){.ad-320{display:none!important;}}</style>
 </head>
@@ -223,6 +224,7 @@
       <div class="quiz-q"><p class="q-text"><strong>Q1:</strong> What is photosynthesis?</p><div class="quiz-opts"><label class="qopt"><input type="radio" name="q0" value="0"><span class="opt-text">Breakdown of sugar for energy</span></label><label class="qopt"><input type="radio" name="q0" value="1"><span class="opt-text">Plants using sunlight, water, and CO₂ to produce oxygen and sugar</span></label><label class="qopt"><input type="radio" name="q0" value="2"><span class="opt-text">Movement of water from roots to leaves</span></label><label class="qopt"><input type="radio" name="q0" value="3"><span class="opt-text">How plants respond to different light spectrums</span></label></div></div><div class="quiz-q"><p class="q-text"><strong>Q2:</strong> Which plant hormone promotes cell division?</p><div class="quiz-opts"><label class="qopt"><input type="radio" name="q1" value="0"><span class="opt-text">Auxins</span></label><label class="qopt"><input type="radio" name="q1" value="1"><span class="opt-text">Gibberellins</span></label><label class="qopt"><input type="radio" name="q1" value="2"><span class="opt-text">Cytokinins</span></label><label class="qopt"><input type="radio" name="q1" value="3"><span class="opt-text">Abscisic acid</span></label></div></div><div class="quiz-q"><p class="q-text"><strong>Q3:</strong> What does photo-morphogenesis describe?</p><div class="quiz-opts"><label class="qopt"><input type="radio" name="q2" value="0"><span class="opt-text">Plant nutrition through sunlight</span></label><label class="qopt"><input type="radio" name="q2" value="1"><span class="opt-text">How plant growth patterns respond to the light spectrum</span></label><label class="qopt"><input type="radio" name="q2" value="2"><span class="opt-text">Chemical breakdown of plant hormones</span></label><label class="qopt"><input type="radio" name="q2" value="3"><span class="opt-text">Storage of sugars in plant roots</span></label></div></div><div class="quiz-q"><p class="q-text"><strong>Q4:</strong> What is the harvest index?</p><div class="quiz-opts"><label class="qopt"><input type="radio" name="q3" value="0"><span class="opt-text">Total crop land available</span></label><label class="qopt"><input type="radio" name="q3" value="1"><span class="opt-text">Proportion of total crop biomass that is harvestable</span></label><label class="qopt"><input type="radio" name="q3" value="2"><span class="opt-text">Number of harvests per year</span></label><label class="qopt"><input type="radio" name="q3" value="3"><span class="opt-text">Yield per hectare adjusted for rainfall</span></label></div></div><div class="quiz-q"><p class="q-text"><strong>Q5:</strong> Which hormone breaks dormancy in seeds and buds?</p><div class="quiz-opts"><label class="qopt"><input type="radio" name="q4" value="0"><span class="opt-text">Auxins</span></label><label class="qopt"><input type="radio" name="q4" value="1"><span class="opt-text">Cytokinins</span></label><label class="qopt"><input type="radio" name="q4" value="2"><span class="opt-text">Abscisic acid</span></label><label class="qopt"><input type="radio" name="q4" value="3"><span class="opt-text">Gibberellins</span></label></div></div>
       <div class="quiz-submit"><button class="btn btn-primary" onclick="submitQuiz()">Check Answers</button></div>
       <div class="quiz-result" id="quiz-result"></div>
+      <div id="quiz-feedback" class="quiz-feedback" style="display:none"></div>
     </div>
       </div>
       <!-- Adsterra 300x250 -->
@@ -241,7 +243,12 @@ atOptions = {'key':'4549af4b6f2e59d48c530d2a3dfa6378','format':'iframe','height'
   <div id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
   <button id="back-top" aria-label="Back to top" title="Back to top">↑</button>
 
-  <footer>
+  
+<nav class="lesson-nav-bar" aria-label="Lesson navigation">
+  <a class="lesson-nav-btn prev" href="/lessons/g12-soil-topography.html">← Unit 1 — Soil Topography & Crop Production Returns</a>
+  <a class="lesson-nav-btn next" href="/lessons/g12-horticulture-commercialisation.html">Units 5–7 — Plants, Horticulture & Commercialisation →</a>
+</nav>
+<footer>
     <div class="container">
       <div class="footer-grid">
         <div>

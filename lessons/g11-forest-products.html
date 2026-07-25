@@ -51,6 +51,7 @@
   </script>
   <link rel="stylesheet" href="../assets/css/style.css"/>
   <link rel="stylesheet" href="../assets/css/lesson-enhance.css"/>
+  <script src="../assets/js/quiz-data.js" defer></script>
   <script src="../assets/js/main.js" defer></script>
 <style>.ad-728{display:none;}@media(min-width:769px){.ad-728{display:block!important;}}.ad-320{display:block;}@media(min-width:769px){.ad-320{display:none!important;}}</style>
 </head>
@@ -225,6 +226,7 @@
       <div class="quiz-q"><p class="q-text"><strong>Q1:</strong> What does NWFP stand for?</p><div class="quiz-opts"><label class="qopt"><input type="radio" name="q0" value="0"><span class="opt-text">National Woodland Forestry Program</span></label><label class="qopt"><input type="radio" name="q0" value="1"><span class="opt-text">Non-Wood Forest Products</span></label><label class="qopt"><input type="radio" name="q0" value="2"><span class="opt-text">Natural Wildlife and Flora Protection</span></label><label class="qopt"><input type="radio" name="q0" value="3"><span class="opt-text">New Woodland Farming Practices</span></label></div></div><div class="quiz-q"><p class="q-text"><strong>Q2:</strong> Which body monitors and controls the forest industry in PNG?</p><div class="quiz-opts"><label class="qopt"><input type="radio" name="q1" value="0"><span class="opt-text">National Fisheries Authority</span></label><label class="qopt"><input type="radio" name="q1" value="1"><span class="opt-text">Department of Agriculture and Livestock</span></label><label class="qopt"><input type="radio" name="q1" value="2"><span class="opt-text">PNG Forest Authority (PNGFA)</span></label><label class="qopt"><input type="radio" name="q1" value="3"><span class="opt-text">PNG Investment Promotion Authority</span></label></div></div><div class="quiz-q"><p class="q-text"><strong>Q3:</strong> What does the Forestry Act 1991 do?</p><div class="quiz-opts"><label class="qopt"><input type="radio" name="q2" value="0"><span class="opt-text">Bans all commercial logging in PNG</span></label><label class="qopt"><input type="radio" name="q2" value="1"><span class="opt-text">Provides for the management, development, and protection of PNG\</span></label><label class="qopt"><input type="radio" name="q2" value="2"><span class="opt-text">,</span></label><label class="qopt"><input type="radio" name="q2" value="3"><span class="opt-text">,</span></label></div></div><div class="quiz-q"><p class="q-text"><strong>Q4:</strong> What does LiDAR technology do in forestry?</p><div class="quiz-opts"><label class="qopt"><input type="radio" name="q3" value="0"><span class="opt-text">Cuts timber using lasers</span></label><label class="qopt"><input type="radio" name="q3" value="1"><span class="opt-text">Creates precise digital maps of forest structure using laser beams</span></label><label class="qopt"><input type="radio" name="q3" value="2"><span class="opt-text">Provides GPS for logging vehicles</span></label><label class="qopt"><input type="radio" name="q3" value="3"><span class="opt-text">Monitors water quality in forest streams</span></label></div></div><div class="quiz-q"><p class="q-text"><strong>Q5:</strong> Which is a step for preserving forest resources?</p><div class="quiz-opts"><label class="qopt"><input type="radio" name="q4" value="0"><span class="opt-text">Maximising the speed of timber extraction</span></label><label class="qopt"><input type="radio" name="q4" value="1"><span class="opt-text">Reforestation and afforestation</span></label><label class="qopt"><input type="radio" name="q4" value="2"><span class="opt-text">Removing all non-commercial tree species</span></label><label class="qopt"><input type="radio" name="q4" value="3"><span class="opt-text">Encouraging slash-and-burn near forests</span></label></div></div>
       <div class="quiz-submit"><button class="btn btn-primary" onclick="submitQuiz()">Check Answers</button></div>
       <div class="quiz-result" id="quiz-result"></div>
+      <div id="quiz-feedback" class="quiz-feedback" style="display:none"></div>
     </div>
       </div>
       <!-- Adsterra 300x250 -->
@@ -243,7 +245,12 @@ atOptions = {'key':'4549af4b6f2e59d48c530d2a3dfa6378','format':'iframe','height'
   <div id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
   <button id="back-top" aria-label="Back to top" title="Back to top">↑</button>
 
-  <footer>
+  
+<nav class="lesson-nav-bar" aria-label="Lesson navigation">
+  <a class="lesson-nav-btn prev" href="/lessons/g11-capture-fishery.html">← Units 1–3 — Capture Fishery: Cultivation & Regulations</a>
+  <a class="lesson-nav-btn next" href="/lessons/g11-financial-management.html">Unit 1 — Financial Management & Business Records →</a>
+</nav>
+<footer>
     <div class="container">
       <div class="footer-grid">
         <div>

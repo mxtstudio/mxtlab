@@ -51,6 +51,7 @@
   </script>
   <link rel="stylesheet" href="../assets/css/style.css"/>
   <link rel="stylesheet" href="../assets/css/lesson-enhance.css"/>
+  <script src="../assets/js/quiz-data.js" defer></script>
   <script src="../assets/js/main.js" defer></script>
 <style>.ad-728{display:none;}@media(min-width:769px){.ad-728{display:block!important;}}.ad-320{display:block;}@media(min-width:769px){.ad-320{display:none!important;}}</style>
 </head>
@@ -230,6 +231,7 @@
       <div class="quiz-q"><p class="q-text"><strong>Q1:</strong> What is the function of the gizzard in a bird?</p><div class="quiz-opts"><label class="qopt"><input type="radio" name="q0" value="0"><span class="opt-text">Stores food before digestion</span></label><label class="qopt"><input type="radio" name="q0" value="1"><span class="opt-text">Secretes digestive enzymes and acids</span></label><label class="qopt"><input type="radio" name="q0" value="2"><span class="opt-text">Grinds food, replacing the function of teeth</span></label><label class="qopt"><input type="radio" name="q0" value="3"><span class="opt-text">Absorbs water from digested food</span></label></div></div><div class="quiz-q"><p class="q-text"><strong>Q2:</strong> Why are birds sensitive to airborne diseases and poor ventilation?</p><div class="quiz-opts"><label class="qopt"><input type="radio" name="q1" value="0"><span class="opt-text">Feathers trap air pollutants</span></label><label class="qopt"><input type="radio" name="q1" value="1"><span class="opt-text">Air sacs allow continuous airflow directly through the lungs</span></label><label class="qopt"><input type="radio" name="q1" value="2"><span class="opt-text">Birds produce no antibodies against respiratory diseases</span></label><label class="qopt"><input type="radio" name="q1" value="3"><span class="opt-text">Their skin is thinner than mammalian skin</span></label></div></div><div class="quiz-q"><p class="q-text"><strong>Q3:</strong> What temperature should a brooder be in the first week for day-old chicks?</p><div class="quiz-opts"><label class="qopt"><input type="radio" name="q2" value="0"><span class="opt-text">20°C</span></label><label class="qopt"><input type="radio" name="q2" value="1"><span class="opt-text">25°C</span></label><label class="qopt"><input type="radio" name="q2" value="2"><span class="opt-text">35°C</span></label><label class="qopt"><input type="radio" name="q2" value="3"><span class="opt-text">40°C</span></label></div></div><div class="quiz-q"><p class="q-text"><strong>Q4:</strong> What is a broiler?</p><div class="quiz-opts"><label class="qopt"><input type="radio" name="q3" value="0"><span class="opt-text">A type of brooder for heating chicks</span></label><label class="qopt"><input type="radio" name="q3" value="1"><span class="opt-text">A chicken bred specifically for egg production</span></label><label class="qopt"><input type="radio" name="q3" value="2"><span class="opt-text">A chicken bred and raised specifically for meat production</span></label><label class="qopt"><input type="radio" name="q3" value="3"><span class="opt-text">A hen that has completed her laying cycle</span></label></div></div><div class="quiz-q"><p class="q-text"><strong>Q5:</strong> What is the purpose of a downtime period between poultry batches?</p><div class="quiz-opts"><label class="qopt"><input type="radio" name="q4" value="0"><span class="opt-text">To let the farmer rest</span></label><label class="qopt"><input type="radio" name="q4" value="1"><span class="opt-text">To reduce labour costs</span></label><label class="qopt"><input type="radio" name="q4" value="2"><span class="opt-text">To break the disease cycle by cleaning and disinfecting the house</span></label><label class="qopt"><input type="radio" name="q4" value="3"><span class="opt-text">To allow chick prices to stabilise before restocking</span></label></div></div>
       <div class="quiz-submit"><button class="btn btn-primary" onclick="submitQuiz()">Check Answers</button></div>
       <div class="quiz-result" id="quiz-result"></div>
+      <div id="quiz-feedback" class="quiz-feedback" style="display:none"></div>
     </div>
       </div>
       <!-- Adsterra 300x250 -->
@@ -248,7 +250,12 @@ atOptions = {'key':'4549af4b6f2e59d48c530d2a3dfa6378','format':'iframe','height'
   <div id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
   <button id="back-top" aria-label="Back to top" title="Back to top">↑</button>
 
-  <footer>
+  
+<nav class="lesson-nav-bar" aria-label="Lesson navigation">
+  <a class="lesson-nav-btn prev" href="/lessons/g12-quality-animal-products.html">← Units 1–3 — Quality Animal Products & Technology</a>
+  <a class="lesson-nav-btn next" href="/lessons/g12-aqua-advanced.html">Units 1–3 — Advanced Aqua Farming & Post-Harvest Technology →</a>
+</nav>
+<footer>
     <div class="container">
       <div class="footer-grid">
         <div>
