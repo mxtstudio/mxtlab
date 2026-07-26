@@ -15,7 +15,7 @@ window.LESSONS['g9-forests'] = {
     <h2>Types of Forests</h2>
     <p>Papua New Guinea has some of the world\'s most biodiverse tropical forests — covering approximately 70% of the country\'s land area. Different forest types exist based on altitude, rainfall, and soil conditions.</p>
     <figure class="lesson-figure">
-      <img src="Images/Nrm.png" alt="Tropical rainforest canopy similar to Papua New Guinea forests" loading="lazy"/>
+      <img src="Image/nrm.webp" alt="Tropical rainforest canopy similar to Papua New Guinea forests" loading="lazy"/>
       <figcaption>Tropical rainforest — the dominant forest type in Papua New Guinea, covering vast areas of lowland and highland terrain.</figcaption>
     </figure>
     <h3>Lowland Tropical Rainforest</h3>

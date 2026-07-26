@@ -14,7 +14,7 @@ window.LESSONS['g9-agribusiness-economics'] = {
   <div class="lesson-section">
     <h2>What is Agribusiness?</h2>
     <figure class="lesson-figure">
-      <img src="Images/Agribusiness.png" alt="Agribusiness activities from farm to market in Papua New Guinea" loading="lazy"/>
+      <img src="Image/AgriBusiness.webp" alt="Agribusiness activities from farm to market in Papua New Guinea" loading="lazy"/>
       <figcaption>Agribusiness covers the full chain from farm production to processing, distribution, and sale of agricultural products.</figcaption>
     </figure>
     <p><strong>Agribusiness</strong> refers to all the economic activities related to agriculture — from producing food to processing it, packaging it, transporting it, and selling it to consumers. It covers the entire chain from "farm to fork."</p>

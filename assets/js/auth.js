@@ -21,7 +21,11 @@ export async function signInWithGoogle() {
   });
   if (error) {
     console.error('Google sign-in failed:', error.message);
-    alert('Sign-in failed. Please try again.');
+    if (typeof showToast === 'function') {
+      showToast('Sign-in failed. Please try again.', 'error');
+    } else {
+      alert('Sign-in failed. Please try again.');
+    }
   }
 }
 
@@ -45,6 +49,9 @@ export async function getCurrentUserProfile() {
 
   if (error) {
     console.error('Failed to load profile:', error.message);
+    if (typeof showToast === 'function') {
+      showToast('Failed to load your profile. Some features may be limited.', 'warn');
+    }
     return null;
   }
   return profile;
