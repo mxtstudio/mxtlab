@@ -1,3 +1,4 @@
+
 # MXT Lab Department OS — Week-One MCP Demo
 
 Two MCP tools (`save_to_dashboard`, `get_my_dashboard`), backed by a
