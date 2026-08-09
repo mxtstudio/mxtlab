@@ -148,6 +148,7 @@
           <button class="tos-tab active" data-tab="mine">My lesson plans</button>
           <button class="tos-tab" data-tab="queue" id="tos-tab-queue" style="display:none">Approval queue</button>
           <button class="tos-tab" data-tab="resources">Resources</button>
+          <button class="tos-tab" data-tab="results">Results</button>
           <button class="tos-tab" data-tab="curriculum">Curriculum</button>
           <button class="tos-tab" data-tab="admin" id="tos-tab-admin" style="display:none">Admin</button>
         </nav>
@@ -155,6 +156,7 @@
         <div id="tos-panel-mine"></div>
         <div id="tos-panel-queue" style="display:none"></div>
         <div id="tos-panel-resources" style="display:none"></div>
+        <div id="tos-panel-results" style="display:none"></div>
         <div id="tos-panel-curriculum" style="display:none"></div>
         <div id="tos-panel-admin" style="display:none"></div>
       </div>
@@ -512,6 +514,87 @@
       });
     }
 
+    // ---------- RESULTS ----------
+    // Surfaces the `results` table — mostly populated by Kira via
+    // record_assessment_result, plus a manual-add form for parity.
+
+    async function renderResults() {
+      const panel = document.getElementById('tos-panel-results');
+      panel.innerHTML = `
+        <div class="tos-panel-header">
+          <h2>Assessment results</h2>
+          <button class="tos-btn tos-btn-primary" id="tos-result-new-btn">+ Add result</button>
+        </div>
+        <p class="tos-card-meta" style="margin:-8px 0 16px">Marked scores by topic/standard — recorded here or by asking Kira to save one.</p>
+        <div id="tos-result-form-wrap"></div>
+        <div id="tos-results-body"><p class="tos-empty">Loading…</p></div>
+      `;
+      document.getElementById('tos-result-new-btn').onclick = () => renderResultForm();
+
+      const { data, error } = await supabase
+        .from('results')
+        .select('*, lesson_plans(title)')
+        .eq('teacher_id', profile.id)
+        .order('created_at', { ascending: false })
+        .limit(50);
+
+      const body = document.getElementById('tos-results-body');
+      if (error) { body.innerHTML = `<p class="tos-error">${esc(error.message)}</p>`; return; }
+      if (!data.length) { body.innerHTML = `<p class="tos-empty">No results recorded yet.</p>`; return; }
+
+      body.innerHTML = `<ul class="tos-list">${data.map(r => `
+        <li class="tos-card">
+          <div>
+            <span class="tos-resource-type">${esc(r.subject)}</span>
+            <h3>${esc(r.topic || 'Untitled topic')}${r.standard ? ` <span class="tos-card-meta">· ${esc(r.standard)}</span>` : ''}</h3>
+            <p class="tos-card-meta">${(r.grade||'').replace('_',' ')}${r.lesson_plans?.title ? ` · linked to "${esc(r.lesson_plans.title)}"` : ''} · ${new Date(r.created_at).toLocaleDateString()}</p>
+          </div>
+          <div class="tos-card-side">
+            <span class="tos-badge">${r.score}${r.max_score ? ` / ${r.max_score}` : ''}</span>
+          </div>
+        </li>
+      `).join('')}</ul>`;
+    }
+
+    function renderResultForm() {
+      const wrap = document.getElementById('tos-result-form-wrap');
+      wrap.innerHTML = `
+        <form class="tos-form" id="tos-result-form">
+          <label>Subject
+            <select name="subject" required>${SUBJECTS.map(s => `<option value="${s}">${s}</option>`).join('')}</select>
+          </label>
+          <label>Grade
+            <select name="grade" required>${GRADES.map(g => `<option value="${g}">${g.replace('_',' ')}</option>`).join('')}</select>
+          </label>
+          <label>Topic <input type="text" name="topic" placeholder="e.g. Soil Fertility"></label>
+          <label>Standard <input type="text" name="standard" placeholder="Content standard / benchmark code"></label>
+          <label>Score <input type="number" name="score" step="any" required></label>
+          <label>Max score <input type="number" name="max_score" step="any"></label>
+          <div class="tos-form-actions">
+            <button type="button" class="tos-btn tos-btn-ghost" id="tos-result-cancel">Cancel</button>
+            <button type="submit" class="tos-btn tos-btn-primary">Save result</button>
+          </div>
+        </form>
+      `;
+      document.getElementById('tos-result-cancel').onclick = () => { wrap.innerHTML = ''; };
+      document.getElementById('tos-result-form').onsubmit = async (e) => {
+        e.preventDefault();
+        const fd = new FormData(e.target);
+        const { error } = await supabase.from('results').insert({
+          teacher_id: profile.id,
+          subject: fd.get('subject'),
+          grade: fd.get('grade'),
+          topic: fd.get('topic') || null,
+          standard: fd.get('standard') || null,
+          score: Number(fd.get('score')),
+          max_score: fd.get('max_score') ? Number(fd.get('max_score')) : null,
+        });
+        if (error) { alert(error.message); return; }
+        wrap.innerHTML = '';
+        renderResults();
+      };
+    }
+
     // ---------- CURRICULUM INTELLIGENCE ----------
 
     async function renderCurriculum() {
@@ -763,8 +846,8 @@
         document.getElementById('tos-tab-admin').style.display = 'inline-block';
       }
 
-      const panels = { mine: 'tos-panel-mine', queue: 'tos-panel-queue', resources: 'tos-panel-resources', curriculum: 'tos-panel-curriculum', admin: 'tos-panel-admin' };
-      const renderers = { mine: renderMine, queue: renderQueue, resources: renderResources, curriculum: renderCurriculum, admin: renderAdmin };
+      const panels = { mine: 'tos-panel-mine', queue: 'tos-panel-queue', resources: 'tos-panel-resources', results: 'tos-panel-results', curriculum: 'tos-panel-curriculum', admin: 'tos-panel-admin' };
+      const renderers = { mine: renderMine, queue: renderQueue, resources: renderResources, results: renderResults, curriculum: renderCurriculum, admin: renderAdmin };
 
       document.querySelectorAll('.tos-tab').forEach(tab => {
         tab.onclick = () => {
