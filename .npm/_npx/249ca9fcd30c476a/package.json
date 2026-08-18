@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "expo": "^57.0.14"
+  },
+  "_npx": {
+    "packages": [
+      "expo"
+    ]
+  }
+}
