@@ -11,13 +11,13 @@ import dataclasses
 from typing import Any, Dict
 
 # Local imports – the project modules
-from .auth.session import SessionStore
-from .policy.models import AuthorizationRequest, IdentityLevel, AuthState
-from .policy.registry import get_operation
-from .policy.engine import authorize
-from .audit.logger import log
-from .security.boundary import check_tool_allowed
-from .tools.registry import get_tool_info
+from auth.session import SessionStore
+from policy.models import AuthorizationRequest, IdentityLevel, AuthState
+from policy.registry import get_operation
+from policy.engine import authorize
+from audit.logger import log
+from security.boundary import check_tool_allowed
+from tools.registry import get_tool_info
 
 # Subsystem imports – may be optional at runtime; we import lazily inside dispatch.
 
@@ -76,7 +76,7 @@ class Orchestrator:
 
         # Learning subsystem – currently only ``learning_record`` is defined.
         if command.startswith("learning_"):
-            from .learning.manager import LearningManager
+            from learning.manager import LearningManager
             lm = LearningManager()
             if command == "learning_record":
                 # Expected params: operation, outcome, confidence, details
@@ -92,7 +92,7 @@ class Orchestrator:
 
         # Skill subsystem – placeholder for future skill actions.
         if command.startswith("skill_"):
-            from .skill.manager import SkillManager
+            from skill.manager import SkillManager
             sm = SkillManager()
             # Simple stub – return acknowledgement.
             return {"skill": command, "status": "handled", "params": params}
@@ -149,12 +149,11 @@ class Orchestrator:
         auth_req = self._build_auth_request(session_id, operation)
         decision = authorize(auth_req)
 
-        # Log the request and the policy decision.
+        # Log the request and the policy decision (minimal fields to avoid serialization issues)
         self._log_event({
             "type": "authorization",
             "session_id": session_id,
             "command": command,
-            "request": dataclasses.asdict(auth_req),
             "decision": dataclasses.asdict(decision),
         })
 

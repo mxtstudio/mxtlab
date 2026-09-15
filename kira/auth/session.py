@@ -10,7 +10,7 @@ from dataclasses import dataclass
 from typing import Dict, Optional
 
 from .identity import Identity
-from ..policy.models import AuthState
+from policy.models import AuthState
 
 # Default session time‑to‑live – 30 minutes of inactivity expires the session.
 SESSION_TTL = datetime.timedelta(minutes=30)
