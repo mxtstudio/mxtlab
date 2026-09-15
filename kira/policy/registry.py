@@ -63,7 +63,7 @@ OPERATION_REGISTRY = {
     "repo_clone": _op("repo_clone", IdentityLevel.AUTHENTICATED_CREATOR, RiskTier.R2, desc="Clone a remote git repository"),
     "repo_pull": _op("repo_pull", IdentityLevel.AUTHENTICATED_CREATOR, RiskTier.R2, desc="Pull latest changes for a repository"),
     "repo_status": _op("repo_status", IdentityLevel.KNOWN_USER, RiskTier.R1, desc="Get git status of a repository"),
-    "repo_list_files": _op("repo_list_files", IdentityLevel.KNOWN_USER, RiskTier.R1, desc="List files in a repository"),
+    "phone_sync": _op("phone_sync", IdentityLevel.AUTHENTICATED_CREATOR, RiskTier.R2, desc="Create a snapshot of phone storage in Kira memory"),
     # Obsidian sync – expose Kira's memory (brain) to an Obsidian vault.
     "obsidian_sync": _op("obsidian_sync", IdentityLevel.AUTHENTICATED_CREATOR, RiskTier.R1, desc="Sync Kira memory files to an Obsidian vault"),
 }

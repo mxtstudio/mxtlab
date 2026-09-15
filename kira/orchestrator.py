@@ -153,36 +153,15 @@ class Orchestrator:
             raise NotImplementedError(f"Preference command {command} not implemented")
 
 
-        # Repository commands – manage git repositories.
-        if command.startswith("repo_"):
-            # Lazy import to avoid circular dependencies.
-            from repo.manager import RepoManager
-            repo_cmd = command[len("repo_"):]
-            if repo_cmd == "clone":
-                url = params.get("url")
-                dest = params.get("dest", ".")
-                if not url:
-                    raise ValueError("'url' parameter is required for repo_clone")
-                return RepoManager.clone(url, dest)
-            if repo_cmd == "pull":
-                path = params.get("path")
-                if not path:
-                    raise ValueError("'path' parameter is required for repo_pull")
-                return RepoManager.pull(path)
-            if repo_cmd == "status":
-                path = params.get("path")
-                if not path:
-                    raise ValueError("'path' parameter is required for repo_status")
-                return RepoManager.status(path)
-            if repo_cmd == "list_files":
-                path = params.get("path")
-                if not path:
-                    raise ValueError("'path' parameter is required for repo_list_files")
-                return RepoManager.list_files(path)
-            raise NotImplementedError(f"Repo command {command} not implemented")
+        # Phone sync – generate a markdown snapshot of the device storage.
+        if command == "phone_sync":
+            from .phone_sync import generate_phone_snapshot
+            max_depth = params.get("max_depth", 2)
+            return generate_phone_snapshot(int(max_depth))
+
         # Obsidian sync – expose memory files to a vault.
         if command == "obsidian_sync":
-            from .obsidian_sync import sync_brain_to_obsidian
+            from obsidian_sync import sync_brain_to_obsidian
             # Optional custom destination can be supplied via params.
             dest = params.get("dest")
             return sync_brain_to_obsidian(dest)
