@@ -59,6 +59,11 @@ OPERATION_REGISTRY = {
     "source_edit": _op("source_edit", IdentityLevel.AUTHENTICATED_CREATOR, RiskTier.R4, biometric=True, desc="Edit Kira source code"),
     "data_delete": _op("data_delete", IdentityLevel.AUTHENTICATED_CREATOR, RiskTier.R4, biometric=True, desc="Delete important data"),
     "creator_transfer": _op("creator_transfer", IdentityLevel.AUTHENTICATED_CREATOR, RiskTier.R4, biometric=True, desc="Transfer Creator authority"),
+    # Repository management ops (moderate‑risk for clone/pull, low‑risk for status/list)
+    "repo_clone": _op("repo_clone", IdentityLevel.AUTHENTICATED_CREATOR, RiskTier.R2, desc="Clone a remote git repository"),
+    "repo_pull": _op("repo_pull", IdentityLevel.AUTHENTICATED_CREATOR, RiskTier.R2, desc="Pull latest changes for a repository"),
+    "repo_status": _op("repo_status", IdentityLevel.KNOWN_USER, RiskTier.R1, desc="Get git status of a repository"),
+    "repo_list_files": _op("repo_list_files", IdentityLevel.KNOWN_USER, RiskTier.R1, desc="List files in a repository"),
 }
 
 def get_operation(name: str) -> OperationDescriptor:

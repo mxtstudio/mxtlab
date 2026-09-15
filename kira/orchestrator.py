@@ -153,6 +153,33 @@ class Orchestrator:
             raise NotImplementedError(f"Preference command {command} not implemented")
 
 
+        # Repository commands – manage git repositories.
+        if command.startswith("repo_"):
+            # Lazy import to avoid circular dependencies.
+            from repo.manager import RepoManager
+            repo_cmd = command[len("repo_"):]
+            if repo_cmd == "clone":
+                url = params.get("url")
+                dest = params.get("dest", ".")
+                if not url:
+                    raise ValueError("'url' parameter is required for repo_clone")
+                return RepoManager.clone(url, dest)
+            if repo_cmd == "pull":
+                path = params.get("path")
+                if not path:
+                    raise ValueError("'path' parameter is required for repo_pull")
+                return RepoManager.pull(path)
+            if repo_cmd == "status":
+                path = params.get("path")
+                if not path:
+                    raise ValueError("'path' parameter is required for repo_status")
+                return RepoManager.status(path)
+            if repo_cmd == "list_files":
+                path = params.get("path")
+                if not path:
+                    raise ValueError("'path' parameter is required for repo_list_files")
+                return RepoManager.list_files(path)
+            raise NotImplementedError(f"Repo command {command} not implemented")
         # Any other command is currently unsupported.
         raise NotImplementedError(f"Unsupported command {command}")
 
