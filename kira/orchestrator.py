@@ -153,11 +153,17 @@ class Orchestrator:
             raise NotImplementedError(f"Preference command {command} not implemented")
 
 
-        # Phone sync – generate a markdown snapshot of the device storage.
+        # Phone sync – generate a markdown snapshot of the device storage and sync it to the Obsidian vault.
         if command == "phone_sync":
             from .phone_sync import generate_phone_snapshot
             max_depth = params.get("max_depth", 2)
-            return generate_phone_snapshot(int(max_depth))
+            snapshot_result = generate_phone_snapshot(int(max_depth))
+            # After snapshot is created, sync all memory markdown files to the Obsidian vault.
+            from .obsidian_sync import sync_brain_to_obsidian
+            sync_result = sync_brain_to_obsidian()
+            # Attach the sync outcome to the response.
+            snapshot_result["obsidian_sync"] = sync_result
+            return snapshot_result
 
         # Obsidian sync – expose memory files to a vault.
         if command == "obsidian_sync":
