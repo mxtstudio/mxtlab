@@ -94,13 +94,64 @@ class Orchestrator:
         if command.startswith("skill_"):
             from skill.manager import SkillManager
             sm = SkillManager()
-            # Simple stub – return acknowledgement.
-            return {"skill": command, "status": "handled", "params": params}
+            # Map specific skill commands to manager methods.
+            if command == "skill_add_candidate":
+                name = params.get("name")
+                definition = params.get("definition")
+                if not name or not definition:
+                    raise ValueError("'name' and 'definition' are required for skill_add_candidate")
+                sm.add_candidate(name, definition)
+                return {"skill": "added", "name": name}
+            if command == "skill_edit":
+                name = params.get("name")
+                definition = params.get("definition")
+                if not name or not definition:
+                    raise ValueError("'name' and 'definition' are required for skill_edit")
+                sm.edit_skill(name, definition)
+                return {"skill": "edited", "name": name}
+            if command == "skill_promote":
+                name = params.get("name")
+                if not name:
+                    raise ValueError("'name' is required for skill_promote")
+                sm.promote(name)
+                return {"skill": "promoted", "name": name}
+            if command == "skill_deactivate":
+                name = params.get("name")
+                if not name:
+                    raise ValueError("'name' is required for skill_deactivate")
+                sm.deactivate(name)
+                return {"skill": "deactivated", "name": name}
+            if command == "skill_get":
+                name = params.get("name")
+                if not name:
+                    raise ValueError("'name' is required for skill_get")
+                skill = sm.get(name)
+                return {"skill": skill}
+            if command == "skill_list":
+                return {"skills": sm.list_all()}
+            # Fallback – unsupported skill command.
+            raise NotImplementedError(f"Skill command {command} not implemented")
+
 
         # Preferences subsystem – placeholder.
         if command.startswith("preference_"):
-            # Preferences manager would be imported here.
-            return {"preference": command, "status": "handled", "params": params}
+            from preferences.manager import set_preference, get_preference, list_all
+            if command == "preference_set":
+                key = params.get("key")
+                value = params.get("value")
+                if key is None:
+                    raise ValueError("'key' is required for preference_set")
+                set_preference(key, value)
+                return {"preference": {"key": key, "value": value}}
+            if command == "preference_get":
+                key = params.get("key")
+                if key is None:
+                    raise ValueError("'key' is required for preference_get")
+                return {"preference": {"key": key, "value": get_preference(key)}}
+            if command == "preference_list":
+                return {"preferences": list_all()}
+            raise NotImplementedError(f"Preference command {command} not implemented")
+
 
         # Any other command is currently unsupported.
         raise NotImplementedError(f"Unsupported command {command}")

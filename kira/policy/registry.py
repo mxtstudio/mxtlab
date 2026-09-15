@@ -41,13 +41,18 @@ OPERATION_REGISTRY = {
     # R2 – moderate‑risk operations (learning, preferences)
     "learning_record": _op("learning_record", IdentityLevel.AUTHENTICATED_CREATOR, RiskTier.R1, desc="Record learning entry"),
     "preference_set": _op("preference_set", IdentityLevel.AUTHENTICATED_CREATOR, RiskTier.R2, desc="Set a preference"),
+    "preference_get": _op("preference_get", IdentityLevel.AUTHENTICATED_CREATOR, RiskTier.R0, desc="Get a preference"),
+    "preference_list": _op("preference_list", IdentityLevel.AUTHENTICATED_CREATOR, RiskTier.R0, desc="List all preferences"),
     "memory_clear": _op("memory_clear", IdentityLevel.AUTHENTICATED_CREATOR, RiskTier.R2, desc="Clear learning memory"),
 
     # R3 – high‑risk (config edit, skill edit, whitelist edit)
     "config_edit": _op("config_edit", IdentityLevel.AUTHENTICATED_CREATOR, RiskTier.R3, biometric=True, desc="Edit Kira config"),
+    "skill_add_candidate": _op("skill_add_candidate", IdentityLevel.AUTHENTICATED_CREATOR, RiskTier.R2, desc="Add a candidate skill"),
     "skill_edit": _op("skill_edit", IdentityLevel.AUTHENTICATED_CREATOR, RiskTier.R3, biometric=True, desc="Edit an existing skill"),
     "skill_promote": _op("skill_promote", IdentityLevel.AUTHENTICATED_CREATOR, RiskTier.R3, biometric=True, desc="Promote a candidate skill"),
-    "tool_whitelist_edit": _op("tool_whitelist_edit", IdentityLevel.AUTHENTICATED_CREATOR, RiskTier.R3, biometric=True, desc="Edit tool whitelist"),
+    "skill_deactivate": _op("skill_deactivate", IdentityLevel.AUTHENTICATED_CREATOR, RiskTier.R3, biometric=True, desc="Deactivate a skill"),
+    "skill_get": _op("skill_get", IdentityLevel.AUTHENTICATED_CREATOR, RiskTier.R0, desc="Retrieve a skill definition"),
+    "skill_list": _op("skill_list", IdentityLevel.AUTHENTICATED_CREATOR, RiskTier.R0, desc="List all skills"),
 
     # R4 – critical (software install, source edit, data delete, authority transfer)
     "software_install": _op("software_install", IdentityLevel.AUTHENTICATED_CREATOR, RiskTier.R4, biometric=True, desc="Install software package"),
