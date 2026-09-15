@@ -180,8 +180,13 @@ class Orchestrator:
                     raise ValueError("'path' parameter is required for repo_list_files")
                 return RepoManager.list_files(path)
             raise NotImplementedError(f"Repo command {command} not implemented")
-        # Any other command is currently unsupported.
-        raise NotImplementedError(f"Unsupported command {command}")
+        # Obsidian sync – expose memory files to a vault.
+        if command == "obsidian_sync":
+            from .obsidian_sync import sync_brain_to_obsidian
+            # Optional custom destination can be supplied via params.
+            dest = params.get("dest")
+            return sync_brain_to_obsidian(dest)
+
 
     def handle(self, request: Dict[str, Any]) -> Dict[str, Any]:
         """Entry point for processing a request.
