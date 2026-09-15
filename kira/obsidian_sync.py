@@ -28,10 +28,16 @@ def sync_brain_to_obsidian(dest_path: str | None = None) -> dict:
         A dictionary summarising the operation:
         ``{"copied": <int>, "skipped": <int>, "errors": <list>}``.
     """
-    # Resolve destination – default to a typical Obsidian vault location.
+    # Resolve destination – prefer a location visible to Android apps.
+    # If shared storage exists, use it (~/storage/shared/Obsidian/kira_brain).
+    # Otherwise fall back to the private folder.
     if dest_path is None:
-        dest_path = "~/Obsidian/kira_brain"
-    dest = Path(os.path.expanduser(dest_path)).expanduser().resolve()
+        shared_dest = Path(os.path.expanduser("~/storage/shared/Obsidian/kira_brain"))
+        if shared_dest.is_dir():
+            dest_path = str(shared_dest)
+        else:
+            dest_path = "~/Obsidian/kira_brain"
+    dest = Path(os.path.expanduser(dest_path)).resolve()
     dest.mkdir(parents=True, exist_ok=True)
 
     result = {"copied": 0, "skipped": 0, "errors": []}
