@@ -1,82 +1,194 @@
-# MXT Lab — Site Audit Report (Phase 1)
-**Date:** July 2026
-**Auditor:** Jules (Software Engineer AI Agent)
-**Status:** Phase 1 Complete (Read-Only Pass)
+# MXT Lab — Technical and Security Audit Report
+
+**Audit date:** 24 October 2026  
+**Repository:** [mxtstudio/mxtlab](https://github.com/mxtstudio/mxtlab)  
+**Reviewed revision:** `main` at `97dc09ba71dd0632eec6b2556e68f40278d32a8c` (after PR #11 was merged)  
+**Scope:** Read-only review of repository files, recent authentication changes, previously reported Vercel check statuses, and teacher-facing code.  
+**Status:** Preliminary audit. Live Supabase configuration, Vercel build logs, production HTTP headers, and end-to-end authentication tests were not available for direct verification.
 
 ---
 
-## Executive Summary
-A comprehensive read-only audit across all **83 HTML files** (including 13 root pages and 68+ lesson pages under `/lessons/`) has been completed. The audit was conducted using both manual inspections and a custom automated link-checking script to ensure 100% accuracy.
+## Executive summary
 
-The overall code quality is high: there are **zero (0)** mismatched structural HTML tags, **zero (0)** broken asset/media paths (images, stylesheets, and scripts), and all lessons follow a highly consistent format.
+MXT Lab currently has two distinct deployment targets: the public static website and the separate Next.js MCP application under `dept-os-mcp/`. The available checks reported a successful Vercel status for `mxtlab-8e22` and a failed status for `mxtlab`. These statuses do not establish that the projects are duplicates. **Do not delete either project based on this audit.** Confirm each project's root directory, production domain, environment variables, and deployment logs first.
 
-However, we have identified **one critical sitewide navigation bug** (237 occurrences of a broken link), **one moderate inconsistent integration issue** on the teacher portal, and **two minor sitemap/legacy-code discrepancies**.
+PR #10 introduced Supabase bearer-token verification for MCP requests and request-scoped teacher identity. PR #11 corrected a regex that previously failed to parse normal whitespace in an Authorization header. PR #11 is merged. These changes are progress, but they do not by themselves establish that the complete deployed service is secure or ready for multi-teacher production use.
 
----
+**Release recommendation: Hold a public multi-teacher launch until the deployment failure is understood, authentication and tenant-isolation tests pass, and live Supabase authorization rules are reviewed.** The public learning website and the teacher/MCP features should be assessed separately.
 
-## Detailed Findings
+## Findings summary
 
-### 1. [CRITICAL] Sitewide Broken Link: `/teachers.html` vs `/teacher-os.html`
-* **File(s) and Line(s) Involved:**
-  - **11 Root Pages (excluding dashboard.html which has no nav links):**
-    - `index.html` (Lines 1005, 1043, 1763)
-    - `about.html` (Lines 91, 141, 260)
-    - `careers.html` (Lines 162, 464)
-    - `contact.html` (Lines 91, 141, 269)
-    - `downloads.html` (Lines 140, 190, 318)
-    - `glossary.html` (Lines 91, 142, 235)
-    - `privacy.html` (Lines 91, 141, 235)
-    - `quiz.html` (Lines 163, 213, 341)
-    - `resources.html` (Lines 112, 162, 281)
-    - `terms.html` (Lines 91, 141, 235)
-    - `topics.html` (Lines 91, 141, 243)
-  - **Sitemap:** `sitemap.xml` (Line 32)
-  - **68 Lesson Pages:** Every single lesson file in `/lessons/` contains exactly 3 broken links (in the desktop navbar, mobile drawer, and footer, e.g. `lessons/g9-soil-formation.html` lines 95, 135, and 488).
-  - **Total Occurrences:** Exactly 237 occurrences across the codebase (33 on root pages + 204 across the 68 lesson files).
-* **What's Wrong:** All navbars, drawers, and footers across the site link to `teachers.html` or `../teachers.html`. This file does not exist on production, causing a **404 File Not Found** error when users click "For Teachers". The actual working filename is `teacher-os.html`.
-* **Proposed Fix (Phase 2):**
-  - Update all 237 references from `teachers.html` to `teacher-os.html` (and from `../teachers.html` to `../teacher-os.html` inside the `/lessons/` directory).
-  - Update `sitemap.xml` to list `/teacher-os.html` instead of `/teachers.html`.
-* **Confidence Level:** Certain.
+| ID | Priority | Finding | Evidence status |
+|---|---|---|---|
+| DEP-01 | High | Main `mxtlab` deployment check reported failure; root cause unknown | Status observed; logs not inspected |
+| DEP-02 | Medium | Two Vercel projects appear to serve separate app roots; duplication is not established | Repository structure reviewed; live settings not verified |
+| SEC-01 | High | MCP uses a server-side service-role key, which bypasses RLS; all privileged queries must enforce verified ownership | Code/documentation reviewed; deployed behaviour not tested |
+| SEC-02 | High | Bearer-token authentication exists, but a complete teacher-friendly OAuth/sign-in and refresh flow remains outstanding | Code and design documentation reviewed |
+| SEC-03 | High | Cross-teacher data isolation and concurrent request isolation are not proven by automated or live tests | Tests not run |
+| SEC-04 | High | MCP browser dashboard is intentionally closed pending server-session authentication | Repository page reviewed |
+| DB-01 | High | Live RLS policies, grants, and privileged RPC function definitions have not been inspected | Live database unavailable for this audit |
+| WEB-01 | Medium | `_headers` is a Netlify-style configuration file; confirm actual response headers on Vercel | Configuration implication; production headers not fetched |
+| SEO-01 | Low | Sitemap includes pages that declare `noindex`, including `dashboard.html` and `teacher-os.html` | Repository files reviewed |
+| DOC-01 | Medium | Previous audit contained findings that no longer match the current repository and needed replacement | Prior report compared with current repository |
+| CLEAN-01 | Low | Legacy demo helper and `DEMO_TEACHER_ID` reference remain in MCP library/docs | Search results reviewed |
 
 ---
 
-### 2. [MODERATE] Inconsistent Third-Party Integrations on `teacher-os.html`
-* **File(s) and Line(s) Involved:**
-  - `teacher-os.html`
-* **What's Wrong:** Unlike all other root and lesson pages across mxtlab.online, `teacher-os.html` does not include:
-  1. The Google Analytics tracking tag (`G-57V6ZXCDK8`) in its `<head>`.
-  2. The Adsterra Social Bar advertisement script at the bottom of the `<body>`.
-  This prevents tracking traffic and user engagement on the Teacher OS page, and misses potential ad revenue from this section.
-* **Proposed Fix (Phase 2):**
-  - Add the standard Google Analytics tracking code block inside the `<head>` of `teacher-os.html`.
-  - Add the Adsterra Social Bar snippet right before `</body>` in `teacher-os.html` to keep its integration identical to other root pages like `dashboard.html` and `careers.html`.
-* **Confidence Level:** Certain.
+## 1. Deployment architecture and status
+
+### Observed structure
+
+- The public website is a static multi-page site with root-level HTML pages, assets, and lesson pages.
+- The MCP application is a separate Next.js app in `dept-os-mcp/`, with its own `package.json` and application route.
+- A separate Vercel project can be appropriate when its Root Directory points to `dept-os-mcp`, while the main project serves the website root.
+
+### Status captured during this review
+
+- **`mxtlab-8e22`:** Vercel check reported success.
+- **`mxtlab`:** Vercel check reported failure.
+
+Deployment links:
+- [Main website deployment](https://vercel.com/mxt-lab/mxtlab/DkLQNVsaYi6CfAfzzFCdi5ayyeTq)
+- [MCP deployment](https://vercel.com/mxt-lab/mxtlab-8e22/HzqoBkLbTBbMursMFEiVgWJNvYo2)
+
+The links above are deployment references available during the review; their present status may change. The failed build's logs were not accessible to this audit, so the cause is **unknown**, not diagnosed.
+
+### Required checks
+
+1. Open the failed main-site deployment and capture the first relevant build error.
+2. In each Vercel project, record Root Directory, production domains, Git repository/branch, build command, output settings, and required environment-variable names.
+3. Confirm that the MCP project's Root Directory is `dept-os-mcp` if that is the intended configuration.
+4. Confirm the main site's production URL and the MCP endpoint URL are the intended ones.
+5. Do not delete either project until the configuration and domain dependencies are documented.
 
 ---
 
-### 3. [MINOR] Leftover SPA-Era Routing Code in `index.html`
-* **File(s) and Line(s) Involved:**
-  - `index.html` (SPA Router Logic, lines 1012–1051 and various matching `page-*` divisions)
-* **What's Wrong:** There is leftover routing logic from the site's previous SPA (Single Page App) architecture. Since the site was converted to a multi-page app (MPA) using standalone files (`about.html`, `contact.html`, `privacy.html`, `terms.html`, `topics.html`), the inline sections inside `index.html` (such as `#page-about`, `#page-contact`, etc.) and the SPA `nav()` script are dead code.
-* **Proposed Fix (Phase 2):**
-  - Do NOT modify or remove anything during Phase 2 to prevent regressions or breaking current working logic, but flag this as deprecated/dead code to be refactored or safely cleaned up in a future, separate cleanup pass once the MPA conversion is verified 100% stable.
-* **Confidence Level:** Certain.
+## 2. MCP authentication and authorization
+
+### Improvements present in the current implementation
+
+- The MCP route expects an `Authorization: Bearer <token>` header.
+- It verifies the supplied token with Supabase Auth using the configured Supabase URL and anon key.
+- The route requires a matching profile and uses the verified teacher identity for data operations.
+- Read operations are filtered by teacher ID.
+- PR #11 corrected the Bearer-header regular expression to use `\s` for whitespace.
+- The previous demo dashboard was closed rather than left accessible with a fixed demo identity.
+
+Relevant files:
+- [MCP route](app/api/mcp/route.ts)
+- [Supabase client helpers](lib/supabase.ts)
+- [Authentication design](AUTHENTICATION_DESIGN.md)
+- [MCP README](README.md)
+
+### Remaining risks and verification gaps
+
+The service-role key bypasses Row Level Security. This means security depends on every privileged database operation deriving identity from a verified token and applying ownership checks correctly. The token parsing fix does not prove that the whole request lifecycle, all tools, and concurrent requests preserve the correct identity.
+
+The current bearer-token approach is also not the final teacher experience. A durable launch needs a supported OAuth/sign-in flow, secure token handling, and a clear refresh/reconnect experience. Do not ask teachers to treat manually copied access tokens as a normal long-term login workflow.
+
+### Required authentication test matrix
+
+| Test | Expected outcome |
+|---|---|
+| No Authorization header | 401 / unauthorized |
+| Malformed Bearer header | 401 / unauthorized |
+| Invalid, expired, or revoked token | 401 / unauthorized |
+| Valid token for a user without a required profile | Denied without exposing data |
+| Valid token for teacher A | Only A's permitted records returned |
+| Teacher A attempts to read/update teacher B's record | Denied or no record returned |
+| Two simultaneous requests for different teachers | Each request remains bound to its own identity |
+| Database or Auth service failure | Safe error; no secrets or raw sensitive details returned |
+
+These are acceptance criteria, **not results of tests already run**. No valid or invalid live tokens were exercised as part of this audit.
 
 ---
 
-### 4. [MINOR] Sitemap Discrepancy & Omissions
-* **File(s) and Line(s) Involved:**
-  - `sitemap.xml` (Lines 14–49)
-* **What's Wrong:**
-  1. The sitemap explicitly contains the broken `teachers.html` (which returns a 404).
-  2. The sitemap is missing `dashboard.html` and `teacher-os.html`.
-* **Proposed Fix (Phase 2):**
-  - Replace `<loc>https://mxtlab.online/teachers.html</loc>` with `<loc>https://mxtlab.online/teacher-os.html</loc>` inside `sitemap.xml`.
-  - Add `/dashboard.html` to the sitemap to improve SEO indexability.
-* **Confidence Level:** Certain.
+## 3. Dashboard and Supabase database
+
+The MCP dashboard page is intentionally disabled until server-side browser-session authentication is implemented. Keep it disabled rather than restoring a page that uses a service-role client and demo teacher ID without authenticating the browser user.
+
+The repository contains a demo `schema.sql` and references to teacher-facing tables and RPC functions. Repository SQL is not proof of the live database state. Before enabling the dashboard or multi-teacher writes, inspect the actual Supabase project for:
+
+- RLS enabled on every table containing teacher or school data;
+- SELECT, INSERT, UPDATE, and DELETE policies scoped to the authenticated user and authorized roles;
+- table grants that do not accidentally permit broader access;
+- definitions and execution privileges for privileged RPC functions, including lesson-plan submission/review and school-claim operations;
+- immutable or server-validated ownership fields;
+- least-privilege access for service-role operations, with explicit ownership checks in each server-side path.
+
+Do not blindly reapply the repository's demo schema to production. No production database changes were made in this audit.
 
 ---
 
-## Conclusion
-The repository is exceptionally clean, but the sitewide broken link to `/teachers.html` needs to be addressed to ensure a seamless experience for teachers and students in Papua New Guinea. All proposed fixes are highly isolated, fully understood, and safe to execute immediately upon your approval.
+## 4. Web hosting and response headers
+
+The repository includes a root `_headers` file. That filename and format are commonly associated with Netlify configuration; do not assume Vercel applies its rules. Verify the actual HTTP response headers on the production domain. If headers are missing, configure them using the deployment platform's supported configuration.
+
+Check at minimum:
+- Content-Security-Policy (introduced carefully to avoid breaking required scripts);
+- Strict-Transport-Security on HTTPS production domains;
+- X-Content-Type-Options;
+- Referrer-Policy;
+- an appropriate Permissions-Policy;
+- framing restrictions appropriate for the site's actual embeds.
+
+Do not copy a strict CSP into production without testing the site's analytics, Supabase, fonts, and other required third-party scripts.
+
+---
+
+## 5. Sitemap and SEO
+
+The current repository's sitemap includes `dashboard.html` and `teacher-os.html`, while those pages declare `noindex`. Pages intended to stay out of search results generally should not be advertised as indexable sitemap entries.
+
+Recommended follow-up:
+1. Remove private or `noindex` pages from the sitemap unless there is a documented reason to retain them.
+2. Keep canonical public learning pages and valid public lesson URLs in the sitemap.
+3. Check sitemap URLs against the deployed site, not just the repository.
+4. Submit the corrected sitemap in Search Console after the change is deployed.
+
+---
+
+## 6. Legacy code and documentation accuracy
+
+The current MCP library still contains a `getDemoTeacherId()` helper that reads `DEMO_TEACHER_ID`. Repository search also finds this variable in setup documentation. The current route no longer appears to rely on the old demo identity, but unused demo helpers and stale setup instructions can cause future deployment mistakes.
+
+Recommended cleanup:
+- Search the whole MCP app for all callers of `getDemoTeacherId()` and `DEMO_TEACHER_ID`.
+- Remove the helper only after confirming there are no legitimate callers.
+- Update the README to describe only the current authentication contract and required environment variables.
+- Keep the security review and authentication design clearly labeled as documents, not proof of successful tests.
+
+The previous July 2026 audit claimed 237 broken links to `teachers.html` and said the sitemap omitted `teacher-os.html` and `dashboard.html`. Current repository navigation/search results point to `teacher-os.html`, and the sitemap already contains both pages. The old audit's counts and recommendations should not be treated as verified current findings. This report supersedes that stale assessment; it does not claim that every production URL has been crawled.
+
+---
+
+## 7. Recommended action plan
+
+### P0 — before teacher data is enabled
+- [ ] Diagnose the failed main-site Vercel build.
+- [ ] Verify each Vercel project's root directory, production domain, and environment-variable configuration.
+- [ ] Run the authentication test matrix against a safe preview/staging environment.
+- [ ] Test two-account ownership isolation, including concurrent requests.
+- [ ] Review live Supabase RLS, grants, and privileged RPC definitions.
+- [ ] Keep the MCP dashboard closed until server-session authentication is implemented and tested.
+
+### P1 — before wider launch
+- [ ] Implement and test a supported OAuth/sign-in and refresh/reconnect flow for the MCP client.
+- [ ] Verify actual production response headers and configure them in the supported Vercel mechanism.
+- [ ] Remove `noindex` pages from the sitemap and validate public URLs.
+- [ ] Remove obsolete demo identity code/configuration after checking all callers.
+- [ ] Add repeatable automated tests to the repository and require passing checks before merge.
+
+### P2 — operational readiness
+- [ ] Add appropriate rate limits and abuse monitoring.
+- [ ] Ensure logs do not record access tokens, service-role secrets, or unnecessary personal data.
+- [ ] Document incident response, backups, retention, and account recovery.
+- [ ] Run a fresh build and smoke test for both apps after deployment.
+
+---
+
+## Audit limitations
+
+This was a read-only repository and deployment-status review. It was not a penetration test, a complete crawl of all production URLs, or an inspection of the live Supabase database. I could not retrieve the failed Vercel build logs or run a successful local build in the available environment. The audit therefore distinguishes observed code/configuration from items that remain unverified.
+
+**Final decision:** Keep both Vercel projects. Resolve the deployment failure and complete the security acceptance tests before treating MXT Lab's teacher workspace as ready for multiple teachers.
