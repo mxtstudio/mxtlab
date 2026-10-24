@@ -1,103 +1,51 @@
+# MXT Lab Department OS — MCP demo
 
-# MXT Lab Department OS — Week-One MCP Demo
+This folder contains a limited single-teacher proof of concept with two MCP tools:
+- `save_to_dashboard`
+- `get_my_dashboard`
 
-Two MCP tools (`save_to_dashboard`, `get_my_dashboard`), backed by a
-new table in your existing Supabase project, hosted on Vercel,
-connectable to Claude as a custom connector. Plus a minimal dashboard
-page to point to during the demo.
+## Security status — read before deploying
 
-Scope is deliberately narrow (see the handoff brief) — no HOD workflow,
-no timetable matching, no Department Core, single test account only.
-This is separate from `lesson_plans`/`resources`/`curriculum_units` —
-it does not touch or depend on that schema.
+**This demo is not safe for a public multi-user launch. Do not connect it to real teachers' private work or treat the endpoint as production-ready.**
 
-## 1. Database (5 min)
+The current implementation has no verified per-user MCP authentication and uses `DEMO_TEACHER_ID` with the Supabase service-role key. That means all MCP calls use the configured demo identity. The dashboard page also uses that demo identity and service-role client rather than an authenticated browser session.
 
-1. Open your Supabase project → SQL Editor.
-2. Paste and run `schema.sql`. It only adds `dashboard_entries` —
-   nothing else is touched.
-3. Find your demo teacher's `profiles.id`:
-   ```sql
-   select id, full_name from public.profiles where full_name ilike '%your name%';
-   ```
-   Copy that `id` — you'll need it as `DEMO_TEACHER_ID`.
-4. Get your **service role** key: Project Settings → API → `service_role`
-   secret (not the publishable key already in `auth.js` — this one is
-   more powerful and must never reach the browser or a public repo).
+A service-role key bypasses Supabase Row Level Security (RLS). RLS policies alone do not protect queries made with this key. Keep the key server-side and do not expose it in client assets, logs, or chat.
 
-## 2. Deploy to Vercel (10 min)
+See [SECURITY_REVIEW.md](./SECURITY_REVIEW.md) for the multi-user release gates and required tests.
 
-1. Push this folder to a new GitHub repo (or a new folder in an
-   existing one — doesn't need to be the mxtlab-main repo).
-2. Import it in Vercel → New Project.
-3. In Vercel → Project Settings → Environment Variables, add:
-   - `SUPABASE_URL` = `https://mqiwckclyohjdhjaoaor.supabase.co`
-   - `SUPABASE_SERVICE_ROLE_KEY` = (the service_role secret from step 1.4)
-   - `DEMO_TEACHER_ID` = (the profiles.id from step 1.3)
-4. Deploy. Your MCP endpoint will be:
-   `https://<your-project>.vercel.app/api/mcp`
-   Your dashboard will be:
-   `https://<your-project>.vercel.app/dashboard`
+## What has been improved on the security branch
 
-## 3. Connect to Claude (2 min)
+The MCP route now bounds input lengths, caps retrieval to 20 rows, selects only required database columns, avoids returning raw database errors, and disables verbose adapter logs. These are defensive improvements only; **they do not add authentication or make this demo safe for multi-user use**.
 
-1. In Claude (claude.ai, Pro/Max): Settings → Connectors → Add
-   custom connector.
-2. Paste the MCP URL: `https://<your-project>.vercel.app/api/mcp`
-3. No OAuth needed — this server is intentionally authless for
-   reliability (see "Why no auth?" below). Just add it and enable it
-   in a conversation.
-4. Test: ask Claude to save something, then ask it to retrieve it.
+## Demo setup (isolated test data only)
 
-## 4. Demo script
+1. Use a non-production Supabase project or isolated test data.
+2. Inspect the actual schema and policies before applying any SQL. Do not blindly run `schema.sql` against the production project.
+3. Configure server-only environment variables in Vercel:
+   - `SUPABASE_URL`
+   - `SUPABASE_SERVICE_ROLE_KEY`
+   - `DEMO_TEACHER_ID`
+4. Never place the service-role key in browser code or commit it to the repository.
+5. Test only with non-sensitive sample teaching artifacts.
 
-> "Watch — I ask Claude to draft a Grade 10 Physics lesson plan using
-> our teacher guide, I approve it, and it saves straight into mxtlab.
-> Then I ask Claude to pull it back up."
+The MCP endpoint for a separately deployed app will be `https://<your-project>.vercel.app/api/mcp`. Confirm the actual Vercel project and deployment URL before using it.
 
-Concretely:
-1. "Draft a Grade 10 Physics lesson plan on [topic] using our teacher
-   guide." → review the output.
-2. "Save that to my dashboard as a lesson plan for Grade 10 Physics."
-   → Claude calls `save_to_dashboard`.
-3. Open `/dashboard` in a browser tab, refresh — show it there.
-4. "Pull up my saved Physics lesson plans." → Claude calls
-   `get_my_dashboard`.
+## Required before inviting other teachers
 
-## 5. Hardening before the inservice (day 6)
+1. Add supported authentication to the MCP transport and verify the identity for every request.
+2. Derive the teacher ID from that verified identity, never from tool input or a global demo setting.
+3. Secure the dashboard with server-verified authentication and per-user ownership checks.
+4. Review actual Supabase grants, RLS policies, and schema in the target project.
+5. Add rate limiting, monitoring, and two-account isolation tests.
+6. Deploy to a preview environment, test, and establish rollback before production.
 
-- Dry-run the full script at least 3 times, on the actual wifi
-  you'll present on, at the actual time of day.
-- Vercel free tier serverless functions cold-start — the first call
-  after idle time can take a couple seconds. Do one throwaway save
-  right before you go on, to warm it up.
-- If a save fails mid-demo, the tool returns a clear error string
-  rather than throwing — Claude will just tell you what went wrong
-  instead of hanging.
-- Have the Supabase table open in a second tab as a fallback way to
-  show saved data if the dashboard page has any issue.
-
-## Why no auth on the MCP server?
-
-Claude supports both authless and OAuth-based remote MCP servers.
-For a single-account, one-week demo, OAuth is one more thing that can
-break live and buys you nothing (only one teacher, and the URL isn't
-public/shared). The service role key does the real access control —
-it lives only in Vercel's server environment, never in the browser or
-in Claude's requests. If you later open this to multiple real
-teachers, that's when to add real auth (Claude's custom connectors
-also support a bearer-token header via "request header
-authentication," which is simpler than full OAuth if you just want
-one more layer).
-
-## Local dev
+## Local development
 
 ```bash
 npm install
-cp .env.example .env.local   # fill in the three values
-npm run dev                   # http://localhost:3000/dashboard
+cp .env.example .env.local
+npm run dev
 ```
 
-To test the MCP server locally before deploying, point an MCP
-inspector (`npx @modelcontextprotocol/inspector`) at
-`http://localhost:3000/api/mcp`.
+Only use local development with isolated test credentials. Authentication work must be completed before this MCP service is offered as a shared teacher platform.
