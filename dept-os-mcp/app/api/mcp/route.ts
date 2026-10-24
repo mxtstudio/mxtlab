@@ -28,7 +28,18 @@ async function verifySupabaseAccessToken(token: string): Promise<string | null> 
     });
     // Ask Supabase Auth to validate the token; do not trust decoded claims alone.
     const { data, error } = await authClient.auth.getUser(token);
-    return error || !data.user?.id ? null : data.user.id;
+    if (error || !data.user?.id) return null;
+
+    // dashboard_entries.teacher_id references profiles.id, so only accept a
+    // verified Auth user that has a matching MXT Lab teacher profile.
+    const { data: profile, error: profileError } = await getServiceClient()
+      .from('profiles')
+      .select('id')
+      .eq('id', data.user.id)
+      .maybeSingle();
+    if (profileError || !profile) return null;
+
+    return data.user.id;
   } catch {
     return null;
   }
