@@ -6,14 +6,9 @@ Last reviewed: 2026-10-24
 
 **Not ready for multi-user or public production use.** This review describes repository code, not the live Vercel configuration or the current Supabase database state.
 
-The current MCP route:
-- accepts GET and POST requests without application-level user authentication;
-- uses a Supabase service-role client, which bypasses Row Level Security (RLS);
-- assigns every save and retrieval to `DEMO_TEACHER_ID`;
-- returns database error messages to the MCP caller; and
-- has verbose adapter logging enabled.
+The MCP route on `main` accepts requests without application-level user authentication, uses a Supabase service-role client that bypasses Row Level Security (RLS), and assigns every save and retrieval to `DEMO_TEACHER_ID`. The dashboard page also uses the service-role key and the same demo ID. It is therefore a single-account demonstration, not a secure teacher dashboard.
 
-The dashboard page also uses the service-role key and the same demo ID. It is therefore a single-account demonstration, not a secure teacher dashboard.
+This branch adds bounded input validation, generic database error messages, narrower database selects, and disables verbose adapter logs. These are defensive improvements only. They do not fix the lack of verified per-user authentication or the hardcoded demo identity.
 
 ## Required before inviting teachers
 
