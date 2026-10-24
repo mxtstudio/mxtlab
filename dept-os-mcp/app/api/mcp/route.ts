@@ -149,7 +149,7 @@ const handler = createMcpHandler((server) => {
 
 async function authenticatedHandler(request: Request): Promise<Response> {
   const authorization = request.headers.get('authorization');
-  const match = authorization?.match(/^Bearer\\s+(.+)$/i);
+  const match = authorization?.match(/^Bearer\s+(.+)$/i);
   if (!match) return unauthorized();
 
   const userId = await verifySupabaseAccessToken(match[1].trim());
