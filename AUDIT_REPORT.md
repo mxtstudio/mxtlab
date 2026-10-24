@@ -75,10 +75,10 @@ The links above are deployment references available during the review; their pre
 - The previous demo dashboard was closed rather than left accessible with a fixed demo identity.
 
 Relevant files:
-- [MCP route](app/api/mcp/route.ts)
-- [Supabase client helpers](lib/supabase.ts)
-- [Authentication design](AUTHENTICATION_DESIGN.md)
-- [MCP README](README.md)
+- [MCP route](https://github.com/mxtstudio/mxtlab/blob/main/dept-os-mcp/app/api/mcp/route.ts)
+- [Supabase client helpers](https://github.com/mxtstudio/mxtlab/blob/main/dept-os-mcp/lib/supabase.ts)
+- [Authentication design](https://github.com/mxtstudio/mxtlab/blob/main/dept-os-mcp/AUTHENTICATION_DESIGN.md)
+- [MCP README](https://github.com/mxtstudio/mxtlab/blob/main/dept-os-mcp/README.md)
 
 ### Remaining risks and verification gaps
 
