@@ -1,0 +1,17 @@
+# dependencies / build output
+node_modules/
+.next/
+out/
+dist/
+
+# secrets and local config
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# tooling
+.vercel/
+.DS_Store
+*.log

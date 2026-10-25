@@ -192,3 +192,23 @@ The previous July 2026 audit claimed 237 broken links to `teachers.html` and sai
 This was a read-only repository and deployment-status review. It was not a penetration test, a complete crawl of all production URLs, or an inspection of the live Supabase database. I could not retrieve the failed Vercel build logs or run a successful local build in the available environment. The audit therefore distinguishes observed code/configuration from items that remain unverified.
 
 **Final decision:** Keep both Vercel projects. Resolve the deployment failure and complete the security acceptance tests before treating MXT Lab's teacher workspace as ready for multiple teachers.
+
+## Addendum — live Supabase inspection (2026-10-25)
+
+Finding **DB-01** (live RLS policies, grants and privileged RPC definitions not inspected) is now partly closed. Live project `mqiwckclyohjdhjaoaor` was inspected and the Supabase security and performance advisors were run.
+
+Verified:
+- RLS is enabled on every sensitive `public` table checked (`api_tokens`, `license_keys`, `subscriptions`, `profiles`, `audit_logs`, `sessions`, `teacher_requests`, `dashboard_entries`); policies are keyed to `auth.uid()`, so `anon` cannot read rows.
+- The web client only calls RPCs intended for signed-in users (`submit_lesson_plan`, `review_lesson_plan`, `claim_school`, `increment_resource_downloads`, `assign_department_member`, `remove_department_member`).
+- `audit_logs` and `version_history` were empty, and no calls to the affected functions appeared in the 24 h of API logs available, so no abuse of the exposure was found.
+
+Fixed (see `supabase/migrations/`):
+- Four SECURITY DEFINER functions with no caller check (`log_audit_event`, `record_document_version`, `snapshot_all_department_health`, `compute_department_health`) were executable by `anon` through `/rest/v1/rpc/`. Execute is now revoked from `anon`, `PUBLIC` and `authenticated`; all other flagged functions are closed to `anon`.
+- `search_path` pinned on the five `set_*_updated_at` trigger functions.
+- 55 RLS policies rewritten to `(select auth.uid())`; 40 missing foreign-key indexes added.
+
+Still open:
+- Leaked-password protection is disabled in Supabase Auth (dashboard setting).
+- The `districtos` schema (17 tables) has RLS enabled with no policies, so it is deny-all until policies are written.
+- 14 multiple-permissive-policy warnings and the `pg_net`-in-`public` warning are unaddressed.
+- SEC-01 to SEC-04 (service-role MCP, per-teacher auth flow, tenant-isolation tests, dashboard session auth) are unchanged by this work.
