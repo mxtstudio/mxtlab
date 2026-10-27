@@ -316,11 +316,9 @@ describe('input validation', () => {
     expect(state.tables.dashboard_entries).toHaveLength(0);
   });
 
-  // KNOWN ISSUE: with @modelcontextprotocol/sdk 1.12.0 + @vercel/mcp-adapter 0.5,
-  // the error event is delivered but the stream is left open until the function's
-  // maxDuration (60 s). `it.fails` passes while the bug exists and starts failing
-  // (prompting removal of `.fails`) once the stream closes promptly.
-  it.fails('closes the response promptly after a validation error', async () => {
+  // Regression test: with @vercel/mcp-adapter 0.5 + SDK 1.10 the stream stayed open until the
+  // function's maxDuration after a validation error. Fixed by the move to mcp-handler v2.
+  it('closes the response promptly after a validation error', async () => {
     seedTeachers();
     const { POST } = await loadRoute();
     const res = await POST(toolCall('save_to_dashboard',
@@ -330,5 +328,29 @@ describe('input validation', () => {
       new Promise<boolean>((r) => setTimeout(() => r(false), 1500)),
     ]);
     expect(closed).toBe(true);
+  });
+});
+
+describe('MCP protocol handshake (how real clients connect)', () => {
+  it('initialize works over Streamable HTTP with a valid token and is refused without one', async () => {
+    seedTeachers();
+    const { POST } = await loadRoute();
+    const init = {
+      protocolVersion: '2025-03-26',
+      capabilities: {},
+      clientInfo: { name: 'test-client', version: '1.0.0' },
+    };
+    const ok = await readFirstMessage(await POST(mcpRequest('initialize', init, bearer(A.token))));
+    expect(ok?.result?.serverInfo?.name).toBe('mxtlab-dept-os');
+    expect(ok?.result?.capabilities?.tools).toBeDefined();
+
+    const denied = await POST(mcpRequest('initialize', init));
+    expect(denied.status).toBe(401);
+  });
+
+  it('GET without a token is refused (no unauthenticated stream)', async () => {
+    const { GET } = await loadRoute();
+    const res = await GET(new Request('http://localhost/api/mcp', { method: 'GET', headers: { accept: 'text/event-stream' } }));
+    expect(res.status).toBe(401);
   });
 });

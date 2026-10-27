@@ -33,7 +33,7 @@ npm test
 
 These tests prove the route's own ownership logic. They do **not** exercise real Supabase Auth, Row Level Security, or a deployed preview, so the manual checks below are still required before enabling multi-teacher use.
 
-Known issue: after a tool-argument validation error the MCP response stream stays open until the function's `maxDuration`. The error is delivered and nothing is written, but the connection is not released promptly. It is tracked by an `it.fails` test, which will start failing (remove `.fails`) once the SDK/adapter versions close the stream.
+The MCP layer uses `mcp-handler` v2 on the MCP SDK v2 (`@modelcontextprotocol/server`). It serves Streamable HTTP at `/api/mcp` only; the old `/api/sse` and `/api/message` endpoints no longer exist, so MCP clients must be configured with the `/api/mcp` URL. The function time limit is set with `export const maxDuration` in `route.ts`.
 
 ## Validation before deployment
 

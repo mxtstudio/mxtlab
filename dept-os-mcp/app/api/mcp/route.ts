@@ -1,10 +1,13 @@
 import { AsyncLocalStorage } from 'node:async_hooks';
-import { createMcpHandler } from '@vercel/mcp-adapter';
+import { createMcpHandler } from 'mcp-handler';
 import { createClient } from '@supabase/supabase-js';
 import { z } from 'zod';
 import { getServiceClient } from '@/lib/supabase';
 
 export const runtime = 'nodejs';
+// Previously set through the adapter's `maxDuration` option; mcp-handler v2 is path- and
+// config-agnostic, so the function time limit is declared as a Next.js route segment option.
+export const maxDuration = 60;
 
 const authContext = new AsyncLocalStorage<{ userId: string }>();
 
@@ -61,14 +64,16 @@ function unauthorized(): Response {
 }
 
 const handler = createMcpHandler((server) => {
-  server.tool(
+  server.registerTool(
     'save_to_dashboard',
-    'Save a teaching artifact to the signed-in teacher\'s MXT Lab dashboard.',
     {
-      subject: subjectSchema,
-      grade: gradeSchema,
-      type: typeSchema,
-      content: contentSchema,
+      description: 'Save a teaching artifact to the signed-in teacher\'s MXT Lab dashboard.',
+      inputSchema: z.object({
+        subject: subjectSchema,
+        grade: gradeSchema,
+        type: typeSchema,
+        content: contentSchema,
+      }),
     },
     async ({ subject, grade, type, content }) => {
       const teacher_id = getAuthenticatedTeacherId();
@@ -99,14 +104,16 @@ const handler = createMcpHandler((server) => {
     },
   );
 
-  server.tool(
+  server.registerTool(
     'get_my_dashboard',
-    'Retrieve the signed-in teacher\'s saved teaching artifacts.',
     {
-      subject: filterSchema.optional(),
-      grade: z.string().trim().min(1).max(50).optional(),
-      type: z.string().trim().min(1).max(50).optional(),
-      limit: z.number().int().min(1).max(20).optional(),
+      description: 'Retrieve the signed-in teacher\'s saved teaching artifacts.',
+      inputSchema: z.object({
+        subject: filterSchema.optional(),
+        grade: z.string().trim().min(1).max(50).optional(),
+        type: z.string().trim().min(1).max(50).optional(),
+        limit: z.number().int().min(1).max(20).optional(),
+      }),
     },
     async ({ subject, grade, type, limit }) => {
       const teacher_id = getAuthenticatedTeacherId();
@@ -145,7 +152,7 @@ const handler = createMcpHandler((server) => {
       return { content: [{ type: 'text', text: summary }] };
     },
   );
-}, {}, { basePath: '/api', maxDuration: 60, verboseLogs: false });
+}, { serverInfo: { name: 'mxtlab-dept-os', version: '0.1.0' }, verboseLogs: false });
 
 async function authenticatedHandler(request: Request): Promise<Response> {
   const authorization = request.headers.get('authorization');
