@@ -22,6 +22,19 @@ A service-role key bypasses Supabase Row Level Security (RLS). Keep it server-si
 
 Remove `DEMO_TEACHER_ID` from this application's environment once no other code requires it.
 
+## Automated tests
+
+```
+npm ci
+npm test
+```
+
+`tests/mcp-auth-isolation.test.ts` runs the real `app/api/mcp/route.ts` against an in-memory fake of Supabase (`tests/fakeSupabase.ts`) and covers the authentication matrix in `AUDIT_REPORT.md`: missing, malformed, invalid, expired and revoked tokens; users without a profile; per-teacher isolation; spoofed ownership fields; concurrent requests from two teachers; Auth and database failures (no internal details or tokens in responses or logs); and input validation.
+
+These tests prove the route's own ownership logic. They do **not** exercise real Supabase Auth, Row Level Security, or a deployed preview, so the manual checks below are still required before enabling multi-teacher use.
+
+Known issue: after a tool-argument validation error the MCP response stream stays open until the function's `maxDuration`. The error is delivered and nothing is written, but the connection is not released promptly. It is tracked by an `it.fails` test, which will start failing (remove `.fails`) once the SDK/adapter versions close the stream.
+
 ## Validation before deployment
 
 1. Run `npm ci` and `npm run build` in the `dept-os-mcp` directory.

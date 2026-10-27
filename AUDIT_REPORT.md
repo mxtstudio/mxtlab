@@ -212,3 +212,24 @@ Still open:
 - The `districtos` schema (17 tables) has RLS enabled with no policies, so it is deny-all until policies are written.
 - 14 multiple-permissive-policy warnings and the `pg_net`-in-`public` warning are unaddressed.
 - SEC-01 to SEC-04 (service-role MCP, per-teacher auth flow, tenant-isolation tests, dashboard session auth) are unchanged by this work.
+
+### Addendum — automated authentication tests (2026-10-27)
+
+The "Required authentication test matrix" in section 2 is now implemented as automated tests in `dept-os-mcp/tests/` (`npm test`, 30 tests) and all pass against the current `route.ts`.
+
+| Matrix row | Result |
+|---|---|
+| No Authorization header | 401, `WWW-Authenticate: Bearer`, `no-store`, no data |
+| Malformed Bearer header | 401 for `Bearer`, blank token, `Basic`, `Token`, bare token, missing space, empty; standard Bearer variants (case, extra spaces) accepted |
+| Invalid, expired or revoked token | 401, including a token revoked mid-session and injection-style strings |
+| Valid token, no profile | 401 on both tools; nothing written |
+| Teacher A returns only A's records | Pass, including with subject/grade/type filters |
+| Teacher A vs teacher B's records | Spoofed `teacher_id`/`user_id`/`id` arguments ignored; B's rows unchanged; only `save_to_dashboard` and `get_my_dashboard` are exposed (no update, delete or by-id tools) |
+| Simultaneous requests, different teachers | 50 interleaved writes and 20 reads: every row owned by the correct teacher, no cross-reads |
+| Database or Auth failure | 401 or generic "Save failed"/"Retrieval failed"; no secrets, hostnames or stack details in responses; no tokens or keys in logs |
+
+Scope and limits: the tests use an in-memory fake of Supabase, so they verify the route's own logic only. The fake's service client bypasses RLS like the real service-role key, which is why per-teacher filtering in the route matters. They do not exercise real Supabase Auth, token refresh, a deployed preview, or RLS on `dashboard_entries`; the P0 item "run the authentication test matrix against a safe preview/staging environment" therefore remains open.
+
+New finding (low severity): after a tool-argument validation error (for example a blank `subject` or content over 50,000 characters) the MCP response stream is left open until the function's `maxDuration` (60 s) with `@modelcontextprotocol/sdk` 1.12.0 and `@vercel/mcp-adapter` 0.5. The JSON-RPC error is delivered and nothing is written, but an authenticated client could hold connections open. Consider upgrading both packages and re-running the tests; the known-issue test will start failing once it is fixed.
+
+Not covered: SEC-02 (supported OAuth/refresh flow), rate limiting, and the dashboard session login.
