@@ -233,3 +233,23 @@ Scope and limits: the tests use an in-memory fake of Supabase, so they verify th
 Finding fixed (low severity): with `@vercel/mcp-adapter` 0.5 (which bundled MCP SDK 1.10.2; the app's own `@modelcontextprotocol/sdk` 1.12.0 pin was not the version in use) the response stream stayed open until the function's `maxDuration` after a tool-argument validation error. The MCP layer was migrated to `mcp-handler` 2.3.0 with `@modelcontextprotocol/server` 2.3.1 and zod 4, which closes the stream promptly; this is now a regression test. Authentication and ownership logic in `route.ts` is unchanged, and the full test suite passes against the new library. Note that the legacy `/api/sse` and `/api/message` endpoints were removed with the migration.
 
 Not covered: SEC-02 (supported OAuth/refresh flow), rate limiting, and the dashboard session login.
+
+### Addendum — student data access model (2026-10-27)
+
+Access rules set by the owner: student data is visible only to teachers; each teacher has their own student data; teachers at the same school may share data with each other if they choose to (for example teachers of different subjects who share a grade).
+
+Findings:
+- The `districtos` schema is an unused scaffold: all 17 tables are empty, no API role has `USAGE` on the schema, and it uses its own `tenants`/`users` tables that are not connected to Supabase Auth, `profiles` or `schools`. No student data is exposed through it. Policies were deliberately **not** written for it. Remove it, or rebuild it on `profiles`/`schools` before use.
+- `public."Students"` is a phone-activation list (deny-all RLS), not a roster.
+
+Implemented (`supabase/migrations/20261027000000_teacher_owned_student_roster.sql`, applied to the live project):
+- `public.roster_students`: each row belongs to one teacher (`owner_id`) at one school. Only a teacher can create, read, update or delete their own rows; student and admin accounts and anonymous callers get nothing.
+- `public.roster_shares`: an owner can share one student, or all their students in one grade, with a specific teacher at the same school. Shared access is read-only, applies only while the grantee is still a teacher at that school, and only the owner can revoke it.
+- Tested with `supabase/tests/roster_rls_test.sql` (45 checks, always rolled back). The single mismatch in the first run was an incorrect expected value in the test, since corrected.
+
+Behaviour to be aware of:
+- Admin accounts cannot read rosters through the API (by design, per the rules). The service-role key can, so server code must filter by the signed-in teacher.
+- Teachers keep access to their own rows if they move school; shares made by a teacher who stops being a teacher remain until revoked.
+- Only the roster itself is built. Grades, attendance and classes should reuse the same pattern (owner column plus `roster_shared_with_me`).
+
+Open decision: policy `profiles_select_merged` lets **every teacher at a school read every student account's profile** (name, grade, streak, subjects). If student accounts count as "student data", this conflicts with the one-teacher-per-student rule and needs a decision.
