@@ -966,7 +966,7 @@ body.adsense-active .ad-slot-label{display:none}
 <!-- ANNOUNCEMENT -->
 <div id="announce-bar">
   MXT Lab Agriculture is now open for Grade 9, 10, 11 &amp; 12 students in Papua New Guinea —
-  <a onclick="nav('modules')">Explore topics →</a>
+  <a href="#" role="button" onclick="nav('modules')">Explore topics →</a>
   <button id="announce-close" aria-label="Close">✕</button>
 </div>
 
@@ -987,12 +987,12 @@ initReveal();return false">
     </a>
     <ul class="nav-links">
       <li class="has-drop">
-        <a onclick="nav('modules');return false">Topics <span class="drop-arrow">▾</span></a>
+        <a href="#" role="button" onclick="nav('modules');return false">Topics <span class="drop-arrow">▾</span></a>
         <div class="dropdown">
-          <a onclick="setGrade(9);nav('modules');return false">Grade 9 Agriculture</a>
-          <a onclick="setGrade(10);nav('modules');return false">Grade 10 Agriculture</a>
-          <a onclick="setGrade(11);nav('modules');return false">Grade 11 Agriculture</a>
-          <a onclick="setGrade(12);nav('modules');return false">Grade 12 Agriculture</a>
+          <a href="#" role="button" onclick="setGrade(9);nav('modules');return false">Grade 9 Agriculture</a>
+          <a href="#" role="button" onclick="setGrade(10);nav('modules');return false">Grade 10 Agriculture</a>
+          <a href="#" role="button" onclick="setGrade(11);nav('modules');return false">Grade 11 Agriculture</a>
+          <a href="#" role="button" onclick="setGrade(12);nav('modules');return false">Grade 12 Agriculture</a>
         </div>
       </li>
       <li><a href="/about.html">About</a></li>
@@ -1004,6 +1004,9 @@ initReveal();return false">
       <li><a href="/contact.html">Contact</a></li>
       <li><a href="/teacher-os.html">For Teachers</a></li>
     </ul>
+        <li id="nav-apply-teacher" style="display:none"><a href="/apply-teacher.html">Apply for Teacher Access</a></li>
+        <li id="nav-teacher-dashboard" style="display:none"><a href="/teacher-dashboard.html">Teacher Dashboard</a></li>
+        <li id="nav-admin-dashboard" style="display:none"><a href="/admin-dashboard.html">Admin Dashboard</a></li>
     <div class="nav-right">
       <button class="nav-icon-btn" id="search-trigger" aria-label="Search">
         <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
@@ -1020,7 +1023,7 @@ initReveal();return false">
         <img id="profile-avatar" alt="">
         <span id="profile-name"></span>
       </div>
-      <button class="hamburger" id="hamburger" aria-expanded="false">
+      <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Toggle navigation menu">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -1028,14 +1031,14 @@ initReveal();return false">
 </nav>
 
 <!-- MOBILE DRAWER -->
-<div class="mobile-drawer" id="mobile-drawer">
+<div class="mobile-drawer" id="mobile-drawer" role="navigation" aria-label="Mobile navigation">
   <ul class="mob-links">
-    <li><a onclick="nav('home');closeDrawer()">Home</a></li>
+    <li><a href="#" role="button" onclick="nav('home');closeDrawer()">Home</a></li>
     <div class="mob-label">Topics</div>
-    <li><a onclick="setGrade(9);nav('modules');closeDrawer()">Grade 9 Agriculture</a></li>
-    <li><a onclick="setGrade(10);nav('modules');closeDrawer()">Grade 10 Agriculture</a></li>
-    <li><a onclick="setGrade(11);nav('modules');closeDrawer()">Grade 11 Agriculture</a></li>
-    <li><a onclick="setGrade(12);nav('modules');closeDrawer()">Grade 12 Agriculture</a></li>
+    <li><a href="#" role="button" onclick="setGrade(9);nav('modules');closeDrawer()">Grade 9 Agriculture</a></li>
+    <li><a href="#" role="button" onclick="setGrade(10);nav('modules');closeDrawer()">Grade 10 Agriculture</a></li>
+    <li><a href="#" role="button" onclick="setGrade(11);nav('modules');closeDrawer()">Grade 11 Agriculture</a></li>
+    <li><a href="#" role="button" onclick="setGrade(12);nav('modules');closeDrawer()">Grade 12 Agriculture</a></li>
     <li><a href="/quiz.html">Quiz Hub</a></li>
     <li><a href="/downloads.html">Revision Packs</a></li>
     <li><a href="/resources.html">Resources</a></li>
@@ -1044,6 +1047,9 @@ initReveal();return false">
     <li><a href="/careers.html">Careers</a></li>
     <li><a href="/contact.html">Contact</a></li>
   </ul>
+        <li id="nav-apply-teacher" style="display:none"><a href="/apply-teacher.html">Apply for Teacher Access</a></li>
+        <li id="nav-teacher-dashboard" style="display:none"><a href="/teacher-dashboard.html">Teacher Dashboard</a></li>
+        <li id="nav-admin-dashboard" style="display:none"><a href="/admin-dashboard.html">Admin Dashboard</a></li>
   <div class="mob-footer">
     <a href="/dashboard.html" id="mob-dashboard-link" class="btn-full" style="display:none">Dashboard</a>
     <button class="btn-full google-signin-btn" id="google-signin-mobile">
@@ -1278,12 +1284,15 @@ initReveal();return false">
           <div class="sw">
             <div class="sw-title">Browse by Strand</div>
             <ul class="sw-list">
-              <li><a onclick="setGrade(9);nav('modules')">Strand 1: Crops <span>→</span></a></li>
-              <li><a onclick="setGrade(9);nav('modules')">Strand 2: Animals <span>→</span></a></li>
-              <li><a onclick="setGrade(9);nav('modules')">Strand 3: Aquaculture <span>→</span></a></li>
-              <li><a onclick="setGrade(9);nav('modules')">Strand 4: Natural Resources <span>→</span></a></li>
-              <li><a onclick="setGrade(9);nav('modules')">Strand 5: Agribusiness <span>→</span></a></li>
+              <li><a href="#" role="button" onclick="setGrade(9);nav('modules')">Strand 1: Crops <span>→</span></a></li>
+              <li><a href="#" role="button" onclick="setGrade(9);nav('modules')">Strand 2: Animals <span>→</span></a></li>
+              <li><a href="#" role="button" onclick="setGrade(9);nav('modules')">Strand 3: Aquaculture <span>→</span></a></li>
+              <li><a href="#" role="button" onclick="setGrade(9);nav('modules')">Strand 4: Natural Resources <span>→</span></a></li>
+              <li><a href="#" role="button" onclick="setGrade(9);nav('modules')">Strand 5: Agribusiness <span>→</span></a></li>
             </ul>
+        <li id="nav-apply-teacher" style="display:none"><a href="/apply-teacher.html">Apply for Teacher Access</a></li>
+        <li id="nav-teacher-dashboard" style="display:none"><a href="/teacher-dashboard.html">Teacher Dashboard</a></li>
+        <li id="nav-admin-dashboard" style="display:none"><a href="/admin-dashboard.html">Admin Dashboard</a></li>
           </div>
           <div class="sw"><div class="sw-title">Tags</div><div class="sw-tags" id="sw-tags"></div></div>
         </aside>
@@ -1313,15 +1322,18 @@ initReveal();return false">
       <div class="footer-col">
         <h4>Topics</h4>
         <ul>
-          <li><a onclick="setGrade(9);nav('modules')">Grade 9 Agriculture</a></li>
-          <li><a onclick="setGrade(10);nav('modules')">Grade 10 Agriculture</a></li>
-          <li><a onclick="setGrade(11);nav('modules')">Grade 11 Agriculture</a></li>
-          <li><a onclick="setGrade(12);nav('modules')">Grade 12 Agriculture</a></li>
+          <li><a href="#" role="button" onclick="setGrade(9);nav('modules')">Grade 9 Agriculture</a></li>
+          <li><a href="#" role="button" onclick="setGrade(10);nav('modules')">Grade 10 Agriculture</a></li>
+          <li><a href="#" role="button" onclick="setGrade(11);nav('modules')">Grade 11 Agriculture</a></li>
+          <li><a href="#" role="button" onclick="setGrade(12);nav('modules')">Grade 12 Agriculture</a></li>
           <li><a href="/resources.html">Study Resources</a></li>
           <li><a href="/quiz.html">Quiz Hub</a></li>
           <li><a href="/downloads.html">Revision Packs</a></li>
           <li><a href="/careers.html">Careers</a></li>
         </ul>
+        <li id="nav-apply-teacher" style="display:none"><a href="/apply-teacher.html">Apply for Teacher Access</a></li>
+        <li id="nav-teacher-dashboard" style="display:none"><a href="/teacher-dashboard.html">Teacher Dashboard</a></li>
+        <li id="nav-admin-dashboard" style="display:none"><a href="/admin-dashboard.html">Admin Dashboard</a></li>
       </div>
       <div class="footer-col">
         <h4>MXT Lab</h4>
@@ -1332,6 +1344,9 @@ initReveal();return false">
           <li><a href="/privacy.html">Privacy Policy</a></li>
           <li><a href="/terms.html">Terms of Use</a></li>
         </ul>
+        <li id="nav-apply-teacher" style="display:none"><a href="/apply-teacher.html">Apply for Teacher Access</a></li>
+        <li id="nav-teacher-dashboard" style="display:none"><a href="/teacher-dashboard.html">Teacher Dashboard</a></li>
+        <li id="nav-admin-dashboard" style="display:none"><a href="/admin-dashboard.html">Admin Dashboard</a></li>
       </div>
     </div>
     <div class="footer-bottom">

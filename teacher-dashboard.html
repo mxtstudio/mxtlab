@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teacher Dashboard – MXT Lab</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <script type="module" src="/assets/js/auth.js"></script>
+  <script type="module" src="/assets/js/teacher-dashboard.js"></script>
+</head>
+<body>
+  <nav id="navbar"><!-- Simplified navigation – same as other pages -->
+    <div class="nav-wrap">
+      <a class="nav-logo" href="/">
+        <svg class="logo-mark" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect id="logo-bg" width="28" height="28" rx="7" fill="#3a7d2c"/></svg>
+        MXT<span id="lab-text">Lab</span>
+        <span class="nav-badge">Teacher</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/teacher-dashboard.html">Teacher Dashboard</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="nav-icon-btn" id="google-signin" aria-label="Sign in with Google">Sign in</button>
+        <div id="profile-badge" class="profile-badge" style="display:none"><img id="profile-avatar" alt="" /><span id="profile-name"></span></div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page active" style="max-width:800px;margin:auto;padding:20px;">
+    <h1>Teacher Dashboard</h1>
+    <div id="status-section">Loading status...</div>
+  </main>
+</body>
+</html>
