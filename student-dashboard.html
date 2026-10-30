@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Dashboard – MXT Lab</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" defer></script>
+  <script type="module" src="/assets/js/auth.js" defer></script>
+  <script type="module" src="/assets/js/student-dashboard.js" defer></script>
+</head>
+<body>
+  <nav id="navbar">
+    <div class="nav-wrap">
+      <a class="nav-logo" href="/">
+        <svg class="logo-mark" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect id="logo-bg" width="28" height="28" rx="7" fill="#3a7d2c"/></svg>
+        MXT<span id="lab-text">Lab</span>
+        <span class="nav-badge">Student</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/dashboard.html">My Dashboard</a></li>
+        <li><a href="/teacher-os.html">For Teachers</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="nav-icon-btn" id="google-signin" aria-label="Sign in with Google">Sign in</button>
+        <div id="profile-badge" class="profile-badge" style="display:none">
+          <img id="profile-avatar" alt="" />
+          <span id="profile-name"></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page active" style="max-width:1000px;margin:auto;padding:20px;">
+    <h1>Student Dashboard</h1>
+    <section id="overview">
+      <h2>Learning Overview</h2>
+      <canvas id="overallChart" width="400" height="200"></canvas>
+    </section>
+    <section id="curriculum-nav">
+      <h2>Curriculum Navigation</h2>
+      <div id="curriculumTree"></div>
+    </section>
+    <section id="recent-quizzes">
+      <h2>Recent Quiz Attempts</h2>
+      <table id="quizTable" class="tos-table">
+        <thead><tr><th>Date</th><th>Topic</th><th>Score</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+    <section id="recommendations">
+      <h2>Recommended Revision Activities</h2>
+      <ul id="recommendList"></ul>
+    </section>
+  </main>
+</body>
+</html>
