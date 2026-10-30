@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teacher Centre – MXT Lab</title>
+  <meta name="description" content="Professional tools for PNG teachers – curriculum navigation, lesson planning, assessment generation and analytics." />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <script type="module" src="/assets/js/auth.js" defer></script>
+</head>
+<body>
+  <!-- Navigation (same as other pages) -->
+  <nav id="navbar">
+    <div class="nav-wrap">
+      <a class="nav-logo" href="/">
+        <svg class="logo-mark" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect id="logo-bg" width="28" height="28" rx="7" fill="#3a7d2c"/></svg>
+        MXT<span id="lab-text">Lab</span>
+        <span class="nav-badge">Teacher</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/" class="active">Home</a></li>
+        <li><a href="/topics.html">Explore Curriculum</a></li>
+        <li><a href="/student-dashboard.html">Student Learning</a></li>
+        <li><a href="/teacher-centre.html">Teacher Centre</a></li>
+        <li><a href="/resources.html">Resources</a></li>
+        <li><a href="/about.html">About MXT Lab</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="nav-icon-btn" id="google-signin" aria-label="Sign in with Google">Sign in</button>
+        <div id="profile-badge" class="profile-badge" style="display:none">
+          <img id="profile-avatar" alt="" />
+          <span id="profile-name"></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page active" style="max-width:1000px;margin:auto;padding:20px;">
+    <h1>Teacher Centre</h1>
+    <p>The MXT Lab Teacher Centre provides professional tools for PNG teachers to plan, deliver and assess curriculum‑aligned lessons.</p>
+    <section>
+      <h2>Key capabilities</h2>
+      <ul>
+        <li>Curriculum navigation – browse grades, subjects, strands, units, standards, benchmarks and topics.</li>
+        <li>Lesson planner – create lesson plans, teaching notes and classroom activities.</li>
+        <li>Assessment generator – design assignments, quizzes, exams and marking guides.</li>
+        <li>Student analytics – view class performance, learning‑gap identification and teaching priorities.</li>
+        <li>Document centre – download generated lessons, assessments, reports (PDF/DOCX) and analytics.</li>
+        <li>MCP integration – connect Claude, ChatGPT or other AI assistants securely.</li>
+        <li>Subscription management – view plan status and renew.</li>
+      </ul>
+    </section>
+    <section style="margin-top:2rem;">
+      <h2>Get started</h2>
+      <p>Sign in with your Google‑linked MXT Lab account. Teachers will be prompted for verification and subscription status after sign‑in.</p>
+      <button class="btn btn-primary" id="google-signin" aria-label="Sign in with Google">Sign in as Teacher</button>
+    </section>
+  </main>
+
+  <footer style="padding:20px;background:var(--bg2);text-align:center;">
+    <p>&copy; 2026 MXT Lab – <a href="/privacy.html">Privacy</a> | <a href="/terms.html">Terms</a> | <a href="/contact.html">Contact</a></p>
+  </footer>
+</body>
+</html>
