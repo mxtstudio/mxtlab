@@ -62,11 +62,24 @@ async function updateNavForRole(session) {
   const role = session ? (await getCurrentUserProfile())?.role || 'student' : 'guest';
   const applyLink = document.getElementById('nav-apply-teacher');
   const teacherLink = document.getElementById('nav-teacher-dashboard');
+  const centreLink = document.getElementById('nav-teacher-centre');
   const adminLink = document.getElementById('nav-admin-dashboard');
   if (applyLink) applyLink.style.display = role === 'student' ? '' : 'none';
   if (teacherLink) teacherLink.style.display = role === 'teacher' ? '' : 'none';
-  if (adminLink) adminLink.style.display = role === 'admin' ? '' : 'none';
-  // Hide "For Teachers" link for non‑teacher and non‑admin roles
+  if (centreLink) centreLink.style.display = role === 'teacher' ? '' : 'none';
+  // Ensure the hidden Teacher Centre link exists (fallback for pages missing the markup)
+  if (!centreLink) {
+    const li = document.createElement('li');
+    li.id = 'nav-teacher-centre';
+    li.style.display = 'none';
+    const a = document.createElement('a');
+    a.href = '/teacher-centre.html';
+    a.textContent = 'Teacher Centre';
+    li.appendChild(a);
+    const navLinks = document.querySelectorAll('.nav-links');
+    navLinks.forEach(n => n.appendChild(li.cloneNode(true)));
+  }
+
   const teacherOsLinks = document.querySelectorAll('a[href="/teacher-os.html"]');
   teacherOsLinks.forEach(l => {
     l.style.display = (role === 'teacher' || role === 'admin') ? '' : 'none';
