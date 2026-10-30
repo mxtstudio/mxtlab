@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Teacher Dashboard – MXT Lab</title>
   <link rel="stylesheet" href="/assets/css/style.css" />
-  <script type="module" src="/assets/js/auth.js"></script>
-  <script type="module" src="/assets/js/teacher-dashboard.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" defer></script>
+  <script type="module" src="/assets/js/auth.js" defer></script>
+  <script type="module" src="/assets/js/teacher-dashboard.js" defer></script>
 </head>
 <body>
-  <nav id="navbar"><!-- Simplified navigation – same as other pages -->
+  <nav id="navbar">
     <div class="nav-wrap">
       <a class="nav-logo" href="/">
         <svg class="logo-mark" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect id="logo-bg" width="28" height="28" rx="7" fill="#3a7d2c"/></svg>
@@ -17,18 +18,45 @@
         <span class="nav-badge">Teacher</span>
       </a>
       <ul class="nav-links">
-        <li><a href="/teacher-dashboard.html">Teacher Dashboard</a></li>
+        <li><a href="/teacher-dashboard.html">My Dashboard</a></li>
       </ul>
       <div class="nav-right">
         <button class="nav-icon-btn" id="google-signin" aria-label="Sign in with Google">Sign in</button>
-        <div id="profile-badge" class="profile-badge" style="display:none"><img id="profile-avatar" alt="" /><span id="profile-name"></span></div>
+        <div id="profile-badge" class="profile-badge" style="display:none">
+          <img id="profile-avatar" alt="" />
+          <span id="profile-name"></span>
+        </div>
       </div>
     </div>
   </nav>
 
-  <main class="page active" style="max-width:800px;margin:auto;padding:20px;">
+  <main class="page active" style="max-width:1000px;margin:auto;padding:20px;">
     <h1>Teacher Dashboard</h1>
-    <div id="status-section">Loading status...</div>
+    <section id="class-list">
+      <h2>My Classes</h2>
+      <div id="classesContainer">Loading classes…</div>
+    </section>
+    <section id="analytics">
+      <h2>Class Performance Analytics</h2>
+      <canvas id="performanceChart" width="400" height="200"></canvas>
+    </section>
+    <section id="teaching-priorities">
+      <h2>Teaching Priorities (low‑scoring topics)</h2>
+      <ul id="priorityList"></ul>
+    </section>
+    <section id="lesson-planner">
+      <h2>Lesson Planner (draft)</h2>
+      <button id="newLessonBtn" class="btn btn-primary">New Lesson</button>
+      <div id="lessonModal" class="modal" style="display:none">
+        <div class="modal-content">
+          <h3>Create Lesson</h3>
+          <input id="lessonTitle" placeholder="Lesson title" style="width:100%;margin-bottom:8px;" />
+          <textarea id="lessonNotes" placeholder="Notes / objectives" rows="5" style="width:100%;margin-bottom:8px;"></textarea>
+          <button id="saveLesson" class="btn btn-primary">Save</button>
+          <button id="cancelLesson" class="btn btn-ghost">Cancel</button>
+        </div>
+      </div>
+    </section>
   </main>
 </body>
 </html>
