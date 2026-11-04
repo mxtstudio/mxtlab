@@ -143,3 +143,18 @@
 [data-theme="dark"] .quiz-feedback.pass{background:#14532d;color:#bbf7d0;border-color:#166534}
 [data-theme="dark"] .quiz-feedback.fail{background:#422006;color:#fde68a;border-color:#713f12}
 [data-theme="dark"] .missed-q{background:#7f1d1d;color:#fca5a5}
+
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: -999px;
+  background: #fff;
+  color: #000;
+  padding: 0.5rem;
+  z-index: 1000;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}

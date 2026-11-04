@@ -15,7 +15,3 @@ export function getServiceClient() {
     auth: { persistSession: false, autoRefreshToken: false },
   });
 }
-
-export function getDemoTeacherId(): string {
-  return requireEnv('DEMO_TEACHER_ID');
-}
