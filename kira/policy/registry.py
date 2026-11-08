@@ -34,6 +34,8 @@ OPERATION_REGISTRY = {
     "tool_clipboard_get": _op("tool_clipboard_get", IdentityLevel.AUTHENTICATED_CREATOR, RiskTier.R1, desc="Get clipboard"),
     "tool_battery": _op("tool_battery", IdentityLevel.AUTHENTICATED_CREATOR, RiskTier.R1, desc="Battery status"),
     "tool_vault_save_note": _op("tool_vault_save_note", IdentityLevel.AUTHENTICATED_CREATOR, RiskTier.R1, desc="Save note to vault"),
+    "knowledge_index": _op("knowledge_index", IdentityLevel.AUTHENTICATED_CREATOR, RiskTier.R2, desc="Index markdown files into the knowledge base"),
+    "knowledge_query": _op("knowledge_query", IdentityLevel.KNOWN_USER, RiskTier.R1, desc="Query the knowledge base"),
 
     # Alias for termux_notification
     "tool_termux_notification": _op("tool_termux_notification", IdentityLevel.AUTHENTICATED_CREATOR, RiskTier.R1, desc="Show notification (alias)"),
@@ -64,6 +66,16 @@ OPERATION_REGISTRY = {
     "repo_pull": _op("repo_pull", IdentityLevel.AUTHENTICATED_CREATOR, RiskTier.R2, desc="Pull latest changes for a repository"),
     "repo_status": _op("repo_status", IdentityLevel.KNOWN_USER, RiskTier.R1, desc="Get git status of a repository"),
     "phone_sync": _op("phone_sync", IdentityLevel.AUTHENTICATED_CREATOR, RiskTier.R2, desc="Create a snapshot of phone storage in Kira memory"),
+    "document_summarize": _op("document_summarize", IdentityLevel.KNOWN_USER, RiskTier.R1, desc="Summarize a text document"),
+    "ocr_process": _op("ocr_process", IdentityLevel.AUTHENTICATED_CREATOR, RiskTier.R2, biometric=True, desc="Run OCR on an image file"),
+    "voice_transcribe": _op("voice_transcribe", IdentityLevel.AUTHENTICATED_CREATOR, RiskTier.R2, biometric=True, desc="Transcribe an audio file to text"),
+    "calendar_add_event": _op("calendar_add_event", IdentityLevel.KNOWN_USER, RiskTier.R1, desc="Add an event to the calendar"),
+    "calendar_list_events": _op("calendar_list_events", IdentityLevel.KNOWN_USER, RiskTier.R1, desc="List calendar events"),
+    "cloud_sync": _op("cloud_sync", IdentityLevel.AUTHENTICATED_CREATOR, RiskTier.R2, biometric=True, desc="Sync a folder to a cloud storage service"),
+    "github_issue_create": _op("github_issue_create", IdentityLevel.AUTHENTICATED_CREATOR, RiskTier.R2, biometric=True, desc="Create a GitHub issue"),
+    "github_pr_list": _op("github_pr_list", IdentityLevel.KNOWN_USER, RiskTier.R1, desc="List pull requests for a repo"),
+    "web_ui_start": _op("web_ui_start", IdentityLevel.AUTHENTICATED_CREATOR, RiskTier.R2, biometric=True, desc="Start the Kira web UI dashboard"),
+
     # Obsidian sync – expose Kira's memory (brain) to an Obsidian vault.
     "obsidian_sync": _op("obsidian_sync", IdentityLevel.AUTHENTICATED_CREATOR, RiskTier.R1, desc="Sync Kira memory files to an Obsidian vault"),
 }

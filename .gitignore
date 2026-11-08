@@ -1,0 +1,35 @@
+# Ignore cache and temporary files
+.cache/
+.npm/
+.expo/
+.pip/
+
+# Node and Python artifacts
+node_modules/
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Environment and config files
+.env*
+!.env.example
+
+# Logs and temporary output
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# Generated files
+*.body
+*.sqlite3
+
+# User‑specific files
+.bash_history
+.bashrc
+.gitconfig
+
+# OS generated files
+.DS_Store
+Thumbs.db

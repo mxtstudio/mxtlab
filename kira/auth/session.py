@@ -47,7 +47,7 @@ class SessionStore:
         """
         if session_id is None:
             session_id = str(uuid.uuid4())
-        now = datetime.datetime.utcnow()
+        now = datetime.datetime.now(datetime.timezone.utc)
         sess = Session(
             session_id=session_id,
             identity=Identity.UNKNOWN,
@@ -89,7 +89,7 @@ class SessionStore:
         If the session has a known identity, we also promote the auth state to ``AUTHENTICATED``.
         """
         sess = cls._sessions[session_id]
-        now = datetime.datetime.utcnow()
+        now = datetime.datetime.now(datetime.timezone.utc)
         sess.last_activity = now
         if sess.identity != Identity.UNKNOWN:
             sess.auth_state = AuthState.AUTHENTICATED
@@ -100,7 +100,7 @@ class SessionStore:
 
         Expired sessions have their ``auth_state`` set to ``AuthState.EXPIRED`` – the orchestrator will then ask the policy engine to require re‑authentication.
         """
-        now = datetime.datetime.utcnow()
+        now = datetime.datetime.now(datetime.timezone.utc)
         for sess in cls._sessions.values():
             if now - sess.last_activity > timeout:
                 sess.auth_state = AuthState.EXPIRED

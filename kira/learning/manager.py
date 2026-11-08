@@ -79,7 +79,7 @@ class LearningManager:
         if cur.fetchone():
             conn.close()
             return  # Duplicate – ignore per design
-        ts = datetime.datetime.utcnow().isoformat() + "Z"
+        ts = datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
         cur.execute(
             "INSERT INTO interactions (ts, operation, outcome, confidence, details) VALUES (?, ?, ?, ?, ?)",
             (ts, operation, outcome, confidence, details_json),
