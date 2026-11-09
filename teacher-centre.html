@@ -56,7 +56,12 @@
     <section style="margin-top:2rem;">
       <h2>Get started</h2>
       <p>Sign in with your Google‑linked MXT Lab account. Teachers will be prompted for verification and subscription status after sign‑in.</p>
-      <button class="btn btn-primary" id="google-signin" aria-label="Sign in with Google">Sign in as Teacher</button>
+      <button class="btn btn-primary" id="google-signin-teacher" aria-label="Sign in with Google">Sign in as Teacher</button>
+    <script type="module">
+      import { signInWithGoogle } from '/assets/js/auth.js';
+      const teacherBtn = document.getElementById('google-signin-teacher');
+      if (teacherBtn) teacherBtn.onclick = signInWithGoogle;
+    </script>
     </section>
   </main>
 

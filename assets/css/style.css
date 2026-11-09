@@ -74,10 +74,10 @@ img{max-width:100%}
 .google-signin-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;visibility:hidden}
 .btn-full.google-signin-btn{display:flex}
 .profile-badge{display:none;align-items:center;gap:8px;cursor:pointer;padding:4px 10px 4px 4px;border-radius:50px;transition:background .18s;visibility:hidden}
-.google-signin-btn.auth-ready,.profile-badge.auth-ready{visibility:visible}
+.google-signin-btn.auth-ready,.profile-badge.auth-ready{display:inline-flex;visibility:visible}
 .profile-badge:hover{background:var(--bg2)}
 /* Hide Google sign‑in button permanently */
-.google-signin-btn {display:none !important;}
+.google-signin-btn {display:none;}
 .profile-badge img{width:28px;height:28px;border-radius:50%;object-fit:cover;background:var(--bg2)}
 .profile-badge span{font-size:.85rem;font-weight:600}
 .mob-footer .profile-badge{width:100%;justify-content:center;padding:13px;border-radius:50px;background:var(--bg2)}
