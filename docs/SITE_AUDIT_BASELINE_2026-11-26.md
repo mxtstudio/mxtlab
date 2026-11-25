@@ -195,6 +195,19 @@ Hard constraints for this architecture project:
 
 PR #46 proposes restricting self-created profile inserts to the student role. It remains open and unapplied at this snapshot; it is not part of this documentation change.
 
+## 8.1 CI migration workflow gap
+
+The current `supabase/validate-migrations.mjs` requires every SQL file in `supabase/migrations/` to already exist in the live migration ledger. This means a new, correctly versioned candidate migration fails the pull-request quality workflow until it has first been applied to the live database and the ledger updated. PR #46 demonstrates this: the proposed profile INSERT policy migration is not in the live ledger, so the validator fails before the remaining checks run.
+
+This is a process limitation, not evidence that the migration SQL is invalid. Do not bypass it by editing the live ledger manually or applying the migration without approval.
+
+**Recommendation:** define a reviewed pending-migration workflow. CI should distinguish:
+- already-applied migrations, which must match the live ledger exactly;
+- explicitly declared pending migrations, which are checked for filename/version validity and ordering but are not represented as applied;
+- migrations that have been applied, which are reconciled against the live ledger after the separately approved database change.
+
+The workflow must never label a pending migration as applied or permit destructive reset/replay against production.
+
 ## 8. Existing pending work and deployment constraints
 
 At the audit snapshot:
