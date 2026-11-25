@@ -44,6 +44,9 @@ jobs:
             node --input-type=module --check < "$file"
           done < <(find assets/js -type f -name '*.js' -print0)
 
+      - name: Validate per-page lesson module loading
+        run: node scripts/validate-lesson-loading.mjs
+
       - name: Validate sitemap XML
         run: python -c "import xml.etree.ElementTree as ET; ET.parse('sitemap.xml')"
 
