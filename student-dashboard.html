@@ -21,8 +21,9 @@
         <span class="nav-badge">Student</span>
       </a>
       <ul class="nav-links">
-        <li><a href="/dashboard.html">My Dashboard</a></li>
-        <li><a href="/teacher-os.html">For Teachers</a></li>
+        <li><a href="/dashboard.html">Account</a></li>
+        <li><a href="/student-dashboard.html" aria-current="page">Learning Progress</a></li>
+        <li><a href="/teacher-centre.html">For Teachers</a></li>
       </ul>
       <div class="nav-right">
         <button class="nav-icon-btn" id="google-signin" aria-label="Sign in with Google">Sign in</button>
@@ -38,19 +39,21 @@
     <h1>Student Dashboard</h1>
     <section id="overview">
       <h2>Learning Overview</h2>
+      <p id="overallSummary" aria-live="polite">Sign in to view your curriculum progress.</p>
       <canvas id="overallChart" width="400" height="200"></canvas>
     </section>
     <section id="curriculum-nav">
       <h2>Curriculum Navigation</h2>
       <div id="curriculumTree"></div>
     </section>
-    <section id="recent-quizzes">
-      <h2>Recent Quiz Attempts</h2>
-      <table id="quizTable" class="tos-table">
-        <thead><tr><th>Date</th><th>Topic</th><th>Score</th></tr></thead>
+    <section id="recent-activity">
+      <h2>Recent Learning Activity</h2>
+      <table id="activityTable" class="tos-table">
+        <thead><tr><th>Date</th><th>Topic</th><th>Status</th></tr></thead>
         <tbody></tbody>
       </table>
     </section>
+    <p id="dashboardError" role="alert" aria-live="polite"></p>
     <section id="recommendations">
       <h2>Recommended Revision Activities</h2>
       <ul id="recommendList"></ul>
