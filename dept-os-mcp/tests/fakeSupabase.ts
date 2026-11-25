@@ -1,27 +1,18 @@
-// Minimal in-memory stand-in for @supabase/supabase-js, covering only what
-// app/api/mcp/route.ts uses. It models the two properties that matter for
-// isolation: Auth validates tokens, and the service client BYPASSES RLS
-// (so isolation depends entirely on the route's own filtering).
+// Minimal in-memory stand-in for @supabase/supabase-js used by route tests.
+// The service client intentionally bypasses RLS, matching the production service-role key.
 export const ANON_KEY = 'test-anon-key';
 export const SERVICE_KEY = 'test-service-key';
 
 type Row = Record<string, any>;
-
 const g = globalThis as any;
 export const state = (g.__fakeSupabaseState ??= {
-  // token -> user id (valid tokens only)
   tokens: new Map<string, string>(),
-  // tokens that Auth rejects explicitly (expired/revoked)
   rejected: new Set<string>(),
-  // simulate the Auth service being down
   authDown: false,
-  // simulate the database being down
   dbDown: false,
-  // fail only queries against these tables (e.g. after auth succeeded)
   failTables: new Set<string>(),
-  // artificial Auth latency per token (ms), for concurrency tests
   authDelay: new Map<string, number>(),
-  tables: { profiles: [] as Row[], dashboard_entries: [] as Row[] },
+  tables: { profiles: [] as Row[], dashboard_entries: [] as Row[], student_progress: [] as Row[] },
   nextId: 1,
 }) as {
   tokens: Map<string, string>;
@@ -30,7 +21,7 @@ export const state = (g.__fakeSupabaseState ??= {
   dbDown: boolean;
   failTables: Set<string>;
   authDelay: Map<string, number>;
-  tables: { profiles: Row[]; dashboard_entries: Row[] };
+  tables: { profiles: Row[]; dashboard_entries: Row[]; student_progress: Row[] };
   nextId: number;
 };
 
@@ -43,12 +34,13 @@ export function resetState() {
   state.authDelay.clear();
   state.tables.profiles = [];
   state.tables.dashboard_entries = [];
+  state.tables.student_progress = [];
   state.nextId = 1;
 }
 
 class Query implements PromiseLike<{ data: any; error: any }> {
   private filters: Array<(r: Row) => boolean> = [];
-  private op: 'select' | 'insert' = 'select';
+  private op: 'select' | 'insert' | 'upsert' = 'select';
   private payload: Row | null = null;
   private orderBy: { col: string; asc: boolean } | null = null;
   private max: number | null = null;
@@ -57,6 +49,7 @@ class Query implements PromiseLike<{ data: any; error: any }> {
 
   select(_cols?: string) { return this; }
   insert(row: Row) { this.op = 'insert'; this.payload = row; return this; }
+  upsert(row: Row, _options?: { onConflict?: string }) { this.op = 'upsert'; this.payload = row; return this; }
   eq(col: string, val: any) { this.filters.push((r) => r[col] === val); return this; }
   order(col: string, o?: { ascending?: boolean }) { this.orderBy = { col, asc: o?.ascending ?? true }; return this; }
   limit(n: number) { this.max = n; return this; }
@@ -64,11 +57,25 @@ class Query implements PromiseLike<{ data: any; error: any }> {
   single() { this.mode = 'single'; return this; }
 
   private run(): { data: any; error: any } {
-    if (state.dbDown || state.failTables.has(this.table)) return { data: null, error: { message: 'connection refused to db.internal:5432 password=SECRET' } };
+    if (state.dbDown || state.failTables.has(this.table)) {
+      return { data: null, error: { message: 'connection refused to db.internal:5432 password=SECRET' } };
+    }
     const rows = state.tables[this.table];
-    if (this.op === 'insert') {
-      const row = { id: `entry-${state.nextId++}`, created_at: new Date().toISOString(), ...this.payload };
-      rows.push(row);
+    if (this.op === 'insert' || this.op === 'upsert') {
+      let row: Row;
+      if (this.op === 'upsert' && this.table === 'student_progress') {
+        const existing = rows.find((r) => r.student_id === this.payload?.student_id && r.topic_id === this.payload?.topic_id);
+        if (existing) {
+          Object.assign(existing, this.payload);
+          row = existing;
+        } else {
+          row = { id: `entry-${state.nextId++}`, created_at: new Date().toISOString(), ...this.payload };
+          rows.push(row);
+        }
+      } else {
+        row = { id: `entry-${state.nextId++}`, created_at: new Date().toISOString(), ...this.payload };
+        rows.push(row);
+      }
       return { data: this.mode ? row : [row], error: null };
     }
     let out = rows.filter((r) => this.filters.every((f) => f(r)));
@@ -105,8 +112,6 @@ export function createClient(_url: string, key: string) {
       },
     };
   }
-  if (key === SERVICE_KEY) {
-    return { from: (t: keyof typeof state.tables) => new Query(t) };
-  }
+  if (key === SERVICE_KEY) return { from: (table: keyof typeof state.tables) => new Query(table) };
   throw new Error('unexpected key in test');
 }

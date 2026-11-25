@@ -108,13 +108,15 @@ export async function POST(request: Request): Promise<Response> {
   const parsed = progressPayloadSchema.safeParse(payload);
   if (!parsed.success) return invalidPayload();
 
+  const completedAt = parsed.data.status === 'completed' ? new Date().toISOString() : null;
   const { data, error } = await getServiceClient()
     .from('student_progress')
-    .insert({
+    .upsert({
       student_id: identity.userId,
       topic_id: parsed.data.topic_id,
       status: parsed.data.status,
-    })
+      completed_at: completedAt,
+    }, { onConflict: 'student_id,topic_id' })
     .select('*')
     .single();
 
@@ -123,5 +125,5 @@ export async function POST(request: Request): Promise<Response> {
     return jsonResponse({ error: 'Unable to update progress' }, 500);
   }
 
-  return jsonResponse({ record: data }, 201);
+  return jsonResponse({ record: data }, 200);
 }

@@ -8,6 +8,9 @@ BEGIN
   IF EXISTS (SELECT 1 FROM public.quiz_attempts qa LEFT JOIN public.profiles p ON p.id = qa.student_id WHERE p.id IS NULL) THEN
     RAISE EXCEPTION 'quiz_attempts contains IDs that are not profile IDs; reconcile before migration';
   END IF;
+  IF EXISTS (SELECT 1 FROM public.student_progress GROUP BY student_id, topic_id HAVING count(*) > 1) THEN
+    RAISE EXCEPTION 'student_progress contains duplicate student/topic rows; reconcile before migration';
+  END IF;
 END
 $$;
 
@@ -17,6 +20,14 @@ ALTER TABLE public.student_progress ADD CONSTRAINT student_progress_student_id_f
 ALTER TABLE public.quiz_attempts DROP CONSTRAINT IF EXISTS quiz_attempts_student_id_fkey;
 ALTER TABLE public.quiz_attempts ADD CONSTRAINT quiz_attempts_student_id_fkey
   FOREIGN KEY (student_id) REFERENCES public.profiles(id) ON DELETE CASCADE;
+
+ALTER TABLE public.student_progress
+  ADD CONSTRAINT student_progress_status_check CHECK (status IN ('in_progress', 'completed'));
+ALTER TABLE public.student_progress
+  ADD CONSTRAINT student_progress_completion_check CHECK (
+    (status = 'completed' AND completed_at IS NOT NULL)
+    OR (status = 'in_progress' AND completed_at IS NULL)
+  );
 
 ALTER TABLE public.student_progress ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.quiz_attempts ENABLE ROW LEVEL SECURITY;
@@ -56,8 +67,10 @@ GRANT SELECT, INSERT ON TABLE public.quiz_attempts TO authenticated;
 GRANT ALL ON TABLE public.student_progress TO service_role;
 GRANT ALL ON TABLE public.quiz_attempts TO service_role;
 
-CREATE INDEX IF NOT EXISTS student_progress_student_topic_idx ON public.student_progress (student_id, topic_id);
-CREATE INDEX IF NOT EXISTS quiz_attempts_student_topic_attempted_idx ON public.quiz_attempts (student_id, topic_id, attempted_at DESC);
+CREATE UNIQUE INDEX student_progress_student_topic_unique_idx
+  ON public.student_progress (student_id, topic_id);
+CREATE INDEX IF NOT EXISTS quiz_attempts_student_topic_attempted_idx
+  ON public.quiz_attempts (student_id, topic_id, attempted_at DESC);
 
 REVOKE ALL ON FUNCTION public.check_rate_limit(text, integer, integer) FROM PUBLIC, anon;
 GRANT EXECUTE ON FUNCTION public.check_rate_limit(text, integer, integer) TO authenticated;
@@ -72,5 +85,5 @@ GRANT EXECUTE ON FUNCTION public.revoke_my_api_key(uuid) TO authenticated;
 REVOKE ALL ON FUNCTION public.flag_new_device_session() FROM PUBLIC, anon, authenticated;
 REVOKE ALL ON FUNCTION public.sync_head_of_department_to_roles() FROM PUBLIC, anon, authenticated;
 
-COMMENT ON TABLE public.student_progress IS 'Learning progress belongs to the permanent student profile; teacher reads require an active teacher_students link.';
-COMMENT ON TABLE public.quiz_attempts IS 'Quiz history belongs to the permanent student profile; teacher reads require an active teacher_students link.';
+COMMENT ON TABLE public.student_progress IS 'One learning-progress row per topic, owned by the permanent student profile; linked teachers may read it.';
+COMMENT ON TABLE public.quiz_attempts IS 'Quiz history belongs to the permanent student profile; linked teachers may read it.';
