@@ -84,9 +84,18 @@ for (const slug of quizSlugs) {
   if (!dataSlugs.includes(slug)) errors.push(`quiz-data.js is missing quiz content for ${slug}`);
 }
 
+
+const teacherOsHtml = await readFile('teacher-os.html', 'utf8');
+if (/assets\\/js\\/lesson-data\\.js/.test(teacherOsHtml)) {
+  errors.push('teacher-os.html: must not download the full lesson-content bundle');
+}
+if (!teacherOsHtml.includes('<script src="/assets/js/main.js" defer></script>')) {
+  errors.push('teacher-os.html: missing shared main.js navigation/search bundle');
+}
+
 assert.equal(errors.length, 0, errors.join('\n'));
 assert.equal(pageFiles.length, moduleFiles.length, 'Every published lesson page must have exactly one matching module');
 
 console.log(`Validated ${pageFiles.length} lesson pages and ${moduleFiles.length} matching modules.`);
 console.log(`Total of all page-specific module files: ${totalPageModuleBytes.toLocaleString()} bytes (each page downloads only its own module).`);
-console.log('Lesson pages load one page-specific module; the quiz hub loads only quiz-data.js, not lesson-data.js.');
+console.log('Lesson pages load one page-specific module; Quiz Hub loads quiz-data.js; Teacher OS skips the full lesson bundle.');
