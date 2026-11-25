@@ -12,10 +12,25 @@ export const supabase = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
 /**
  * Trigger Google sign‑in. Called from a button's onclick.
  */
-export async function signInWithGoogle() {
+export async function signInWithGoogle(redirectTo = null) {
+  // Keep OAuth callbacks on this origin and return users to the workflow they started.
+  const requestedRedirect = redirectTo || (window.location.pathname === '/apply-teacher.html' ? '/apply-teacher.html' : '/dashboard.html');
+  let safeRedirect = '/dashboard.html';
+  if (typeof requestedRedirect === 'string' && requestedRedirect.startsWith('/') && !requestedRedirect.startsWith('//')) {
+    try {
+      const candidate = new URL(requestedRedirect, window.location.origin);
+      // Backslashes can be treated as URL separators by browsers. Compare the
+      // parsed origin as well as the relative-path form before accepting it.
+      if (candidate.origin === window.location.origin) {
+        safeRedirect = `${candidate.pathname}${candidate.search}${candidate.hash}`;
+      }
+    } catch {
+      // Keep the safe dashboard fallback for malformed redirect values.
+    }
+  }
   const { error } = await supabase.auth.signInWithOAuth({
     provider: 'google',
-    options: { redirectTo: window.location.origin + '/dashboard.html' },
+    options: { redirectTo: new URL(safeRedirect, window.location.origin).toString() },
   });
   if (error) {
     console.error('Google sign‑in failed:', error.message);
@@ -62,26 +77,19 @@ async function updateNavForRole(session) {
   const role = session ? (await getCurrentUserProfile())?.role || 'student' : 'guest';
   const applyLinks = document.querySelectorAll('[data-nav-role="apply-teacher"]');
   const teacherLinks = document.querySelectorAll('[data-nav-role="teacher-dashboard"]');
-  const centreLinks = document.querySelectorAll('[data-nav-role="teacher-centre"]');
   const adminLinks = document.querySelectorAll('[data-nav-role="admin-dashboard"]');
   applyLinks.forEach(link => { link.style.display = role === 'student' ? '' : 'none'; });
-  teacherLinks.forEach(link => { link.style.display = role === 'teacher' ? '' : 'none'; });
-  centreLinks.forEach(link => { link.style.display = role === 'teacher' ? '' : 'none'; });
+  teacherLinks.forEach(link => {
+    link.style.display = (role === 'teacher' || role === 'admin') ? '' : 'none';
+    const anchor = link.querySelector('a');
+    if (anchor) {
+      anchor.href = '/teacher-os.html';
+      anchor.textContent = 'Teacher Workspace';
+      anchor.setAttribute('data-staff-workspace', '');
+    }
+  });
   adminLinks.forEach(link => { link.style.display = role === 'admin' ? '' : 'none'; });
-  // Ensure the hidden Teacher Centre link exists (fallback for pages missing the markup)
-  if (centreLinks.length === 0) {
-    const li = document.createElement('li');
-    li.dataset.navRole = 'teacher-centre';
-    li.style.display = role === 'teacher' ? '' : 'none';
-    const a = document.createElement('a');
-    a.href = '/teacher-centre.html';
-    a.textContent = 'Teacher Centre';
-    li.appendChild(a);
-    const navLinks = document.querySelectorAll('.nav-links');
-    navLinks.forEach(n => n.appendChild(li.cloneNode(true)));
-  }
-
-  const teacherOsLinks = document.querySelectorAll('a[href="/teacher-os.html"]');
+  const teacherOsLinks = document.querySelectorAll('a[href="/teacher-os.html"][data-staff-workspace]');
   teacherOsLinks.forEach(l => {
     l.style.display = (role === 'teacher' || role === 'admin') ? '' : 'none';
   });
@@ -135,7 +143,12 @@ supabase.auth.getSession().then(({ data: { session } }) => {
 // Wire sign‑in buttons.
 ['google-signin', 'google-signin-mobile'].forEach((id) => {
   const btn = document.getElementById(id);
-  if (btn) btn.onclick = signInWithGoogle;
+  if (btn) btn.onclick = () => signInWithGoogle(btn.dataset.authRedirect || null);
+});
+
+// Allow workflow-specific buttons to return to their originating page after OAuth.
+document.querySelectorAll('[data-auth-redirect]').forEach((btn) => {
+  btn.onclick = () => signInWithGoogle(btn.dataset.authRedirect);
 });
 
 // Keep UI in sync on every auth state change.

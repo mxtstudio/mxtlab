@@ -897,3 +897,11 @@ function filterGlossary(q){ renderGlossary(glossaryFilter); }
   if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initBanner);
   else initBanner();
 })();
+
+
+// Lesson pages use this shared script and historically linked the public
+// “For Teachers” navigation directly to the staff-only Teacher OS. Normalize
+// those legacy relative links to the public Teacher Centre.
+document.querySelectorAll('a[href="../teacher-os.html"]').forEach((link) => {
+  link.setAttribute('href', '../teacher-centre.html');
+});
