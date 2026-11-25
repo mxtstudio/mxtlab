@@ -49,6 +49,41 @@ for (const moduleFile of moduleFiles) {
   if (!pageSlugs.has(slug)) errors.push(`${moduleFile}: no matching published lesson page`);
 }
 
+
+const quizHtml = await readFile('quiz.html', 'utf8');
+const quizDataTag = '<script src="/assets/js/quiz-data.js" defer></script>';
+const mainTag = '<script src="/assets/js/main.js" defer></script>';
+const quizHubTag = '<script src="/assets/js/quiz-hub.js" defer></script>';
+const quizDataIndex = quizHtml.indexOf(quizDataTag);
+const quizMainIndex = quizHtml.indexOf(mainTag);
+const quizHubIndex = quizHtml.indexOf(quizHubTag);
+
+if (quizDataIndex < 0) errors.push('quiz.html: must load the quiz-only data bundle');
+if (quizMainIndex < 0) errors.push('quiz.html: missing main.js');
+if (quizHubIndex < 0) errors.push('quiz.html: missing quiz-hub.js');
+if (quizDataIndex >= 0 && quizMainIndex >= 0 && quizDataIndex > quizMainIndex) {
+  errors.push('quiz.html: quiz data must load before main.js');
+}
+if (quizMainIndex >= 0 && quizHubIndex >= 0 && quizMainIndex > quizHubIndex) {
+  errors.push('quiz.html: main.js must load before quiz-hub.js');
+}
+if (/assets\\/js\\/lesson-data\\.js/.test(quizHtml)) {
+  errors.push('quiz.html: still downloads the full lesson-content bundle');
+}
+
+const quizDataSource = await readFile('assets/js/quiz-data.js', 'utf8');
+const quizHubSource = await readFile('assets/js/quiz-hub.js', 'utf8');
+const quizSlugs = [...quizHubSource.matchAll(/slug:'([^']+)'/g)].map((match) => match[1]);
+const dataSlugs = [...quizDataSource.matchAll(/window\\.LESSONS\\[['"]([^'"]+)['"]\\]\\s*=\\s*\\{\\s*quiz\\s*:/g)]
+  .map((match) => match[1]);
+
+if (quizSlugs.length !== dataSlugs.length) {
+  errors.push(`quiz-hub.js lists ${quizSlugs.length} quizzes but quiz-data.js defines ${dataSlugs.length}`);
+}
+for (const slug of quizSlugs) {
+  if (!dataSlugs.includes(slug)) errors.push(`quiz-data.js is missing quiz content for ${slug}`);
+}
+
 assert.equal(errors.length, 0, errors.join('\n'));
 assert.equal(pageFiles.length, moduleFiles.length, 'Every published lesson page must have exactly one matching module');
 
