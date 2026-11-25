@@ -67,3 +67,8 @@ Leaked-password protection should be enabled after reviewing its authentication 
 - Table constraints for profiles, department roles, departments, schools, teacher requests, and teacher applications: inspected read-only.
 - SQL regression tests for the finding: not yet run.
 - Migration or production change: not performed.
+
+- `remove_department_member`: checks HOD membership in the supplied department or admin role before deleting that department membership. Its profile cleanup is conditional on the profile's current `department_id`; if multi-department memberships are intended, the resulting `department_roles` and `profiles.department_id` state deserves an explicit invariant/test.
+- `compute_department_health` and `check_rate_limit`: the live ACL grants execution to `service_role`, not `authenticated`; they were not counted as user-callable RPCs in the risk assessment.
+- `current_role_is_admin`: checks only the caller's own profile role using `auth.uid()`.
+- `list_my_api_keys`, `list_my_api_tokens`, `revoke_my_api_key`, and `revoke_my_api_token`: list/revoke operations are scoped to rows whose `profile_id` equals `auth.uid()`; list functions return metadata, not raw secret values.
