@@ -18,7 +18,8 @@
     .teacher-entry-muted{color:var(--ink2);background:var(--surface)}
     .teacher-entry-status{margin-top:18px;color:var(--ink2);font-size:.92rem}
     .teacher-entry-list{padding-left:20px;margin-top:12px}
-    .teacher-entry-list li{margin:8px 0}
+     .teacher-entry-list li{margin:8px 0}
+    [hidden]{display:none!important}
   </style>
 </head>
 <body>
@@ -101,7 +102,6 @@
     }
 
     refreshTeacherEntry();
-    supabase.auth.onAuthStateChange(() => { refreshTeacherEntry(); });
   </script>
 </body>
 </html>
