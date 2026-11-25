@@ -4,7 +4,7 @@
 **Based on:** `docs/SITE_AUDIT_BASELINE_2026-11-26.md`  
 **Guiding principle:** Evolve the existing platform safely; preserve learning content, public links, accounts, and student records.
 
-Related references: [site audit baseline](./SITE_AUDIT_BASELINE_2026-11-26.md) · [route and lesson inventory](./ROUTE_INVENTORY.md).
+Related references: [site audit baseline](./SITE_AUDIT_BASELINE_2026-11-26.md) · [route and lesson inventory](./ROUTE_INVENTORY.md) · [third-party/performance review](./THIRD_PARTY_AND_PERFORMANCE_AUDIT.md).
 
 ## 1. Product definition
 
