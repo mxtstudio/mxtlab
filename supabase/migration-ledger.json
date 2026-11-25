@@ -417,6 +417,10 @@
     {
       "version": "20261125170352",
       "name": "remove_client_table_admin_privileges_and_internal_access"
+    },
+    {
+      "version": "20261125170625",
+      "name": "revoke_postgres_default_client_privileges"
     }
   ]
 }
