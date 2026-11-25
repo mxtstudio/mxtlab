@@ -1,5 +1,27 @@
 -- MXT Lab: create a complete, private teacher-application workflow.
 -- Explicit grants are required for new public-schema tables on Supabase.
+CREATE OR REPLACE FUNCTION public.teacher_application_documents_valid(
+  p_user_id uuid,
+  p_documents text[]
+)
+RETURNS boolean
+LANGUAGE sql
+IMMUTABLE
+SET search_path = ''
+AS $function$
+  SELECT p_user_id IS NOT NULL
+    AND COALESCE(cardinality(p_documents), 0) BETWEEN 1 AND 5
+    AND NOT EXISTS (
+      SELECT 1
+      FROM unnest(COALESCE(p_documents, ARRAY[]::text[])) AS item(path)
+      WHERE item.path IS NULL
+         OR item.path !~* ('^' || p_user_id::text || '/[0-9a-f-]{36}[.](pdf|jpg|jpeg|png)$')
+    );
+$function$;
+
+REVOKE ALL ON FUNCTION public.teacher_application_documents_valid(uuid, text[]) FROM PUBLIC, anon;
+GRANT EXECUTE ON FUNCTION public.teacher_application_documents_valid(uuid, text[]) TO authenticated, service_role;
+
 CREATE TABLE public.teacher_applications (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   user_id uuid NOT NULL REFERENCES public.profiles(id) ON DELETE CASCADE,
@@ -12,7 +34,7 @@ CREATE TABLE public.teacher_applications (
   position text NOT NULL CHECK (char_length(btrim(position)) BETWEEN 2 AND 120),
   subjects text NOT NULL CHECK (char_length(btrim(subjects)) BETWEEN 2 AND 500),
   years_experience integer NOT NULL CHECK (years_experience BETWEEN 0 AND 60),
-  documents text[] NOT NULL DEFAULT '{}'::text[],
+  documents text[] NOT NULL,
   status text NOT NULL DEFAULT 'pending' CHECK (status IN ('pending', 'approved', 'rejected')),
   admin_note text,
   admin_id uuid REFERENCES public.profiles(id) ON DELETE SET NULL,
@@ -21,7 +43,9 @@ CREATE TABLE public.teacher_applications (
   CONSTRAINT teacher_applications_review_state_check CHECK (
     (status = 'pending' AND admin_id IS NULL AND reviewed_at IS NULL)
     OR (status IN ('approved', 'rejected') AND admin_id IS NOT NULL AND reviewed_at IS NOT NULL)
-  )
+  ),
+  CONSTRAINT teacher_applications_documents_check
+    CHECK (public.teacher_application_documents_valid(user_id, documents))
 );
 
 CREATE UNIQUE INDEX teacher_applications_one_pending_per_user_idx ON public.teacher_applications (user_id) WHERE status = 'pending';
@@ -117,6 +141,7 @@ CREATE POLICY teacher_applications_upload_own ON storage.objects
   FOR INSERT TO authenticated WITH CHECK (
     bucket_id = 'teacher-applications'
     AND (storage.foldername(name))[1] = (SELECT auth.uid()::text)
+    AND name ~* '^[0-9a-f-]{36}/[0-9a-f-]{36}[.](pdf|jpg|jpeg|png)$'
   );
 CREATE POLICY teacher_applications_read_own_or_admin ON storage.objects
   FOR SELECT TO authenticated USING (

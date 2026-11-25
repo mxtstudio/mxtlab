@@ -1,6 +1,7 @@
 import { supabase, getCurrentUserProfile } from '/assets/js/auth.js';
 
 const MAX_FILE_SIZE = 5 * 1024 * 1024;
+const MAX_FILES = 5;
 const ALLOWED_DOCUMENTS = {
   pdf: 'application/pdf',
   jpg: 'image/jpeg',
@@ -10,6 +11,7 @@ const ALLOWED_DOCUMENTS = {
 
 function validateFiles(files) {
   if (!files || files.length === 0) throw new Error('Please attach at least one supporting document.');
+  if (files.length > MAX_FILES) throw new Error('You can attach a maximum of 5 supporting documents.');
   for (const file of files) {
     const extension = file.name.split('.').pop()?.toLowerCase();
     const expectedType = extension ? ALLOWED_DOCUMENTS[extension] : null;
