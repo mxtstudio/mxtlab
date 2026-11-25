@@ -4,8 +4,8 @@
 
 - Project: `MXTLAB PROJECT`
 - Snapshot date: 26 November 2026
-- Applied migrations in the live ledger: **99**
-- Active migration files after reconciliation: **11**
+- Applied migrations in the live ledger: **100**
+- Active migration files after reconciliation: **12**
 - Historical migration SQL files still missing from the repository: **88**
 
 The live database is operating with the current schema. This is a source-control reproducibility issue, not a claim that live objects are missing.
@@ -13,10 +13,10 @@ The live database is operating with the current schema. This is a source-control
 ## What was corrected
 
 - Four historical files now use their exact remote ledger versions.
-- Seven November 2026 security/performance migrations now use their exact applied versions.
+- Eight November 2026 security/performance migrations now use their exact applied versions.
 - `20261031000000_curriculum_and_progress.sql` is archived because its version is absent from the live ledger and it overlaps curriculum/progress objects represented by the later roster-model migration.
 - `migration-ledger.json` records the live version/name pairs.
-- `validate-migrations.mjs` and CI fail if an active migration filename does not match the ledger.
+- `validate-migrations.mjs` and CI fail if an active migration filename does not match an applied live ledger version.
 
 ## Historical migration SQL still missing
 

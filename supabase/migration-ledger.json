@@ -397,6 +397,10 @@
     {
       "version": "20261125163720",
       "name": "harden_review_rpcs_and_api_token_creation"
+    },
+    {
+      "version": "20261125163952",
+      "name": "restrict_department_resource_uploads"
     }
   ]
 }
