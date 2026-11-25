@@ -71,8 +71,13 @@ let checkedFragments = 0;
 
 for (const htmlFile of htmlFiles) {
   const source = await readFile(path.join(ROOT, htmlFile), 'utf8');
-  const ids = new Set([...source.matchAll(/\bid\s*=\s*["']([^"']+)["']/gi)].map((match) => match[1]));
-  const tags = source.match(/<(?:a|script|link|img|source|video|audio|iframe)\b[^>]*>/gi) || [];
+  // Avoid treating markup-like content inside inline scripts or data-URI SVGs as HTML.
+  const markup = source
+    .replace(/data:image\/svg\+xml,[^"]*/gi, 'data:image/svg+xml,INLINE_SVG')
+    .replace(/(<script\b[^>]*>)[\s\S]*?<\/script>/gi, '$1')
+    .replace(/(<style\b[^>]*>)[\s\S]*?<\/style>/gi, '$1');
+  const ids = new Set([...markup.matchAll(/\bid\s*=\s*["']([^"']+)["']/gi)].map((match) => match[1]));
+  const tags = markup.match(/<(?:a|script|link|img|source|video|audio|iframe)\b[^>]*>/gi) || [];
 
   for (const tag of tags) {
     const tagName = (tag.match(/^<([a-z]+)/i) || [])[1]?.toLowerCase();
