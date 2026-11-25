@@ -4,8 +4,8 @@
 
 - Project: `MXTLAB PROJECT`
 - Snapshot date: 26 November 2026
-- Applied migrations in the live ledger: **102**
-- Active migration files after reconciliation: **14**
+- Applied migrations in the live ledger: **103**
+- Active migration files after reconciliation: **15**
 - Historical migration SQL files still missing from the repository: **88**
 
 The live database is operating with the current schema. This is a source-control reproducibility issue, not a claim that live objects are missing.
@@ -13,11 +13,12 @@ The live database is operating with the current schema. This is a source-control
 ## What was corrected
 
 - Four historical files now use their exact remote ledger versions.
-- Ten November 2026 security/performance migrations now use their exact applied versions.
+- Eleven November 2026 security/performance migrations now use their exact applied versions.
 - `20261031000000_curriculum_and_progress.sql` is archived because its version is absent from the live ledger and it overlaps curriculum/progress objects represented by the later roster-model migration.
 - `migration-ledger.json` records the live version/name pairs.
 - `validate-migrations.mjs` and CI fail if an active migration filename does not match an applied live ledger version.
-- Department resource uploads are limited to 10 MB and allowed document/image types, scoped to teachers' own department and uploader folder. A temporary legacy-path policy preserves compatibility with the deployed teacher portal until the matching frontend update is released.
+- Department resource uploads are private, limited to 10 MB and approved document/image types, scoped to department staff and uploader folders. A temporary legacy-path policy preserves compatibility until the matching frontend is released.
+- Account-linked lesson/practice progress is visible to a teacher only when the student is explicitly linked to that teacher, not merely because both accounts belong to the same school.
 
 ## Historical migration SQL still missing
 
