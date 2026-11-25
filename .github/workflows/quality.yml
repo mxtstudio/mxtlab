@@ -46,8 +46,12 @@ jobs:
 
       - name: Install MCP dependencies
         working-directory: dept-os-mcp
-        run: npm ci
+        run: npm install --no-audit --no-fund
 
       - name: Run MCP regression tests
         working-directory: dept-os-mcp
         run: npm test
+
+      - name: Audit all MCP dependencies
+        working-directory: dept-os-mcp
+        run: npm audit --audit-level=high
