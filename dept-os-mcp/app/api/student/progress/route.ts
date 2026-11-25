@@ -1,11 +1,14 @@
 import { createClient } from '@supabase/supabase-js';
-import { AsyncLocalStorage } from 'node:async_hooks';
+import { z } from 'zod';
 import { getServiceClient } from '@/lib/supabase';
 
 export const runtime = 'nodejs';
 export const maxDuration = 30;
 
-const authContext = new AsyncLocalStorage<{ userId: string }>();
+const progressPayloadSchema = z.object({
+  topic_id: z.string().uuid(),
+  status: z.enum(['in_progress', 'completed']),
+});
 
 async function verifySupabaseAccessToken(token: string): Promise<string | null> {
   const url = process.env.SUPABASE_URL;
@@ -27,12 +30,26 @@ async function verifySupabaseAccessToken(token: string): Promise<string | null> 
   }
 }
 
+function jsonResponse(body: unknown, status: number): Response {
+  return new Response(JSON.stringify(body), {
+    status,
+    headers: {
+      'content-type': 'application/json; charset=utf-8',
+      'cache-control': 'no-store',
+    },
+  });
+}
+
 function unauthorized(): Response {
-  return new Response(JSON.stringify({ error: 'Unauthorized' }), { status: 401, headers: { 'content-type': 'application/json' } });
+  return jsonResponse({ error: 'Unauthorized' }, 401);
 }
 
 function forbidden(): Response {
-  return new Response(JSON.stringify({ error: 'Forbidden: you can only access your own progress.' }), { status: 403, headers: { 'content-type': 'application/json' } });
+  return jsonResponse({ error: 'Forbidden: you can only access your own progress.' }, 403);
+}
+
+function invalidPayload(): Response {
+  return jsonResponse({ error: 'Invalid payload' }, 400);
 }
 
 export async function GET(request: Request): Promise<Response> {
@@ -52,9 +69,12 @@ export async function GET(request: Request): Promise<Response> {
 
   const supabase = getServiceClient();
   const { data, error } = await supabase.from('student_progress').select('*').eq('student_id', studentId);
-  if (error) return new Response(JSON.stringify({ error: error.message }), { status: 500, headers: { 'content-type': 'application/json' } });
+  if (error) {
+    console.error('Student progress retrieval failed.');
+    return jsonResponse({ error: 'Unable to retrieve progress' }, 500);
+  }
 
-  return new Response(JSON.stringify({ progress: data }), { status: 200, headers: { 'content-type': 'application/json' } });
+  return jsonResponse({ progress: data }, 200);
 }
 
 export async function POST(request: Request): Promise<Response> {
@@ -64,16 +84,31 @@ export async function POST(request: Request): Promise<Response> {
   const userId = await verifySupabaseAccessToken(match[1].trim());
   if (!userId) return unauthorized();
 
-  const payload = await request.json();
-  // Expected payload: { topic_id: string, status: 'in_progress'|'completed' }
-  const { topic_id, status } = payload;
-  if (!topic_id || !['in_progress', 'completed'].includes(status)) {
-    return new Response(JSON.stringify({ error: 'Invalid payload' }), { status: 400, headers: { 'content-type': 'application/json' } });
+  let payload: unknown;
+  try {
+    payload = await request.json();
+  } catch {
+    return invalidPayload();
   }
 
-  const supabase = getServiceClient();
-  const { data, error } = await supabase.from('student_progress').insert({ student_id: userId, topic_id, status }).select('*').single();
-  if (error) return new Response(JSON.stringify({ error: error.message }), { status: 500, headers: { 'content-type': 'application/json' } });
+  const parsed = progressPayloadSchema.safeParse(payload);
+  if (!parsed.success) return invalidPayload();
 
-  return new Response(JSON.stringify({ record: data }), { status: 201, headers: { 'content-type': 'application/json' } });
+  const supabase = getServiceClient();
+  const { data, error } = await supabase
+    .from('student_progress')
+    .insert({
+      student_id: userId,
+      topic_id: parsed.data.topic_id,
+      status: parsed.data.status,
+    })
+    .select('*')
+    .single();
+
+  if (error) {
+    console.error('Student progress update failed.');
+    return jsonResponse({ error: 'Unable to update progress' }, 500);
+  }
+
+  return jsonResponse({ record: data }, 201);
 }
