@@ -5,8 +5,8 @@ vi.mock('@supabase/supabase-js', async () => await import('./fakeSupabase'));
 import { state, resetState } from './fakeSupabase';
 import { setEnv } from './helpers';
 
-const A = { id: 'student-a', token: 'tok-a' };
-const B = { id: 'student-b', token: 'tok-b' };
+const A = { id: '11111111-1111-4111-8111-111111111111', token: 'tok-a' };
+const B = { id: '22222222-2222-4222-8222-222222222222', token: 'tok-b' };
 const bearer = (token: string) => ({ authorization: `Bearer ${token}` });
 
 beforeEach(() => {
@@ -17,8 +17,8 @@ beforeEach(() => {
     state.tables.profiles.push({ id: user.id });
   }
   state.tables.student_progress.push(
-    { id: 'progress-a', student_id: A.id, topic_id: 'topic-a', status: 'completed' },
-    { id: 'progress-b', student_id: B.id, topic_id: 'topic-b', status: 'completed' },
+    { id: 'progress-a', student_id: A.id, topic_id: 'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa', status: 'completed' },
+    { id: 'progress-b', student_id: B.id, topic_id: 'bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb', status: 'completed' },
   );
 });
 
@@ -51,16 +51,57 @@ describe('student progress API authorization', () => {
     expect(response.status).toBe(401);
   });
 
+  it('rejects malformed JSON without exposing an internal error', async () => {
+    const { POST } = await import('@/app/api/student/progress/route');
+    const response = await POST(new Request('http://localhost/api/student/progress', {
+      method: 'POST',
+      headers: { ...bearer(A.token), 'content-type': 'application/json' },
+      body: '{invalid json',
+    }));
+
+    expect(response.status).toBe(400);
+    expect(await response.json()).toEqual({ error: 'Invalid payload' });
+  });
+
+  it('rejects a non-UUID topic identifier', async () => {
+    const { POST } = await import('@/app/api/student/progress/route');
+    const response = await POST(new Request('http://localhost/api/student/progress', {
+      method: 'POST',
+      headers: { ...bearer(A.token), 'content-type': 'application/json' },
+      body: JSON.stringify({ topic_id: 'not-a-uuid', status: 'completed' }),
+    }));
+
+    expect(response.status).toBe(400);
+  });
+
+  it('returns a generic error when the progress table fails', async () => {
+    state.failTables.add('student_progress');
+    const { POST } = await import('@/app/api/student/progress/route');
+    const response = await POST(new Request('http://localhost/api/student/progress', {
+      method: 'POST',
+      headers: { ...bearer(A.token), 'content-type': 'application/json' },
+      body: JSON.stringify({
+        topic_id: 'cccccccc-cccc-4ccc-8ccc-cccccccccccc',
+        status: 'completed',
+      }),
+    }));
+
+    expect(response.status).toBe(500);
+    const body = await response.text();
+    expect(body).toContain('Unable to update progress');
+    expect(body).not.toMatch(/connection refused|db.internal|password=SECRET/);
+  });
+
   it('does not allow POST to assign progress to a different student', async () => {
     const { POST } = await import('@/app/api/student/progress/route');
     const response = await POST(new Request('http://localhost/api/student/progress', {
       method: 'POST',
       headers: { ...bearer(A.token), 'content-type': 'application/json' },
-      body: JSON.stringify({ topic_id: 'topic-x', status: 'completed', student_id: B.id }),
+      body: JSON.stringify({ topic_id: 'cccccccc-cccc-4ccc-8ccc-cccccccccccc', status: 'completed', student_id: B.id }),
     }));
 
     expect(response.status).toBe(201);
-    const inserted = state.tables.student_progress.find(row => row.topic_id === 'topic-x');
+    const inserted = state.tables.student_progress.find(row => row.topic_id === 'cccccccc-cccc-4ccc-8ccc-cccccccccccc');
     expect(inserted?.student_id).toBe(A.id);
   });
 });
