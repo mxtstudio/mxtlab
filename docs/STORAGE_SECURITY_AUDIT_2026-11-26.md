@@ -12,7 +12,7 @@ Read-only inspection of the live Supabase Storage bucket configuration, Storage 
 | `department-resources` | No | 10 MiB | PDF, Word, PowerPoint, Excel, JPEG, PNG |
 | `teacher-applications` | No | 5 MiB | PDF, JPEG, PNG |
 
-RLS is enabled on both `storage.objects` and `storage.buckets`. The buckets table has no client-facing policies, so its table grants do not by themselves make bucket metadata writable or readable through RLS-protected access.
+RLS is enabled on both `storage.objects` and `storage.buckets`. The `anon` and `authenticated` roles have table-level DML grants on these Storage tables, so RLS is the effective access boundary rather than grants alone. The buckets table has no policies, which prevents client-role access to bucket metadata through RLS-protected queries; `storage.objects` has the bucket-scoped policies described below.
 
 At the time of this audit, `storage.objects` contained **zero objects**. This is a point-in-time observation, not a guarantee about future uploads. Because the buckets are empty, existing-object ownership and cross-user download behaviour could not be exercised against live files.
 
