@@ -20,7 +20,7 @@ const bearer = (t: string) => ({ authorization: `Bearer ${t}` });
 function seedTeachers() {
   for (const u of [A, B]) {
     state.tokens.set(u.token, u.id);
-    state.tables.profiles.push({ id: u.id });
+    state.tables.profiles.push({ id: u.id, role: 'teacher' });
   }
 }
 
@@ -117,6 +117,30 @@ describe('4. Valid token, no teacher profile', () => {
       { subject: 'x', grade: 'x', type: 'x', content: 'x' }, bearer('tok-ghost')));
     expect(save.status).toBe(401);
     expect(state.tables.dashboard_entries.some((r) => r.teacher_id === 'user-ghost')).toBe(false);
+    expect(state.tables.dashboard_entries).toHaveLength(4);
+  });
+});
+
+describe('4a. Authenticated non-teacher profiles', () => {
+  it('denies students before exposing teacher tools or writing dashboard data', async () => {
+    const student = { id: 'student-user', token: 'student-token' };
+    state.tokens.set(student.token, student.id);
+    state.tables.profiles.push({ id: student.id, role: 'student' });
+    seedTeachers(); seedEntries();
+    const { POST, GET } = await loadRoute();
+
+    for (const request of [
+      POST(toolCall('get_my_dashboard', {}, bearer(student.token))),
+      POST(toolCall('save_to_dashboard', {
+        subject: 'Agriculture', grade: 'Grade 9', type: 'lesson_plan', content: 'must not save',
+      }, bearer(student.token))),
+      GET(new Request('http://localhost/api/mcp', { headers: bearer(student.token) })),
+    ]) {
+      const response = await request;
+      expect(response.status).toBe(403);
+      expect(await response.text()).not.toMatch(/PRIVATE|CONFIDENTIAL|must not save/);
+    }
+
     expect(state.tables.dashboard_entries).toHaveLength(4);
   });
 });
