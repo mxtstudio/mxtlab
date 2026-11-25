@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="/assets/css/style.css" />
   <title>For Teachers — MXT Lab</title>
   <script type="module" src="/assets/js/auth.js"></script>
+  <script type="module" src="/assets/js/teacher-centre.js"></script>
   <style>
     .teacher-entry{max-width:900px;margin:0 auto;padding:clamp(28px,6vw,64px) 20px 80px}
     .teacher-entry-card{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:clamp(20px,4vw,36px);margin-top:24px;box-shadow:var(--shadow-sm)}
@@ -95,49 +96,6 @@
 
   <footer class="site-footer"><p>© 2026 MXT Lab. <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a> · <a href="/contact.html">Contact</a></p></footer>
 
-  <script type="module">
-    import { supabase, getCurrentUserProfile, signInWithGoogle } from '/assets/js/auth.js';
-    const signInButton = document.getElementById('teacher-entry-signin');
-    const status = document.getElementById('teacher-entry-status');
-    const workspace = document.getElementById('teacher-entry-workspace');
 
-    signInButton.addEventListener('click', () => signInWithGoogle('/teacher-os.html'));
-
-    const menuToggle = document.getElementById('teacher-menu-toggle');
-    const mobileDrawer = document.getElementById('teacher-mobile-drawer');
-    const closeMobileMenu = () => {
-      mobileDrawer.classList.remove('open');
-      menuToggle.classList.remove('open');
-      menuToggle.setAttribute('aria-expanded', 'false');
-    };
-    menuToggle.addEventListener('click', () => {
-      const isOpen = mobileDrawer.classList.toggle('open');
-      menuToggle.classList.toggle('open', isOpen);
-      menuToggle.setAttribute('aria-expanded', String(isOpen));
-    });
-    mobileDrawer.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMobileMenu));
-
-    async function refreshTeacherEntry() {
-      const { data: { session } } = await supabase.auth.getSession();
-      if (!session) return;
-      const profile = await getCurrentUserProfile();
-      if (!profile) {
-        status.textContent = 'We could not load your account profile. Please refresh or contact MXT Lab support.';
-        return;
-      }
-      if (profile.role === 'teacher' || profile.role === 'admin') {
-        workspace.hidden = false;
-        signInButton.hidden = true;
-        status.textContent = profile.department_id
-          ? 'Your staff account is approved. Open your Teacher Workspace.'
-          : 'Your staff account is approved, but it has not been assigned to a department yet. Contact your administrator.';
-      } else {
-        signInButton.hidden = true;
-        status.textContent = 'You are signed in. Submit a teacher access application to request teacher permissions.';
-      }
-    }
-
-    refreshTeacherEntry();
-  </script>
 </body>
 </html>
