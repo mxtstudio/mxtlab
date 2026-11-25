@@ -17,7 +17,7 @@ if (!Array.isArray(pendingLedger.pending_migrations)) {
 }
 
 for (const item of ledger.applied_migrations) {
-  if (!/^\\d{14}$/.test(item.version || '') || !/^[a-z0-9_]+$/.test(item.name || '')) {
+  if (!/^\d{14}$/.test(item.version || '') || !/^[a-z0-9_]+$/.test(item.name || '')) {
     errors.push(`Invalid applied migration ledger entry: ${JSON.stringify(item)}`);
     continue;
   }
@@ -26,7 +26,7 @@ for (const item of ledger.applied_migrations) {
 }
 
 for (const item of pendingLedger.pending_migrations) {
-  if (!/^\\d{14}$/.test(item.version || '') || !/^[a-z0-9_]+$/.test(item.name || '')) {
+  if (!/^\d{14}$/.test(item.version || '') || !/^[a-z0-9_]+$/.test(item.name || '')) {
     errors.push(`Invalid pending migration entry: ${JSON.stringify(item)}`);
     continue;
   }
@@ -36,7 +36,7 @@ for (const item of pendingLedger.pending_migrations) {
 }
 
 for (const file of files) {
-  const match = /^(\\d{14})_([a-z0-9_]+)\\.sql$/.exec(file);
+  const match = /^(\d{14})_([a-z0-9_]+)\.sql$/.exec(file);
   if (!match) {
     errors.push(`Invalid migration filename: ${file}`);
     continue;
