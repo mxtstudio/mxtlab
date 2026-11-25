@@ -93,6 +93,12 @@ if (!teacherOsHtml.includes('<script src="/assets/js/main.js" defer></script>'))
   errors.push('teacher-os.html: missing shared main.js navigation/search bundle');
 }
 
+
+const glossaryHtml = await readFile('glossary.html', 'utf8');
+if (!glossaryHtml.includes('<script src="/assets/js/lesson-data.js" defer></script>')) {
+  errors.push('glossary.html: must retain the complete lesson data required to build all key terms');
+}
+
 assert.equal(errors.length, 0, errors.join('\n'));
 assert.equal(pageFiles.length, moduleFiles.length, 'Every published lesson page must have exactly one matching module');
 
