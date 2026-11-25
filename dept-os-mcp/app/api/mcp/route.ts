@@ -5,8 +5,6 @@ import { z } from 'zod';
 import { getServiceClient } from '@/lib/supabase';
 
 export const runtime = 'nodejs';
-// Previously set through the adapter's `maxDuration` option; mcp-handler v2 is path- and
-// config-agnostic, so the function time limit is declared as a Next.js route segment option.
 export const maxDuration = 60;
 
 const authContext = new AsyncLocalStorage<{ userId: string }>();
@@ -17,7 +15,7 @@ const typeSchema = z.string().trim().min(1).max(50);
 const contentSchema = z.string().min(1).max(50_000);
 const filterSchema = z.string().trim().min(1).max(100);
 
-async function verifySupabaseAccessToken(token: string): Promise<string | null> {
+async function verifySupabaseAccessToken(token: string): Promise<{ userId: string; role: string } | null> {
   const url = process.env.SUPABASE_URL;
   const anonKey = process.env.SUPABASE_ANON_KEY;
   if (!url || !anonKey) {
@@ -29,20 +27,17 @@ async function verifySupabaseAccessToken(token: string): Promise<string | null> 
     const authClient = createClient(url, anonKey, {
       auth: { persistSession: false, autoRefreshToken: false },
     });
-    // Ask Supabase Auth to validate the token; do not trust decoded claims alone.
     const { data, error } = await authClient.auth.getUser(token);
     if (error || !data.user?.id) return null;
 
-    // dashboard_entries.teacher_id references profiles.id, so only accept a
-    // verified Auth user that has a matching MXT Lab teacher profile.
     const { data: profile, error: profileError } = await getServiceClient()
       .from('profiles')
-      .select('id')
+      .select('id, role')
       .eq('id', data.user.id)
       .maybeSingle();
-    if (profileError || !profile) return null;
 
-    return data.user.id;
+    if (profileError || !profile || typeof profile.role !== 'string') return null;
+    return { userId: data.user.id, role: profile.role };
   } catch {
     return null;
   }
@@ -52,15 +47,19 @@ function getAuthenticatedTeacherId(): string | null {
   return authContext.getStore()?.userId ?? null;
 }
 
-function unauthorized(): Response {
-  return new Response(JSON.stringify({ error: 'Unauthorized' }), {
-    status: 401,
+function jsonError(status: number, message: string, extra: Record<string, string> = {}): Response {
+  return new Response(JSON.stringify({ error: message }), {
+    status,
     headers: {
       'content-type': 'application/json; charset=utf-8',
-      'www-authenticate': 'Bearer',
       'cache-control': 'no-store',
+      ...extra,
     },
   });
+}
+
+function unauthorized(): Response {
+  return jsonError(401, 'Unauthorized', { 'www-authenticate': 'Bearer' });
 }
 
 const handler = createMcpHandler((server) => {
@@ -89,10 +88,7 @@ const handler = createMcpHandler((server) => {
 
       if (error || !data) {
         console.error('MCP dashboard save failed');
-        return {
-          content: [{ type: 'text', text: 'Save failed. Please try again later.' }],
-          isError: true,
-        };
+        return { content: [{ type: 'text', text: 'Save failed. Please try again later.' }], isError: true };
       }
 
       return {
@@ -135,10 +131,7 @@ const handler = createMcpHandler((server) => {
       const { data, error } = await query;
       if (error) {
         console.error('MCP dashboard retrieval failed');
-        return {
-          content: [{ type: 'text', text: 'Retrieval failed. Please try again later.' }],
-          isError: true,
-        };
+        return { content: [{ type: 'text', text: 'Retrieval failed. Please try again later.' }], isError: true };
       }
 
       if (!data?.length) {
@@ -155,16 +148,19 @@ const handler = createMcpHandler((server) => {
 }, { serverInfo: { name: 'mxtlab-dept-os', version: '0.1.0' }, verboseLogs: false });
 
 async function authenticatedHandler(request: Request): Promise<Response> {
-  const authorization = request.headers.get('authorization');
-  const match = authorization?.match(/^Bearer\s+(.+)$/i);
-  if (!match) return unauthorized();
+  const match = request.headers.get('authorization')?.match(/^Bearer\s+(.+)$/i);
+  const token = match?.[1]?.trim();
+  if (!token) return unauthorized();
 
-  const userId = await verifySupabaseAccessToken(match[1].trim());
-  if (!userId) return unauthorized();
+  const identity = await verifySupabaseAccessToken(token);
+  if (!identity) return unauthorized();
 
-  // AsyncLocalStorage binds identity to this request's async work, not global
-  // mutable state, so concurrent teachers cannot overwrite one another.
-  return authContext.run({ userId }, () => handler(request));
+  // Admins can use their own dashboard; students cannot access teacher tools.
+  if (identity.role !== 'teacher' && identity.role !== 'admin') {
+    return jsonError(403, 'Forbidden');
+  }
+
+  return authContext.run({ userId: identity.userId }, () => handler(request));
 }
 
 export { authenticatedHandler as GET, authenticatedHandler as POST };
