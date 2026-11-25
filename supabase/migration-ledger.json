@@ -409,6 +409,10 @@
     {
       "version": "20261125164611",
       "name": "preserve_legacy_department_resource_upload_path"
+    },
+    {
+      "version": "20261125170054",
+      "name": "restrict_learning_progress_to_linked_teachers"
     }
   ]
 }
