@@ -47,6 +47,9 @@ jobs:
       - name: Validate sitemap XML
         run: python -c "import xml.etree.ElementTree as ET; ET.parse('sitemap.xml')"
 
+      - name: Validate static-site API proxy configuration
+        run: node scripts/validate-api-proxy.mjs
+
       - name: Validate Supabase migration filenames against the live ledger snapshot
         run: node supabase/validate-migrations.mjs
 
