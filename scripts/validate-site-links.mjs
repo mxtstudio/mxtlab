@@ -17,6 +17,15 @@ async function walk(directory) {
   return found;
 }
 
+function repositoryFilePath(relativePath) {
+  const absolutePath = path.resolve(ROOT, relativePath);
+  const fromRoot = path.relative(ROOT, absolutePath);
+  if (fromRoot === '..' || fromRoot.startsWith('..' + path.sep) || path.isAbsolute(fromRoot)) {
+    throw new Error('Refusing to read a path outside the repository root.');
+  }
+  return absolutePath;
+}
+
 function attribute(tag, name) {
   const patterns = {
     href: /\bhref\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+))/i,
@@ -74,7 +83,7 @@ let checkedReferences = 0;
 let checkedFragments = 0;
 
 for (const htmlFile of htmlFiles) {
-  const source = await readFile(path.join(ROOT, htmlFile), 'utf8');
+  const source = await readFile(repositoryFilePath(htmlFile), 'utf8');
   // Avoid treating markup-like content inside inline scripts or data-URI SVGs as HTML.
   const markup = source
     .replace(/data:image\/svg\+xml,[^"]*/gi, 'data:image/svg+xml,INLINE_SVG')
