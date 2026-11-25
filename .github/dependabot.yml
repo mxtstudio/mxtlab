@@ -1,23 +1,30 @@
 version: 2
 updates:
-  - package-ecosystem: "npm"
-    directory: "/dept-os-mcp"
+  - package-ecosystem: npm
+    directory: /dept-os-mcp
     schedule:
-      interval: "weekly"
-      day: "monday"
+      interval: weekly
+      day: monday
       time: "06:00"
-      timezone: "Pacific/Port_Moresby"
+      timezone: Pacific/Port_Moresby
     open-pull-requests-limit: 5
     groups:
-      patch-and-minor:
+      production-dependencies:
+        dependency-type: production
         update-types:
-          - "patch"
-          - "minor"
-  - package-ecosystem: "github-actions"
-    directory: "/"
+          - patch
+          - minor
+      development-dependencies:
+        dependency-type: development
+        update-types:
+          - patch
+          - minor
+
+  - package-ecosystem: github-actions
+    directory: /
     schedule:
-      interval: "weekly"
-      day: "monday"
+      interval: weekly
+      day: monday
       time: "06:00"
-      timezone: "Pacific/Port_Moresby"
+      timezone: Pacific/Port_Moresby
     open-pull-requests-limit: 5
