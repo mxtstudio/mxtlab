@@ -16,4 +16,11 @@ assert.equal(
   'Do not add broad or unrelated rewrites to the static-site project',
 );
 
+
+const apiCacheHeaders = (config.headers || []).find((rule) => rule.source === '/api/:path*')?.headers || [];
+assert.ok(
+  apiCacheHeaders.some((header) => header.key.toLowerCase() === 'x-vercel-enable-rewrite-caching' && header.value === '0'),
+  'Authenticated API proxy responses must not be cached by Vercel',
+);
+
 console.log('API proxy configuration is valid.');
