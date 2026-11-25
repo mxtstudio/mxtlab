@@ -1,28 +1,45 @@
 -- MXT Lab: make learning history account-owned and restrict roster visibility.
--- Abort rather than orphan/reassign any unexpected legacy rows.
+-- Existing learning tables are empty. Abort rather than orphan/reassign unexpected legacy rows.
 DO $$
 BEGIN
-  IF EXISTS (SELECT 1 FROM public.student_progress sp LEFT JOIN public.profiles p ON p.id = sp.student_id WHERE p.id IS NULL) THEN
+  IF EXISTS (
+    SELECT 1 FROM public.student_progress sp
+    LEFT JOIN public.profiles p ON p.id = sp.student_id
+    WHERE p.id IS NULL
+  ) THEN
     RAISE EXCEPTION 'student_progress contains IDs that are not profile IDs; reconcile before migration';
   END IF;
-  IF EXISTS (SELECT 1 FROM public.quiz_attempts qa LEFT JOIN public.profiles p ON p.id = qa.student_id WHERE p.id IS NULL) THEN
+  IF EXISTS (
+    SELECT 1 FROM public.quiz_attempts qa
+    LEFT JOIN public.profiles p ON p.id = qa.student_id
+    WHERE p.id IS NULL
+  ) THEN
     RAISE EXCEPTION 'quiz_attempts contains IDs that are not profile IDs; reconcile before migration';
   END IF;
-  IF EXISTS (SELECT 1 FROM public.student_progress GROUP BY student_id, topic_id HAVING count(*) > 1) THEN
+  IF EXISTS (
+    SELECT 1 FROM public.student_progress
+    GROUP BY student_id, topic_id
+    HAVING count(*) > 1
+  ) THEN
     RAISE EXCEPTION 'student_progress contains duplicate student/topic rows; reconcile before migration';
   END IF;
 END
 $$;
 
-ALTER TABLE public.student_progress DROP CONSTRAINT IF EXISTS student_progress_student_id_fkey;
-ALTER TABLE public.student_progress ADD CONSTRAINT student_progress_student_id_fkey
-  FOREIGN KEY (student_id) REFERENCES public.profiles(id) ON DELETE CASCADE;
-ALTER TABLE public.quiz_attempts DROP CONSTRAINT IF EXISTS quiz_attempts_student_id_fkey;
-ALTER TABLE public.quiz_attempts ADD CONSTRAINT quiz_attempts_student_id_fkey
+ALTER TABLE public.student_progress
+  DROP CONSTRAINT IF EXISTS student_progress_student_id_fkey;
+ALTER TABLE public.student_progress
+  ADD CONSTRAINT student_progress_student_id_fkey
   FOREIGN KEY (student_id) REFERENCES public.profiles(id) ON DELETE CASCADE;
 
-ALTER TABLE public.student_progress
-  ADD CONSTRAINT student_progress_status_check CHECK (status IN ('in_progress', 'completed'));
+ALTER TABLE public.quiz_attempts
+  DROP CONSTRAINT IF EXISTS quiz_attempts_student_id_fkey;
+ALTER TABLE public.quiz_attempts
+  ADD CONSTRAINT quiz_attempts_student_id_fkey
+  FOREIGN KEY (student_id) REFERENCES public.profiles(id) ON DELETE CASCADE;
+
+-- The existing student_progress_status_check and student_progress_student_topic_uniq
+-- already enforce valid status values and one row per student/topic.
 ALTER TABLE public.student_progress
   ADD CONSTRAINT student_progress_completion_check CHECK (
     (status = 'completed' AND completed_at IS NOT NULL)
@@ -67,8 +84,6 @@ GRANT SELECT, INSERT ON TABLE public.quiz_attempts TO authenticated;
 GRANT ALL ON TABLE public.student_progress TO service_role;
 GRANT ALL ON TABLE public.quiz_attempts TO service_role;
 
-CREATE UNIQUE INDEX student_progress_student_topic_unique_idx
-  ON public.student_progress (student_id, topic_id);
 CREATE INDEX IF NOT EXISTS quiz_attempts_student_topic_attempted_idx
   ON public.quiz_attempts (student_id, topic_id, attempted_at DESC);
 
