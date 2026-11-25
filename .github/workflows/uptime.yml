@@ -1,0 +1,30 @@
+name: MXT Lab uptime checks
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: uptime-check
+  cancel-in-progress: true
+
+jobs:
+  check-production:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check apex site
+        run: curl --fail --silent --show-error --location --max-redirs 5 --output /dev/null https://mxtlab.online/
+
+      - name: Check privacy page
+        run: curl --fail --silent --show-error --location --max-redirs 5 --output /dev/null https://mxtlab.online/privacy.html
+
+      - name: Check teacher portal
+        run: curl --fail --silent --show-error --location --max-redirs 5 --output /dev/null https://mxtlab.online/teacher-os.html
+
+      - name: Check www redirect
+        run: curl --fail --silent --show-error --location --max-redirs 5 --output /dev/null https://www.mxtlab.online/
