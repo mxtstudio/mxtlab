@@ -413,6 +413,10 @@
     {
       "version": "20261125170054",
       "name": "restrict_learning_progress_to_linked_teachers"
+    },
+    {
+      "version": "20261125170352",
+      "name": "remove_client_table_admin_privileges_and_internal_access"
     }
   ]
 }
