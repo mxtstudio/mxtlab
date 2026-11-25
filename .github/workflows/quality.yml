@@ -47,6 +47,9 @@ jobs:
       - name: Validate sitemap XML
         run: python -c "import xml.etree.ElementTree as ET; ET.parse('sitemap.xml')"
 
+      - name: Validate Supabase migration filenames against the live ledger snapshot
+        run: node supabase/validate-migrations.mjs
+
       - name: Regenerate dependency lock from package metadata
         working-directory: dept-os-mcp
         run: npm install --package-lock-only --ignore-scripts --no-audit --no-fund
