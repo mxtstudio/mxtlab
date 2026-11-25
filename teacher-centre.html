@@ -37,9 +37,30 @@
         <div id="profile-badge" class="profile-badge" style="display:none">
           <img id="profile-avatar" alt="" /><span id="profile-name"></span>
         </div>
+        <button class="hamburger" id="teacher-menu-toggle" aria-expanded="false" aria-controls="teacher-mobile-drawer" aria-label="Toggle navigation menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
   </nav>
+
+  <div class="mobile-drawer" id="teacher-mobile-drawer" role="navigation" aria-label="Mobile navigation">
+    <ul class="mob-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/topics.html">Explore Topics</a></li>
+      <li><a href="/resources.html">Resources</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/teacher-centre.html">For Teachers</a></li>
+      <li><a href="/apply-teacher.html">Apply for Teacher Access</a></li>
+    </ul>
+    <div class="mob-footer">
+      <button class="btn-full google-signin-btn" id="google-signin-mobile" data-auth-redirect="/teacher-os.html">Sign in as Teacher</button>
+      <div id="profile-badge-mobile" class="profile-badge" style="display:none">
+        <img id="profile-avatar-mobile" alt="" /><span id="profile-name-mobile"></span>
+      </div>
+      <button class="btn-full" id="mob-signout" style="display:none">Sign out</button>
+    </div>
+  </div>
 
   <main class="teacher-entry">
     <p class="nav-badge">MXT Lab · PNG Agriculture Education</p>
@@ -81,6 +102,20 @@
     const workspace = document.getElementById('teacher-entry-workspace');
 
     signInButton.addEventListener('click', () => signInWithGoogle('/teacher-os.html'));
+
+    const menuToggle = document.getElementById('teacher-menu-toggle');
+    const mobileDrawer = document.getElementById('teacher-mobile-drawer');
+    const closeMobileMenu = () => {
+      mobileDrawer.classList.remove('open');
+      menuToggle.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    };
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mobileDrawer.classList.toggle('open');
+      menuToggle.classList.toggle('open', isOpen);
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    mobileDrawer.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMobileMenu));
 
     async function refreshTeacherEntry() {
       const { data: { session } } = await supabase.auth.getSession();
