@@ -15,9 +15,19 @@ export const supabase = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
 export async function signInWithGoogle(redirectTo = null) {
   // Keep OAuth callbacks on this origin and return users to the workflow they started.
   const requestedRedirect = redirectTo || (window.location.pathname === '/apply-teacher.html' ? '/apply-teacher.html' : '/dashboard.html');
-  const safeRedirect = typeof requestedRedirect === 'string' && requestedRedirect.startsWith('/') && !requestedRedirect.startsWith('//')
-    ? requestedRedirect
-    : '/dashboard.html';
+  let safeRedirect = '/dashboard.html';
+  if (typeof requestedRedirect === 'string' && requestedRedirect.startsWith('/') && !requestedRedirect.startsWith('//')) {
+    try {
+      const candidate = new URL(requestedRedirect, window.location.origin);
+      // Backslashes can be treated as URL separators by browsers. Compare the
+      // parsed origin as well as the relative-path form before accepting it.
+      if (candidate.origin === window.location.origin) {
+        safeRedirect = `${candidate.pathname}${candidate.search}${candidate.hash}`;
+      }
+    } catch {
+      // Keep the safe dashboard fallback for malformed redirect values.
+    }
+  }
   const { error } = await supabase.auth.signInWithOAuth({
     provider: 'google',
     options: { redirectTo: new URL(safeRedirect, window.location.origin).toString() },
