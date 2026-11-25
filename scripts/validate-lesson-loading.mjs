@@ -86,7 +86,7 @@ for (const slug of quizSlugs) {
 
 
 const teacherOsHtml = await readFile('teacher-os.html', 'utf8');
-if (/assets\\/js\\/lesson-data\\.js/.test(teacherOsHtml)) {
+if (/assets\/js\/lesson-data\.js/.test(teacherOsHtml)) {
   errors.push('teacher-os.html: must not download the full lesson-content bundle');
 }
 if (!teacherOsHtml.includes('<script src="/assets/js/main.js" defer></script>')) {
