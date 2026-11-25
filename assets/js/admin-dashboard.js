@@ -10,8 +10,9 @@ function cell(row, value) {
 }
 
 async function signedDocumentLinks(paths) {
+  const documents = Array.isArray(paths) ? paths : [];
   const links = document.createDocumentFragment();
-  for (const [index, path] of (paths || []).entries()) {
+  for (const [index, path] of documents.entries()) {
     const { data } = await supabase.storage.from('teacher-applications').createSignedUrl(path, 300);
     if (!data?.signedUrl) continue;
     const link = document.createElement('a');
@@ -20,7 +21,7 @@ async function signedDocumentLinks(paths) {
     link.rel = 'noopener noreferrer';
     link.textContent = `Document ${index + 1}`;
     links.appendChild(link);
-    if (index < paths.length - 1) links.append(' · ');
+    if (index < documents.length - 1) links.append(' · ');
   }
   return links;
 }
