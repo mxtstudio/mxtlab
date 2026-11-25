@@ -89,4 +89,4 @@ assert.equal(pageFiles.length, moduleFiles.length, 'Every published lesson page 
 
 console.log(`Validated ${pageFiles.length} lesson pages and ${moduleFiles.length} matching modules.`);
 console.log(`Total of all page-specific module files: ${totalPageModuleBytes.toLocaleString()} bytes (each page downloads only its own module).`);
-console.log('No lesson page loads the site-wide lesson-data.js or quiz-data.js bundles.');
+console.log('Lesson pages load one page-specific module; the quiz hub loads only quiz-data.js, not lesson-data.js.');
