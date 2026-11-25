@@ -15,7 +15,7 @@ The advisor reported:
 - 21 tables with RLS enabled but no policies (including internal `districtos` tables and internal/public tables).
 - Leaked-password protection disabled and `pg_net` installed in `public`.
 
-These findings are not, by themselves, proof that private rows can be read or changed. GraphQL schema discoverability is different from row access: table grants expose an API surface, while RLS policies still determine which rows a caller can access. Several no-policy tables have client grants revoked, so the advisor's informational RLS finding must not be "fixed" by adding broad policies.
+These findings are not, by themselves, proof that private rows can be read or changed. GraphQL schema discoverability is different from row access: table grants expose an API surface, while RLS policies still determine which rows a caller can access. I verified all 21 no-policy tables reported in the public/districtos schemas: RLS is enabled, and none grants SELECT or INSERT to `anon` or `authenticated`. This is why the advisor's informational RLS finding is not evidence of public row exposure and must not be "fixed" by adding broad policies.
 
 The three anonymous GraphQL-visible tables appear to be catalogue/content objects intended for public browsing. Their exposure should remain intentional and separately tested.
 
