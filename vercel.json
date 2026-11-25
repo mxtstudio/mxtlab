@@ -1,5 +1,11 @@
 {
   "framework": null,
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://www.mxtlab.online/api/:path*"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
