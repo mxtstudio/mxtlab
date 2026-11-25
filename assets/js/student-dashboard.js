@@ -16,7 +16,7 @@ async function loadOverview() {
   const { data: { session } } = await supabase.auth.getSession();
   const user = await getCurrentUserProfile();
   if (!user) return;
-  const studentId = user.id; // profiles.id matches roster_students.id? Actually roster_students.id is separate. For demo we use profile id as student identifier.
+  const studentId = user.id; // profiles.id is the canonical student identity for all learning-progress records.
   const progressRes = await authFetch('/api/student/progress');
   const progress = progressRes.progress || [];
   const completed = progress.filter(p => p.status === 'completed').length;
