@@ -1,0 +1,8 @@
+{
+  "pending_migrations": [
+    {
+      "version": "20261126170000",
+      "name": "restrict_self_profile_role_insert"
+    }
+  ]
+}
