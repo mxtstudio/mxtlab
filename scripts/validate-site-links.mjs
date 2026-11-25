@@ -18,8 +18,12 @@ async function walk(directory) {
 }
 
 function attribute(tag, name) {
-  const pattern = new RegExp("\\b" + name + "\\s*=\\s*(?:\"([^\"]*)\"|'([^']*)'|([^\\s>]+))", 'i');
-  const match = tag.match(pattern);
+  const patterns = {
+    href: /\bhref\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+))/i,
+    src: /\bsrc\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+))/i,
+    poster: /\bposter\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+))/i,
+  };
+  const match = patterns[name]?.exec(tag);
   return match ? (match[1] ?? match[2] ?? match[3] ?? '').trim() : null;
 }
 
