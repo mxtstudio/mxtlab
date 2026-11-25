@@ -24,11 +24,18 @@ function attribute(tag, name) {
 }
 
 function localTarget(raw, currentFile) {
-  if (!raw || /^(?:mailto:|tel:|javascript:|data:|blob:)/i.test(raw)) return null;
+  let candidate = (raw || '').trim();
+  while (candidate.startsWith('"') || candidate.startsWith("'")) candidate = candidate.slice(1);
+  if (!candidate || candidate === '#' || candidate.includes('${')) return null;
+
+  const lower = candidate.toLowerCase();
+  if (lower.startsWith('mailto:') || lower.startsWith('tel:') ||
+      lower.startsWith('javascript:') || lower.startsWith('data:') ||
+      lower.startsWith('blob:') || lower.startsWith('vbscript:')) return null;
 
   let url;
   try {
-    url = new URL(raw, new URL(currentFile, SITE_ORIGIN + '/'));
+    url = new URL(candidate, new URL(currentFile, SITE_ORIGIN + '/'));
   } catch {
     return { error: 'invalid URL' };
   }
