@@ -44,6 +44,9 @@ At the time of this audit, `storage.objects` contained **zero objects**. This is
 
 ## Findings and follow-up
 
+The Supabase security advisor returned no finding specifically targeting Storage buckets or `storage.objects` policies. It did return separate database/API/auth warnings (including GraphQL object discoverability, authenticated-executable SECURITY DEFINER functions, leaked-password protection disabled, and `pg_net` in `public`); those require their own review and are not evidence of a Storage-policy bypass.
+
+
 1. **No confirmed anonymous Storage access.** All three buckets are private, RLS is enabled, and the inspected policies contain identity/role predicates.
 2. **Defence-in-depth opportunity:** change the `curriculum-pdfs` policies from `TO public` to `TO authenticated` and state the UPDATE `WITH CHECK` explicitly. This is a policy clarity/hardening recommendation, not evidence of a current bypass.
 3. **No live objects to test.** The zero-object result means uploader-folder ownership, signed URL delivery, and cross-department denial still need test fixtures in an isolated preview/test environment before any policy changes are released.
