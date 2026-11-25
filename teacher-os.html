@@ -489,7 +489,7 @@
         }
 
         const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, '_').slice(0, 100);
-        const path = `${profile.department_id}/${crypto.randomUUID()}-${safeName}`;
+        const path = `${profile.department_id}/${profile.id}/${crypto.randomUUID()}-${safeName}`;
         btn.disabled = true;
         btn.textContent = 'Uploading…';
         errorEl.textContent = '';
