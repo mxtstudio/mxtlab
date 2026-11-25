@@ -141,6 +141,7 @@
         </div>
 
         <a href="/topics.html" class="btn-full btn-full-green">Continue Learning →</a>
+        <a id="dash-learning-progress" href="/student-dashboard.html" class="btn-full" hidden>View Learning Progress →</a>
         <button id="dash-signout" class="btn-full dash-signout">Sign out</button>
       </div>
 
@@ -187,6 +188,8 @@
       document.getElementById('dash-role').textContent = profile?.role
         ? profile.role.charAt(0).toUpperCase() + profile.role.slice(1)
         : '';
+      const learningProgressLink = document.getElementById('dash-learning-progress');
+      if (learningProgressLink) learningProgressLink.hidden = profile?.role !== 'student';
       document.getElementById('dash-streak').textContent = profile?.current_streak ?? 0;
       document.getElementById('dash-longest').textContent = profile?.longest_streak ?? 0;
 
