@@ -401,6 +401,10 @@
     {
       "version": "20261125163952",
       "name": "restrict_department_resource_uploads"
+    },
+    {
+      "version": "20261125164502",
+      "name": "bind_department_resource_uploads_to_owner"
     }
   ]
 }
