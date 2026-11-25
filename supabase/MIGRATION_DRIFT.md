@@ -6,7 +6,7 @@
 - Snapshot date: 26 November 2026
 - Applied migrations in the live ledger: **105**
 - Active migration files after reconciliation: **17**
-- Historical migration SQL files still missing from the repository: **89**
+- Historical migration SQL files still missing from the repository: **88**
 
 The live database is operating with the current schema. This is a source-control reproducibility issue, not a claim that live objects are missing.
 
@@ -112,7 +112,6 @@ The live database is operating with the current schema. This is a source-control
 - `20261110093224_curriculum_and_progress_roster_model.sql`
 - `20261110093232_profiles_select_students_only_when_linked.sql`
 - `20261110093247_curriculum_progress_revoke_default_authenticated_grants.sql`
-- `20261125170625_revoke_postgres_default_client_privileges.sql`
 
 ## Operational warning
 
