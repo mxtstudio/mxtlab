@@ -1,0 +1,398 @@
+{
+  "project_id": "mqiwckclyohjdhjaoaor",
+  "captured_at": "2026-11-26",
+  "applied_migrations": [
+    {
+      "version": "20260703165739",
+      "name": "init_profiles_and_lesson_progress_v2"
+    },
+    {
+      "version": "20260703165911",
+      "name": "harden_helper_functions_and_search_path"
+    },
+    {
+      "version": "20260703170912",
+      "name": "fix_admin_policy_recursion_via_helper"
+    },
+    {
+      "version": "20260703170952",
+      "name": "regrant_helper_execute_to_authenticated"
+    },
+    {
+      "version": "20260703172755",
+      "name": "add_schools_table_and_backfill_school_id"
+    },
+    {
+      "version": "20260713231716",
+      "name": "add_missing_fk_indexes"
+    },
+    {
+      "version": "20260713231726",
+      "name": "optimize_rls_auth_uid_calls"
+    },
+    {
+      "version": "20260713232108",
+      "name": "consolidate_permissive_policies"
+    },
+    {
+      "version": "20260713232129",
+      "name": "curriculum_pdfs_storage_policies"
+    },
+    {
+      "version": "20260714124834",
+      "name": "add_lessons_reference_and_streak_tracking"
+    },
+    {
+      "version": "20260714124851",
+      "name": "add_progress_reporting_view"
+    },
+    {
+      "version": "20260715092029",
+      "name": "create_mxt_store_schema"
+    },
+    {
+      "version": "20260715233901",
+      "name": "fix_performance_issues_from_progress_tracking"
+    },
+    {
+      "version": "20260715234536",
+      "name": "remove_unused_store_checkout_infrastructure"
+    },
+    {
+      "version": "20260717123714",
+      "name": "add_store_public_read_policies"
+    },
+    {
+      "version": "20260717124405",
+      "name": "tighten_connection_timeouts"
+    },
+    {
+      "version": "20260717124627",
+      "name": "add_edge_function_rate_limiting"
+    },
+    {
+      "version": "20260717230200",
+      "name": "teacher_os_pilot_agriculture_kerema"
+    },
+    {
+      "version": "20260717231346",
+      "name": "seed_lessons_table"
+    },
+    {
+      "version": "20260718104258",
+      "name": "department_resources_storage"
+    },
+    {
+      "version": "20260718104352",
+      "name": "increment_resource_downloads_fn"
+    },
+    {
+      "version": "20260719052540",
+      "name": "department_roles_table"
+    },
+    {
+      "version": "20260719054756",
+      "name": "restrict_teacher_os_to_staff_roles"
+    },
+    {
+      "version": "20260719055252",
+      "name": "science_department_subjects"
+    },
+    {
+      "version": "20260719061517",
+      "name": "curriculum_intelligence"
+    },
+    {
+      "version": "20260719064705",
+      "name": "hod_assign_department_members"
+    },
+    {
+      "version": "20260719072519",
+      "name": "fix_profiles_rls_infinite_recursion"
+    },
+    {
+      "version": "20260720230519",
+      "name": "security_hardening_search_path_and_grants"
+    },
+    {
+      "version": "20260720230546",
+      "name": "revoke_public_execute_on_staff_functions"
+    },
+    {
+      "version": "20260720230738",
+      "name": "revoke_anon_select_on_messaging_tables"
+    },
+    {
+      "version": "20260721111200",
+      "name": "add_self_service_school_claim"
+    },
+    {
+      "version": "20260721122219",
+      "name": "lesson_plan_status_notify_webhook"
+    },
+    {
+      "version": "20260721122241",
+      "name": "lock_down_notify_trigger_function"
+    },
+    {
+      "version": "20260721141747",
+      "name": "curriculum_units_full_detail"
+    },
+    {
+      "version": "20260721142657",
+      "name": "import_agriculture_curriculum_data"
+    },
+    {
+      "version": "20260722015806",
+      "name": "normalize_legacy_curriculum_rows"
+    },
+    {
+      "version": "20260723144313",
+      "name": "fix_rls_auth_initplan_perf"
+    },
+    {
+      "version": "20260725002555",
+      "name": "fix_profiles_insert_policy_for_google_signin"
+    },
+    {
+      "version": "20260725061835",
+      "name": "create_anon_lesson_completions"
+    },
+    {
+      "version": "20260726174823",
+      "name": "dashboard_entries_owner_update_delete"
+    },
+    {
+      "version": "20260726174832",
+      "name": "dashboard_entries_hod_department_select"
+    },
+    {
+      "version": "20260727105033",
+      "name": "simplify_notify_payload_for_make"
+    },
+    {
+      "version": "20260730101201",
+      "name": "add_results_and_api_tokens"
+    },
+    {
+      "version": "20260731062956",
+      "name": "districtos_initial_schema"
+    },
+    {
+      "version": "20260731114953",
+      "name": "districtos_schema_rebuild_authoritative"
+    },
+    {
+      "version": "20260803075002",
+      "name": "security_fixes_critical"
+    },
+    {
+      "version": "20260803075017",
+      "name": "seed_missing_lessons"
+    },
+    {
+      "version": "20260803081446",
+      "name": "link_results_to_lesson_plans"
+    },
+    {
+      "version": "20260803154845",
+      "name": "add_meeting_manager_and_program_of_work"
+    },
+    {
+      "version": "20260803154946",
+      "name": "add_student_tracker_attendance_behavior"
+    },
+    {
+      "version": "20260804095340",
+      "name": "create_teacher_requests"
+    },
+    {
+      "version": "20260804095514",
+      "name": "create_teacher_request_decision_function"
+    },
+    {
+      "version": "20260804100009",
+      "name": "create_notifications_and_wire_up_teacher_requests"
+    },
+    {
+      "version": "20260804143745",
+      "name": "create_department_health_scoring"
+    },
+    {
+      "version": "20260804143855",
+      "name": "schedule_department_health_snapshot"
+    },
+    {
+      "version": "20260804144012",
+      "name": "create_notices"
+    },
+    {
+      "version": "20260808104935",
+      "name": "create_lesson_notes"
+    },
+    {
+      "version": "20260808105222",
+      "name": "create_timetable_entries"
+    },
+    {
+      "version": "20260808105305",
+      "name": "create_saps"
+    },
+    {
+      "version": "20260808105431",
+      "name": "create_audit_logs"
+    },
+    {
+      "version": "20260808105530",
+      "name": "create_version_history"
+    },
+    {
+      "version": "20260808105612",
+      "name": "create_sessions"
+    },
+    {
+      "version": "20260808105636",
+      "name": "create_subscriptions"
+    },
+    {
+      "version": "20260809044040",
+      "name": "add_pdf_uploads_table"
+    },
+    {
+      "version": "20260809044049",
+      "name": "add_license_keys_table"
+    },
+    {
+      "version": "20260809044058",
+      "name": "add_profile_id_to_subscriptions"
+    },
+    {
+      "version": "20260809044107",
+      "name": "add_arch_checklist_progress_table"
+    },
+    {
+      "version": "20260809044115",
+      "name": "add_modelling_guided_practice_to_lesson_plans"
+    },
+    {
+      "version": "20260813052559",
+      "name": "self_serve_api_tokens_v2"
+    },
+    {
+      "version": "20260813052615",
+      "name": "add_generate_my_api_token"
+    },
+    {
+      "version": "20261003050026",
+      "name": "curriculum_knowledge_base"
+    },
+    {
+      "version": "20261007215613",
+      "name": "fix_dashboard_entries_hod_select_scope_bug"
+    },
+    {
+      "version": "20261007215729",
+      "name": "dashboard_entries_soft_delete_and_teacher_api_keys"
+    },
+    {
+      "version": "20261021063845",
+      "name": "wire_lesson_plan_versioning"
+    },
+    {
+      "version": "20261021064102",
+      "name": "wire_saps_versioning"
+    },
+    {
+      "version": "20261025024416",
+      "name": "lock_down_security_definer_functions"
+    },
+    {
+      "version": "20261025024536",
+      "name": "rls_wrap_auth_uid_in_select"
+    },
+    {
+      "version": "20261025024544",
+      "name": "add_missing_foreign_key_indexes"
+    },
+    {
+      "version": "20261027091042",
+      "name": "teacher_owned_student_roster"
+    },
+    {
+      "version": "20261028075512",
+      "name": "add_api_key_management_functions"
+    },
+    {
+      "version": "20261028075522",
+      "name": "add_hod_visibility_to_version_history"
+    },
+    {
+      "version": "20261028075545",
+      "name": "add_session_anomaly_detection"
+    },
+    {
+      "version": "20261028075607",
+      "name": "drop_legacy_students_table"
+    },
+    {
+      "version": "20261028080105",
+      "name": "add_rate_limit_helper"
+    },
+    {
+      "version": "20261028080127",
+      "name": "add_lesson_plan_and_sap_approval_functions"
+    },
+    {
+      "version": "20261028080225",
+      "name": "sync_hod_sources_of_truth"
+    },
+    {
+      "version": "20261028080320",
+      "name": "fix_hod_sync_upgrade_path"
+    },
+    {
+      "version": "20261028090711",
+      "name": "teacher_student_links_and_assignable_accounts"
+    },
+    {
+      "version": "20261030181527",
+      "name": "lock_down_teacher_api_keys_grants"
+    },
+    {
+      "version": "20261110093224",
+      "name": "curriculum_and_progress_roster_model"
+    },
+    {
+      "version": "20261110093232",
+      "name": "profiles_select_students_only_when_linked"
+    },
+    {
+      "version": "20261110093247",
+      "name": "curriculum_progress_revoke_default_authenticated_grants"
+    },
+    {
+      "version": "20261125162414",
+      "name": "fix_student_progress_account_ownership"
+    },
+    {
+      "version": "20261125162423",
+      "name": "add_teacher_application_workflow"
+    },
+    {
+      "version": "20261125162633",
+      "name": "revoke_anon_private_data_access"
+    },
+    {
+      "version": "20261125162721",
+      "name": "restrict_teacher_applications_and_aggregate_privacy"
+    },
+    {
+      "version": "20261125162805",
+      "name": "consolidate_progress_policies_and_application_roles"
+    },
+    {
+      "version": "20261125163009",
+      "name": "consolidate_rls_policies_and_initplan_performance"
+    }
+  ]
+}
