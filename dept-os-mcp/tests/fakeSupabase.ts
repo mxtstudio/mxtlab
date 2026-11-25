@@ -30,7 +30,7 @@ export const state = (g.__fakeSupabaseState ??= {
   dbDown: boolean;
   failTables: Set<string>;
   authDelay: Map<string, number>;
-  tables: { profiles: Row[]; dashboard_entries: Row[] };
+  tables: { profiles: Row[]; dashboard_entries: Row[]; student_progress: Row[] };
   nextId: number;
 };
 
@@ -43,6 +43,7 @@ export function resetState() {
   state.authDelay.clear();
   state.tables.profiles = [];
   state.tables.dashboard_entries = [];
+  state.tables.student_progress = [];
   state.nextId = 1;
 }
 
