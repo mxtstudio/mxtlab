@@ -32,6 +32,9 @@ jobs:
           cache: npm
           cache-dependency-path: dept-os-mcp/package-lock.json
 
+      - name: Pin npm version for reproducible lockfile resolution
+        run: npm install --global npm@11.6.2
+
       - name: Validate browser JavaScript syntax
         shell: bash
         run: |
@@ -44,9 +47,13 @@ jobs:
       - name: Validate sitemap XML
         run: python -c "import xml.etree.ElementTree as ET; ET.parse('sitemap.xml')"
 
-      - name: Install MCP dependencies
+      - name: Regenerate dependency lock from package metadata
         working-directory: dept-os-mcp
-        run: npm install --no-audit --no-fund
+        run: npm install --package-lock-only --ignore-scripts --no-audit --no-fund
+
+      - name: Install MCP dependencies from generated lock
+        working-directory: dept-os-mcp
+        run: npm ci --ignore-scripts --no-audit --no-fund
 
       - name: Run MCP regression tests
         working-directory: dept-os-mcp

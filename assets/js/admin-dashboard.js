@@ -1,103 +1,128 @@
-// admin-dashboard.js – list pending teacher applications for admins
 import { supabase, getCurrentUserProfile } from '/assets/js/auth.js';
+
+function cell(row, value) {
+  const td = document.createElement('td');
+  td.textContent = value ?? '';
+  td.style.border = '1px solid var(--border)';
+  td.style.padding = '6px';
+  row.appendChild(td);
+  return td;
+}
+
+async function signedDocumentLinks(paths) {
+  const documents = Array.isArray(paths) ? paths : [];
+  const links = document.createDocumentFragment();
+  for (const [index, path] of documents.entries()) {
+    const { data } = await supabase.storage.from('teacher-applications').createSignedUrl(path, 300);
+    if (!data?.signedUrl) continue;
+    const link = document.createElement('a');
+    link.href = data.signedUrl;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.textContent = `Document ${index + 1}`;
+    links.appendChild(link);
+    if (index < documents.length - 1) links.append(' · ');
+  }
+  return links;
+}
 
 async function loadApplications() {
   const container = document.getElementById('applications-table');
-  const profile = await getCurrentUserProfile();
-  if (!profile || profile.role !== 'admin') {
-    container.textContent = 'Access denied.';
-    return;
-  }
-  const { data: apps, error } = await supabase
-    .from('teacher_applications')
-    .select('*')
-    .order('created_at', { ascending: false });
-  if (error) {
-    container.textContent = 'Failed to load applications.';
-    console.error(error);
-    return;
-  }
-  if (!apps || apps.length === 0) {
-    container.textContent = 'No teacher applications.';
-    return;
-  }
-  const table = document.createElement('table');
-  table.style.width = '100%';
-  table.style.borderCollapse = 'collapse';
-  const header = document.createElement('tr');
-  ['Name','Email','School','Province','Subjects','Submitted','Status','Actions'].forEach(text => {
-    const th = document.createElement('th');
-    th.textContent = text;
-    th.style.border = '1px solid var(--border)';
-    th.style.padding = '8px';
-    header.appendChild(th);
-  });
-  table.appendChild(header);
-  apps.forEach(app => {
-    const tr = document.createElement('tr');
-    const fields = [app.full_name, app.email, app.school, app.province, app.subjects, new Date(app.created_at).toLocaleString(), app.status];
-    fields.forEach(val => {
-      const td = document.createElement('td');
-      td.textContent = val || '';
-      td.style.border = '1px solid var(--border)';
-      td.style.padding = '6px';
-      tr.appendChild(td);
-    });
-    // Actions cell
-    const actionTd = document.createElement('td');
-    actionTd.style.border = '1px solid var(--border)';
-    actionTd.style.padding = '6px';
-    const approveBtn = document.createElement('button');
-    approveBtn.textContent = 'Approve';
-    approveBtn.className = 'btn btn-primary';
-    approveBtn.onclick = async () => await handleDecision(app.id, 'Approved');
-    const rejectBtn = document.createElement('button');
-    rejectBtn.textContent = 'Reject';
-    rejectBtn.className = 'btn btn-danger';
-    rejectBtn.style.marginLeft = '4px';
-    rejectBtn.onclick = async () => {
-      const reason = prompt('Enter rejection reason:');
-      await handleDecision(app.id, 'Rejected', reason);
-    };
-    actionTd.appendChild(approveBtn);
-    actionTd.appendChild(rejectBtn);
-    tr.appendChild(actionTd);
-    table.appendChild(tr);
-  });
-  container.innerHTML = '';
-  container.appendChild(table);
-}
+  if (!container) return;
 
-async function handleDecision(appId, newStatus, note = null) {
-  const { error } = await supabase.from('teacher_applications').update({
-    status: newStatus,
-    admin_note: note,
-    admin_id: (await supabase.auth.getUser()).data.user.id,
-    reviewed_at: new Date().toISOString(),
-  }).eq('id', appId);
-  if (error) {
-    alert('Failed to update status');
-    console.error(error);
-    return;
-  }
-  // If approved, promote the applicant to teacher role
-  if (newStatus === 'Approved') {
-    // Fetch the application to get user_id
-    const { data: app } = await supabase.from('teacher_applications').select('user_id').eq('id', appId).single();
-    if (app && app.user_id) {
-      await supabase.from('profiles').update({ role: 'teacher' }).eq('id', app.user_id);
+  try {
+    const profile = await getCurrentUserProfile();
+    if (!profile || profile.role !== 'admin') {
+      container.textContent = 'Access denied.';
+      return;
     }
+
+    const { data: apps, error } = await supabase
+      .from('teacher_applications')
+      .select('*')
+      .order('created_at', { ascending: false });
+
+    if (error) {
+      container.textContent = 'Failed to load applications.';
+      return;
+    }
+    if (!apps?.length) {
+      container.textContent = 'No teacher applications.';
+      return;
+    }
+
+    const table = document.createElement('table');
+    table.style.width = '100%';
+    table.style.borderCollapse = 'collapse';
+    const header = document.createElement('tr');
+    for (const label of ['Name', 'Email', 'School', 'Province', 'Subjects', 'Documents', 'Submitted', 'Status', 'Actions']) {
+      const th = document.createElement('th');
+      th.textContent = label;
+      th.style.border = '1px solid var(--border)';
+      th.style.padding = '8px';
+      header.appendChild(th);
+    }
+    table.appendChild(header);
+
+    for (const app of apps) {
+      const tr = document.createElement('tr');
+      cell(tr, app.full_name);
+      cell(tr, app.email);
+      cell(tr, app.school);
+      cell(tr, app.province);
+      cell(tr, app.subjects);
+      const docs = cell(tr, '');
+      docs.appendChild(await signedDocumentLinks(app.documents));
+      cell(tr, app.created_at ? new Date(app.created_at).toLocaleString() : '');
+      cell(tr, app.status ? app.status.charAt(0).toUpperCase() + app.status.slice(1) : '');
+
+      const actions = cell(tr, '');
+      if (app.status === 'pending') {
+        const approve = document.createElement('button');
+        approve.type = 'button';
+        approve.textContent = 'Approve';
+        approve.className = 'btn btn-primary';
+        approve.addEventListener('click', () => handleDecision(app.id, true, null, approve));
+
+        const reject = document.createElement('button');
+        reject.type = 'button';
+        reject.textContent = 'Reject';
+        reject.className = 'btn btn-danger';
+        reject.style.marginLeft = '4px';
+        reject.addEventListener('click', () => {
+          const note = prompt('Enter rejection reason:');
+          if (note === null) return;
+          handleDecision(app.id, false, note, reject);
+        });
+        actions.append(approve, reject);
+      }
+      table.appendChild(tr);
+    }
+
+    container.replaceChildren(table);
+  } catch {
+    container.textContent = 'Failed to load applications.';
   }
-  // Record audit log
-  await supabase.from('audit_logs').insert({
-    admin_id: (await supabase.auth.getUser()).data.user.id,
-    action: `teacher_application_${newStatus.toLowerCase()}`,
-    target_user_id: null,
-    details: { application_id: appId, note },
-  });
-  // Reload list
-  loadApplications();
 }
 
-// Load on page ready
+async function handleDecision(applicationId, approve, note, button) {
+  if (button) button.disabled = true;
+  try {
+    const { error } = await supabase.rpc('review_teacher_application', {
+      p_application_id: applicationId,
+      p_approve: approve,
+      p_note: note,
+    });
+    if (error) {
+      alert('Failed to review application. Please refresh and try again.');
+      return;
+    }
+    await loadApplications();
+  } catch {
+    alert('Failed to review application. Please refresh and try again.');
+  } finally {
+    if (button) button.disabled = false;
+  }
+}
+
 window.addEventListener('load', loadApplications);
