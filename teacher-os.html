@@ -432,7 +432,7 @@
             <label class="tos-field"><span>Type</span>
               <select name="resource_type">${RESOURCE_TYPES.map(t => `<option value="${t}">${RESOURCE_LABELS[t]}</option>`).join('')}</select>
             </label>
-            <label class="tos-field"><span>File</span><input required type="file" name="file"/></label>
+            <label class="tos-field"><span>File</span><input required type="file" name="file" accept=".pdf,.doc,.docx,.ppt,.pptx,.xls,.xlsx,.jpg,.jpeg,.png"/></label>
             <button type="submit" class="tos-btn tos-btn-primary" id="tos-upload-btn">Upload</button>
           </div>
           <div id="tos-upload-error"></div>
@@ -450,35 +450,80 @@
         if (!file || !file.name) return;
 
         const btn = document.getElementById('tos-upload-btn');
+        const errorEl = document.getElementById('tos-upload-error');
+        const MAX_SIZE = 10 * 1024 * 1024;
+        const ALLOWED = {
+          pdf: 'application/pdf',
+          doc: 'application/msword',
+          docx: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+          ppt: 'application/vnd.ms-powerpoint',
+          pptx: 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
+          xls: 'application/vnd.ms-excel',
+          xlsx: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+          jpg: 'image/jpeg',
+          jpeg: 'image/jpeg',
+          png: 'image/png'
+        };
+        const showUploadError = (message) => {
+          errorEl.textContent = message;
+          errorEl.className = 'tos-error';
+        };
+
+        const extension = file.name.split('.').pop()?.toLowerCase();
+        const contentType = extension ? ALLOWED[extension] : null;
+        if (!contentType || (file.type && file.type !== contentType)) {
+          showUploadError('Unsupported file type. Upload PDF, Word, PowerPoint, Excel, JPG or PNG files only.');
+          return;
+        }
+        if (!file.size || file.size > MAX_SIZE) {
+          showUploadError('File must be larger than 0 bytes and no larger than 10 MB.');
+          return;
+        }
+        if (!profile.department_id || profile.role !== 'teacher') {
+          showUploadError('Your teacher account must be assigned to a department before uploading resources.');
+          return;
+        }
+        if (!title || title.length > 160) {
+          showUploadError('Enter a resource title of 1–160 characters.');
+          return;
+        }
+
+        const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, '_').slice(0, 100);
+        const path = `${profile.department_id}/${profile.id}/${crypto.randomUUID()}-${safeName}`;
         btn.disabled = true;
         btn.textContent = 'Uploading…';
+        errorEl.textContent = '';
 
-        const path = `${profile.department_id}/${crypto.randomUUID()}-${file.name}`;
-        const upload = await supabase.storage.from('department-resources').upload(path, file);
-        if (upload.error) {
-          document.getElementById('tos-upload-error').innerHTML = `<p class="tos-error">${esc(upload.error.message)}</p>`;
+        try {
+          const upload = await supabase.storage.from('department-resources').upload(path, file, {
+            cacheControl: '3600',
+            upsert: false,
+            contentType
+          });
+          if (upload.error) throw new Error('Upload failed. Check the file and try again.');
+
+          const insert = await supabase.from('resources').insert({
+            department_id: profile.department_id,
+            created_by: profile.id,
+            title,
+            subject,
+            resource_type: resourceType,
+            file_url: path,
+          });
+
+          if (insert.error) {
+            await supabase.storage.from('department-resources').remove([path]);
+            throw new Error('The resource record could not be saved. The uploaded file was cleaned up.');
+          }
+
+          e.target.reset();
+          await renderResources();
+        } catch (error) {
+          showUploadError(error instanceof Error ? error.message : 'Upload failed. Please try again.');
+        } finally {
           btn.disabled = false;
           btn.textContent = 'Upload';
-          return;
         }
-
-        const insert = await supabase.from('resources').insert({
-          department_id: profile.department_id,
-          created_by: profile.id,
-          title,
-          subject,
-          resource_type: resourceType,
-          file_url: path,
-        });
-
-        if (insert.error) {
-          document.getElementById('tos-upload-error').innerHTML = `<p class="tos-error">${esc(insert.error.message)}</p>`;
-          btn.disabled = false;
-          btn.textContent = 'Upload';
-          return;
-        }
-
-        renderResources();
       };
 
       const { data, error } = await supabase
