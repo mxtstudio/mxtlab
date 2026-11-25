@@ -21,7 +21,7 @@ export const state = (g.__fakeSupabaseState ??= {
   failTables: new Set<string>(),
   // artificial Auth latency per token (ms), for concurrency tests
   authDelay: new Map<string, number>(),
-  tables: { profiles: [] as Row[], dashboard_entries: [] as Row[] },
+  tables: { profiles: [] as Row[], dashboard_entries: [] as Row[], student_progress: [] as Row[] },
   nextId: 1,
 }) as {
   tokens: Map<string, string>;
