@@ -401,6 +401,26 @@
     {
       "version": "20261125163952",
       "name": "restrict_department_resource_uploads"
+    },
+    {
+      "version": "20261125164502",
+      "name": "bind_department_resource_uploads_to_owner"
+    },
+    {
+      "version": "20261125164611",
+      "name": "preserve_legacy_department_resource_upload_path"
+    },
+    {
+      "version": "20261125170054",
+      "name": "restrict_learning_progress_to_linked_teachers"
+    },
+    {
+      "version": "20261125170352",
+      "name": "remove_client_table_admin_privileges_and_internal_access"
+    },
+    {
+      "version": "20261125170625",
+      "name": "revoke_postgres_default_client_privileges"
     }
   ]
 }
