@@ -69,7 +69,15 @@ async function updateNavForRole(session) {
   const teacherLinks = document.querySelectorAll('[data-nav-role="teacher-dashboard"]');
   const adminLinks = document.querySelectorAll('[data-nav-role="admin-dashboard"]');
   applyLinks.forEach(link => { link.style.display = role === 'student' ? '' : 'none'; });
-  teacherLinks.forEach(link => { link.style.display = role === 'teacher' ? '' : 'none'; });
+  teacherLinks.forEach(link => {
+    link.style.display = (role === 'teacher' || role === 'admin') ? '' : 'none';
+    const anchor = link.querySelector('a');
+    if (anchor) {
+      anchor.href = '/teacher-os.html';
+      anchor.textContent = 'Teacher Workspace';
+      anchor.setAttribute('data-staff-workspace', '');
+    }
+  });
   adminLinks.forEach(link => { link.style.display = role === 'admin' ? '' : 'none'; });
   // Public navigation always points to the Teacher Centre. Staff-only workspace links remain role-gated.
   document.querySelectorAll('a[href="/teacher-os.html"]:not([data-staff-workspace])').forEach(link => { link.href = '/teacher-centre.html'; });

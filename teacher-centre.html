@@ -97,6 +97,7 @@
           ? 'Your staff account is approved. Open your Teacher Workspace.'
           : 'Your staff account is approved, but it has not been assigned to a department yet. Contact your administrator.';
       } else {
+        signInButton.hidden = true;
         status.textContent = 'You are signed in. Submit a teacher access application to request teacher permissions.';
       }
     }
