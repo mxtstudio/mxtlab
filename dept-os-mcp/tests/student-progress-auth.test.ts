@@ -81,7 +81,7 @@ describe('student progress API authorization', () => {
       method: 'POST',
       headers: { ...bearer(A.token), 'content-type': 'application/json' },
       body: JSON.stringify({
-        topic_id: 'cccccccc-cccc-4ccc-8ccc-cccccccccccc',
+        topic_id: '550e8400-e29b-41d4-a716-446655440000',
         status: 'completed',
       }),
     }));
@@ -97,11 +97,11 @@ describe('student progress API authorization', () => {
     const response = await POST(new Request('http://localhost/api/student/progress', {
       method: 'POST',
       headers: { ...bearer(A.token), 'content-type': 'application/json' },
-      body: JSON.stringify({ topic_id: 'cccccccc-cccc-4ccc-8ccc-cccccccccccc', status: 'completed', student_id: B.id }),
+      body: JSON.stringify({ topic_id: '550e8400-e29b-41d4-a716-446655440000', status: 'completed', student_id: B.id }),
     }));
 
     expect(response.status).toBe(201);
-    const inserted = state.tables.student_progress.find(row => row.topic_id === 'cccccccc-cccc-4ccc-8ccc-cccccccccccc');
+    const inserted = state.tables.student_progress.find(row => row.topic_id === '550e8400-e29b-41d4-a716-446655440000');
     expect(inserted?.student_id).toBe(A.id);
   });
 });
