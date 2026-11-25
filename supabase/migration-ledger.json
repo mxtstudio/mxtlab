@@ -393,6 +393,10 @@
     {
       "version": "20261125163009",
       "name": "consolidate_rls_policies_and_initplan_performance"
+    },
+    {
+      "version": "20261125163720",
+      "name": "harden_review_rpcs_and_api_token_creation"
     }
   ]
 }

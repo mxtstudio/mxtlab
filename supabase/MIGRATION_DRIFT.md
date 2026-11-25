@@ -4,23 +4,21 @@
 
 - Project: `MXTLAB PROJECT`
 - Snapshot date: 26 November 2026
-- Applied migrations in the live `supabase_migrations.schema_migrations` ledger: **98**
-- Active migration files after this reconciliation: **10**
+- Applied migrations in the live ledger: **99**
+- Active migration files after reconciliation: **11**
 - Historical migration SQL files still missing from the repository: **88**
 
-The live database is operating with the current schema. This finding is about **source-control reproducibility**, not a claim that the live database is missing objects.
+The live database is operating with the current schema. This is a source-control reproducibility issue, not a claim that live objects are missing.
 
 ## What was corrected
 
-- Four existing historical files had filenames whose timestamps did not match the versions recorded by Supabase. They are renamed to the exact live ledger versions.
-- Six migrations applied during the November 2026 security work are now stored under the exact versions recorded by the live ledger.
-- `20261031000000_curriculum_and_progress.sql` is moved to `supabase/archive/`. Its version is not in the live migration ledger and it overlaps curriculum/progress objects represented by the later live migration `20261110093224_curriculum_and_progress_roster_model`. It must not be run automatically.
+- Four historical files now use their exact remote ledger versions.
+- Seven November 2026 security/performance migrations now use their exact applied versions.
+- `20261031000000_curriculum_and_progress.sql` is archived because its version is absent from the live ledger and it overlaps curriculum/progress objects represented by the later roster-model migration.
 - `migration-ledger.json` records the live version/name pairs.
-- `validate-migrations.mjs` and CI ensure every active migration filename matches an applied live version/name pair.
+- `validate-migrations.mjs` and CI fail if an active migration filename does not match the ledger.
 
 ## Historical migration SQL still missing
-
-The following live-applied versions do not have their original SQL files in this repository. They are listed here so they are not mistaken for unapplied migrations.
 
 - `20260703165739_init_profiles_and_lesson_progress_v2.sql`
 - `20260703165911_harden_helper_functions_and_search_path.sql`
@@ -113,10 +111,10 @@ The following live-applied versions do not have their original SQL files in this
 
 ## Operational warning
 
-Do **not** run `supabase db reset` or treat this repository as a reproducible clean-database baseline yet. The missing historical SQL must be recovered from the original source or a verified backup and tested against a fresh disposable Supabase project before a clean reset/bootstrap can be considered safe.
+Do **not** run `supabase db reset` or treat this repository as a reproducible clean-database baseline yet. The missing historical SQL must be recovered from the original source or a verified backup and tested against a fresh disposable Supabase project before a clean reset/bootstrap is safe.
 
-Do not create empty placeholder migrations or guess historical SQL. For the already-running production project, continue using forward-only migrations, preserve the live ledger, and commit each applied migration using its exact remote version and name.
+Do not create empty placeholder migrations or guess historical SQL. For the live project, continue using forward-only migrations and commit each applied migration with its exact remote version and name.
 
 ## Required follow-up
 
-Recover the missing historical migration files, reconstruct a verified baseline if originals cannot be recovered, then validate a clean local reset and a disposable-project migration replay before claiming full GitHub/Supabase reproducibility.
+Recover the missing historical migration files, reconstruct a verified baseline if originals cannot be recovered, then validate a clean local reset and a disposable-project migration replay.
