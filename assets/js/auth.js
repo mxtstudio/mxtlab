@@ -79,8 +79,6 @@ async function updateNavForRole(session) {
     }
   });
   adminLinks.forEach(link => { link.style.display = role === 'admin' ? '' : 'none'; });
-  // Public navigation always points to the Teacher Centre. Staff-only workspace links remain role-gated.
-  document.querySelectorAll('a[href="/teacher-os.html"]:not([data-staff-workspace])').forEach(link => { link.href = '/teacher-centre.html'; });
   const teacherOsLinks = document.querySelectorAll('a[href="/teacher-os.html"][data-staff-workspace]');
   teacherOsLinks.forEach(l => {
     l.style.display = (role === 'teacher' || role === 'admin') ? '' : 'none';
@@ -125,9 +123,6 @@ function renderAuthUI(session) {
     signOutBtn.onclick = signOut;
   }
 }
-
-// Public teacher links must lead to the public entry page, never directly to the staff-only workspace.
-document.querySelectorAll('a[href="/teacher-os.html"]:not([data-staff-workspace])').forEach(link => { link.href = '/teacher-centre.html'; });
 
 // Initial session handling – render UI and update nav.
 supabase.auth.getSession().then(({ data: { session } }) => {
