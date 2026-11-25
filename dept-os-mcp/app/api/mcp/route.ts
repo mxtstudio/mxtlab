@@ -17,7 +17,7 @@ const typeSchema = z.string().trim().min(1).max(50);
 const contentSchema = z.string().min(1).max(50_000);
 const filterSchema = z.string().trim().min(1).max(100);
 
-async function verifySupabaseAccessToken(token: string): Promise<string | null> {
+async function verifySupabaseAccessToken(token: string): Promise<{ userId: string; role: string } | null> {
   const url = process.env.SUPABASE_URL;
   const anonKey = process.env.SUPABASE_ANON_KEY;
   if (!url || !anonKey) {
@@ -37,12 +37,12 @@ async function verifySupabaseAccessToken(token: string): Promise<string | null> 
     // verified Auth user that has a matching MXT Lab teacher profile.
     const { data: profile, error: profileError } = await getServiceClient()
       .from('profiles')
-      .select('id')
+      .select('id, role')
       .eq('id', data.user.id)
       .maybeSingle();
-    if (profileError || !profile) return null;
+    if (profileError || !profile || typeof profile.role !== 'string') return null;
 
-    return data.user.id;
+    return { userId: data.user.id, role: profile.role };
   } catch {
     return null;
   }
@@ -159,12 +159,21 @@ async function authenticatedHandler(request: Request): Promise<Response> {
   const match = authorization?.match(/^Bearer\s+(.+)$/i);
   if (!match) return unauthorized();
 
-  const userId = await verifySupabaseAccessToken(match[1].trim());
-  if (!userId) return unauthorized();
+  const identity = await verifySupabaseAccessToken(match[1].trim());
+  if (!identity) return unauthorized();
+  if (identity.role !== 'teacher') {
+    return new Response(JSON.stringify({ error: 'Forbidden' }), {
+      status: 403,
+      headers: {
+        'content-type': 'application/json; charset=utf-8',
+        'cache-control': 'no-store',
+      },
+    });
+  }
 
-  // AsyncLocalStorage binds identity to this request's async work, not global
-  // mutable state, so concurrent teachers cannot overwrite one another.
-  return authContext.run({ userId }, () => handler(request));
+  // AsyncLocalStorage binds verified teacher identity to this request's async
+  // work, not global mutable state, so concurrent teachers cannot overwrite one another.
+  return authContext.run({ userId: identity.userId }, () => handler(request));
 }
 
 export { authenticatedHandler as GET, authenticatedHandler as POST };
