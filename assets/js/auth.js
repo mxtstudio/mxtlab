@@ -60,17 +60,18 @@ export async function getCurrentUserProfile() {
  */
 async function updateNavForRole(session) {
   const role = session ? (await getCurrentUserProfile())?.role || 'student' : 'guest';
-  const applyLink = document.getElementById('nav-apply-teacher');
-  const teacherLink = document.getElementById('nav-teacher-dashboard');
-  const centreLink = document.getElementById('nav-teacher-centre');
-  const adminLink = document.getElementById('nav-admin-dashboard');
-  if (applyLink) applyLink.style.display = role === 'student' ? '' : 'none';
-  if (teacherLink) teacherLink.style.display = role === 'teacher' ? '' : 'none';
-  if (centreLink) centreLink.style.display = role === 'teacher' ? '' : 'none';
+  const applyLinks = document.querySelectorAll('[data-nav-role="apply-teacher"]');
+  const teacherLinks = document.querySelectorAll('[data-nav-role="teacher-dashboard"]');
+  const centreLinks = document.querySelectorAll('[data-nav-role="teacher-centre"]');
+  const adminLinks = document.querySelectorAll('[data-nav-role="admin-dashboard"]');
+  applyLinks.forEach(link => { link.style.display = role === 'student' ? '' : 'none'; });
+  teacherLinks.forEach(link => { link.style.display = role === 'teacher' ? '' : 'none'; });
+  centreLinks.forEach(link => { link.style.display = role === 'teacher' ? '' : 'none'; });
+  adminLinks.forEach(link => { link.style.display = role === 'admin' ? '' : 'none'; });
   // Ensure the hidden Teacher Centre link exists (fallback for pages missing the markup)
   if (!centreLink) {
     const li = document.createElement('li');
-    li.id = 'nav-teacher-centre';
+    li.dataset.navRole = 'teacher-centre';
     li.style.display = 'none';
     const a = document.createElement('a');
     a.href = '/teacher-centre.html';
