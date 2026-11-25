@@ -31,6 +31,10 @@ function unauthorized(): Response {
   return new Response(JSON.stringify({ error: 'Unauthorized' }), { status: 401, headers: { 'content-type': 'application/json' } });
 }
 
+function forbidden(): Response {
+  return new Response(JSON.stringify({ error: 'Forbidden: you can only access your own progress.' }), { status: 403, headers: { 'content-type': 'application/json' } });
+}
+
 export async function GET(request: Request): Promise<Response> {
   const authHeader = request.headers.get('authorization');
   const match = authHeader?.match(/^Bearer\s+(.+)$/i);
@@ -38,9 +42,13 @@ export async function GET(request: Request): Promise<Response> {
   const userId = await verifySupabaseAccessToken(match[1].trim());
   if (!userId) return unauthorized();
 
-  // Student can only see their own progress; teachers can view any student via query param (not implemented yet)
+  // Do not trust a caller-supplied student_id when using the service-role client.
+  // Teacher-to-roster authorization is not implemented in this endpoint yet, so
+  // callers are restricted to their own authenticated user ID until that model exists.
   const url = new URL(request.url);
-  const studentId = url.searchParams.get('student_id') ?? userId;
+  const requestedStudentId = url.searchParams.get('student_id');
+  if (requestedStudentId && requestedStudentId !== userId) return forbidden();
+  const studentId = userId;
 
   const supabase = getServiceClient();
   const { data, error } = await supabase.from('student_progress').select('*').eq('student_id', studentId);
