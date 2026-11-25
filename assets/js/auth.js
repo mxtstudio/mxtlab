@@ -69,10 +69,10 @@ async function updateNavForRole(session) {
   centreLinks.forEach(link => { link.style.display = role === 'teacher' ? '' : 'none'; });
   adminLinks.forEach(link => { link.style.display = role === 'admin' ? '' : 'none'; });
   // Ensure the hidden Teacher Centre link exists (fallback for pages missing the markup)
-  if (!centreLink) {
+  if (centreLinks.length === 0) {
     const li = document.createElement('li');
     li.dataset.navRole = 'teacher-centre';
-    li.style.display = 'none';
+    li.style.display = role === 'teacher' ? '' : 'none';
     const a = document.createElement('a');
     a.href = '/teacher-centre.html';
     a.textContent = 'Teacher Centre';
