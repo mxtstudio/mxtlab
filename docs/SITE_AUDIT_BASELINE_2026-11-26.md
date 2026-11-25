@@ -97,6 +97,12 @@ Do not add an arbitrary cross-origin URL in client code or change DNS as a quick
 - The MCP README states that the current bearer-token approach is not a complete OAuth sign-in/reconnect experience.
 - The root static site has a separate `teacher-os.html` page. It must not be assumed to be the same thing as the Next.js MCP dashboard.
 
+### Production deployment snapshot
+
+Read-only Vercel deployment history showed the latest production deployment for both the static apex project and the separate Next.js project at commit `5a91fe2aa4ef387fbd5d88d5239c54656240c91d`. GitHub `main` at the audit baseline (`e2f93581b747900d0705b3436f071dec895c3a3b`) is two commits ahead of that production revision. The latest production deployments are READY, but new preview deployments are currently being blocked by the team's build-rate limit.
+
+This means GitHub `main` is not identical to the currently deployed site. Always distinguish repository state, preview state, and production state when diagnosing a reported page behaviour. None of the audit PRs in this work has been deployed.
+
 ## 3. Structural and user-journey findings
 
 ### Finding IA-01 — Too many overlapping dashboard destinations
