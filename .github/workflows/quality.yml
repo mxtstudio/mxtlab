@@ -32,6 +32,9 @@ jobs:
           cache: npm
           cache-dependency-path: dept-os-mcp/package-lock.json
 
+      - name: Pin npm version for reproducible lockfile resolution
+        run: npm install --global npm@11.6.2
+
       - name: Validate browser JavaScript syntax
         shell: bash
         run: |
