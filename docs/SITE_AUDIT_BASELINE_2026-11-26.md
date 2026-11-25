@@ -125,7 +125,7 @@ PR #38 proposes navigation and teacher-entry improvements, but it was still open
 
 ### Finding IA-03 — Homepage contains placeholder anchors
 
-The homepage uses several `href="#"` anchors as controls for its JavaScript single-page navigation; these are not automatically broken when their click handlers are present. However, the automated link/fragment validator added in PR #48 found one genuine broken fragment: the homepage "Browse Strands" link pointed to `#strands`, but no element with that ID existed. PR #48 corrects it to open the existing curriculum SPA page via `nav('modules')` and `#page-modules`.
+The homepage uses several `href="#"` anchors as controls for its JavaScript single-page navigation; these are not automatically broken when their click handlers are present. However, the automated link/fragment validator added in PR #48 found one genuine broken fragment: the homepage "Browse Strands" link pointed to `#strands`, but no element with that ID existed. PR #48 corrects it to link directly to the public curriculum catalogue at `/topics.html`.
 
 **Recommendation:** keep the validator in CI and browser-test controls that rely on JavaScript. A visible navigation control must always have a useful action and keyboard-accessible behaviour.
 
