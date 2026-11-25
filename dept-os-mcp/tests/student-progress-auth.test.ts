@@ -41,18 +41,26 @@ describe('student progress API authorization and idempotency', () => {
     expect(await response.text()).not.toContain('progress-b');
   });
 
-  it('rejects teacher profiles from the student progress endpoint', async () => {
+  it('allows teachers to read their own historical progress but denies student-progress writes', async () => {
     const teacher = { id: '33333333-3333-4333-8333-333333333333', token: 'teacher-token' };
     state.tokens.set(teacher.token, teacher.id);
     state.tables.profiles.push({ id: teacher.id, role: 'teacher' });
+    state.tables.student_progress.push({
+      id: 'progress-teacher',
+      student_id: teacher.id,
+      topic_id: 'cccccccc-cccc-4ccc-8ccc-cccccccccccc',
+      status: 'completed',
+    });
     const { GET, POST } = await import('@/app/api/student/progress/route');
     const get = await GET(new Request('http://localhost/api/student/progress', { headers: bearer(teacher.token) }));
+    const body = await get.json();
     const post = await POST(new Request('http://localhost/api/student/progress', {
       method: 'POST',
       headers: { ...bearer(teacher.token), 'content-type': 'application/json' },
       body: JSON.stringify({ topic_id: '550e8400-e29b-41d4-a716-446655440000', status: 'completed' }),
     }));
-    expect(get.status).toBe(403);
+    expect(get.status).toBe(200);
+    expect(body.progress.map((row: { id: string }) => row.id)).toEqual(['progress-teacher']);
     expect(post.status).toBe(403);
   });
 

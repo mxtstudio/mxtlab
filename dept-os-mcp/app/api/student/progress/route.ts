@@ -70,7 +70,7 @@ export async function GET(request: Request): Promise<Response> {
 
   const identity = await verifySupabaseAccessToken(token);
   if (!identity) return unauthorized();
-  if (identity.role !== 'student') return forbidden('A student account is required.');
+  if (!['student', 'teacher', 'admin'].includes(identity.role)) return forbidden();
 
   const requestedStudentId = new URL(request.url).searchParams.get('student_id');
   if (requestedStudentId && requestedStudentId !== identity.userId) {
