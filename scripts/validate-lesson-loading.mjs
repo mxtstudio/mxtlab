@@ -67,14 +67,14 @@ if (quizDataIndex >= 0 && quizMainIndex >= 0 && quizDataIndex > quizMainIndex) {
 if (quizMainIndex >= 0 && quizHubIndex >= 0 && quizMainIndex > quizHubIndex) {
   errors.push('quiz.html: main.js must load before quiz-hub.js');
 }
-if (/assets\\/js\\/lesson-data\\.js/.test(quizHtml)) {
+if (/assets\/js\/lesson-data\.js/.test(quizHtml)) {
   errors.push('quiz.html: still downloads the full lesson-content bundle');
 }
 
 const quizDataSource = await readFile('assets/js/quiz-data.js', 'utf8');
 const quizHubSource = await readFile('assets/js/quiz-hub.js', 'utf8');
 const quizSlugs = [...quizHubSource.matchAll(/slug:'([^']+)'/g)].map((match) => match[1]);
-const dataSlugs = [...quizDataSource.matchAll(/window\\.LESSONS\\[['"]([^'"]+)['"]\\]\\s*=\\s*\\{\\s*quiz\\s*:/g)]
+const dataSlugs = [...quizDataSource.matchAll(/window\.LESSONS\[['"]([^'"]+)['"]\]\s*=\s*\{\s*quiz\s*:/g)]
   .map((match) => match[1]);
 
 if (quizSlugs.length !== dataSlugs.length) {
